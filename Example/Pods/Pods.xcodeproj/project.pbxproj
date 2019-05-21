@@ -36,6 +36,7 @@
 		33CD52558D8E2F820100C8753AA2F32F /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417AC43741957D422D95FE23428AC0F /* SwiftSupport.swift */; };
 		342E271422946C1C00011037 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */; };
 		344A62912294433F00C34CFA /* StantUiIosLibrary.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8C23CFD2483184A38DEF96BA34FC7947 /* StantUiIosLibrary.podspec */; };
+		34DFB8C1229493B1002D92FB /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8C0229493B1002D92FB /* ConstructionCard.swift */; };
 		393FE2527000C2538664D9310D7F2CD6 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D70388309C97FC710EA3161F580D3 /* Behavior.swift */; };
 		3989CFAB6F4803956C1E9DD851633AB9 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB63FC973DDA85FE9E584BF9B98FAC8 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A80484B27458684DC9762F053404225 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C4F04456488D98A9ED1791A0C32A /* NSBundle+CurrentTestBundle.swift */; };
@@ -262,6 +263,7 @@
 		306CBA9147837D72CAAFA9A056322B22 /* Pods-StantUiIosLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		325F23715E0145731359FF5F6BF075F7 /* XCTestObservationCenter+CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTestObservationCenter+CurrentTestCaseTracker.h"; sourceTree = "<group>"; };
 		33D2F72834EB1CFF047E3B7255792720 /* Pods-StantUiIosLibrary_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibrary_Tests-dummy.m"; sourceTree = "<group>"; };
+		34DFB8C0229493B1002D92FB /* ConstructionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
 		3737834F967FDB0C45E943087084B571 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
 		3806C1140E86A072585989CFCC678386 /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		386EDB244F08295A4AE9A263140A3DC6 /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickSpecBase/include/QuickSpecBase.h; sourceTree = "<group>"; };
@@ -552,6 +554,22 @@
 			path = "../Target Support Files/Quick";
 			sourceTree = "<group>";
 		};
+		34DFB8BE22949394002D92FB /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				34DFB8BF2294939B002D92FB /* Construction */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		34DFB8BF2294939B002D92FB /* Construction */ = {
+			isa = PBXGroup;
+			children = (
+				34DFB8C0229493B1002D92FB /* ConstructionCard.swift */,
+			);
+			path = Construction;
+			sourceTree = "<group>";
+		};
 		3927476536186BB75601A00BA991084B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +776,7 @@
 		9460BD7012FC05BBA9D83740209BBCDE /* StantUiIosLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				34DFB8BE22949394002D92FB /* Cards */,
 				81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */,
 				E5B3EA27D2597CC0038674E3EF9F1B2C /* Pod */,
 				C2A90A5901DE0638A0559CEF03F2556D /* Support Files */,
@@ -1204,6 +1223,7 @@
 				832DC61A7CA632444CD6DA46EF6491FC /* FBSnapshotTestController.m in Sources */,
 				33CD52558D8E2F820100C8753AA2F32F /* SwiftSupport.swift in Sources */,
 				CFA869102744DB995F3AC930E96E3AFF /* UIApplication+StrictKeyWindow.m in Sources */,
+				34DFB8C1229493B1002D92FB /* ConstructionCard.swift in Sources */,
 				D428498A1A70F3DB2F9D9C921989E6B8 /* UIImage+Compare.m in Sources */,
 				E7F0B09F899DBFE173736F8AE258ED48 /* UIImage+Diff.m in Sources */,
 				24DEF3AF3296F229268D80B50E433240 /* UIImage+Snapshot.m in Sources */,

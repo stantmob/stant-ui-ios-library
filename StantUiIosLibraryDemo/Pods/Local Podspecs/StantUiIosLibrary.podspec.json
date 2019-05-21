@@ -1,0 +1,26 @@
+{
+  "name": "StantUiIosLibrary",
+  "version": "1.0",
+  "summary": "Stant Ios Library for UI Elements.",
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "4.2"
+  },
+  "description": "Stant Ios Library containing UI Elements.",
+  "homepage": "https://github.com/stantmob/stant-ui-ios-library",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Stant": "developer@stant.com.br"
+  },
+  "source": {
+    "git": "https://github.com/stantmob/stant-ui-ios-library.git",
+    "tag": "1.0"
+  },
+  "platforms": {
+    "ios": "10.3"
+  },
+  "swift_version": "4.2",
+  "source_files": "StantUiIosLibrary/Classes/**/*"
+}

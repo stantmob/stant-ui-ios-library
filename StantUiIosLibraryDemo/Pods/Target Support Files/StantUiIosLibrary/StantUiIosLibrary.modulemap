@@ -1,0 +1,6 @@
+framework module StantUiIosLibrary {
+  umbrella header "StantUiIosLibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}
