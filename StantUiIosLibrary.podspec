@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.3'
   s.swift_version = '4.2'
 
-  s.source_files = 'StantUiIosLibrary/Classes/**/*'
+  s.source_files = 'StantUiIosLibrary/*'
   
   # s.resource_bundles = {
   #   'StantUiIosLibrary' => ['StantUiIosLibrary/Assets/*.png']
