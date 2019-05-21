@@ -9,7 +9,7 @@
 import UIKit
 import StantUiIosLibrary
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
