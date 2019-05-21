@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19D1364D68E7174F0DFADAAFD4C60C71 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C092BE06D4835B96D84F25B245E9CAAA /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19D1364D68E7174F0DFADAAFD4C60C71 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE6D6F1D406B64F47858124DC68E272 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34D749B6FAE07AD5ED20310404F02A14 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8BC0DE3926166FF1F78733B31EA6A /* Pods-StantUiIosLibraryDemo-dummy.m */; };
 		5DF7A1311D2180D7F2227D88E444892E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		6D9F107BB6462756CCFFD6202FCBF0B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
@@ -18,8 +18,8 @@
 		AB5189F84251721A13D601E2969F21DB /* Pods-StantUiIosLibraryDemoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 403D97285E8421241C3DC89C1B46D557 /* Pods-StantUiIosLibraryDemoUITests-dummy.m */; };
 		C528EA95FEBDC039BCEC9864A87ADA39 /* Pods-StantUiIosLibraryDemoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 802937D0FF7AA96C74428FA3AC4ED9BD /* Pods-StantUiIosLibraryDemoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D56EB48D66947DCF4431AF755BB43890 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B155D4C1BAF7BB3BA4F7C2B96E7D90 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D66E8F615FC91A1DCC81B0B86FBEBBFA /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F75610D5EDFA7D8FBC3CD3B65D573E /* StantUiIosLibrary-dummy.m */; };
-		D86A2131537AE5472C70D78591763ECE /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03532F8F12737802D196BB739780101F /* ViewTeste.swift */; };
+		D66E8F615FC91A1DCC81B0B86FBEBBFA /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80052902F7CBA86D1F95F665051A9259 /* StantUiIosLibrary-dummy.m */; };
+		D86A2131537AE5472C70D78591763ECE /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32AE0C637A87C498E168F619248DCC /* ViewTeste.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,27 +48,29 @@
 
 /* Begin PBXFileReference section */
 		009AADA6F3A51FCFFD6DDD5200C45A89 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoTests.framework; path = "Pods-StantUiIosLibraryDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00F75610D5EDFA7D8FBC3CD3B65D573E /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
-		03532F8F12737802D196BB739780101F /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
 		0AF18754E5D903D809E6C1892CD4E085 /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemo.framework; path = "Pods-StantUiIosLibraryDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F77A8FE5E18288097BEB6E3A03736C2 /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
 		154F5F263D2BA2A22F45172DDF994541 /* Pods-StantUiIosLibraryDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1B1CC446FF5889F2DB5B5819E813329D /* Pods-StantUiIosLibraryDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1B41C1468FC7176C8A8D5DD4C8C8F521 /* Pods-StantUiIosLibraryDemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemoUITests.modulemap"; sourceTree = "<group>"; };
+		1DB2F4A45968A5DBD6AC8B3FF4E9DA80 /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
+		1F1BC0E776DB87607B7E0B468172F15B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1FE6D6F1D406B64F47858124DC68E272 /* StantUiIosLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-umbrella.h"; sourceTree = "<group>"; };
 		26A8BC0DE3926166FF1F78733B31EA6A /* Pods-StantUiIosLibraryDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemo-dummy.m"; sourceTree = "<group>"; };
 		27C345B8A93CDB601A2B5310F7D75990 /* Pods-StantUiIosLibraryDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-Info.plist"; sourceTree = "<group>"; };
 		294B08413E15EF44B971EA9F21DDEB79 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		31A429FF445284C6B52716D4AC27A049 /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
+		352C7C398E5F84CAC5CE82E0E4445160 /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
+		3B32AE0C637A87C498E168F619248DCC /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
 		3F4639B79761459164F0F8E73913FA8C /* Pods-StantUiIosLibraryDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoTests-dummy.m"; sourceTree = "<group>"; };
 		403D97285E8421241C3DC89C1B46D557 /* Pods-StantUiIosLibraryDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoUITests-dummy.m"; sourceTree = "<group>"; };
 		44B067F616CF608B24E83992B30E2970 /* Pods-StantUiIosLibraryDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemoTests.modulemap"; sourceTree = "<group>"; };
 		4D43AC2C368E9B6AFAE5199A0ACBD5A4 /* Pods-StantUiIosLibraryDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StantUiIosLibraryDemo-frameworks.sh"; sourceTree = "<group>"; };
+		4EB5E214A1C1F1CDCAF7F89AC8DFEBF2 /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
 		55DBECB70792B96CA0D2CEB0D97FCC47 /* Pods_StantUiIosLibraryDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoUITests.framework; path = "Pods-StantUiIosLibraryDemoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66A0B7C05BA7A00D37DDCE7BCEB661C1 /* Pods-StantUiIosLibraryDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6DC1AF3243E5B1E037503684B719718F /* Pods-StantUiIosLibraryDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		79461A1CB4352706EF796387EB8B40E1 /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
 		7C2FA4B4A0461A8889A2A360DED42353 /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CAEC27E5EF15C29DB8BEE790549A787 /* Pods-StantUiIosLibraryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.release.xcconfig"; sourceTree = "<group>"; };
+		80052902F7CBA86D1F95F665051A9259 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
 		802937D0FF7AA96C74428FA3AC4ED9BD /* Pods-StantUiIosLibraryDemoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemoUITests-umbrella.h"; sourceTree = "<group>"; };
 		8B1C75E337793F544B5A108F8C88EB94 /* Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8FF4258854F51E6928A8F9EB3FF6F3DA /* Pods-StantUiIosLibraryDemoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoUITests-Info.plist"; sourceTree = "<group>"; };
@@ -76,13 +78,14 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1B155D4C1BAF7BB3BA4F7C2B96E7D90 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemoTests-umbrella.h"; sourceTree = "<group>"; };
 		A9185A8B13678CB867031A4F3C511DFE /* Pods-StantUiIosLibraryDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemo-umbrella.h"; sourceTree = "<group>"; };
-		C092BE06D4835B96D84F25B245E9CAAA /* StantUiIosLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-umbrella.h"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCFB4D5B77F8B7253994CF85C65A6739 /* Pods-StantUiIosLibraryDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-Info.plist"; sourceTree = "<group>"; };
-		DF89018C1215C12269C7B49A295E1C5B /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
 		E1238C91AF558E7C6E77E2437DD11F81 /* Pods-StantUiIosLibraryDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1ADF27C141C16200D702A6865C33F5C /* Pods-StantUiIosLibraryDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemo.modulemap"; sourceTree = "<group>"; };
+		E42FD6973E2CF32B76C9F1E4164C536C /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
+		E7FB2300BA76A551D9F67AB8C0833202 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		F3516346E8ED901876A10237B58A507F /* Pods-StantUiIosLibraryDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F6D9DA1E2C461D1921B4B93B9D73FEB2 /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FB4112D12E18FEE6E1984A393EFA0CC0 /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StantUiIosLibrary.framework; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC0C624F50639A85FA1A6E49DC8054E /* Pods-StantUiIosLibraryDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,27 +143,16 @@
 			path = "Target Support Files/Pods-StantUiIosLibraryDemo";
 			sourceTree = "<group>";
 		};
-		12F1CC27CC1EFDAAE2E7B7128F4C7B1A /* Pods */ = {
+		1345CB596528CC8758F56BEDE6B9CDEA /* StantUiIosLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				68DABF6065E6344B0BB65547C30BED5E /* StantUiIosLibrary */,
+				3B32AE0C637A87C498E168F619248DCC /* ViewTeste.swift */,
+				BDCBECFBFA8921EA875E959D0FDA9E26 /* Pod */,
+				DDDFE28C0EFD7BE5C5D146767BE71293 /* Support Files */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2275108642895A43F7673129F35AA917 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0F77A8FE5E18288097BEB6E3A03736C2 /* StantUiIosLibrary.modulemap */,
-				31A429FF445284C6B52716D4AC27A049 /* StantUiIosLibrary.xcconfig */,
-				00F75610D5EDFA7D8FBC3CD3B65D573E /* StantUiIosLibrary-dummy.m */,
-				79461A1CB4352706EF796387EB8B40E1 /* StantUiIosLibrary-Info.plist */,
-				DF89018C1215C12269C7B49A295E1C5B /* StantUiIosLibrary-prefix.pch */,
-				C092BE06D4835B96D84F25B245E9CAAA /* StantUiIosLibrary-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/StantUiIosLibrary";
-			sourceTree = "<group>";
+			name = StantUiIosLibrary;
+			path = "/Users/macmininew/Documents/iOSProjects/Stant/stant-ui-ios-library";
+			sourceTree = "<absolute>";
 		};
 		3652CC5CCD1F1E52427FA878F35FE848 /* Targets Support Files */ = {
 			isa = PBXGroup;
@@ -186,16 +178,6 @@
 			);
 			name = "Pods-StantUiIosLibraryDemoUITests";
 			path = "Target Support Files/Pods-StantUiIosLibraryDemoUITests";
-			sourceTree = "<group>";
-		};
-		68DABF6065E6344B0BB65547C30BED5E /* StantUiIosLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				03532F8F12737802D196BB739780101F /* ViewTeste.swift */,
-				2275108642895A43F7673129F35AA917 /* Support Files */,
-			);
-			name = StantUiIosLibrary;
-			path = StantUiIosLibrary;
 			sourceTree = "<group>";
 		};
 		86FA5B1BE1F430F4DA3058140085C36B /* Pods-StantUiIosLibraryDemoTests */ = {
@@ -233,12 +215,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A2AC8DB9D9878B3EFEBB70F81F86A932 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1345CB596528CC8758F56BEDE6B9CDEA /* StantUiIosLibrary */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BDCBECFBFA8921EA875E959D0FDA9E26 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E7FB2300BA76A551D9F67AB8C0833202 /* LICENSE */,
+				1F1BC0E776DB87607B7E0B468172F15B /* README.md */,
+				F6D9DA1E2C461D1921B4B93B9D73FEB2 /* StantUiIosLibrary.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				A2AC8DB9D9878B3EFEBB70F81F86A932 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				12F1CC27CC1EFDAAE2E7B7128F4C7B1A /* Pods */,
 				A10569769974719BC5DF2D59266EEB52 /* Products */,
 				3652CC5CCD1F1E52427FA878F35FE848 /* Targets Support Files */,
 			);
@@ -250,6 +250,20 @@
 				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDDFE28C0EFD7BE5C5D146767BE71293 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4EB5E214A1C1F1CDCAF7F89AC8DFEBF2 /* StantUiIosLibrary.modulemap */,
+				E42FD6973E2CF32B76C9F1E4164C536C /* StantUiIosLibrary.xcconfig */,
+				80052902F7CBA86D1F95F665051A9259 /* StantUiIosLibrary-dummy.m */,
+				352C7C398E5F84CAC5CE82E0E4445160 /* StantUiIosLibrary-Info.plist */,
+				1DB2F4A45968A5DBD6AC8B3FF4E9DA80 /* StantUiIosLibrary-prefix.pch */,
+				1FE6D6F1D406B64F47858124DC68E272 /* StantUiIosLibrary-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "StantUiIosLibraryDemo/Pods/Target Support Files/StantUiIosLibrary";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,7 +499,7 @@
 /* Begin XCBuildConfiguration section */
 		3ADCB6CB4B67E4D39B4740C170AABE4B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31A429FF445284C6B52716D4AC27A049 /* StantUiIosLibrary.xcconfig */;
+			baseConfigurationReference = E42FD6973E2CF32B76C9F1E4164C536C /* StantUiIosLibrary.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -637,7 +651,7 @@
 		};
 		67EB812EFE6C610F4C463797CC83128D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31A429FF445284C6B52716D4AC27A049 /* StantUiIosLibrary.xcconfig */;
+			baseConfigurationReference = E42FD6973E2CF32B76C9F1E4164C536C /* StantUiIosLibrary.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
