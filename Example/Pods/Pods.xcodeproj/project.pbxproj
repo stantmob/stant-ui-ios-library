@@ -34,9 +34,9 @@
 		2C8E41D43E185E62965404EC1F236FA0 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D77C6A3F3C12054776CB175E6349170 /* FBSnapshotTestCase-dummy.m */; };
 		3048AE11A6EC4EBE55C2E2AB861E80B4 /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316F45810C4AC0FE0AE28360CDD71E2 /* SourceLocation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		33CD52558D8E2F820100C8753AA2F32F /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417AC43741957D422D95FE23428AC0F /* SwiftSupport.swift */; };
+		342E271422946C1C00011037 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */; };
 		344A629022943D0500C34CFA /* ViewTeste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344A628F22943D0500C34CFA /* ViewTeste.xib */; };
 		344A62912294433F00C34CFA /* StantUiIosLibrary.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8C23CFD2483184A38DEF96BA34FC7947 /* StantUiIosLibrary.podspec */; };
-		344A62922294434B00C34CFA /* ViewTeste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344A628F22943D0500C34CFA /* ViewTeste.xib */; };
 		393FE2527000C2538664D9310D7F2CD6 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D70388309C97FC710EA3161F580D3 /* Behavior.swift */; };
 		3989CFAB6F4803956C1E9DD851633AB9 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB63FC973DDA85FE9E584BF9B98FAC8 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A80484B27458684DC9762F053404225 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8C4F04456488D98A9ED1791A0C32A /* NSBundle+CurrentTestBundle.swift */; };
@@ -148,7 +148,6 @@
 		E27E026297873F3C6141C0E8BA756BCC /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E42E2EF0F700ACD147B62FBCF45D4148 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E28CDEF53EB41956223421A5AB1FE1E7 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173138DF73844D2A5CCFF1F67D50BD47 /* BeNil.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E3B86D234BC43FB8877126BFDD760867 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A76E0C7FCF6B674505BA134BBF1870 /* FBSnapshotTestCasePlatform.m */; };
-		E61C2ACA6308284F67BE7E04373B2CC2 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */; };
 		E7F0B09F899DBFE173736F8AE258ED48 /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = B67E144328C4704D60F49566A33AF2EA /* UIImage+Diff.m */; };
 		E7F84728F8D8D6F33E322E6E83AA2239 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777EAC8948223C4E918B936CBC0709C /* FBSnapshotTestCase.framework */; };
 		F13A75F99C4F4DAC689611CD5638BA1E /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BC2DDC40F2A2AF6191C5A83691F69D /* SuiteHooks.swift */; };
@@ -1133,7 +1132,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344A62922294434B00C34CFA /* ViewTeste.xib in Resources */,
 				344A62912294433F00C34CFA /* StantUiIosLibrary.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1304,7 +1302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E61C2ACA6308284F67BE7E04373B2CC2 /* ViewTeste.swift in Sources */,
+				342E271422946C1C00011037 /* ViewTeste.swift in Sources */,
 				CC9D78BCD089FC021F5CD9E2FA7AD706 /* StantUiIosLibrary-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
