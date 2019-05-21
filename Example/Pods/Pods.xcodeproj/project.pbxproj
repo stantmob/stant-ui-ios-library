@@ -35,7 +35,6 @@
 		3048AE11A6EC4EBE55C2E2AB861E80B4 /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F316F45810C4AC0FE0AE28360CDD71E2 /* SourceLocation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		33CD52558D8E2F820100C8753AA2F32F /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417AC43741957D422D95FE23428AC0F /* SwiftSupport.swift */; };
 		342E271422946C1C00011037 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */; };
-		344A629022943D0500C34CFA /* ViewTeste.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344A628F22943D0500C34CFA /* ViewTeste.xib */; };
 		344A62912294433F00C34CFA /* StantUiIosLibrary.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8C23CFD2483184A38DEF96BA34FC7947 /* StantUiIosLibrary.podspec */; };
 		393FE2527000C2538664D9310D7F2CD6 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D70388309C97FC710EA3161F580D3 /* Behavior.swift */; };
 		3989CFAB6F4803956C1E9DD851633AB9 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB63FC973DDA85FE9E584BF9B98FAC8 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -263,7 +262,6 @@
 		306CBA9147837D72CAAFA9A056322B22 /* Pods-StantUiIosLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		325F23715E0145731359FF5F6BF075F7 /* XCTestObservationCenter+CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTestObservationCenter+CurrentTestCaseTracker.h"; sourceTree = "<group>"; };
 		33D2F72834EB1CFF047E3B7255792720 /* Pods-StantUiIosLibrary_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibrary_Tests-dummy.m"; sourceTree = "<group>"; };
-		344A628F22943D0500C34CFA /* ViewTeste.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewTeste.xib; path = StantUiIosLibrary/Classes/ViewTeste.xib; sourceTree = "<group>"; };
 		3737834F967FDB0C45E943087084B571 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
 		3806C1140E86A072585989CFCC678386 /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		386EDB244F08295A4AE9A263140A3DC6 /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickSpecBase/include/QuickSpecBase.h; sourceTree = "<group>"; };
@@ -760,7 +758,6 @@
 		9460BD7012FC05BBA9D83740209BBCDE /* StantUiIosLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				344A628F22943D0500C34CFA /* ViewTeste.xib */,
 				81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */,
 				E5B3EA27D2597CC0038674E3EF9F1B2C /* Pod */,
 				C2A90A5901DE0638A0559CEF03F2556D /* Support Files */,
@@ -1175,7 +1172,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344A629022943D0500C34CFA /* ViewTeste.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

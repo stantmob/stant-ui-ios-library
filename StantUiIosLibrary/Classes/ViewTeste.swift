@@ -1,11 +1,25 @@
 import UIKit
 
-class ViewTeste: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+public class ViewTeste: UIView {
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configureView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureView()
     }
+    
+    private func configureView() {
+        // Here it comes general configurations
+        self.backgroundColor = UIColor.blue
+    }
+    
+    public func changeBackground() {
+        // Here it comes custom configurations
+        self.backgroundColor = UIColor.magenta
+    }
+    
 }
