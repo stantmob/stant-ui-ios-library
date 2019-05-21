@@ -1,0 +1,6 @@
+framework module Pods_StantUiIosLibrary_Tests {
+  umbrella header "Pods-StantUiIosLibrary_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
