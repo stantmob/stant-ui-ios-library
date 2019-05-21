@@ -559,7 +559,8 @@
 			children = (
 				34DFB8BF2294939B002D92FB /* Construction */,
 			);
-			path = Cards;
+			name = Cards;
+			path = StantUiIosLibrary/Classes/Cards;
 			sourceTree = "<group>";
 		};
 		34DFB8BF2294939B002D92FB /* Construction */ = {
