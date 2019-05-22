@@ -1,0 +1,16 @@
+PODS:
+  - StantUiIosLibrary (1.0)
+
+DEPENDENCIES:
+  - StantUiIosLibrary (from `~/Documents/iOSProjects/Stant/stant-ui-ios-library`)
+
+EXTERNAL SOURCES:
+  StantUiIosLibrary:
+    :path: "~/Documents/iOSProjects/Stant/stant-ui-ios-library"
+
+SPEC CHECKSUMS:
+  StantUiIosLibrary: ca93c3d162bc0fb77263a53039a8113ea41161e7
+
+PODFILE CHECKSUM: 0e5dff7a25d4d560d364b9576f7bd1bd06ce5c9f
+
+COCOAPODS: 1.6.1
