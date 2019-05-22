@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().shadowImage         = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
-        navigation.view.frame = self.window!.bounds
+        navigation.view.frame            = self.window!.bounds
         navigation.isNavigationBarHidden = true
-        window!.rootViewController = navigation
+        window!.rootViewController       = navigation
         window!.makeKeyAndVisible()
 
         return true

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StantUiIosLibrary
 
 class ConstructionCardViewController: UIViewController {
     
@@ -29,8 +30,8 @@ class ConstructionCardViewController: UIViewController {
         tableView?.dataSource     = self
         tableView?.separatorStyle = .none
         
-        let cell = UITableViewCell()
-//        tableView?.register(cell, forCellReuseIdentifier: "")
+        tableView?.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.IDENTIFIER)
+        self.view.addSubview(tableView!)
     }
 }
 
@@ -44,7 +45,9 @@ extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let cell = tableView.dequeueReusableCell(withIdentifier: ConstructionCard.IDENTIFIER) as? ConstructionCard
+        cell?.configureView()
+        return cell!
     }
     
 }
