@@ -57,9 +57,10 @@ extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSo
             return UITableViewCell()
         }
         
-        
-        let url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
-        cell.configureView(title: "", subtitle: "", imageUrl: url, color: UIColor.init(), percentage: 0)
+        let title    = "Some title"
+        let subtitle = "Some subtitle"
+        let url      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+        cell.configureView(title: title, subtitle: subtitle, imageUrl: url, color: UIColor.blue, percentage: 0)
         
         return cell
     }
