@@ -17,6 +17,7 @@
 		34DFB8FF22949C5C002D92FB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8FE22949C5C002D92FB /* UIViewController.swift */; };
 		34DFB90122949C82002D92FB /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB90022949C82002D92FB /* Optional.swift */; };
 		34DFB90622957331002D92FB /* ConstructionCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB90522957331002D92FB /* ConstructionCardViewController.swift */; };
+		34DFB908229579A0002D92FB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DFB907229579A0002D92FB /* Launch Screen.storyboard */; };
 		6303D5997404EBA197F2F02D /* Pods_StantUiIosLibraryDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC557E4D7A3C702898C7EEFA /* Pods_StantUiIosLibraryDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		34DFB8FE22949C5C002D92FB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		34DFB90022949C82002D92FB /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		34DFB90522957331002D92FB /* ConstructionCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionCardViewController.swift; sourceTree = "<group>"; };
+		34DFB907229579A0002D92FB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		49F361D4117CFF17FD5A05B7 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6621EFD205F51D7A2A9EDCCF /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1ADE93D2A144585AA62ECB3 /* Pods_StantUiIosLibraryDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 				34DFB9042295731B002D92FB /* ConstructionCard */,
 				34DFB8FD22949C4C002D92FB /* Common */,
 				34DFB8CE229495F5002D92FB /* AppDelegate.swift */,
+				34DFB907229579A0002D92FB /* Launch Screen.storyboard */,
 			);
 			path = DemoApplication;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DFB908229579A0002D92FB /* Launch Screen.storyboard in Resources */,
 				34DFB8D6229495F7002D92FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
