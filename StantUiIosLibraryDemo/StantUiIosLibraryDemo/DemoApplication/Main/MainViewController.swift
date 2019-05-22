@@ -23,11 +23,12 @@ class MainViewController: UIViewController {
     fileprivate func addConstructionCardDemoButton() {
         let button = UIButton(type: .system) as UIButton
         
-        button.frame = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 50)
-        button.backgroundColor = UIColor.lightGray
-        button.setTitle("Construction Card Demo", for: .normal)
-        button.tintColor = UIColor.black
+        button.frame                      = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 50)
+        button.backgroundColor            = UIColor.lightGray
+        button.tintColor                  = UIColor.black
         button.contentHorizontalAlignment = .center
+        
+        button.setTitle("Construction Card Demo", for: .normal)
         button.addTarget(self, action: #selector(goToConstructionCardDemo), for: .touchUpInside)
         
         self.view.addSubview(button)
