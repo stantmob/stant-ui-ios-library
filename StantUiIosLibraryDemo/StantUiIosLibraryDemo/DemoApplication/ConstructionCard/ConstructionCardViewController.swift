@@ -13,6 +13,8 @@ class ConstructionCardViewController: UIViewController {
     
     var tableView: UITableView?
     
+    let navigationBarHeight: CGFloat = 44
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,13 +27,19 @@ class ConstructionCardViewController: UIViewController {
     }
     
     fileprivate func configureTableView() {
-        tableView = UITableView(frame: CGRect(x: 0, y: 44, width: self.view.frame.width, height: self.view.frame.height - 44), style: .plain)
+        tableView = UITableView(frame: CGRect(x: 0,
+                                              y: navigationBarHeight,
+                                              width: self.view.frame.width,
+                                              height: self.view.frame.height - navigationBarHeight),
+                                style: .plain)
         tableView?.delegate       = self
         tableView?.dataSource     = self
-        tableView?.separatorStyle = .none
         
         tableView?.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.IDENTIFIER)
-        self.view.addSubview(tableView!)
+        
+        if let tableView = tableView {
+            self.view.addSubview(tableView)
+        }
     }
 }
 
@@ -41,13 +49,17 @@ extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 87
+        return ConstructionCard.cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ConstructionCard.IDENTIFIER) as? ConstructionCard
-        cell?.configureView()
-        return cell!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConstructionCard.IDENTIFIER) as? ConstructionCard else {
+            return UITableViewCell()
+        }
+        
+        cell.configureView(title: "", subtitle: "", imageUrl: "", color: UIColor.init(), percentage: 0)
+        
+        return cell
     }
     
 }

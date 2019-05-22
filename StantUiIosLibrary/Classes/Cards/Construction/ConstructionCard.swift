@@ -4,6 +4,8 @@ public class ConstructionCard: UITableViewCell {
     
     public static let IDENTIFIER = "ConstructionCardIdentifier"
     
+    public static let cellHeight: CGFloat = 87
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -13,7 +15,7 @@ public class ConstructionCard: UITableViewCell {
     }
     
     public func configureView(title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: Int) {
-        let mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 87))
+        let mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ConstructionCard.cellHeight))
         
         self.addSubview(mainView)
         

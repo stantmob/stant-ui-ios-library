@@ -5,8 +5,8 @@ target 'StantUiIosLibraryDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'StantUiIosLibrary',    path: '~/Documents/iOSProjects/Stant/stant-ui-ios-library'
-
+  pod 'StantUiIosLibrary', git: 'https://github.com/stantmob/stant-ui-ios-library.git',  branch: 'master'
+  
   # Pods for StantUiIosLibraryDemo
 
   target 'StantUiIosLibraryDemoTests' do
