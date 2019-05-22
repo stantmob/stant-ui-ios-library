@@ -153,7 +153,8 @@
 			children = (
 				34DFB90A22958EDA002D92FB /* UIViewLayoutExtension.swift */,
 			);
-			path = Common;
+			name = Common;
+			path = StantUiIosLibrary/Classes/Common;
 			sourceTree = "<group>";
 		};
 		3652CC5CCD1F1E52427FA878F35FE848 /* Targets Support Files */ = {
