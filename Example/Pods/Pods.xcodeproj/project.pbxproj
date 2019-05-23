@@ -36,6 +36,9 @@
 		33CD52558D8E2F820100C8753AA2F32F /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417AC43741957D422D95FE23428AC0F /* SwiftSupport.swift */; };
 		342E271422946C1C00011037 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */; };
 		344A62912294433F00C34CFA /* StantUiIosLibrary.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8C23CFD2483184A38DEF96BA34FC7947 /* StantUiIosLibrary.podspec */; };
+		348DCDBF2297160000443B52 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348DCDB9229715F300443B52 /* UIColorExtension.swift */; };
+		348DCDC02297160000443B52 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348DCDBB229715F300443B52 /* UIImageViewExtension.swift */; };
+		348DCDC12297160000443B52 /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348DCDBA229715F300443B52 /* UIViewLayoutExtension.swift */; };
 		34DFB8FC2294997B002D92FB /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8C0229493B1002D92FB /* ConstructionCard.swift */; };
 		393FE2527000C2538664D9310D7F2CD6 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D70388309C97FC710EA3161F580D3 /* Behavior.swift */; };
 		3989CFAB6F4803956C1E9DD851633AB9 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB63FC973DDA85FE9E584BF9B98FAC8 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -263,6 +266,9 @@
 		306CBA9147837D72CAAFA9A056322B22 /* Pods-StantUiIosLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		325F23715E0145731359FF5F6BF075F7 /* XCTestObservationCenter+CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTestObservationCenter+CurrentTestCaseTracker.h"; sourceTree = "<group>"; };
 		33D2F72834EB1CFF047E3B7255792720 /* Pods-StantUiIosLibrary_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibrary_Tests-dummy.m"; sourceTree = "<group>"; };
+		348DCDB9229715F300443B52 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		348DCDBA229715F300443B52 /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
+		348DCDBB229715F300443B52 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		34DFB8C0229493B1002D92FB /* ConstructionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
 		3737834F967FDB0C45E943087084B571 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
 		3806C1140E86A072585989CFCC678386 /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,7 +386,6 @@
 		CB53D202D4EEB268405B001D2206F460 /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		CB831761ABBA32376E6530BBB3D9F280 /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
 		CC82913E108B569645EBB5B95CC5C84C /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
-		CDAFA614E0272845E43689F528C9C5D8 /* Pods_StantUiIosLibrary_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibrary_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC64EB6AF28AF400C76E13B9BC435AB /* URL+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+FileName.swift"; path = "Sources/Quick/URL+FileName.swift"; sourceTree = "<group>"; };
 		CFCB8A3618DC07ABD0C24822A6B8931A /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		D221094C9799EAF82398D03592289A35 /* Pods-StantUiIosLibrary_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibrary_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -415,7 +420,6 @@
 		F3760B87C4F35F36E33B2014AD7EA749 /* CurrentTestCaseTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CurrentTestCaseTracker.swift; sourceTree = "<group>"; };
 		F3F7108272D57135780DC768D059978F /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		F4F3691DA9BC91A00B966340E8880672 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
-		FA14C0FFCE0CF30DD8A915A2657E699F /* Pods_StantUiIosLibrary_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibrary_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC1A2F1F59831A572D6B25F808BB038 /* CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CurrentTestCaseTracker.h; path = Sources/NimbleObjectiveC/CurrentTestCaseTracker.h; sourceTree = "<group>"; };
 		FC4B74241DF26357A6E0E41500F7AA77 /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
 		FCD359CF4DE084E9742A5C2AF59174BB /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
@@ -554,6 +558,17 @@
 			path = "../Target Support Files/Quick";
 			sourceTree = "<group>";
 		};
+		348DCDB8229715E600443B52 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				348DCDB9229715F300443B52 /* UIColorExtension.swift */,
+				348DCDBB229715F300443B52 /* UIImageViewExtension.swift */,
+				348DCDBA229715F300443B52 /* UIViewLayoutExtension.swift */,
+			);
+			name = Utils;
+			path = StantUiIosLibrary/Classes/Utils;
+			sourceTree = "<group>";
+		};
 		34DFB8BE22949394002D92FB /* Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,8 +704,6 @@
 				1A7A5506BFEBD1F401B37C2823355147 /* FBSnapshotTestCase.framework */,
 				E330E694CCC919450F9ACC8454C02C95 /* Nimble.framework */,
 				2300A510F3707F6F1FE960ECC6EEFEE8 /* Nimble_Snapshots.framework */,
-				FA14C0FFCE0CF30DD8A915A2657E699F /* Pods_StantUiIosLibrary_Example.framework */,
-				CDAFA614E0272845E43689F528C9C5D8 /* Pods_StantUiIosLibrary_Tests.framework */,
 				9195F8427D3A25B2E0335FF2AFE6FC5F /* Quick.framework */,
 				3806C1140E86A072585989CFCC678386 /* StantUiIosLibrary.framework */,
 			);
@@ -777,6 +790,7 @@
 		9460BD7012FC05BBA9D83740209BBCDE /* StantUiIosLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				348DCDB8229715E600443B52 /* Utils */,
 				34DFB8BE22949394002D92FB /* Cards */,
 				81CE1BDCE57884D07C9C26E64F2C598F /* ViewTeste.swift */,
 				E5B3EA27D2597CC0038674E3EF9F1B2C /* Pod */,
@@ -1015,7 +1029,6 @@
 			);
 			name = "Pods-StantUiIosLibrary_Tests";
 			productName = "Pods-StantUiIosLibrary_Tests";
-			productReference = CDAFA614E0272845E43689F528C9C5D8 /* Pods_StantUiIosLibrary_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		54D528066EFBCCF7A74E754C248F9112 /* Nimble-Snapshots */ = {
@@ -1090,7 +1103,6 @@
 			);
 			name = "Pods-StantUiIosLibrary_Example";
 			productName = "Pods-StantUiIosLibrary_Example";
-			productReference = FA14C0FFCE0CF30DD8A915A2657E699F /* Pods_StantUiIosLibrary_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BC4EDE37ED1AEDD40C58187FD6DF26A1 /* StantUiIosLibrary */ = {
@@ -1318,9 +1330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348DCDC02297160000443B52 /* UIImageViewExtension.swift in Sources */,
 				34DFB8FC2294997B002D92FB /* ConstructionCard.swift in Sources */,
+				348DCDC12297160000443B52 /* UIViewLayoutExtension.swift in Sources */,
 				342E271422946C1C00011037 /* ViewTeste.swift in Sources */,
 				CC9D78BCD089FC021F5CD9E2FA7AD706 /* StantUiIosLibrary-dummy.m in Sources */,
+				348DCDBF2297160000443B52 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

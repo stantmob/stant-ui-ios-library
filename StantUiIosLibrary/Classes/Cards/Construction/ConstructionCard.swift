@@ -39,26 +39,29 @@ public class ConstructionCard: UITableViewCell {
         let titleLabel    = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 19))
         let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 14))
         
-        self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.dark,
-                     topAnchor: 14, leftAnchor: 91, bottomAnchor: 54, rightAnchor: 12)
-        self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: UIColor.darkGray,
-                     topAnchor: 37, leftAnchor: 91, bottomAnchor: 36, rightAnchor: 12)
-        
+        if #available(iOS 8.2, *) {
+            self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.dark,
+                         topAnchor: 14, leftAnchor: 91, bottomAnchor: 54, rightAnchor: 12)
+            self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: UIColor.darkGray,
+                         topAnchor: 37, leftAnchor: 91, bottomAnchor: 36, rightAnchor: 12)
+        }
     }
     
     fileprivate func setText(label: UILabel, text: String, textSize: CGFloat, textWeight: UIFont.Weight, textColor: UIColor,
                              topAnchor: CGFloat, leftAnchor: CGFloat, bottomAnchor: CGFloat, rightAnchor: CGFloat) {
         guard let mainView = mainView else { return }
+        if #available(iOS 9.0, *) {
+            label.text      = text
+            label.font      = .systemFont(ofSize: textSize, weight: textWeight)
+            label.textColor = textColor
+            mainView.addSubview(label)
+            label.anchor(top: mainView.topAnchor,
+                         leading: mainView.leadingAnchor,
+                         bottom: mainView.bottomAnchor,
+                         trailing: mainView.trailingAnchor,
+                         padding: UIEdgeInsets(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor))
+        }
         
-        label.text      = text
-        label.font      = .systemFont(ofSize: textSize, weight: textWeight)
-        label.textColor = textColor
-        mainView.addSubview(label)
-        label.anchor(top: mainView.topAnchor,
-                     leading: mainView.leadingAnchor,
-                     bottom: mainView.bottomAnchor,
-                     trailing: mainView.trailingAnchor,
-                     padding: UIEdgeInsets(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor))
     }
     
     fileprivate func configureImageWith(url: String) {
@@ -67,12 +70,14 @@ public class ConstructionCard: UITableViewCell {
         guard let mainView = mainView else { return }
         photoImageView.showRounded(image: url)
         mainView.addSubview(photoImageView)
-        photoImageView.anchor(top: mainView.topAnchor,
-                              leading: mainView.leadingAnchor,
-                              bottom: nil,
-                              trailing: nil,
-                              padding: UIEdgeInsets(top: 9, left: 12, bottom: 0, right: 0),
-                              size: CGSize(width: 70, height: 70))
+        if #available(iOS 9.0, *) {
+            photoImageView.anchor(top: mainView.topAnchor,
+                                  leading: mainView.leadingAnchor,
+                                  bottom: nil,
+                                  trailing: nil,
+                                  padding: UIEdgeInsets(top: 9, left: 12, bottom: 0, right: 0),
+                                  size: CGSize(width: 70, height: 70))
+        }
     }
     
     fileprivate func configureProgressBarWith(color: UIColor, percentage: CGFloat) {
@@ -82,12 +87,13 @@ public class ConstructionCard: UITableViewCell {
         fullProgressBarView.backgroundColor    = UIColor.lightGray
         fullProgressBarView.layer.cornerRadius = 2.5
         mainView.addSubview(fullProgressBarView)
-        fullProgressBarView.anchor(top: mainView.topAnchor,
-                                   leading: mainView.leadingAnchor,
-                                   bottom: mainView.bottomAnchor,
-                                   trailing: mainView.trailingAnchor,
-                                   padding: UIEdgeInsets(top: 61, left: 91, bottom: 21, right: 53))
-        
+        if #available(iOS 9.0, *) {
+            fullProgressBarView.anchor(top: mainView.topAnchor,
+                                       leading: mainView.leadingAnchor,
+                                       bottom: mainView.bottomAnchor,
+                                       trailing: mainView.trailingAnchor,
+                                       padding: UIEdgeInsets(top: 61, left: 91, bottom: 21, right: 53))
+        }
     
         self.configurePercentageIndicator(color: color, percentage: percentage)
     }
@@ -100,22 +106,23 @@ public class ConstructionCard: UITableViewCell {
         backgroundView.backgroundColor    = color
         mainView.addSubview(backgroundView)
         
-        backgroundView.anchor(top: mainView.topAnchor,
-                              leading: nil,
-                              bottom: nil,
-                              trailing: mainView.trailingAnchor,
-                              padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
-                              size: CGSize(width: 36, height: 18))
-        
-        let percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
-        
-        percentageLabel.text          = "\(Int(percentage))%"
-        percentageLabel.font          = .systemFont(ofSize: 12, weight: .bold)
-        percentageLabel.textColor     = UIColor.white
-        percentageLabel.textAlignment = .center
-        backgroundView.addSubview(percentageLabel)
-        percentageLabel.fillSuperView()
-        
+        if #available(iOS 9.0, *) {
+            backgroundView.anchor(top: mainView.topAnchor,
+                                  leading: nil,
+                                  bottom: nil,
+                                  trailing: mainView.trailingAnchor,
+                                  padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
+                                  size: CGSize(width: 36, height: 18))
+            
+            let percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
+            
+            percentageLabel.text          = "\(Int(percentage))%"
+            percentageLabel.font          = .systemFont(ofSize: 12, weight: .bold)
+            percentageLabel.textColor     = UIColor.white
+            percentageLabel.textAlignment = .center
+            backgroundView.addSubview(percentageLabel)
+            percentageLabel.fillSuperView()
+        }
     }
     
     public override func layoutSubviews() {
@@ -133,12 +140,14 @@ public class ConstructionCard: UITableViewCell {
            width = width * (percentage / 100)
         }
         
-        progressBarView.anchor(top: fullProgressBarView.topAnchor,
-                               leading: fullProgressBarView.leadingAnchor,
-                               bottom: fullProgressBarView.bottomAnchor,
-                               trailing: nil,
-                               padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                               size: CGSize(width: width, height: 4))
+        if #available(iOS 9.0, *) {
+            progressBarView.anchor(top: fullProgressBarView.topAnchor,
+                                   leading: fullProgressBarView.leadingAnchor,
+                                   bottom: fullProgressBarView.bottomAnchor,
+                                   trailing: nil,
+                                   padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                                   size: CGSize(width: width, height: 4))
+        }
     }
     
 }

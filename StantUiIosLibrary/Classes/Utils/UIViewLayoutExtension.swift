@@ -10,17 +10,22 @@ import UIKit
 extension UIView {
     
     func fillSuperView() {
-        anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor)
+        if #available(iOS 9.0, *) {
+            anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor)
+        }
     }
     
+    @available(iOS 9.0, *)
     func anchorCenterX(anchorX: NSLayoutXAxisAnchor) {
         centerXAnchor.constraint(equalTo: anchorX).isActive = true
     }
     
+    @available(iOS 9.0, *)
     func anchorCenterY(anchorY: NSLayoutYAxisAnchor) {
         centerYAnchor.constraint(equalTo: anchorY).isActive = true
     }
     
+    @available(iOS 9.0, *)
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -50,8 +55,12 @@ extension UIView {
     }
     
     func anchorSize(to view: UIView) {
-        widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        if #available(iOS 9.0, *) {
+            widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        }
+        if #available(iOS 9.0, *) {
+            heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        } 
     }
     
 }
