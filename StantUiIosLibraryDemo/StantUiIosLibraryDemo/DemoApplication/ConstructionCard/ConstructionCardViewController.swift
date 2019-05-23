@@ -14,6 +14,11 @@ class ConstructionCardViewController: UIViewController {
     var tableView: UITableView?
     
     let navigationBarHeight: CGFloat = 44
+    let cardTitle                    = "Some title"
+    let cardSubtitle                 = "Some subtitle"
+    let cardUrl                      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+    let cardColor                    = UIColor.blue
+    let cardPercentage: CGFloat      = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +62,7 @@ extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSo
             return UITableViewCell()
         }
         
-        let title    = "Some title"
-        let subtitle = "Some subtitle"
-        let url      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
-        let color    = UIColor.blue
-        let percentage: CGFloat = 50
-        cell.configureView(title: title, subtitle: subtitle, imageUrl: url, color: color, percentage: percentage)
+        cell.configureView(title: cardTitle, subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage)
         
         return cell
     }
