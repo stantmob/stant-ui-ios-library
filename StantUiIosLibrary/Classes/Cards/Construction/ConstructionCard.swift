@@ -15,7 +15,7 @@ public class ConstructionCard: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configureView(title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: Int) {
+    public func configureView(title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: CGFloat) {
         mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ConstructionCard.cellHeight))
         
         guard let mainView = mainView else { return }
@@ -70,7 +70,7 @@ public class ConstructionCard: UITableViewCell {
                               size: CGSize(width: 70, height: 70))
     }
     
-    fileprivate func configureProgressBarWith(color: UIColor, percentage: Int) {
+    fileprivate func configureProgressBarWith(color: UIColor, percentage: CGFloat) {
         let fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 4))
         
         guard let mainView = mainView else { return }
@@ -96,6 +96,33 @@ public class ConstructionCard: UITableViewCell {
                                bottom: fullProgressBarView.bottomAnchor,
                                trailing: fullProgressBarView.trailingAnchor,
                                padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: rightAnchor))
+        
+        self.configurePercentageIndicator(color: color, percentage: percentage)
+    }
+    
+    fileprivate func configurePercentageIndicator(color: UIColor, percentage: CGFloat) {
+        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
+        
+        guard let mainView = mainView else { return }
+        backgroundView.layer.cornerRadius = 3
+        backgroundView.backgroundColor    = color
+        mainView.addSubview(backgroundView)
+        
+        backgroundView.anchor(top: mainView.topAnchor,
+                              leading: nil,
+                              bottom: nil,
+                              trailing: mainView.trailingAnchor,
+                              padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
+                              size: CGSize(width: 36, height: 18))
+        
+        let percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
+        
+        percentageLabel.text          = "\(Int(percentage))%"
+        percentageLabel.font          = .systemFont(ofSize: 12, weight: .bold)
+        percentageLabel.textColor     = UIColor.white
+        percentageLabel.textAlignment = .center
+        backgroundView.addSubview(percentageLabel)
+        percentageLabel.fillSuperView()
         
     }
     

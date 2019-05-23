@@ -60,7 +60,9 @@ extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSo
         let title    = "Some title"
         let subtitle = "Some subtitle"
         let url      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
-        cell.configureView(title: title, subtitle: subtitle, imageUrl: url, color: UIColor.blue, percentage: 0)
+        let color    = UIColor.blue
+        let percentage: CGFloat = 50
+        cell.configureView(title: title, subtitle: subtitle, imageUrl: url, color: color, percentage: percentage)
         
         return cell
     }
