@@ -5,10 +5,18 @@ public class ConstructionCard: UITableViewCell {
     public static let IDENTIFIER = "ConstructionCardIdentifier"
     public static let cellHeight: CGFloat = 87
     
-    var mainView: UIView?
-    var fullProgressBarView: UIView?
     var color: UIColor?
     var percentageValue: CGFloat?
+    
+    public var mainView: UIView?
+    public var titleLabel: UILabel?
+    public var subtitleLabel: UILabel?
+    public var photoImageView: UIImageView?
+    public var percentageBackgroundView: UIView?
+    public var fullProgressBarView: UIView?
+    public var progressBarView: UIView?
+    public var percentageLabel: UILabel?
+    public var progressWidth: CGFloat?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,8 +44,10 @@ public class ConstructionCard: UITableViewCell {
     }
     
     fileprivate func configure(title: String, subtitle: String) {
-        let titleLabel    = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 19))
-        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 14))
+        titleLabel    = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 19))
+        subtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 14))
+        
+        guard let titleLabel = titleLabel, let subtitleLabel = subtitleLabel else { return }
         
         if #available(iOS 8.2, *) {
             self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.dark,
@@ -65,9 +75,9 @@ public class ConstructionCard: UITableViewCell {
     }
     
     fileprivate func configureImageWith(url: String) {
-        let photoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        photoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
         
-        guard let mainView = mainView else { return }
+        guard let mainView = mainView, let photoImageView = photoImageView else { return }
         photoImageView.showRounded(image: url)
         mainView.addSubview(photoImageView)
         if #available(iOS 9.0, *) {
@@ -99,9 +109,9 @@ public class ConstructionCard: UITableViewCell {
     }
 
     fileprivate func configurePercentageIndicator(color: UIColor, percentage: CGFloat) {
-        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
+        percentageBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
         
-        guard let mainView = mainView else { return }
+        guard let mainView = mainView, let backgroundView = percentageBackgroundView else { return }
         backgroundView.layer.cornerRadius = 3
         backgroundView.backgroundColor    = color
         mainView.addSubview(backgroundView)
@@ -114,8 +124,10 @@ public class ConstructionCard: UITableViewCell {
                                   padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
                                   size: CGSize(width: 36, height: 18))
             
-            let percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
+            percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
             
+            guard let percentageLabel = percentageLabel else { return }
+
             percentageLabel.text          = "\(Int(percentage))%"
             percentageLabel.font          = .systemFont(ofSize: 12, weight: .bold)
             percentageLabel.textColor     = UIColor.white
@@ -130,14 +142,18 @@ public class ConstructionCard: UITableViewCell {
             let percentage = self.percentageValue,
             let color = self.color else { return }
     
-        let progressBarView  = UIView(frame: fullProgressBarView.frame)
+        progressBarView  = UIView(frame: fullProgressBarView.frame)
+        
+        guard let progressBarView = progressBarView else { return }
         progressBarView.backgroundColor    = color
         progressBarView.layer.cornerRadius = 2.5
         fullProgressBarView.addSubview(progressBarView)
 
-        var width: CGFloat = (self.frame.width - 91 - 53)
+        progressWidth = (self.frame.width - 91 - 53)
+        
+        guard let currentProgressWidth = progressWidth else { return }
         if percentage <= 100 {
-           width = width * (percentage / 100)
+           self.progressWidth = currentProgressWidth * (percentage / 100)
         }
         
         if #available(iOS 9.0, *) {
@@ -146,7 +162,7 @@ public class ConstructionCard: UITableViewCell {
                                    bottom: fullProgressBarView.bottomAnchor,
                                    trailing: nil,
                                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                                   size: CGSize(width: width, height: 4))
+                                   size: CGSize(width: self.progressWidth ?? 0, height: 4))
         }
     }
     

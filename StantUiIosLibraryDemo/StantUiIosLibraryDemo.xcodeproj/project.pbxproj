@@ -11,7 +11,7 @@
 		34DFB8CF229495F5002D92FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8CE229495F5002D92FB /* AppDelegate.swift */; };
 		34DFB8D1229495F5002D92FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8D0229495F5002D92FB /* MainViewController.swift */; };
 		34DFB8D6229495F7002D92FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DFB8D5229495F7002D92FB /* Assets.xcassets */; };
-		34DFB8E4229495F7002D92FB /* StantUiIosLibraryDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8E3229495F7002D92FB /* StantUiIosLibraryDemoTests.swift */; };
+		34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8E3229495F7002D92FB /* ConstructionCardTests.swift */; };
 		34DFB8EF229495F7002D92FB /* StantUiIosLibraryDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8EE229495F7002D92FB /* StantUiIosLibraryDemoUITests.swift */; };
 		34DFB90622957331002D92FB /* ConstructionCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB90522957331002D92FB /* ConstructionCardViewController.swift */; };
 		34DFB908229579A0002D92FB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DFB907229579A0002D92FB /* Launch Screen.storyboard */; };
@@ -43,7 +43,7 @@
 		34DFB8D5229495F7002D92FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34DFB8DA229495F7002D92FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34DFB8DF229495F7002D92FB /* StantUiIosLibraryDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StantUiIosLibraryDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34DFB8E3229495F7002D92FB /* StantUiIosLibraryDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StantUiIosLibraryDemoTests.swift; sourceTree = "<group>"; };
+		34DFB8E3229495F7002D92FB /* ConstructionCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionCardTests.swift; sourceTree = "<group>"; };
 		34DFB8E5229495F7002D92FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34DFB8EA229495F7002D92FB /* StantUiIosLibraryDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StantUiIosLibraryDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DFB8EE229495F7002D92FB /* StantUiIosLibraryDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StantUiIosLibraryDemoUITests.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		34DFB8E2229495F7002D92FB /* StantUiIosLibraryDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				34DFB8E3229495F7002D92FB /* StantUiIosLibraryDemoTests.swift */,
+				34DFB8E3229495F7002D92FB /* ConstructionCardTests.swift */,
 				34DFB8E5229495F7002D92FB /* Info.plist */,
 			);
 			path = StantUiIosLibraryDemoTests;
@@ -424,7 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34DFB8E4229495F7002D92FB /* StantUiIosLibraryDemoTests.swift in Sources */,
+				34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
