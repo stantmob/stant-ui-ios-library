@@ -62,7 +62,8 @@ extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSo
             return UITableViewCell()
         }
         
-        cell.configureView(title: cardTitle, subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage)
+        let construction = Construction(title: cardTitle, subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage )
+        cell.configureViewFor(construction: construction)
         
         return cell
     }

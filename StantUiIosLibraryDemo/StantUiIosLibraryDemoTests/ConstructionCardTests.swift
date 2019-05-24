@@ -19,7 +19,7 @@ class ConstructionCardTests: XCTestCase {
     let imageUrl: String    = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
     let color: UIColor      = UIColor.blue
     var percentage: CGFloat = 78.5
-    
+
     let cellWidth  = 300
     let cellHeight = 87
 
@@ -33,7 +33,8 @@ class ConstructionCardTests: XCTestCase {
     }
     
     fileprivate func configureCell() {
-        tableViewCell.configureView(title: title, subtitle: subtitle, imageUrl: imageUrl, color: color, percentage: percentage)
+        let construction = Construction(title: self.title, subtitle: self.subtitle, imageUrl: self.imageUrl, color: self.color, percentage: self.percentage)
+        tableViewCell.configureViewFor(construction: construction)
         tableViewCell.layoutSubviews()
     }
 

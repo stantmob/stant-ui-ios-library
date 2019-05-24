@@ -26,7 +26,7 @@ public class ConstructionCard: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configureView(title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: CGFloat) {
+    public func configureViewFor(construction: Construction) {
         mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ConstructionCard.cellHeight))
         
         guard let mainView = mainView else { return }
@@ -35,12 +35,12 @@ public class ConstructionCard: UITableViewCell {
         
         mainView.fillSuperView()
         mainView.backgroundColor = UIColor.white
-        self.color               = color
-        self.percentageValue     = percentage
+        self.color               = construction.color
+        self.percentageValue     = construction.percentage
         
-        self.configureImageWith(url: imageUrl)
-        self.configure(title: title, subtitle: subtitle)
-        self.configureProgressBarWith(color: color, percentage: percentage)
+        self.configureImageWith(url: construction.imageUrl ?? String())
+        self.configure(title: construction.title ?? String(), subtitle: construction.subtitle ?? String())
+        self.configureProgressBarWith(color: construction.color ?? UIColor(), percentage: construction.percentage ?? CGFloat())
     }
     
     fileprivate func configure(title: String, subtitle: String) {
@@ -166,4 +166,20 @@ public class ConstructionCard: UITableViewCell {
         }
     }
     
+}
+
+public struct Construction {
+    let title: String?
+    let subtitle: String?
+    let imageUrl: String?
+    let color: UIColor?
+    let percentage: CGFloat?
+    
+    public init(title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: CGFloat) {
+        self.title      = title
+        self.subtitle   = subtitle
+        self.imageUrl   = imageUrl
+        self.color      = color
+        self.percentage = percentage
+    }
 }
