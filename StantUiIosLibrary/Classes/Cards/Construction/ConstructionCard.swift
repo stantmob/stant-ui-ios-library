@@ -50,9 +50,9 @@ public class ConstructionCard: UITableViewCell {
         guard let titleLabel = titleLabel, let subtitleLabel = subtitleLabel else { return }
         
         if #available(iOS 8.2, *) {
-            self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.dark,
+            self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.darkStant,
                          topAnchor: 14, leftAnchor: 91, bottomAnchor: 54, rightAnchor: 12)
-            self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: UIColor.darkGray,
+            self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: UIColor.darkGrayStant,
                          topAnchor: 37, leftAnchor: 91, bottomAnchor: 36, rightAnchor: 12)
         }
     }
@@ -83,8 +83,6 @@ public class ConstructionCard: UITableViewCell {
         if #available(iOS 9.0, *) {
             photoImageView.anchor(top: mainView.topAnchor,
                                   leading: mainView.leadingAnchor,
-                                  bottom: nil,
-                                  trailing: nil,
                                   padding: UIEdgeInsets(top: 9, left: 12, bottom: 0, right: 0),
                                   size: CGSize(width: 70, height: 70))
         }
@@ -94,7 +92,7 @@ public class ConstructionCard: UITableViewCell {
         fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 4))
 
         guard let mainView = mainView, let fullProgressBarView = fullProgressBarView else { return }
-        fullProgressBarView.backgroundColor    = UIColor.lightGray
+        fullProgressBarView.backgroundColor    = UIColor.lightGrayStant
         fullProgressBarView.layer.cornerRadius = 2.5
         mainView.addSubview(fullProgressBarView)
         if #available(iOS 9.0, *) {
@@ -118,8 +116,6 @@ public class ConstructionCard: UITableViewCell {
         
         if #available(iOS 9.0, *) {
             backgroundView.anchor(top: mainView.topAnchor,
-                                  leading: nil,
-                                  bottom: nil,
                                   trailing: mainView.trailingAnchor,
                                   padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
                                   size: CGSize(width: 36, height: 18))
@@ -160,7 +156,6 @@ public class ConstructionCard: UITableViewCell {
             progressBarView.anchor(top: fullProgressBarView.topAnchor,
                                    leading: fullProgressBarView.leadingAnchor,
                                    bottom: fullProgressBarView.bottomAnchor,
-                                   trailing: nil,
                                    padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                                    size: CGSize(width: self.progressWidth ?? 0, height: 4))
         }

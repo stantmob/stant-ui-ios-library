@@ -72,7 +72,7 @@ class ConstructionCardTests: XCTestCase {
         XCTAssertEqual(tableViewCell.titleLabel?.font, .systemFont(ofSize: 16, weight: .regular))
 
         XCTAssertEqual(tableViewCell.subtitleLabel?.text, subtitle)
-        XCTAssertEqual(tableViewCell.subtitleLabel?.textColor, UIColor.darkGray)
+        XCTAssertEqual(tableViewCell.subtitleLabel?.textColor, UIColor(red: 133/255, green: 133/255, blue: 150/255, alpha: 1))
         XCTAssertEqual(tableViewCell.subtitleLabel?.font, .systemFont(ofSize: 12, weight: .regular))
     }
     
@@ -80,7 +80,7 @@ class ConstructionCardTests: XCTestCase {
         self.configureCell()
         let progressBarWidth = getProgressWidthforBar()
         
-        XCTAssertEqual(tableViewCell.fullProgressBarView?.backgroundColor, UIColor.lightGray)
+        XCTAssertEqual(tableViewCell.fullProgressBarView?.backgroundColor, UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1))
         XCTAssertEqual(tableViewCell.progressWidth, progressBarWidth)
         XCTAssertEqual(tableViewCell.progressBarView?.backgroundColor, color)
         XCTAssertEqual(tableViewCell.percentageLabel?.text, "78%")

@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addConstructionCardDemoButton()
+        self.addConstructionsFiltersDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -21,23 +22,38 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addConstructionCardDemoButton() {
-        let button = UIButton(type: .system) as UIButton
-        
-        button.frame                      = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 50)
-        button.backgroundColor            = UIColor.lightGray
-        button.tintColor                  = UIColor.black
-        button.contentHorizontalAlignment = .center
-        
-        button.setTitle("Construction Card Demo", for: .normal)
-        button.addTarget(self, action: #selector(goToConstructionCardDemo), for: .touchUpInside)
-        
-        self.view.addSubview(button)
+        self.addButton(title: "Construction Card Demo", action: #selector(goToConstructionCardDemo), orderOfButton: 1)
     }
     
     @objc func goToConstructionCardDemo() {
         let viewController = ConstructionCardViewController()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    fileprivate func addConstructionsFiltersDemoButton() {
+        self.addButton(title: "Constructions Filter Demo", action: #selector(goToConstructionsFilterDemo), orderOfButton: 2)
+    }
+    
+    @objc func goToConstructionsFilterDemo() {
+        let viewController = ConstructionsFilterViewController()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    fileprivate func addButton(title: String, action: Selector, orderOfButton: CGFloat) {
+        let button = UIButton(type: .system) as UIButton
+        let distanceToTop: CGFloat = 50 * orderOfButton
+        
+        button.frame                      = CGRect(x: 0, y: distanceToTop, width: self.view.frame.width, height: 50)
+        button.backgroundColor            = UIColor.lightGray
+        button.tintColor                  = UIColor.black
+        button.contentHorizontalAlignment = .center
+        
+        button.setTitle(title, for: .normal)
+        button.addTarget(self, action: action, for: .touchUpInside)
+        
+        self.view.addSubview(button)
     }
 
 }

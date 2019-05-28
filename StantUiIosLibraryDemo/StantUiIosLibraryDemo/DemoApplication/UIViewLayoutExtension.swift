@@ -1,8 +1,9 @@
 //
 //  UIViewLayoutExtension.swift
-//  Pods-StantUiIosLibraryDemo
+//  StantUiIosLibraryDemo
 //
-//  Created by Mac Mini Novo on 22/05/19.
+//  Created by Mac Mini Novo on 27/05/19.
+//  Copyright © 2019 Stant. All rights reserved.
 //
 
 import UIKit
@@ -60,7 +61,7 @@ extension UIView {
         }
         if #available(iOS 9.0, *) {
             heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        } 
+        }
     }
     
 }
