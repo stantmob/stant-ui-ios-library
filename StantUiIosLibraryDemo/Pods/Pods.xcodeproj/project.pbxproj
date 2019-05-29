@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0FB6E587D1F03837ABEEF3A67941CDE0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70822E0B42CA7B2C9C6635221EADB91F /* UIColorExtension.swift */; };
 		19D1364D68E7174F0DFADAAFD4C60C71 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 806785F17786C6962A62A01968E7C343 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		343FF2BF229D764A00B96C60 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FF2B9229D746500B96C60 /* DialogViewController.swift */; };
+		343FF2C0229D7D7B00B96C60 /* SyncDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FF2BB229D747800B96C60 /* SyncDialogView.swift */; };
+		343FF2C3229DB96800B96C60 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FF2C1229DB88F00B96C60 /* UILabelExtension.swift */; };
+		343FF2C5229DBA2000B96C60 /* DialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FF2C4229DBA2000B96C60 /* DialogButton.swift */; };
 		34D749B6FAE07AD5ED20310404F02A14 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8BC0DE3926166FF1F78733B31EA6A /* Pods-StantUiIosLibraryDemo-dummy.m */; };
 		44264EFA5DDC9F81264FC1079B5142F7 /* FilterButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6940F1F617229D87927FF2333788F /* FilterButtonCollectionViewCell.swift */; };
 		59934826DA698F92B00C60DB29BC12F4 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F04330D469CC421C53B3D161948A05D /* FilterButton.swift */; };
@@ -55,9 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		009AADA6F3A51FCFFD6DDD5200C45A89 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoTests.framework; path = "Pods-StantUiIosLibraryDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AF18754E5D903D809E6C1892CD4E085 /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemo.framework; path = "Pods-StantUiIosLibraryDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1363AAC5571CD80FAB96DE0980D4D0AF /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		009AADA6F3A51FCFFD6DDD5200C45A89 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AF18754E5D903D809E6C1892CD4E085 /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1363AAC5571CD80FAB96DE0980D4D0AF /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		154F5F263D2BA2A22F45172DDF994541 /* Pods-StantUiIosLibraryDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1B1CC446FF5889F2DB5B5819E813329D /* Pods-StantUiIosLibraryDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1B41C1468FC7176C8A8D5DD4C8C8F521 /* Pods-StantUiIosLibraryDemoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemoUITests.modulemap"; sourceTree = "<group>"; };
@@ -66,14 +70,18 @@
 		294B08413E15EF44B971EA9F21DDEB79 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2F04330D469CC421C53B3D161948A05D /* FilterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		3183D2212516F70942F4AF9EF4762EBE /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
+		343FF2B9229D746500B96C60 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		343FF2BB229D747800B96C60 /* SyncDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
+		343FF2C1229DB88F00B96C60 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		343FF2C4229DBA2000B96C60 /* DialogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogButton.swift; sourceTree = "<group>"; };
 		3F4639B79761459164F0F8E73913FA8C /* Pods-StantUiIosLibraryDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoTests-dummy.m"; sourceTree = "<group>"; };
 		403D97285E8421241C3DC89C1B46D557 /* Pods-StantUiIosLibraryDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoUITests-dummy.m"; sourceTree = "<group>"; };
-		426EFC16EBCEF8A58A4EBB7A574BECE7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		426EFC16EBCEF8A58A4EBB7A574BECE7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		44B067F616CF608B24E83992B30E2970 /* Pods-StantUiIosLibraryDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemoTests.modulemap"; sourceTree = "<group>"; };
 		4CFC57D2A58AFC8DDB81737FAE9E7739 /* ConstructionCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
 		4D43AC2C368E9B6AFAE5199A0ACBD5A4 /* Pods-StantUiIosLibraryDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StantUiIosLibraryDemo-frameworks.sh"; sourceTree = "<group>"; };
 		517EE9F74B42DA594E1E24410B4A5081 /* FiltersCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
-		55DBECB70792B96CA0D2CEB0D97FCC47 /* Pods_StantUiIosLibraryDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoUITests.framework; path = "Pods-StantUiIosLibraryDemoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55DBECB70792B96CA0D2CEB0D97FCC47 /* Pods_StantUiIosLibraryDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F240CC8CC7445DF889094DA098A50B2 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		66A0B7C05BA7A00D37DDCE7BCEB661C1 /* Pods-StantUiIosLibraryDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		66EE1142EB2AC2CBC16E6254211B8E7D /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
@@ -88,7 +96,7 @@
 		8FF4258854F51E6928A8F9EB3FF6F3DA /* Pods-StantUiIosLibraryDemoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoUITests-Info.plist"; sourceTree = "<group>"; };
 		9091D537463D792C72D14C2649073738 /* Pods-StantUiIosLibraryDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		91B0C884802717FFB797095E503F0EFF /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1B155D4C1BAF7BB3BA4F7C2B96E7D90 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemoTests-umbrella.h"; sourceTree = "<group>"; };
 		A9185A8B13678CB867031A4F3C511DFE /* Pods-StantUiIosLibraryDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemo-umbrella.h"; sourceTree = "<group>"; };
 		AEF735CBC738AC5095D277B1274E3214 /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
@@ -96,13 +104,13 @@
 		C65F0635B5F4BE9215190E3424BE8650 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCFB4D5B77F8B7253994CF85C65A6739 /* Pods-StantUiIosLibraryDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-Info.plist"; sourceTree = "<group>"; };
-		D16EE391D299FB192829C2ADBC87ECAE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D16EE391D299FB192829C2ADBC87ECAE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D5C6940F1F617229D87927FF2333788F /* FilterButtonCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1238C91AF558E7C6E77E2437DD11F81 /* Pods-StantUiIosLibraryDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1ADF27C141C16200D702A6865C33F5C /* Pods-StantUiIosLibraryDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemo.modulemap"; sourceTree = "<group>"; };
 		F014903C2CD9F2BFB4398643F8E11B0B /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
 		F3516346E8ED901876A10237B58A507F /* Pods-StantUiIosLibraryDemoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FB4112D12E18FEE6E1984A393EFA0CC0 /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StantUiIosLibrary.framework; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4112D12E18FEE6E1984A393EFA0CC0 /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC0C624F50639A85FA1A6E49DC8054E /* Pods-StantUiIosLibraryDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +191,7 @@
 				70822E0B42CA7B2C9C6635221EADB91F /* UIColorExtension.swift */,
 				5F240CC8CC7445DF889094DA098A50B2 /* UIImageViewExtension.swift */,
 				B26382AC2487F88BDF80FB0979D66B5F /* UIViewLayoutExtension.swift */,
+				343FF2C1229DB88F00B96C60 /* UILabelExtension.swift */,
 			);
 			name = Utils;
 			path = StantUiIosLibrary/Classes/Utils;
@@ -196,8 +205,18 @@
 				D5C6940F1F617229D87927FF2333788F /* FilterButtonCollectionViewCell.swift */,
 				517EE9F74B42DA594E1E24410B4A5081 /* FiltersCollectionView.swift */,
 			);
-			name = ConstructionsFilter;
 			path = ConstructionsFilter;
+			sourceTree = "<group>";
+		};
+		343FF2B8229D741800B96C60 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				343FF2B9229D746500B96C60 /* DialogViewController.swift */,
+				343FF2BB229D747800B96C60 /* SyncDialogView.swift */,
+				343FF2C4229DBA2000B96C60 /* DialogButton.swift */,
+			);
+			name = Dialogs;
+			path = StantUiIosLibrary/Classes/Dialogs;
 			sourceTree = "<group>";
 		};
 		3652CC5CCD1F1E52427FA878F35FE848 /* Targets Support Files */ = {
@@ -224,7 +243,6 @@
 			children = (
 				4CFC57D2A58AFC8DDB81737FAE9E7739 /* ConstructionCard.swift */,
 			);
-			name = Construction;
 			path = Construction;
 			sourceTree = "<group>";
 		};
@@ -327,6 +345,7 @@
 				66EE1142EB2AC2CBC16E6254211B8E7D /* ViewTeste.swift */,
 				5C1F10AAE1D080A25C99E16B089F7EFF /* Cards */,
 				3C30CC1A0364668C98B626D4C22A8612 /* Headers */,
+				343FF2B8229D741800B96C60 /* Dialogs */,
 				22DD9BAE3B2232B9694D0F84C7832EED /* Pod */,
 				C9348527F39924C3D66F48F4E5EC91BE /* Support Files */,
 				2C5C9C84CAD58DE560F7B288FCEC1344 /* Utils */,
@@ -456,12 +475,18 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					5B9E89F275256E66C050291825236B08 = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -519,10 +544,14 @@
 				44264EFA5DDC9F81264FC1079B5142F7 /* FilterButtonCollectionViewCell.swift in Sources */,
 				AF38D3106014BC232B5EAFB7454BF7DF /* FiltersCollectionView.swift in Sources */,
 				CC14DDE07313CADEE6BE0524E1658746 /* StantUiIosLibrary-dummy.m in Sources */,
+				343FF2BF229D764A00B96C60 /* DialogViewController.swift in Sources */,
 				0FB6E587D1F03837ABEEF3A67941CDE0 /* UIColorExtension.swift in Sources */,
 				C1752ABC90587FF2FB5E6C9F892077C6 /* UIImageViewExtension.swift in Sources */,
 				B085F9BF396AD7E70C200D856A918598 /* UIViewLayoutExtension.swift in Sources */,
 				8D41382E4F616A7FB84EEB455C36199E /* ViewTeste.swift in Sources */,
+				343FF2C5229DBA2000B96C60 /* DialogButton.swift in Sources */,
+				343FF2C0229D7D7B00B96C60 /* SyncDialogView.swift in Sources */,
+				343FF2C3229DB96800B96C60 /* UILabelExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,11 +621,7 @@
 				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
 				PRODUCT_MODULE_NAME = StantUiIosLibrary;
 				PRODUCT_NAME = StantUiIosLibrary;
@@ -615,6 +640,7 @@
 			baseConfigurationReference = 294B08413E15EF44B971EA9F21DDEB79 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -628,11 +654,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.modulemap";
 				OTHER_LDFLAGS = "";
@@ -642,6 +664,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -666,11 +690,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -692,6 +712,7 @@
 			baseConfigurationReference = 7CAEC27E5EF15C29DB8BEE790549A787 /* Pods-StantUiIosLibraryDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -705,11 +726,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.modulemap";
 				OTHER_LDFLAGS = "";
@@ -719,6 +736,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -744,11 +762,7 @@
 				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
 				PRODUCT_MODULE_NAME = StantUiIosLibrary;
 				PRODUCT_NAME = StantUiIosLibrary;
@@ -816,8 +830,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -841,11 +854,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoUITests/Pods-StantUiIosLibraryDemoUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoUITests/Pods-StantUiIosLibraryDemoUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -880,11 +889,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoUITests/Pods-StantUiIosLibraryDemoUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoUITests/Pods-StantUiIosLibraryDemoUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -982,11 +987,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests.modulemap";
 				OTHER_LDFLAGS = "";

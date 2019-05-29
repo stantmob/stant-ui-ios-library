@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A5531BEE5BF434EB91930A2 /* Pods_StantUiIosLibraryDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B4C937FEF6C04464A1636 /* Pods_StantUiIosLibraryDemoTests.framework */; };
+		343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FF2BD229D74BE00B96C60 /* SyncDialogTests.swift */; };
 		349CE991229875DD0066A6E7 /* ConstructionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CE990229875DD0066A6E7 /* ConstructionsFilterViewController.swift */; };
 		349CE9932298762E0066A6E7 /* ConstructionsFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CE9922298762E0066A6E7 /* ConstructionsFilterTests.swift */; };
 		349CE995229C1A660066A6E7 /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CE994229C1A660066A6E7 /* UIViewLayoutExtension.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		343FF2BD229D74BE00B96C60 /* SyncDialogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDialogTests.swift; sourceTree = "<group>"; };
 		349CE990229875DD0066A6E7 /* ConstructionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionsFilterViewController.swift; sourceTree = "<group>"; };
 		349CE9922298762E0066A6E7 /* ConstructionsFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionsFilterTests.swift; sourceTree = "<group>"; };
 		349CE994229C1A660066A6E7 /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				34DFB8E3229495F7002D92FB /* ConstructionCardTests.swift */,
 				34DFB8E5229495F7002D92FB /* Info.plist */,
 				349CE9922298762E0066A6E7 /* ConstructionsFilterTests.swift */,
+				343FF2BD229D74BE00B96C60 /* SyncDialogTests.swift */,
 			);
 			path = StantUiIosLibraryDemoTests;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				349CE9932298762E0066A6E7 /* ConstructionsFilterTests.swift in Sources */,
+				343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */,
 				34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

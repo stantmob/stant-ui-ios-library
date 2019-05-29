@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import StantUiIosLibrary
 
 class MainViewController: UIViewController {
 
+    let syncDialogViewController = DialogViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addConstructionCardDemoButton()
         self.addConstructionsFiltersDemoButton()
+        self.addSyncDialogDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +43,35 @@ class MainViewController: UIViewController {
         let viewController = ConstructionsFilterViewController()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    fileprivate func addSyncDialogDemoButton() {
+        self.addButton(title: "Sync Dialog", action: #selector(openSyncDialogDemo), orderOfButton: 3)
+    }
+    
+    @objc func openSyncDialogDemo() {
+        syncDialogViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        
+        let insideView   = SyncDialogView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        insideView.set(image: UIImage(named: "sync") ?? UIImage(),
+                       text: "Some text in dialog some text in dialog some text in dialog",
+                       percentage: 50)
+        
+        let firstButton  = DialogButton(title: "Report", action: #selector(someSomethingInDialogButton), target: self, style: ButtonStyle.standard)
+        let secondButton = DialogButton(title: "Cancel", action: #selector(dismissDialog), target: self, style: ButtonStyle.cancel)
+        let thirdButton  = DialogButton(title: "Select", action: #selector(someSomethingInDialogButton), target: self, style: ButtonStyle.standard)
+        syncDialogViewController.configureView(title: "Some title",
+                                               mainView: insideView,
+                                               buttons: [firstButton, secondButton, thirdButton])
+        self.present(syncDialogViewController, animated: false, completion: nil)
+    }
+    
+    @objc func dismissDialog() {
+        syncDialogViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func someSomethingInDialogButton() {
+        print("Something")
     }
     
     fileprivate func addButton(title: String, action: Selector, orderOfButton: CGFloat) {

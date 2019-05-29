@@ -1,0 +1,120 @@
+//
+//  DialogViewController.swift
+//  Pods-StantUiIosLibraryDemo
+//
+//  Created by Mac Mini Novo on 28/05/19.
+//
+
+import UIKit
+
+public class DialogViewController: UIViewController {
+    
+    public var dialogView: UIView?
+    public var titleLabel: UILabel?
+    public var stackView: UIStackView?
+    
+    let dialogHeight: CGFloat = 234
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissViewController))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissViewController() {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    public func configureView(title: String, mainView: UIView, buttons: [DialogButton]) {
+        self.addDialog()
+        self.addCenteredView(mainView)
+        self.addTitle(title)
+        self.add(buttons: buttons)
+    }
+    
+    fileprivate func addDialog() {
+        dialogView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: dialogHeight))
+        
+        guard let dialogView = dialogView else { return }
+        dialogView.backgroundColor    = UIColor.white
+        dialogView.layer.cornerRadius = 3.0
+        self.view.addSubview(dialogView)
+        dialogView.anchor(leading: self.view.leadingAnchor,
+                          trailing: self.view.trailingAnchor,
+                          padding: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16),
+                          size: CGSize(width: 0, height: dialogHeight))
+        dialogView.anchorCenterY(anchorY: self.view.centerYAnchor)
+    }
+    
+    fileprivate func addCenteredView(_ view: UIView) {
+        guard let dialogView = dialogView else { return }
+        dialogView.addSubview(view)
+        view.anchor(top: dialogView.topAnchor,
+                    leading: dialogView.leadingAnchor,
+                    bottom: dialogView.bottomAnchor,
+                    trailing: dialogView.trailingAnchor,
+                    padding: UIEdgeInsets(top: 54, left: 0, bottom: 56, right: 0))
+    }
+    
+    fileprivate func addTitle(_ title: String) {
+        titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 21))
+        
+        guard let dialogView = dialogView, let titleLabel = titleLabel else { return }
+        titleLabel.configure(text: title, size: 18, weight: .bold, color: UIColor.darkStant)
+        dialogView.addSubview(titleLabel)
+        titleLabel.anchor(top: dialogView.topAnchor,
+                          leading: dialogView.leadingAnchor,
+                          trailing: dialogView.trailingAnchor,
+                          padding: UIEdgeInsets(top: 16, left: 34, bottom: 56, right: 34),
+                          size: CGSize(width: 0, height: 21))
+    }
+    
+    fileprivate func add(buttons: [DialogButton]) {
+        stackView = UIStackView(arrangedSubviews: [])
+        
+        guard let dialogView = dialogView, let stackView = stackView else { return }
+        
+        for button in buttons {
+            let stackViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 14))
+
+            stackViewButton.backgroundColor = UIColor.white
+            
+            stackViewButton.setTitle(button.title?.uppercased() ?? "", for: .normal)
+            
+            if button.style == ButtonStyle.cancel {
+                stackViewButton.setTitleColor(UIColor.darkGrayStant, for: .normal)
+            } else {
+                stackViewButton.setTitleColor(UIColor.orangeStant, for: .normal)
+            }
+            
+            stackViewButton.contentHorizontalAlignment = .center
+            stackViewButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
+            
+            guard let action = button.action, let target = button.target else { return }
+            stackViewButton.addTarget(target, action: action, for: .touchUpInside)
+            stackView.addArrangedSubview(stackViewButton)
+        }
+        stackView.distribution = .fillEqually
+        dialogView.addSubview(stackView)
+        
+        self.addStackViewConstraintAccordingToQuantityOf(buttons: buttons)
+    }
+    
+    fileprivate func addStackViewConstraintAccordingToQuantityOf(buttons: [DialogButton]) {
+        guard let dialogView = dialogView, let stackView = stackView else { return }
+        var leadingAnchorValue: CGFloat = 0
+        
+        if buttons.count == 2 {
+            leadingAnchorValue = (self.view.frame.width - 32) / 3
+        }
+        
+        stackView.anchor(leading: dialogView.leadingAnchor,
+                         bottom: dialogView.bottomAnchor,
+                         trailing: dialogView.trailingAnchor,
+                         padding: UIEdgeInsets(top: 0, left: leadingAnchorValue, bottom: 0, right: 0),
+                         size: CGSize(width: 0, height: 56))
+    }
+
+}

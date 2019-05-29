@@ -13,6 +13,10 @@ extension UIImageView {
         self.layer.cornerRadius  = radius
         self.layer.masksToBounds = true
         
+        self.show(image: image)
+    }
+    
+    func show(image: String) {
         if let url = NSURL(string: image) {
             if let data = NSData(contentsOf: url as URL) {
                 self.image = UIImage(data: data as Data)

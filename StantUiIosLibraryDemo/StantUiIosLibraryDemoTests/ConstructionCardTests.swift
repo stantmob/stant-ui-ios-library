@@ -63,6 +63,7 @@ class ConstructionCardTests: XCTestCase {
 
         return data1.isEqual(to: data2 as Data)
     }
+    
     func testCheckTitleAndSubtitle() {
         self.configureCell()
         let darkColor = UIColor(red: 60/255, green: 60/255, blue: 70/255, alpha: 1)
