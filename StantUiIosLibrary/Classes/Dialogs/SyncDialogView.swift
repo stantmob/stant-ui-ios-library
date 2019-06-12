@@ -26,6 +26,13 @@ public class SyncDialogView: UIView {
         configureView()
     }
     
+    deinit {
+        self.iconImageView       = nil
+        self.textDialogLabel     = nil
+        self.fullProgressBarView = nil
+        self.progressBarView     = nil
+    }
+    
     private func configureView() {
         self.backgroundColor = UIColor.lightGrayStant
     }

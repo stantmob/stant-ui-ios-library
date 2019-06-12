@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
         self.addConstructionCardDemoButton()
         self.addConstructionsFiltersDemoButton()
         self.addSyncDialogDemoButton()
+        self.addFirstHeaderDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +53,7 @@ class MainViewController: UIViewController {
     @objc func openSyncDialogDemo() {
         syncDialogViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         
-        let insideView   = SyncDialogView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        let insideView = SyncDialogView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
         insideView.set(image: UIImage(named: "sync") ?? UIImage(),
                        text: "Some text in dialog some text in dialog some text in dialog",
                        percentage: 50)
@@ -72,6 +73,16 @@ class MainViewController: UIViewController {
     
     @objc func someSomethingInDialogButton() {
         print("Something")
+    }
+    
+    fileprivate func addFirstHeaderDemoButton() {
+        self.addButton(title: "First Header Demo", action: #selector(goToFirstHeaderDemo), orderOfButton: 4)
+    }
+    
+    @objc func goToFirstHeaderDemo() {
+        let viewController = FirstHeaderViewController()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     fileprivate func addButton(title: String, action: Selector, orderOfButton: CGFloat) {

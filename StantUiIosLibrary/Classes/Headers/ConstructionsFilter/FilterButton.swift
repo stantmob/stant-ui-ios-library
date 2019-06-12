@@ -10,7 +10,7 @@ import UIKit
 public struct FilterButton {
     let title: String?
     let action: Selector?
-    let target: UIViewController?
+    unowned var target: UIViewController
     
     public init(title: String, action: Selector, target: UIViewController) {
         self.title  = title

@@ -26,8 +26,6 @@ class ConstructionsFilterViewController: UIViewController {
         let filterIcon = UIImage(named: "filter")
         guard let filter = filter, let icon = filterIcon else { return }
         
-        
-        
         let buttons = [FilterButton(title: "Button 01", action: #selector(printButton01), target: self),
                        FilterButton(title: "Button 02", action: #selector(printButton02), target: self),
                        FilterButton(title: "Button 03", action: #selector(printButton03), target: self)]

@@ -26,6 +26,17 @@ public class ConstructionCard: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        self.mainView                 = nil
+        self.titleLabel               = nil
+        self.subtitleLabel            = nil
+        self.photoImageView           = nil
+        self.percentageBackgroundView = nil
+        self.fullProgressBarView      = nil
+        self.progressBarView          = nil
+        self.percentageLabel          = nil
+    }
+    
     public func configureViewFor(construction: Construction) {
         mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ConstructionCard.cellHeight))
         

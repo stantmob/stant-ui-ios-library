@@ -12,7 +12,7 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
     public static let IDENTIFIER = "FilterButtonCollectionViewCellIdentifier"
     
     public var mainButton: UIButton?
-    public var cellDelegate: FilterCellDelegate?
+    public weak var cellDelegate: FilterCellDelegate?
     
     public func configureCell(button: FilterButton) {
         mainButton   = UIButton(frame: CGRect(x: 0, y: 0, width: 90, height: 28))
@@ -26,9 +26,9 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
         mainButton.contentHorizontalAlignment = .center
         mainButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
         
-        guard let action = button.action, let target = button.target else { return }
+        guard let action = button.action else { return }
         mainButton.addTarget(self, action: #selector(clickInButton), for: .touchUpInside)
-        mainButton.addTarget(target, action: action, for: .touchUpInside)
+        mainButton.addTarget(button.target, action: action, for: .touchUpInside)
         
         self.addSubview(mainButton)
         mainButton.anchor(top: superview?.topAnchor,

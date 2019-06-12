@@ -23,6 +23,12 @@ public class DialogViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
     }
     
+    deinit {
+        self.dialogView = nil
+        self.titleLabel = nil
+        self.stackView  = nil
+    }
+    
     @objc func dismissViewController() {
         self.dismiss(animated: false, completion: nil)
     }
@@ -92,8 +98,8 @@ public class DialogViewController: UIViewController {
             stackViewButton.contentHorizontalAlignment = .center
             stackViewButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
             
-            guard let action = button.action, let target = button.target else { return }
-            stackViewButton.addTarget(target, action: action, for: .touchUpInside)
+            guard let action = button.action else { return }
+            stackViewButton.addTarget(button.target, action: action, for: .touchUpInside)
             stackView.addArrangedSubview(stackViewButton)
         }
         stackView.distribution = .fillEqually

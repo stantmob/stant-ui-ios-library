@@ -25,6 +25,14 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
         super.init(frame: frame)
     }
     
+    deinit {
+        self.fixedFilterUiView    = nil
+        self.filterIconImageView  = nil
+        self.filterQuantityUiView = nil
+        self.filterQuantityLabel  = nil
+        self.filterTitleLabel     = nil
+    }
+    
     public func configureViewWith(fixedTitle: String, icon: UIImage, buttons: [FilterButton]) {
         self.title   = fixedTitle
         self.icon    = icon

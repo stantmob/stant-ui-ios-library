@@ -10,7 +10,7 @@ import UIKit
 public struct DialogButton {
     let title: String?
     let action: Selector?
-    let target: UIViewController?
+    unowned var target: UIViewController
     let style: ButtonStyle?
     
     public init(title: String, action: Selector, target: UIViewController, style: ButtonStyle) {

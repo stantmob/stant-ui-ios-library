@@ -12,7 +12,7 @@ import StantUiIosLibrary
 
 class ConstructionsFilterTests: XCTestCase {
     
-    private var testVC: TestFilterUiViewController!
+    private var testVC: TestFilterUiViewController?
     
     var fixedFilterTitle     =  ""
     var filterIconImageView  = UIImageView()
@@ -24,8 +24,10 @@ class ConstructionsFilterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-       
-        testVC         = TestFilterUiViewController()
+        
+        testVC = TestFilterUiViewController()
+
+        guard let testVC = testVC else { return }
         testVC.filters = ConstructionsFilter.init(frame: CGRect(x: 0, y: 0, width: 300, height: ConstructionsFilter.headerHeight))
     
         let filterIcon = UIImage(named: "filter")
@@ -52,6 +54,7 @@ class ConstructionsFilterTests: XCTestCase {
     }
    
     func testCollectionViewInformation() {
+        guard let testVC = testVC else { return }
         let collectionView = testVC.filters?.collectionView ?? FiltersCollectionView()
     
         XCTAssertEqual(collectionView.numberOfItems(inSection: 0) , 3)
@@ -70,6 +73,7 @@ class ConstructionsFilterTests: XCTestCase {
     }
     
     func testSelectAndDeselectButtons() {
+        guard let testVC = testVC else { return }
         let collectionView = testVC.filters?.collectionView ?? FiltersCollectionView()
     
         self.clickToSelectAndDeselectCells(collectionView: collectionView, positions: [0, 1])
@@ -108,6 +112,7 @@ class ConstructionsFilterTests: XCTestCase {
     }
     
     fileprivate func updateViews() {
+        guard let testVC = testVC else { return }
         fixedFilterTitle     = testVC.filters?.filterTitleLabel?.text ?? ""
         filterIconImageView  = testVC.filters?.filterIconImageView ?? UIImageView()
         fixedUiView          = testVC.filters?.fixedFilterUiView ?? UIView()

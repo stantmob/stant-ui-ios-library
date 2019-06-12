@@ -11,7 +11,7 @@ public class FiltersCollectionView: UICollectionView, UICollectionViewDataSource
     
     public var buttons = [FilterButton]()
     
-    var cellDelegate: FilterCellDelegate?
+    weak var cellDelegate: FilterCellDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
