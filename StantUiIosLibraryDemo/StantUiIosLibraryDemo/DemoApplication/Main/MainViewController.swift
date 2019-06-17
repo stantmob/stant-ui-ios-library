@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
         self.addConstructionsFiltersDemoButton()
         self.addSyncDialogDemoButton()
         self.addFirstHeaderDemoButton()
+        self.addMainMenuTabBarDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,78 +28,43 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addConstructionCardDemoButton() {
-        self.addButton(title: "Construction Card Demo", action: #selector(goToConstructionCardDemo), orderOfButton: 1)
+        self.view.addButton(title: "Construction Card Demo", action: #selector(goToConstructionCardDemo), orderOfButton: 1, target: self)
     }
     
     @objc func goToConstructionCardDemo() {
-        let viewController = ConstructionCardViewController()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.open(viewController: ConstructionCardViewController())
     }
     
     fileprivate func addConstructionsFiltersDemoButton() {
-        self.addButton(title: "Constructions Filter Demo", action: #selector(goToConstructionsFilterDemo), orderOfButton: 2)
+        self.view.addButton(title: "Constructions Filter Demo", action: #selector(goToConstructionsFilterDemo), orderOfButton: 2, target: self)
     }
     
     @objc func goToConstructionsFilterDemo() {
-        let viewController = ConstructionsFilterViewController()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.open(viewController: ConstructionsFilterViewController())
     }
     
     fileprivate func addSyncDialogDemoButton() {
-        self.addButton(title: "Sync Dialog", action: #selector(openSyncDialogDemo), orderOfButton: 3)
+        self.view.addButton(title: "Sync Dialog", action: #selector(goToSyncDialogDemo), orderOfButton: 3, target: self)
     }
     
-    @objc func openSyncDialogDemo() {
-        syncDialogViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        
-        let insideView = SyncDialogView.init(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-        insideView.set(image: UIImage(named: "sync") ?? UIImage(),
-                       text: "Some text in dialog some text in dialog some text in dialog",
-                       percentage: 50)
-        
-        let firstButton  = DialogButton(title: "Report", action: #selector(someSomethingInDialogButton), target: self, style: ButtonStyle.standard)
-        let secondButton = DialogButton(title: "Cancel", action: #selector(dismissDialog), target: self, style: ButtonStyle.cancel)
-        let thirdButton  = DialogButton(title: "Select", action: #selector(someSomethingInDialogButton), target: self, style: ButtonStyle.standard)
-        syncDialogViewController.configureView(title: "Some title",
-                                               mainView: insideView,
-                                               buttons: [firstButton, secondButton, thirdButton])
-        self.present(syncDialogViewController, animated: false, completion: nil)
+    @objc func goToSyncDialogDemo() {
+        self.openSyncDialogDemo()
     }
-    
-    @objc func dismissDialog() {
-        syncDialogViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func someSomethingInDialogButton() {
-        print("Something")
-    }
-    
+
     fileprivate func addFirstHeaderDemoButton() {
-        self.addButton(title: "First Header Demo", action: #selector(goToFirstHeaderDemo), orderOfButton: 4)
+        self.view.addButton(title: "First Header Demo", action: #selector(goToFirstHeaderDemo), orderOfButton: 4, target: self)
     }
     
     @objc func goToFirstHeaderDemo() {
-        let viewController = FirstHeaderViewController()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.open(viewController: FirstHeaderViewController())
     }
     
-    fileprivate func addButton(title: String, action: Selector, orderOfButton: CGFloat) {
-        let button = UIButton(type: .system) as UIButton
-        let distanceToTop: CGFloat = 50 * orderOfButton
-        
-        button.frame                      = CGRect(x: 0, y: distanceToTop, width: self.view.frame.width, height: 50)
-        button.backgroundColor            = UIColor.lightGray
-        button.tintColor                  = UIColor.black
-        button.contentHorizontalAlignment = .center
-        
-        button.setTitle(title, for: .normal)
-        button.addTarget(self, action: action, for: .touchUpInside)
-        
-        self.view.addSubview(button)
+    fileprivate func addMainMenuTabBarDemoButton() {
+        self.view.addButton(title: "Main Menu Tab Bar", action: #selector(goToMainMenuTabBarDemo), orderOfButton: 5, target: self)
+    }
+    
+    @objc func goToMainMenuTabBarDemo() {
+        self.openMainMenuTabBarDemo()
     }
 
 }
-
