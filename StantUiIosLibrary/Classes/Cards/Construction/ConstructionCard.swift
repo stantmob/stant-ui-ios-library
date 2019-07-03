@@ -8,7 +8,6 @@ public class ConstructionCard: UITableViewCell {
     var color: UIColor?
     var percentageValue: CGFloat?
     
-    public var mainView: UIView?
     public var titleLabel: UILabel?
     public var subtitleLabel: UILabel?
     public var photoImageView: UIImageView?
@@ -27,7 +26,6 @@ public class ConstructionCard: UITableViewCell {
     }
     
     deinit {
-        self.mainView                 = nil
         self.titleLabel               = nil
         self.subtitleLabel            = nil
         self.photoImageView           = nil
@@ -38,17 +36,10 @@ public class ConstructionCard: UITableViewCell {
     }
     
     public func configureViewFor(construction: Construction) {
-        mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ConstructionCard.cellHeight))
-        
-        guard let mainView = mainView else { return }
-        
-        self.addSubview(mainView)
-        
-        mainView.fillSuperView()
-        mainView.backgroundColor = UIColor.white
-        self.color               = construction.color
-        self.percentageValue     = construction.percentage
-        
+        self.removeSubviews()
+        self.color           = construction.color
+        self.percentageValue = construction.percentage
+
         self.configureImageWith(url: construction.imageUrl ?? String())
         self.configure(title: construction.title ?? String(), subtitle: construction.subtitle ?? String())
         self.configureProgressBarWith(color: construction.color ?? UIColor(), percentage: construction.percentage ?? CGFloat())
@@ -70,16 +61,15 @@ public class ConstructionCard: UITableViewCell {
     
     fileprivate func setText(label: UILabel, text: String, textSize: CGFloat, textWeight: UIFont.Weight, textColor: UIColor,
                              topAnchor: CGFloat, leftAnchor: CGFloat, bottomAnchor: CGFloat, rightAnchor: CGFloat) {
-        guard let mainView = mainView else { return }
         if #available(iOS 9.0, *) {
             label.text      = text
             label.font      = .systemFont(ofSize: textSize, weight: textWeight)
             label.textColor = textColor
-            mainView.addSubview(label)
-            label.anchor(top: mainView.topAnchor,
-                         leading: mainView.leadingAnchor,
-                         bottom: mainView.bottomAnchor,
-                         trailing: mainView.trailingAnchor,
+            self.addSubview(label)
+            label.anchor(top: self.topAnchor,
+                         leading: self.leadingAnchor,
+                         bottom: self.bottomAnchor,
+                         trailing: self.trailingAnchor,
                          padding: UIEdgeInsets(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor))
         }
         
@@ -88,12 +78,12 @@ public class ConstructionCard: UITableViewCell {
     fileprivate func configureImageWith(url: String) {
         photoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
         
-        guard let mainView = mainView, let photoImageView = photoImageView else { return }
+        guard let photoImageView = photoImageView else { return }
         photoImageView.showRounded(image: url)
-        mainView.addSubview(photoImageView)
+        self.addSubview(photoImageView)
         if #available(iOS 9.0, *) {
-            photoImageView.anchor(top: mainView.topAnchor,
-                                  leading: mainView.leadingAnchor,
+            photoImageView.anchor(top: self.topAnchor,
+                                  leading: self.leadingAnchor,
                                   padding: UIEdgeInsets(top: 9, left: 12, bottom: 0, right: 0),
                                   size: CGSize(width: 70, height: 70))
         }
@@ -102,15 +92,15 @@ public class ConstructionCard: UITableViewCell {
     fileprivate func configureProgressBarWith(color: UIColor, percentage: CGFloat) {
         fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 4))
 
-        guard let mainView = mainView, let fullProgressBarView = fullProgressBarView else { return }
+        guard let fullProgressBarView = fullProgressBarView else { return }
         fullProgressBarView.backgroundColor    = UIColor.lightGrayStant
         fullProgressBarView.layer.cornerRadius = 2.5
-        mainView.addSubview(fullProgressBarView)
+        self.addSubview(fullProgressBarView)
         if #available(iOS 9.0, *) {
-            fullProgressBarView.anchor(top: mainView.topAnchor,
-                                       leading: mainView.leadingAnchor,
-                                       bottom: mainView.bottomAnchor,
-                                       trailing: mainView.trailingAnchor,
+            fullProgressBarView.anchor(top: self.topAnchor,
+                                       leading: self.leadingAnchor,
+                                       bottom: self.bottomAnchor,
+                                       trailing: self.trailingAnchor,
                                        padding: UIEdgeInsets(top: 61, left: 91, bottom: 21, right: 53))
         }
     
@@ -120,14 +110,14 @@ public class ConstructionCard: UITableViewCell {
     fileprivate func configurePercentageIndicator(color: UIColor, percentage: CGFloat) {
         percentageBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
         
-        guard let mainView = mainView, let backgroundView = percentageBackgroundView else { return }
+        guard let backgroundView = percentageBackgroundView else { return }
         backgroundView.layer.cornerRadius = 3
         backgroundView.backgroundColor    = color
-        mainView.addSubview(backgroundView)
+        self.addSubview(backgroundView)
         
         if #available(iOS 9.0, *) {
-            backgroundView.anchor(top: mainView.topAnchor,
-                                  trailing: mainView.trailingAnchor,
+            backgroundView.anchor(top: self.topAnchor,
+                                  trailing: self.trailingAnchor,
                                   padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
                                   size: CGSize(width: 36, height: 18))
             
@@ -175,7 +165,7 @@ public class ConstructionCard: UITableViewCell {
 }
 
 public struct Construction {
-    let title: String?
+    public let title: String?
     let subtitle: String?
     let imageUrl: String?
     let color: UIColor?

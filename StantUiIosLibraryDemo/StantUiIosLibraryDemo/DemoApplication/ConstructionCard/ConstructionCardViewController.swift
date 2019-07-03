@@ -11,14 +11,14 @@ import StantUiIosLibrary
 
 class ConstructionCardViewController: UIViewController {
     
-    var tableView: UITableView?
-    
-    let navigationBarHeight: CGFloat = 44
+    let navigationBarHeight: CGFloat = 60
     let cardTitle                    = "Some title"
     let cardSubtitle                 = "Some subtitle"
     let cardUrl                      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
     let cardColor                    = UIColor.blue
     let cardPercentage: CGFloat      = 50
+    
+    var constructionSiteList         = [Construction]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,44 +28,32 @@ class ConstructionCardViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = UIColor.white
 
-        self.configureTableView()
-    }
-    
-    fileprivate func configureTableView() {
-        tableView = UITableView(frame: CGRect(x: 0,
-                                              y: navigationBarHeight,
-                                              width: self.view.frame.width,
-                                              height: self.view.frame.height - navigationBarHeight),
-                                style: .plain)
-        tableView?.delegate       = self
-        tableView?.dataSource     = self
-        
-        tableView?.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.IDENTIFIER)
-        
-        if let tableView = tableView {
-            self.view.addSubview(tableView)
+        for i in 1...25 {
+            constructionSiteList.append(Construction(title: "\(i)", subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage))
         }
+        
+        let constructionTableView = ConstructionTableViewWithCollapsedSearchBar(frame: CGRect(x: 0,
+                                                                                              y: navigationBarHeight,
+                                                                                              width: self.view.frame.width,
+                                                                                              height: self.view.frame.height - navigationBarHeight))
+        self.view.addSubview(constructionTableView)
+        constructionTableView.anchor(top: self.view.topAnchor,
+                                     leading: self.view.leadingAnchor,
+                                     bottom: self.view.bottomAnchor,
+                                     trailing: self.view.trailingAnchor,
+                                     padding: UIEdgeInsets(top: navigationBarHeight, left: 0, bottom: 0, right: 0))
+        constructionTableView.configureViewWith(constructionList: constructionSiteList,
+                                                searchBarIcon: UIImage(named: "search") ?? UIImage(),
+                                                searchBarPlaceholder: "Search",
+                                                tableViewDelegate: self,
+                                                emptyMessage: "No construction site to show on current screen. Please try again later.")
     }
 }
 
-extension ConstructionCardViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+extension ConstructionCardViewController: ConstructionTableViewDidSelectDelegate {
+    func didClickOnTableViewCellWith(index: Int) {
+        print("Clicked on cell \(index)")
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ConstructionCard.cellHeight
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConstructionCard.IDENTIFIER) as? ConstructionCard else {
-            return UITableViewCell()
-        }
-        
-        let construction = Construction(title: cardTitle, subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage )
-        cell.configureViewFor(construction: construction)
-        
-        return cell
-    }
     
 }

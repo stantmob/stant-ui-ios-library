@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addConstructionCardDemoButton() {
-        self.view.addButton(title: "Construction Card Demo", action: #selector(goToConstructionCardDemo), orderOfButton: 1, target: self)
+        self.view.addButton(title: "Construction Table View and Search Demo", action: #selector(goToConstructionCardDemo), orderOfButton: 1, target: self)
     }
     
     @objc func goToConstructionCardDemo() {

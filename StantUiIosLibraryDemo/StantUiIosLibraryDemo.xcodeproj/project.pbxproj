@@ -14,6 +14,8 @@
 		3445BC5822B80AFA00C62011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DFB8D5229495F7002D92FB /* Assets.xcassets */; };
 		34518E7722B28942004D1833 /* MainViewControllerActionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34518E7622B28942004D1833 /* MainViewControllerActionsExtension.swift */; };
 		34518E7922B28A54004D1833 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34518E7822B28A54004D1833 /* UIViewExtension.swift */; };
+		347958E922CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347958E822CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift */; };
+		347958EB22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347958EA22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift */; };
 		349CE991229875DD0066A6E7 /* ConstructionsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CE990229875DD0066A6E7 /* ConstructionsFilterViewController.swift */; };
 		349CE9932298762E0066A6E7 /* ConstructionsFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CE9922298762E0066A6E7 /* ConstructionsFilterTests.swift */; };
 		349CE995229C1A660066A6E7 /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CE994229C1A660066A6E7 /* UIViewLayoutExtension.swift */; };
@@ -44,6 +46,8 @@
 		3445BC5622B7D68200C62011 /* MainMenuTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTabBarTests.swift; sourceTree = "<group>"; };
 		34518E7622B28942004D1833 /* MainViewControllerActionsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerActionsExtension.swift; sourceTree = "<group>"; };
 		34518E7822B28A54004D1833 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		347958E822CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchBarTests.swift; sourceTree = "<group>"; };
+		347958EA22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchMocks.swift; sourceTree = "<group>"; };
 		349CE990229875DD0066A6E7 /* ConstructionsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionsFilterViewController.swift; sourceTree = "<group>"; };
 		349CE9922298762E0066A6E7 /* ConstructionsFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionsFilterTests.swift; sourceTree = "<group>"; };
 		349CE994229C1A660066A6E7 /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 			path = MainMenuTabBar;
 			sourceTree = "<group>";
 		};
+		347958E722CA2917003D7CC4 /* ConstructionTableViewWithCollapsedSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				347958E822CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift */,
+				347958EA22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift */,
+			);
+			path = ConstructionTableViewWithCollapsedSearchBar;
+			sourceTree = "<group>";
+		};
 		349CE98F229875A10066A6E7 /* ConstructionsFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 		34DFB8E2229495F7002D92FB /* StantUiIosLibraryDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				347958E722CA2917003D7CC4 /* ConstructionTableViewWithCollapsedSearchBar */,
 				3445BC5522B7D66300C62011 /* MainMenuTabBar */,
 				53D2813D22A1AF10007064F1 /* SyncDialog */,
 				53D2813C22A1AF01007064F1 /* ConstructionsFilter */,
@@ -435,9 +449,11 @@
 			files = (
 				349CE9932298762E0066A6E7 /* ConstructionsFilterTests.swift in Sources */,
 				53D2813722A152F6007064F1 /* FirstHeaderTests.swift in Sources */,
+				347958EB22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift in Sources */,
 				343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */,
 				3445BC5722B7D68200C62011 /* MainMenuTabBarTests.swift in Sources */,
 				34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */,
+				347958E922CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift in Sources */,
 				53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

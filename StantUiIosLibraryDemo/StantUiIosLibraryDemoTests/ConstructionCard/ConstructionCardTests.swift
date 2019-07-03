@@ -45,11 +45,11 @@ class ConstructionCardTests: XCTestCase {
     func testGeneralCellView() {
         self.configureCell()
         
-        XCTAssertTrue(tableViewCell.titleLabel?.isDescendant(of: tableViewCell.mainView!) ?? false)
-        XCTAssertTrue(tableViewCell.subtitleLabel?.isDescendant(of: tableViewCell.mainView!) ?? false)
-        XCTAssertTrue(tableViewCell.photoImageView?.isDescendant(of: tableViewCell.mainView!) ?? false)
-        XCTAssertTrue(tableViewCell.percentageBackgroundView?.isDescendant(of: tableViewCell.mainView!) ?? false)
-        XCTAssertTrue(tableViewCell.fullProgressBarView?.isDescendant(of: tableViewCell.mainView!) ?? false)
+        XCTAssertTrue(tableViewCell.titleLabel?.isDescendant(of: tableViewCell) ?? false)
+        XCTAssertTrue(tableViewCell.subtitleLabel?.isDescendant(of: tableViewCell) ?? false)
+        XCTAssertTrue(tableViewCell.photoImageView?.isDescendant(of: tableViewCell) ?? false)
+        XCTAssertTrue(tableViewCell.percentageBackgroundView?.isDescendant(of: tableViewCell) ?? false)
+        XCTAssertTrue(tableViewCell.fullProgressBarView?.isDescendant(of: tableViewCell) ?? false)
         
         XCTAssertTrue(tableViewCell.progressBarView?.isDescendant(of: tableViewCell.fullProgressBarView!) ?? false)
         XCTAssertTrue(tableViewCell.percentageLabel?.isDescendant(of: tableViewCell.percentageBackgroundView!) ?? false)
@@ -88,7 +88,7 @@ class ConstructionCardTests: XCTestCase {
     }
     
     fileprivate func getProgressWidthforBar() -> CGFloat {
-        let fullProgressBarWidth = (tableViewCell.mainView?.frame.width)! - 91.0 - 53.0
+        let fullProgressBarWidth = (tableViewCell.frame.width) - 91.0 - 53.0
         let percentage           = self.percentage / 100
         let progressBarWidth     = fullProgressBarWidth * percentage
         
@@ -98,7 +98,7 @@ class ConstructionCardTests: XCTestCase {
     func testCheckWhenPassAPercentageBiggerThan100() {
         self.percentage = 230
         self.configureCell()
-        let fullProgressBarWidth = (tableViewCell.mainView?.frame.width)! - 91.0 - 53.0
+        let fullProgressBarWidth = (tableViewCell.frame.width) - 91.0 - 53.0
         
         XCTAssertEqual(tableViewCell.progressWidth, fullProgressBarWidth)
         XCTAssertEqual(tableViewCell.percentageLabel?.text, "230%")
