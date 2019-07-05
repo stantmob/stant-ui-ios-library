@@ -17,7 +17,7 @@ public class MainMenuTabBarController: UITabBarController {
         tabBar.barTintColor            = barTintColor
         tabBar.unselectedItemTintColor = unselectedItemsTintColor
         
-        viewControllers = tabBarObjects.map { $0.controller ?? UIViewController() }
+        viewControllers = tabBarObjects.map { $0.controller }
     }
     
 }

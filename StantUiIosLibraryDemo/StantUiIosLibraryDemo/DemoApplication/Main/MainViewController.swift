@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
         self.addSyncDialogDemoButton()
         self.addFirstHeaderDemoButton()
         self.addMainMenuTabBarDemoButton()
+        self.addCellWithImageDemoButton()
+        self.addProfileCellDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +67,22 @@ class MainViewController: UIViewController {
     
     @objc func goToMainMenuTabBarDemo() {
         self.openMainMenuTabBarDemo()
+    }
+    
+    fileprivate func addCellWithImageDemoButton() {
+        self.view.addButton(title: "Cell With Image", action: #selector(goToCellWithImageDemo), orderOfButton: 6, target: self)
+    }
+    
+    @objc func goToCellWithImageDemo() {
+        self.open(viewController: CellWithImageTableViewController())
+    }
+    
+    fileprivate func addProfileCellDemoButton() {
+        self.view.addButton(title: "Profile cell", action: #selector(goToProfileCellDemo), orderOfButton: 7, target: self)
+    }
+    
+    @objc func goToProfileCellDemo() {
+        self.open(viewController: ProfileCellTableViewController())
     }
 
 }

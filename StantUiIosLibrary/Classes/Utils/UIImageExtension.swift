@@ -37,5 +37,19 @@ extension UIImage {
         
         return finalImage ?? UIImage()
     }
+    
+    public func reframeImageSize(_ size: CGSize = CGSize(width: 20, height: 20)) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale);
+        self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
+    public func roundedReframedWith(size: CGSize) -> UIImage? {
+        return self.reframeImageSize(size)
+            .roundedRectImageFromImage(cornerRadius: size.height/2)
+    }
+    
 }
 
