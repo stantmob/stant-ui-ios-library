@@ -1,6 +1,6 @@
 # StantUiIosLibrary
 
-[![CI Status](https://img.shields.io/travis/liuvasconcelos/StantUiIosLibrary.svg?style=flat)](https://travis-ci.org/liuvasconcelos/StantUiIosLibrary)
+[![CI Status](https://img.shields.io/travis/liuvasconcelos/StantUiIosLibrary.svg?style=flat)](https://travis-ci.com/stantmob/stant-ui-ios-library)
 [![Version](https://img.shields.io/cocoapods/v/StantUiIosLibrary.svg?style=flat)](https://cocoapods.org/pods/StantUiIosLibrary)
 [![License](https://img.shields.io/cocoapods/l/StantUiIosLibrary.svg?style=flat)](https://cocoapods.org/pods/StantUiIosLibrary)
 [![Platform](https://img.shields.io/cocoapods/p/StantUiIosLibrary.svg?style=flat)](https://cocoapods.org/pods/StantUiIosLibrary)
