@@ -175,15 +175,16 @@ class InternPersonCellTests: XCTestCase {
         }
         
         try then("It should contain the given images as subviews") {
-            let imageViews = self.cell.subviews.map { subview -> UIImage? in
+            let imagesHashValues = self.cell.subviews.map { subview -> Int? in
                 if subview is UIImageView {
                     let castedView = subview as? UIImageView
-                    return castedView?.image
+                    return castedView?.image.hashValue
                 }
                 return nil
             }
             
-            XCTAssert(imageViews.contains(self.mailImage) && imageViews.contains(self.phoneImage))
+            XCTAssert(imagesHashValues.contains(self.mailImage.hashValue))
+            XCTAssert(imagesHashValues.contains(self.phoneImage.hashValue))
         }
         
         try then("It should not contain any buttons set") {

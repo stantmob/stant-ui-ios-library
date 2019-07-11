@@ -11,6 +11,9 @@ import StantUiIosLibrary
 
 class ProfileCellTableViewController: UITableViewController {
     
+    let validMailButtons  = [UIButton(), nil, nil, UIButton(), nil, UIButton()]
+    let validPhoneButtons = [UIButton(), UIButton(), nil, UIButton(), UIButton(), nil]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,21 +21,25 @@ class ProfileCellTableViewController: UITableViewController {
         self.tableView.allowsSelection = false
     }
     
-    func getButtonsBy(index: Int) -> [UIButton] {
-        let mailButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20)),
-        callButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        
-        mailButton.tag = index
-        callButton.tag = index
-        
-        mailButton.addTarget(self, action: #selector(teste), for: .touchUpInside)
-        callButton.addTarget(self, action: #selector(teste), for: .touchUpInside)
-        
-        return [mailButton, callButton]
+    private func setButtonsActionsFor(index: Int) {
+        if let btn = self.validMailButtons[index] {
+            btn.addTarget(self, action: #selector(mailAction), for: .touchUpInside)
+        }
+        if let btn = self.validPhoneButtons[index] {
+            btn.addTarget(self, action: #selector(phoneAction), for: .touchUpInside)
+        }
     }
     
-    @objc func teste(sender: UIButton) {
-        print(sender.tag)
+    @objc func mailAction(sender: UIButton) {
+        let alert = UIAlertController(title: "Mail", message: "Send a mail button was clicked!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    @objc func phoneAction(sender: UIButton) {
+        let alert = UIAlertController(title: "Phone", message: "Call a phone button was clicked!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,22 +47,22 @@ class ProfileCellTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: InternPersonCell.IDENTIFIER,
                                                  for: indexPath) as? InternPersonCell
         
-        let buttons = getButtonsBy(index: indexPath.row)
-        
         cell?.set(title: "Godfather Washington",
                   description: "The big bad godfather.",
                   icon: UIImage(named: "godfatherWashington"))
         
-        cell?.set(mailButton: buttons.first!,
+        self.setButtonsActionsFor(index: indexPath.row)
+        
+        cell?.set(mailButton: self.validMailButtons[indexPath.row],
                   mailImage: UIImage(named: "mail")!,
-                  callButton: buttons.last!,
+                  callButton: self.validPhoneButtons[indexPath.row],
                   callImage: UIImage(named: "call")!)
         
         return cell ?? UITableViewCell()

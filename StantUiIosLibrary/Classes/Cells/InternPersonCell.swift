@@ -86,6 +86,17 @@ public class InternPersonCell: UITableViewCell {
         self.callButton = callButton
         
         positionOptionalElements()
+        styleButtonImages()
+    }
+    
+    private func styleButtonImages() {
+        if self.mailButton == nil {
+            self.mailImage.set(color: .darkGrayStant)
+        }
+        
+        if self.callButton == nil {
+            self.callImage.set(color: .darkGrayStant)
+        }
     }
     
     private func positionOptionalElements() {
