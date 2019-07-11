@@ -12,10 +12,23 @@ public class InternPersonCell: UITableViewCell {
     public static let IDENTIFIER      = "InternPersonCellIdentifier"
     public static let HEIGHT: CGFloat = 56
     
-    public let titleLabel       = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 19))
-    public let descriptionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 14))
-    private let mailImage       = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    private let callImage       = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    public let titleLabel       = UILabel(frame: CGRect(x: 0,
+                                                        y: 0,
+                                                        width: 210,
+                                                        height: 19))
+    public let descriptionLabel = UILabel(frame: CGRect(x: 0,
+                                                        y: 0,
+                                                        width: 210,
+                                                        height: 14))
+    
+    private let mailImage       = UIImageView(frame: CGRect(x: 0,
+                                                            y: 0,
+                                                            width: 20,
+                                                            height: 20))
+    private let callImage       = UIImageView(frame: CGRect(x: 0,
+                                                            y: 0,
+                                                            width: 20,
+                                                            height: 20))
     
     private weak var mailButton: UIButton?
     private weak var callButton: UIButton?
@@ -61,7 +74,10 @@ public class InternPersonCell: UITableViewCell {
                                         color: .darkGrayStant)
     }
     
-    public func set(mailButton: UIButton?, mailImage: UIImage, callButton: UIButton?, callImage: UIImage) {
+    public func set(mailButton: UIButton? = nil,
+                    mailImage: UIImage,
+                    callButton: UIButton? = nil,
+                    callImage: UIImage) {
         
         self.mailImage.image = mailImage
         self.callImage.image = callImage
@@ -73,33 +89,56 @@ public class InternPersonCell: UITableViewCell {
     }
     
     private func positionOptionalElements() {
-        self.addSubviews(mailImage, callImage, self.mailButton!, self.callButton!)
+        
+        self.addSubviews(mailImage, callImage)
         
         self.callImage.anchor(top: self.topAnchor,
                               leading: nil,
                               bottom: self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                              padding: UIEdgeInsets(top: 18,
+                                                    left: 0,
+                                                    bottom: 18,
+                                                    right: 16),
                               size: CGSize(width: 20, height: 20))
         self.mailImage.anchor(top: self.topAnchor,
                               leading: nil,
                               bottom: self.bottomAnchor,
                               trailing: self.callImage.leadingAnchor,
-                              padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                              padding: UIEdgeInsets(top: 18,
+                                                    left: 0,
+                                                    bottom: 18,
+                                                    right: 16),
                               size: CGSize(width: 20, height: 20))
+
+        if let callButton = self.callButton {
+            self.addSubview(callButton)
+            
+            self.callButton?.anchor(top: self.topAnchor,
+                                    leading: nil,
+                                    bottom: self.bottomAnchor,
+                                    trailing: self.trailingAnchor,
+                                    padding: UIEdgeInsets(top: 18,
+                                                          left: 0,
+                                                          bottom: 18,
+                                                          right: 16),
+                                    size: CGSize(width: 20, height: 20))
+        }
         
-        self.callButton?.anchor(top: self.topAnchor,
-                                 leading: nil,
-                                 bottom: self.bottomAnchor,
-                                 trailing: self.trailingAnchor,
-                                 padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-                                 size: CGSize(width: 20, height: 20))
-        self.mailButton?.anchor(top: self.topAnchor,
-                                leading: nil,
-                                bottom: self.bottomAnchor,
-                                trailing: self.callImage.leadingAnchor,
-                                padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-                                size: CGSize(width: 20, height: 20))
+        if let mailButton = self.mailButton {
+            self.addSubview(mailButton)
+            
+            self.mailButton?.anchor(top: self.topAnchor,
+                                    leading: nil,
+                                    bottom: self.bottomAnchor,
+                                    trailing: self.callImage.leadingAnchor,
+                                    padding: UIEdgeInsets(top: 18,
+                                                          left: 0,
+                                                          bottom: 18,
+                                                          right: 16),
+                                    size: CGSize(width: 20, height: 20))
+        }
+        
     }
     
     private func positionElements() {
@@ -121,4 +160,3 @@ public class InternPersonCell: UITableViewCell {
     }
     
 }
-
