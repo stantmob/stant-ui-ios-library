@@ -14,6 +14,11 @@ public class InternPersonCell: UITableViewCell {
     
     public let titleLabel       = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 19))
     public let descriptionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 14))
+    private let mailImage       = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    private let callImage       = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    
+    private weak var mailButton: UIButton?
+    private weak var callButton: UIButton?
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -33,11 +38,15 @@ public class InternPersonCell: UITableViewCell {
                     iconSize: CGSize = CGSize(width: 35, height: 35),
                     titleSize: CGFloat = 16,
                     descriptionSize: CGFloat = 14) {
+        
+        self.subviews.forEach { view in
+            if view is UIButton { view.removeFromSuperview() }
+        }
+        
         self.removeSubviews(self.titleLabel, self.descriptionLabel)
         
         let roundedAndFormattedImage = icon?.roundedReframedWith(size: iconSize)
-        
-        self.imageView?.image      = roundedAndFormattedImage
+        self.imageView?.image        = roundedAndFormattedImage
         
         positionElements()
         
@@ -45,10 +54,52 @@ public class InternPersonCell: UITableViewCell {
                                   size: titleSize,
                                   weight: .regular,
                                   color: .darkStant)
+        
         self.descriptionLabel.configure(text: description,
                                         size: descriptionSize,
                                         weight: .regular,
                                         color: .darkGrayStant)
+    }
+    
+    public func set(mailButton: UIButton?, mailImage: UIImage, callButton: UIButton?, callImage: UIImage) {
+        
+        self.mailImage.image = mailImage
+        self.callImage.image = callImage
+        
+        self.mailButton = mailButton
+        self.callButton = callButton
+        
+        positionOptionalElements()
+    }
+    
+    private func positionOptionalElements() {
+        self.addSubviews(mailImage, callImage, self.mailButton!, self.callButton!)
+        
+        self.callImage.anchor(top: self.topAnchor,
+                              leading: nil,
+                              bottom: self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                              size: CGSize(width: 20, height: 20))
+        self.mailImage.anchor(top: self.topAnchor,
+                              leading: nil,
+                              bottom: self.bottomAnchor,
+                              trailing: self.callImage.leadingAnchor,
+                              padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                              size: CGSize(width: 20, height: 20))
+        
+        self.callButton?.anchor(top: self.topAnchor,
+                                 leading: nil,
+                                 bottom: self.bottomAnchor,
+                                 trailing: self.trailingAnchor,
+                                 padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                                 size: CGSize(width: 20, height: 20))
+        self.mailButton?.anchor(top: self.topAnchor,
+                                leading: nil,
+                                bottom: self.bottomAnchor,
+                                trailing: self.callImage.leadingAnchor,
+                                padding: UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                                size: CGSize(width: 20, height: 20))
     }
     
     private func positionElements() {
@@ -67,7 +118,6 @@ public class InternPersonCell: UITableViewCell {
                                                            left: 14,
                                                            bottom: 0,
                                                            right: 0))
-        
     }
     
 }

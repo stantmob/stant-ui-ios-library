@@ -15,6 +15,24 @@ class ProfileCellTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.register(InternPersonCell.self, forCellReuseIdentifier: InternPersonCell.IDENTIFIER)
+        self.tableView.allowsSelection = false
+    }
+    
+    func getButtonsBy(index: Int) -> [UIButton] {
+        let mailButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20)),
+        callButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        
+        mailButton.tag = index
+        callButton.tag = index
+        
+        mailButton.addTarget(self, action: #selector(teste), for: .touchUpInside)
+        callButton.addTarget(self, action: #selector(teste), for: .touchUpInside)
+        
+        return [mailButton, callButton]
+    }
+    
+    @objc func teste(sender: UIButton) {
+        print(sender.tag)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,13 +44,19 @@ class ProfileCellTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: InternPersonCell.IDENTIFIER,
                                                  for: indexPath) as? InternPersonCell
+        
+        let buttons = getButtonsBy(index: indexPath.row)
         
         cell?.set(title: "Godfather Washington",
                   description: "The big bad godfather.",
                   icon: UIImage(named: "godfatherWashington"))
+        
+        cell?.set(mailButton: buttons.first!,
+                  mailImage: UIImage(named: "mail")!,
+                  callButton: buttons.last!,
+                  callImage: UIImage(named: "call")!)
         
         return cell ?? UITableViewCell()
     }
@@ -43,9 +67,5 @@ class ProfileCellTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 16))
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell selected with section \(indexPath.section) at the \(indexPath.row) row")
     }
 }

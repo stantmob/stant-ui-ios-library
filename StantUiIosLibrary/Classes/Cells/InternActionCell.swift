@@ -26,9 +26,12 @@ public class InternActionCell: UITableViewCell {
     
     public func set(description: String = String(),
                     icon: UIImage? = UIImage(),
+                    iconColor: UIColor = UIColor.darkGray,
                     iconSize: CGSize = CGSize(width: 20, height: 20)) {
-        self.textLabel?.text  = description
-        self.imageView?.image = icon?.reframeImageSize(iconSize)
+        self.textLabel?.text      = description
+        self.imageView?.image     = icon?.reframeImageSize(iconSize)
+        
+        self.imageView?.set(color: iconColor)
     }
 
 }

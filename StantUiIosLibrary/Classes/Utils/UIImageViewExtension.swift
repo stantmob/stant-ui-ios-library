@@ -24,4 +24,11 @@ extension UIImageView {
         }
     }
     
+    func set(color: UIColor) {
+        let template   = self.image?.withRenderingMode(.alwaysTemplate)
+        
+        self.image     = template
+        self.tintColor = color
+    }
+    
 }

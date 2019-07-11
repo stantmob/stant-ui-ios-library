@@ -16,6 +16,7 @@ class CellWithImageTests: XCTestCase {
     private var textDescription: String!
     private var cellIcon: UIImage!
     private var imageSize: CGSize!
+    private var imageColor: UIColor!
 
     override func setUp() {
         super.setUp()
@@ -24,14 +25,15 @@ class CellWithImageTests: XCTestCase {
                                                    y: 0,
                                                    width: 200,
                                                    height: 200))
-
     }
 
     override func tearDown() {
         self.cell            = nil
         self.cellIcon        = nil
         self.imageSize       = nil
+        self.imageColor      = nil
         self.textDescription = nil
+        
     }
     
     func testIfThereIsACellCreated() throws {
@@ -63,6 +65,21 @@ class CellWithImageTests: XCTestCase {
         
         try then("It should match the given image") {
             XCTAssertEqual(self.cell.imageView?.image?.pngData(), self.cellIcon.pngData())
+        }
+    }
+    
+    func testIfItChangesTheColorOfTheImage() throws {
+        try given("A generated image and a generated color") {
+            self.cellIcon   = UIImage(named: "sync")
+            self.imageColor = .yellow
+        }
+        
+        try when("Set to the cell") {
+            self.cell.set(icon: self.cellIcon, iconColor: self.imageColor)
+        }
+        
+        try then("It should have changed the color") {
+            XCTAssertEqual(self.cell.imageView?.tintColor, self.imageColor)
         }
     }
     
