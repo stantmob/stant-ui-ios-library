@@ -51,17 +51,9 @@ class ConstructionCardTests: XCTestCase {
         XCTAssertTrue(tableViewCell.percentageBackgroundView?.isDescendant(of: tableViewCell) ?? false)
         XCTAssertTrue(tableViewCell.fullProgressBarView?.isDescendant(of: tableViewCell) ?? false)
         
-        XCTAssertTrue(tableViewCell.progressBarView?.isDescendant(of: tableViewCell.fullProgressBarView!) ?? false)
-        XCTAssertTrue(tableViewCell.percentageLabel?.isDescendant(of: tableViewCell.percentageBackgroundView!) ?? false)
-        
-        XCTAssertTrue(isSameImageRepresentation(tableViewCell.photoImageView!.image!, UIImage(data: try NSData(contentsOf: NSURL(string: imageUrl)! as URL) as Data)!))
-    }
-    
-    func isSameImageRepresentation(_ image1: UIImage, _ image2: UIImage) -> Bool {
-        let data1: NSData = image1.pngData()! as NSData
-        let data2: NSData = image2.pngData()! as NSData
-
-        return data1.isEqual(to: data2 as Data)
+        XCTAssertTrue(tableViewCell.progressBarView?.isDescendant(of: tableViewCell.fullProgressBarView ?? UIView()) ?? false)
+        XCTAssertTrue(tableViewCell.percentageLabel?.isDescendant(of: tableViewCell.percentageBackgroundView ?? UIView()) ?? false)
+        XCTAssertTrue(tableViewCell.activityIndicator.isDescendant(of: tableViewCell.photoImageView ?? UIImageView()))
     }
     
     func testCheckTitleAndSubtitle() {

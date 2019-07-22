@@ -18,6 +18,7 @@ class MainMenuTabBarTests: XCTestCase {
     private let secondVC       = UIViewController()
     private let thirdVC        = UIViewController()
     private var tabBarElements = [MenuTabBarDTO]()
+    private let tabBarDelegate = MainMenuTabBarControllerMock()
 
     private let firstTitle  = "Title01"
     private let secondTitle = "Title02"
@@ -55,7 +56,7 @@ class MainMenuTabBarTests: XCTestCase {
                                         url: nil)]
         
         guard let tabBarViewController = tabBarViewController else { return }
-        tabBarViewController.set(tabBarObjects: tabBarElements)
+        tabBarViewController.set(tabBarObjects: tabBarElements, mainMenuTabBarDelegate: tabBarDelegate)
     }
     
     func testCheckTabBarElements() {
@@ -83,6 +84,7 @@ class MainMenuTabBarTests: XCTestCase {
         self.setTabViewElements()
         
         XCTAssertEqual(tabBarViewController?.selectedIndex, 0)
+        XCTAssertEqual(tabBarDelegate.selectedCellIndex, 0)
         XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, UIColor.yellow)
 
         self.clickOnSecondElement()
@@ -91,13 +93,21 @@ class MainMenuTabBarTests: XCTestCase {
     
     fileprivate func clickOnSecondElement() {
         tabBarViewController?.selectedIndex = 1
+        guard let viewControllers = tabBarViewController?.viewControllers else { return }
+        tabBarViewController?.tabBarController(tabBarViewController ?? UITabBarController(),
+                                               didSelect: viewControllers[1])
         
+        XCTAssertEqual(tabBarDelegate.selectedCellIndex, 1)
         XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, UIColor.orange)
     }
     
     fileprivate func clickOnThirdElement() {
         tabBarViewController?.selectedIndex = 2
+        guard let viewControllers = tabBarViewController?.viewControllers else { return }
+        tabBarViewController?.tabBarController(tabBarViewController ?? UITabBarController(),
+                                               didSelect: viewControllers[2])
         
+        XCTAssertEqual(tabBarDelegate.selectedCellIndex, 2)
         XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, UIColor.green)
     }
     

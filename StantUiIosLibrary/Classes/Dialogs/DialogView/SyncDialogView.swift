@@ -92,7 +92,7 @@ public class SyncDialogView: UIView {
             fullProgressBarView.anchor(leading: self.leadingAnchor,
                                        bottom: self.bottomAnchor,
                                        trailing: self.trailingAnchor,
-                                       padding: UIEdgeInsets(top: 0, left: 59, bottom: 5, right: 59),
+                                       padding: UIEdgeInsets(top: 0, left: 59, bottom: 15, right: 59),
                                        size: CGSize(width: 0, height: 5))
         }
         

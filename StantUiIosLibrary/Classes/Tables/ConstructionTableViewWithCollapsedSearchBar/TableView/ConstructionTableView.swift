@@ -54,12 +54,13 @@ public class ConstructionTableView: UITableView, UITableViewDelegate, UITableVie
         }
         
         cell.configureViewFor(construction: filteredConstructionSiteList[indexPath.row])
-        
+
         return cell
     }
-    
+
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectCellDelegate?.didClickOnTableViewCellWith(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {

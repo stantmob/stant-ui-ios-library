@@ -75,7 +75,7 @@ public class FirstHeaderRecentItemCell: UITableViewCell {
     fileprivate func configureImageWith(url: String) {
         guard let mainView = mainView, let photoImageView = photoImageView else { return }
         
-        photoImageView.showRounded(image: url, radius: 8.0)
+        photoImageView.showRoundedImageWith(path: url, radius: 8.0)
         photoImageView.anchor(top: mainView.topAnchor,
                               leading: mainView.leadingAnchor,
                               padding: UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 0),

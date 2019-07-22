@@ -1,3 +1,4 @@
+
 //
 //  DefaultSearchBar.swift
 //  StantUiIosLibrary
@@ -24,7 +25,7 @@ public class DefaultSearchBar: UIView {
     }
     
     public func configureViewWith(delegate: DefaultSearchViewDelegate, image: UIImage, placeholderText: String) {
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.clear
         self.delegate        = delegate
         
         searchBar = UISearchBar(frame: CGRect(x: 0, y: 0,

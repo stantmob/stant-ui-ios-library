@@ -19,7 +19,7 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
     var searchBarPlaceholder = String()
     var searchOnTableView    = String()
     var emptyMessage         = String()
-    var constructionSiteList = [Construction]()
+    public var constructionSiteList = [Construction]()
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,6 +39,7 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         self.searchBarIcon        = searchBarIcon
         self.searchBarPlaceholder = searchBarPlaceholder
         self.emptyMessage         = emptyMessage
+        self.backgroundColor      = UIColor.backgroundStant
         
         self.configureSearchView()
         self.configureTableView()
@@ -77,6 +78,8 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         tableView?.configureTableViewWith(constructionList: constructionSiteList,
                                           animationDelegate: self,
                                           selectCellDelegate: tableViewDelegate)
+        tableView?.backgroundColor = UIColor.clear
+        
         if let tableView = tableView, let searchView = searchView {
             self.addSubview(tableView)
             tableView.anchor(top: searchView.topAnchor,
@@ -85,28 +88,48 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
                              trailing: self.trailingAnchor,
                              padding: UIEdgeInsets(top: DefaultSearchBar.searchViewHeight, left: 0, bottom: 0, right: 0))
         }
+
     }
     
     fileprivate func configureEmptyMessageLabel() {
+        emptyMessageLabel?.removeFromSuperview()
         emptyMessageLabel = UILabel(frame: CGRect(x: 0,
                                                   y: DefaultSearchBar.searchViewHeight,
                                                   width: self.frame.width,
                                                   height: self.frame.height))
         
-        guard let emptyMessageLabel = emptyMessageLabel, let tableView = tableView else { return }
+        guard let emptyMessageLabel = emptyMessageLabel else { return }
         emptyMessageLabel.configure(text: emptyMessage,
                                     alignment: .left,
                                     size: 16,
                                     weight: .regular,
                                     color: UIColor.darkStant)
         self.addSubview(emptyMessageLabel)
-        emptyMessageLabel.anchor(top: tableView.topAnchor,
-                                 leading: self.leadingAnchor,
-                                 trailing: self.trailingAnchor,
-                                 padding: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16),
-                                 size: CGSize(width: 0, height: 50))
         emptyMessageLabel.numberOfLines = 0
-        emptyMessageLabel.isHidden = true
+        self.setEmptyMessageLabelVisibility()
+    }
+    
+    public func updateConstructionSiteList(_ constructionSites: [Construction]) {
+        self.constructionSiteList                    = constructionSites
+        self.tableView?.filteredConstructionSiteList = constructionSites
+
+        self.tableView?.reloadData()
+        self.setEmptyMessageLabelVisibility()
     }
 
+    func setEmptyMessageLabelVisibility() {
+        let listIsNotEmpty = !(tableView?.filteredConstructionSiteList.isEmpty ?? false)
+        if listIsNotEmpty {
+            emptyMessageLabel?.isHidden = true
+            return
+        }
+        
+        guard let emptyMessageLabel = emptyMessageLabel, let tableView = tableView else { return }
+        emptyMessageLabel.anchor(top:      tableView.topAnchor,
+                                 leading:  self.leadingAnchor,
+                                 trailing: self.trailingAnchor,
+                                 padding:  UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16),
+                                 size:     CGSize(width: 0, height: 50))
+        emptyMessageLabel.isHidden = false
+    }
 }

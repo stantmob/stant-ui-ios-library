@@ -12,6 +12,8 @@ public class DialogViewController: UIViewController {
     public var dialogView: UIView?
     public var titleLabel: UILabel?
     public var stackView: UIStackView?
+    public var insideView: UIView?
+    public var buttons = [DialogButton]()
     
     let dialogHeight: CGFloat = 234
 
@@ -27,17 +29,37 @@ public class DialogViewController: UIViewController {
         self.dialogView = nil
         self.titleLabel = nil
         self.stackView  = nil
+        self.insideView = nil
     }
     
     @objc func dismissViewController() {
+        UIView.animate(withDuration: 0.2) {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0)
+        }
         self.dismiss(animated: false, completion: nil)
     }
     
     public func configureView(title: String, mainView: UIView, buttons: [DialogButton]) {
         self.addDialog()
+        self.insideView = mainView
         self.addCenteredView(mainView)
         self.addTitle(title)
+        self.buttons = buttons
         self.add(buttons: buttons)
+    }
+    
+    public func updateDialog(title: String, mainView: UIView, maintainOnlyCentralButton: Bool = true) {
+        insideView?.removeFromSuperview()
+        self.addCenteredView(mainView)
+        titleLabel?.text = title
+        
+        if maintainOnlyCentralButton {
+            stackView?.removeFromSuperview()
+            let cancelButton = buttons.filter { (button) -> Bool in
+                button.style == ButtonStyle.cancel
+            }
+            self.add(buttons: cancelButton)
+        }
     }
     
     fileprivate func addDialog() {

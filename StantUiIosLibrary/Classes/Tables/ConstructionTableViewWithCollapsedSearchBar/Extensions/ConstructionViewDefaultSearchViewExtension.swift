@@ -20,10 +20,6 @@ extension ConstructionTableViewWithCollapsedSearchBar: DefaultSearchViewDelegate
         
         tableView.reloadData()
         
-        if tableView.filteredConstructionSiteList.isEmpty {
-            emptyMessageLabel?.isHidden = false
-        } else {
-            emptyMessageLabel?.isHidden = true
-        }
+        self.setEmptyMessageLabelVisibility()
     }
 }

@@ -63,23 +63,11 @@ class ConstructionsFilterTests: XCTestCase {
         XCTAssertTrue(testVC.firstButtonCalled)
         XCTAssertFalse(testVC.secondButtonCalled)
         XCTAssertFalse(testVC.thirdButtonCalled)
-        XCTAssertEqual(filterQuantityLabel.text, "1")
         
         self.clickToSelectCellOf(collectionView: collectionView, position: 1)
         XCTAssertTrue(testVC.firstButtonCalled)
         XCTAssertTrue(testVC.secondButtonCalled)
         XCTAssertFalse(testVC.thirdButtonCalled)
-        XCTAssertEqual(filterQuantityLabel.text, "2")
-    }
-    
-    func testSelectAndDeselectButtons() {
-        guard let testVC = testVC else { return }
-        let collectionView = testVC.filters?.collectionView ?? FiltersCollectionView()
-    
-        self.clickToSelectAndDeselectCells(collectionView: collectionView, positions: [0, 1])
-        XCTAssertTrue(filterIconImageView.isDescendant(of: fixedUiView))
-        XCTAssertFalse(filterQuantityUiView.isDescendant(of: fixedUiView))
-        XCTAssertFalse(filterQuantityLabel.isDescendant(of: fixedUiView))
     }
 
     fileprivate func clickToSelectCellOf(collectionView: FiltersCollectionView, position: Int) {
@@ -87,28 +75,6 @@ class ConstructionsFilterTests: XCTestCase {
         
         collectionViewCell.mainButton?.sendActions(for: .touchUpInside)
         self.updateViews()
-        
-        XCTAssertEqual(collectionViewCell.mainButton?.backgroundColor, UIColor(red: 255/255, green: 64/255, blue: 37/255, alpha: 1))
-        XCTAssertEqual(collectionViewCell.mainButton?.titleColor(for: .normal), UIColor.white)
-        XCTAssertFalse(filterIconImageView.isDescendant(of: fixedUiView))
-        XCTAssertTrue(filterQuantityUiView.isDescendant(of: fixedUiView))
-        XCTAssertTrue(filterQuantityLabel.isDescendant(of: fixedUiView))
-    }
-
-    fileprivate func clickToSelectAndDeselectCells(collectionView: FiltersCollectionView, positions: [Int]) {
-        let firstCollectionViewCell = collectionView.collectionView(collectionView, cellForItemAt: IndexPath(item: positions[0], section: 0)) as! FilterButtonCollectionViewCell
-        let secondCollectionViewCell = collectionView.collectionView(collectionView, cellForItemAt: IndexPath(item: positions[1], section: 0)) as! FilterButtonCollectionViewCell
-        
-        firstCollectionViewCell.mainButton?.sendActions(for: .touchUpInside)
-        secondCollectionViewCell.mainButton?.sendActions(for: .touchUpInside)
-        firstCollectionViewCell.mainButton?.sendActions(for: .touchUpInside)
-        secondCollectionViewCell.mainButton?.sendActions(for: .touchUpInside)
-
-        self.updateViews()
-        XCTAssertEqual(firstCollectionViewCell.mainButton?.backgroundColor, UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1))
-        XCTAssertEqual(firstCollectionViewCell.mainButton?.titleColor(for: .normal), UIColor(red: 133/255, green: 133/255, blue: 150/255, alpha: 1))
-        XCTAssertEqual(secondCollectionViewCell.mainButton?.backgroundColor, UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1))
-        XCTAssertEqual(secondCollectionViewCell.mainButton?.titleColor(for: .normal), UIColor(red: 133/255, green: 133/255, blue: 150/255, alpha: 1))
     }
     
     fileprivate func updateViews() {
@@ -131,14 +97,17 @@ class TestFilterUiViewController: UIViewController {
     
     @objc func actionButton01() {
         firstButtonCalled = true
+        filters?.changeButtonBackground(index: 0)
     }
     
     @objc func actionButton02() {
         secondButtonCalled = true
+        filters?.changeButtonBackground(index: 1)
     }
     
     @objc func actionButton03() {
         thirdButtonCalled = true
+        filters?.changeButtonBackground(index: 2)
     }
     
 }
