@@ -85,8 +85,19 @@ extension MainViewController {
 }
 
 extension MainViewController: MainMenuTabBarDelegate {
+    
+    var tabBarSelectedIndex: Int {
+        get {
+            return tabBarLastSelectedIndex
+        }
+        set {
+           tabBarLastSelectedIndex = newValue
+        }
+    }
+    
     func clickOnCellWith(index: Int, tabBarController: UITabBarController, currentViewController: UIViewController) {
-        print("did click on tab bar item")
+        tabBarSelectedIndex = index
+        print("did click on tab bar item \(tabBarSelectedIndex)")
     }
 }
 

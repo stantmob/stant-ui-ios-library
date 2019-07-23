@@ -19,6 +19,10 @@ class InternPersonCellTests: XCTestCase {
     private var profileImage: UIImage!
     private var cellDescription: String!
     private var descriptionSize: CGFloat!
+    private var mailImage: UIImage!
+    private var phoneImage: UIImage!
+    private var mailButton: UIButton!
+    private var phoneButton: UIButton!
     
     override func setUp() {
         self.cell = InternPersonCell(frame: CGRect(x: 0,
@@ -31,7 +35,11 @@ class InternPersonCellTests: XCTestCase {
         self.cell            = nil
         self.titleSize       = nil
         self.imageSize       = nil
+        self.mailImage       = nil
+        self.phoneImage      = nil
         self.titleLabel      = nil
+        self.mailButton      = nil
+        self.phoneButton     = nil
         self.profileImage    = nil
         self.cellDescription = nil
         self.descriptionSize = nil
@@ -155,5 +163,105 @@ class InternPersonCellTests: XCTestCase {
             XCTAssertEqual(self.cell.descriptionLabel.font.pointSize, self.descriptionSize)
         }
     }
+    
+    func testIfItDoesSetMailAndCallImages() throws {
+        try given("Generated mail and phone images") {
+            self.mailImage  = UIImage(named: "mail")
+            self.phoneImage = UIImage(named: "call")
+        }
+        
+        try when("Set to the cell") {
+            self.cell.set(mailImage: self.mailImage, callImage: self.phoneImage)
+        }
+        
+        try then("It should contain the given images as subviews") {
+            let imagesHashValues = self.cell.subviews.map { subview -> Int? in
+                if subview is UIImageView {
+                    let castedView = subview as? UIImageView
+                    return castedView?.image.hashValue
+                }
+                return nil
+            }
+            
+            XCTAssert(imagesHashValues.contains(self.mailImage.hashValue))
+            XCTAssert(imagesHashValues.contains(self.phoneImage.hashValue))
+        }
+        
+        try then("It should not contain any buttons set") {
+            let amountOfButtons = self.cell.subviews.filter { $0 is UIButton }.count
+            
+            XCTAssert(amountOfButtons == 0)
+        }
+    }
+    
+    func testIfItDoesSetMailButton() throws {
+        try given("A generated button and the needed setup") {
+            self.mailImage  = UIImage(named: "mail")
+            self.phoneImage = UIImage(named: "call")
+            self.mailButton = UIButton()
+        }
+        
+        try when("Set to the cell") {
+            self.cell.set(mailButton: self.mailButton,
+                          mailImage: self.mailImage,
+                          callImage: self.phoneImage)
+        }
+        
+        try then("It should contain the given button") {
+            let buttons = self.cell.subviews.map { subview -> UIButton? in
+                if subview is UIButton { return subview as? UIButton }
+                return nil
+            }
+            
+            XCTAssert(buttons.contains(self.mailButton))
+        }
+    }
 
+    func testIfItDoesSetPhoneButton() throws {
+        try given("A generated button and the needed setup") {
+            self.mailImage   = UIImage(named: "mail")
+            self.phoneImage  = UIImage(named: "call")
+            self.phoneButton = UIButton()
+        }
+        
+        try when("Set to the cell") {
+            self.cell.set(mailImage: self.mailImage,
+                          callButton: self.phoneButton,
+                          callImage: self.phoneImage)
+        }
+        
+        try then("It should contain the given button") {
+            let buttons = self.cell.subviews.map { subview -> UIButton? in
+                if subview is UIButton { return subview as? UIButton }
+                return nil
+            }
+            
+            XCTAssert(buttons.contains(self.phoneButton))
+        }
+    }
+
+    func testIfItDoesSetButtonsAndImagesForMailAndPhone() throws {
+        try given("Generated buttons and the needed setup") {
+            self.mailImage   = UIImage(named: "mail")
+            self.phoneImage  = UIImage(named: "call")
+            self.phoneButton = UIButton()
+            self.mailButton  = UIButton()
+        }
+        
+        try when("Set to the cell") {
+            self.cell.set(mailButton: self.mailButton,
+                          mailImage: self.mailImage,
+                          callButton: self.phoneButton,
+                          callImage: self.phoneImage)
+        }
+        
+        try then("It should contain the given button") {
+            let buttons = self.cell.subviews.map { subview -> UIButton? in
+                if subview is UIButton { return subview as? UIButton }
+                return nil
+            }
+            
+            XCTAssert(buttons.contains(self.phoneButton) && buttons.contains(self.mailButton))
+        }
+    }
 }

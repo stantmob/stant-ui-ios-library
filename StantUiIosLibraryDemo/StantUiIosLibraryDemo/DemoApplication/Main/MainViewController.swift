@@ -13,8 +13,10 @@ class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
     let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
-
+    
     var tableViewSelectedItem = 0
+    
+    var tabBarLastSelectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class MainViewController: UIViewController {
         self.addBottomDialogWithScrollDemoButton()
         self.addCellWithImageDemoButton()
         self.addProfileCellDemoButton()
+        self.addBottomDialogWithScrollDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {

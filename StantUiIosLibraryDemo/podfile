@@ -6,7 +6,7 @@ target 'StantUiIosLibraryDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'StantUiIosLibrary', path: '../StantUiIosLibrary.podspec'    
+  pod 'StantUiIosLibrary', path: '../StantUiIosLibrary.podspec'
   # Pods for StantUiIosLibraryDemo
 
   target 'StantUiIosLibraryDemoTests' do

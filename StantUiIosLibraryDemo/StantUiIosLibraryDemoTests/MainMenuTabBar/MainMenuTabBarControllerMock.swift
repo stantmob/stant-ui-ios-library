@@ -11,6 +11,16 @@ import StantUiIosLibrary
 
 class MainMenuTabBarControllerMock: MainMenuTabBarDelegate {
     
+    fileprivate var selectedIndex = 0
+    var tabBarSelectedIndex: Int {
+        get {
+            return selectedIndex
+        }
+        set {
+            selectedIndex = newValue
+        }
+    }
+    
     var selectedCellIndex = 0
     
     func clickOnCellWith(index: Int, tabBarController: UITabBarController, currentViewController: UIViewController) {

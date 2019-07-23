@@ -27,7 +27,7 @@ public class MainMenuTabBarController: UITabBarController, UITabBarControllerDel
         tabBar.barTintColor            = barTintColor
         tabBar.unselectedItemTintColor = unselectedItemsTintColor
         self.mainMenuTabBarDelegate    = mainMenuTabBarDelegate
-        viewControllers = tabBarObjects.map { $0.controller ?? UIViewController() }
+        viewControllers = tabBarObjects.map { $0.controller }
     }
     
     public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
@@ -40,4 +40,6 @@ public class MainMenuTabBarController: UITabBarController, UITabBarControllerDel
 
 public protocol MainMenuTabBarDelegate: class {
     func clickOnCellWith(index: Int, tabBarController: UITabBarController, currentViewController: UIViewController)
+    
+    var tabBarSelectedIndex: Int { get set }
 }

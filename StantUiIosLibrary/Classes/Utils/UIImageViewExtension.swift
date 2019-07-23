@@ -26,6 +26,14 @@ extension UIImageView {
                 activityIndicator.stopAnimating()
             }
         }
+       
+    }
+    
+    func set(color: UIColor) {
+        let template   = self.image?.withRenderingMode(.alwaysTemplate)
+        
+        self.image     = template
+        self.tintColor = color
     }
     
     fileprivate func getImageViewImage(_ imagePath: String) -> UIImage {
