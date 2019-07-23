@@ -9,6 +9,7 @@ import UIKit
 
 extension ConstructionTableViewWithCollapsedSearchBar: DefaultSearchViewDelegate {
     public func updateTableViewWith(search: String) {
+        self.currentSearch  = search
         guard let tableView = tableView else { return }
         tableView.filteredConstructionSiteList = constructionSiteList.filter { (constructionSite: Construction) -> Bool in
             let title = constructionSite.title ?? ""

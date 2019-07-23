@@ -21,6 +21,8 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
     var emptyMessage         = String()
     public var constructionSiteList = [Construction]()
     
+    var currentSearch = ""
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -41,9 +43,11 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         self.emptyMessage         = emptyMessage
         self.backgroundColor      = UIColor.backgroundStant
         
+        self.configureEmptyMessageLabel()
         self.configureSearchView()
         self.configureTableView()
-        self.configureEmptyMessageLabel()
+        self.anchorSearchAndTableView()
+        self.setEmptyMessageLabelVisibility()
     }
     
     fileprivate func configureSearchView() {
@@ -53,15 +57,6 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
                                                     height: DefaultSearchBar.searchViewHeight))
         guard let searchView = searchView else { return }
         self.addSubview(searchView)
-        searchView.anchor(top: self.topAnchor,
-                          leading: self.leadingAnchor,
-                          bottom: self.bottomAnchor,
-                          trailing: self.trailingAnchor,
-                          padding: UIEdgeInsets(top: 0,
-                                                left: 6,
-                                                bottom: self.frame.height - DefaultSearchBar.searchViewHeight,
-                                                right: 6))
-        
         searchView.configureViewWith(delegate: self,
                                      image: searchBarIcon,
                                      placeholderText: searchBarPlaceholder)
@@ -79,16 +74,25 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
                                           animationDelegate: self,
                                           selectCellDelegate: tableViewDelegate)
         tableView?.backgroundColor = UIColor.clear
+        if let tableView = tableView { self.addSubview(tableView) }
+    }
+    
+    fileprivate func anchorSearchAndTableView() {
+        guard let tableView = tableView, let searchView = searchView else { return }
         
-        if let tableView = tableView, let searchView = searchView {
-            self.addSubview(tableView)
-            tableView.anchor(top: searchView.topAnchor,
-                             leading: self.leadingAnchor,
-                             bottom: self.bottomAnchor,
-                             trailing: self.trailingAnchor,
-                             padding: UIEdgeInsets(top: DefaultSearchBar.searchViewHeight, left: 0, bottom: 0, right: 0))
-        }
-
+        searchView.anchor(top: self.topAnchor,
+                          leading: self.leadingAnchor,
+                          bottom: self.bottomAnchor,
+                          trailing: self.trailingAnchor,
+                          padding: UIEdgeInsets(top: 0,
+                                                left: 6,
+                                                bottom: self.frame.height - DefaultSearchBar.searchViewHeight,
+                                                right: 6))
+        tableView.anchor(top: searchView.topAnchor,
+                         leading: self.leadingAnchor,
+                         bottom: self.bottomAnchor,
+                         trailing: self.trailingAnchor,
+                         padding: UIEdgeInsets(top: DefaultSearchBar.searchViewHeight, left: 0, bottom: 0, right: 0))
     }
     
     fileprivate func configureEmptyMessageLabel() {
@@ -106,14 +110,13 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
                                     color: UIColor.darkStant)
         self.addSubview(emptyMessageLabel)
         emptyMessageLabel.numberOfLines = 0
-        self.setEmptyMessageLabelVisibility()
     }
     
     public func updateConstructionSiteList(_ constructionSites: [Construction]) {
         self.constructionSiteList                    = constructionSites
         self.tableView?.filteredConstructionSiteList = constructionSites
 
-        self.tableView?.reloadData()
+        self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()
     }
 
