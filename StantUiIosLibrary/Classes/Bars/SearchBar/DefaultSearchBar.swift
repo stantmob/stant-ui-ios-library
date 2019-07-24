@@ -16,6 +16,9 @@ public class DefaultSearchBar: UIView {
     var searchOnTableView = String()
     weak var delegate: DefaultSearchViewDelegate?
     
+    var isSearchEnable     = true
+    var didTapCancelButton = false
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -49,7 +52,6 @@ public class DefaultSearchBar: UIView {
         searchTextField.layer.borderWidth  = 2.0
         searchTextField.layer.borderColor  = UIColor.veryLightGrayStant.cgColor
         searchTextField.layer.cornerRadius = 4
-        
         UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.systemFont(ofSize: 16)
     }
     
