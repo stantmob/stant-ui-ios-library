@@ -150,6 +150,8 @@ public class BottomDialogWithScrollViewController: UIViewController {
                          bottom: mainView.bottomAnchor,
                          trailing: mainView.trailingAnchor,
                          padding: UIEdgeInsets(top: 38, left: 0, bottom: 0, right: 0))
+        
+        tableView.selectRow(at: IndexPath(row: selectedItemIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
 }
