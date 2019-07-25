@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		0B2CCE3737B433F58E8D9555D3052E4C /* MenuTabBarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD37A953441C25F89E47006F69C22E /* MenuTabBarDTO.swift */; };
 		0FF59655FCCFAC384F8EC28A81AF21B7 /* ConstructionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EB5859181DF68EBDD3425B9B94C343 /* ConstructionTableView.swift */; };
 		11CEF23B76B05F508E6B8D50DFCC0F59 /* FirstHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172C95D95B0A5F9AD0F9DD321D1915C /* FirstHeaderView.swift */; };
@@ -47,6 +48,50 @@
 		E5DE5BDCADD5C30F3D85E7567ECD071B /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F1B9861C38174FC9CEFC048A59B8C90 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAEF27FC745EE4458AAA519A67D4617B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F884210A8EC5D55F7FDE9F7EF655954 /* UIViewExtension.swift */; };
 		F9DACA63A0958AF1609F7DB50970ACA1 /* FirstHeaderDropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769120CA4D5292A00275C61288AAB6F8 /* FirstHeaderDropdownButton.swift */; };
+=======
+		0C5C4E48F78875558C7FAB22B57D41FE /* ConstructionViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5517A5245ECDBBED92490C426B617C /* ConstructionViewDefaultSearchViewExtension.swift */; };
+		0C6E7882CB6A73DCFE7623F73C08DEBA /* DefaultSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB85C54C55778FE11ABB6035B37D5745 /* DefaultSearchBar.swift */; };
+		12057846FBCCCFF96A042E2A9252B252 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9502B08AEA1398D8A035B887486B4E84 /* ViewTeste.swift */; };
+		175AEE9612605CD0C19ECAE1B842BF74 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213C4D533BE5F026D0924C52754959D /* UIImageExtension.swift */; };
+		19BE8536CC3AC24E30EEA16CC41D0948 /* MenuTabBarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4016E7D2A72E406FDEDC83E18745DD6A /* MenuTabBarDTO.swift */; };
+		1D8CB5DAFD255BE8BAB24FD3B6BB5828 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2F5E20FA20E54AB8C0141C0787D1D468 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3285EFAF58A7453A450CD337ED0F04CD /* FirstHeaderDropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B811F6A6970F97957F8EA701C4B7E7E /* FirstHeaderDropdownButton.swift */; };
+		3345839BD071A66DCCBFBECD81FD2A29 /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF35413EE0894BE8E1C66379B817638B /* BottomDialogWithScrollViewController.swift */; };
+		381A8CC027AE3DCDDC877D13ABF3EBDF /* SelectRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84DEDA2F397321BC337237CF55B99D /* SelectRecentViewController.swift */; };
+		3D4C8914EC91C78C7F81C56B9D0DAD78 /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA7E13C434E675E44E7E3D0BD0B225 /* ConstructionTableViewWithCollapsedSearchBar.swift */; };
+		4DFEF26F64A4E6CF3985412CC3352432 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D5E86B37CB1D42B0370E466E54DCB /* UIColorExtension.swift */; };
+		4EA01FDC7209CE5AA94010A5F7C1E3DA /* ConstructionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9482929345CDD725C3869DE8F8996C90 /* ConstructionTableView.swift */; };
+		55C011207215D0D6DD1195B907AFD638 /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAF22C218974C6B04938C3A562131E0 /* StantUiIosLibrary-dummy.m */; };
+		5B9B8A6C18377709D0B7B40B5FD3D017 /* DialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEAF405F318CC3F4E92AD91B9D43EB0 /* DialogButton.swift */; };
+		5F63CD2E9351E0D66650FCB85C0CB1D2 /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A83A2EA2251A1409204C1F1639C0C /* ConstructionCard.swift */; };
+		639706B71375A89230FF3264CE7A5AEF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D0D38790B1894B754B58D68E32B965 /* UIViewExtension.swift */; };
+		7007E6ED01089F0347B5355274D2D8C6 /* InternPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585CDF5CEB90894D38B5315572643082 /* InternPersonCell.swift */; };
+		725A0B55B45882E50DD2963883940E74 /* FirstHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E64F0DF3196449EE2A39D7EB2C2348 /* FirstHeaderView.swift */; };
+		763028A7C4889CDA34033193EA7E8040 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7F75A488DD8E661B9A3455E0C11DFA6E /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */; };
+		80DD79294329712AFD94D5069895EC49 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69457A8531CFDE82AE81499888B9D24A /* UILabelExtension.swift */; };
+		87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EDD2B9ACA95D34D895381D20E3741CC /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F85C1C286924716DA0CEF801AB40A7 /* FiltersCollectionView.swift */; };
+		9382FFF6D7E6B8C7149FA453311B2DDD /* FilterButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F9B492C2F130224BA4E5801773065 /* FilterButtonCollectionViewCell.swift */; };
+		9907FEA3147466F05F6AA175D243B4E0 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1BFBAEC7806A78944FACC2845C4E2 /* UIImageViewExtension.swift */; };
+		9AD3F0CBC32DA8FD6CFC6A693E997060 /* FirstHeaderRecentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5771540D23D8964E1C8348FEE150F /* FirstHeaderRecentItemCell.swift */; };
+		9D997B07B2AF4C1E67F53A0F9F21E226 /* ScrollableTableViewDialogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E564F2F7B5DDDDA4970853694A571C4 /* ScrollableTableViewDialogCell.swift */; };
+		A0A050A18C527D5E45472ADB5268507C /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF6C6CC317B71D1B3ECF32ADF3C4F7 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */; };
+		AC70186E43C34AAEE1489A36674CEFF5 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */; };
+		B2022F679859EB6BE02539AE6BA98AAE /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57274CA34D2EB14BF1FA7D38F507BEC9 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B940064918F097038C2CAC494284345F /* ConstructionsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357C426FC2B36F811C9CBB4EEA7B7AF /* ConstructionsFilter.swift */; };
+		BD98FEDDC5C4B99BA98DF714C05B6380 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E134B78B494CFB3B00FAAB83A5E4C /* DialogViewController.swift */; };
+		C7A00DB5E95DD8969CE82C6DB0A79861 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D02FD76C18FB5F551D35783134745986 /* SyncDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769A4DE8632354C81EE7DE2B5ED0B1C /* SyncDialogView.swift */; };
+		DC966EA4B99D2AE285A1F1351324C363 /* MainMenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5309E08535696B6A695171DE61558 /* MainMenuTabBarController.swift */; };
+		E2BEA1C29C75304EA35C8EC896721D98 /* FirstHeaderRightBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C719B32F466D1D00902F990BB3DE7 /* FirstHeaderRightBarButton.swift */; };
+		ED17CB7E98320E1D5E45D63015419B33 /* InternActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338548FEE414A1E4F1840FAB4D7C60FF /* InternActionCell.swift */; };
+		F528D64F984DDDA63523316B690D0EBA /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD988BB9060BCA314702F1A6A5762AAB /* FilterButton.swift */; };
+		F68F1896E29A3565A3AA60502EABEC4E /* DefaultSearchBarDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF922292F6ED75BC02D62AB40E6414 /* DefaultSearchBarDelegateExtension.swift */; };
+		F8B08F44C2552FDBA81B567DB10378DF /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DAFDB6FAE8110F7A4FBB13231A1812 /* UIViewLayoutExtension.swift */; };
+		FDC4D39240E9CF941CB25E2ADACF1C84 /* FirstHeaderRecentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1487442F3142AD118771433F8CFC6 /* FirstHeaderRecentItem.swift */; };
+>>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +112,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		0308D31E1E3E8FE016519B506FAD5099 /* FirstHeaderRightBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRightBarButton.swift; sourceTree = "<group>"; };
 		088FFF5D16AF3B816FA5B397C34D6F98 /* FirstHeaderRecentItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItem.swift; sourceTree = "<group>"; };
+=======
+		048E134B78B494CFB3B00FAAB83A5E4C /* DialogViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		05BF6C6CC317B71D1B3ECF32ADF3C4F7 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemo-umbrella.h"; sourceTree = "<group>"; };
 		09261D554DD1AA0AE14F8925D8A79614 /* ConstructionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
 		09AA8720879CB7D8AA2937F4B1F3FB16 /* FirstHeaderRecentItemCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItemCell.swift; sourceTree = "<group>"; };
 		0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemoTests-umbrella.h"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		0BCA7E9627D020CFD2B5B6604D17837B /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
 		10422ACDD9F052066D63FC95B7F3E926 /* Pods-StantUiIosLibraryDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-Info.plist"; sourceTree = "<group>"; };
 		1E4833F4C4D00AF2C58A78CA7EAF3158 /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
@@ -89,8 +140,36 @@
 		43B886666541ED9A07C3616453E1CD0B /* InternPersonCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternPersonCell.swift; sourceTree = "<group>"; };
 		463BBE081674D46A8A78440606F3E47C /* ConstructionCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
 		516DE50C003B74B155155A6E78178AAE /* SyncDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
+=======
+		0CB1487442F3142AD118771433F8CFC6 /* FirstHeaderRecentItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItem.swift; sourceTree = "<group>"; };
+		10422ACDD9F052066D63FC95B7F3E926 /* Pods-StantUiIosLibraryDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-Info.plist"; sourceTree = "<group>"; };
+		1FEAF405F318CC3F4E92AD91B9D43EB0 /* DialogButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogButton.swift; sourceTree = "<group>"; };
+		2751B91001E5D1FF49E74865A2AC8C95 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3357C426FC2B36F811C9CBB4EEA7B7AF /* ConstructionsFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionsFilter.swift; sourceTree = "<group>"; };
+		338548FEE414A1E4F1840FAB4D7C60FF /* InternActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternActionCell.swift; sourceTree = "<group>"; };
+		3769A4DE8632354C81EE7DE2B5ED0B1C /* SyncDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
+		38D5771540D23D8964E1C8348FEE150F /* FirstHeaderRecentItemCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItemCell.swift; sourceTree = "<group>"; };
+		395970EC61D8F9DE0F4570A1245BC11D /* Pods-StantUiIosLibraryDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StantUiIosLibraryDemo-frameworks.sh"; sourceTree = "<group>"; };
+		3D5517A5245ECDBBED92490C426B617C /* ConstructionViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
+		3EDA7E13C434E675E44E7E3D0BD0B225 /* ConstructionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
+		4016E7D2A72E406FDEDC83E18745DD6A /* MenuTabBarDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuTabBarDTO.swift; sourceTree = "<group>"; };
+		429E759E718004E0C7BC03A6608AC1FF /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StantUiIosLibrary.framework; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F85C1C286924716DA0CEF801AB40A7 /* FiltersCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
+		4570927C08C6F17A6546ECDE08994D7D /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
+		4E67660EF28E9B0C1F11711D35381610 /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
+		524D8583F0D50D29E7CE7544E33450D3 /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		56BFE6E66CECBC3DDA84DA75501E7FF7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		57274CA34D2EB14BF1FA7D38F507BEC9 /* StantUiIosLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-umbrella.h"; sourceTree = "<group>"; };
+		585CDF5CEB90894D38B5315572643082 /* InternPersonCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternPersonCell.swift; sourceTree = "<group>"; };
+		596F9B492C2F130224BA4E5801773065 /* FilterButtonCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E564F2F7B5DDDDA4970853694A571C4 /* ScrollableTableViewDialogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollableTableViewDialogCell.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		68566BDB28AAD2BAC190B1DEA4B03F7C /* Pods-StantUiIosLibraryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.release.xcconfig"; sourceTree = "<group>"; };
+		69457A8531CFDE82AE81499888B9D24A /* UILabelExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		6AA5309E08535696B6A695171DE61558 /* MainMenuTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainMenuTabBarController.swift; sourceTree = "<group>"; };
 		6C3968C525C8FD506C924AF18A4767F7 /* Pods-StantUiIosLibraryDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		6DF4E5B9990250D8C5551E53A30D9421 /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
 		6EC5389F0F2236947DEAD191DF4262BB /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		769120CA4D5292A00275C61288AAB6F8 /* FirstHeaderDropdownButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderDropdownButton.swift; sourceTree = "<group>"; };
@@ -123,6 +202,38 @@
 		E3647F9417ECF98355D3F82965CECDD5 /* Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E83E531C24F903CC61CC0FEE14789A18 /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF459D52C86CBF9FA8C727E188EFA000 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+=======
+		73DAFDB6FAE8110F7A4FBB13231A1812 /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
+		78E64F0DF3196449EE2A39D7EB2C2348 /* FirstHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderView.swift; sourceTree = "<group>"; };
+		7B811F6A6970F97957F8EA701C4B7E7E /* FirstHeaderDropdownButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderDropdownButton.swift; sourceTree = "<group>"; };
+		7E90D46BEBDB1B9A6958CA60DEA40C24 /* Pods-StantUiIosLibraryDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		85C1BFBAEC7806A78944FACC2845C4E2 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		88AF922292F6ED75BC02D62AB40E6414 /* DefaultSearchBarDelegateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBarDelegateExtension.swift; sourceTree = "<group>"; };
+		8D84DEDA2F397321BC337237CF55B99D /* SelectRecentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectRecentViewController.swift; sourceTree = "<group>"; };
+		9482929345CDD725C3869DE8F8996C90 /* ConstructionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableView.swift; sourceTree = "<group>"; };
+		9502B08AEA1398D8A035B887486B4E84 /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
+		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoTests.framework; path = "Pods-StantUiIosLibraryDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemo-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A10080F1A6AAB065335DCC693571CB00 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoTests-dummy.m"; sourceTree = "<group>"; };
+		AFAF22C218974C6B04938C3A562131E0 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
+		BC2A83A2EA2251A1409204C1F1639C0C /* ConstructionCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
+		BD988BB9060BCA314702F1A6A5762AAB /* FilterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		BEC8AA4D42A2670EB8FA1427AA014653 /* Pods-StantUiIosLibraryDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemoTests.modulemap"; sourceTree = "<group>"; };
+		C2D0D38790B1894B754B58D68E32B965 /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		CF1C719B32F466D1D00902F990BB3DE7 /* FirstHeaderRightBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRightBarButton.swift; sourceTree = "<group>"; };
+		CF35413EE0894BE8E1C66379B817638B /* BottomDialogWithScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollViewController.swift; sourceTree = "<group>"; };
+		CF73C53E72862E4190C9EAEBBEC074E9 /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
+		D573C606A2CB5159F5802054438D2C15 /* Pods-StantUiIosLibraryDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-Info.plist"; sourceTree = "<group>"; };
+		DB0A509A3A6BFC848C175623D654B237 /* Pods-StantUiIosLibraryDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE2D5E86B37CB1D42B0370E466E54DCB /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E213C4D533BE5F026D0924C52754959D /* UIImageExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		E3647F9417ECF98355D3F82965CECDD5 /* Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E83E531C24F903CC61CC0FEE14789A18 /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB85C54C55778FE11ABB6035B37D5745 /* DefaultSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBar.swift; sourceTree = "<group>"; };
+		EF49E760B669E8B1A80B99CE508DB63B /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
+>>>>>>> master
 		EFC60B91AD8D3C8812B554BCA4C0424D /* Pods-StantUiIosLibraryDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F0264A16974D620F42A533B8F0479BEC /* ConstructionViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
 		F3229B59B6C736ABD26DE76E46422967 /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -132,11 +243,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		130106836C76F2803B6152E587AAAAC5 /* Frameworks */ = {
+		53C65EE3312FA5A5538A527B63915255 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8867D9F52FB2E1C60B25222B083E63E7 /* Foundation.framework in Frameworks */,
+				763028A7C4889CDA34033193EA7E8040 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +279,7 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		052423410FFD9D7964526026B2C0D1E1 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,11 +295,19 @@
 			isa = PBXGroup;
 			children = (
 				731864A5F6A230220DDF6B111C369F5E /* SearchBar */,
+=======
+		18322636ABA468BF0F77F356B2F51390 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				338548FEE414A1E4F1840FAB4D7C60FF /* InternActionCell.swift */,
+				585CDF5CEB90894D38B5315572643082 /* InternPersonCell.swift */,
+>>>>>>> master
 			);
 			name = Bars;
 			path = StantUiIosLibrary/Classes/Bars;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		09A63FE93F6CEB5C9AE78725B7274BB6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +341,25 @@
 			);
 			name = Menus;
 			path = StantUiIosLibrary/Classes/Menus;
+=======
+		1CC58C48049BB1AC268EABB8743510E5 /* StantUiIosLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				9502B08AEA1398D8A035B887486B4E84 /* ViewTeste.swift */,
+				31FE882369D752C6304E8C5F42B03257 /* Bars */,
+				FBFEED2D979DC3F70CC4107EC73848B3 /* Cards */,
+				18322636ABA468BF0F77F356B2F51390 /* Cells */,
+				84B5636922114A35541D7F5240EC699E /* Dialogs */,
+				E9AC4E5AE240EDACBCA515CFF15D9321 /* Headers */,
+				E243DB554621ABD485CEA7D0085A97B2 /* Menus */,
+				74FFCFF3583392803968278BF0F206CB /* Pod */,
+				AE4DFB7A8A7CBC7119FC9CF795D21F50 /* Support Files */,
+				609F49A1237B35E981E4923F6D415C86 /* Tables */,
+				745BA96F70F35CC8BBB93FC41ED09A36 /* Utils */,
+			);
+			name = StantUiIosLibrary;
+			path = ../..;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		23FBACE5A1F65A61190F8F7B794FDAB5 /* Pods-StantUiIosLibraryDemoTests */ = {
@@ -239,6 +378,7 @@
 			path = "Target Support Files/Pods-StantUiIosLibraryDemoTests";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		2D0A709DE4566BDBC0D578C158390406 /* ConstructionTableViewWithCollapsedSearchBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +398,34 @@
 				6EC5389F0F2236947DEAD191DF4262BB /* StantUiIosLibrary.podspec */,
 			);
 			name = Pod;
+=======
+		31FE882369D752C6304E8C5F42B03257 /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				ED880AE053F4F3426274C264449541FF /* SearchBar */,
+			);
+			name = Bars;
+			path = StantUiIosLibrary/Classes/Bars;
+			sourceTree = "<group>";
+		};
+		4828093D0644AB3C3153A8A9758B2D06 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6AA5309E08535696B6A695171DE61558 /* MainMenuTabBarController.swift */,
+				4016E7D2A72E406FDEDC83E18745DD6A /* MenuTabBarDTO.swift */,
+			);
+			name = MainMenu;
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		609F49A1237B35E981E4923F6D415C86 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				E42BF2F79C2EC5496376E64FC5E0D136 /* ConstructionTableViewWithCollapsedSearchBar */,
+			);
+			name = Tables;
+			path = StantUiIosLibrary/Classes/Tables;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		66364AA4EC25D66A03D81060EA30C0AF /* Products */ = {
@@ -270,20 +438,69 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		731864A5F6A230220DDF6B111C369F5E /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
 				F7724D1333A5AEA3D0B27F38CF2DA5D8 /* DefaultSearchBar.swift */,
 				22CD28F75183F0C05C99A9E4B4FFBDCE /* DefaultSearchBarDelegateExtension.swift */,
+=======
+		745BA96F70F35CC8BBB93FC41ED09A36 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE2D5E86B37CB1D42B0370E466E54DCB /* UIColorExtension.swift */,
+				E213C4D533BE5F026D0924C52754959D /* UIImageExtension.swift */,
+				85C1BFBAEC7806A78944FACC2845C4E2 /* UIImageViewExtension.swift */,
+				69457A8531CFDE82AE81499888B9D24A /* UILabelExtension.swift */,
+				C2D0D38790B1894B754B58D68E32B965 /* UIViewExtension.swift */,
+				73DAFDB6FAE8110F7A4FBB13231A1812 /* UIViewLayoutExtension.swift */,
+			);
+			name = Utils;
+			path = StantUiIosLibrary/Classes/Utils;
+			sourceTree = "<group>";
+		};
+		74FFCFF3583392803968278BF0F206CB /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				56BFE6E66CECBC3DDA84DA75501E7FF7 /* LICENSE */,
+				A10080F1A6AAB065335DCC693571CB00 /* README.md */,
+				524D8583F0D50D29E7CE7544E33450D3 /* StantUiIosLibrary.podspec */,
+>>>>>>> master
 			);
 			name = SearchBar;
 			path = SearchBar;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		7C3F38D5FE490BDC3650200A828AA1E0 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
 				E96E454E8EC4B1F2E0B92F17F73A7E38 /* Construction */,
+=======
+		7A49D6F79577B30BC3482340BA617103 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9482929345CDD725C3869DE8F8996C90 /* ConstructionTableView.swift */,
+			);
+			name = TableView;
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		83379BEE8FA96DA15CF07F8B87EAB9CD /* Construction */ = {
+			isa = PBXGroup;
+			children = (
+				BC2A83A2EA2251A1409204C1F1639C0C /* ConstructionCard.swift */,
+			);
+			name = Construction;
+			path = Construction;
+			sourceTree = "<group>";
+		};
+		84B5636922114A35541D7F5240EC699E /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				D931BBAA5784C8C7EF09745F32ED787F /* BottomDialogWithScroll */,
+				9BA0246F98652C7C427C4CF354CAB705 /* DialogView */,
+>>>>>>> master
 			);
 			name = Cards;
 			path = StantUiIosLibrary/Classes/Cards;
@@ -320,6 +537,7 @@
 			path = "Target Support Files/Pods-StantUiIosLibraryDemo";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		B4AE99D03FF2001DC332E9659ECA5DB3 /* StantUiIosLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +572,43 @@
 				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
+=======
+		9BA0246F98652C7C427C4CF354CAB705 /* DialogView */ = {
+			isa = PBXGroup;
+			children = (
+				1FEAF405F318CC3F4E92AD91B9D43EB0 /* DialogButton.swift */,
+				048E134B78B494CFB3B00FAAB83A5E4C /* DialogViewController.swift */,
+				3769A4DE8632354C81EE7DE2B5ED0B1C /* SyncDialogView.swift */,
+			);
+			name = DialogView;
+			path = DialogView;
+			sourceTree = "<group>";
+		};
+		AE4DFB7A8A7CBC7119FC9CF795D21F50 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF73C53E72862E4190C9EAEBBEC074E9 /* StantUiIosLibrary.modulemap */,
+				EF49E760B669E8B1A80B99CE508DB63B /* StantUiIosLibrary.xcconfig */,
+				AFAF22C218974C6B04938C3A562131E0 /* StantUiIosLibrary-dummy.m */,
+				4E67660EF28E9B0C1F11711D35381610 /* StantUiIosLibrary-Info.plist */,
+				4570927C08C6F17A6546ECDE08994D7D /* StantUiIosLibrary-prefix.pch */,
+				57274CA34D2EB14BF1FA7D38F507BEC9 /* StantUiIosLibrary-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "StantUiIosLibraryDemo/Pods/Target Support Files/StantUiIosLibrary";
+			sourceTree = "<group>";
+		};
+		B9DDE13E43513E59CE61345F0079FB63 /* ConstructionsFilter */ = {
+			isa = PBXGroup;
+			children = (
+				3357C426FC2B36F811C9CBB4EEA7B7AF /* ConstructionsFilter.swift */,
+				BD988BB9060BCA314702F1A6A5762AAB /* FilterButton.swift */,
+				596F9B492C2F130224BA4E5801773065 /* FilterButtonCollectionViewCell.swift */,
+				42F85C1C286924716DA0CEF801AB40A7 /* FiltersCollectionView.swift */,
+			);
+			name = ConstructionsFilter;
+			path = ConstructionsFilter;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		C0F7C961DC237649D1F4228EF8DC95B4 /* Cells */ = {
@@ -366,6 +621,7 @@
 			path = StantUiIosLibrary/Classes/Cells;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		C47B214762ACA677EC15CEF698A26F63 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +640,18 @@
 			);
 			name = Headers;
 			path = StantUiIosLibrary/Classes/Headers;
+=======
+		CE4DEF2F74EA42846C25E273AA02C0EE /* FirstHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7B811F6A6970F97957F8EA701C4B7E7E /* FirstHeaderDropdownButton.swift */,
+				CF1C719B32F466D1D00902F990BB3DE7 /* FirstHeaderRightBarButton.swift */,
+				78E64F0DF3196449EE2A39D7EB2C2348 /* FirstHeaderView.swift */,
+				F11BD4F3FCB069BCCED1E3C5D0B1F92D /* SelectRecentDialog */,
+			);
+			name = FirstHeader;
+			path = FirstHeader;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -405,6 +673,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		E5A784B60F7DCACD1A3D95247A724C2A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,16 +711,92 @@
 			);
 			name = TableView;
 			path = TableView;
+=======
+		D931BBAA5784C8C7EF09745F32ED787F /* BottomDialogWithScroll */ = {
+			isa = PBXGroup;
+			children = (
+				CF35413EE0894BE8E1C66379B817638B /* BottomDialogWithScrollViewController.swift */,
+				5E564F2F7B5DDDDA4970853694A571C4 /* ScrollableTableViewDialogCell.swift */,
+			);
+			name = BottomDialogWithScroll;
+			path = BottomDialogWithScroll;
+			sourceTree = "<group>";
+		};
+		E06EFC757F557E3BEE02AD55FBF558CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D5517A5245ECDBBED92490C426B617C /* ConstructionViewDefaultSearchViewExtension.swift */,
+				05BF6C6CC317B71D1B3ECF32ADF3C4F7 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */,
+			);
+			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E243DB554621ABD485CEA7D0085A97B2 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				4828093D0644AB3C3153A8A9758B2D06 /* MainMenu */,
+			);
+			name = Menus;
+			path = StantUiIosLibrary/Classes/Menus;
+			sourceTree = "<group>";
+		};
+		E42BF2F79C2EC5496376E64FC5E0D136 /* ConstructionTableViewWithCollapsedSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				3EDA7E13C434E675E44E7E3D0BD0B225 /* ConstructionTableViewWithCollapsedSearchBar.swift */,
+				E06EFC757F557E3BEE02AD55FBF558CC /* Extensions */,
+				7A49D6F79577B30BC3482340BA617103 /* TableView */,
+			);
+			name = ConstructionTableViewWithCollapsedSearchBar;
+			path = ConstructionTableViewWithCollapsedSearchBar;
+			sourceTree = "<group>";
+		};
+		E9AC4E5AE240EDACBCA515CFF15D9321 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				B9DDE13E43513E59CE61345F0079FB63 /* ConstructionsFilter */,
+				CE4DEF2F74EA42846C25E273AA02C0EE /* FirstHeader */,
+			);
+			name = Headers;
+			path = StantUiIosLibrary/Classes/Headers;
+			sourceTree = "<group>";
+		};
+		ED880AE053F4F3426274C264449541FF /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				EB85C54C55778FE11ABB6035B37D5745 /* DefaultSearchBar.swift */,
+				88AF922292F6ED75BC02D62AB40E6414 /* DefaultSearchBarDelegateExtension.swift */,
+			);
+			name = SearchBar;
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		F11BD4F3FCB069BCCED1E3C5D0B1F92D /* SelectRecentDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0CB1487442F3142AD118771433F8CFC6 /* FirstHeaderRecentItem.swift */,
+				38D5771540D23D8964E1C8348FEE150F /* FirstHeaderRecentItemCell.swift */,
+				8D84DEDA2F397321BC337237CF55B99D /* SelectRecentViewController.swift */,
+			);
+			name = SelectRecentDialog;
+			path = SelectRecentDialog;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		F2D4F2F152C99FB19E33490BE3DE8AC5 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B4AE99D03FF2001DC332E9659ECA5DB3 /* StantUiIosLibrary */,
+=======
+				1CC58C48049BB1AC268EABB8743510E5 /* StantUiIosLibrary */,
+>>>>>>> master
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		F86468DE9464F5E707CD6AB22A2701AE /* ConstructionsFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,16 +807,25 @@
 			);
 			name = ConstructionsFilter;
 			path = ConstructionsFilter;
+=======
+		FBFEED2D979DC3F70CC4107EC73848B3 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				83379BEE8FA96DA15CF07F8B87EAB9CD /* Construction */,
+			);
+			name = Cards;
+			path = StantUiIosLibrary/Classes/Cards;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6BF637D0441D1653037FAACEBA9B259C /* Headers */ = {
+		83333323D28EC769517F8565380EA2EF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5DE5BDCADD5C30F3D85E7567ECD071B /* StantUiIosLibrary-umbrella.h in Headers */,
+				B2022F679859EB6BE02539AE6BA98AAE /* StantUiIosLibrary-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,12 +869,19 @@
 		};
 		700FA4C1FD72FEEE1830AC61D6CF9210 /* StantUiIosLibrary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BA2AB8D69A570609E85B8619507C92A /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */;
+			buildConfigurationList = 20D475CD871C5D4EE58C4570C7FA3018 /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */;
 			buildPhases = (
+<<<<<<< HEAD
 				6BF637D0441D1653037FAACEBA9B259C /* Headers */,
 				0F2BAC30FA63AD8284FDFFBCBF451A04 /* Sources */,
 				130106836C76F2803B6152E587AAAAC5 /* Frameworks */,
 				86093F44B986E60AD84FFCA74F242351 /* Resources */,
+=======
+				83333323D28EC769517F8565380EA2EF /* Headers */,
+				D9930519049587ABE5B7D26961C470A2 /* Sources */,
+				53C65EE3312FA5A5538A527B63915255 /* Frameworks */,
+				5C7AED078EC1BC79CEE34CD3CFFCFCD5 /* Resources */,
+>>>>>>> master
 			);
 			buildRules = (
 			);
@@ -586,7 +947,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		86093F44B986E60AD84FFCA74F242351 /* Resources */ = {
+		5C7AED078EC1BC79CEE34CD3CFFCFCD5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -603,6 +964,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+<<<<<<< HEAD
 		0F2BAC30FA63AD8284FDFFBCBF451A04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -639,14 +1001,13 @@
 				EAEF27FC745EE4458AAA519A67D4617B /* UIViewExtension.swift in Sources */,
 				22AAA258626B59BBF9362DB71ED89C2E /* UIViewLayoutExtension.swift in Sources */,
 				7831BFBCEBC83A8FEB834522BB3A2206 /* ViewTeste.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+=======
 		8FA0CD4B4E0DC271F06279A23519A140 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AC70186E43C34AAEE1489A36674CEFF5 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */,
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +1016,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F75A488DD8E661B9A3455E0C11DFA6E /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9930519049587ABE5B7D26961C470A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3345839BD071A66DCCBFBECD81FD2A29 /* BottomDialogWithScrollViewController.swift in Sources */,
+				5F63CD2E9351E0D66650FCB85C0CB1D2 /* ConstructionCard.swift in Sources */,
+				B940064918F097038C2CAC494284345F /* ConstructionsFilter.swift in Sources */,
+				4EA01FDC7209CE5AA94010A5F7C1E3DA /* ConstructionTableView.swift in Sources */,
+				3D4C8914EC91C78C7F81C56B9D0DAD78 /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */,
+				0C5C4E48F78875558C7FAB22B57D41FE /* ConstructionViewDefaultSearchViewExtension.swift in Sources */,
+				A0A050A18C527D5E45472ADB5268507C /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */,
+				0C6E7882CB6A73DCFE7623F73C08DEBA /* DefaultSearchBar.swift in Sources */,
+				F68F1896E29A3565A3AA60502EABEC4E /* DefaultSearchBarDelegateExtension.swift in Sources */,
+				5B9B8A6C18377709D0B7B40B5FD3D017 /* DialogButton.swift in Sources */,
+				BD98FEDDC5C4B99BA98DF714C05B6380 /* DialogViewController.swift in Sources */,
+				F528D64F984DDDA63523316B690D0EBA /* FilterButton.swift in Sources */,
+				9382FFF6D7E6B8C7149FA453311B2DDD /* FilterButtonCollectionViewCell.swift in Sources */,
+				8EDD2B9ACA95D34D895381D20E3741CC /* FiltersCollectionView.swift in Sources */,
+				3285EFAF58A7453A450CD337ED0F04CD /* FirstHeaderDropdownButton.swift in Sources */,
+				FDC4D39240E9CF941CB25E2ADACF1C84 /* FirstHeaderRecentItem.swift in Sources */,
+				9AD3F0CBC32DA8FD6CFC6A693E997060 /* FirstHeaderRecentItemCell.swift in Sources */,
+				E2BEA1C29C75304EA35C8EC896721D98 /* FirstHeaderRightBarButton.swift in Sources */,
+				725A0B55B45882E50DD2963883940E74 /* FirstHeaderView.swift in Sources */,
+				ED17CB7E98320E1D5E45D63015419B33 /* InternActionCell.swift in Sources */,
+				7007E6ED01089F0347B5355274D2D8C6 /* InternPersonCell.swift in Sources */,
+				DC966EA4B99D2AE285A1F1351324C363 /* MainMenuTabBarController.swift in Sources */,
+				19BE8536CC3AC24E30EEA16CC41D0948 /* MenuTabBarDTO.swift in Sources */,
+				9D997B07B2AF4C1E67F53A0F9F21E226 /* ScrollableTableViewDialogCell.swift in Sources */,
+				381A8CC027AE3DCDDC877D13ABF3EBDF /* SelectRecentViewController.swift in Sources */,
+				55C011207215D0D6DD1195B907AFD638 /* StantUiIosLibrary-dummy.m in Sources */,
+				D02FD76C18FB5F551D35783134745986 /* SyncDialogView.swift in Sources */,
+				4DFEF26F64A4E6CF3985412CC3352432 /* UIColorExtension.swift in Sources */,
+				175AEE9612605CD0C19ECAE1B842BF74 /* UIImageExtension.swift in Sources */,
+				9907FEA3147466F05F6AA175D243B4E0 /* UIImageViewExtension.swift in Sources */,
+				80DD79294329712AFD94D5069895EC49 /* UILabelExtension.swift in Sources */,
+				639706B71375A89230FF3264CE7A5AEF /* UIViewExtension.swift in Sources */,
+				F8B08F44C2552FDBA81B567DB10378DF /* UIViewLayoutExtension.swift in Sources */,
+				12057846FBCCCFF96A042E2A9252B252 /* ViewTeste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,9 +1280,48 @@
 			};
 			name = Release;
 		};
-		ABDF575ADABB689FBA8AD3813033AEB5 /* Release */ = {
+		8A7F7809F62590BCB41CBD9A0FB7B344 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 6DF4E5B9990250D8C5551E53A30D9421 /* StantUiIosLibrary.xcconfig */;
+=======
+			baseConfigurationReference = EF49E760B669E8B1A80B99CE508DB63B /* StantUiIosLibrary.xcconfig */;
+>>>>>>> master
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
+				PRODUCT_MODULE_NAME = StantUiIosLibrary;
+				PRODUCT_NAME = StantUiIosLibrary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9967FB8FF99761EDF80AFBAEE5EC9EF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF49E760B669E8B1A80B99CE508DB63B /* StantUiIosLibrary.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -954,7 +1395,11 @@
 		};
 		CC42AC089F60A9E01E17691B485D3FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
+			baseConfigurationReference = 6DF4E5B9990250D8C5551E53A30D9421 /* StantUiIosLibrary.xcconfig */;
+=======
 			baseConfigurationReference = E83E531C24F903CC61CC0FEE14789A18 /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */;
+>>>>>>> master
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -990,41 +1435,6 @@
 			};
 			name = Debug;
 		};
-		D86152F804FEDBB0539E0BB94B973475 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DF4E5B9990250D8C5551E53A30D9421 /* StantUiIosLibrary.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
-				PRODUCT_MODULE_NAME = StantUiIosLibrary;
-				PRODUCT_NAME = StantUiIosLibrary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1033,6 +1443,15 @@
 			buildConfigurations = (
 				CC42AC089F60A9E01E17691B485D3FE6 /* Debug */,
 				2A3940FD278B44C688D824F298228EE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20D475CD871C5D4EE58C4570C7FA3018 /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A7F7809F62590BCB41CBD9A0FB7B344 /* Debug */,
+				9967FB8FF99761EDF80AFBAEE5EC9EF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1051,15 +1470,6 @@
 			buildConfigurations = (
 				B5AA096459BA4706C932F87EB782E6C1 /* Debug */,
 				5DC1C2C4B3FE26EAFDF122B109682B62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BA2AB8D69A570609E85B8619507C92A /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D86152F804FEDBB0539E0BB94B973475 /* Debug */,
-				ABDF575ADABB689FBA8AD3813033AEB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

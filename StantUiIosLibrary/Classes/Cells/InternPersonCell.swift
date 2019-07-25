@@ -100,11 +100,9 @@ public class InternPersonCell: UITableViewCell {
     }
     
     private func positionOptionalElements() {
-        
         self.addSubviews(mailImage, callImage)
         
         self.callImage.anchor(top: self.topAnchor,
-                              leading: nil,
                               bottom: self.bottomAnchor,
                               trailing: self.trailingAnchor,
                               padding: UIEdgeInsets(top: 18,
@@ -113,7 +111,6 @@ public class InternPersonCell: UITableViewCell {
                                                     right: 16),
                               size: CGSize(width: 20, height: 20))
         self.mailImage.anchor(top: self.topAnchor,
-                              leading: nil,
                               bottom: self.bottomAnchor,
                               trailing: self.callImage.leadingAnchor,
                               padding: UIEdgeInsets(top: 18,
@@ -126,7 +123,6 @@ public class InternPersonCell: UITableViewCell {
             self.addSubview(callButton)
             
             self.callButton?.anchor(top: self.topAnchor,
-                                    leading: nil,
                                     bottom: self.bottomAnchor,
                                     trailing: self.trailingAnchor,
                                     padding: UIEdgeInsets(top: 18,
@@ -140,7 +136,6 @@ public class InternPersonCell: UITableViewCell {
             self.addSubview(mailButton)
             
             self.mailButton?.anchor(top: self.topAnchor,
-                                    leading: nil,
                                     bottom: self.bottomAnchor,
                                     trailing: self.callImage.leadingAnchor,
                                     padding: UIEdgeInsets(top: 18,

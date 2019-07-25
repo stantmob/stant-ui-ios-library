@@ -28,7 +28,8 @@ class ConstructionCardViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = UIColor.white
 
-        for i in 1...25 {
+        constructionSiteList.append(Construction(title: "Construction site without image", subtitle: cardSubtitle, imageUrl: "", color: cardColor, percentage: 10))
+        for i in 1...24 {
             constructionSiteList.append(Construction(title: "\(i)", subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage))
         }
         

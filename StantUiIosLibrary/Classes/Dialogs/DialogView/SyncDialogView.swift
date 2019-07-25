@@ -15,6 +15,7 @@ public class SyncDialogView: UIView {
     public var progressBarView: UIView?
     
     var percentageValue: CGFloat = 0
+    private var percentageColor  = UIColor.darkGrayStant
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,11 +38,12 @@ public class SyncDialogView: UIView {
         self.backgroundColor = UIColor.lightGrayStant
     }
     
-    public func set(image: UIImage, text: String, percentage: CGFloat = 0) {
+    public func set(image: UIImage, text: String, percentage: CGFloat = 0, percentageBarColor: UIColor = UIColor.darkGrayStant) {
         self.configureImageWith(image: image)
         self.addText(text)
         
         self.percentageValue = percentage
+        self.percentageColor = percentageBarColor
     }
     
     fileprivate func configureImageWith(image: UIImage) {
@@ -92,7 +94,7 @@ public class SyncDialogView: UIView {
             fullProgressBarView.anchor(leading: self.leadingAnchor,
                                        bottom: self.bottomAnchor,
                                        trailing: self.trailingAnchor,
-                                       padding: UIEdgeInsets(top: 0, left: 59, bottom: 5, right: 59),
+                                       padding: UIEdgeInsets(top: 0, left: 59, bottom: 15, right: 59),
                                        size: CGSize(width: 0, height: 5))
         }
         
@@ -105,7 +107,7 @@ public class SyncDialogView: UIView {
         progressBarView  = UIView(frame: fullProgressBarView.frame)
         
         guard let progressBarView = progressBarView else { return }
-        progressBarView.backgroundColor    = UIColor.darkGrayStant
+        progressBarView.backgroundColor    = percentageColor
         progressBarView.layer.cornerRadius = 2.5
         fullProgressBarView.addSubview(progressBarView)
         

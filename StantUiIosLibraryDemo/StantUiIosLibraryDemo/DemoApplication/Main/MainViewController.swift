@@ -11,7 +11,12 @@ import StantUiIosLibrary
 
 class MainViewController: UIViewController {
 
-    let syncDialogViewController = DialogViewController()
+    let syncDialogViewController             = DialogViewController()
+    let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
+    
+    var tableViewSelectedItem = 0
+    
+    var tabBarLastSelectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +25,10 @@ class MainViewController: UIViewController {
         self.addSyncDialogDemoButton()
         self.addFirstHeaderDemoButton()
         self.addMainMenuTabBarDemoButton()
+        self.addBottomDialogWithScrollDemoButton()
         self.addCellWithImageDemoButton()
         self.addProfileCellDemoButton()
+        self.addBottomDialogWithScrollDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,22 +72,30 @@ class MainViewController: UIViewController {
         self.view.addButton(title: "Main Menu Tab Bar", action: #selector(goToMainMenuTabBarDemo), orderOfButton: 5, target: self)
     }
     
+    fileprivate func addBottomDialogWithScrollDemoButton() {
+        self.view.addButton(title: "Bottom Dialog With Scroll", action: #selector(goToBottomDialogWithScrollDemo), orderOfButton: 6, target: self)
+    }
+
+    @objc func goToBottomDialogWithScrollDemo() {
+        self.openBottomDialogWithScrollDemo()
+    }
+
     @objc func goToMainMenuTabBarDemo() {
         self.openMainMenuTabBarDemo()
     }
-    
+
     fileprivate func addCellWithImageDemoButton() {
-        self.view.addButton(title: "Cell With Image", action: #selector(goToCellWithImageDemo), orderOfButton: 6, target: self)
+        self.view.addButton(title: "Cell With Image", action: #selector(goToCellWithImageDemo), orderOfButton: 7, target: self)
     }
-    
+
     @objc func goToCellWithImageDemo() {
         self.open(viewController: CellWithImageTableViewController())
     }
-    
+
     fileprivate func addProfileCellDemoButton() {
-        self.view.addButton(title: "Profile cell", action: #selector(goToProfileCellDemo), orderOfButton: 7, target: self)
+        self.view.addButton(title: "Profile cell", action: #selector(goToProfileCellDemo), orderOfButton: 8, target: self)
     }
-    
+
     @objc func goToProfileCellDemo() {
         self.open(viewController: ProfileCellTableViewController())
     }

@@ -33,6 +33,16 @@ extension MainViewController {
         self.present(syncDialogViewController, animated: false, completion: nil)
     }
     
+    func openBottomDialogWithScrollDemo() {
+        let items = ["Item 01", "Item 02", "Item 03", "Item 04", "Item 05", "Item 06", "Item 07", "Item 08", "Item 09", "Item 10"]
+        
+        bottomDialogWithScrollViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        bottomDialogWithScrollViewController.cellDelegate           = self
+        bottomDialogWithScrollViewController.configureView(items: items, selectedItemIndex: tableViewSelectedItem)
+        
+        self.present(bottomDialogWithScrollViewController, animated: false, completion: nil)
+    }
+    
     @objc func dismissDialog() {
         syncDialogViewController.dismiss(animated: true, completion: nil)
     }
@@ -65,10 +75,36 @@ extension MainViewController {
                                      icon: UIImage(named: "hamburgerMenu") ?? UIImage(),
                                      url: nil)]
         
-        tabBar.set(tabBarObjects: objects)
+        tabBar.set(tabBarObjects: objects, mainMenuTabBarDelegate: self)
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(tabBar, animated: true)
+    }
+    
+    
+}
+
+extension MainViewController: MainMenuTabBarDelegate {
+    
+    var tabBarSelectedIndex: Int {
+        get {
+            return tabBarLastSelectedIndex
+        }
+        set {
+           tabBarLastSelectedIndex = newValue
+        }
+    }
+    
+    func clickOnCellWith(index: Int, tabBarController: UITabBarController, currentViewController: UIViewController) {
+        tabBarSelectedIndex = index
+        print("did click on tab bar item \(tabBarSelectedIndex)")
+    }
+}
+
+extension MainViewController: ScrollableTableViewDialogCellDelegate {
+    func clickOnCellWith(index: Int, title: String) {
+        print("Click on cell \(title)")
+        self.tableViewSelectedItem = index
     }
     
     

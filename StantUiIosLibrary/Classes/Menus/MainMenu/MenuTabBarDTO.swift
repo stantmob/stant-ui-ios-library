@@ -20,28 +20,20 @@ public struct MenuTabBarDTO {
         }
         
         if let url = url {
-            self.setRoundedImageToTabBarItem(url: url)
+            let image = self.getRoundedImageToTabBarItem(url: url)
+            controller.tabBarItem.image = image.withRenderingMode(.alwaysOriginal)
         }
         
     }
     
-    fileprivate func setRoundedImageToTabBarItem(url: String) {
-        var roundedImage = UIColor.lightGray.image()
+    fileprivate func getRoundedImageToTabBarItem(url: String) -> UIImage {
+        let roundedImage = UIColor.lightGray.image().roundedRectImageFromImage(cornerRadius: 12)
+
+        guard let nsurl    = NSURL(string: url)               else { return roundedImage }
+        guard let data     = NSData(contentsOf: nsurl as URL) else { return roundedImage }
+        guard let newImage = UIImage(data: data as Data)      else { return roundedImage }
         
-        if let nsurl = NSURL(string: url) {
-            if let data = NSData(contentsOf: nsurl as URL) {
-                if let newImage = UIImage(data: data as Data) {
-                    roundedImage = newImage.roundedRectImageFromImage(cornerRadius: 12)
-                    controller.tabBarItem.image = roundedImage.withRenderingMode(.alwaysOriginal)
-                } else {
-                    roundedImage = roundedImage.roundedRectImageFromImage(cornerRadius: 12)
-                    controller.tabBarItem.image = roundedImage.withRenderingMode(.alwaysTemplate)
-                }
-            } else {
-                roundedImage = roundedImage.roundedRectImageFromImage(cornerRadius: 12)
-                controller.tabBarItem.image = roundedImage.withRenderingMode(.alwaysTemplate)
-            }
-        }
+        return newImage.roundedRectImageFromImage(cornerRadius: 12)
     }
     
 }

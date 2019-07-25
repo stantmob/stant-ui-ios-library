@@ -42,6 +42,17 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
         self.configureCollectionView()
         
         self.backgroundColor = UIColor.white
+        self.addBottomBorderWithColor()
+    }
+    
+    public func changeButton(title: String, index: Int) {
+        let cell = collectionView?.cellForItem(at: IndexPath(row: index, section: 0)) as? FilterButtonCollectionViewCell
+        cell?.mainButton?.setTitle(title, for: .normal)
+    }
+    
+    public func changeButtonBackground(index: Int) {
+        let cell = collectionView?.cellForItem(at: IndexPath(row: index, section: 0)) as? FilterButtonCollectionViewCell
+        cell?.changeButtonStyle()
     }
     
     fileprivate func addFilterFixedUiView() {

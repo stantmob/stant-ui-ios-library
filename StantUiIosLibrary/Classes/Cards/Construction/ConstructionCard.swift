@@ -8,6 +8,7 @@ public class ConstructionCard: UITableViewCell {
     var color: UIColor?
     var percentageValue: CGFloat?
     
+    public var mainView: UIView?
     public var titleLabel: UILabel?
     public var subtitleLabel: UILabel?
     public var photoImageView: UIImageView?
@@ -16,6 +17,8 @@ public class ConstructionCard: UITableViewCell {
     public var progressBarView: UIView?
     public var percentageLabel: UILabel?
     public var progressWidth: CGFloat?
+    
+    public let activityIndicator = UIActivityIndicatorView(style: .gray)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,82 +29,100 @@ public class ConstructionCard: UITableViewCell {
     }
     
     deinit {
-        self.titleLabel               = nil
-        self.subtitleLabel            = nil
-        self.photoImageView           = nil
-        self.percentageBackgroundView = nil
-        self.fullProgressBarView      = nil
-        self.progressBarView          = nil
-        self.percentageLabel          = nil
+        self.removeSubviews()
     }
     
     public func configureViewFor(construction: Construction) {
         self.removeSubviews()
+        
         self.color           = construction.color
         self.percentageValue = construction.percentage
-
+        self.backgroundColor = .clear
+        
+        self.addMainViewWithShadow()
         self.configureImageWith(url: construction.imageUrl ?? String())
         self.configure(title: construction.title ?? String(), subtitle: construction.subtitle ?? String())
         self.configureProgressBarWith(color: construction.color ?? UIColor(), percentage: construction.percentage ?? CGFloat())
     }
     
+    fileprivate func addMainViewWithShadow() {
+        mainView = UIView(frame: CGRect(x: 4, y: 2, width: self.frame.width - 8, height: self.frame.height - 4))
+        
+        guard let mainView = mainView else { return }
+        self.addSubview(mainView)
+        mainView.backgroundColor = UIColor.white
+        mainView.anchor(top: self.topAnchor,
+                        leading: self.leadingAnchor,
+                        bottom: self.bottomAnchor,
+                        trailing: self.trailingAnchor,
+                        padding: UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4))
+        mainView.layer.applySketchShadow(color: UIColor.shadowStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
+    }
+    
     fileprivate func configure(title: String, subtitle: String) {
-        titleLabel    = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 19))
-        subtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 14))
+        titleLabel    = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 23))
+        subtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 17))
         
         guard let titleLabel = titleLabel, let subtitleLabel = subtitleLabel else { return }
         
         if #available(iOS 8.2, *) {
             self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.darkStant,
-                         topAnchor: 14, leftAnchor: 91, bottomAnchor: 54, rightAnchor: 12)
+                         topAnchor: 14, leftAnchor: 91, bottomAnchor: 51, rightAnchor: 12)
             self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: UIColor.darkGrayStant,
-                         topAnchor: 37, leftAnchor: 91, bottomAnchor: 36, rightAnchor: 12)
+                         topAnchor: 37, leftAnchor: 91, bottomAnchor: 33, rightAnchor: 12)
         }
     }
     
     fileprivate func setText(label: UILabel, text: String, textSize: CGFloat, textWeight: UIFont.Weight, textColor: UIColor,
                              topAnchor: CGFloat, leftAnchor: CGFloat, bottomAnchor: CGFloat, rightAnchor: CGFloat) {
+        guard let mainView = mainView else { return }
+        
         if #available(iOS 9.0, *) {
             label.text      = text
             label.font      = .systemFont(ofSize: textSize, weight: textWeight)
             label.textColor = textColor
-            self.addSubview(label)
-            label.anchor(top: self.topAnchor,
-                         leading: self.leadingAnchor,
-                         bottom: self.bottomAnchor,
-                         trailing: self.trailingAnchor,
+            mainView.addSubview(label)
+            label.anchor(top: mainView.topAnchor,
+                         leading: mainView.leadingAnchor,
+                         bottom: mainView.bottomAnchor,
+                         trailing: mainView.trailingAnchor,
                          padding: UIEdgeInsets(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor))
         }
         
     }
     
     fileprivate func configureImageWith(url: String) {
-        photoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        photoImageView                     = UIImageView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        activityIndicator.frame            = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.hidesWhenStopped = true
         
-        guard let photoImageView = photoImageView else { return }
-        photoImageView.showRounded(image: url)
-        self.addSubview(photoImageView)
+        guard let photoImageView = photoImageView, let mainView = mainView else { return }
+    
+        mainView.addSubview(photoImageView)
         if #available(iOS 9.0, *) {
-            photoImageView.anchor(top: self.topAnchor,
-                                  leading: self.leadingAnchor,
+            photoImageView.anchor(top: mainView.topAnchor,
+                                  leading: mainView.leadingAnchor,
                                   padding: UIEdgeInsets(top: 9, left: 12, bottom: 0, right: 0),
                                   size: CGSize(width: 70, height: 70))
         }
+        
+        photoImageView.addSubview(activityIndicator)
+        activityIndicator.fillSuperView()
+        photoImageView.showRoundedImageWith(path: url, activityIndicator: activityIndicator)
     }
     
     fileprivate func configureProgressBarWith(color: UIColor, percentage: CGFloat) {
         fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 4))
 
-        guard let fullProgressBarView = fullProgressBarView else { return }
+        guard let fullProgressBarView = fullProgressBarView, let mainView = mainView  else { return }
         fullProgressBarView.backgroundColor    = UIColor.lightGrayStant
         fullProgressBarView.layer.cornerRadius = 2.5
-        self.addSubview(fullProgressBarView)
+        mainView.addSubview(fullProgressBarView)
         if #available(iOS 9.0, *) {
-            fullProgressBarView.anchor(top: self.topAnchor,
-                                       leading: self.leadingAnchor,
-                                       bottom: self.bottomAnchor,
-                                       trailing: self.trailingAnchor,
-                                       padding: UIEdgeInsets(top: 61, left: 91, bottom: 21, right: 53))
+            fullProgressBarView.anchor(leading: mainView.leadingAnchor,
+                                       bottom: mainView.bottomAnchor,
+                                       padding: UIEdgeInsets(top: 0, left: 91, bottom: 21, right: 0),
+                                       size: CGSize(width: self.frame.width - 152, height: 4))
         }
     
         self.configurePercentageIndicator(color: color, percentage: percentage)
@@ -110,15 +131,15 @@ public class ConstructionCard: UITableViewCell {
     fileprivate func configurePercentageIndicator(color: UIColor, percentage: CGFloat) {
         percentageBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
         
-        guard let backgroundView = percentageBackgroundView else { return }
+        guard let backgroundView = percentageBackgroundView, let mainView = mainView else { return }
         backgroundView.layer.cornerRadius = 3
         backgroundView.backgroundColor    = color
-        self.addSubview(backgroundView)
+        mainView.addSubview(backgroundView)
         
         if #available(iOS 9.0, *) {
-            backgroundView.anchor(top: self.topAnchor,
-                                  trailing: self.trailingAnchor,
-                                  padding: UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 12),
+            backgroundView.anchor(top: mainView.topAnchor,
+                                  trailing: mainView.trailingAnchor,
+                                  padding: UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 12),
                                   size: CGSize(width: 36, height: 18))
             
             percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 36, height: 18))
@@ -139,6 +160,9 @@ public class ConstructionCard: UITableViewCell {
             let percentage = self.percentageValue,
             let color = self.color else { return }
     
+        if let progressBarView = progressBarView {
+            progressBarView.removeFromSuperview()
+        }
         progressBarView  = UIView(frame: fullProgressBarView.frame)
         
         guard let progressBarView = progressBarView else { return }
@@ -146,7 +170,7 @@ public class ConstructionCard: UITableViewCell {
         progressBarView.layer.cornerRadius = 2.5
         fullProgressBarView.addSubview(progressBarView)
 
-        progressWidth = (self.frame.width - 91 - 53)
+        progressWidth = (self.frame.width - 144)
         
         guard let currentProgressWidth = progressWidth else { return }
         if percentage <= 100 {

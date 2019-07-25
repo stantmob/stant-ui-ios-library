@@ -33,7 +33,6 @@ class CellWithImageTests: XCTestCase {
         self.imageSize       = nil
         self.imageColor      = nil
         self.textDescription = nil
-        
     }
     
     func testIfThereIsACellCreated() throws {

@@ -14,6 +14,7 @@ extension ConstructionTableViewWithCollapsedSearchBar: ShowAndHideSearchTableVie
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCrossDissolve], animations: {
             searchView.isHidden = true
+            tableView.removeAllConstraints()
             tableView.frame     = CGRect(x: tableView.frame.minX, y: 0, width: self.frame.width,
                                          height: self.frame.height)
         }, completion: { _ in
@@ -37,6 +38,7 @@ extension ConstructionTableViewWithCollapsedSearchBar: ShowAndHideSearchTableVie
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCrossDissolve], animations: {
             searchView.isHidden = false
+            tableView.removeAllConstraints()
             tableView.frame     = CGRect(x: tableView.frame.minX, y: DefaultSearchBar.searchViewHeight, width: self.frame.width,
                                          height: self.frame.height - DefaultSearchBar.searchViewHeight)
         }, completion: { _ in

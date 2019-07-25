@@ -13,9 +13,11 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
     
     public var mainButton: UIButton?
     public weak var cellDelegate: FilterCellDelegate?
+    private var currentFilterButton: FilterButton?
     
     public func configureCell(button: FilterButton) {
-        mainButton   = UIButton(frame: CGRect(x: 0, y: 0, width: 90, height: 28))
+        mainButton          = UIButton(frame: CGRect(x: 0, y: 0, width: 90, height: 28))
+        currentFilterButton = button
         
         guard let mainButton = mainButton else { return }
         mainButton.backgroundColor           = UIColor.lightGrayStant
@@ -27,7 +29,6 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
         mainButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
         
         guard let action = button.action else { return }
-        mainButton.addTarget(self, action: #selector(clickInButton), for: .touchUpInside)
         mainButton.addTarget(button.target, action: action, for: .touchUpInside)
         
         self.addSubview(mainButton)
@@ -39,7 +40,7 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
                           size: CGSize(width: 90, height: 28))
     }
     
-    @objc func clickInButton() {
+    public func changeButtonStyle() {
         guard let mainButton = mainButton else { return }
         
         if mainButton.backgroundColor == UIColor.lightGrayStant {

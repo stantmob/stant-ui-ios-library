@@ -12,6 +12,8 @@ public class DialogViewController: UIViewController {
     public var dialogView: UIView?
     public var titleLabel: UILabel?
     public var stackView: UIStackView?
+    public var mainContainerInformation: UIView?
+    public var buttons = [DialogButton]()
     
     let dialogHeight: CGFloat = 234
 
@@ -27,17 +29,37 @@ public class DialogViewController: UIViewController {
         self.dialogView = nil
         self.titleLabel = nil
         self.stackView  = nil
+        self.mainContainerInformation = nil
     }
     
     @objc func dismissViewController() {
+        UIView.animate(withDuration: 0.2) {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0)
+        }
         self.dismiss(animated: false, completion: nil)
     }
     
     public func configureView(title: String, mainView: UIView, buttons: [DialogButton]) {
         self.addDialog()
+        self.mainContainerInformation = mainView
         self.addCenteredView(mainView)
         self.addTitle(title)
+        self.buttons = buttons
         self.add(buttons: buttons)
+    }
+    
+    public func updateDialog(title: String, mainView: UIView, maintainOnlyCentralButton: Bool = true) {
+        mainContainerInformation?.removeFromSuperview()
+        self.addCenteredView(mainView)
+        titleLabel?.text = title
+        
+        if maintainOnlyCentralButton {
+            stackView?.removeFromSuperview()
+            let cancelButton = buttons.filter { (button) -> Bool in
+                button.style == ButtonStyle.cancel
+            }
+            self.add(buttons: cancelButton)
+        }
     }
     
     fileprivate func addDialog() {
@@ -122,5 +144,35 @@ public class DialogViewController: UIViewController {
                          padding: UIEdgeInsets(top: 0, left: leadingAnchorValue, bottom: 0, right: 0),
                          size: CGSize(width: 0, height: 56))
     }
+    
+    public func updateDialog(title: String, mainView: UIView,
+                             buttons: [DialogButton] = [DialogButton](),
+                             canClickOutside: Bool = true) {
+        self.titleLabel?.text = title
+        
+        self.updateMainContainerInformation(withView: mainView)
+        self.update(dialogButtons: buttons)
+        self.updateClicks(canClickOutside)
+    }
+    
+    fileprivate func updateMainContainerInformation(withView mainView: UIView) {
+        mainContainerInformation?.removeFromSuperview()
+        self.mainContainerInformation = mainView
+        self.addCenteredView(mainView)
+    }
+    
+    fileprivate func update(dialogButtons: [DialogButton]) {
+        stackView?.removeFromSuperview()
+        self.buttons = dialogButtons
+        self.add(buttons: buttons)
+    }
 
+    fileprivate func updateClicks(_ canClickOutside: Bool) {
+        self.view.gestureRecognizers?.removeAll()
+        
+        if canClickOutside {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissViewController))
+            self.view.addGestureRecognizer(tap)
+        }
+    }
 }

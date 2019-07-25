@@ -29,6 +29,26 @@ extension UIColor {
         return UIColor(red: 255/255, green: 64/255, blue: 37/255, alpha: 1)
     }
     
+    @nonobjc public class var backgroundStant: UIColor {
+        return UIColor(red: 252/255, green: 252/255, blue: 252/255, alpha: 1)
+    }
+    
+    @nonobjc public class var shadowStant: UIColor {
+        return UIColor(red: 92/255, green: 135/255, blue: 175/255, alpha: 1)
+    }
+    
+    @nonobjc public class var stantImagePlaceholder: UIColor {
+        return UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
+    }
+    
+    @nonobjc public class var errorColorStant: UIColor {
+        return UIColor(red: 212/255, green: 29/255, blue: 0/255, alpha: 1)
+    }
+    
+    @nonobjc public class var greenStant: UIColor {
+        return UIColor(red: 128/255, green: 176/255, blue: 39/255, alpha: 1)
+    }
+    
     public func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             self.setFill()
