@@ -32,7 +32,7 @@ public class DialogViewController: UIViewController {
         self.mainContainerInformation = nil
     }
     
-    @objc func dismissViewController() {
+    @objc public func dismissViewController() {
         UIView.animate(withDuration: 0.2) {
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0)
         }
