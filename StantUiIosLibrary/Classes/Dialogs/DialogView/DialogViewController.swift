@@ -48,17 +48,13 @@ public class DialogViewController: UIViewController {
         self.add(buttons: buttons)
     }
     
-    public func updateDialog(title: String, mainView: UIView, maintainOnlyCentralButton: Bool = true) {
+    public func updateDialog(title: String, mainView: UIView, removeAllButtons: Bool = true) {
         mainContainerInformation?.removeFromSuperview()
         self.addCenteredView(mainView)
         titleLabel?.text = title
         
-        if maintainOnlyCentralButton {
+        if removeAllButtons {
             stackView?.removeFromSuperview()
-            let cancelButton = buttons.filter { (button) -> Bool in
-                button.style == ButtonStyle.cancel
-            }
-            self.add(buttons: cancelButton)
         }
     }
     
