@@ -176,15 +176,15 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         if indexPath.row == selectedItemIndex {
             cell.accessoryType = .checkmark
         }
-        
+    
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.dismissScreen()
-
-        if selectedItemIndex != indexPath.row {
-            selectTableViewCellAt(indexPath: indexPath)
+        self.backgroundView?.alpha = 0
+        UIView.animate(withDuration: 0.2) {
+            self.dismiss(animated: true, completion: nil)
+            self.selectTableViewCellAt(indexPath: indexPath)
         }
     }
     
@@ -194,12 +194,13 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         
         cellDelegate?.clickOnCellWith(index: indexPath.row, title: cell?.cellTextLabel?.text ?? "")
         
-        for(index, _) in items.enumerated() {
-            let cell = tableView(tableView ?? UITableView(), cellForRowAt: IndexPath(row: index, section: 0))
-            cell.accessoryType = .none
-            tableView?.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+        if selectedItemIndex != indexPath.row {
+            for(index, _) in items.enumerated() {
+                let cell = tableView(tableView ?? UITableView(), cellForRowAt: IndexPath(row: index, section: 0))
+                cell.accessoryType = .none
+                tableView?.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+            }
         }
-        
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
