@@ -14,6 +14,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     private var backgroundView: UIView?
     private var mainView: UIView?
     public var tableView: UITableView?
+    private var gesturizer: Gesturizer?
     
     private var items                   = [String]()
     private var mainViewHeight: CGFloat = 374
@@ -34,6 +35,10 @@ public class BottomDialogWithScrollViewController: UIViewController {
             backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
         }
         self.dismissScreen()
+    }
+    
+    @objc func swipeDownGesture(sender: UIPanGestureRecognizer) {
+        self.gesturizer?.getSwipeDownGesture()(sender)
     }
     
     func dismissScreen() {
@@ -61,7 +66,8 @@ public class BottomDialogWithScrollViewController: UIViewController {
     
     fileprivate func configureBackgroundView() {
         guard let backgroundView = backgroundView else { return }
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        backgroundView.backgroundColor = UIColor.black
+        backgroundView.alpha           = 0.3
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissViewController))
         backgroundView.addGestureRecognizer(tap)
@@ -105,6 +111,15 @@ public class BottomDialogWithScrollViewController: UIViewController {
         
         self.adjustDetailViewOnTop(view: view)
         self.configureTableView()
+        self.addSwipeDownGestureOn(view: mainView)
+    }
+    
+    fileprivate func addSwipeDownGestureOn(view: UIView) {
+        self.gesturizer = Gesturizer(viewController: self,
+                                     backgroundView: self.backgroundView ?? UIView())
+        
+        let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeDownGesture))
+        view.addGestureRecognizer(swipeGesture)
     }
     
     fileprivate func adjustDetailViewOnTop(view: UIView) {
@@ -135,6 +150,8 @@ public class BottomDialogWithScrollViewController: UIViewController {
                          bottom: mainView.bottomAnchor,
                          trailing: mainView.trailingAnchor,
                          padding: UIEdgeInsets(top: 38, left: 0, bottom: 0, right: 0))
+        
+        tableView.selectRow(at: IndexPath(row: selectedItemIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
 }
@@ -159,15 +176,15 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         if indexPath.row == selectedItemIndex {
             cell.accessoryType = .checkmark
         }
-        
+    
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.dismissScreen()
-
-        if selectedItemIndex != indexPath.row {
-            selectTableViewCellAt(indexPath: indexPath)
+        self.backgroundView?.alpha = 0
+        UIView.animate(withDuration: 0.2) {
+            self.dismiss(animated: true, completion: nil)
+            self.selectTableViewCellAt(indexPath: indexPath)
         }
     }
     
@@ -177,12 +194,13 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         
         cellDelegate?.clickOnCellWith(index: indexPath.row, title: cell?.cellTextLabel?.text ?? "")
         
-        for(index, _) in items.enumerated() {
-            let cell = tableView(tableView ?? UITableView(), cellForRowAt: IndexPath(row: index, section: 0))
-            cell.accessoryType = .none
-            tableView?.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+        if selectedItemIndex != indexPath.row {
+            for(index, _) in items.enumerated() {
+                let cell = tableView(tableView ?? UITableView(), cellForRowAt: IndexPath(row: index, section: 0))
+                cell.accessoryType = .none
+                tableView?.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+            }
         }
-        
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
