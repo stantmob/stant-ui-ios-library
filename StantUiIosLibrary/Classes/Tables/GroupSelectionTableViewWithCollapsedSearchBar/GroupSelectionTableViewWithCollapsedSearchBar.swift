@@ -1,25 +1,25 @@
 //
-//  ConstructionTableViewWithCollapsedSearchBar.swift
+//  GroupSelectionTableViewWithCollapsedSearchBar.swift
 //  StantUiIosLibrary
 //
-//  Created by Mac Mini Novo on 27/06/19.
+//  Created by Mac Mini Novo on 29/07/19.
 //
 
 import UIKit
 
-public class ConstructionTableViewWithCollapsedSearchBar: UIView {
+public class GroupSelectionTableViewWithCollapsedSearchBar: UIView {
     
-    public var tableView: ConstructionTableView?
-    public var searchView: DefaultSearchBar?
-    public var emptyMessageLabel: UILabel?
+    internal var tableView: GroupSelectionTableView?
+    internal var searchView: DefaultSearchBar?
+    private var emptyMessageLabel: UILabel?
     
-    weak var tableViewDelegate: ConstructionTableViewDidSelectDelegate?
+    weak var tableViewDelegate: GroupSelectionTableViewDidSelectDelegate?
     
     var searchBarIcon        = UIImage()
     var searchBarPlaceholder = String()
     var searchOnTableView    = String()
     var emptyMessage         = String()
-    public var constructionSiteList = [Construction]()
+    public var itemsList     = [GroupedSelection]()
     
     var currentSearch = ""
     
@@ -31,13 +31,13 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         super.init(frame: frame)
     }
     
-    public func configureViewWith(constructionList: [Construction],
+    public func configureViewWith(items: [GroupedSelection],
                                   searchBarIcon: UIImage,
                                   searchBarPlaceholder: String,
-                                  tableViewDelegate: ConstructionTableViewDidSelectDelegate,
+                                  tableViewDelegate: GroupSelectionTableViewDidSelectDelegate,
                                   emptyMessage: String) {
         self.tableViewDelegate    = tableViewDelegate
-        self.constructionSiteList = constructionList
+        self.itemsList            = items
         self.searchBarIcon        = searchBarIcon
         self.searchBarPlaceholder = searchBarPlaceholder
         self.emptyMessage         = emptyMessage
@@ -48,6 +48,14 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         self.configureTableView()
         self.anchorSearchAndTableView()
         self.setEmptyMessageLabelVisibility()
+        self.addTags()
+    }
+    
+    fileprivate func addTags() {
+        tableView?.tag         = 1
+        searchView?.tag        = 2
+        emptyMessageLabel?.tag = 3
+        searchView?.viewWithTag(1)?.tag = 4
     }
     
     fileprivate func configureSearchView() {
@@ -61,19 +69,21 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
                                      image: searchBarIcon,
                                      placeholderText: searchBarPlaceholder)
     }
-        
+    
     
     fileprivate func configureTableView() {
-        tableView = ConstructionTableView(frame: CGRect(x: 0,
-                                                        y: DefaultSearchBar.searchViewHeight,
-                                                        width: self.frame.width,
-                                                        height: self.frame.height))
+        tableView = GroupSelectionTableView(frame: CGRect(x: 0,
+                                                          y: DefaultSearchBar.searchViewHeight,
+                                                          width: self.frame.width,
+                                                          height: self.frame.height),
+                                            style: .grouped)
         
         tableView?.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.identifier())
-        tableView?.configureTableViewWith(constructionList: constructionSiteList,
+        tableView?.configureTableViewWith(itemsList: itemsList,
                                           animationDelegate: self,
                                           selectCellDelegate: tableViewDelegate)
         tableView?.backgroundColor = .clear
+    
         if let tableView = tableView { self.addSubview(tableView) }
     }
     
@@ -112,16 +122,16 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         emptyMessageLabel.numberOfLines = 0
     }
     
-    public func updateConstructionSiteList(_ constructionSites: [Construction]) {
-        self.constructionSiteList                    = constructionSites
-        self.tableView?.filteredConstructionSiteList = constructionSites
-
+    public func updateItemsList(_ items: [GroupedSelection]) {
+        self.itemsList = items
+        self.tableView?.filteredItemsList = items
+        
         self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()
     }
-
+    
     func setEmptyMessageLabelVisibility() {
-        let listIsNotEmpty = !(tableView?.filteredConstructionSiteList.isEmpty ?? false)
+        let listIsNotEmpty = !(tableView?.filteredItemsList.isEmpty ?? false)
         if listIsNotEmpty {
             emptyMessageLabel?.isHidden = true
             return
@@ -136,3 +146,4 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
         emptyMessageLabel.isHidden = false
     }
 }
+

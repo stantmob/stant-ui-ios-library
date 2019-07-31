@@ -8,9 +8,7 @@
 import UIKit
 
 public class FilterButtonCollectionViewCell: UICollectionViewCell {
-    
-    public static let IDENTIFIER = "FilterButtonCollectionViewCellIdentifier"
-    
+        
     public var mainButton: UIButton?
     public weak var cellDelegate: FilterCellDelegate?
     private var currentFilterButton: FilterButton?
@@ -20,11 +18,11 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
         currentFilterButton = button
         
         guard let mainButton = mainButton else { return }
-        mainButton.backgroundColor           = UIColor.lightGrayStant
+        mainButton.backgroundColor           = .lightGrayStant
         mainButton.layer.cornerRadius        = 3.0
         
         mainButton.setTitle(button.title ?? "", for: .normal)
-        mainButton.setTitleColor(UIColor.darkGrayStant, for: .normal)
+        mainButton.setTitleColor(.darkGrayStant, for: .normal)
         mainButton.contentHorizontalAlignment = .center
         mainButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
         
@@ -43,13 +41,13 @@ public class FilterButtonCollectionViewCell: UICollectionViewCell {
     public func changeButtonStyle() {
         guard let mainButton = mainButton else { return }
         
-        if mainButton.backgroundColor == UIColor.lightGrayStant {
-            mainButton.setTitleColor(UIColor.white, for: .normal)
-            mainButton.backgroundColor = UIColor.orangeStant
+        if mainButton.backgroundColor == .lightGrayStant {
+            mainButton.setTitleColor(.white, for: .normal)
+            mainButton.backgroundColor = .orangeStant
             cellDelegate?.changeIconOfFixedUIView(amountToAdd: 1)
         } else {
-            mainButton.setTitleColor(UIColor.darkGrayStant, for: .normal)
-            mainButton.backgroundColor = UIColor.lightGrayStant
+            mainButton.setTitleColor(.darkGrayStant, for: .normal)
+            mainButton.backgroundColor = .lightGrayStant
             cellDelegate?.changeIconOfFixedUIView(amountToAdd: -1) 
         }
         

@@ -58,9 +58,9 @@ extension MainViewController {
         secondVC = UIViewController(),
         thirdVC  = UIViewController()
         
-        firstVC.view.backgroundColor  = UIColor.yellow
-        secondVC.view.backgroundColor = UIColor.orange
-        thirdVC.view.backgroundColor  = UIColor.green
+        firstVC.view.backgroundColor  = .yellow
+        secondVC.view.backgroundColor = .orange
+        thirdVC.view.backgroundColor  = .green
         
         let objects = [MenuTabBarDTO(controller: firstVC,
                                      title: "Obra",

@@ -29,11 +29,12 @@ class MainViewController: UIViewController {
         self.addCellWithImageDemoButton()
         self.addProfileCellDemoButton()
         self.addBottomDialogWithScrollDemoButton()
+        self.addGroupSelectionTableViewDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .white
     }
     
     fileprivate func addConstructionCardDemoButton() {
@@ -100,4 +101,11 @@ class MainViewController: UIViewController {
         self.open(viewController: ProfileCellTableViewController())
     }
 
+    fileprivate func addGroupSelectionTableViewDemoButton() {
+        self.view.addButton(title: "Group Selection Table View Demo", action: #selector(goToGroupSelectionDemo), orderOfButton: 9, target: self)
+    }
+    
+    @objc func goToGroupSelectionDemo() {
+        self.open(viewController: GroupSelectionViewController())
+    }
 }

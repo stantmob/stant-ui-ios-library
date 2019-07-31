@@ -28,7 +28,7 @@ public class FiltersCollectionView: UICollectionView, UICollectionViewDataSource
         self.dataSource      = self
         self.allowsSelection = true
         
-        self.register(FilterButtonCollectionViewCell.self, forCellWithReuseIdentifier: FilterButtonCollectionViewCell.IDENTIFIER)
+        self.register(FilterButtonCollectionViewCell.self, forCellWithReuseIdentifier: FilterButtonCollectionViewCell.identifier())
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,7 +36,7 @@ public class FiltersCollectionView: UICollectionView, UICollectionViewDataSource
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterButtonCollectionViewCell.IDENTIFIER, for: indexPath as IndexPath) as? FilterButtonCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterButtonCollectionViewCell.identifier(), for: indexPath as IndexPath) as? FilterButtonCollectionViewCell else {
             return UICollectionViewCell()
         }
         

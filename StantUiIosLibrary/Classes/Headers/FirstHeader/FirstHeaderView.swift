@@ -35,7 +35,7 @@ public class FirstHeaderView: UIView {
     }
     
     public func configure(dropdown: FirstHeaderDropdownButton, rightBarButton: FirstHeaderRightBarButton) {
-        self.backgroundColor     = UIColor.white
+        self.backgroundColor     = .white
         self.dropdown            = dropdown
         self.rightNavigationItem = rightBarButton
     }
@@ -59,7 +59,7 @@ public class FirstHeaderView: UIView {
         
         guard let dropdownMenu = dropdownMenu, let dropdown = dropdown else { return }
         dropdownMenu.layer.cornerRadius = 3.0
-        dropdownMenu.backgroundColor    = UIColor.lightGrayStant
+        dropdownMenu.backgroundColor    = .lightGrayStant
         
         let action      = dropdown.action ?? Selector.init(String())
         let dropdownTap = UITapGestureRecognizer(target: dropdown.target ?? UIViewController(), action: action)
@@ -86,7 +86,7 @@ public class FirstHeaderView: UIView {
     
     fileprivate func configureDropdownLabel() {
         guard let dropdownLabel = dropdownLabel, let dropdown = dropdown else { return }
-        dropdownLabel.configure(text: dropdown.title ?? String(), size: 12, weight: .regular, color: UIColor.darkStant)
+        dropdownLabel.configure(text: dropdown.title ?? String(), size: 12, weight: .regular, color: .darkStant)
         dropdownLabel.fillSuperView()
     }
     

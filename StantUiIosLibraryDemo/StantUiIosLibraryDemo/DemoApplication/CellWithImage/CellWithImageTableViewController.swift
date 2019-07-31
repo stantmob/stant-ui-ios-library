@@ -20,7 +20,7 @@ class CellWithImageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.register(InternActionCell.self, forCellReuseIdentifier: InternActionCell.IDENTIFIER)
+        self.tableView.register(InternActionCell.self, forCellReuseIdentifier: InternActionCell.identifier())
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,7 +33,7 @@ class CellWithImageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: InternActionCell.IDENTIFIER,
+        let cell = tableView.dequeueReusableCell(withIdentifier: InternActionCell.identifier(),
                                                  for: indexPath) as? InternActionCell
 
         cell?.set(description: data[indexPath.section][indexPath.row].0,

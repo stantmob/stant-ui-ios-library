@@ -9,7 +9,6 @@ import UIKit
 
 public class InternPersonCell: UITableViewCell {
     
-    public static let IDENTIFIER      = "InternPersonCellIdentifier"
     public static let HEIGHT: CGFloat = 56
     
     public let titleLabel       = UILabel(frame: CGRect(x: 0,

@@ -37,7 +37,7 @@ public class ConstructionTableView: UITableView, UITableViewDelegate, UITableVie
         self.animationDelegate            = animationDelegate
         self.selectCellDelegate           = selectCellDelegate
         self.filteredConstructionSiteList = constructionList
-        self.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.IDENTIFIER)
+        self.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.identifier())
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +49,7 @@ public class ConstructionTableView: UITableView, UITableViewDelegate, UITableVie
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConstructionCard.IDENTIFIER, for: indexPath) as? ConstructionCard else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConstructionCard.identifier(), for: indexPath) as? ConstructionCard else {
             return UITableViewCell()
         }
         

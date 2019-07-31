@@ -20,7 +20,7 @@ public class SelectRecentViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor.clear
+        self.view.backgroundColor = .clear
     }
     
     deinit {
@@ -73,7 +73,7 @@ public class SelectRecentViewController: UIViewController {
     
     fileprivate func configureMainView() {
         guard let mainView = mainView else { return }
-        mainView.backgroundColor = UIColor.white
+        mainView.backgroundColor = .white
         mainView.roundCorners(corners: [.topLeft, .topRight], radius: 5.0)
         
         if recentItems.count < 6 {
@@ -108,7 +108,7 @@ public class SelectRecentViewController: UIViewController {
     fileprivate func adjustDetailViewOnTop(view: UIView) {
         guard let mainView = mainView else { return }
         view.layer.cornerRadius = 3.5
-        view.backgroundColor    = UIColor.lightGrayStant
+        view.backgroundColor    = .lightGrayStant
         
         view.anchor(top: mainView.topAnchor,
                     padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0),
@@ -126,7 +126,7 @@ public class SelectRecentViewController: UIViewController {
         tableView.isScrollEnabled          = false
         tableView.allowsMultipleSelection  = false
         
-        tableView.register(FirstHeaderRecentItemCell.self, forCellReuseIdentifier: FirstHeaderRecentItemCell.IDENTIFIER)
+        tableView.register(FirstHeaderRecentItemCell.self, forCellReuseIdentifier: FirstHeaderRecentItemCell.identifier())
         
         tableView.anchor(top: mainView.topAnchor,
                          leading: mainView.leadingAnchor,
@@ -148,7 +148,7 @@ extension SelectRecentViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstHeaderRecentItemCell.IDENTIFIER) as? FirstHeaderRecentItemCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstHeaderRecentItemCell.identifier()) as? FirstHeaderRecentItemCell else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none

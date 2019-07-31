@@ -14,8 +14,8 @@ extension UIView {
         let distanceToTop: CGFloat = 50 * orderOfButton
         
         button.frame                      = CGRect(x: 0, y: distanceToTop, width: self.frame.width, height: 50)
-        button.backgroundColor            = UIColor.lightGray
-        button.tintColor                  = UIColor.black
+        button.backgroundColor            = .lightGray
+        button.tintColor                  = .black
         button.contentHorizontalAlignment = .center
         
         button.setTitle(title, for: .normal)

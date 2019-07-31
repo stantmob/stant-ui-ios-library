@@ -41,7 +41,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
         self.addFilterFixedUiView()
         self.configureCollectionView()
         
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = .white
         self.addBottomBorderWithColor()
     }
     
@@ -61,7 +61,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
         guard let fixedFilterUiView = fixedFilterUiView else { return }
         
         fixedFilterUiView.layer.cornerRadius = 3.0
-        fixedFilterUiView.backgroundColor    = UIColor.lightGrayStant
+        fixedFilterUiView.backgroundColor    = .lightGrayStant
         self.addSubview(fixedFilterUiView)
         fixedFilterUiView.anchor(top: self.topAnchor,
                                  leading: self.leadingAnchor,
@@ -74,7 +74,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
         filterTitleLabel.text          = self.title ?? ""
         filterTitleLabel.textAlignment = .center
         filterTitleLabel.font          = .systemFont(ofSize: 12, weight: .bold)
-        filterTitleLabel.textColor     = UIColor.darkGrayStant
+        filterTitleLabel.textColor     = .darkGrayStant
         fixedFilterUiView.addSubview(filterTitleLabel)
         filterTitleLabel.anchor(leading: fixedFilterUiView.leadingAnchor,
                                 trailing: fixedFilterUiView.trailingAnchor,
@@ -95,7 +95,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
             filterQuantityLabel  = UILabel.init(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
             
             guard let filterQuantityUiView = filterQuantityUiView, let filterQuantityLabel = filterQuantityLabel else { return }
-            filterQuantityUiView.backgroundColor    = UIColor.darkGrayStant
+            filterQuantityUiView.backgroundColor    = .darkGrayStant
             filterQuantityUiView.layer.cornerRadius = 3.0
             fixedFilterUiView.addSubview(filterQuantityUiView)
             filterQuantityUiView.anchorCenterY(anchorY: fixedFilterUiView.centerYAnchor)
@@ -106,7 +106,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
             filterQuantityLabel.text          = String(self.selectedFiltersQuantity)
             filterQuantityLabel.textAlignment = .center
             filterQuantityLabel.font          = .systemFont(ofSize: 12, weight: .bold)
-            filterQuantityLabel.textColor     = UIColor.white
+            filterQuantityLabel.textColor     = .white
             filterQuantityUiView.addSubview(filterQuantityLabel)
             filterQuantityLabel.fillSuperView()
             filterQuantityLabel.anchorCenterY(anchorY: filterQuantityUiView.centerYAnchor)
@@ -115,7 +115,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
             filterIconImageView = UIImageView(image: icon)
             
             guard let filterIconImageView = filterIconImageView else { return }
-            filterIconImageView.tintColor = UIColor.darkGrayStant
+            filterIconImageView.tintColor = .darkGrayStant
             fixedFilterUiView.addSubview(filterIconImageView)
             filterIconImageView.anchorCenterY(anchorY: fixedFilterUiView.centerYAnchor)
             filterIconImageView.anchor(leading: fixedFilterUiView.leadingAnchor,
@@ -137,7 +137,7 @@ public class ConstructionsFilter: UIView, FilterCellDelegate {
                                                                   height: 28), collectionViewLayout:collectionViewLayout)
         
         guard let collectionView = collectionView else { return }
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = .white
         collectionView.set(buttons: buttons)
         collectionView.set(cellDelegate: self)
         self.addSubview(collectionView)

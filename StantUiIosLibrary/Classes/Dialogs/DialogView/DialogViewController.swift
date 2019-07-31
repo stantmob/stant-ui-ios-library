@@ -62,7 +62,7 @@ public class DialogViewController: UIViewController {
         dialogView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: dialogHeight))
         
         guard let dialogView = dialogView else { return }
-        dialogView.backgroundColor    = UIColor.white
+        dialogView.backgroundColor    = .white
         dialogView.layer.cornerRadius = 3.0
         self.view.addSubview(dialogView)
         dialogView.anchor(leading: self.view.leadingAnchor,
@@ -86,7 +86,7 @@ public class DialogViewController: UIViewController {
         titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 21))
         
         guard let dialogView = dialogView, let titleLabel = titleLabel else { return }
-        titleLabel.configure(text: title, size: 18, weight: .bold, color: UIColor.darkStant)
+        titleLabel.configure(text: title, size: 18, weight: .bold, color: .darkStant)
         dialogView.addSubview(titleLabel)
         titleLabel.anchor(top: dialogView.topAnchor,
                           leading: dialogView.leadingAnchor,
@@ -103,14 +103,14 @@ public class DialogViewController: UIViewController {
         for button in buttons {
             let stackViewButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 14))
 
-            stackViewButton.backgroundColor = UIColor.white
+            stackViewButton.backgroundColor = .white
             
             stackViewButton.setTitle(button.title?.uppercased() ?? "", for: .normal)
             
             if button.style == ButtonStyle.cancel {
-                stackViewButton.setTitleColor(UIColor.darkGrayStant, for: .normal)
+                stackViewButton.setTitleColor(.darkGrayStant, for: .normal)
             } else {
-                stackViewButton.setTitleColor(UIColor.orangeStant, for: .normal)
+                stackViewButton.setTitleColor(.orangeStant, for: .normal)
             }
             
             stackViewButton.contentHorizontalAlignment = .center

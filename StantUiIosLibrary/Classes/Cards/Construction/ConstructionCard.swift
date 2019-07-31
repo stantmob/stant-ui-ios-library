@@ -2,7 +2,6 @@ import UIKit
 
 public class ConstructionCard: UITableViewCell {
     
-    public static let IDENTIFIER = "ConstructionCardIdentifier"
     public static let cellHeight: CGFloat = 87
     
     var color: UIColor?
@@ -50,13 +49,13 @@ public class ConstructionCard: UITableViewCell {
         
         guard let mainView = mainView else { return }
         self.addSubview(mainView)
-        mainView.backgroundColor = UIColor.white
+        mainView.backgroundColor = .white
         mainView.anchor(top: self.topAnchor,
                         leading: self.leadingAnchor,
                         bottom: self.bottomAnchor,
                         trailing: self.trailingAnchor,
                         padding: UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4))
-        mainView.layer.applySketchShadow(color: UIColor.shadowStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
+        mainView.layer.applySketchShadow(color: .shadowStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
     }
     
     fileprivate func configure(title: String, subtitle: String) {
@@ -66,9 +65,9 @@ public class ConstructionCard: UITableViewCell {
         guard let titleLabel = titleLabel, let subtitleLabel = subtitleLabel else { return }
         
         if #available(iOS 8.2, *) {
-            self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: UIColor.darkStant,
+            self.setText(label: titleLabel, text: title, textSize: 16, textWeight: .regular, textColor: .darkStant,
                          topAnchor: 14, leftAnchor: 91, bottomAnchor: 51, rightAnchor: 12)
-            self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: UIColor.darkGrayStant,
+            self.setText(label: subtitleLabel, text: subtitle, textSize: 12, textWeight: .regular, textColor: .darkGrayStant,
                          topAnchor: 37, leftAnchor: 91, bottomAnchor: 33, rightAnchor: 12)
         }
     }
@@ -115,7 +114,7 @@ public class ConstructionCard: UITableViewCell {
         fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 4))
 
         guard let fullProgressBarView = fullProgressBarView, let mainView = mainView  else { return }
-        fullProgressBarView.backgroundColor    = UIColor.lightGrayStant
+        fullProgressBarView.backgroundColor    = .lightGrayStant
         fullProgressBarView.layer.cornerRadius = 2.5
         mainView.addSubview(fullProgressBarView)
         if #available(iOS 9.0, *) {
@@ -148,7 +147,7 @@ public class ConstructionCard: UITableViewCell {
 
             percentageLabel.text          = "\(Int(percentage))%"
             percentageLabel.font          = .systemFont(ofSize: 12, weight: .bold)
-            percentageLabel.textColor     = UIColor.white
+            percentageLabel.textColor     = .white
             percentageLabel.textAlignment = .center
             backgroundView.addSubview(percentageLabel)
             percentageLabel.fillSuperView()

@@ -36,9 +36,9 @@ class MainMenuTabBarTests: XCTestCase {
         
         tabBarViewController = MainMenuTabBarController()
         
-        firstVC.view.backgroundColor  = UIColor.yellow
-        secondVC.view.backgroundColor = UIColor.orange
-        thirdVC.view.backgroundColor  = UIColor.green
+        firstVC.view.backgroundColor  = .yellow
+        secondVC.view.backgroundColor = .orange
+        thirdVC.view.backgroundColor  = .green
     }
     
     fileprivate func setTabViewElements(url: String = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdDuogJgtggIE17gf4kOGyXX4ayj2g9bXj1P2lFQuhVu1FXe2odWKfPA") {
@@ -85,7 +85,7 @@ class MainMenuTabBarTests: XCTestCase {
         
         XCTAssertEqual(tabBarViewController?.selectedIndex, 0)
         XCTAssertEqual(tabBarDelegate.selectedCellIndex, 0)
-        XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, UIColor.yellow)
+        XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, .yellow)
 
         self.clickOnSecondElement()
         self.clickOnThirdElement()
@@ -98,7 +98,7 @@ class MainMenuTabBarTests: XCTestCase {
                                                didSelect: viewControllers[1])
         
         XCTAssertEqual(tabBarDelegate.selectedCellIndex, 1)
-        XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, UIColor.orange)
+        XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, .orange)
     }
     
     fileprivate func clickOnThirdElement() {
@@ -108,7 +108,7 @@ class MainMenuTabBarTests: XCTestCase {
                                                didSelect: viewControllers[2])
         
         XCTAssertEqual(tabBarDelegate.selectedCellIndex, 2)
-        XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, UIColor.green)
+        XCTAssertEqual(tabBarViewController?.selectedViewController?.view.backgroundColor, .green)
     }
     
     func testSendInvalidUrlToIcon() {

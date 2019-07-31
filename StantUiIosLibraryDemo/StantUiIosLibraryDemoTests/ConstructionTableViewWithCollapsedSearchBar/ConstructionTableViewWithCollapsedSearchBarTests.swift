@@ -27,7 +27,7 @@ class ConstructionTableViewWithCollapsedSearchBarTests: XCTestCase {
             constructionList.append(Construction(title: "Title \(i)",
                                                  subtitle: "Subtitle",
                                                  imageUrl: "",
-                                                 color: UIColor.yellow,
+                                                 color: .yellow,
                                                  percentage: CGFloat(i*2)))
         }
         
@@ -65,15 +65,18 @@ class ConstructionTableViewWithCollapsedSearchBarTests: XCTestCase {
     
     func testCheckSearchElements() {
         guard let mainView = mainView else { return }
+        let searchBar = mainView.searchView?.viewWithTag(1) as? UISearchBar
         
-        XCTAssertTrue(mainView.searchView?.searchBar?.isDescendant(of: mainView.searchView ?? UIView()) ?? false)
-        XCTAssertEqual(mainView.searchView?.searchBar?.barTintColor, UIColor.white)
-        XCTAssertEqual(mainView.searchView?.searchBar?.placeholder, placeholderText)
+        XCTAssertTrue(searchBar?.isDescendant(of: mainView.searchView ?? UIView()) ?? false)
+        XCTAssertEqual(searchBar?.barTintColor, .white)
+        XCTAssertEqual(searchBar?.placeholder, placeholderText)
     }
     
     func testTableViewAfterSearch() {
         guard let mainView = mainView else { return }
-        mainView.searchView?.searchBar(mainView.searchView?.searchBar ?? UISearchBar(),
+        let searchBar = mainView.searchView?.viewWithTag(1) as? UISearchBar
+        
+        mainView.searchView?.searchBar(searchBar ?? UISearchBar(),
                                        textDidChange: "2")
         
         XCTAssertEqual(mainView.tableView?.filteredConstructionSiteList.count, 3)
@@ -83,7 +86,9 @@ class ConstructionTableViewWithCollapsedSearchBarTests: XCTestCase {
     
     fileprivate func checkEraseSearch() {
         guard let mainView = mainView else { return }
-        mainView.searchView?.searchBar(mainView.searchView?.searchBar ?? UISearchBar(),
+        let searchBar = mainView.searchView?.viewWithTag(1) as? UISearchBar
+        
+        mainView.searchView?.searchBar(searchBar ?? UISearchBar(),
                                        textDidChange: "")
         
         XCTAssertEqual(mainView.tableView?.filteredConstructionSiteList.count, 20)
@@ -93,7 +98,9 @@ class ConstructionTableViewWithCollapsedSearchBarTests: XCTestCase {
     
     func testTypeAnInvalidSearch() {
         guard let mainView = mainView else { return }
-        mainView.searchView?.searchBar(mainView.searchView?.searchBar ?? UISearchBar(),
+        let searchBar = mainView.searchView?.viewWithTag(1) as? UISearchBar
+        
+        mainView.searchView?.searchBar(searchBar ?? UISearchBar(),
                                        textDidChange: "2837383")
         
         XCTAssertEqual(mainView.tableView?.filteredConstructionSiteList.count, 0)

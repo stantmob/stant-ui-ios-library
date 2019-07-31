@@ -26,7 +26,7 @@ class ConstructionCardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .white
 
         constructionSiteList.append(Construction(title: "Construction site without image", subtitle: cardSubtitle, imageUrl: "", color: cardColor, percentage: 10))
         for i in 1...24 {

@@ -24,7 +24,7 @@ class FirstHeaderViewController: UIViewController, RecentItemCellDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .white
         
         self.addHeaderView()
     }

@@ -22,7 +22,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor.clear
+        self.view.backgroundColor = .clear
     }
     
     deinit {
@@ -66,7 +66,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     
     fileprivate func configureBackgroundView() {
         guard let backgroundView = backgroundView else { return }
-        backgroundView.backgroundColor = UIColor.black
+        backgroundView.backgroundColor = .black
         backgroundView.alpha           = 0.3
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissViewController))
@@ -83,7 +83,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     
     fileprivate func configureMainView() {
         guard let mainView = mainView else { return }
-        mainView.backgroundColor = UIColor.white
+        mainView.backgroundColor = .white
         mainView.roundCorners(corners: [.topLeft, .topRight], radius: 5.0)
         
         mainViewHeight = (self.view.frame.height * 0.6)
@@ -125,7 +125,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     fileprivate func adjustDetailViewOnTop(view: UIView) {
         guard let mainView = mainView else { return }
         view.layer.cornerRadius = 3.5
-        view.backgroundColor    = UIColor.lightGrayStant
+        view.backgroundColor    = .lightGrayStant
         
         view.anchor(top: mainView.topAnchor,
                     padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0),
@@ -143,7 +143,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
         tableView.isScrollEnabled          = true
         tableView.allowsMultipleSelection  = false
         
-        tableView.register(ScrollableTableViewDialogCell.self, forCellReuseIdentifier: ScrollableTableViewDialogCell.IDENTIFIER)
+        tableView.register(ScrollableTableViewDialogCell.self, forCellReuseIdentifier: ScrollableTableViewDialogCell.identifier())
         
         tableView.anchor(top: mainView.topAnchor,
                          leading: mainView.leadingAnchor,
@@ -167,7 +167,7 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ScrollableTableViewDialogCell.IDENTIFIER) as? ScrollableTableViewDialogCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ScrollableTableViewDialogCell.identifier()) as? ScrollableTableViewDialogCell else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none

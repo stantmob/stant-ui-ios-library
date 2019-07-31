@@ -14,12 +14,12 @@ public class ViewTeste: UIView {
     
     private func configureView() {
         // Here it comes general configurations
-        self.backgroundColor = UIColor.blue
+        self.backgroundColor = .blue
     }
     
     public func changeBackground() {
         // Here it comes custom configurations
-        self.backgroundColor = UIColor.magenta
+        self.backgroundColor = .magenta
     }
     
 }

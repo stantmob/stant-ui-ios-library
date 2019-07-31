@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let mainView   = MainViewController()
         let navigation = UINavigationController(rootViewController: mainView)
-        UINavigationBar.appearance().tintColor           = UIColor.red
-        UINavigationBar.appearance().backgroundColor     = UIColor.clear
+        UINavigationBar.appearance().tintColor           = .red
+        UINavigationBar.appearance().backgroundColor     = .clear
         UINavigationBar.appearance().isTranslucent       = true
         UINavigationBar.appearance().shadowImage         = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)

@@ -35,10 +35,10 @@ public class SyncDialogView: UIView {
     }
     
     private func configureView() {
-        self.backgroundColor = UIColor.lightGrayStant
+        self.backgroundColor = .lightGrayStant
     }
     
-    public func set(image: UIImage, text: String, percentage: CGFloat = 0, percentageBarColor: UIColor = UIColor.darkGrayStant) {
+    public func set(image: UIImage, text: String, percentage: CGFloat = 0, percentageBarColor: UIColor = .darkGrayStant) {
         self.configureImageWith(image: image)
         self.addText(text)
         
@@ -64,7 +64,7 @@ public class SyncDialogView: UIView {
         textDialogLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
         
         guard let textDialogLabel = textDialogLabel else { return }
-        textDialogLabel.configure(text: text, size: 16, weight: .regular, color: UIColor.darkStant)
+        textDialogLabel.configure(text: text, size: 16, weight: .regular, color: .darkStant)
         textDialogLabel.lineBreakMode      = .byWordWrapping
         textDialogLabel.numberOfLines      = 3
         textDialogLabel.minimumScaleFactor = 0.5
@@ -86,7 +86,7 @@ public class SyncDialogView: UIView {
         fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 5))
         
         guard let fullProgressBarView = fullProgressBarView else { return }
-        fullProgressBarView.backgroundColor    = UIColor.veryLightGrayStant
+        fullProgressBarView.backgroundColor    = .veryLightGrayStant
         fullProgressBarView.layer.cornerRadius = 2.5
         self.addSubview(fullProgressBarView)
         

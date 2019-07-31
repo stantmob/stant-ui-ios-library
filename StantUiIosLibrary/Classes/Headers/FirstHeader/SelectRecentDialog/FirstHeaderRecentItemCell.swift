@@ -9,7 +9,6 @@ import UIKit
 
 public class FirstHeaderRecentItemCell: UITableViewCell {
     
-    public static let IDENTIFIER = "FirstHeaderRecentItemCellIdentifier"
     public static let cellHeight: CGFloat = 56
     
     public var mainView: UIView?
@@ -40,7 +39,7 @@ public class FirstHeaderRecentItemCell: UITableViewCell {
         self.addSubview(mainView)
         
         mainView.fillSuperView()
-        mainView.backgroundColor = UIColor.white
+        mainView.backgroundColor = .white
         
         self.addCellSubviews()
     }
@@ -85,7 +84,7 @@ public class FirstHeaderRecentItemCell: UITableViewCell {
     fileprivate func configureCellWith(text: String) {
         guard let mainView = mainView, let cellTextLabel = cellTextLabel else { return }
         
-        cellTextLabel.configure(text: text, alignment: .left, size: 16, weight: .regular, color: UIColor.darkStant)
+        cellTextLabel.configure(text: text, alignment: .left, size: 16, weight: .regular, color: .darkStant)
         cellTextLabel.anchor(top: mainView.topAnchor,
                              leading: mainView.leadingAnchor,
                              bottom: mainView.bottomAnchor,

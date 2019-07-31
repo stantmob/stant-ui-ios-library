@@ -19,7 +19,7 @@ class ConstructionsFilterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .white
         
         filter = ConstructionsFilter.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: ConstructionsFilter.headerHeight))
         

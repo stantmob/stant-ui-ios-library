@@ -9,7 +9,6 @@ import UIKit
 
 public class ScrollableTableViewDialogCell: UITableViewCell {
     
-    public static let IDENTIFIER = "ScrollableTableViewDialogCellIdentifier"
     public static let cellHeight: CGFloat = 56
     
     public var mainView: UIView?
@@ -38,7 +37,7 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         self.addSubview(mainView)
         
         mainView.fillSuperView()
-        mainView.backgroundColor = UIColor.white
+        mainView.backgroundColor = .white
         
         self.addCellSubviews()
     }
@@ -50,7 +49,7 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         guard let cellTextLabel = cellTextLabel else { return }
         mainView.addSubviews(cellTextLabel)
         
-        cellTextLabel.configure(text: title ?? "", alignment: .left, size: 16, weight: .regular, color: UIColor.darkStant)
+        cellTextLabel.configure(text: title ?? "", alignment: .left, size: 16, weight: .regular, color: .darkStant)
         cellTextLabel.anchor(top: mainView.topAnchor,
                              leading: mainView.leadingAnchor,
                              bottom: mainView.bottomAnchor,

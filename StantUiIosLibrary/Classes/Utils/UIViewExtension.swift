@@ -8,6 +8,11 @@
 import UIKit
 
 extension UIView {
+    
+    public static func identifier() -> String {
+        return "\(String(describing: self.self))Identifier"
+    }
+    
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path   = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask   = CAShapeLayer()
@@ -62,7 +67,7 @@ extension UIView {
         self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
-    func addBottomBorderWithColor(color: UIColor = UIColor.veryLightGrayStant, width: CGFloat = 1) {
+    func addBottomBorderWithColor(color: UIColor = .veryLightGrayStant, width: CGFloat = 1) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame           = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)

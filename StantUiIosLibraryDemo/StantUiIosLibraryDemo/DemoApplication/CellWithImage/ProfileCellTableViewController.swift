@@ -17,7 +17,7 @@ class ProfileCellTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(InternPersonCell.self, forCellReuseIdentifier: InternPersonCell.IDENTIFIER)
+        self.tableView.register(InternPersonCell.self, forCellReuseIdentifier: InternPersonCell.identifier())
         self.tableView.allowsSelection = false
     }
     
@@ -51,7 +51,7 @@ class ProfileCellTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: InternPersonCell.IDENTIFIER,
+        let cell = tableView.dequeueReusableCell(withIdentifier: InternPersonCell.identifier(),
                                                  for: indexPath) as? InternPersonCell
         
         cell?.set(title: "Godfather Washington",

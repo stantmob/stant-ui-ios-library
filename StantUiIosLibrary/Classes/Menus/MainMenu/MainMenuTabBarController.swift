@@ -18,9 +18,9 @@ public class MainMenuTabBarController: UITabBarController, UITabBarControllerDel
     }
     
     public func set(tabBarObjects: [MenuTabBarDTO],
-                    itemsTintColor: UIColor = UIColor.darkStant,
-                    barTintColor: UIColor = UIColor.white,
-                    unselectedItemsTintColor: UIColor = UIColor.darkGrayStant,
+                    itemsTintColor: UIColor = .darkStant,
+                    barTintColor: UIColor = .white,
+                    unselectedItemsTintColor: UIColor = .darkGrayStant,
                     mainMenuTabBarDelegate: MainMenuTabBarDelegate) {
         
         tabBar.tintColor               = itemsTintColor

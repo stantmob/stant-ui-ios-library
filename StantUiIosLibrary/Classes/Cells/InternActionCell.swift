@@ -9,7 +9,6 @@ import UIKit
 
 public class InternActionCell: UITableViewCell {
     
-    public static let IDENTIFIER      = "InternActionCellIdentifier"
     public static let HEIGHT: CGFloat = 56
     
     override public func awakeFromNib() {
@@ -26,7 +25,7 @@ public class InternActionCell: UITableViewCell {
     
     public func set(description: String = String(),
                     icon: UIImage? = UIImage(),
-                    iconColor: UIColor = UIColor.darkGray,
+                    iconColor: UIColor = .darkGray,
                     iconSize: CGSize = CGSize(width: 20, height: 20)) {
         self.textLabel?.text      = description
         self.imageView?.image     = icon?.reframeImageSize(iconSize)
