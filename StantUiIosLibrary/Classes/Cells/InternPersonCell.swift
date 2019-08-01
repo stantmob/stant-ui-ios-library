@@ -44,11 +44,12 @@ public class InternPersonCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func set(title: String = String(),
-                    description: String = String(),
-                    icon: UIImage? = UIImage(),
-                    iconSize: CGSize = CGSize(width: 35, height: 35),
-                    titleSize: CGFloat = 16,
+    public func set(title: String            = String(),
+                    description: String      = String(),
+                    icon: UIImage?           = nil,
+                    iconURL: String?         = nil,
+                    iconSize: CGSize         = CGSize(width: 35, height: 35),
+                    titleSize: CGFloat       = 16,
                     descriptionSize: CGFloat = 14) {
         
         self.subviews.forEach { view in
@@ -57,10 +58,16 @@ public class InternPersonCell: UITableViewCell {
         
         self.removeSubviews(self.titleLabel, self.descriptionLabel)
         
-        let roundedAndFormattedImage = icon?.roundedReframedWith(size: iconSize)
-        self.imageView?.image        = roundedAndFormattedImage
+        if let unwrappedIcon = icon {
+            self.imageView?.image = unwrappedIcon.roundedReframedWith(size: iconSize)
+        } else if let unwrappedURL = iconURL {
+            self.imageView?.image = UIImage().roundedReframedWith(size: iconSize)
+            self.loadImageBy(url: unwrappedURL) { iconImage in
+                self.imageView?.image = iconImage.roundedReframedWith(size: iconSize)
+            }
+        }
         
-        positionElements()
+        self.positionElements()
         
         self.titleLabel.configure(text: title,
                                   size: titleSize,
@@ -86,6 +93,10 @@ public class InternPersonCell: UITableViewCell {
         
         positionOptionalElements()
         styleButtonImages()
+    }
+    
+    private func loadImageBy(url: String, _ callbackBlock: @escaping (UIImage) -> Void) {
+        UIImage.getFrom(url: url, callbackBlock)
     }
     
     private func styleButtonImages() {
