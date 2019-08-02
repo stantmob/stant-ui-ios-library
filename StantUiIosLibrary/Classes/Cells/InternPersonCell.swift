@@ -19,7 +19,6 @@ public class InternPersonCell: UITableViewCell {
                                                         y: 0,
                                                         width: 210,
                                                         height: 14))
-    
     private let mailImage       = UIImageView(frame: CGRect(x: 0,
                                                             y: 0,
                                                             width: 20,
@@ -28,9 +27,11 @@ public class InternPersonCell: UITableViewCell {
                                                             y: 0,
                                                             width: 20,
                                                             height: 20))
-    
+
     private weak var mailButton: UIButton?
     private weak var callButton: UIButton?
+    
+    private var profileImage: RoundedImageView?
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +43,11 @@ public class InternPersonCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        self.removeSubviews()
+        profileImage = nil
     }
     
     public func set(title: String            = String(),
@@ -58,14 +64,7 @@ public class InternPersonCell: UITableViewCell {
         
         self.removeSubviews(self.titleLabel, self.descriptionLabel)
         
-        if let unwrappedIcon = icon {
-            self.imageView?.image = unwrappedIcon.roundedReframedWith(size: iconSize)
-        } else if let unwrappedURL = iconURL {
-            self.imageView?.image = UIImage().roundedReframedWith(size: iconSize)
-            self.loadImageBy(url: unwrappedURL) { iconImage in
-                self.imageView?.image = iconImage.roundedReframedWith(size: iconSize)
-            }
-        }
+        self.addCustomImageView(icon: icon, iconURL: iconURL, iconSize: iconSize)
         
         self.positionElements()
         
@@ -95,8 +94,21 @@ public class InternPersonCell: UITableViewCell {
         styleButtonImages()
     }
     
-    private func loadImageBy(url: String, _ callbackBlock: @escaping (UIImage) -> Void) {
-        UIImage.getFrom(url: url, callbackBlock)
+    private func addCustomImageView(icon: UIImage?   = nil,
+                                    iconURL: String? = nil,
+                                    iconSize: CGSize) {
+        profileImage = RoundedImageView(frame: CGRect(x: 0,
+                                                      y: 0,
+                                                      width: iconSize.width,
+                                                      height: iconSize.height))
+        guard let profileImage = profileImage else { return }
+        self.addSubview(profileImage)
+        profileImage.anchor(top: self.topAnchor,
+                            leading: self.leadingAnchor,
+                            padding: UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 0),
+                            size: iconSize)
+        profileImage.set(icon: icon, iconURL: iconURL, iconDiameter: iconSize.height, iconBorder: 2)
+        profileImage.tag = 1
     }
     
     private func styleButtonImages() {
@@ -161,14 +173,14 @@ public class InternPersonCell: UITableViewCell {
         self.addSubviews(titleLabel, descriptionLabel)
         
         self.titleLabel.anchor(top: self.topAnchor,
-                               leading: self.imageView?.trailingAnchor,
+                               leading: self.profileImage?.trailingAnchor,
                                padding: UIEdgeInsets(top: 11,
                                                      left: 14,
                                                      bottom: 0,
                                                      right: 0))
         
         self.descriptionLabel.anchor(top: self.titleLabel.bottomAnchor,
-                                     leading: self.imageView?.trailingAnchor,
+                                     leading: self.profileImage?.trailingAnchor,
                                      padding: UIEdgeInsets(top: 2,
                                                            left: 14,
                                                            bottom: 0,

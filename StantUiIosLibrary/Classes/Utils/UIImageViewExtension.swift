@@ -46,4 +46,39 @@ extension UIImageView {
         return UIImage(data: data as Data) ?? UIImage()
     }
     
+    func addRoundedImage(icon: UIImage? = nil, iconURL: String? = nil, borderWidth: CGFloat = 5, diameter: CGFloat) {
+        self.image               = UIColor.stantImagePlaceholder.image()
+        self.layer.cornerRadius  = diameter / 2
+        self.layer.masksToBounds = true
+
+        let imageDiameter = diameter - (2 * borderWidth)
+        let iconSize      = CGSize(width: imageDiameter, height: imageDiameter)
+        let imageView     = UIImageView(frame: CGRect(x: 0,
+                                                      y: 0,
+                                                      width: imageDiameter,
+                                                      height: imageDiameter))
+        self.addSubview(imageView)
+        
+        imageView.anchor(size: iconSize)
+        imageView.anchorCenterX(anchorX: self.centerXAnchor)
+        imageView.anchorCenterY(anchorY: self.centerYAnchor)
+        
+        imageView.layer.cornerRadius  = imageDiameter / 2
+        imageView.layer.masksToBounds = true
+        imageView.backgroundColor     = .white
+
+        if let unwrappedIcon = icon {
+            imageView.image = unwrappedIcon
+        } else if let unwrappedURL = iconURL {
+            imageView.image = UIImage()
+            loadImageBy(url: unwrappedURL) { iconImage in
+                imageView.image = iconImage
+            }
+        }
+    }
+    
+    private func loadImageBy(url: String, _ callbackBlock: @escaping (UIImage) -> Void) {
+        UIImage.getFrom(url: url, callbackBlock)
+    }
+    
 }

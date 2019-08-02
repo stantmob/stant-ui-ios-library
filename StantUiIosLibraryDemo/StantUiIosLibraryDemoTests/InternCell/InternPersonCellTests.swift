@@ -88,7 +88,8 @@ class InternPersonCellTests: XCTestCase {
         }
         
         try then("It should match the given size") {
-            XCTAssertEqual(self.cell.imageView?.image?.size, self.imageSize)
+            let imageView = self.cell.viewWithTag(1) as? RoundedImageView
+            XCTAssertEqual(imageView?.frame.size, self.imageSize)
         }
     }
     
@@ -104,7 +105,8 @@ class InternPersonCellTests: XCTestCase {
         }
         
         try then("It should match the given size") {
-            XCTAssertEqual(self.cell.imageView?.image?.size, self.imageSize)
+            let imageView = self.cell.viewWithTag(1) as? RoundedImageView
+            XCTAssertEqual(imageView?.frame.size, self.imageSize)
         }
     }
     

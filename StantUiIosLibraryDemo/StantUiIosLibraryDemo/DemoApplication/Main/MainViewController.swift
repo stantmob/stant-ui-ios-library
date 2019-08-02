@@ -30,6 +30,9 @@ class MainViewController: UIViewController {
         self.addProfileCellDemoButton()
         self.addBottomDialogWithScrollDemoButton()
         self.addGroupSelectionTableViewDemoButton()
+        self.addTextInputTableViewCellDemoButton()
+        self.addRoundedImageViewDemoButton()
+        self.addSecondHeaderDemoButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,5 +110,29 @@ class MainViewController: UIViewController {
     
     @objc func goToGroupSelectionDemo() {
         self.open(viewController: GroupSelectionViewController())
+    }
+    
+    fileprivate func addTextInputTableViewCellDemoButton() {
+        self.view.addButton(title: "Text Input Table View Cell Demo", action: #selector(goToTextInputTableViewCellDemo), orderOfButton: 10, target: self)
+    }
+    
+    @objc func goToTextInputTableViewCellDemo() {
+        self.open(viewController: InputTextCellTableViewController())
+    }
+    
+    fileprivate func addRoundedImageViewDemoButton() {
+        self.view.addButton(title: "Rounded Image View Demo", action: #selector(goToRoundedImageViewDemo), orderOfButton: 11, target: self)
+    }
+    
+    @objc func goToRoundedImageViewDemo() {
+        self.open(viewController: RoundedImageViewController())
+    }
+    
+    fileprivate func addSecondHeaderDemoButton() {
+        self.view.addButton(title: "Second Header Demo", action: #selector(goToSecondHeaderDemo), orderOfButton: 12, target: self)
+    }
+    
+    @objc func goToSecondHeaderDemo() {
+        self.open(viewController: SecondHeaderViewController())
     }
 }
