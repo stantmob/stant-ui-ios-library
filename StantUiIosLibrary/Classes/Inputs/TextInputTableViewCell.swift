@@ -25,6 +25,7 @@ public class TextInputTableViewCell: UITableViewCell {
     
     public func set(inputType: String, inicialInputValue: String = "", editable: Bool = true) {
         self.removeSubviews()
+        self.backgroundColor = .clear
         
         let mainView = UIView(frame: CGRect(x: 16,
                                             y: 0,

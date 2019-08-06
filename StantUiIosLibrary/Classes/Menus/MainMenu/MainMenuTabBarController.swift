@@ -17,6 +17,11 @@ public class MainMenuTabBarController: UITabBarController, UITabBarControllerDel
         self.delegate = self
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     public func set(tabBarObjects: [MenuTabBarDTO],
                     itemsTintColor: UIColor = .darkStant,
                     barTintColor: UIColor = .white,
