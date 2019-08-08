@@ -66,7 +66,7 @@ extension UIImageView {
         imageView.layer.cornerRadius  = imageDiameter / 2
         imageView.layer.masksToBounds = true
         imageView.backgroundColor     = .white
-        imageView.contentMode         = .scaleAspectFit
+        imageView.contentMode         = .scaleAspectFill
 
         if let unwrappedIcon = icon {
             imageView.image = unwrappedIcon
