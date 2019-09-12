@@ -77,7 +77,7 @@ extension UIImageView {
             }
         }
     }
-    
+
     private func loadImageBy(url: String, _ callbackBlock: @escaping (UIImage) -> Void) {
         UIImage.getFrom(url: url, callbackBlock)
     }

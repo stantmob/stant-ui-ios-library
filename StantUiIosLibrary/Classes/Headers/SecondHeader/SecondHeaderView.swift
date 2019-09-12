@@ -24,6 +24,7 @@ public class SecondHeaderView: UIView {
     }
     
     public func configure(title: String,
+                          titleFont: UIFont = .systemFont(ofSize: 18, weight: .bold),
                           subtitle: String? = nil,
                           titleButton: SecondHeaderButton? = nil,
                           leftButton: SecondHeaderButton? = nil,
@@ -31,14 +32,18 @@ public class SecondHeaderView: UIView {
         self.backgroundColor = .white
         self.layer.applySketchShadow(color: .shadowStant, alpha: 0.07, x: 0, y: 5, blur: 8, spread: 0)
         
-        self.addMainTitle(title, button: titleButton, hasSubtitle: subtitle != nil, tag: 1)
+        self.addMainTitle(title, button: titleButton, hasSubtitle: subtitle != nil, tag: 1, font: titleFont)
         
         if let subtitle = subtitle { self.addSubtitle(subtitle, tag: 2) }
         if let button   = leftButton { self.add(button: button, alignment: .left, tag: 3) }
         if let button   = rightButton { self.add(button: button, alignment: .right, tag: 4) }
     }
     
-    fileprivate func addMainTitle(_ title: String, button: SecondHeaderButton?, hasSubtitle: Bool, tag: Int) {
+    fileprivate func addMainTitle(_ title: String,
+                                  button: SecondHeaderButton?,
+                                  hasSubtitle: Bool,
+                                  tag: Int,
+                                  font: UIFont) {
         let titleButton = UIButton(frame: CGRect(x: 0,
                                                  y: 0,
                                                  width: self.frame.width,
@@ -47,7 +52,7 @@ public class SecondHeaderView: UIView {
         titleButton.setTitle(title, for: .normal)
         titleButton.setTitleColor(.darkStant, for: .normal)
         
-        titleButton.titleLabel?.font         = .systemFont(ofSize: 18, weight: .bold)
+        titleButton.titleLabel?.font         = font
         titleButton.isUserInteractionEnabled = button?.action != nil
         titleButton.semanticContentAttribute = .forceRightToLeft
         

@@ -42,7 +42,7 @@ public class FirstHeaderView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
+        self.removeSubviews()
         let dropdownWidth = (self.frame.width * 2 ) / 3
         dropdownMenu      = UIView(frame: CGRect(x: 0, y: 0, width: dropdownWidth, height: 29))
         navigationItem    = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))

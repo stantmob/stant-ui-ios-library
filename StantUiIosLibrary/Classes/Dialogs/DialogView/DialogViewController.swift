@@ -20,9 +20,6 @@ public class DialogViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissViewController))
-        self.view.addGestureRecognizer(tap)
     }
     
     deinit {
@@ -39,13 +36,14 @@ public class DialogViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    public func configureView(title: String, mainView: UIView, buttons: [DialogButton]) {
+    public func configureView(title: String, mainView: UIView, buttons: [DialogButton], canClickOutside: Bool = true) {
         self.addDialog()
         self.mainContainerInformation = mainView
         self.addCenteredView(mainView)
         self.addTitle(title)
         self.buttons = buttons
         self.add(buttons: buttons)
+        self.updateClicks(canClickOutside)
     }
     
     public func updateDialog(title: String, mainView: UIView, removeAllButtons: Bool = true) {

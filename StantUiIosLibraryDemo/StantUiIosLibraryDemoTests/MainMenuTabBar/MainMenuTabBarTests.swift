@@ -93,7 +93,9 @@ class MainMenuTabBarTests: XCTestCase {
     
     fileprivate func clickOnSecondElement() {
         tabBarViewController?.selectedIndex = 1
+        
         guard let viewControllers = tabBarViewController?.viewControllers else { return }
+
         tabBarViewController?.tabBarController(tabBarViewController ?? UITabBarController(),
                                                didSelect: viewControllers[1])
         

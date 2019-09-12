@@ -14,6 +14,7 @@ class ConstructionCardTests: XCTestCase {
 
     private var tableViewCell: ConstructionCard!
     
+    let id: String          = String()
     let title: String       = "Title for test"
     let subtitle: String    = "Subtitle"
     let imageUrl: String    = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
@@ -33,7 +34,12 @@ class ConstructionCardTests: XCTestCase {
     }
     
     fileprivate func configureCell() {
-        let construction = Construction(title: self.title, subtitle: self.subtitle, imageUrl: self.imageUrl, color: self.color, percentage: self.percentage)
+        let construction = Construction(id: self.id,
+                                        title: self.title,
+                                        subtitle: self.subtitle,
+                                        imageUrl: self.imageUrl,
+                                        color: self.color,
+                                        percentage: self.percentage)
         tableViewCell.configureViewFor(construction: construction)
         tableViewCell.layoutSubviews()
     }

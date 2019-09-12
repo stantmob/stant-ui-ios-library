@@ -188,13 +188,15 @@ public class ConstructionCard: UITableViewCell {
 }
 
 public struct Construction {
+    let id: String?
     public let title: String?
     let subtitle: String?
     let imageUrl: String?
     let color: UIColor?
     let percentage: CGFloat?
     
-    public init(title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: CGFloat) {
+    public init(id: String, title: String, subtitle: String, imageUrl: String, color: UIColor, percentage: CGFloat) {
+        self.id         = id
         self.title      = title
         self.subtitle   = subtitle
         self.imageUrl   = imageUrl

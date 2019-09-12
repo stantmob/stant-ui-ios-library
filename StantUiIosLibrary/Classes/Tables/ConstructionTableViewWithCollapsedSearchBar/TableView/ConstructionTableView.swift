@@ -11,6 +11,7 @@ public class ConstructionTableView: UITableView, UITableViewDelegate, UITableVie
     
     var previousScrollOffset: CGFloat  = 0
     
+    public var allConstructionSiteList        = [Construction]()
     public var filteredConstructionSiteList   = [Construction]()
     public var currentHeightConstant: CGFloat = DefaultSearchBar.searchViewHeight
     public let maxHeaderHeight: CGFloat       = DefaultSearchBar.searchViewHeight
@@ -37,6 +38,7 @@ public class ConstructionTableView: UITableView, UITableViewDelegate, UITableVie
         self.animationDelegate            = animationDelegate
         self.selectCellDelegate           = selectCellDelegate
         self.filteredConstructionSiteList = constructionList
+        self.allConstructionSiteList      = constructionList
         self.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.identifier())
     }
     
@@ -59,7 +61,10 @@ public class ConstructionTableView: UITableView, UITableViewDelegate, UITableVie
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectCellDelegate?.didClickOnTableViewCellWith(index: indexPath.row)
+        let clickedConstruction      = filteredConstructionSiteList[indexPath.row]
+        let clickedConstructionIndex = allConstructionSiteList.firstIndex(where: {$0.id == clickedConstruction.id}) ?? indexPath.row
+        
+        selectCellDelegate?.didClickOnTableViewCellWith(index: clickedConstructionIndex)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

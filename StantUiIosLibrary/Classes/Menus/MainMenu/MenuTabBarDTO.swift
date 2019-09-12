@@ -28,7 +28,7 @@ public struct MenuTabBarDTO {
     
     fileprivate func getRoundedImageToTabBarItem(url: String) -> UIImage {
         let roundedImage = UIColor.lightGray.image().roundedRectImageFromImage(cornerRadius: 12)
-
+        
         guard let nsurl    = NSURL(string: url)               else { return roundedImage }
         guard let data     = NSData(contentsOf: nsurl as URL) else { return roundedImage }
         guard let newImage = UIImage(data: data as Data)      else { return roundedImage }

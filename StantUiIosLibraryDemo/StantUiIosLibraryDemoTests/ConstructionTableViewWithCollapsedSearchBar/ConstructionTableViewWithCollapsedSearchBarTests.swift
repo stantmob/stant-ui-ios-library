@@ -24,7 +24,8 @@ class ConstructionTableViewWithCollapsedSearchBarTests: XCTestCase {
         super.setUp()
         
         for i in 1...20 {
-            constructionList.append(Construction(title: "Title \(i)",
+            constructionList.append(Construction(id: "\(i)",
+                                                 title: "Title \(i)",
                                                  subtitle: "Subtitle",
                                                  imageUrl: "",
                                                  color: .yellow,

@@ -68,4 +68,21 @@ extension UIImage {
         }
     }
     
+    static func getRoundedImageToTabBarItem(url givenUrl: String, _ callback: @escaping (UIImage) -> Void) {
+        var roundedImage = UIColor.lightGray.image().roundedRectImageFromImage(cornerRadius: 12)
+        
+        DispatchQueue.global(qos: .background).async {
+            do {
+                guard let url = URL(string: givenUrl) else { return }
+                let data      = try Data(contentsOf: url)
+                roundedImage  = UIImage(data: data) ?? roundedImage
+                roundedImage  = roundedImage.roundedRectImageFromImage(cornerRadius: 12)
+            } catch { }
+            DispatchQueue.main.async {
+                callback(roundedImage)
+            }
+        }
+
+    }
+    
 }

@@ -28,9 +28,9 @@ class ConstructionCardViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = .white
 
-        constructionSiteList.append(Construction(title: "Construction site without image", subtitle: cardSubtitle, imageUrl: "", color: cardColor, percentage: 10))
+        constructionSiteList.append(Construction(id: "0", title: "Construction site without image", subtitle: cardSubtitle, imageUrl: "", color: cardColor, percentage: 10))
         for i in 1...24 {
-            constructionSiteList.append(Construction(title: "\(i)", subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage))
+            constructionSiteList.append(Construction(id: "\(i)", title: "\(i)", subtitle: cardSubtitle, imageUrl: cardUrl, color: cardColor, percentage: cardPercentage))
         }
         
         let constructionTableView = ConstructionTableViewWithCollapsedSearchBar(frame: CGRect(x: 0,
