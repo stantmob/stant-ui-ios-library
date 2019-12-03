@@ -14,8 +14,16 @@ extension GroupSelectionTableViewWithCollapsedSearchBar: DefaultSearchViewDelega
         
         tableView.filteredItemsList = itemsList.filter { (item: GroupedSelection) -> Bool in
             let title = item.sectionTitle ?? ""
+            
+            for itemSelection in item.itemsOfSection ?? [ItemSelection]() {
+                if (itemSelection.itemTitle?.lowercased().contains(search.lowercased())) ?? false {
+                    return true
+                }
+            }
+            
             return title.lowercased().contains(search.lowercased())
         }
+        
         if search.isEmpty {
             tableView.filteredItemsList = itemsList
         }
