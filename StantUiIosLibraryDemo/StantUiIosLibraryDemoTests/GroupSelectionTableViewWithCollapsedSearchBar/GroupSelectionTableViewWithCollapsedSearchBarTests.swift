@@ -120,7 +120,7 @@ class GroupSelectionTableViewWithCollapsedSearchBarTests: XCTestCase {
         searchView?.searchBar(searchBar ?? UISearchBar(), textDidChange: "02")
         let groupedItems = tableView?.filteredItemsList ?? [GroupedSelection]()
         
-        XCTAssertEqual(groupedItems.count, 1)
+        XCTAssertEqual(groupedItems.count, 2)
     }
 
     func testTypeAnInvalidSearch() {
