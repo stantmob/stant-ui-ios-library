@@ -70,7 +70,7 @@ public class MainMenuTabBarController: UITabBarController, UITabBarControllerDel
         let selectingIndex     = viewControllers?.index(of: viewController) ?? 0
         let isSelectingSameTab = tabBarController.selectedIndex == selectingIndex
         
-        if isSelectingSameTab { return false }
+        if isSelectingSameTab && selectingIndex != 0 { return false }
         
         return true
     }
