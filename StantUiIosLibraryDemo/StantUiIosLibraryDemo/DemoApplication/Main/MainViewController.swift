@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
         self.addCellWithImageDemoButton()
         self.addProfileCellDemoButton()
         self.addBottomDialogWithScrollDemoButton()
+        self.addBottomDialogWithScrollAndIconsDemo()
         self.addGroupSelectionTableViewDemoButton()
         self.addTextInputTableViewCellDemoButton()
         self.addRoundedImageViewDemoButton()
@@ -76,16 +77,16 @@ class MainViewController: UIViewController {
         self.view.addButton(title: "Main Menu Tab Bar", action: #selector(goToMainMenuTabBarDemo), orderOfButton: 5, target: self)
     }
     
+    @objc func goToMainMenuTabBarDemo() {
+        self.openMainMenuTabBarDemo()
+    }
+    
     fileprivate func addBottomDialogWithScrollDemoButton() {
         self.view.addButton(title: "Bottom Dialog With Scroll", action: #selector(goToBottomDialogWithScrollDemo), orderOfButton: 6, target: self)
     }
-
+    
     @objc func goToBottomDialogWithScrollDemo() {
         self.openBottomDialogWithScrollDemo()
-    }
-
-    @objc func goToMainMenuTabBarDemo() {
-        self.openMainMenuTabBarDemo()
     }
 
     fileprivate func addCellWithImageDemoButton() {
@@ -135,4 +136,13 @@ class MainViewController: UIViewController {
     @objc func goToSecondHeaderDemo() {
         self.open(viewController: SecondHeaderViewController())
     }
+    
+    fileprivate func addBottomDialogWithScrollAndIconsDemo() {
+        self.view.addButton(title: "Bottom Dialog With Scroll and icons", action: #selector(goToBottomDialogWithScrollAndIconsDemo), orderOfButton: 13, target: self)
+    }
+    
+    @objc func goToBottomDialogWithScrollAndIconsDemo() {
+        self.openBottomDialogWithScrollAndIconsDemo()
+    }
+    
 }
