@@ -34,11 +34,10 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         self.cellTextLabel    = nil
     }
     
-    public func configureViewWith(title: String, imageURL: String? = "") {
-        self.title    = title
-        self.imageURL = imageURL ?? String()
+    public func configureViewWith(title: String) {
+        self.title = title
         
-        mainView   = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ScrollableTableViewDialogCell.cellHeight))
+        mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ScrollableTableViewDialogCell.cellHeight))
         
         guard let mainView = mainView else { return }
         self.addSubview(mainView)
@@ -49,22 +48,51 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         self.addCellSubviews()
     }
     
+    public func configureViewWith(title: String, imageURL: String) {
+        self.title    = title
+        self.imageURL = imageURL
+        
+        mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ScrollableTableViewDialogCell.cellHeight))
+        
+        guard let mainView = mainView else { return }
+        self.addSubview(mainView)
+        
+        mainView.fillSuperView()
+        mainView.backgroundColor = .white
+        
+        self.addCellSubviewsWithIcons()
+    }
+    
     fileprivate func addCellSubviews() {
+        guard let mainView = mainView else { return }
+        cellTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: mainView.frame.width, height: 56))
+        
+        guard let cellTextLabel = cellTextLabel else { return }
+        mainView.addSubviews(cellTextLabel)
+        
+        cellTextLabel.configure(text: title ?? "", alignment: .left, size: 16, weight: .regular, color: .darkStant)
+        cellTextLabel.anchor(top: mainView.topAnchor,
+                             leading: mainView.leadingAnchor,
+                             bottom: mainView.bottomAnchor,
+                             trailing: mainView.trailingAnchor,
+                             padding: UIEdgeInsets(top: 0, left: 26, bottom: 0, right: 58))
+    }
+    
+    fileprivate func addCellSubviewsWithIcons() {
         guard let mainView = mainView else { return }
         
         cellIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: mainView.frame.width, height: mainView.frame.height))
         guard let cellIcon = cellIcon else { return }
         
+        mainView.addSubview(cellIcon)
+        
         if imageURL == "home" {
-            mainView.addSubview(cellIcon)
-            
             cellIcon.image = UIImage(named: "home")
-            cellIcon.anchor(leading:  mainView.leadingAnchor,
-                            padding:  UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0),
-                            size:     CGSize(width: 30, height: 30))
-        } else if imageURL != "" {
-            mainView.addSubview(cellIcon)
-            
+            cellIcon.anchor(top:      mainView.topAnchor,
+                            leading:  mainView.leadingAnchor,
+                            padding:  UIEdgeInsets(top: 5, left: 20, bottom: 0, right: 0),
+                            size:     CGSize(width: 25, height: 25))
+        } else {
             cellIcon.showRoundedImageWith(path: imageURL ?? String(), radius: 8, activityIndicator: activityIndicator)
             cellIcon.anchor(leading:  mainView.leadingAnchor,
                             padding:  UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0),
@@ -77,7 +105,7 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         
         cellTextLabel.configure(text: title ?? "", alignment: .left, size: 16, weight: .regular, color: .darkStant)
         cellTextLabel.anchor(top:      mainView.topAnchor,
-                             leading:  imageURL == "" ? mainView.leadingAnchor : cellIcon.trailingAnchor,
+                             leading:  cellIcon.trailingAnchor,
                              bottom:   mainView.bottomAnchor,
                              trailing: mainView.trailingAnchor,
                              padding:  UIEdgeInsets(top: 0, left: 10, bottom: 15, right: 58))
