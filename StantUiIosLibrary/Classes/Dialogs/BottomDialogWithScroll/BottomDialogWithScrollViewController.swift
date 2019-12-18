@@ -17,6 +17,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     private var gesturizer: Gesturizer?
     
     private var items                   = [String]()
+    private var icons                   = [String]()
     private var mainViewHeight: CGFloat = 374
     private var selectedItemIndex       = 0
     
@@ -45,9 +46,10 @@ public class BottomDialogWithScrollViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    public func configureView(items: [String], selectedItemIndex: Int) {
+    public func configureView(items: [String], icons: [String]? = [], selectedItemIndex: Int) {
         self.view.removeSubviews()
         self.items             = items
+        self.icons             = icons ?? [String]()
         self.selectedItemIndex = selectedItemIndex
         
         self.addSubviews()
@@ -170,8 +172,15 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ScrollableTableViewDialogCell.identifier()) as? ScrollableTableViewDialogCell else {
             return UITableViewCell()
         }
+        
         cell.selectionStyle = .none
-        cell.configureViewWith(title: items[indexPath.row])
+        
+        if icons.isEmpty {
+            cell.configureViewWith(title: items[indexPath.row])
+        } else {
+            cell.configureViewWith(title: items[indexPath.row], imageURL: icons[indexPath.row])
+        }
+        
         
         if indexPath.row == selectedItemIndex {
             cell.accessoryType = .checkmark
