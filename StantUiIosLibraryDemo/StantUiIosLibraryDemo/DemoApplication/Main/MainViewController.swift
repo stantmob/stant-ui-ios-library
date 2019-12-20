@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
         self.addTextInputTableViewCellDemoButton()
         self.addRoundedImageViewDemoButton()
         self.addSecondHeaderDemoButton()
+        self.addProgressBarDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,6 +144,14 @@ class MainViewController: UIViewController {
     
     @objc func goToBottomDialogWithScrollAndIconsDemo() {
         self.openBottomDialogWithScrollAndIconsDemo()
+    }
+    
+    fileprivate func addProgressBarDemo() {
+        self.view.addButton(title: "Progress bar demo", action: #selector(goToProgressBarDemo), orderOfButton: 14, target: self)
+    }
+    
+    @objc func goToProgressBarDemo() {
+        self.openProgressBarDemo()
     }
     
 }
