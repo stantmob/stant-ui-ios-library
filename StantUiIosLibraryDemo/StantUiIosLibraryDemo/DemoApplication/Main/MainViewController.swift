@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         self.addSecondHeaderDemoButton()
         self.addBottomDialogWithScrollDemoButton()
         self.addBottomDialogWithScrollAndIconsDemo()
-        self.addProgressBarDemo()
+        self.addProgressBarWithToolTipDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,14 +176,14 @@ class MainViewController: UIViewController {
         self.openBottomDialogWithScrollAndIconsDemo()
     }
     
-    fileprivate func addProgressBarDemo() {
-        self.scrollView.addButton(title:  "Progress bar demo",
-                                  action: #selector(goToProgressBarDemo),
+    fileprivate func addProgressBarWithToolTipDemo() {
+        self.scrollView.addButton(title:  "Progress bar with tooltip demo",
+                                  action: #selector(goToProgressBarWithToolTipDemo),
                                   target: self)
     }
     
-    @objc func goToProgressBarDemo() {
-        self.openProgressBarDemo()
+    @objc func goToProgressBarWithToolTipDemo() {
+        self.openProgressBarWithToolTipDemo()
     }
     
 }

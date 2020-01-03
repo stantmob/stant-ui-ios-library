@@ -1,5 +1,5 @@
 //
-//  ProgressBubble.swift
+//  ProgressToolTip.swift
 //  Pods-StantUiIosLibraryDemo
 //
 //  Created by Leandro Martins on 23/12/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ProgressBubble: UIView {
+public class ProgressToolTip: UIView {
     public var progressLabel: UILabel?
     public var indicatorView: UIImageView?
     

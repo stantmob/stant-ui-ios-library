@@ -45,7 +45,7 @@
 		53D2813722A152F6007064F1 /* FirstHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2813622A152F6007064F1 /* FirstHeaderTests.swift */; };
 		53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2813922A1737F007064F1 /* TestFirstHeaderViewController.swift */; };
 		8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */; };
-		8FC2EFA823AAE88400184A1E /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarViewController.swift */; };
+		8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */; };
 		E1D31785CECB6D483275C9C0 /* Pods_StantUiIosLibraryDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA657F69F7022B92818D01F /* Pods_StantUiIosLibraryDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +103,7 @@
 		53D2813922A1737F007064F1 /* TestFirstHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFirstHeaderViewController.swift; sourceTree = "<group>"; };
 		58357EB134EC24161B70AFF1 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndIconsTests.swift; sourceTree = "<group>"; };
-		8FC2EFA723AAE88400184A1E /* ProgressBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
+		8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipViewController.swift; sourceTree = "<group>"; };
 		DDD0EEAC06C53E6EA39F93B5 /* Pods-StantUiIosLibraryDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemoTests.release.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFA657F69F7022B92818D01F /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B5B1700790164DC446DB8D /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -409,7 +409,7 @@
 		8F14491C23AACDC800BD0E7D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8FC2EFA723AAE88400184A1E /* ProgressBarViewController.swift */,
+				8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				51E9B31A22CA8EEA00D47B6A /* CellWithImageTableViewController.swift in Sources */,
 				349CE995229C1A660066A6E7 /* UIViewLayoutExtension.swift in Sources */,
 				34FE368C22F22B4700F9FEAE /* InputTextCellTableViewController.swift in Sources */,
-				8FC2EFA823AAE88400184A1E /* ProgressBarViewController.swift in Sources */,
+				8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */,
 				34ECE71322F384B500D24ED3 /* SecondHeaderViewController.swift in Sources */,
 				452DB8AC22CCF2AD00561600 /* ProfileCellTableViewController.swift in Sources */,
 				34ECE70D22F31BF300D24ED3 /* RoundedImageViewController.swift in Sources */,

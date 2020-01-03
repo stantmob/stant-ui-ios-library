@@ -1,5 +1,5 @@
 //
-//  ProgressBarView.swift
+//  ProgressBarWithToolTipView.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 18/12/19.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-public class ProgressBarView: UIView {
-    public var progressBubble: ProgressBubble?
+public class ProgressBarWithToolTipView: UIView {
+    public var progressToolTip: ProgressToolTip?
     public var progressView:   UIStackView?
     public var doneBar:        UIView?
     public var remainingBar:   UIView?
@@ -28,7 +28,7 @@ public class ProgressBarView: UIView {
     }
     
     deinit {
-        self.progressBubble = nil
+        self.progressToolTip = nil
         self.progressView   = nil
     }
     
@@ -36,26 +36,26 @@ public class ProgressBarView: UIView {
         self.percentage = percentage
         self.message    = message
         
-        self.configureProgressBubble(message: self.message)
+        self.configureprogressToolTip(message: self.message)
         self.configureProgressView()
     }
     
-    fileprivate func configureProgressBubble(message: String) {
-        progressBubble = ProgressBubble(frame: self.frame)
+    fileprivate func configureprogressToolTip(message: String) {
+        progressToolTip = ProgressToolTip(frame: self.frame)
         
-        guard let progressBubble = progressBubble else { return }
-        self.addSubview(progressBubble)
-        progressBubble.configure(percentage:        percentage,
+        guard let progressToolTip = progressToolTip else { return }
+        self.addSubview(progressToolTip)
+        progressToolTip.configure(percentage:        percentage,
                                  positionIndicator: positionIndicator,
                                  message:           message)
         
-        progressBubble.anchor(top:      self.topAnchor,
+        progressToolTip.anchor(top:      self.topAnchor,
                               leading:  self.leadingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
                               padding:  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
         
-        progressBubble.isHidden = true
+        progressToolTip.isHidden = true
     }
     
     fileprivate func configureProgressView() {
@@ -67,7 +67,7 @@ public class ProgressBarView: UIView {
         
         self.addSubview(progressView)
         
-        progressView.anchor(top:      progressBubble?.bottomAnchor,
+        progressView.anchor(top:      progressToolTip?.bottomAnchor,
                             leading:  self.leadingAnchor,
                             trailing: self.trailingAnchor,
                             size:     CGSize(width: self.frame.width, height: barHeight))
@@ -116,7 +116,7 @@ public class ProgressBarView: UIView {
     }
     
     public func setProgress(percentage: Float) {
-        self.removeSubviews(progressBubble ?? UIView())
+        self.removeSubviews(progressToolTip ?? UIView())
         self.removeSubviews(progressView ?? UIView())
         
         guard let progressView = progressView else { return }
@@ -127,6 +127,6 @@ public class ProgressBarView: UIView {
     
     @objc public func showProgress(){
         print("Bar was clicked!")
-        progressBubble?.isHidden = false
+        progressToolTip?.isHidden = false
     }
 }
