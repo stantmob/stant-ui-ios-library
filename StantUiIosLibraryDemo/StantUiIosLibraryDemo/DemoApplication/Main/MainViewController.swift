@@ -13,37 +13,43 @@ class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
     let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
+    let scrollView                           = UIScrollView()
     
-    var tableViewSelectedItem = 0
-    
-    var tabBarLastSelectedIndex = 0
+    var tableViewSelectedItem    = 0
+    var tabBarLastSelectedIndex  = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.frame = self.view.frame
+        self.view.addSubview(scrollView)
+        
         self.addConstructionCardDemoButton()
         self.addConstructionsFiltersDemoButton()
         self.addSyncDialogDemoButton()
-        self.addFirstHeaderDemoButton()
         self.addMainMenuTabBarDemoButton()
-        self.addBottomDialogWithScrollDemoButton()
         self.addCellWithImageDemoButton()
         self.addProfileCellDemoButton()
-        self.addBottomDialogWithScrollDemoButton()
-        self.addBottomDialogWithScrollAndIconsDemo()
         self.addGroupSelectionTableViewDemoButton()
         self.addTextInputTableViewCellDemoButton()
         self.addRoundedImageViewDemoButton()
+        self.addFirstHeaderDemoButton()
         self.addSecondHeaderDemoButton()
+        self.addBottomDialogWithScrollDemoButton()
+        self.addBottomDialogWithScrollAndIconsDemo()
         self.addProgressBarDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.backgroundColor = .white
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: CGFloat(self.scrollView.subviews.count * 50))
     }
     
     fileprivate func addConstructionCardDemoButton() {
-        self.view.addButton(title: "Construction Table View and Search Demo", action: #selector(goToConstructionCardDemo), orderOfButton: 1, target: self)
+        self.scrollView.addButton(title:  "Construction Table View and Search Demo",
+                                  action: #selector(goToConstructionCardDemo),
+                                  target: self)
     }
     
     @objc func goToConstructionCardDemo() {
@@ -51,7 +57,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addConstructionsFiltersDemoButton() {
-        self.view.addButton(title: "Constructions Filter Demo", action: #selector(goToConstructionsFilterDemo), orderOfButton: 2, target: self)
+        self.scrollView.addButton(title:  "Constructions Filter Demo",
+                                  action: #selector(goToConstructionsFilterDemo),
+                                  target: self)
     }
     
     @objc func goToConstructionsFilterDemo() {
@@ -59,7 +67,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addSyncDialogDemoButton() {
-        self.view.addButton(title: "Sync Dialog", action: #selector(goToSyncDialogDemo), orderOfButton: 3, target: self)
+        self.scrollView.addButton(title:  "Sync Dialog",
+                                  action: #selector(goToSyncDialogDemo),
+                                  target: self)
     }
     
     @objc func goToSyncDialogDemo() {
@@ -67,7 +77,9 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addFirstHeaderDemoButton() {
-        self.view.addButton(title: "First Header Demo", action: #selector(goToFirstHeaderDemo), orderOfButton: 4, target: self)
+        self.scrollView.addButton(title:  "First Header Demo",
+                                  action: #selector(goToFirstHeaderDemo),
+                                  target: self)
     }
     
     @objc func goToFirstHeaderDemo() {
@@ -75,7 +87,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addMainMenuTabBarDemoButton() {
-        self.view.addButton(title: "Main Menu Tab Bar", action: #selector(goToMainMenuTabBarDemo), orderOfButton: 5, target: self)
+        self.scrollView.addButton(title:  "Main Menu Tab Bar",
+                                  action: #selector(goToMainMenuTabBarDemo),
+                                  target: self)
     }
     
     @objc func goToMainMenuTabBarDemo() {
@@ -83,7 +97,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addBottomDialogWithScrollDemoButton() {
-        self.view.addButton(title: "Bottom Dialog With Scroll", action: #selector(goToBottomDialogWithScrollDemo), orderOfButton: 6, target: self)
+        self.scrollView.addButton(title:  "Bottom Dialog With Scroll",
+                                  action: #selector(goToBottomDialogWithScrollDemo),
+                                  target: self)
     }
     
     @objc func goToBottomDialogWithScrollDemo() {
@@ -91,7 +107,9 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addCellWithImageDemoButton() {
-        self.view.addButton(title: "Cell With Image", action: #selector(goToCellWithImageDemo), orderOfButton: 7, target: self)
+        self.scrollView.addButton(title:  "Cell With Image",
+                                  action: #selector(goToCellWithImageDemo),
+                                  target: self)
     }
 
     @objc func goToCellWithImageDemo() {
@@ -99,7 +117,9 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addProfileCellDemoButton() {
-        self.view.addButton(title: "Profile cell", action: #selector(goToProfileCellDemo), orderOfButton: 8, target: self)
+        self.scrollView.addButton(title:  "Profile cell",
+                                  action: #selector(goToProfileCellDemo),
+                                  target: self)
     }
 
     @objc func goToProfileCellDemo() {
@@ -107,7 +127,9 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addGroupSelectionTableViewDemoButton() {
-        self.view.addButton(title: "Group Selection Table View Demo", action: #selector(goToGroupSelectionDemo), orderOfButton: 9, target: self)
+        self.scrollView.addButton(title:  "Group Selection Table View Demo",
+                                  action: #selector(goToGroupSelectionDemo),
+                                  target: self)
     }
     
     @objc func goToGroupSelectionDemo() {
@@ -115,7 +137,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addTextInputTableViewCellDemoButton() {
-        self.view.addButton(title: "Text Input Table View Cell Demo", action: #selector(goToTextInputTableViewCellDemo), orderOfButton: 10, target: self)
+        self.scrollView.addButton(title:  "Text Input Table View Cell Demo",
+                                  action: #selector(goToTextInputTableViewCellDemo),
+                                  target: self)
     }
     
     @objc func goToTextInputTableViewCellDemo() {
@@ -123,7 +147,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addRoundedImageViewDemoButton() {
-        self.view.addButton(title: "Rounded Image View Demo", action: #selector(goToRoundedImageViewDemo), orderOfButton: 11, target: self)
+        self.scrollView.addButton(title:  "Rounded Image View Demo",
+                                  action: #selector(goToRoundedImageViewDemo),
+                                  target: self)
     }
     
     @objc func goToRoundedImageViewDemo() {
@@ -131,7 +157,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addSecondHeaderDemoButton() {
-        self.view.addButton(title: "Second Header Demo", action: #selector(goToSecondHeaderDemo), orderOfButton: 12, target: self)
+        self.scrollView.addButton(title:  "Second Header Demo",
+                                  action: #selector(goToSecondHeaderDemo),
+                                  target: self)
     }
     
     @objc func goToSecondHeaderDemo() {
@@ -139,7 +167,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addBottomDialogWithScrollAndIconsDemo() {
-        self.view.addButton(title: "Bottom Dialog With Scroll and icons", action: #selector(goToBottomDialogWithScrollAndIconsDemo), orderOfButton: 13, target: self)
+        self.scrollView.addButton(title:  "Bottom Dialog With Scroll and icons",
+                                  action: #selector(goToBottomDialogWithScrollAndIconsDemo),
+                                  target: self)
     }
     
     @objc func goToBottomDialogWithScrollAndIconsDemo() {
@@ -147,7 +177,9 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addProgressBarDemo() {
-        self.view.addButton(title: "Progress bar demo", action: #selector(goToProgressBarDemo), orderOfButton: 14, target: self)
+        self.scrollView.addButton(title:  "Progress bar demo",
+                                  action: #selector(goToProgressBarDemo),
+                                  target: self)
     }
     
     @objc func goToProgressBarDemo() {
