@@ -25,9 +25,9 @@ class ProgressBarWithToolTipViewController: UIViewController {
         self.view.backgroundColor = .white
         
         mainView = UIStackView(frame: CGRect(x:      0,
-                                             y:      100,
+                                             y:      50,
                                              width:  self.view.frame.width,
-                                             height: 50))
+                                             height: 100))
         
         guard let mainView = mainView else { return }
         mainView.axis      = .vertical
@@ -41,9 +41,9 @@ class ProgressBarWithToolTipViewController: UIViewController {
     
     func layoutProgressView() {
         progressBarView = ProgressBarWithToolTipView(frame: CGRect(x:      0,
-                                                        y:      0,
-                                                        width:  self.mainView?.frame.width ?? 0,
-                                                        height: self.mainView?.frame.height ?? 0))
+                                                                   y:      0,
+                                                                   width:  self.mainView?.frame.width ?? 0,
+                                                                   height: self.mainView?.frame.height ?? 0))
         
         guard let progressBarView = progressBarView else { return }
 

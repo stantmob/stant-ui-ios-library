@@ -13,7 +13,7 @@ public class ProgressToolTip: UIView {
     
     public var percentage: Float            = 0
     public var progressLabelHeight: CGFloat = 18
-    public var progressLabelWidth: CGFloat  = 130
+    public var progressLabelWidth: CGFloat  = 103
     public var message: String              = ""
     
     required public init?(coder aDecoder: NSCoder) {
@@ -29,13 +29,12 @@ public class ProgressToolTip: UIView {
         self.percentage = percentage
         var leftPadding: CGFloat = 0
         
-        if positionIndicator <= progressLabelWidth / 2 {
+        if positionIndicator <= self.progressLabelWidth / 2 {
             leftPadding = -5
-        }
-        else if(positionIndicator > progressLabelWidth / 2 && positionIndicator < self.frame.width - progressLabelWidth / 2) {
-            leftPadding = positionIndicator - progressLabelWidth / 2 + 5
+        } else if(self.progressLabelWidth / 2)...(self.frame.width - self.progressLabelWidth / 2) ~= positionIndicator {
+            leftPadding = positionIndicator - self.progressLabelWidth / 2
         } else {
-            leftPadding = self.frame.width - progressLabelWidth + 5
+            leftPadding = self.frame.width - self.progressLabelWidth + 5
         }
         
         self.configureProgressLabel(leftPadding: leftPadding, message: self.message)
@@ -43,28 +42,29 @@ public class ProgressToolTip: UIView {
     }
     
     fileprivate func configureProgressLabel(leftPadding: CGFloat, message: String) {
-        progressLabel = UILabel(frame: self.frame)
+        progressLabel           = UILabel(frame: self.frame)
         guard let progressLabel = progressLabel else { return }
-        progressLabel.text               = "\((self.percentage * 100).cleanValue)% \(message)"
+        let attributedText      = NSMutableAttributedString().bold("\((self.percentage * 100).cleanValue)%").normal(" \(message)")
+        
+        progressLabel.attributedText     = attributedText
         progressLabel.backgroundColor    = .blueLightStant
-        progressLabel.layer.cornerRadius = progressLabelHeight / 6
+        progressLabel.layer.cornerRadius = self.progressLabelHeight / 6
         progressLabel.clipsToBounds      = true
         progressLabel.textAlignment      = .center
         progressLabel.textColor          = .white
-        progressLabel.font               = UIFont.boldSystemFont(ofSize: 12.0)
         
         self.addSubview(progressLabel)
         
         progressLabel.anchor(leading: self.leadingAnchor,
                              bottom:  self.bottomAnchor,
                              padding: UIEdgeInsets(top: 0, left: leftPadding, bottom: 7.5, right: 0),
-                             size:    CGSize(width: progressLabelWidth, height: progressLabelHeight))
+                             size:    CGSize(width: self.progressLabelWidth, height: self.progressLabelHeight))
     }
     
     fileprivate func configureIndicatorView(leftPadding: CGFloat) {
-        indicatorView = UIImageView(frame: self.frame)
+        indicatorView           = UIImageView(frame: self.frame)
         guard let indicatorView = indicatorView else { return }
-        indicatorView.image = UIImage(named: "progressIndicator")
+        indicatorView.image     = UIImage(named: "progressIndicator")
         
         self.addSubview(indicatorView)
         
@@ -77,6 +77,24 @@ public class ProgressToolTip: UIView {
 
 extension Float {
     var cleanValue: String {
-        return self.truncatingRemainder(dividingBy: 1) <= 0.00001 ? String(format: "%.0f", self) : String(format: "%.2f", self)
+        return self.truncatingRemainder(dividingBy: 1) <= 0.00001 ? String(format: "%.0f", self) : String(format: "%.1f", self)
+    }
+}
+
+extension NSMutableAttributedString {
+    func bold(_ text: String) -> NSMutableAttributedString {
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 12.0)]
+        let boldString                           = NSMutableAttributedString(string:text, attributes: attrs)
+        append(boldString)
+        
+        return self
+    }
+    
+    func normal(_ text: String) -> NSMutableAttributedString {
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 12.0)]
+        let normal                               = NSAttributedString(string: text, attributes: attrs)
+        append(normal)
+        
+        return self
     }
 }

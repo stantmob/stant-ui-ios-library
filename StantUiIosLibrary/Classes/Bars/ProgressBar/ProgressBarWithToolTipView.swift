@@ -9,13 +9,13 @@ import UIKit
 
 public class ProgressBarWithToolTipView: UIView {
     public var progressToolTip: ProgressToolTip?
-    public var progressView:   UIStackView?
-    public var doneBar:        UIView?
-    public var remainingBar:   UIView?
+    public var progressBar:     UIStackView?
+    public var doneBar:         UIView?
+    public var remainingBar:    UIView?
     
-    public var percentage: Float            = 0
-    public var positionIndicator: CGFloat   = 0
-    public var message: String              = ""
+    public var percentage: Float          = 0
+    public var positionIndicator: CGFloat = 0
+    public var message: String            = ""
     
     let barHeight: CGFloat = 6
     
@@ -29,51 +29,52 @@ public class ProgressBarWithToolTipView: UIView {
     
     deinit {
         self.progressToolTip = nil
-        self.progressView   = nil
+        self.progressBar    = nil
     }
     
     public func configure(percentage: Float, message: String) {
-        self.percentage = percentage
-        self.message    = message
+        self.percentage        = percentage
+        self.message           = message
+        self.positionIndicator = CGFloat(percentage * Float(self.frame.width))
         
-        self.configureprogressToolTip(message: self.message)
-        self.configureProgressView()
+        self.configureProgressToolTip()
+        self.configureProgressBar()
     }
     
-    fileprivate func configureprogressToolTip(message: String) {
+    fileprivate func configureProgressToolTip() {
         progressToolTip = ProgressToolTip(frame: self.frame)
         
         guard let progressToolTip = progressToolTip else { return }
         self.addSubview(progressToolTip)
-        progressToolTip.configure(percentage:        percentage,
-                                 positionIndicator: positionIndicator,
-                                 message:           message)
+        progressToolTip.configure(percentage:        self.percentage,
+                                  positionIndicator: self.positionIndicator,
+                                  message:           self.message)
         
         progressToolTip.anchor(top:      self.topAnchor,
-                              leading:  self.leadingAnchor,
-                              bottom:   self.bottomAnchor,
-                              trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
+                               leading:  self.leadingAnchor,
+                               bottom:   self.bottomAnchor,
+                               trailing: self.trailingAnchor,
+                               padding:  UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
         
         progressToolTip.isHidden = true
     }
     
-    fileprivate func configureProgressView() {
-        progressView = UIStackView(frame: self.frame)
+    fileprivate func configureProgressBar() {
+        progressBar = UIStackView()
         
-        guard let progressView = progressView else { return }
-        progressView.axis      = .horizontal
-        progressView.spacing   = 1
+        guard let progressBar = progressBar else { return }
+        progressBar.axis      = .horizontal
+        progressBar.spacing   = 1
         
-        self.addSubview(progressView)
+        self.addSubview(progressBar)
         
-        progressView.anchor(top:      progressToolTip?.bottomAnchor,
-                            leading:  self.leadingAnchor,
-                            trailing: self.trailingAnchor,
-                            size:     CGSize(width: self.frame.width, height: barHeight))
+        progressBar.anchor(top:      progressToolTip?.bottomAnchor,
+                           leading:  self.leadingAnchor,
+                           trailing: self.trailingAnchor,
+                           size:     CGSize(width: self.frame.width, height: self.barHeight))
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(showProgress))
-        progressView.addGestureRecognizer(tap)
+        progressBar.addGestureRecognizer(tap)
 
         configureDoneBar()
         configureRemainingBar()
@@ -82,46 +83,42 @@ public class ProgressBarWithToolTipView: UIView {
     fileprivate func configureDoneBar() {
         doneBar = UIView()
         
-        guard let doneBar      = doneBar else { return }
-        guard let progressView = progressView else { return }
+        guard let doneBar     = doneBar else { return }
+        guard let progressBar = progressBar else { return }
         
         doneBar.backgroundColor    = .blueLightStant
-        doneBar.layer.cornerRadius = barHeight / 2
+        doneBar.layer.cornerRadius = self.barHeight / 2
         doneBar.clipsToBounds      = true
         
-        progressView.addArrangedSubview(doneBar)
-        doneBar.anchor(top:     progressView.topAnchor,
-                       leading: progressView.leadingAnchor,
-                       bottom:  progressView.bottomAnchor,
-                       size:    CGSize(width:  self.positionIndicator,
-                                       height: progressView.frame.height))
+        progressBar.addArrangedSubview(doneBar)
+        doneBar.anchor(top:     progressBar.topAnchor,
+                       leading: progressBar.leadingAnchor,
+                       bottom:  progressBar.bottomAnchor,
+                       size:    CGSize(width:  self.positionIndicator == 0 ? 0.1 : self.positionIndicator,
+                                       height: progressBar.frame.height))
     }
     
     fileprivate func configureRemainingBar() {
         remainingBar = UIView()
         
         guard let remainingBar = remainingBar else { return }
-        guard let progressView = progressView else { return }
+        guard let progressBar  = progressBar else { return }
         
         remainingBar.backgroundColor    = .blueDarkStant
-        remainingBar.layer.cornerRadius = barHeight / 2
+        remainingBar.layer.cornerRadius = self.barHeight / 2
         remainingBar.clipsToBounds      = true
         
-        progressView.addArrangedSubview(remainingBar)
-        remainingBar.anchor(top:      progressView.topAnchor,
-                            bottom:   progressView.bottomAnchor,
-                            trailing: progressView.trailingAnchor,
-                            size:     CGSize(width:  progressView.frame.width - self.positionIndicator,
-                                             height: progressView.frame.height))
+        progressBar.addArrangedSubview(remainingBar)
+        remainingBar.anchor(top:      progressBar.topAnchor,
+                            bottom:   progressBar.bottomAnchor,
+                            trailing: progressBar.trailingAnchor,
+                            size:     CGSize(width:  progressBar.frame.width - self.positionIndicator,
+                                             height: progressBar.frame.height))
     }
     
     public func setProgress(percentage: Float) {
         self.removeSubviews(progressToolTip ?? UIView())
-        self.removeSubviews(progressView ?? UIView())
-        
-        guard let progressView = progressView else { return }
-        self.percentage        = percentage
-        self.positionIndicator = CGFloat(percentage * Float(progressView.frame.width))
+        self.removeSubviews(progressBar ?? UIView())
         self.configure(percentage: percentage, message: self.message)
     }
     
