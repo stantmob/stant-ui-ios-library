@@ -29,7 +29,7 @@ public class ProgressBarWithToolTipView: UIView {
     
     deinit {
         self.progressToolTip = nil
-        self.progressBar    = nil
+        self.progressBar     = nil
     }
     
     public func configure(percentage: Float, message: String) {
@@ -39,6 +39,11 @@ public class ProgressBarWithToolTipView: UIView {
         
         self.configureProgressToolTip()
         self.configureProgressBar()
+        self.layoutIfNeeded()
+    }
+    
+    override public func layoutIfNeeded() {
+        super.layoutIfNeeded()
     }
     
     fileprivate func configureProgressToolTip() {
@@ -64,7 +69,7 @@ public class ProgressBarWithToolTipView: UIView {
         
         guard let progressBar = progressBar else { return }
         progressBar.axis      = .horizontal
-        progressBar.spacing   = 1
+        progressBar.spacing   = self.positionIndicator == self.frame.width ? 0 : 1
         
         self.addSubview(progressBar)
         
