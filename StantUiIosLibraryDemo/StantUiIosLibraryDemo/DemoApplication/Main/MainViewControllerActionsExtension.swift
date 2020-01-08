@@ -101,7 +101,10 @@ extension MainViewController {
         self.navigationController?.pushViewController(tabBar, animated: true)
     }
     
-    
+    func openProgressBarWithToolTipDemo() {
+        let progressBarWithToolTipViewController = ProgressBarWithToolTipViewController()
+        self.navigationController?.pushViewController(progressBarWithToolTipViewController, animated: true)
+    }
 }
 
 extension MainViewController: MainMenuTabBarDelegate {

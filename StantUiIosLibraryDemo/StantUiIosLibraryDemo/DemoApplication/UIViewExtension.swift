@@ -9,9 +9,9 @@
 import UIKit
 
 extension UIView {
-    func addButton(title: String, action: Selector, orderOfButton: CGFloat, target: UIViewController) {
+    func addButton(title: String, action: Selector, target: UIViewController) {
         let button = UIButton(type: .system) as UIButton
-        let distanceToTop: CGFloat = 50 * orderOfButton
+        let distanceToTop: CGFloat = 50 * CGFloat(self.subviews.count)
         
         button.frame                      = CGRect(x: 0, y: distanceToTop, width: self.frame.width, height: 50)
         button.backgroundColor            = .lightGray
