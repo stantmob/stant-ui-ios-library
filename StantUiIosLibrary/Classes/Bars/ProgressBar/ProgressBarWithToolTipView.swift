@@ -129,6 +129,6 @@ public class ProgressBarWithToolTipView: UIView {
     
     @objc public func showProgress(){
         print("Bar was clicked!")
-        progressToolTip?.isHidden = false
+        progressToolTip?.isHidden = !progressToolTip!.isHidden
     }
 }
