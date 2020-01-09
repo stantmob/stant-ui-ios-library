@@ -38,6 +38,7 @@ class MainViewController: UIViewController {
         self.addBottomDialogWithScrollDemoButton()
         self.addBottomDialogWithScrollAndIconsDemo()
         self.addProgressBarWithToolTipDemo()
+        self.addConstructionsContactsDemoTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,5 +186,16 @@ class MainViewController: UIViewController {
     @objc func goToProgressBarWithToolTipDemo() {
         self.openProgressBarWithToolTipDemo()
     }
+    
+    fileprivate func addConstructionsContactsDemoTableView() {
+        self.scrollView.addButton(title: "Contruction Contacts Table View",
+                                  action: #selector(gotToConstructionsContactsDemo),
+                                  target: self)
+    }
+    
+    @objc func gotToConstructionsContactsDemo() {
+        self.open(viewController: ConstructionContactsViewController())
+    }
+
     
 }

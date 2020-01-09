@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../StantUiIosLibrary.podspec"
 
 SPEC CHECKSUMS:
-  StantUiIosLibrary: ca93c3d162bc0fb77263a53039a8113ea41161e7
+  StantUiIosLibrary: eec948cc028a555b3e9b3ba3687655dbb8378986
 
 PODFILE CHECKSUM: 67a2323c2ae30d048a7ab1c38fff09bb981b133a
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3
