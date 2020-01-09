@@ -51,10 +51,10 @@ class FispCardViewController: UIViewController {
         
         cardsView.configure(executedPercentage: self.percentage, quantity: self.quantity)
     }
-
+    
     func layoutAddProgressButton() {
         addProgressButton = UIButton(frame: CGRect())
-
+        
         guard let addProgressButton = addProgressButton else { return }
         addProgressButton.backgroundColor = .lightGray
         addProgressButton.setTitle("Add progress", for: .normal)
@@ -67,10 +67,10 @@ class FispCardViewController: UIViewController {
                                  trailing: self.view.trailingAnchor,
                                  padding:  UIEdgeInsets(top: 10, left: 16, bottom: 0, right: 16))
     }
-
+    
     @objc func addProgress() {
         self.percentage += 0.135
-
+        
         if self.percentage >= 1 {
             self.percentage = 1
         }

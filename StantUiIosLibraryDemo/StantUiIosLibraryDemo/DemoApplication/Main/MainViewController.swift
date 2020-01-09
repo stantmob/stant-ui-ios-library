@@ -39,6 +39,7 @@ class MainViewController: UIViewController {
         self.addBottomDialogWithScrollAndIconsDemo()
         self.addProgressBarWithToolTipDemo()
         self.addFispCardDemo()
+        self.addConstructionsContactsDemoTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -192,9 +193,20 @@ class MainViewController: UIViewController {
                                   action: #selector(goToFispCardDemo),
                                   target: self)
     }
-    
+
     @objc func goToFispCardDemo() {
         self.openFispCardDemo()
     }
-    
+
+    fileprivate func addConstructionsContactsDemoTableView() {
+        self.scrollView.addButton(title: "Contruction Contacts Table View",
+                                  action: #selector(gotToConstructionsContactsDemo),
+                                  target: self)
+    }
+
+    @objc func gotToConstructionsContactsDemo() {
+        self.open(viewController: ConstructionContactsViewController())
+    }
+
+
 }

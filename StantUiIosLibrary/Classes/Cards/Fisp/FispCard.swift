@@ -130,4 +130,3 @@ public enum CardType {
     case executed
     case available
 }
-

@@ -14,7 +14,7 @@ public class FispCardStack: UIStackView {
     
     public var cardWidth:  CGFloat = 100
     public var cardHeight: CGFloat = 69
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -75,18 +75,18 @@ public class FispCardStack: UIStackView {
     
     public func setProgress(executedPercentage: Float, quantity: Float) {
         plannedFispCard?.setLabels(executedPercentage: 1,
-                                  quantity: quantity,
-                                  message: "Planned",
-                                  type: .planned)
+                                   quantity: quantity,
+                                   message: "Planned",
+                                   type: .planned)
         
         executedFispCard?.setLabels(executedPercentage: executedPercentage,
-                                   quantity: executedPercentage * quantity,
-                                   message: "Executed",
-                                   type: .executed)
+                                    quantity: executedPercentage * quantity,
+                                    message: "Executed",
+                                    type: .executed)
         
         availableFispCard?.setLabels(executedPercentage: 1 - executedPercentage,
-                                    quantity: (1 - executedPercentage) * quantity,
-                                    message: "Available",
-                                    type: .available)
+                                     quantity: (1 - executedPercentage) * quantity,
+                                     message: "Available",
+                                     type: .available)
     }
 }
