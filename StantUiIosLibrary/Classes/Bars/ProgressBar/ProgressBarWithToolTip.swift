@@ -1,5 +1,5 @@
 //
-//  ProgressBarWithToolTipView.swift
+//  ProgressBarWithToolTip.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 18/12/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ProgressBarWithToolTipView: UIView {
+public class ProgressBarWithToolTip: UIView {
     public var progressToolTip: ProgressToolTip?
     public var progressBar:     UIStackView?
     public var doneBar:         UIView?

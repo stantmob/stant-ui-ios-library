@@ -38,6 +38,7 @@ class MainViewController: UIViewController {
         self.addBottomDialogWithScrollDemoButton()
         self.addBottomDialogWithScrollAndIconsDemo()
         self.addProgressBarWithToolTipDemo()
+        self.addFispCardDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -184,6 +185,16 @@ class MainViewController: UIViewController {
     
     @objc func goToProgressBarWithToolTipDemo() {
         self.openProgressBarWithToolTipDemo()
+    }
+    
+    fileprivate func addFispCardDemo() {
+        self.scrollView.addButton(title:  "Fisp card demo",
+                                  action: #selector(goToFispCardDemo),
+                                  target: self)
+    }
+    
+    @objc func goToFispCardDemo() {
+        self.openFispCardDemo()
     }
     
 }

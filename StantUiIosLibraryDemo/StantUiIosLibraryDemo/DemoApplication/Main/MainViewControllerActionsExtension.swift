@@ -105,6 +105,12 @@ extension MainViewController {
         let progressBarWithToolTipViewController = ProgressBarWithToolTipViewController()
         self.navigationController?.pushViewController(progressBarWithToolTipViewController, animated: true)
     }
+    
+    func openFispCardDemo() {
+        let fispCardViewController = FispCardViewController()
+        self.navigationController?.pushViewController(fispCardViewController, animated: true)
+    }
+
 }
 
 extension MainViewController: MainMenuTabBarDelegate {
