@@ -213,14 +213,14 @@ public class ContactsCard: UITableViewCell {
 }
 
 public struct ContactsInformation {
-    let name:     String?
-    let office:   String?
-    let imageUrl: String?
-    var iconSize: CGSize?
+    let name:       String?
+    let office:     String?
+    let imageUrl:   String?
+    var iconSize:   CGSize?
     let mailButton: UIButton?
-    let mailImage: UIImage?
+    let mailImage:  UIImage?
     let callButton: UIButton?
-    let callImage: UIImage?
+    let callImage:  UIImage?
     
     public init(name:       String,
                 office:     String,
@@ -230,13 +230,13 @@ public struct ContactsInformation {
                 mailImage:  UIImage,
                 callButton: UIButton?,
                 callImage:  UIImage) {
-        self.name     = name
-        self.office   = office
-        self.imageUrl = imageUrl
-        self.iconSize = iconSize
+        self.name       = name
+        self.office     = office
+        self.imageUrl   = imageUrl
+        self.iconSize   = iconSize
         self.mailButton = mailButton
-        self.mailImage = mailImage
+        self.mailImage  = mailImage
         self.callButton = callButton
-        self.callImage = callImage
+        self.callImage  = callImage
     }
 }
