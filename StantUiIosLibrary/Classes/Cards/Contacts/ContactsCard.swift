@@ -135,8 +135,8 @@ public class ContactsCard: UITableViewCell {
     }
     
     fileprivate func configure(name: String, office: String) {
-        nameLabel    = UILabel(frame: CGRect(x: 68, y: 173, width: 210, height: 19))
-        officeLabel  = UILabel(frame: CGRect(x: 68, y: 194, width: 210, height: 14))
+        nameLabel   = UILabel(frame: CGRect(x: 68, y: 173, width: 210, height: 19))
+        officeLabel = UILabel(frame: CGRect(x: 68, y: 194, width: 210, height: 14))
         
         guard let nameLabel = nameLabel, let officeLabel = officeLabel else { return }
         
@@ -163,7 +163,7 @@ public class ContactsCard: UITableViewCell {
         }
     }
     
-    fileprivate func setText(label: UILabel,
+    fileprivate func setText(label:        UILabel,
                              text:         String,
                              textSize:     CGFloat,
                              textWeight:   UIFont.Weight,
@@ -172,6 +172,7 @@ public class ContactsCard: UITableViewCell {
                              leftAnchor:   CGFloat,
                              bottomAnchor: CGFloat,
                              rightAnchor:  CGFloat) {
+        
         guard let mainView = mainView else { return }
         
         if #available(iOS 9.0, *) {

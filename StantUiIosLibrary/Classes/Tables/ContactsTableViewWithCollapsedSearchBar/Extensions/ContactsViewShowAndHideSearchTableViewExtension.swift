@@ -14,11 +14,11 @@ extension ContactsTableViewWithCollapseSearchBar: ContactsAndHideSearchTableView
                
         UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCrossDissolve], animations: {
                 searchView.isHidden = true
-                   tableView.removeAllConstraints()
-                   tableView.frame = CGRect(x:      tableView.frame.minX,
-                                            y:      0,
-                                            width:  self.frame.width,
-                                            height: self.frame.height)
+                tableView.removeAllConstraints()
+                tableView.frame = CGRect(x:      tableView.frame.minX,
+                                         y:      0,
+                                         width:  self.frame.width,
+                                         height: self.frame.height)
         }, completion: { _ in
             tableView.anchor(top:      self.topAnchor,
                              leading:  self.leadingAnchor,
@@ -39,7 +39,7 @@ extension ContactsTableViewWithCollapseSearchBar: ContactsAndHideSearchTableView
                                                      right:  6))
             
             tableView.currentHeightConstant = tableView.minHeaderHeight
-        })
+          })
     }
     
     public func expandSearchView() {
@@ -58,15 +58,18 @@ extension ContactsTableViewWithCollapseSearchBar: ContactsAndHideSearchTableView
                               leading:  self.leadingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top:   0,
-                                                    left:   6,
-                                                    bottom: self.frame.height - DefaultSearchBar.searchViewHeight,
-                                                    right:  6))
+                              padding:  UIEdgeInsets(top:    0,
+                                                     left:   6,
+                                                     bottom: self.frame.height - DefaultSearchBar.searchViewHeight,
+                                                     right:  6))
             tableView.anchor(top:      searchView.topAnchor,
                              leading:  self.leadingAnchor,
                              bottom:   self.bottomAnchor,
                              trailing: self.trailingAnchor,
-                             padding:  UIEdgeInsets(top: DefaultSearchBar.searchViewHeight, left: 0, bottom: 0, right: 0))
+                             padding:  UIEdgeInsets(top: DefaultSearchBar.searchViewHeight,
+                                                    left: 0,
+                                                    bottom: 0,
+                                                    right: 0))
             tableView.currentHeightConstant = tableView.maxHeaderHeight
         })
     }

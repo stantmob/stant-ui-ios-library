@@ -51,15 +51,32 @@ class ConstructionContactsViewController: UIViewController {
         
         for i in 0...5 {
                         
-            constructionSiteList.append(ContactsInformation(name: name + " \(i)", office: office, imageUrl: cardUrl, iconSize: iconSize, mailButton: self.validMailButtons[i], mailImage: UIImage(named: "mail") ?? UIImage(), callButton: self.validPhoneButtons[i], callImage: UIImage(named: "call") ?? UIImage()))
+            constructionSiteList.append(ContactsInformation(name: name + " \(i)",
+                                                            office:     office,
+                                                            imageUrl:   cardUrl,
+                                                            iconSize:   iconSize,
+                                                            mailButton: self.validMailButtons[i],
+                                                            mailImage:  UIImage(named: "mail") ?? UIImage(),
+                                                            callButton: self.validPhoneButtons[i],
+                                                            callImage:  UIImage(named: "call") ?? UIImage()))
             
             self.setButtonsActionsFor(index: i)
         }
         
-        let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x: 0, y: navigationBarHeight, width: self.view.frame.width, height: self.view.frame.height - navigationBarHeight))
+        let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x: 0,
+                                                                                     y: navigationBarHeight,
+                                                                                     width: self.view.frame.width,
+                                                                                     height: self.view.frame.height - navigationBarHeight))
         
         self.view.addSubview(contactsTableView)
-        contactsTableView.anchor(top: self.view.topAnchor, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor, padding: UIEdgeInsets(top: navigationBarHeight, left: 0, bottom: 0, right: 0))
+        contactsTableView.anchor(top:      self.view.topAnchor,
+                                 leading:  self.view.leadingAnchor,
+                                 bottom:   self.view.bottomAnchor,
+                                 trailing: self.view.trailingAnchor,
+                                 padding:  UIEdgeInsets(top: navigationBarHeight,
+                                 left:     0,
+                                 bottom:   0,
+                                 right:    0))
         
         contactsTableView.configureViewWith(constructionList: constructionSiteList, searchBarIcon: UIImage(named: "search") ?? UIImage(),
         searchBarPlaceholder: "Search",

@@ -12,7 +12,6 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     public var tableView:         ContactsTableView?
     public var searchView:        DefaultSearchBar?
     public var emptyMessageLabel: UILabel?
-    
     weak var tableViewDelegate:   ContactsTableViewDidSelectDelegate?
     
     var searchBarIcon        = UIImage()
@@ -52,7 +51,10 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     }
     
     fileprivate func configureSearchView() {
-        searchView = DefaultSearchBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: DefaultSearchBar.searchViewHeight))
+        searchView = DefaultSearchBar(frame: CGRect(x:      0,
+                                                    y:      0,
+                                                    width:  self.frame.width,
+                                                    height: DefaultSearchBar.searchViewHeight))
         
         guard let searchView = searchView else { return }
         self.addSubview(searchView)
@@ -69,7 +71,7 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         
         tableView?.register(ContactsCard.self, forCellReuseIdentifier: ContactsCard.identifier())
         
-        tableView?.configureTableViewWith(constructionList:  constructionSiteList,
+        tableView?.configureTableViewWith(constructionList:   constructionSiteList,
                                           animationDelegate:  self,
                                           selectCellDelegate: tableViewDelegate)
         tableView?.backgroundColor = .clear
@@ -103,10 +105,17 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     
     fileprivate func configureEmptyMessageLabel() {
         emptyMessageLabel?.removeFromSuperview()
-        emptyMessageLabel = UILabel(frame: CGRect(x: 0, y: DefaultSearchBar.searchViewHeight, width: self.frame.width, height: self.frame.height))
+        emptyMessageLabel = UILabel(frame: CGRect(x:      0,
+                                                  y:      DefaultSearchBar.searchViewHeight,
+                                                  width:  self.frame.width,
+                                                  height: self.frame.height))
         
         guard let emptyMessageLabel = emptyMessageLabel else { return }
-        emptyMessageLabel.configure(text: emptyMessage, alignment: .left, size: 16, weight: .regular, color: .darkStant)
+        emptyMessageLabel.configure(text: emptyMessage,
+                                    alignment: .left,
+                                    size:      16,
+                                    weight:    .regular,
+                                    color:     .darkStant)
         self.addSubview(emptyMessageLabel)
         emptyMessageLabel.numberOfLines = 0
     }
