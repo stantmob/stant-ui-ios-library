@@ -121,6 +121,7 @@ public class ProgressBarWithToolTip: UIView {
                                              height: progressBar.frame.height))
     }
     
+    //This function is only used on Demo
     public func setProgress(percentage: Float) {
         self.removeSubviews(progressToolTip ?? UIView())
         self.removeSubviews(progressBar ?? UIView())

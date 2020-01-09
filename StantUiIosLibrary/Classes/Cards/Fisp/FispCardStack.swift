@@ -46,20 +46,7 @@ public class FispCardStack: UIStackView {
         
         guard let plannedFispCard = plannedFispCard, let executedFispCard = executedFispCard, let availableFispCard = availableFispCard else { return }
         
-        plannedFispCard.configure(percentage: 1,
-                                  quantity: quantity,
-                                  message: "Planned",
-                                  type: .planned)
-        
-        executedFispCard.configure(percentage: executedPercentage,
-                                   quantity: executedPercentage * quantity,
-                                   message: "Executed",
-                                   type: .executed)
-        
-        availableFispCard.configure(percentage: 1 - executedPercentage,
-                                    quantity: (1 - executedPercentage) * quantity,
-                                    message: "Available",
-                                    type: .available)
+        self.setProgress(executedPercentage: executedPercentage, quantity: quantity)
         
         self.addArrangedSubview(plannedFispCard)
         self.addArrangedSubview(executedFispCard)
@@ -74,19 +61,19 @@ public class FispCardStack: UIStackView {
     }
     
     public func setProgress(executedPercentage: Float, quantity: Float) {
-        plannedFispCard?.setLabels(executedPercentage: 1,
-                                   quantity: quantity,
-                                   message: "Planned",
-                                   type: .planned)
+        plannedFispCard?.renewLabels(executedPercentage: 1,
+                                     quantity:           quantity,
+                                     message:            "Planned",
+                                     type:               .planned)
         
-        executedFispCard?.setLabels(executedPercentage: executedPercentage,
-                                    quantity: executedPercentage * quantity,
-                                    message: "Executed",
-                                    type: .executed)
+        executedFispCard?.renewLabels(executedPercentage: executedPercentage,
+                                      quantity:           executedPercentage * quantity,
+                                      message:            "Executed",
+                                      type:               .executed)
         
-        availableFispCard?.setLabels(executedPercentage: 1 - executedPercentage,
-                                     quantity: (1 - executedPercentage) * quantity,
-                                     message: "Available",
-                                     type: .available)
+        availableFispCard?.renewLabels(executedPercentage: 1 - executedPercentage,
+                                       quantity:           (1 - executedPercentage) * quantity,
+                                       message:            "Available",
+                                       type:               .available)
     }
 }

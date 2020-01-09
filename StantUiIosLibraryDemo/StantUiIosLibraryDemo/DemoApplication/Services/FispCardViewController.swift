@@ -15,7 +15,6 @@ class FispCardViewController: UIViewController {
     
     public var percentage: Float   = 0
     public var quantity: Float     = 1222.88
-    public var cardWidth:  CGFloat = 100
     public var cardHeight: CGFloat = 69
     
     override func viewDidLoad() {

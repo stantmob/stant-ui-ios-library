@@ -29,13 +29,6 @@ public class FispCard: UIView {
         super.layoutIfNeeded()
     }
     
-    public func configure(percentage: Float, quantity: Float, message: String, type: CardType) {
-        self.backgroundColor = .white
-        
-        self.configureLabels(percentage: percentage, quantity: quantity, message: message, type: type)
-        self.layoutIfNeeded()
-    }
-    
     public func configureLabels(percentage: Float, quantity: Float, message: String, type: CardType) {
         self.percentage = percentage
         self.message    = message
@@ -102,26 +95,31 @@ public class FispCard: UIView {
         
         self.addSubview(quanityLabel)
         
-        quanityLabel.anchor(bottom:     self.bottomAnchor,
+        quanityLabel.anchor(bottom:  self.bottomAnchor,
                             padding: UIEdgeInsets(top: 0, left: 0, bottom: 11, right: 0))
         
         quanityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     public func makeShadow() {
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shadowRadius = 4
-        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowPath    = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.shadowRadius  = 4
+        self.layer.shadowOffset  = CGSize(width: 0, height: 3)
         self.layer.shadowOpacity = 0.1
     }
     
-    public func setLabels(executedPercentage: Float, quantity: Float, message: String, type: CardType) {
+    public func renewLabels(executedPercentage: Float, quantity: Float, message: String, type: CardType) {
+        self.backgroundColor = .white
+        self.layoutIfNeeded()
+        
         self.removeSubviews(self.percentageLabel ?? UILabel())
         self.removeSubviews(self.messageLabel ?? UILabel())
         self.removeSubviews(self.quanityLabel ?? UILabel())
         
-        self.configureLabels(percentage: executedPercentage, quantity: quantity, message: message, type: type)
-        
+        self.configureLabels(percentage: executedPercentage,
+                             quantity:   quantity,
+                             message:    message,
+                             type:       type)
     }
 }
 
