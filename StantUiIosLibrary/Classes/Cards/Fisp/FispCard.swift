@@ -95,7 +95,7 @@ public class FispCard: UIView {
         quanityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         guard let quanityLabel = quanityLabel else { return }
-        quanityLabel.text          = "\(quantity) m²"
+        quanityLabel.text          = "\(String(format: "%.2f", quantity)) m²"
         quanityLabel.textColor     = .black
         quanityLabel.font          = UIFont.systemFont(ofSize: 14.0)
         quanityLabel.textAlignment = .center
