@@ -1,5 +1,5 @@
 //
-//  FispCardViewController.swift
+//  ServiceInspectionFormFilledCardViewController.swift
 //  StantUiIosLibraryDemo
 //
 //  Created by Leandro Martins on 08/01/20.
@@ -9,13 +9,17 @@
 import UIKit
 import StantUiIosLibrary
 
-class FispCardViewController: UIViewController {
-    public var cardsView:         FispCardStack?
+class ServiceInspectionFormFilledCardViewController: UIViewController {
+    public var cardsView:         ServiceInspectionFormFilledCardStack?
     public var addProgressButton: UIButton?
     
     public var percentage: Float   = 0
     public var quantity: Float     = 1222.88
     public var cardHeight: CGFloat = 69
+    
+    public var plannedMessage:   String = "Planned"
+    public var executedMessage:  String = "Executed"
+    public var availableMessage: String = "Available"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +37,12 @@ class FispCardViewController: UIViewController {
         cardsView?.makeShadow()
     }
     
+    
     func layoutCardsView() {
-        cardsView = FispCardStack(frame: CGRect(x:      0,
-                                                y:      0,
-                                                width:  self.view.frame.width,
-                                                height: cardHeight))
+        cardsView = ServiceInspectionFormFilledCardStack(frame: CGRect(x:      0,
+                                                                       y:      0,
+                                                                       width:  self.view.frame.width,
+                                                                       height: cardHeight))
         
         guard let cardsView = cardsView else { return }
         self.view.addSubview(cardsView)
@@ -48,7 +53,11 @@ class FispCardViewController: UIViewController {
                          padding:  UIEdgeInsets(top: 100, left: 16, bottom: 0, right: 16),
                          size:     CGSize(width: self.view.frame.width, height: cardHeight))
         
-        cardsView.configure(executedPercentage: self.percentage, quantity: self.quantity)
+        cardsView.configure(executedPercentage: self.percentage,
+                            quantity:           self.quantity,
+                            plannedMessage:     self.plannedMessage,
+                            executedMessage:    self.executedMessage,
+                            availableMessage:   self.availableMessage)
     }
     
     func layoutAddProgressButton() {
@@ -73,6 +82,10 @@ class FispCardViewController: UIViewController {
         if self.percentage >= 1 {
             self.percentage = 1
         }
-        cardsView?.setProgress(executedPercentage: self.percentage, quantity: self.quantity)
+        cardsView?.setProgress(executedPercentage: self.percentage,
+                               quantity:           self.quantity,
+                               plannedMessage:     self.plannedMessage,
+                               executedMessage:    self.executedMessage,
+                               availableMessage:   self.availableMessage)
     }
 }

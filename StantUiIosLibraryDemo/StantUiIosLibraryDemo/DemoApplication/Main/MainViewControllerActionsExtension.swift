@@ -106,9 +106,9 @@ extension MainViewController {
         self.navigationController?.pushViewController(progressBarWithToolTipViewController, animated: true)
     }
     
-    func openFispCardDemo() {
-        let fispCardViewController = FispCardViewController()
-        self.navigationController?.pushViewController(fispCardViewController, animated: true)
+    func openServiceInspectionFormFilledCardDemo() {
+        let serviceInspectionFormFilledCardViewController = ServiceInspectionFormFilledCardViewController()
+        self.navigationController?.pushViewController(serviceInspectionFormFilledCardViewController, animated: true)
     }
 
 }

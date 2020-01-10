@@ -1,5 +1,5 @@
 //
-//  FispCard.swift
+//  ServiceInspectionFormFilledCard.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 08/01/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class FispCard: UIView {
+public class ServiceInspectionFormFilledCard: UIView {
     public var percentageLabel: UILabel?
     public var messageLabel:    UILabel?
     public var quanityLabel:    UILabel?
@@ -108,7 +108,7 @@ public class FispCard: UIView {
         self.layer.shadowOpacity = 0.1
     }
     
-    public func renewLabels(executedPercentage: Float, quantity: Float, message: String, type: CardType) {
+    public func setLabels(executedPercentage: Float, quantity: Float, message: String, type: CardType) {
         self.backgroundColor = .white
         self.layoutIfNeeded()
         

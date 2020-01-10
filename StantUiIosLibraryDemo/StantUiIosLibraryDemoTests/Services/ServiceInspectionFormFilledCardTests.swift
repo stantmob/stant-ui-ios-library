@@ -1,5 +1,5 @@
 //
-//  FispCardTests.swift
+//  ServiceInspectionFormFilledCardTests.swift
 //  StantUiIosLibraryDemoTests
 //
 //  Created by Leandro Martins on 09/01/20.
@@ -10,9 +10,9 @@ import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
-class FispCardTests: XCTestCase {
+class ServiceInspectionFormFilledCardTests: XCTestCase {
     
-    private var cardsView: FispCardStack!
+    private var cardsView: ServiceInspectionFormFilledCardStack!
     
     let percentageList: [Float]    = [0, 0.155, 0.5, 0.84, 1]
     var percentage:     Float      = 0
@@ -20,19 +20,27 @@ class FispCardTests: XCTestCase {
     var viewHeight:     CGFloat    = 69
     var viewWidth:      CGFloat    = 300
     
+    public var plannedMessage:   String = "Planned"
+    public var executedMessage:  String = "Executed"
+    public var availableMessage: String = "Available"
+    
     override func setUp() {
         super.setUp()
         
-        cardsView = FispCardStack(frame: CGRect(x:      0,
-                                                y:      0,
-                                                width:  viewWidth,
-                                                height: viewHeight))
+        cardsView = ServiceInspectionFormFilledCardStack(frame: CGRect(x:      0,
+                                                                       y:      0,
+                                                                       width:  viewWidth,
+                                                                       height: viewHeight))
         
         self.configureCardsView()
     }
     
     fileprivate func configureCardsView() {
-        cardsView.configure(executedPercentage: self.percentage, quantity: self.quantity)
+        cardsView.configure(executedPercentage: self.percentage,
+                            quantity:           self.quantity,
+                            plannedMessage:     self.plannedMessage,
+                            executedMessage:    self.executedMessage,
+                            availableMessage:   self.availableMessage)
     }
     
     override func tearDown() {
@@ -76,9 +84,9 @@ class FispCardTests: XCTestCase {
     func testMessageLabel() {
         self.configureCardsView()
         
-        XCTAssertEqual(cardsView.plannedFispCard?.messageLabel?.text, "Planned")
-        XCTAssertEqual(cardsView.executedFispCard?.messageLabel?.text, "Executed")
-        XCTAssertEqual(cardsView.availableFispCard?.messageLabel?.text, "Available")
+        XCTAssertEqual(cardsView.plannedFispCard?.messageLabel?.text, self.plannedMessage)
+        XCTAssertEqual(cardsView.executedFispCard?.messageLabel?.text, self.executedMessage)
+        XCTAssertEqual(cardsView.availableFispCard?.messageLabel?.text, self.availableMessage)
     }
 
     func testQuantityLabel() {
