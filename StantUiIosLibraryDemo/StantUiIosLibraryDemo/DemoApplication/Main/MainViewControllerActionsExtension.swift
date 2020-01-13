@@ -105,6 +105,12 @@ extension MainViewController {
         let progressBarWithToolTipViewController = ProgressBarWithToolTipViewController()
         self.navigationController?.pushViewController(progressBarWithToolTipViewController, animated: true)
     }
+    
+    func openServiceInspectionFormFilledCardDemo() {
+        let serviceInspectionFormFilledCardViewController = ServiceInspectionFormFilledCardViewController()
+        self.navigationController?.pushViewController(serviceInspectionFormFilledCardViewController, animated: true)
+    }
+
 }
 
 extension MainViewController: MainMenuTabBarDelegate {

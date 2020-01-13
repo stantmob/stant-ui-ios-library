@@ -31,6 +31,11 @@
 		8AA2ED2ACEE53961D2EEBED4BA01C975 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58F12FE52B2E9409BD1198B07B67F1C /* ViewTeste.swift */; };
 		8EE392649000EC0DEF36055A8E05F88F /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85B2621D2CC9DDC309A4551684C7AF /* BottomDialogWithScrollViewController.swift */; };
 		8F7FBB4FD9FAA5DD806FA2E0FC28A4CD /* GroupSelectionRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3CC20FE3C6D8D6E360AB024C3B5839 /* GroupSelectionRowCell.swift */; };
+		8FBE26CC23C7B557002C488C /* ServiceInspectionFormFilledCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26CB23C7B557002C488C /* ServiceInspectionFormFilledCard.swift */; };
+		8FBE26CE23C7B57E002C488C /* ServiceInspectionFormFilledCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26CD23C7B57E002C488C /* ServiceInspectionFormFilledCardStack.swift */; };
+		8FBE26D023C7B5C5002C488C /* ProgressBarWithToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26CF23C7B5C5002C488C /* ProgressBarWithToolTip.swift */; };
+		8FBE26D323C7B602002C488C /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D223C7B602002C488C /* FloatExtension.swift */; };
+		8FBE26D523C7B62F002C488C /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D423C7B62F002C488C /* NSMutableAttributedStringExtension.swift */; };
 		91992615E0AF40433165FE813354C60D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		91BF2A8C8DF4ABFC2F7B1ADB8DFF21DC /* ConstructionViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151F89FC291D8B90FD332842A57C9D6 /* ConstructionViewDefaultSearchViewExtension.swift */; };
 		948CAAD58B5C3A3F4539CD68BE77E4E7 /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD335EAB88CDCCA313881D750E9268E5 /* StantUiIosLibrary-dummy.m */; };
@@ -60,7 +65,6 @@
 		D45B87F18C7BF0F60336C91927A72E8A /* DefaultSearchBarDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C3EA9F3D21C10547F038DEA9FC5275 /* DefaultSearchBarDelegateExtension.swift */; };
 		D64CFF6FA28837A727DF1152E96099B3 /* ItemSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A198F80BE7BF8299173E8F5872EB704F /* ItemSelection.swift */; };
 		DD599C2D43D11A1735540C80CCA6C9D8 /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E43D09EE96F535EE005DB961A8F99A /* ConstructionCard.swift */; };
-		DF6E3DBB3B5DCB36FA7927E4C1C58BA0 /* ProgressBarWithToolTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E91C018AEB48A9A08C4A6285D80BE /* ProgressBarWithToolTipView.swift */; };
 		E3C21B080B0A362DA30A96C7BEA6C3EB /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A2C58B20F55BA1332E0410FF4F941B /* ConstructionViewShowAndHideSearchTableViewExtension.swift */; };
 		E657B90FBAF14AE594F02F961A6E8051 /* SelectRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961BCC7B09F9467A717BBF35275B53D /* SelectRecentViewController.swift */; };
 		EBF7644BBEF75371226254E29B01607A /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B6E9FE0D6CE6A8B10863F85C025 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */; };
@@ -106,7 +110,6 @@
 		1E442FE0B3429C240DDB236CBA09FA7D /* UIImageExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		2138E13F52E382D716D8BD75247B2CB8 /* SyncDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
 		213B7232BC49C7D1C1CA66D2328AA249 /* DialogButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogButton.swift; sourceTree = "<group>"; };
-		254E91C018AEB48A9A08C4A6285D80BE /* ProgressBarWithToolTipView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipView.swift; sourceTree = "<group>"; };
 		2751B91001E5D1FF49E74865A2AC8C95 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		395970EC61D8F9DE0F4570A1245BC11D /* Pods-StantUiIosLibraryDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StantUiIosLibraryDemo-frameworks.sh"; sourceTree = "<group>"; };
@@ -134,6 +137,11 @@
 		887D1A4C65ACF81B5B96209E87C15BE0 /* Gesturizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Gesturizer.swift; sourceTree = "<group>"; };
 		8961BCC7B09F9467A717BBF35275B53D /* SelectRecentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectRecentViewController.swift; sourceTree = "<group>"; };
 		899C9036804B4DB99A0A85887E342552 /* ScrollableTableViewDialogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollableTableViewDialogCell.swift; sourceTree = "<group>"; };
+		8FBE26CB23C7B557002C488C /* ServiceInspectionFormFilledCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCard.swift; sourceTree = "<group>"; };
+		8FBE26CD23C7B57E002C488C /* ServiceInspectionFormFilledCardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardStack.swift; sourceTree = "<group>"; };
+		8FBE26CF23C7B5C5002C488C /* ProgressBarWithToolTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTip.swift; sourceTree = "<group>"; };
+		8FBE26D223C7B602002C488C /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
+		8FBE26D423C7B62F002C488C /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
 		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D28122DC4A0DF88B33DAD95FDD5577 /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemo-dummy.m"; sourceTree = "<group>"; };
@@ -409,6 +417,8 @@
 				E9EFABF30BF181F25BBE3F508DC22140 /* UIViewExtension.swift */,
 				DB5E131D7190B535CDF73E9424BF1D3F /* UIViewLayoutExtension.swift */,
 				82245F57097833529FAD8CB1FE2B9846 /* ViewHelpers */,
+				8FBE26D223C7B602002C488C /* FloatExtension.swift */,
+				8FBE26D423C7B62F002C488C /* NSMutableAttributedStringExtension.swift */,
 			);
 			name = Utils;
 			path = StantUiIosLibrary/Classes/Utils;
@@ -445,6 +455,15 @@
 				E0E43D09EE96F535EE005DB961A8F99A /* ConstructionCard.swift */,
 			);
 			path = Construction;
+			sourceTree = "<group>";
+		};
+		8FBE26CA23C7B540002C488C /* ServiceInspectionFormFilled */ = {
+			isa = PBXGroup;
+			children = (
+				8FBE26CB23C7B557002C488C /* ServiceInspectionFormFilledCard.swift */,
+				8FBE26CD23C7B57E002C488C /* ServiceInspectionFormFilledCardStack.swift */,
+			);
+			path = ServiceInspectionFormFilled;
 			sourceTree = "<group>";
 		};
 		955C3D925E3322FAE1AD96B821E145AD /* Pods-StantUiIosLibraryDemo */ = {
@@ -505,8 +524,8 @@
 		AF6363B829B1A0D6CD9D098D744ED33A /* ProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				254E91C018AEB48A9A08C4A6285D80BE /* ProgressBarWithToolTipView.swift */,
 				F88F39F98D177055783980AAF3603AE4 /* ProgressToolTip.swift */,
+				8FBE26CF23C7B5C5002C488C /* ProgressBarWithToolTip.swift */,
 			);
 			path = ProgressBar;
 			sourceTree = "<group>";
@@ -655,6 +674,7 @@
 		F360B816A99B571F71AE31735DDEF0FD /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				8FBE26CA23C7B540002C488C /* ServiceInspectionFormFilled */,
 				C7313BA323C67001003950E4 /* Contacts */,
 				8B4625283219394D489CE3B6E402D3EF /* Construction */,
 			);
@@ -809,10 +829,12 @@
 				8EE392649000EC0DEF36055A8E05F88F /* BottomDialogWithScrollViewController.swift in Sources */,
 				DD599C2D43D11A1735540C80CCA6C9D8 /* ConstructionCard.swift in Sources */,
 				A1A4B4BF494735C64BC30A5B7B947DB4 /* ConstructionsFilter.swift in Sources */,
+				8FBE26D323C7B602002C488C /* FloatExtension.swift in Sources */,
 				BD23B87D4D27A6538C426CEF35D0B824 /* ConstructionTableView.swift in Sources */,
 				FA4B620FF0331748702BB2250AF8E13D /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */,
 				91BF2A8C8DF4ABFC2F7B1ADB8DFF21DC /* ConstructionViewDefaultSearchViewExtension.swift in Sources */,
 				E3C21B080B0A362DA30A96C7BEA6C3EB /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */,
+				8FBE26D023C7B5C5002C488C /* ProgressBarWithToolTip.swift in Sources */,
 				0554C3A57875B441ABC2DE7A582560F2 /* DateExtension.swift in Sources */,
 				431B1A34D68E4B4E02C3C5845AE6C28C /* DefaultSearchBar.swift in Sources */,
 				D45B87F18C7BF0F60336C91927A72E8A /* DefaultSearchBarDelegateExtension.swift in Sources */,
@@ -826,9 +848,11 @@
 				C7313BA523C67002003950E4 /* ContactsCard.swift in Sources */,
 				70160B0AE332F74BFDA44BEC78CA9C07 /* FirstHeaderDropdownButton.swift in Sources */,
 				B94C0DCF8BB49D93D1E8891C2F65972F /* FirstHeaderRecentItem.swift in Sources */,
+				8FBE26CC23C7B557002C488C /* ServiceInspectionFormFilledCard.swift in Sources */,
 				54CF7617BE1A18761CC5414EBACE484E /* FirstHeaderRecentItemCell.swift in Sources */,
 				FF906E66101A2F7DA0C201B5C106BD85 /* FirstHeaderRightBarButton.swift in Sources */,
 				C11432E74BA460B205272E3D9414DEC2 /* FirstHeaderView.swift in Sources */,
+				8FBE26D523C7B62F002C488C /* NSMutableAttributedStringExtension.swift in Sources */,
 				55988D8B8D1FBB4AEC6F122DFA4B71F8 /* Gesturizer.swift in Sources */,
 				A354CD3ACFE509D4A32A7D087CBC65EA /* GroupedSelection.swift in Sources */,
 				5D3FA2722C9F39AB49149C9C8E399825 /* GroupSelectionDefaultSearchViewExtension.swift in Sources */,
@@ -837,13 +861,13 @@
 				8F7FBB4FD9FAA5DD806FA2E0FC28A4CD /* GroupSelectionRowCell.swift in Sources */,
 				46DE6BFA2F59347B0EEA5E90508BE297 /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */,
 				186CA1FD3BA9904DC7CE1D583A27FF15 /* GroupSelectionTableView.swift in Sources */,
+				8FBE26CE23C7B57E002C488C /* ServiceInspectionFormFilledCardStack.swift in Sources */,
 				EBF7644BBEF75371226254E29B01607A /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */,
 				A804A2390189C46686F36CFBCB1D660B /* InternActionCell.swift in Sources */,
 				3C0235ECF9DB25F0A4B1855E1C477538 /* InternPersonCell.swift in Sources */,
 				D64CFF6FA28837A727DF1152E96099B3 /* ItemSelection.swift in Sources */,
 				5E7E362296D03DA5BA2939D8061F1B1D /* MainMenuTabBarController.swift in Sources */,
 				6DF629F1ABED1CEF26C27BDE1F02A7D4 /* MenuTabBarDTO.swift in Sources */,
-				DF6E3DBB3B5DCB36FA7927E4C1C58BA0 /* ProgressBarWithToolTipView.swift in Sources */,
 				77C0AA48EB483EF088AF726F0F9A9B28 /* ProgressToolTip.swift in Sources */,
 				C7A1C40E219D23447BC712A28E6F7A82 /* RoundedImageView.swift in Sources */,
 				F32B426C2B4B838E31EF73B10711EA1D /* ScrollableTableViewDialogCell.swift in Sources */,

@@ -74,27 +74,3 @@ public class ProgressToolTip: UIView {
                              size:    CGSize(width: 10, height: 5))
     }
 }
-
-extension Float {
-    var cleanValue: String {
-        return self.truncatingRemainder(dividingBy: 1) <= 0.00001 ? String(format: "%.0f", self) : String(format: "%.1f", self)
-    }
-}
-
-extension NSMutableAttributedString {
-    func bold(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 12.0)]
-        let boldString                           = NSMutableAttributedString(string:text, attributes: attrs)
-        append(boldString)
-        
-        return self
-    }
-    
-    func normal(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 12.0)]
-        let normal                               = NSAttributedString(string: text, attributes: attrs)
-        append(normal)
-        
-        return self
-    }
-}

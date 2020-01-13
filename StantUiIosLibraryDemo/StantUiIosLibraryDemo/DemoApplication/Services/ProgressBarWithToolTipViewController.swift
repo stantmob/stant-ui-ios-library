@@ -11,7 +11,7 @@ import StantUiIosLibrary
 
 class ProgressBarWithToolTipViewController: UIViewController {
     public var mainView:          UIStackView?
-    public var progressBarView:   ProgressBarWithToolTipView?
+    public var progressBarView:   ProgressBarWithToolTip?
     public var addProgressButton: UIButton?
     
     public var percentage: Float = 0
@@ -40,10 +40,10 @@ class ProgressBarWithToolTipViewController: UIViewController {
     }
     
     func layoutProgressView() {
-        progressBarView = ProgressBarWithToolTipView(frame: CGRect(x:      0,
-                                                                   y:      0,
-                                                                   width:  self.mainView?.frame.width ?? 0,
-                                                                   height: self.mainView?.frame.height ?? 0))
+        progressBarView = ProgressBarWithToolTip(frame: CGRect(x:      0,
+                                                               y:      0,
+                                                               width:  self.mainView?.frame.width ?? 0,
+                                                               height: self.mainView?.frame.height ?? 0))
         
         guard let progressBarView = progressBarView else { return }
 

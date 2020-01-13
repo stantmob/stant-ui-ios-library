@@ -12,7 +12,7 @@ import StantUiIosLibrary
 
 class ProgressBarWithToolTipTests: XCTestCase {
 
-    private var progressBarView: ProgressBarWithToolTipView!
+    private var progressBarView: ProgressBarWithToolTip!
     
     var percentage: Float = 0
     
@@ -23,7 +23,7 @@ class ProgressBarWithToolTipTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        progressBarView = ProgressBarWithToolTipView(frame: CGRect(x: 0, y: 50, width: viewWidth, height: viewHeight))
+        progressBarView = ProgressBarWithToolTip(frame: CGRect(x: 0, y: 50, width: viewWidth, height: viewHeight))
         self.configureProgressView()
     }
     

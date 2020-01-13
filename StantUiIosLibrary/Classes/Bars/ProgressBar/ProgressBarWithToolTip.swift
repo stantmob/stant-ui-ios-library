@@ -1,5 +1,5 @@
 //
-//  ProgressBarWithToolTipView.swift
+//  ProgressBarWithToolTip.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 18/12/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ProgressBarWithToolTipView: UIView {
+public class ProgressBarWithToolTip: UIView {
     public var progressToolTip: ProgressToolTip?
     public var progressBar:     UIStackView?
     public var doneBar:         UIView?
@@ -80,7 +80,7 @@ public class ProgressBarWithToolTipView: UIView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(showProgress))
         progressBar.addGestureRecognizer(tap)
-
+        
         configureDoneBar()
         configureRemainingBar()
     }
@@ -121,6 +121,7 @@ public class ProgressBarWithToolTipView: UIView {
                                              height: progressBar.frame.height))
     }
     
+    //This function is only used on Demo
     public func setProgress(percentage: Float) {
         self.removeSubviews(progressToolTip ?? UIView())
         self.removeSubviews(progressBar ?? UIView())
