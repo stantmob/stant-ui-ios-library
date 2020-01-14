@@ -12,11 +12,11 @@ import StantUiIosLibrary
 class ConstructionContactsViewController: UIViewController {
      let navigationBarHeight: CGFloat = 60
      let name                         = "Steve Jobs"
-     let office                       = "Developer IOS "
-     let cardUrl                      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+     let office                       = "Developer IOS"
+     let contactsUrl                      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
      let iconSize: CGSize             = CGSize(width: 35, height: 35)
-     let validMailButtons             = [UIButton(), nil, nil, UIButton(), nil, UIButton()]
-     let validPhoneButtons            = [UIButton(), UIButton(), nil, UIButton(), UIButton(), nil]
+     let validMailButtons             = [UIButton(), nil, nil, UIButton(), nil]
+     let validPhoneButtons            = [UIButton(), UIButton(), nil, UIButton(), UIButton()]
     
      var constructionSiteList         = [ContactsInformation]()
     
@@ -49,18 +49,12 @@ class ConstructionContactsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = .white
         
-        for i in 0...5 {
+        for i in 0...10 {
                         
-            constructionSiteList.append(ContactsInformation(name: name + " \(i)",
-                                                            office:     office,
-                                                            imageUrl:   cardUrl,
-                                                            iconSize:   iconSize,
-                                                            mailButton: self.validMailButtons[i],
-                                                            mailImage:  UIImage(named: "mail") ?? UIImage(),
-                                                            callButton: self.validPhoneButtons[i],
-                                                            callImage:  UIImage(named: "call") ?? UIImage()))
+            constructionSiteList.append(ContactsInformation(name: name + "\(i)", office: office, photo: contactsUrl))
+                                                           
             
-            self.setButtonsActionsFor(index: i)
+            //self.setButtonsActionsFor(index: i)
         }
         
         let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x: 0,

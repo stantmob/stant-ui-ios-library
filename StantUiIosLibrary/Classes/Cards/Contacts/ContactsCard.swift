@@ -16,8 +16,8 @@ public class ContactsCard: UITableViewCell {
     public var officeLabel:    UILabel?
     public var photoImageView: RoundedImageView?
     
-    private let mailImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    private let callImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    //private let mailImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    //private let callImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
     
     private weak var mailButton: UIButton?
     private weak var callButton: UIButton?
@@ -42,59 +42,61 @@ public class ContactsCard: UITableViewCell {
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(url:      construction.imageUrl ?? String(),
-                                iconSize: construction.iconSize ?? CGSize())
+        self.configureImageWith(url: construction.photo ?? String())
         
         self.configure(name:   construction.name ?? String(),
                        office: construction.office ?? String())
         
-        self.set(mailButton: construction.mailButton,
-                 mailImage:  construction.mailImage ?? UIImage(),
-                 callButton: construction.callButton,
-                 callImage:  construction.callImage ?? UIImage())
+//        self.set(mailButton: construction.mail ?? UIButton(), callButton: <#UIButton?#>);,
+//                 //mailImage:  construction.mailImage ?? UIImage(),
+//                 callButton: construction.phone)
+//                 //callImage:  construction.callImage ?? UIImage())
     }
     
-    private func set(mailButton: UIButton? = nil,
-                     mailImage:  UIImage,
-                     callButton: UIButton? = nil,
-                     callImage:  UIImage) {
-        
-        self.mailImage.image = mailImage
-        self.callImage.image = callImage
-
-        self.mailButton = mailButton
-        self.callButton = callButton
-        
-        positionOptionalElements()
-        styleButtonImages()
-    }
+//    private func set(mailButton: UIButton?,
+//                     //mailImage:  UIImage,
+//                     callButton: UIButton?) {
+//                     //callImage:  UIImage) {
+//
+//        //self.mailImage.image = mailImage
+//        //self.callImage.image = callImage
+//
+//        self.mailButton = mailButton
+//        self.callButton = callButton
+//
+//        self.mailButton?.setImage(UIImage(named: "mail"), for: .normal)
+//        self.callButton?.setImage(UIImage(named: "call"), for: .normal)
+//
+//        positionOptionalElements()
+//        styleButtonImages()
+//    }
 
     private func styleButtonImages() {
         if self.mailButton == nil {
-            self.mailImage.set(color: .darkGrayStant)
+            //self.mailImage.set(color: .darkGrayStant)
             self.mailButton?.isEnabled = false
         }
 
         if self.callButton == nil {
-            self.callImage.set(color: .darkGrayStant)
+            //self.callImage.set(color: .darkGrayStant)
             self.callButton?.isEnabled = false
         }
     }
 
     private func positionOptionalElements() {
-        self.addSubviews(mailImage, callImage)
-
-        self.callImage.anchor(top:      self.topAnchor,
-                              bottom:   self.bottomAnchor,
-                              trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top:   18, left:   0, bottom: 18,right: 16),
-                              size:     CGSize(width: 20, height: 20))
-        
-        self.mailImage.anchor(top:      self.topAnchor,
-                              bottom:   self.bottomAnchor,
-                              trailing: self.callImage.leadingAnchor,
-                              padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-                              size:     CGSize(width: 20, height: 20))
+//        self.addSubviews(mailImage, callImage)
+//
+//        self.callImage.anchor(top:      self.topAnchor,
+//                              bottom:   self.bottomAnchor,
+//                              trailing: self.trailingAnchor,
+//                              padding:  UIEdgeInsets(top:   18, left:   0, bottom: 18,right: 16),
+//                              size:     CGSize(width: 20, height: 20))
+//
+//        self.mailImage.anchor(top:      self.topAnchor,
+//                              bottom:   self.bottomAnchor,
+//                              trailing: self.callImage.leadingAnchor,
+//                              padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+//                              size:     CGSize(width: 20, height: 20))
 
         if let callButton = self.callButton {
             self.addSubview(callButton)
@@ -111,7 +113,7 @@ public class ContactsCard: UITableViewCell {
 
             self.mailButton?.anchor(top:      self.topAnchor,
                                     bottom:   self.bottomAnchor,
-                                    trailing: self.callImage.leadingAnchor,
+                                    trailing: self.callButton?.leadingAnchor,
                                     padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
                                     size:     CGSize(width: 20, height: 20))
         }
@@ -135,8 +137,8 @@ public class ContactsCard: UITableViewCell {
     }
     
     fileprivate func configure(name: String, office: String) {
-        nameLabel   = UILabel(frame: CGRect(x: 68, y: 173, width: 210, height: 19))
-        officeLabel = UILabel(frame: CGRect(x: 68, y: 194, width: 210, height: 14))
+        nameLabel   = UILabel(frame: CGRect(x: 68, y: 11, width: 210, height: 19))
+        officeLabel = UILabel(frame: CGRect(x: 68, y: 32, width: 210, height: 14))
         
         guard let nameLabel = nameLabel, let officeLabel = officeLabel else { return }
         
@@ -147,7 +149,7 @@ public class ContactsCard: UITableViewCell {
                          textWeight:   .regular,
                          textColor:    .darkStant,
                          topAnchor:    5,
-                         leftAnchor:   62,
+                         leftAnchor:   68,
                          bottomAnchor: 26,
                          rightAnchor:  82)
             
@@ -157,8 +159,8 @@ public class ContactsCard: UITableViewCell {
                          textWeight:   .regular,
                          textColor:    .darkGrayStant,
                          topAnchor:    28,
-                         leftAnchor:   62,
-                         bottomAnchor: 10,
+                         leftAnchor:   68,
+                         bottomAnchor: 9,
                          rightAnchor:  82)
         }
     }
@@ -193,11 +195,11 @@ public class ContactsCard: UITableViewCell {
         
     }
     
-    fileprivate func configureImageWith(url: String, iconSize: CGSize) {
+    fileprivate func configureImageWith(url: String) {
         photoImageView = RoundedImageView(frame: CGRect(x:      19,
                                                         y:      173,
-                                                        width:  iconSize.width,
-                                                        height: iconSize.height))
+                                                        width:  35,
+                                                        height: 35))
 
         guard let photoImageView = photoImageView else { return }
     
@@ -205,39 +207,35 @@ public class ContactsCard: UITableViewCell {
         if #available(iOS 9.0, *) {
             photoImageView.anchor(top:     self.topAnchor,
                                   leading: self.leadingAnchor,
-                                  padding: UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 0),
-                                  size:    iconSize)
+                                  padding: UIEdgeInsets(top: 15, left: 23, bottom: 0, right: 306),
+                                  size:    CGSize(width: 20, height: 20))
         }
-        photoImageView.set(iconURL: url, iconDiameter: iconSize.height, iconBorder: 2)
+        photoImageView.set(iconURL: url, iconDiameter: 40, iconBorder: 2)
         photoImageView.tag = 1
     }
 }
 
 public struct ContactsInformation {
-    let name:       String?
-    let office:     String?
-    let imageUrl:   String?
-    var iconSize:   CGSize?
-    let mailButton: UIButton?
-    let mailImage:  UIImage?
-    let callButton: UIButton?
-    let callImage:  UIImage?
+    let name:     String?
+    let office:   String?
+    let photo:    String?
+    //var iconSize: CGSize?
+    //let mail:     String?
+    //let phone:    String?
     
-    public init(name:       String,
-                office:     String,
-                imageUrl:   String,
-                iconSize:   CGSize,
-                mailButton: UIButton?,
-                mailImage:  UIImage,
-                callButton: UIButton?,
-                callImage:  UIImage) {
-        self.name       = name
-        self.office     = office
-        self.imageUrl   = imageUrl
-        self.iconSize   = iconSize
-        self.mailButton = mailButton
-        self.mailImage  = mailImage
-        self.callButton = callButton
-        self.callImage  = callImage
+    public init(name:     String,
+                office:   String,
+                photo:    String) {
+                //iconSize: CGSize,
+                //mail:     String,
+                //phone:    String)
+                
+        self.name     = name
+        self.office   = office
+        self.photo    = photo
+        //self.iconSize = iconSize
+        //self.mail     = mail
+        //self.phone    = phone
+        
     }
 }
