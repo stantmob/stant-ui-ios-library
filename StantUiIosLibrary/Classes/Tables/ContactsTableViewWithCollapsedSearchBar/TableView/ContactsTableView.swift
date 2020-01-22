@@ -11,14 +11,16 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
     
     var previousScrollOffset: CGFloat  = 0
     
-    public var allConstructionSiteList        = [ContactsInformation]()
-    public var filteredConstructionSiteList   = [ContactsInformation]()
+    public var allContactsList        = [ContactsInformation]()
+    public var filteredContactsList   = [ContactsInformation]()
     public var currentHeightConstant: CGFloat = DefaultSearchBar.searchViewHeight
     public let maxHeaderHeight: CGFloat       = DefaultSearchBar.searchViewHeight
     public let minHeaderHeight: CGFloat       = 0
     
-    public var animationDelegate: ContactsAndHideSearchTableViewDelegate?
-    var selectCellDelegate:       ContactsTableViewDidSelectDelegate?
+    public var animationDelegate:  ContactsAndHideSearchTableViewDelegate?
+    public var selectCellDelegate: ContactsTableViewDidSelectDelegate?
+    
+    public var presenterDelegate:  UIViewController?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,22 +30,22 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
         super.init(frame: frame, style: style)
     }
     
-    public func configureTableViewWith(constructionList:   [ContactsInformation],
+    public func configureTableViewWith(contactsList:   [ContactsInformation],
                                        animationDelegate:  ContactsAndHideSearchTableViewDelegate,
                                        selectCellDelegate: ContactsTableViewDidSelectDelegate?) {
         self.delegate        = self
         self.dataSource      = self
         self.separatorStyle  = .none
         
-        self.animationDelegate            = animationDelegate
-        self.selectCellDelegate           = selectCellDelegate
-        self.filteredConstructionSiteList = constructionList
-        self.allConstructionSiteList      = constructionList
+        self.animationDelegate    = animationDelegate
+        self.selectCellDelegate   = selectCellDelegate
+        self.filteredContactsList = contactsList
+        self.allContactsList      = contactsList
         self.register(ContactsCard.self, forCellReuseIdentifier: ContactsCard.identifier())
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return filteredConstructionSiteList.count
+           return filteredContactsList.count
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,17 +56,19 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsCard.identifier(), for: indexPath) as? ContactsCard else {
             return UITableViewCell()
         }
-        
-        cell.configureViewFor(construction: filteredConstructionSiteList[indexPath.row])
 
+        
+        cell.configureViewFor(contacts: filteredContactsList[indexPath.row])
+        cell.presenterDelegate = presenterDelegate as! ContactsTableViewShowPresenter
         return cell
     }
     
      public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let clickedConstruction      = filteredConstructionSiteList[indexPath.row]
-            let clickedConstructionIndex = allConstructionSiteList.firstIndex(where: {$0.name == clickedConstruction.name}) ?? indexPath.row
+            let clickedContacts      = filteredContactsList[indexPath.row]
+            let clickedContactsIndex = allContactsList.firstIndex(where: {$0.name == clickedContacts.name}) ?? indexPath.row
             
-            selectCellDelegate?.didClickOnTableViewCellWith(index: clickedConstructionIndex)
+        
+            selectCellDelegate?.didClickOnTableViewCellWith(index: clickedContactsIndex)
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
@@ -110,4 +114,5 @@ public protocol ContactsAndHideSearchTableViewDelegate: class {
 public protocol ContactsTableViewDidSelectDelegate: class {
     func didClickOnTableViewCellWith(index: Int)
 }
+
 

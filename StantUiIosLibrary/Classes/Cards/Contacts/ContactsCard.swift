@@ -11,16 +11,13 @@ public class ContactsCard: UITableViewCell {
     
     public static let cellHeight: CGFloat = 56
     
-    public var mainView:       UIView?
-    public var nameLabel:      UILabel?
-    public var officeLabel:    UILabel?
-    public var photoImageView: RoundedImageView?
-    
-    //private let mailImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    //private let callImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    
-    private weak var mailButton: UIButton?
-    private weak var callButton: UIButton?
+    public var mainView:          UIView?
+    public var nameLabel:         UILabel?
+    public var roleLabel:         UILabel?
+    public var mailButton:        UIButton?
+    public var phoneButton:       UIButton?
+    public var presenterDelegate: ContactsTableViewShowPresenter?
+    public var photoImageView:    RoundedImageView?
        
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,87 +32,92 @@ public class ContactsCard: UITableViewCell {
         photoImageView = nil
     }
     
-    public func configureViewFor(construction: ContactsInformation) {
+    public func configureViewFor(contacts: ContactsInformation) {
         self.removeSubviews()
         
         self.backgroundColor = .clear
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(url: construction.photo ?? String())
+        self.configureImageWith(url: contacts.photo ?? String())
         
-        self.configure(name:   construction.name ?? String(),
-                       office: construction.office ?? String())
+        self.configure(name:  contacts.name ?? String(),
+                       role:  contacts.role ?? String(),
+                       mail:  contacts.mail ?? String(),
+                       phone: contacts.phone ?? String())
         
-//        self.set(mailButton: construction.mail ?? UIButton(), callButton: <#UIButton?#>);,
-//                 //mailImage:  construction.mailImage ?? UIImage(),
-//                 callButton: construction.phone)
-//                 //callImage:  construction.callImage ?? UIImage())
+        self.set(mail:  contacts.mail ?? "",
+                 phone: contacts.phone ?? "")
     }
     
-//    private func set(mailButton: UIButton?,
-//                     //mailImage:  UIImage,
-//                     callButton: UIButton?) {
-//                     //callImage:  UIImage) {
-//
-//        //self.mailImage.image = mailImage
-//        //self.callImage.image = callImage
-//
-//        self.mailButton = mailButton
-//        self.callButton = callButton
-//
-//        self.mailButton?.setImage(UIImage(named: "mail"), for: .normal)
-//        self.callButton?.setImage(UIImage(named: "call"), for: .normal)
-//
-//        positionOptionalElements()
-//        styleButtonImages()
-//    }
-
-    private func styleButtonImages() {
-        if self.mailButton == nil {
-            //self.mailImage.set(color: .darkGrayStant)
-            self.mailButton?.isEnabled = false
+    private func setButtonsActionsFor(mail: String, phone: String) {
+        if !mail.isEmpty {
+            mailButton?.addTarget(self, action: #selector(mailAction), for: .touchUpInside)
         }
+        
+        if !phone.isEmpty {
+            phoneButton?.addTarget(self, action: #selector(phoneAction), for: .touchUpInside)
+        }
+    }
+    
+    @objc func mailAction(sender: UIButton) {
+        let alert = UIAlertController(title: "Mail", message: "Send a mail button was clicked!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
-        if self.callButton == nil {
-            //self.callImage.set(color: .darkGrayStant)
-            self.callButton?.isEnabled = false
+        if let present = presenterDelegate {
+            present.present(alert: alert)
         }
     }
 
+    @objc func phoneAction(sender: UIButton) {
+        let alert = UIAlertController(title: "Phone", message: "Call a phone button was clicked!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        if let present = presenterDelegate {
+            present.present(alert: alert)
+        }
+    }
+    
+    public func set(mail: String, phone: String) {
+        mailButton = UIButton()
+        mailButton?.setImage(UIImage(named: "mail"), for: .normal)
+        
+        phoneButton = UIButton()
+        phoneButton?.setImage(UIImage(named: "call"), for: .normal)
+        
+        if mail.isEmpty {
+            self.mailButton?.imageView?.set(color: .darkGrayStant)
+            self.mailButton?.isEnabled = false
+        }
+        
+        if phone.isEmpty {
+            self.phoneButton?.imageView?.set(color: .darkGrayStant)
+            self.phoneButton?.isEnabled = false
+        }
+        
+        positionOptionalElements()
+        setButtonsActionsFor(mail: mail, phone: phone)
+    }
+    
     private func positionOptionalElements() {
-//        self.addSubviews(mailImage, callImage)
-//
-//        self.callImage.anchor(top:      self.topAnchor,
-//                              bottom:   self.bottomAnchor,
-//                              trailing: self.trailingAnchor,
-//                              padding:  UIEdgeInsets(top:   18, left:   0, bottom: 18,right: 16),
-//                              size:     CGSize(width: 20, height: 20))
-//
-//        self.mailImage.anchor(top:      self.topAnchor,
-//                              bottom:   self.bottomAnchor,
-//                              trailing: self.callImage.leadingAnchor,
-//                              padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-//                              size:     CGSize(width: 20, height: 20))
+        if let callButton = self.phoneButton {
+           self.addSubview(callButton)
 
-        if let callButton = self.callButton {
-            self.addSubview(callButton)
-
-            self.callButton?.anchor(top:      self.topAnchor,
-                                    bottom:   self.bottomAnchor,
-                                    trailing: self.trailingAnchor,
-                                    padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-                                    size:     CGSize(width: 20, height: 20))
+           self.phoneButton?.anchor(top:      self.topAnchor,
+                                       bottom:   self.bottomAnchor,
+                                       trailing: self.trailingAnchor,
+                                       padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                                       size:     CGSize(width: 20, height: 20))
         }
 
         if let mailButton = self.mailButton {
-            self.addSubview(mailButton)
+           self.addSubview(mailButton)
 
-            self.mailButton?.anchor(top:      self.topAnchor,
-                                    bottom:   self.bottomAnchor,
-                                    trailing: self.callButton?.leadingAnchor,
-                                    padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-                                    size:     CGSize(width: 20, height: 20))
+           self.mailButton?.anchor(top:      self.topAnchor,
+                                   bottom:   self.bottomAnchor,
+                                   trailing: self.phoneButton?.leadingAnchor,
+                                   padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                                   size:     CGSize(width: 20, height: 20))
         }
     }
     
@@ -136,11 +138,11 @@ public class ContactsCard: UITableViewCell {
         mainView.layer.applySketchShadow(color: .lightGray, alpha: 0.2, x: 16, y: 1, blur: 0, spread: 0)
     }
     
-    fileprivate func configure(name: String, office: String) {
+    fileprivate func configure(name: String, role: String, mail: String, phone: String) {
         nameLabel   = UILabel(frame: CGRect(x: 68, y: 11, width: 210, height: 19))
-        officeLabel = UILabel(frame: CGRect(x: 68, y: 32, width: 210, height: 14))
+        roleLabel = UILabel(frame: CGRect(x: 68, y: 32, width: 210, height: 14))
         
-        guard let nameLabel = nameLabel, let officeLabel = officeLabel else { return }
+        guard let nameLabel = nameLabel, let roleLabel = roleLabel else { return }
         
         if #available(iOS 8.2, *) {
             self.setText(label:        nameLabel,
@@ -153,8 +155,8 @@ public class ContactsCard: UITableViewCell {
                          bottomAnchor: 26,
                          rightAnchor:  82)
             
-            self.setText(label:        officeLabel,
-                         text:         office,
+            self.setText(label:        roleLabel,
+                         text:         role,
                          textSize:     12,
                          textWeight:   .regular,
                          textColor:    .darkGrayStant,
@@ -215,27 +217,28 @@ public class ContactsCard: UITableViewCell {
     }
 }
 
+public protocol ContactsTableViewShowPresenter: class {
+    func present(alert: UIAlertController)
+}
+
 public struct ContactsInformation {
     let name:     String?
-    let office:   String?
+    let role:     String?
     let photo:    String?
-    //var iconSize: CGSize?
-    //let mail:     String?
-    //let phone:    String?
+    let mail:     String?
+    let phone:    String?
     
     public init(name:     String,
-                office:   String,
-                photo:    String) {
-                //iconSize: CGSize,
-                //mail:     String,
-                //phone:    String)
+                role:     String,
+                photo:    String,
+                mail:     String,
+                phone:    String) {
                 
         self.name     = name
-        self.office   = office
+        self.role     = role
         self.photo    = photo
-        //self.iconSize = iconSize
-        //self.mail     = mail
-        //self.phone    = phone
+        self.mail     = mail
+        self.phone    = phone
         
     }
 }

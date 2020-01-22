@@ -12,13 +12,15 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     public var tableView:         ContactsTableView?
     public var searchView:        DefaultSearchBar?
     public var emptyMessageLabel: UILabel?
+    public var presenterDelegate: UIViewController?
     weak var tableViewDelegate:   ContactsTableViewDidSelectDelegate?
     
     var searchBarIcon        = UIImage()
     var searchBarPlaceholder = String()
     var searchOnTableView    = String()
     var emptyMessage         = String()
-    public var constructionSiteList = [ContactsInformation]()
+    public var contactsSiteList = [ContactsInformation]()
+    
     
     var currentSearch = ""
     
@@ -30,14 +32,14 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
            super.init(frame: frame)
     }
     
-    public func configureViewWith(constructionList:     [ContactsInformation],
+    public func configureViewWith(contactsList:     [ContactsInformation],
                                   searchBarIcon:        UIImage,
                                   searchBarPlaceholder: String,
                                   tableViewDelegate:    ContactsTableViewDidSelectDelegate,
                                   emptyMessage:         String) {
         
         self.tableViewDelegate    = tableViewDelegate
-        self.constructionSiteList = constructionList
+        self.contactsSiteList     = contactsList
         self.searchBarIcon        = searchBarIcon
         self.searchBarPlaceholder = searchBarPlaceholder
         self.emptyMessage         = emptyMessage
@@ -71,10 +73,11 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         
         tableView?.register(ContactsCard.self, forCellReuseIdentifier: ContactsCard.identifier())
         
-        tableView?.configureTableViewWith(constructionList:   constructionSiteList,
+        tableView?.configureTableViewWith(contactsList:   contactsSiteList,
                                           animationDelegate:  self,
                                           selectCellDelegate: tableViewDelegate)
         tableView?.backgroundColor = .clear
+        tableView?.presenterDelegate = presenterDelegate
         
         if let tableView = tableView {
             self.addSubview(tableView)
@@ -120,16 +123,16 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         emptyMessageLabel.numberOfLines = 0
     }
     
-    public func updateConstructionSiteList(_ constructionSites: [ContactsInformation]) {
-        self.constructionSiteList                    = constructionSites
-        self.tableView?.filteredConstructionSiteList = constructionSites
+    public func updateContactsList(_ contacts: [ContactsInformation]) {
+        self.contactsSiteList                    = contacts
+        self.tableView?.filteredContactsList = contacts
 
         self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()
     }
     
     func setEmptyMessageLabelVisibility() {
-        let listIsNotEmpty = !(tableView?.filteredConstructionSiteList.isEmpty ?? false)
+        let listIsNotEmpty = !(tableView?.filteredContactsList.isEmpty ?? false)
         if listIsNotEmpty {
             emptyMessageLabel?.isHidden = true
             return

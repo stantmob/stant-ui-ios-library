@@ -12,12 +12,12 @@ extension ContactsTableViewWithCollapseSearchBar: DefaultSearchViewDelegate {
         self.currentSearch  = search
         guard let tableView = tableView else { return }
         
-        tableView.filteredConstructionSiteList = constructionSiteList.filter { (constructionSite: ContactsInformation) -> Bool in
+        tableView.filteredContactsList = contactsSiteList.filter { (constructionSite: ContactsInformation) -> Bool in
             let title = constructionSite.name ?? ""
             return title.lowercased().contains(search.lowercased())
         }
         if search.isEmpty {
-            tableView.filteredConstructionSiteList = constructionSiteList
+            tableView.filteredContactsList = contactsSiteList
         }
         
         tableView.reloadData()
