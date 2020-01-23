@@ -32,22 +32,22 @@ public class ContactsCard: UITableViewCell {
         photoImageView = nil
     }
     
-    public func configureViewFor(contacts: ContactsInformation) {
+    public func configureViewFor(contact: ContactsInformation) {
         self.removeSubviews()
         
         self.backgroundColor = .clear
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(url: contacts.photo ?? String())
+        self.configureImageWith(url: contact.photo ?? String())
         
-        self.configure(name:  contacts.name ?? String(),
-                       role:  contacts.role ?? String(),
-                       mail:  contacts.mail ?? String(),
-                       phone: contacts.phone ?? String())
+        self.configure(name:  contact.name ?? String(),
+                       role:  contact.role ?? String(),
+                       mail:  contact.mail ?? String(),
+                       phone: contact.phone ?? String())
         
-        self.set(mail:  contacts.mail ?? "",
-                 phone: contacts.phone ?? "")
+        self.set(mail:  contact.mail ?? "",
+                 phone: contact.phone ?? "")
     }
     
     private func setButtonsActionsFor(mail: String, phone: String) {
@@ -104,10 +104,10 @@ public class ContactsCard: UITableViewCell {
            self.addSubview(callButton)
 
            self.phoneButton?.anchor(top:      self.topAnchor,
-                                       bottom:   self.bottomAnchor,
-                                       trailing: self.trailingAnchor,
-                                       padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
-                                       size:     CGSize(width: 20, height: 20))
+                                    bottom:   self.bottomAnchor,
+                                    trailing: self.trailingAnchor,
+                                    padding:  UIEdgeInsets(top: 18, left: 0, bottom: 18, right: 16),
+                                    size:     CGSize(width: 20, height: 20))
         }
 
         if let mailButton = self.mailButton {
@@ -122,7 +122,7 @@ public class ContactsCard: UITableViewCell {
     }
     
     fileprivate func addMainViewWithShadow() {
-        mainView = UIView(frame: CGRect(x: 4, y: 2, width: self.frame.width - 8, height: self.frame.height - 4))
+        mainView = UIView(frame: CGRect(x: 4, y: 2, width: self.frame.width, height: self.frame.height))
         
         guard let mainView = mainView else { return }
         self.addSubview(mainView)
@@ -139,8 +139,8 @@ public class ContactsCard: UITableViewCell {
     }
     
     fileprivate func configure(name: String, role: String, mail: String, phone: String) {
-        nameLabel   = UILabel(frame: CGRect(x: 68, y: 11, width: 210, height: 19))
-        roleLabel = UILabel(frame: CGRect(x: 68, y: 32, width: 210, height: 14))
+        nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 19))
+        roleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 210, height: 14))
         
         guard let nameLabel = nameLabel, let roleLabel = roleLabel else { return }
         

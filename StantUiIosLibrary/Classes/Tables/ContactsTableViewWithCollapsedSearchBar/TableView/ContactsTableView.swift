@@ -57,8 +57,7 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
             return UITableViewCell()
         }
 
-        
-        cell.configureViewFor(contacts: filteredContactsList[indexPath.row])
+        cell.configureViewFor(contact: filteredContactsList[indexPath.row])
         cell.presenterDelegate = presenterDelegate as! ContactsTableViewShowPresenter
         return cell
     }

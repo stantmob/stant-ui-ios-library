@@ -21,7 +21,6 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     var emptyMessage         = String()
     public var contactsSiteList = [ContactsInformation]()
     
-    
     var currentSearch = ""
     
     required public init?(coder aDecoder: NSCoder) {
@@ -32,7 +31,7 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
            super.init(frame: frame)
     }
     
-    public func configureViewWith(contactsList:     [ContactsInformation],
+    public func configureViewWith(contactsList:         [ContactsInformation],
                                   searchBarIcon:        UIImage,
                                   searchBarPlaceholder: String,
                                   tableViewDelegate:    ContactsTableViewDidSelectDelegate,
