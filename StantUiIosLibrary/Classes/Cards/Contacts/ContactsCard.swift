@@ -39,7 +39,7 @@ public class ContactsCard: UITableViewCell {
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(url: contact.photo ?? String())
+        self.configureImageWith(image: contact.photo ?? UIImage())
         
         self.configure(name:  contact.name ?? String(),
                        role:  contact.role ?? String(),
@@ -197,7 +197,7 @@ public class ContactsCard: UITableViewCell {
         
     }
     
-    fileprivate func configureImageWith(url: String) {
+    fileprivate func configureImageWith(image: UIImage) {
         photoImageView = RoundedImageView(frame: CGRect(x:      19,
                                                         y:      173,
                                                         width:  35,
@@ -212,7 +212,7 @@ public class ContactsCard: UITableViewCell {
                                   padding: UIEdgeInsets(top: 15, left: 23, bottom: 0, right: 306),
                                   size:    CGSize(width: 20, height: 20))
         }
-        photoImageView.set(iconURL: url, iconDiameter: 40, iconBorder: 2)
+        photoImageView.set(icon: image, iconDiameter: 40, iconBorder: 2)
         photoImageView.tag = 1
     }
 }
@@ -224,13 +224,13 @@ public protocol ContactsTableViewShowPresenter: class {
 public struct ContactsInformation {
     let name:     String?
     let role:     String?
-    let photo:    String?
+    let photo:    UIImage
     let mail:     String?
     let phone:    String?
     
     public init(name:     String,
                 role:     String,
-                photo:    String,
+                photo:    UIImage,
                 mail:     String,
                 phone:    String) {
                 
