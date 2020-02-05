@@ -13,7 +13,7 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
     let navigationBarHeight: CGFloat = 60
     let name                         = "Steve Jobs"
     let role                         = "Developer IOS"
-    let contactPhoto                 = "godfatherWashington"
+    let contactPhoto                 = UIImage(named: "godfatherWashington") ?? UIImage()
     let contactEmail                 = "stant@stant.com.br"
     let contactPhone                 = "99999-9999"
     
@@ -32,7 +32,7 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
             
             contactsSiteList.append(ContactsInformation(name: name + "\(i)",
                                                         role: role,
-                                                        photo: UIImage(named: "godfatherWashington") ?? UIImage(),
+                                                        photo: contactPhoto ,
                                                         mail: (i > 2 ? contactEmail : ""),
                                                         phone: (i < 2 ? contactPhone : "")))
         }

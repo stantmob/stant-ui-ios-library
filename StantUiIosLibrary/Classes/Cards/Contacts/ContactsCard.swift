@@ -80,10 +80,10 @@ public class ContactsCard: UITableViewCell {
     
     public func set(mail: String, phone: String) {
         mailButton = UIButton()
-        mailButton?.setImage(UIImage(named: "mail"), for: .normal)
+        mailButton?.setImage(UIImage(named: "mailIcon"), for: .normal)
         
         phoneButton = UIButton()
-        phoneButton?.setImage(UIImage(named: "call"), for: .normal)
+        phoneButton?.setImage(UIImage(named: "callIcon"), for: .normal)
         
         if mail.isEmpty {
             self.mailButton?.imageView?.set(color: .darkGrayStant)
