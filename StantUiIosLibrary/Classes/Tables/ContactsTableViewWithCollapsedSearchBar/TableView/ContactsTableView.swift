@@ -21,6 +21,14 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
     public var selectCellDelegate: ContactsTableViewDidSelectDelegate?
     
     public var presenterDelegate:  UIViewController?
+    public var callToMessage = String()
+    public var mailMessage  = String()
+    public var supportWarningMessage  = String()
+    public var makeCall  = String()
+    public var sendEmail  = String()
+    public var warningMessage  = String()
+    public var guidance  = String()
+    public var cancel  = String()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,7 +40,15 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
     
     public func configureTableViewWith(contactsList:   [ContactsInformation],
                                        animationDelegate:  ContactsAndHideSearchTableViewDelegate,
-                                       selectCellDelegate: ContactsTableViewDidSelectDelegate?) {
+                                       selectCellDelegate: ContactsTableViewDidSelectDelegate?,
+                                       callToMessage: String,
+                                       mailMessage: String,
+                                       supportWarningMessage: String,
+                                       makeCall: String,
+                                       sendMail: String,
+                                       warningMessage: String,
+                                       guidance: String,
+                                       cancel: String) {
         self.delegate        = self
         self.dataSource      = self
         self.separatorStyle  = .none
@@ -41,6 +57,14 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
         self.selectCellDelegate   = selectCellDelegate
         self.filteredContactsList = contactsList
         self.allContactsList      = contactsList
+        self.callToMessage = callToMessage
+        self.mailMessage  = mailMessage
+        self.supportWarningMessage = supportWarningMessage
+        self.makeCall = makeCall
+        self.sendEmail = sendMail
+        self.warningMessage = warningMessage
+        self.guidance = guidance
+        self.cancel = cancel
         self.register(ContactsCard.self, forCellReuseIdentifier: ContactsCard.identifier())
     }
     
@@ -59,6 +83,15 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
 
         cell.configureViewFor(contact: filteredContactsList[indexPath.row])
         cell.presenterDelegate = presenterDelegate as! ContactsTableViewShowPresenter
+        cell.callToMessage = callToMessage
+        cell.mailMessage = mailMessage
+        cell.supportWarningMessage = supportWarningMessage
+        cell.makeCall = makeCall
+        cell.sendEmail = sendEmail
+        cell.warningMessage = warningMessage
+        cell.guidance = guidance
+        cell.cancel = cancel
+        
         return cell
     }
     

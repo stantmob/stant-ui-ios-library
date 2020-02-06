@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 public class ContactsCard: UITableViewCell {
     
@@ -18,7 +19,19 @@ public class ContactsCard: UITableViewCell {
     public var phoneButton:       UIButton?
     public var presenterDelegate: ContactsTableViewShowPresenter?
     public var photoImageView:    RoundedImageView?
-       
+    var person: ContactsInformation?
+    
+    var callToMessage = String()
+    var mailMessage   = String()
+    var supportWarningMessage =  String()
+    var makeCall = String()
+    var sendEmail = String()
+    var warningMessage = String()
+    var guidance = String()
+    var cancel        = String()
+    
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -39,7 +52,7 @@ public class ContactsCard: UITableViewCell {
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(image: contact.photo ?? UIImage())
+        self.configureImageWith(image: contact.photo )
         
         self.configure(name:  contact.name ?? String(),
                        role:  contact.role ?? String(),
@@ -51,6 +64,8 @@ public class ContactsCard: UITableViewCell {
     }
     
     private func setButtonsActionsFor(mail: String, phone: String) {
+        person = ContactsInformation(name: "", role: "", photo: UIImage(), mail: mail, phone: phone)
+        
         if !mail.isEmpty {
             mailButton?.addTarget(self, action: #selector(mailAction), for: .touchUpInside)
         }
@@ -60,23 +75,80 @@ public class ContactsCard: UITableViewCell {
         }
     }
     
-    @objc func mailAction(sender: UIButton) {
-        let alert = UIAlertController(title: "Mail", message: "Send a mail button was clicked!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
-        if let present = presenterDelegate {
-            present.present(alert: alert)
-        }
+    //MARK: - IBAction
+    
+    @IBAction func phoneAction(sender: UIButton) {
+        guard let currentPerson = person else {return}
+           
+        let alert = UIAlertController(title: self.callToMessage, message: currentPerson.phone, preferredStyle: .alert)
+            
+        alert.addAction(UIAlertAction(title: self.makeCall, style: .default, handler: { (_) in
+                let url: NSURL? = URL(string: "TEL://\(currentPerson.phone)") as? NSURL
+                   if let url = url {
+                       UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+                   }
+            }))
+               
+        alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
+           }))
+           
+           if let present = presenterDelegate {
+               present.present(alert: alert)
+           }
+       }
+    
+    @IBAction func mailAction(sender: UIButton) {
+        self.openEmailPopup()
     }
+    
+    func openEmailPopup() {
+        guard let currentPerson = person else {return}
+        let alert = UIAlertController(title: self.mailMessage, message: currentPerson.mail, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: self.sendEmail, style: .default, handler: { (_) in
+                   self.sendMail()
+               }))
+           
+        alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
+               }))
 
-    @objc func phoneAction(sender: UIButton) {
-        let alert = UIAlertController(title: "Phone", message: "Call a phone button was clicked!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        
-        if let present = presenterDelegate {
-            present.present(alert: alert)
-        }
+           if let present = presenterDelegate {
+               present.present(alert: alert)
+           }
     }
+    
+    func sendMail() {
+        if MFMailComposeViewController.canSendMail() {
+            self.openEmail()
+       } else {
+           self.showAlertToGoGuidance()
+       }
+    }
+    
+    func openEmail() {
+        guard let currentPerson = person else{return}
+        let mail                 = MFMailComposeViewController()
+        mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+        mail.setToRecipients([(currentPerson.mail ?? "")])
+    }
+    
+    func showAlertToGoGuidance() {
+        let alert = UIAlertController(title: self.supportWarningMessage, message: self.warningMessage, preferredStyle: .alert)
+                
+        alert.addAction(UIAlertAction(title: self.guidance, style: .default, handler: { (_) in
+                if let url = URL(string: "https://support.apple.com/pt-br/HT201320") {
+                    UIApplication.shared.open(url)
+                }
+            }))
+                
+        alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
+            }))
+            
+            if let present = presenterDelegate {
+                present.present(alert: alert)
+            }
+    }
+    
+    
     
     public func set(mail: String, phone: String) {
         mailButton = UIButton()

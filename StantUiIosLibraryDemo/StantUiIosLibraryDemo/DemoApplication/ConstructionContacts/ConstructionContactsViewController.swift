@@ -30,10 +30,10 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
         
         for i in 0...5 {
             
-            contactsSiteList.append(ContactsInformation(name: name + "\(i)",
-                                                        role: role,
+            contactsSiteList.append(ContactsInformation(name:  name + "\(i)",
+                                                        role:  role,
                                                         photo: contactPhoto ,
-                                                        mail: (i > 2 ? contactEmail : ""),
+                                                        mail:  (i > 2 ? contactEmail : ""),
                                                         phone: (i < 2 ? contactPhone : "")))
         }
         
@@ -55,9 +55,17 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
         
         contactsTableView.configureViewWith(contactsList: contactsSiteList,
                                             searchBarIcon: UIImage(named: "search") ?? UIImage(),
-        searchBarPlaceholder: "Search",
-        tableViewDelegate: self,
-        emptyMessage: "No construction site to show on current screen. Please try again later.")
+                                            searchBarPlaceholder: "Search",
+                                            tableViewDelegate: self,
+                                            emptyMessage: "No construction site to show on current screen. Please try again later.",
+                                            callToMessage: "Call to",
+                                            mailMessage: "Mail",
+                                            supportWarningMessage: "Warning Message",
+                                            makeCall: "Make call                  ",
+                                            sendEmail: "Send Mail                 ",
+                                            warningMessage: "Warning Message",
+                                            guidance: "Guidance                   ",
+                                            cancel: "Cancel")
     }
     
     func present(alert: UIAlertController) {
