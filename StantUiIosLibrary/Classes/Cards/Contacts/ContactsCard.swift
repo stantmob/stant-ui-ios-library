@@ -82,12 +82,12 @@ public class ContactsCard: UITableViewCell {
            
         let alert = UIAlertController(title: self.callToMessage, message: currentPerson.phone, preferredStyle: .alert)
             
-        alert.addAction(UIAlertAction(title: self.makeCall, style: .default, handler: { (_) in
-                let url: NSURL? = URL(string: "TEL://\(currentPerson.phone)") as? NSURL
-                   if let url = url {
-                       UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-                   }
-            }))
+        alert.addAction(UIAlertAction(title: self.makeCall + "        ", style: .default, handler: { (_) in
+            let url = URL(string: "TEL://\(currentPerson.phone as! String)")
+            if let url = url {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+           }
+        }))
                
         alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
            }))
@@ -104,12 +104,12 @@ public class ContactsCard: UITableViewCell {
     func openEmailPopup() {
         guard let currentPerson = person else {return}
         let alert = UIAlertController(title: self.mailMessage, message: currentPerson.mail, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: self.sendEmail, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: self.sendEmail + "        ", style: .default, handler: { (_) in
                    self.sendMail()
-               }))
+        }))
            
         alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
-               }))
+        }))
 
            if let present = presenterDelegate {
                present.present(alert: alert)
@@ -126,15 +126,20 @@ public class ContactsCard: UITableViewCell {
     
     func openEmail() {
         guard let currentPerson = person else{return}
-        let mail                 = MFMailComposeViewController()
-        mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
-        mail.setToRecipients([(currentPerson.mail ?? "")])
+        let mailViewController                 = MFMailComposeViewController()
+        mailViewController.mailComposeDelegate = presenterDelegate as? MFMailComposeViewControllerDelegate
+        mailViewController.setToRecipients([(currentPerson.mail ?? "")])
+        
+        if let present = presenterDelegate {
+            present.present(alert: mailViewController)
+        }
     }
+    
     
     func showAlertToGoGuidance() {
         let alert = UIAlertController(title: self.supportWarningMessage, message: self.warningMessage, preferredStyle: .alert)
                 
-        alert.addAction(UIAlertAction(title: self.guidance, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: self.guidance + "       ", style: .default, handler: { (_) in
                 if let url = URL(string: "https://support.apple.com/pt-br/HT201320") {
                     UIApplication.shared.open(url)
                 }
@@ -290,7 +295,7 @@ public class ContactsCard: UITableViewCell {
 }
 
 public protocol ContactsTableViewShowPresenter: class {
-    func present(alert: UIAlertController)
+    func present(alert: UIViewController)
 }
 
 public struct ContactsInformation {

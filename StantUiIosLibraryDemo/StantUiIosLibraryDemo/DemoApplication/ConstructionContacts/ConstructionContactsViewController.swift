@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import MessageUI
 import StantUiIosLibrary
 
-class ConstructionContactsViewController: UIViewController, ContactsTableViewShowPresenter {
+class ConstructionContactsViewController: UIViewController, ContactsTableViewShowPresenter, MFMailComposeViewControllerDelegate {
     let navigationBarHeight: CGFloat = 60
     let name                         = "Steve Jobs"
     let role                         = "Developer IOS"
     let contactPhoto                 = UIImage(named: "godfatherWashington") ?? UIImage()
     let contactEmail                 = "stant@stant.com.br"
-    let contactPhone                 = "99999-9999"
+    let contactPhone                 = "82999999999"
     
     var contactsSiteList = [ContactsInformation]()
     
@@ -68,8 +69,12 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
                                             cancel: "Cancel")
     }
     
-    func present(alert: UIAlertController) {
+    func present(alert: UIViewController) {
         self.present(alert, animated: true)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+         controller.dismiss(animated: true)
     }
 }
 
