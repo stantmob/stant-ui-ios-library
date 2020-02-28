@@ -89,7 +89,7 @@ public class ContactsCard: UITableViewCell {
            }
         }))
                
-        alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
            }))
            
            if let present = presenterDelegate {
@@ -108,7 +108,7 @@ public class ContactsCard: UITableViewCell {
                    self.sendMail()
         }))
            
-        alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
         }))
 
            if let present = presenterDelegate {
@@ -145,7 +145,7 @@ public class ContactsCard: UITableViewCell {
                 }
             }))
                 
-        alert.addAction(UIAlertAction(title: self.cancel, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
             }))
             
             if let present = presenterDelegate {
