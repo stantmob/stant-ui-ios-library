@@ -102,7 +102,7 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
         
             selectCellDelegate?.didClickOnTableViewCellWith(index: clickedContactsIndex)
             tableView.deselectRow(at: indexPath, animated: true)
-        }
+    }
         
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
             self.checkScrollDirectionAndAnimateView(scrollView)

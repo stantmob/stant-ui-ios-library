@@ -20,6 +20,12 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
     
     var contactsSiteList = [ContactsInformation]()
     
+    @IBAction func alertInformation() {
+        let alert = UIAlertController(title: "Warning", message: "select a construction site to load the work contacts", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert: alert)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -38,35 +44,40 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
                                                         phone: (i < 2 ? contactPhone : "")))
         }
         
-        let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x: 0,
-                                                                                     y: navigationBarHeight,
-                                                                                     width: self.view.frame.width,
-                                                                                     height: self.view.frame.height - navigationBarHeight))
-        contactsTableView.presenterDelegate = self
-        self.view.addSubview(contactsTableView)
-        
-        contactsTableView.anchor(top:      self.view.topAnchor,
-                                 leading:  self.view.leadingAnchor,
-                                 bottom:   self.view.bottomAnchor,
-                                 trailing: self.view.trailingAnchor,
-                                 padding:  UIEdgeInsets(top: navigationBarHeight,
-                                 left:     0,
-                                 bottom:   0,
-                                 right:    0))
-        
-        contactsTableView.configureViewWith(contactsList: contactsSiteList,
-                                            searchBarIcon: UIImage(named: "search") ?? UIImage(),
-                                            searchBarPlaceholder: "Search",
-                                            tableViewDelegate: self,
-                                            emptyMessage: "No construction site to show on current screen. Please try again later.",
-                                            callToMessage: "Call to",
-                                            mailMessage: "Mail",
-                                            supportWarningMessage: "Warning Message",
-                                            makeCall: "Make call                  ",
-                                            sendEmail: "Send Mail                 ",
-                                            warningMessage: "Warning Message",
-                                            guidance: "Guidance                   ",
-                                            cancel: "Cancel")
+        if !contactsSiteList.isEmpty {
+            let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x: 0,
+                                                                                         y: navigationBarHeight,
+                                                                                         width: self.view.frame.width,
+                                                                                         height: self.view.frame.height - navigationBarHeight))
+            contactsTableView.presenterDelegate = self
+            self.view.addSubview(contactsTableView)
+            
+            contactsTableView.anchor(top:      self.view.topAnchor,
+                                     leading:  self.view.leadingAnchor,
+                                     bottom:   self.view.bottomAnchor,
+                                     trailing: self.view.trailingAnchor,
+                                     padding:  UIEdgeInsets(top: navigationBarHeight,
+                                     left:     0,
+                                     bottom:   0,
+                                     right:    0))
+            
+            contactsTableView.configureViewWith(contactsList:          contactsSiteList,
+                                                searchBarIcon:         UIImage(named: "search") ?? UIImage(),
+                                                searchBarPlaceholder:  "Search",
+                                                tableViewDelegate:     self,
+                                                emptyMessage:          "No construction site to show on current screen. Please try again later.",
+                                                callToMessage:         "Call to",
+                                                mailMessage:           "Mail",
+                                                supportWarningMessage: "Warning Message",
+                                                makeCall:              "Make call                 ",
+                                                sendEmail:             "Send Mail                 ",
+                                                warningMessage:        "Warning Message",
+                                                guidance:              "Guidance                  ",
+                                                cancel:                "Cancel")
+        } else {
+            self.alertInformation()
+        }
+
     }
     
     func present(alert: UIViewController) {
