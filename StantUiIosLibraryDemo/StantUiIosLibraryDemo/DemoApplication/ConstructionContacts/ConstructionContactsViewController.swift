@@ -21,7 +21,9 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
     var contactsSiteList = [ContactsInformation]()
     
     @IBAction func alertInformation() {
-        let alert = UIAlertController(title: "Warning", message: "select a construction site to load the work contacts", preferredStyle: .alert)
+        let alert = UIAlertController(title:          "Warning",
+                                      message:        "select a construction site to load the work contacts",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert: alert)
     }
@@ -45,9 +47,9 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
         }
         
         if !contactsSiteList.isEmpty {
-            let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x: 0,
-                                                                                         y: navigationBarHeight,
-                                                                                         width: self.view.frame.width,
+            let contactsTableView = ContactsTableViewWithCollapseSearchBar(frame: CGRect(x:      0,
+                                                                                         y:      navigationBarHeight,
+                                                                                         width:  self.view.frame.width,
                                                                                          height: self.view.frame.height - navigationBarHeight))
             contactsTableView.presenterDelegate = self
             self.view.addSubview(contactsTableView)

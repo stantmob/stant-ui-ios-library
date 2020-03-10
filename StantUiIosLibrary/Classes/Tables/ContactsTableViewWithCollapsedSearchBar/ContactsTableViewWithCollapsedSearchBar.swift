@@ -54,14 +54,14 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         
         self.configureEmptyMessageLabel()
         self.configureSearchView()
-        self.configureTableView(callToMessage: callToMessage,
-                                mailMessage: mailMessage,
+        self.configureTableView(callToMessage:         callToMessage,
+                                mailMessage:           mailMessage,
                                 supportWarningMessage: supportWarningMessage,
-                                makeCall: makeCall,
-                                sendMail: sendEmail,
-                                warningMessage: warningMessage,
-                                guidance: guidance,
-                                cancel: cancel)
+                                makeCall:              makeCall,
+                                sendMail:              sendEmail,
+                                warningMessage:        warningMessage,
+                                guidance:              guidance,
+                                cancel:                cancel)
         self.anchorSearchAndTableView()
         self.setEmptyMessageLabelVisibility()
     }
@@ -79,7 +79,14 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
                                      placeholderText: searchBarPlaceholder)
     }
     
-    fileprivate func configureTableView(callToMessage: String, mailMessage: String, supportWarningMessage: String, makeCall: String, sendMail: String, warningMessage: String, guidance: String, cancel: String){
+    fileprivate func configureTableView(callToMessage:         String,
+                                        mailMessage:           String,
+                                        supportWarningMessage: String,
+                                        makeCall:              String,
+                                        sendMail:              String,
+                                        warningMessage:        String,
+                                        guidance:              String,
+                                        cancel:                String){
         tableView = ContactsTableView(frame: CGRect(x:      0,
                                                     y:      DefaultSearchBar.searchViewHeight,
                                                     width:  self.frame.width,
@@ -87,17 +94,17 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         
         tableView?.register(ContactsCard.self, forCellReuseIdentifier: ContactsCard.identifier())
         
-        tableView?.configureTableViewWith(contactsList:   contactsSiteList,
-                                          animationDelegate:  self,
-                                          selectCellDelegate: tableViewDelegate,
-                                          callToMessage: callToMessage,
-                                          mailMessage: mailMessage,
+        tableView?.configureTableViewWith(contactsList:          contactsSiteList,
+                                          animationDelegate:     self,
+                                          selectCellDelegate:    tableViewDelegate,
+                                          callToMessage:         callToMessage,
+                                          mailMessage:           mailMessage,
                                           supportWarningMessage: supportWarningMessage,
-                                          makeCall: makeCall,
-                                          sendMail: sendMail,
-                                          warningMessage: warningMessage,
-                                          guidance: guidance,
-                                          cancel: cancel)
+                                          makeCall:              makeCall,
+                                          sendMail:              sendMail,
+                                          warningMessage:        warningMessage,
+                                          guidance:              guidance,
+                                          cancel:                cancel)
               
         tableView?.backgroundColor = .clear
         tableView?.presenterDelegate = presenterDelegate
@@ -147,7 +154,7 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     }
     
     public func updateContactsList(_ contacts: [ContactsInformation]) {
-        self.contactsSiteList                    = contacts
+        self.contactsSiteList = contacts
         self.tableView?.filteredContactsList = contacts
 
         self.updateTableViewWith(search: currentSearch)

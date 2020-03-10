@@ -61,9 +61,9 @@ class ProfileCellTableViewController: UITableViewController {
         self.setButtonsActionsFor(index: indexPath.row)
         
         cell?.set(mailButton: self.validMailButtons[indexPath.row],
-                  mailImage: UIImage(named: "mailIcon")!,
+                  mailImage:  UIImage(named: "mailIcon")!,
                   callButton: self.validPhoneButtons[indexPath.row],
-                  callImage: UIImage(named: "callIcon")!)
+                  callImage:  UIImage(named: "callIcon")!)
         
         return cell ?? UITableViewCell()
     }

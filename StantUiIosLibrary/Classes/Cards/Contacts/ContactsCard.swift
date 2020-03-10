@@ -19,16 +19,16 @@ public class ContactsCard: UITableViewCell {
     public var phoneButton:       UIButton?
     public var presenterDelegate: ContactsTableViewShowPresenter?
     public var photoImageView:    RoundedImageView?
-    var person: ContactsInformation?
+    var person:                   ContactsInformation?
     
-    var callToMessage = String()
-    var mailMessage   = String()
+    var callToMessage         = String()
+    var mailMessage           = String()
     var supportWarningMessage =  String()
-    var makeCall = String()
-    var sendEmail = String()
-    var warningMessage = String()
-    var guidance = String()
-    var cancel        = String()
+    var makeCall              = String()
+    var sendEmail             = String()
+    var warningMessage        = String()
+    var guidance              = String()
+    var cancel                = String()
     
     
     
@@ -64,7 +64,11 @@ public class ContactsCard: UITableViewCell {
     }
     
     private func setButtonsActionsFor(mail: String, phone: String) {
-        person = ContactsInformation(name: "", role: "", photo: UIImage(), mail: mail, phone: phone)
+        person = ContactsInformation(name:  "",
+                                     role:  "",
+                                     photo: UIImage(),
+                                     mail:  mail,
+                                     phone: phone)
         
         if !mail.isEmpty {
             mailButton?.addTarget(self, action: #selector(mailAction), for: .touchUpInside)
@@ -90,12 +94,12 @@ public class ContactsCard: UITableViewCell {
         }))
                
         alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
-           }))
-           
-           if let present = presenterDelegate {
-               present.present(alert: alert)
-           }
-       }
+        }))
+        
+        if let present = presenterDelegate {
+           present.present(alert: alert)
+        }
+    }
     
     @IBAction func mailAction(sender: UIButton) {
         self.openEmailPopup()
@@ -111,9 +115,9 @@ public class ContactsCard: UITableViewCell {
         alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
         }))
 
-           if let present = presenterDelegate {
-               present.present(alert: alert)
-           }
+        if let present = presenterDelegate {
+           present.present(alert: alert)
+        }
     }
     
     func sendMail() {
@@ -140,20 +144,18 @@ public class ContactsCard: UITableViewCell {
         let alert = UIAlertController(title: self.supportWarningMessage, message: self.warningMessage, preferredStyle: .alert)
                 
         alert.addAction(UIAlertAction(title: self.guidance + "       ", style: .default, handler: { (_) in
-                if let url = URL(string: "https://support.apple.com/pt-br/HT201320") {
-                    UIApplication.shared.open(url)
-                }
-            }))
+            if let url = URL(string: "https://support.apple.com/pt-br/HT201320") {
+                UIApplication.shared.open(url)
+            }
+        }))
                 
         alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
-            }))
-            
-            if let present = presenterDelegate {
-                present.present(alert: alert)
-            }
+        }))
+        
+        if let present = presenterDelegate {
+            present.present(alert: alert)
+        }
     }
-    
-    
     
     public func set(mail: String, phone: String) {
         mailButton = UIButton()
