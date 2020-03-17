@@ -16,6 +16,32 @@ extension UIImageView {
         self.showImageWith(path: imagePath, activityIndicator: activityIndicator)
     }
     
+    public func setRoundedImageView(icon:              UIImage? = nil,
+                                    iconURL:           String?  = nil,
+                                    iconDiameter:      CGFloat,
+                                    iconBorder:        CGFloat,
+                                    activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()) {
+        self.backgroundColor = .clear
+        
+        let backgroundSize = CGSize(width: iconDiameter, height: iconDiameter)
+        let backgroundView = UIImageView(frame: CGRect(x:     0,
+                                                       y:     0,
+                                                       width: iconDiameter,
+                                                       height: iconDiameter))
+        self.addSubview(backgroundView)
+        backgroundView.anchor(size: backgroundSize)
+        backgroundView.anchorCenterX(anchorX: self.centerXAnchor)
+        backgroundView.anchorCenterY(anchorY: self.centerYAnchor)
+        backgroundView.addRoundedImage(icon:        icon,
+                                       iconURL:     iconURL,
+                                       borderWidth: iconBorder,
+                                       diameter:    iconDiameter)
+        
+        guard let imagePath = iconURL else {return}
+        
+        self.showImageWith(path: imagePath, activityIndicator: activityIndicator)
+    }
+    
     func showImageWith(path imagePath: String, activityIndicator: UIActivityIndicatorView) {
         activityIndicator.startAnimating()
         DispatchQueue.global(qos: .background).async {

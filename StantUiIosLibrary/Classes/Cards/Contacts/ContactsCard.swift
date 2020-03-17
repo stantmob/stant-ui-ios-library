@@ -18,7 +18,7 @@ public class ContactsCard: UITableViewCell {
     public var mailButton:        UIButton?
     public var phoneButton:       UIButton?
     public var presenterDelegate: ContactsTableViewShowPresenter?
-    public var photoImageView:    RoundedImageView?
+    public var photoImageView:    UIImageView?
     var person:                   ContactsInformation?
     
     var callToMessage         = String()
@@ -30,6 +30,7 @@ public class ContactsCard: UITableViewCell {
     var guidance              = String()
     var cancel                = String()
     
+    public let activityIndicator = UIActivityIndicatorView(style: .gray)
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -52,7 +53,7 @@ public class ContactsCard: UITableViewCell {
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(image: contact.photo )
+        self.configureImageWith(image: contact.photo ?? String() )
         
         self.configure(name:  contact.name ?? String(),
                        role:  contact.role ?? String(),
@@ -66,7 +67,7 @@ public class ContactsCard: UITableViewCell {
     private func setButtonsActionsFor(mail: String, phone: String) {
         person = ContactsInformation(name:  "",
                                      role:  "",
-                                     photo: UIImage(),
+                                     photo: "",
                                      mail:  mail,
                                      phone: phone)
         
@@ -276,11 +277,17 @@ public class ContactsCard: UITableViewCell {
         
     }
     
-    fileprivate func configureImageWith(image: UIImage) {
-        photoImageView = RoundedImageView(frame: CGRect(x:      19,
-                                                        y:      173,
-                                                        width:  35,
-                                                        height: 35))
+    fileprivate func configureImageWith(image: String) {
+        photoImageView = UIImageView(frame: CGRect(x:      19,
+                                                   y:      173,
+                                                   width:  35,
+                                                   height: 35))
+        
+        activityIndicator.frame            = CGRect(x:     0,
+                                                    y:     0,
+                                                    width: 10,
+                                                    height: 10)
+        activityIndicator.hidesWhenStopped = true
 
         guard let photoImageView = photoImageView else { return }
     
@@ -288,11 +295,18 @@ public class ContactsCard: UITableViewCell {
         if #available(iOS 9.0, *) {
             photoImageView.anchor(top:     self.topAnchor,
                                   leading: self.leadingAnchor,
-                                  padding: UIEdgeInsets(top: 15, left: 23, bottom: 0, right: 306),
-                                  size:    CGSize(width: 20, height: 20))
+                                  padding: UIEdgeInsets(top:    15,
+                                                        left:   23,
+                                                        bottom: 0,
+                                                        right:  306),
+                                  size:    CGSize(width:  20,
+                                                  height: 20))
         }
-        photoImageView.set(icon: image, iconDiameter: 40, iconBorder: 2)
+        
+        photoImageView.addSubview(activityIndicator)
         photoImageView.tag = 1
+        activityIndicator.fillSuperView()
+        photoImageView.setRoundedImageView(iconURL: image, iconDiameter: 40, iconBorder: 2, activityIndicator: activityIndicator)
     }
 }
 
@@ -303,13 +317,13 @@ public protocol ContactsTableViewShowPresenter: class {
 public struct ContactsInformation {
     let name:     String?
     let role:     String?
-    let photo:    UIImage
+    let photo:    String?
     let mail:     String?
     let phone:    String?
     
     public init(name:     String,
                 role:     String,
-                photo:    UIImage,
+                photo:    String,
                 mail:     String,
                 phone:    String) {
                 
