@@ -23,16 +23,13 @@ public class ContactsCard: UITableViewCell {
     
     var callToMessage         = String()
     var mailMessage           = String()
-    var supportWarningMessage =  String()
+    var supportWarningMessage = String()
     var makeCall              = String()
     var sendEmail             = String()
     var warningMessage        = String()
     var guidance              = String()
     var cancel                = String()
-    
-    public let activityIndicator = UIActivityIndicatorView(style: .gray)
-    
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -53,7 +50,7 @@ public class ContactsCard: UITableViewCell {
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(image: contact.photo ?? String() )
+        self.configureImageWith(imageUrl: contact.photo ?? String() )
         
         self.configure(name:  contact.name ?? String(),
                        role:  contact.role ?? String(),
@@ -277,17 +274,11 @@ public class ContactsCard: UITableViewCell {
         
     }
     
-    fileprivate func configureImageWith(image: String) {
+    fileprivate func configureImageWith(imageUrl: String) {
         photoImageView = UIImageView(frame: CGRect(x:      19,
                                                    y:      173,
                                                    width:  35,
                                                    height: 35))
-        
-        activityIndicator.frame            = CGRect(x:     0,
-                                                    y:     0,
-                                                    width: 10,
-                                                    height: 10)
-        activityIndicator.hidesWhenStopped = true
 
         guard let photoImageView = photoImageView else { return }
     
@@ -295,18 +286,16 @@ public class ContactsCard: UITableViewCell {
         if #available(iOS 9.0, *) {
             photoImageView.anchor(top:     self.topAnchor,
                                   leading: self.leadingAnchor,
-                                  padding: UIEdgeInsets(top:    15,
-                                                        left:   23,
+                                  padding: UIEdgeInsets(top:    26,
+                                                        left:   30,
                                                         bottom: 0,
                                                         right:  306),
-                                  size:    CGSize(width:  20,
-                                                  height: 20))
+                                  size:    CGSize(width:  1,
+                                                  height: 1))
         }
-        
-        photoImageView.addSubview(activityIndicator)
+
         photoImageView.tag = 1
-        activityIndicator.fillSuperView()
-        photoImageView.setRoundedImageView(iconURL: image, iconDiameter: 40, iconBorder: 2, activityIndicator: activityIndicator)
+        photoImageView.setRoundedImageView(iconURL: imageUrl, iconDiameter: 40, iconBorder: 2)
     }
 }
 

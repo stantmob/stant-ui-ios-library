@@ -19,14 +19,13 @@ extension UIImageView {
     public func setRoundedImageView(icon:              UIImage? = nil,
                                     iconURL:           String?  = nil,
                                     iconDiameter:      CGFloat,
-                                    iconBorder:        CGFloat,
-                                    activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()) {
+                                    iconBorder:        CGFloat) {
         self.backgroundColor = .clear
         
         let backgroundSize = CGSize(width: iconDiameter, height: iconDiameter)
-        let backgroundView = UIImageView(frame: CGRect(x:     0,
-                                                       y:     0,
-                                                       width: iconDiameter,
+        let backgroundView = UIImageView(frame: CGRect(x:      0,
+                                                       y:      0,
+                                                       width:  iconDiameter,
                                                        height: iconDiameter))
         self.addSubview(backgroundView)
         backgroundView.anchor(size: backgroundSize)
@@ -39,7 +38,19 @@ extension UIImageView {
         
         guard let imagePath = iconURL else {return}
         
-        self.showImageWith(path: imagePath, activityIndicator: activityIndicator)
+        self.showImageContacts(path: imagePath)
+    }
+    
+    func showImageContacts(path imagePath: String) {
+        
+        DispatchQueue.global(qos: .background).async {
+            let imageViewImage = self.getImageViewImage(imagePath)
+            
+            DispatchQueue.main.sync {
+                self.image = imageViewImage
+            }
+        }
+       
     }
     
     func showImageWith(path imagePath: String, activityIndicator: UIActivityIndicatorView) {

@@ -82,15 +82,15 @@ public class ContactsTableView: UITableView, UITableViewDelegate, UITableViewDat
         }
 
         cell.configureViewFor(contact: filteredContactsList[indexPath.row])
-        cell.presenterDelegate = presenterDelegate as! ContactsTableViewShowPresenter
-        cell.callToMessage = callToMessage
-        cell.mailMessage = mailMessage
+        cell.presenterDelegate     = presenterDelegate as! ContactsTableViewShowPresenter
+        cell.callToMessage         = callToMessage
+        cell.mailMessage           = mailMessage
         cell.supportWarningMessage = supportWarningMessage
-        cell.makeCall = makeCall
-        cell.sendEmail = sendEmail
-        cell.warningMessage = warningMessage
-        cell.guidance = guidance
-        cell.cancel = cancel
+        cell.makeCall              = makeCall
+        cell.sendEmail             = sendEmail
+        cell.warningMessage        = warningMessage
+        cell.guidance              = guidance
+        cell.cancel                = cancel
         
         return cell
     }
