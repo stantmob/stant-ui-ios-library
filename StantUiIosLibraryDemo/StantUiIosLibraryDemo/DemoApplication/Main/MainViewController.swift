@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         self.addConstructionsContactsDemoTableView()
         self.addProgressBarWithToolTipDemo()
         self.addServiceInspectionFormFilledCardDemo()
+        self.addQuantityBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -199,7 +200,7 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addConstructionsContactsDemoTableView() {
-        self.scrollView.addButton(title: "Contruction Contacts Table View",
+        self.scrollView.addButton(title:  "Contruction Contacts Table View",
                                   action: #selector(gotToConstructionsContactsDemo),
                                   target: self)
     }
@@ -208,5 +209,13 @@ class MainViewController: UIViewController {
         self.open(viewController: ConstructionContactsViewController())
     }
 
-
+    fileprivate func addQuantityBar() {
+        self.scrollView.addButton(title:  "Quantity bar demo",
+                                  action: #selector(goToQuantityBarDemo),
+                                  target: self)
+    }
+    
+    @objc func goToQuantityBarDemo() {
+        self.openQuantityBarDemo()
+    }
 }

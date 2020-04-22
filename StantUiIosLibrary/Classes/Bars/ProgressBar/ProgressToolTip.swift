@@ -1,6 +1,6 @@
 //
 //  ProgressToolTip.swift
-//  Pods-StantUiIosLibraryDemo
+//  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 23/12/19.
 //
@@ -11,10 +11,10 @@ public class ProgressToolTip: UIView {
     public var progressLabel: UILabel?
     public var indicatorView: UIImageView?
     
-    public var percentage: Float            = 0
+    public var percentage:          Float   = 0
     public var progressLabelHeight: CGFloat = 18
-    public var progressLabelWidth: CGFloat  = 103
-    public var message: String              = ""
+    public var progressLabelWidth:  CGFloat = 103
+    public var message:             String  = ""
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

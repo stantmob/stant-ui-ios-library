@@ -111,6 +111,10 @@ extension MainViewController {
         self.navigationController?.pushViewController(serviceInspectionFormFilledCardViewController, animated: true)
     }
 
+    func openQuantityBarDemo() {
+        let quantityBarViewController = QuantityBarViewController()
+        self.navigationController?.pushViewController(quantityBarViewController, animated: true)
+    }
 }
 
 extension MainViewController: MainMenuTabBarDelegate {
