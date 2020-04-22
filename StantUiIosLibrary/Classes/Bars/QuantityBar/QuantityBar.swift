@@ -13,9 +13,9 @@ public class QuantityBar: UIView {
     public var toDoBar: ToDoBar?
     
     public var donePercentage:         Float   = 0
-    public var selectedToDoPercentage: Float   = 0.5
+    public var selectedToDoPercentage: Float   = 0
     public var positionIndicator:      CGFloat = 0
-    public var totalQuantity:          Float   = 1222.88
+    public var totalQuantity:          Float   = 0
     
     let barHeight: CGFloat = 6
     
@@ -31,8 +31,9 @@ public class QuantityBar: UIView {
         self.mainBar = nil
     }
     
-    public func configure(donePercentage: Float) {
-        self.donePercentage    = donePercentage
+    public func configure(totalQuantity: Float, doneQuantity: Float) {
+        self.totalQuantity     = totalQuantity
+        self.donePercentage    = doneQuantity / totalQuantity
         self.positionIndicator = CGFloat(donePercentage * Float(self.frame.width))
         
         self.configureMainBar()
