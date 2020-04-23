@@ -13,12 +13,12 @@ import StantUiIosLibrary
 class QuantityBarTests: XCTestCase {
     private var quantityBar: QuantityBar!
     
-    var percentage:     Float   = 0
-    let viewWidth:      CGFloat = 200
-    let viewHeight:     CGFloat = 6
-    let totalQuantity:  Float   = 200
-    let doneQuantity:   Float   = 100
-    let percentageList: [Float] = [0, 0.25, 0.5, 0.75, 1]
+    var percentage:     Float     = 0
+    let viewWidth:      CGFloat   = 200
+    let viewHeight:     CGFloat   = 6
+    let totalQuantity:  Float     = 200
+    let doneQuantity:   Float     = 100
+    let percentageList: [Float]   = [0, 0.25, 0.5, 0.75, 1]
     let quantityList:   [CGFloat] = [0, 25, 50, 75, 100]
     
     override func setUp() {
@@ -50,8 +50,8 @@ class QuantityBarTests: XCTestCase {
     }
 
     func testQuantityBarDimensionsWhenSettingPercentage() {
-        var expectedWidth:  CGFloat
-        var toDoWidth:      CGFloat
+        var expectedWidth: CGFloat
+        var toDoWidth:     CGFloat
 
         XCTAssertEqual(quantityBar.mainBar?.frame.height, viewHeight)
 
@@ -59,15 +59,15 @@ class QuantityBarTests: XCTestCase {
             self.percentage = percentage
             quantityBar.setPercentageToDo(percentage: percentage)
 
-            expectedWidth  = CGFloat(self.percentage) * viewWidth * CGFloat(doneQuantity / totalQuantity)
-            toDoWidth      = CGFloat((quantityBar.toDoBar?.selectedToDoBar?.frame.width)!)
+            expectedWidth = CGFloat(self.percentage) * viewWidth * CGFloat(doneQuantity / totalQuantity)
+            toDoWidth     = CGFloat((quantityBar.toDoBar?.selectedToDoBar?.frame.width)!)
 
             XCTAssertEqual(ceil(expectedWidth), ceil(toDoWidth))
         }
     }
     
     func testQuantityBarDimensionsWhenSettingQuantity() {
-        var toDoWidth:      CGFloat
+        var toDoWidth: CGFloat
 
         XCTAssertEqual(quantityBar.mainBar?.frame.height, viewHeight)
 
