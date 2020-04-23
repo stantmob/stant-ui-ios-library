@@ -10,14 +10,15 @@ import UIKit
 import StantUiIosLibrary
 
 class QuantityBarViewController: UIViewController {
-    public var quantityBarView: QuantityBar?
-    public var buttonStackView: UIStackView?
-    public var oneThirdButton:  UIButton?
-    public var halfButton:      UIButton?
-    public var leftButton:      UIButton?
+    public var quantityBarView:  QuantityBar?
+    public var buttonStackView:  UIStackView?
+    public var oneThirdButton:   UIButton?
+    public var halfButton:       UIButton?
+    public var leftButton:       UIButton?
+    public var quantityTextField: UITextField?
     
-    public var doneQuantity:   Float = 700
-    public var totalQuantity:  Float = 1222.88
+    public var doneQuantity:   Float = 100
+    public var totalQuantity:  Float = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,9 @@ class QuantityBarViewController: UIViewController {
         
         self.layoutQuantityView()
         self.layoutButtonStackView()
+        self.layoutQuantityTextField()
     }
-    
-    
+
     func layoutQuantityView() {
         quantityBarView = QuantityBar()
         
@@ -65,33 +66,76 @@ class QuantityBarViewController: UIViewController {
         buttonStackView.setNeedsLayout()
         buttonStackView.layoutIfNeeded()
         
-        layoutQuantityButtons()
+        layoutOneThirdButton()
+        layoutHalfButton()
+        layoutLeftButton()
     }
     
-    func layoutQuantityButtons() {
+    func layoutOneThirdButton() {
         oneThirdButton                 = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 34))
         guard let oneThirdButton       = oneThirdButton else { return }
         oneThirdButton.backgroundColor = .blueLightStant
+        
         oneThirdButton.setTitle("1/3", for: .normal)
         oneThirdButton.setTitleColor(.white, for: .normal)
         oneThirdButton.addTarget(self, action: #selector(selectOneThird), for: .touchUpInside)
         buttonStackView?.addArrangedSubview(oneThirdButton)
-        
+    }
+    
+    func layoutHalfButton() {
         halfButton                 = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 34))
         guard let halfButton       = halfButton else { return }
         halfButton.backgroundColor = .blueLightStant
+        
         halfButton.setTitle("Half", for: .normal)
         halfButton.setTitleColor(.white, for: .normal)
         halfButton.addTarget(self, action: #selector(selectHalf), for: .touchUpInside)
         buttonStackView?.addArrangedSubview(halfButton)
-        
+    }
+    
+    func layoutLeftButton() {
         leftButton                 = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 34))
         guard let leftButton       = leftButton else { return }
         leftButton.backgroundColor = .blueLightStant
+        
         leftButton.setTitle("Left", for: .normal)
         leftButton.setTitleColor(.white, for: .normal)
         leftButton.addTarget(self, action: #selector(selectLeft), for: .touchUpInside)
         buttonStackView?.addArrangedSubview(leftButton)
+    }
+    
+    func layoutQuantityTextField() {
+        quantityTextField                 = UITextField()
+        guard let quantityTextField       = quantityTextField else { return }
+        quantityTextField.textColor       = .black
+        quantityTextField.placeholder     = "Remaining quantity: \(totalQuantity - doneQuantity)"
+        quantityTextField.backgroundColor = UIColor.init(red:   220 / 255,
+                                                         green: 220 / 255,
+                                                         blue:  220 / 255,
+                                                         alpha: 1)
+        
+        self.view.addSubview(quantityTextField)
+        quantityTextField.anchor(top:      buttonStackView?.bottomAnchor,
+                                 leading:  self.view.leadingAnchor,
+                                 trailing: self.view.trailingAnchor,
+                                 padding:  UIEdgeInsets(top:    20,
+                                                        left:   16,
+                                                        bottom: 0,
+                                                        right:  16),
+                                 size:     CGSize(width: 0, height: 50))
+        quantityTextField.addTarget(self,
+                                    action: #selector(textFieldDidChange(_:)),
+                                    for:    UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if textField.text == "" {
+            quantityBarView?.setQuantityToDo(quantity: 0)
+        }
+        
+        if let value = Float(textField.text ?? "") {
+            quantityBarView?.setQuantityToDo(quantity: value)
+        }
     }
     
     @objc func selectOneThird() {

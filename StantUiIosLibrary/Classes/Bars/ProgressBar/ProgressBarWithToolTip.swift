@@ -81,9 +81,6 @@ public class ProgressBarWithToolTip: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(showProgress))
         progressBar.addGestureRecognizer(tap)
         
-        progressBar.setNeedsLayout()
-        progressBar.layoutIfNeeded()
-        
         configureDoneBar()
         configureRemainingBar()
     }
