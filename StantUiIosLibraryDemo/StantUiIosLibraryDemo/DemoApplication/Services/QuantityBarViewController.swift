@@ -135,18 +135,24 @@ class QuantityBarViewController: UIViewController {
         
         if let value = Float(textField.text ?? "") {
             quantityBarView?.setQuantityToDo(quantity: value)
+        } else {
+            quantityTextField?.text = ""
+            quantityBarView?.setQuantityToDo(quantity: 0)
         }
     }
     
     @objc func selectOneThird() {
+        quantityTextField?.text = ""
         quantityBarView?.setPercentageToDo(percentage: 1/3)
     }
     
     @objc func selectHalf() {
+        quantityTextField?.text = ""
         quantityBarView?.setPercentageToDo(percentage: 0.5)
     }
     
     @objc func selectLeft() {
+        quantityTextField?.text = ""
         quantityBarView?.setPercentageToDo(percentage: 1)
     }
     
