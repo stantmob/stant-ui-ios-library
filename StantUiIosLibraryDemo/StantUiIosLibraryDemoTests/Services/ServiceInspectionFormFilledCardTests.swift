@@ -96,9 +96,9 @@ class ServiceInspectionFormFilledCardTests: XCTestCase {
             self.percentage = percentage
             self.configureCardsView()
             
-            XCTAssertEqual(cardsView.plannedSiffCard?.quanityLabel?.text, "\(String(format: "%.2f", quantity)) m²")
-            XCTAssertEqual(cardsView.executedSiffCard?.quanityLabel?.text, "\(String(format: "%.2f", quantity * percentage)) m²")
-            XCTAssertEqual(cardsView.availableSiffCard?.quanityLabel?.text, "\(String(format: "%.2f", quantity * (1 - percentage))) m²")
+            XCTAssertEqual(cardsView.plannedSiffCard?.quantityLabel?.text, "\(String(format: "%.2f", quantity)) m²")
+            XCTAssertEqual(cardsView.executedSiffCard?.quantityLabel?.text, "\(String(format: "%.2f", quantity * percentage)) m²")
+            XCTAssertEqual(cardsView.availableSiffCard?.quantityLabel?.text, "\(String(format: "%.2f", quantity * (1 - percentage))) m²")
         }
     }
 }
