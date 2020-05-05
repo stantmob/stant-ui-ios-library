@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
     let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
+    let selectionViewController              = SelectionViewController()
     let scrollView                           = UIScrollView()
     
     var tableViewSelectedItem    = 0
@@ -40,7 +41,9 @@ class MainViewController: UIViewController {
         self.addConstructionsContactsDemoTableView()
         self.addProgressBarWithToolTipDemo()
         self.addServiceInspectionFormFilledCardDemo()
-        self.addQuantityBar()
+        self.addQuantityBarDemo()
+        self.addTeamScreenDemo()
+        self.addResponsibleScreenDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -209,7 +212,7 @@ class MainViewController: UIViewController {
         self.open(viewController: ConstructionContactsViewController())
     }
 
-    fileprivate func addQuantityBar() {
+    fileprivate func addQuantityBarDemo() {
         self.scrollView.addButton(title:  "Quantity bar demo",
                                   action: #selector(goToQuantityBarDemo),
                                   target: self)
@@ -217,5 +220,25 @@ class MainViewController: UIViewController {
     
     @objc func goToQuantityBarDemo() {
         self.openQuantityBarDemo()
+    }
+    
+    fileprivate func addTeamScreenDemo() {
+        self.scrollView.addButton(title:  "Team screen demo",
+                                  action: #selector(goToTeamScreenDemo),
+                                  target: self)
+    }
+    
+    @objc func goToTeamScreenDemo() {
+        self.openTeamScreenDemo()
+    }
+    
+    fileprivate func addResponsibleScreenDemo() {
+        self.scrollView.addButton(title:  "Responsible screen demo",
+                                  action: #selector(goToResponsibleScreenDemo),
+                                  target: self)
+    }
+    
+    @objc func goToResponsibleScreenDemo() {
+        self.openResponsibleScreenDemo()
     }
 }

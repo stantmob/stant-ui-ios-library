@@ -181,7 +181,6 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
             cell.configureViewWith(title: items[indexPath.row], imageURL: icons[indexPath.row])
         }
         
-        
         if indexPath.row == selectedItemIndex {
             cell.accessoryType = .checkmark
         }
