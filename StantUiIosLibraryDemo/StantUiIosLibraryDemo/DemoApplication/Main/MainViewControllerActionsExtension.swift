@@ -129,7 +129,8 @@ extension MainViewController {
         
         selectionViewController.modalPresentationStyle = .fullScreen
         
-        selectionViewController.configure(headerTitle:       "Select Team",
+        selectionViewController.configure(delegate:          self,
+                                          headerTitle:       "Select Team",
                                           selectionType:     .multiple,
                                           confirmButtonText: "Confirm",
                                           itemTitles:        itemTitles,
@@ -151,7 +152,8 @@ extension MainViewController {
         
         selectionViewController.modalPresentationStyle = .fullScreen
         
-        selectionViewController.configure(headerTitle:       "Select Responsible",
+        selectionViewController.configure(delegate:          self,
+                                          headerTitle:       "Select Responsible",
                                           selectionType:     .single,
                                           confirmButtonText: "Confirm",
                                           itemTitles:        itemTitles,
@@ -181,5 +183,11 @@ extension MainViewController: ScrollableTableViewDialogCellDelegate {
     func clickOnCellWith(index: Int, title: String) {
         print("Click on cell \(title)")
         self.tableViewSelectedItem = index
+    }
+}
+
+extension MainViewController: SelectionViewDelegate {
+    func getSelectedItems(items: [Int]) {
+        print(items)
     }
 }

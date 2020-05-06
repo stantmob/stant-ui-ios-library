@@ -19,6 +19,7 @@ public class SelectionViewController: UIViewController {
     public var itemTitles:        [String] = []
     public var itemSubtitles:     [String] = []
     public var selectedItems:     [Int]    = []
+    public var delegate:          SelectionViewDelegate?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +38,14 @@ public class SelectionViewController: UIViewController {
         self.view.removeSubviews()
     }
     
-    public func configure(headerTitle:       String,
+    public func configure(delegate:          SelectionViewDelegate,
+                          headerTitle:       String,
                           selectionType:     SelectionType,
                           confirmButtonText: String,
                           itemTitles:        [String],
                           itemSubtitles:     [String] = [],
                           iconsUrls:         [String] = []) {
+        self.delegate          = delegate
         self.headerTitle       = headerTitle
         self.selectionType     = selectionType
         self.confirmButtonText = confirmButtonText
@@ -117,6 +120,8 @@ public class SelectionViewController: UIViewController {
                              trailing: self.view.trailingAnchor,
                              padding:  UIEdgeInsets(top: 2 , left: 16, bottom: 16, right: 16),
                              size:     CGSize(width: self.view.frame.width, height: 50))
+        
+        confirmButton.addTarget(self, action: #selector(returnSelectedItems), for: .touchUpInside)
     }
     
     func configureTableView() {
@@ -136,6 +141,12 @@ public class SelectionViewController: UIViewController {
                          trailing: self.view.trailingAnchor)
         
         tableView.register(SelectionTableViewCell.self, forCellReuseIdentifier: SelectionTableViewCell.identifier())
+    }
+    
+    @objc func returnSelectedItems() {
+        self.dismiss(animated: true, completion: nil)
+        delegate?.getSelectedItems(items: selectedItems)
+        selectedItems = []
     }
 }
 
@@ -165,17 +176,24 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectionType == .single {
+            for index in selectedItems {
+                let cell           = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! SelectionTableViewCell
+                cell.accessoryType = .none
+                tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+            }
+            selectedItems = []
+        }
+        
         let cell           = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
         cell.accessoryType = .checkmark
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         selectedItems.append(indexPath.row)
-        
-//        if selectionType == .single {
-//            for(index, _) in selectedItems.enumerated() {
-//                let cell           = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! SelectionTableViewCell
-//                cell.accessoryType = .none
-//                tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
-//            }
-//        }
+    }
+    
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! SelectionTableViewCell
+        cell.accessoryType = .none
     }
 }
 
@@ -184,3 +202,7 @@ public enum SelectionType {
     case multiple
 }
 
+
+public protocol SelectionViewDelegate {
+    func getSelectedItems(items: [Int])
+}
