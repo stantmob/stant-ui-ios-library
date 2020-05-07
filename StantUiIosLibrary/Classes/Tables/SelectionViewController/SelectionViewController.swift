@@ -163,6 +163,11 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(), for: indexPath)
                          as? SelectionTableViewCell else { return UITableViewCell() }
     
+        if selectedItems.contains(indexPath.row) {
+            cell.accessoryType = .checkmark
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+        
         if !iconsUrls.isEmpty {
             cell.configureViewWithIcons(title:    itemTitles[indexPath.row],
                                         subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row],
@@ -194,6 +199,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! SelectionTableViewCell
         cell.accessoryType = .none
+        selectedItems      = selectedItems.filter{ $0 != indexPath.row }
     }
 }
 
