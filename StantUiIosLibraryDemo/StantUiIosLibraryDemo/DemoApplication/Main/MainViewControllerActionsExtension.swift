@@ -115,10 +115,55 @@ extension MainViewController {
         let quantityBarViewController = QuantityBarViewController()
         self.navigationController?.pushViewController(quantityBarViewController, animated: true)
     }
+    
+    func openTeamScreenDemo() {
+        var itemTitles:    [String] = []
+        var itemSubtitles: [String] = []
+        var iconsUrls:     [String] = []
+        
+        for i in 0...10 {
+            itemTitles.append("Person \(i + 1)")
+            itemSubtitles.append("Role \(i + 1)")
+            iconsUrls.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")
+        }
+        
+        selectionViewController.modalPresentationStyle = .fullScreen
+        
+        selectionViewController.configure(delegate:          self,
+                                          headerTitle:       "Select Team",
+                                          selectionType:     .multiple,
+                                          confirmButtonText: "Confirm",
+                                          itemTitles:        itemTitles,
+                                          itemSubtitles:     itemSubtitles,
+                                          iconsUrls:         iconsUrls)
+        self.present(selectionViewController, animated: false, completion: nil)
+    }
+    
+    func openResponsibleScreenDemo() {
+        var itemTitles:    [String] = []
+        var itemSubtitles: [String] = []
+        var iconsUrls:     [String] = []
+        
+        for i in 0...9 {
+            itemTitles.append("Person \(i + 1)")
+            itemSubtitles.append("Role \(i + 1)")
+            iconsUrls.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")
+        }
+        
+        selectionViewController.modalPresentationStyle = .fullScreen
+        
+        selectionViewController.configure(delegate:          self,
+                                          headerTitle:       "Select Responsible",
+                                          selectionType:     .single,
+                                          confirmButtonText: "Confirm",
+                                          itemTitles:        itemTitles,
+                                          itemSubtitles:     itemSubtitles,
+                                          iconsUrls:         iconsUrls)
+        self.present(selectionViewController, animated: false, completion: nil)
+    }
 }
 
 extension MainViewController: MainMenuTabBarDelegate {
-    
     var tabBarSelectedIndex: Int {
         get {
             return tabBarLastSelectedIndex
@@ -139,6 +184,10 @@ extension MainViewController: ScrollableTableViewDialogCellDelegate {
         print("Click on cell \(title)")
         self.tableViewSelectedItem = index
     }
-    
-    
+}
+
+extension MainViewController: SelectionViewDelegate {
+    func getSelectedItems(items: [Int]) {
+        print(items)
+    }
 }
