@@ -65,7 +65,7 @@ public class SelectionViewController: UIViewController {
         headerView.anchor(top:      self.view.topAnchor,
                           leading:  self.view.leadingAnchor,
                           trailing: self.view.trailingAnchor,
-                          padding:  UIEdgeInsets(top: 20 , left: 0, bottom: 0, right: 0),
+                          padding:  UIEdgeInsets(top: 40 , left: 0, bottom: 0, right: 0),
                           size:     CGSize(width: self.view.frame.width, height: 56))
     }
     
