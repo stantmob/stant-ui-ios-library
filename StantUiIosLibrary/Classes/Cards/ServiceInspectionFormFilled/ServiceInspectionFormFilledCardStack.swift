@@ -8,9 +8,9 @@
 import UIKit
 
 public class ServiceInspectionFormFilledCardStack: UIStackView {
-    public var plannedFispCard:   ServiceInspectionFormFilledCard?
-    public var executedFispCard:  ServiceInspectionFormFilledCard?
-    public var availableFispCard: ServiceInspectionFormFilledCard?
+    public var plannedSiffCard:   ServiceInspectionFormFilledCard?
+    public var executedSiffCard:  ServiceInspectionFormFilledCard?
+    public var availableSiffCard: ServiceInspectionFormFilledCard?
     
     public var plannedMessage:   String?
     public var executedMessage:  String?
@@ -37,22 +37,22 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
         self.axis         = .horizontal
         self.spacing      = 14
         
-        plannedFispCard = ServiceInspectionFormFilledCard(frame: CGRect(x:      0,
+        plannedSiffCard = ServiceInspectionFormFilledCard(frame: CGRect(x:      0,
                                                                         y:      0,
                                                                         width:  cardWidth,
                                                                         height: cardHeight))
         
-        executedFispCard = ServiceInspectionFormFilledCard(frame: CGRect(x:      0,
+        executedSiffCard = ServiceInspectionFormFilledCard(frame: CGRect(x:      0,
                                                                          y:      0,
                                                                          width:  cardWidth,
                                                                          height: cardHeight))
         
-        availableFispCard = ServiceInspectionFormFilledCard(frame: CGRect(x:      0,
+        availableSiffCard = ServiceInspectionFormFilledCard(frame: CGRect(x:      0,
                                                                           y:      0,
                                                                           width:  cardWidth,
                                                                           height: cardHeight))
         
-        guard let plannedFispCard = plannedFispCard, let executedFispCard = executedFispCard, let availableFispCard = availableFispCard else { return }
+        guard let plannedSiffCard = plannedSiffCard, let executedSiffCard = executedSiffCard, let availableSiffCard = availableSiffCard else { return }
         
         self.setProgress(executedPercentage: executedPercentage,
                          quantity:           quantity,
@@ -60,16 +60,16 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
                          executedMessage:    executedMessage,
                          availableMessage:   availableMessage)
         
-        self.addArrangedSubview(plannedFispCard)
-        self.addArrangedSubview(executedFispCard)
-        self.addArrangedSubview(availableFispCard)
+        self.addArrangedSubview(plannedSiffCard)
+        self.addArrangedSubview(executedSiffCard)
+        self.addArrangedSubview(availableSiffCard)
         
     }
     
     public func makeShadow() {
-        plannedFispCard?.makeShadow()
-        executedFispCard?.makeShadow()
-        availableFispCard?.makeShadow()
+        plannedSiffCard?.makeShadow()
+        executedSiffCard?.makeShadow()
+        availableSiffCard?.makeShadow()
     }
     
     public func setProgress(executedPercentage: Float,
@@ -77,17 +77,17 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
                             plannedMessage:     String,
                             executedMessage:    String,
                             availableMessage:   String) {
-        plannedFispCard?.setLabels(executedPercentage: 1,
+        plannedSiffCard?.setLabels(executedPercentage: 1,
                                    quantity:           quantity,
                                    message:            plannedMessage,
                                    type:               .planned)
         
-        executedFispCard?.setLabels(executedPercentage: executedPercentage,
+        executedSiffCard?.setLabels(executedPercentage: executedPercentage,
                                     quantity:           executedPercentage * quantity,
                                     message:            executedMessage,
                                     type:               .executed)
         
-        availableFispCard?.setLabels(executedPercentage: 1 - executedPercentage,
+        availableSiffCard?.setLabels(executedPercentage: 1 - executedPercentage,
                                      quantity:           (1 - executedPercentage) * quantity,
                                      message:            availableMessage,
                                      type:               .available)

@@ -55,11 +55,12 @@ public class QuantityBar: UIView {
         
         mainBar.anchor(top:      self.topAnchor,
                        leading:  self.leadingAnchor,
+                       bottom:   self.bottomAnchor,
                        trailing: self.trailingAnchor,
                        size:     CGSize(width: self.frame.width, height: self.barHeight))
         
-        mainBar.setNeedsLayout()
-        mainBar.layoutIfNeeded()
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
         
         configureDoneBar()
         configureToDoBar()

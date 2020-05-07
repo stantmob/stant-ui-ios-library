@@ -193,7 +193,7 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addServiceInspectionFormFilledCardDemo() {
-        self.scrollView.addButton(title:  "Fisp card demo",
+        self.scrollView.addButton(title:  "Siff card demo",
                                   action: #selector(goToServiceInspectionFormFilledCardDemo),
                                   target: self)
     }

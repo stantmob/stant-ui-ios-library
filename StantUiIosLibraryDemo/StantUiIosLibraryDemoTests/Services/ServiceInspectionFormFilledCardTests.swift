@@ -50,24 +50,24 @@ class ServiceInspectionFormFilledCardTests: XCTestCase {
     func testGeneralView() {
         self.configureCardsView()
         
-        XCTAssertTrue(cardsView.plannedFispCard?.isDescendant(of: cardsView) ?? false)
-        XCTAssertTrue(cardsView.executedFispCard?.isDescendant(of: cardsView) ?? false)
-        XCTAssertTrue(cardsView.availableFispCard?.isDescendant(of: cardsView) ?? false)
+        XCTAssertTrue(cardsView.plannedSiffCard?.isDescendant(of: cardsView) ?? false)
+        XCTAssertTrue(cardsView.executedSiffCard?.isDescendant(of: cardsView) ?? false)
+        XCTAssertTrue(cardsView.availableSiffCard?.isDescendant(of: cardsView) ?? false)
         
         XCTAssertEqual(cardsView.frame.width, viewWidth)
         XCTAssertEqual(cardsView.frame.height, viewHeight)
         
-        XCTAssertEqual(cardsView.plannedFispCard?.frame.width, cardsView.executedFispCard?.frame.width)
-        XCTAssertEqual(cardsView.executedFispCard?.frame.width, cardsView.availableFispCard?.frame.width)
+        XCTAssertEqual(cardsView.plannedSiffCard?.frame.width, cardsView.executedSiffCard?.frame.width)
+        XCTAssertEqual(cardsView.executedSiffCard?.frame.width, cardsView.availableSiffCard?.frame.width)
         
-        XCTAssertEqual(cardsView.plannedFispCard?.frame.height, cardsView.executedFispCard?.frame.height)
-        XCTAssertEqual(cardsView.executedFispCard?.frame.height, cardsView.availableFispCard?.frame.height)
+        XCTAssertEqual(cardsView.plannedSiffCard?.frame.height, cardsView.executedSiffCard?.frame.height)
+        XCTAssertEqual(cardsView.executedSiffCard?.frame.height, cardsView.availableSiffCard?.frame.height)
     }
     
     func testPercentageLabelBackground() {
-        XCTAssertEqual(cardsView.plannedFispCard?.percentageLabel?.backgroundColor, .darkGrayStant)
-        XCTAssertEqual(cardsView.executedFispCard?.percentageLabel?.backgroundColor, .blueLightStant)
-        XCTAssertEqual(cardsView.availableFispCard?.percentageLabel?.backgroundColor, .blueDarkStant)
+        XCTAssertEqual(cardsView.plannedSiffCard?.percentageLabel?.backgroundColor, .darkGrayStant)
+        XCTAssertEqual(cardsView.executedSiffCard?.percentageLabel?.backgroundColor, .blueLightStant)
+        XCTAssertEqual(cardsView.availableSiffCard?.percentageLabel?.backgroundColor, .blueDarkStant)
     }
     
     func testPercentageLabelContent() {
@@ -75,18 +75,18 @@ class ServiceInspectionFormFilledCardTests: XCTestCase {
             self.percentage = percentage
             self.configureCardsView()
             
-            XCTAssertEqual(cardsView.plannedFispCard?.percentageLabel?.text, "\(100)%")
-            XCTAssertEqual(cardsView.executedFispCard?.percentageLabel?.text, "\((self.percentage * 100).cleanValue)%")
-            XCTAssertEqual(cardsView.availableFispCard?.percentageLabel?.text, "\(((1 - self.percentage) * 100).cleanValue)%")
+            XCTAssertEqual(cardsView.plannedSiffCard?.percentageLabel?.text, "\(100)%")
+            XCTAssertEqual(cardsView.executedSiffCard?.percentageLabel?.text, "\((self.percentage * 100).cleanValue)%")
+            XCTAssertEqual(cardsView.availableSiffCard?.percentageLabel?.text, "\(((1 - self.percentage) * 100).cleanValue)%")
         }
     }
     
     func testMessageLabel() {
         self.configureCardsView()
         
-        XCTAssertEqual(cardsView.plannedFispCard?.messageLabel?.text, self.plannedMessage)
-        XCTAssertEqual(cardsView.executedFispCard?.messageLabel?.text, self.executedMessage)
-        XCTAssertEqual(cardsView.availableFispCard?.messageLabel?.text, self.availableMessage)
+        XCTAssertEqual(cardsView.plannedSiffCard?.messageLabel?.text, self.plannedMessage)
+        XCTAssertEqual(cardsView.executedSiffCard?.messageLabel?.text, self.executedMessage)
+        XCTAssertEqual(cardsView.availableSiffCard?.messageLabel?.text, self.availableMessage)
     }
 
     func testQuantityLabel() {
@@ -96,9 +96,9 @@ class ServiceInspectionFormFilledCardTests: XCTestCase {
             self.percentage = percentage
             self.configureCardsView()
             
-            XCTAssertEqual(cardsView.plannedFispCard?.quanityLabel?.text, "\(String(format: "%.2f", quantity)) m²")
-            XCTAssertEqual(cardsView.executedFispCard?.quanityLabel?.text, "\(String(format: "%.2f", quantity * percentage)) m²")
-            XCTAssertEqual(cardsView.availableFispCard?.quanityLabel?.text, "\(String(format: "%.2f", quantity * (1 - percentage))) m²")
+            XCTAssertEqual(cardsView.plannedSiffCard?.quantityLabel?.text, "\(String(format: "%.2f", quantity)) m²")
+            XCTAssertEqual(cardsView.executedSiffCard?.quantityLabel?.text, "\(String(format: "%.2f", quantity * percentage)) m²")
+            XCTAssertEqual(cardsView.availableSiffCard?.quantityLabel?.text, "\(String(format: "%.2f", quantity * (1 - percentage))) m²")
         }
     }
 }

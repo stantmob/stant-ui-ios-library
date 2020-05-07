@@ -10,7 +10,7 @@ import UIKit
 public class ServiceInspectionFormFilledCard: UIView {
     public var percentageLabel: UILabel?
     public var messageLabel:    UILabel?
-    public var quanityLabel:    UILabel?
+    public var quantityLabel:   UILabel?
     
     public var percentage:   Float = 0
     public var message:      String   = ""
@@ -85,20 +85,20 @@ public class ServiceInspectionFormFilledCard: UIView {
     }
     
     public func configureQuantityLabel(quantity: Float) {
-        quanityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        quantityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
-        guard let quanityLabel = quanityLabel else { return }
-        quanityLabel.text          = "\(String(format: "%.2f", quantity)) m²"
-        quanityLabel.textColor     = .black
-        quanityLabel.font          = UIFont.systemFont(ofSize: 14.0)
-        quanityLabel.textAlignment = .center
+        guard let quantityLabel     = quantityLabel else { return }
+        quantityLabel.text          = "\(String(format: "%.2f", quantity)) m²"
+        quantityLabel.textColor     = .black
+        quantityLabel.font          = UIFont.systemFont(ofSize: 14.0)
+        quantityLabel.textAlignment = .center
         
-        self.addSubview(quanityLabel)
+        self.addSubview(quantityLabel)
         
-        quanityLabel.anchor(bottom:  self.bottomAnchor,
+        quantityLabel.anchor(bottom:  self.bottomAnchor,
                             padding: UIEdgeInsets(top: 0, left: 0, bottom: 11, right: 0))
         
-        quanityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        quantityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     public func makeShadow() {
@@ -114,7 +114,7 @@ public class ServiceInspectionFormFilledCard: UIView {
         
         self.removeSubviews(self.percentageLabel ?? UILabel())
         self.removeSubviews(self.messageLabel ?? UILabel())
-        self.removeSubviews(self.quanityLabel ?? UILabel())
+        self.removeSubviews(self.quantityLabel ?? UILabel())
         
         self.configureLabels(percentage: executedPercentage,
                              quantity:   quantity,
