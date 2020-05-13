@@ -12,10 +12,11 @@ public class ServiceInspectionFormFilledCard: UIView {
     public var messageLabel:    UILabel?
     public var quantityLabel:   UILabel?
     
-    public var percentage:   Float = 0
-    public var message:      String   = ""
-    public var quantity:     Float = 0
-    private var shadowLayer: CAShapeLayer?
+    public var percentage:       Float  = 0
+    public var message:          String = ""
+    public var quantity:         Float  = 0
+    public var measurementUnit:  String = ""
+    private var shadowLayer:     CAShapeLayer?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,10 +30,15 @@ public class ServiceInspectionFormFilledCard: UIView {
         super.layoutIfNeeded()
     }
     
-    public func configureLabels(percentage: Float, quantity: Float, message: String, type: CardType) {
-        self.percentage = percentage
-        self.message    = message
-        self.quantity   = quantity
+    public func configureLabels(percentage:      Float,
+                                quantity:        Float,
+                                measurementUnit: String,
+                                message:         String,
+                                type:            CardType) {
+        self.percentage      = percentage
+        self.message         = message
+        self.quantity        = quantity
+        self.measurementUnit = measurementUnit
         
         self.configurePercentageLabel(type: type)
         self.configureMessageLabel(message: message)
@@ -88,7 +94,7 @@ public class ServiceInspectionFormFilledCard: UIView {
         quantityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         guard let quantityLabel     = quantityLabel else { return }
-        quantityLabel.text          = "\(String(format: "%.2f", quantity)) m²"
+        quantityLabel.text          = "\(String(format: "%.2f", quantity)) \(measurementUnit)"
         quantityLabel.textColor     = .black
         quantityLabel.font          = UIFont.systemFont(ofSize: 14.0)
         quantityLabel.textAlignment = .center
@@ -108,7 +114,11 @@ public class ServiceInspectionFormFilledCard: UIView {
         self.layer.shadowOpacity = 0.1
     }
     
-    public func setLabels(executedPercentage: Float, quantity: Float, message: String, type: CardType) {
+    public func setLabels(executedPercentage: Float,
+                          quantity:           Float,
+                          measurementUnit:    String,
+                          message:            String,
+                          type:               CardType) {
         self.backgroundColor = .white
         self.layoutIfNeeded()
         
@@ -116,10 +126,11 @@ public class ServiceInspectionFormFilledCard: UIView {
         self.removeSubviews(self.messageLabel ?? UILabel())
         self.removeSubviews(self.quantityLabel ?? UILabel())
         
-        self.configureLabels(percentage: executedPercentage,
-                             quantity:   quantity,
-                             message:    message,
-                             type:       type)
+        self.configureLabels(percentage:      executedPercentage,
+                             quantity:        quantity,
+                             measurementUnit: measurementUnit,
+                             message:         message,
+                             type:            type)
     }
 }
 
