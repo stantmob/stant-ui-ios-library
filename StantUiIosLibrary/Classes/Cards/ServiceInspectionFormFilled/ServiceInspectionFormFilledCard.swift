@@ -13,9 +13,10 @@ public class ServiceInspectionFormFilledCard: UIView {
     public var quantityLabel:   UILabel?
     
     public var percentage:       Float  = 0
-    public var message:          String = ""
     public var quantity:         Float  = 0
     public var measurementUnit:  String = ""
+    public var message:          String = ""
+    public var type:             CardType?
     private var shadowLayer:     CAShapeLayer?
     
     required public init?(coder aDecoder: NSCoder) {
@@ -36,16 +37,17 @@ public class ServiceInspectionFormFilledCard: UIView {
                                 message:         String,
                                 type:            CardType) {
         self.percentage      = percentage
-        self.message         = message
         self.quantity        = quantity
         self.measurementUnit = measurementUnit
+        self.message         = message
+        self.type            = type
         
-        self.configurePercentageLabel(type: type)
-        self.configureMessageLabel(message: message)
-        self.configureQuantityLabel(quantity: quantity)
+        self.configurePercentageLabel()
+        self.configureMessageLabel()
+        self.configureQuantityLabel()
     }
     
-    public func configurePercentageLabel(type: CardType) {
+    public func configurePercentageLabel() {
         percentageLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
         
         guard let percentageLabel = percentageLabel else { return }
@@ -73,7 +75,7 @@ public class ServiceInspectionFormFilledCard: UIView {
         percentageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
-    public func configureMessageLabel(message: String) {
+    public func configureMessageLabel() {
         messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         guard let messageLabel = messageLabel else { return }
@@ -90,7 +92,7 @@ public class ServiceInspectionFormFilledCard: UIView {
         messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
-    public func configureQuantityLabel(quantity: Float) {
+    public func configureQuantityLabel() {
         quantityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         guard let quantityLabel     = quantityLabel else { return }
