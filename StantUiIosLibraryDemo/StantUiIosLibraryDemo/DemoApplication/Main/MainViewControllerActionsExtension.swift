@@ -133,6 +133,7 @@ extension MainViewController {
                                           headerTitle:       "Select Team",
                                           selectionType:     .multiple,
                                           confirmButtonText: "Confirm",
+                                          selectedItems:     [],
                                           itemTitles:        itemTitles,
                                           itemSubtitles:     itemSubtitles,
                                           iconsUrls:         iconsUrls)
@@ -156,6 +157,7 @@ extension MainViewController {
                                           headerTitle:       "Select Responsible",
                                           selectionType:     .single,
                                           confirmButtonText: "Confirm",
+                                          selectedItems:     [],
                                           itemTitles:        itemTitles,
                                           itemSubtitles:     itemSubtitles,
                                           iconsUrls:         iconsUrls)

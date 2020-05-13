@@ -15,10 +15,10 @@ public class SelectionViewController: UIViewController {
     public var headerTitle:       String?
     public var selectionType:     SelectionType?
     public var confirmButtonText: String?
+    public var selectedItems:     [Int]    = []
     public var iconsUrls:         [String] = []
     public var itemTitles:        [String] = []
     public var itemSubtitles:     [String] = []
-    public var selectedItems:     [Int]    = []
     public var delegate:          SelectionViewDelegate?
     
     override public func viewDidLoad() {
@@ -42,6 +42,7 @@ public class SelectionViewController: UIViewController {
                           headerTitle:       String,
                           selectionType:     SelectionType,
                           confirmButtonText: String,
+                          selectedItems:     [Int],
                           itemTitles:        [String],
                           itemSubtitles:     [String] = [],
                           iconsUrls:         [String] = []) {
@@ -49,6 +50,7 @@ public class SelectionViewController: UIViewController {
         self.headerTitle       = headerTitle
         self.selectionType     = selectionType
         self.confirmButtonText = confirmButtonText
+        self.selectedItems     = selectedItems
         self.itemTitles        = itemTitles
         self.itemSubtitles     = itemSubtitles
         self.iconsUrls         = iconsUrls
