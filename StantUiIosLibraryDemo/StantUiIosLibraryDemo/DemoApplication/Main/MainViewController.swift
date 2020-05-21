@@ -16,8 +16,8 @@ class MainViewController: UIViewController {
     let selectionViewController              = SelectionViewController()
     let scrollView                           = UIScrollView()
     
-    var tableViewSelectedItem    = 0
-    var tabBarLastSelectedIndex  = 0
+    var tableViewSelectedItem   = 0
+    var tabBarLastSelectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
