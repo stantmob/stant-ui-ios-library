@@ -49,6 +49,7 @@
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
 		8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */; };
 		8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */; };
+		8FDC5413247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */; };
 		C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730D6CF23C7A141003DEE68 /* ConstructionContactsViewController.swift */; };
 		C752BDDF23C658A80093DCF0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8D0229495F5002D92FB /* MainViewController.swift */; };
 		CCB596907AB6EF3A33F53325 /* Pods_StantUiIosLibraryDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BD7768261CFAE8A2C39846 /* Pods_StantUiIosLibraryDemoTests.framework */; };
@@ -116,6 +117,7 @@
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
 		8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardTests.swift; sourceTree = "<group>"; };
 		8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipViewController.swift; sourceTree = "<group>"; };
+		8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuViewController.swift; sourceTree = "<group>"; };
 		9D34B62AEC665ABAA939DC73 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A4BD7768261CFAE8A2C39846 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C730D6CF23C7A141003DEE68 /* ConstructionContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionContactsViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */,
 				8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */,
 				8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */,
+				8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				34DFB8CF229495F5002D92FB /* AppDelegate.swift in Sources */,
 				34518E7722B28942004D1833 /* MainViewControllerActionsExtension.swift in Sources */,
 				34518E7922B28A54004D1833 /* UIViewExtension.swift in Sources */,
+				8FDC5413247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift in Sources */,
 				34DFB90622957331002D92FB /* ConstructionCardViewController.swift in Sources */,
 				51E9B31A22CA8EEA00D47B6A /* CellWithImageTableViewController.swift in Sources */,
 				C752BDDF23C658A80093DCF0 /* MainViewController.swift in Sources */,
