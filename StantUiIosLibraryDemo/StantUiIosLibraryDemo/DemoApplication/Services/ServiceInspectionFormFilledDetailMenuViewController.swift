@@ -40,6 +40,8 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
                                               personInChargeRoles:     personInChargeRoles,
                                               personInChargePhotoUrls: photoUrls)
 
+        detailView.configureMainTabView()
+        
         detailView.configureFormTab(beginDate:       Date(),
                                     endDate:         Date(),
                                     quantiy:         200,

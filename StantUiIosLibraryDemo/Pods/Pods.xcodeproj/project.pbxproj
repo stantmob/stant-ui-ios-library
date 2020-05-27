@@ -44,6 +44,10 @@
 		8FDC5417247EB2D600443DF4 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5416247EB2D600443DF4 /* PhotoDetailView.swift */; };
 		8FDC5419247EBB1800443DF4 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5418247EBB1800443DF4 /* CustomTabView.swift */; };
 		8FDC541B247EBFDF00443DF4 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC541A247EBFDF00443DF4 /* ServiceInspectionFormFilledDetailMenuView.swift */; };
+		8FE8356E247EFAD80088B5A3 /* CustomTabViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8356D247EFAD80088B5A3 /* CustomTabViewButton.swift */; };
+		8FE83570247F03C10088B5A3 /* FormTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8356F247F03C10088B5A3 /* FormTabView.swift */; };
+		8FE83572247F03D40088B5A3 /* TeamTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE83571247F03D40088B5A3 /* TeamTabView.swift */; };
+		8FE83574247F03E10088B5A3 /* AttachmentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE83573247F03E10088B5A3 /* AttachmentTabView.swift */; };
 		9171F885A9B325CE12BD8BC1C331E4A8 /* ProgressBarWithToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBB69095AF1F28BFCE47B13D0A247DC /* ProgressBarWithToolTip.swift */; };
 		91F783477E96404D36597AF8387F7265 /* GroupedSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469536C2048401B61C1106D9A041D65A /* GroupedSelection.swift */; };
 		976EE56C53FB830ACC44A2D4110E8E39 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525CA31622C3C11CBEC1CE9972C167A /* SelectionViewController.swift */; };
@@ -159,6 +163,10 @@
 		8FDC5416247EB2D600443DF4 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		8FDC5418247EBB1800443DF4 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		8FDC541A247EBFDF00443DF4 /* ServiceInspectionFormFilledDetailMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuView.swift; sourceTree = "<group>"; };
+		8FE8356D247EFAD80088B5A3 /* CustomTabViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewButton.swift; sourceTree = "<group>"; };
+		8FE8356F247F03C10088B5A3 /* FormTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTabView.swift; sourceTree = "<group>"; };
+		8FE83571247F03D40088B5A3 /* TeamTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTabView.swift; sourceTree = "<group>"; };
+		8FE83573247F03E10088B5A3 /* AttachmentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentTabView.swift; sourceTree = "<group>"; };
 		94A124E7BE69C37DF451912B927E2634 /* FirstHeaderRecentItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItem.swift; sourceTree = "<group>"; };
 		9593D6608A3E05668B8D86A40434F27B /* GroupSelectionDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
 		976D0AD439A058E185B0E8581586E322 /* ConstructionsFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionsFilter.swift; sourceTree = "<group>"; };
@@ -479,12 +487,24 @@
 		8FDC5411247EA82800443DF4 /* ServiceInspectionFormFilledDetailMenu */ = {
 			isa = PBXGroup;
 			children = (
+				8FDC541C247EE4DD00443DF4 /* TabView */,
 				8FDC5414247EB02900443DF4 /* InChargeStackView.swift */,
 				8FDC5416247EB2D600443DF4 /* PhotoDetailView.swift */,
-				8FDC5418247EBB1800443DF4 /* CustomTabView.swift */,
 				8FDC541A247EBFDF00443DF4 /* ServiceInspectionFormFilledDetailMenuView.swift */,
 			);
 			path = ServiceInspectionFormFilledDetailMenu;
+			sourceTree = "<group>";
+		};
+		8FDC541C247EE4DD00443DF4 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				8FDC5418247EBB1800443DF4 /* CustomTabView.swift */,
+				8FE8356D247EFAD80088B5A3 /* CustomTabViewButton.swift */,
+				8FE8356F247F03C10088B5A3 /* FormTabView.swift */,
+				8FE83571247F03D40088B5A3 /* TeamTabView.swift */,
+				8FE83573247F03E10088B5A3 /* AttachmentTabView.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		904056356E03B9B726916574D304B880 /* ConstructionTableViewWithCollapsedSearchBar */ = {
@@ -889,6 +909,7 @@
 				416CAC26FB5C1CB81763787D3BE88293 /* DefaultSearchBar.swift in Sources */,
 				F1CB70D6C7642895996D466C550EA6C2 /* DefaultSearchBarDelegateExtension.swift in Sources */,
 				17C47B4D68D65076F7523B7EE30C8DBD /* DialogButton.swift in Sources */,
+				8FE83574247F03E10088B5A3 /* AttachmentTabView.swift in Sources */,
 				A87F5B0F54235E6715409EF4B5884B06 /* DialogViewController.swift in Sources */,
 				74D2413F1EBAA352DE247740A7ED695D /* FilterButton.swift in Sources */,
 				B24ED835E41D645DA1E2CEC9B3799D5A /* FilterButtonCollectionViewCell.swift in Sources */,
@@ -906,7 +927,9 @@
 				649EA434ECCC1A228E3CD546A6BA3E26 /* GroupSelectionHeaderView.swift in Sources */,
 				8FDC5415247EB02900443DF4 /* InChargeStackView.swift in Sources */,
 				BC06E0EC20886ABF260E2AFD26A74E49 /* GroupSelectionRowCell.swift in Sources */,
+				8FE83570247F03C10088B5A3 /* FormTabView.swift in Sources */,
 				6C94B41D0C6EF23DA3EAD9472F9EA572 /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */,
+				8FE83572247F03D40088B5A3 /* TeamTabView.swift in Sources */,
 				D7BB52D3A69EA97F6A262EABEEAC5D2F /* GroupSelectionTableView.swift in Sources */,
 				1101CD0EC76315FC894A854EAE566D3A /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */,
 				7DCB15DBC180075BCB8984DFF316E8BC /* InternActionCell.swift in Sources */,
@@ -922,6 +945,7 @@
 				9844D65F4DF7A46CF4312537E1B588FC /* ScrollableTableViewDialogCell.swift in Sources */,
 				596054560AEA4B8070902E50582C0069 /* SecondHeaderButton.swift in Sources */,
 				BE2A95FFB282846390832B86D6564416 /* SecondHeaderView.swift in Sources */,
+				8FE8356E247EFAD80088B5A3 /* CustomTabViewButton.swift in Sources */,
 				AD27A09760535BB05A3B4CDE8A9B00CB /* SelectionTableViewCell.swift in Sources */,
 				976EE56C53FB830ACC44A2D4110E8E39 /* SelectionViewController.swift in Sources */,
 				8FDC5419247EBB1800443DF4 /* CustomTabView.swift in Sources */,
