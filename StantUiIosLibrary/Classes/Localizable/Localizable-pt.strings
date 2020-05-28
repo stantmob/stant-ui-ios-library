@@ -6,7 +6,12 @@
   
 */
 
+//Service Inspection Form Filled Details
+"service_inspection_form_filled_details.form_title"        = "Formulário";
+"service_inspection_form_filled_details.team_title"        = "Equipe";
+"service_inspection_form_filled_details.attachments_title" = "Anexos";
 
-"form_title"        = "Formulário";
-"team_title"        = "Equipe";
-"attachments_title" = "Anexos";
+"service_inspection_form_filled_details.begin_label"    = "Início";
+"service_inspection_form_filled_details.deadline_label" = "Prazo";
+"service_inspection_form_filled_details.quantity_label" = "Quantidade";
+"service_inspection_form_filled_details.tests_label"    = "Testes";

@@ -6,6 +6,12 @@
   
 */
 
-"form_title"        = "Form";
-"team_title"        = "Team";
-"attachments_title" = "Attachments";
+//Service Inspection Form Filled Details
+"service_inspection_form_filled_details.form_title"        = "Form";
+"service_inspection_form_filled_details.team_title"        = "Team";
+"service_inspection_form_filled_details.attachments_title" = "Attachments";
+
+"service_inspection_form_filled_details.begin_label"    = "Begin";
+"service_inspection_form_filled_details.deadline_label" = "Deadline";
+"service_inspection_form_filled_details.quantity_label" = "Quantity";
+"service_inspection_form_filled_details.tests_label"    = "Tests";

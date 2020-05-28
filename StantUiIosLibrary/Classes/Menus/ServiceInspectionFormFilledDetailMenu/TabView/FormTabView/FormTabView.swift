@@ -9,8 +9,12 @@ import UIKit
 
 class FormTabView: UIView {
     var collectionView: UICollectionView?
-    var titles:         [String] = []
     var content:        [String] = []
+    
+    var titles = [AppStrings.service_inspection_form_filled_details_begin_label,
+                  AppStrings.service_inspection_form_filled_details_deadline_label,
+                  AppStrings.service_inspection_form_filled_details_quantity_label,
+                  AppStrings.service_inspection_form_filled_details_tests_label]
 
     func configure(beginDate:       String,
                    endDate:         String,
@@ -18,7 +22,6 @@ class FormTabView: UIView {
                    unitMeasurement: String,
                    tests:           String) {
         
-        titles  = ["1", "2", "3", "4"]
         content = [beginDate, endDate, "\(quantiy) \(unitMeasurement)", tests]
         
         let layout                     = UICollectionViewFlowLayout()
