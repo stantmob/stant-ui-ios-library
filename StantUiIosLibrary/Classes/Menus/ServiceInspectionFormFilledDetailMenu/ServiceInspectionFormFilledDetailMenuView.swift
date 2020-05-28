@@ -47,11 +47,11 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                            size:     CGSize(width: self.frame.width, height: 38))
     }
     
-    public func configureFormTab(beginDate:       Date,
-                                 endDate:         Date,
-                                 quantiy:         Float,
+    public func configureFormTab(beginDate:       String,
+                                 endDate:         String,
+                                 quantiy:         String,
                                  unitMeasurement: String,
-                                 tests:           Int) {
+                                 tests:           String) {
        
         formTabView           = FormTabView()
         guard let formTabView = formTabView else { return }
@@ -63,7 +63,12 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                            bottom:   self.bottomAnchor,
                            trailing: self.trailingAnchor,
                            padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        formTabView.configure()
+        
+        formTabView.configure(beginDate:       beginDate,
+                              endDate:         endDate,
+                              quantiy:         quantiy,
+                              unitMeasurement: unitMeasurement,
+                              tests:           tests)
     }
     
     public func configureTeamTab(personNames: [String],

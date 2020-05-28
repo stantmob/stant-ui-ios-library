@@ -42,11 +42,11 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
 
         detailView.configureMainTabView()
         
-        detailView.configureFormTab(beginDate:       Date(),
-                                    endDate:         Date(),
-                                    quantiy:         200,
+        detailView.configureFormTab(beginDate:       "11/10/2010",
+                                    endDate:         "10/10/2010",
+                                    quantiy:         "200",
                                     unitMeasurement: "m²",
-                                    tests:           0)
+                                    tests:           "0")
         
         detailView.configureTeamTab(personNames: personNames,
                                     personRoles: personRoles,
