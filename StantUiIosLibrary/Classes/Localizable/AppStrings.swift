@@ -13,8 +13,14 @@ class AppStrings {
     public static let attachments_title = localized("attachments_title")
     
     public static func localized(_ value: String) -> String {
-        let bundle = Bundle.init(identifier: "org.cocoapods.StantUiIosLibrary") ?? Bundle.main
-        return NSLocalizedString(value, tableName: nil, bundle: bundle, value: "", comment: "")
+        let currentLanguage = Locale.current
+        let bundle          = Bundle.init(identifier: "org.cocoapods.StantUiIosLibrary") ?? Bundle.main
+        
+        if currentLanguage.languageCode == "pt" {
+            return NSLocalizedString(value, tableName: "Localizable-pt", bundle: bundle, comment: "")
+        } else {
+            return NSLocalizedString(value, tableName: "Localizable-en", bundle: bundle, comment: "")
+        }
     }
 }
 
