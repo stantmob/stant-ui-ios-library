@@ -81,7 +81,9 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                            bottom:   self.bottomAnchor,
                            trailing: self.trailingAnchor,
                            padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        teamTabView.configure()
+        teamTabView.configure(personNames: personNames,
+                              personRoles: personRoles,
+                              photoUrls:   photoUrls)
     }
     
     public func configureAttachmentTab() {

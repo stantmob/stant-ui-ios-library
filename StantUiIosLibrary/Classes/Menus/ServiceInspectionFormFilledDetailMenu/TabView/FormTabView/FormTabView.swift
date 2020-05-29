@@ -24,6 +24,10 @@ class FormTabView: UIView {
         
         content = [beginDate, endDate, "\(quantiy) \(unitMeasurement)", tests]
         
+        configureCollectionView()
+    }
+    
+    func configureCollectionView() {
         let layout                     = UICollectionViewFlowLayout()
         layout.itemSize                = CGSize(width: 94, height: 35)
         layout.minimumInteritemSpacing = 66
@@ -38,8 +42,8 @@ class FormTabView: UIView {
         self.addSubview(collectionView)
         collectionView.fillSuperView()
 
-        self.collectionView?.register(FormTabCollectionViewCell.self,
-                                      forCellWithReuseIdentifier: FormTabCollectionViewCell.identifier())
+        collectionView.register(FormTabCollectionViewCell.self,
+                                forCellWithReuseIdentifier: FormTabCollectionViewCell.identifier())
     }
 }
 
