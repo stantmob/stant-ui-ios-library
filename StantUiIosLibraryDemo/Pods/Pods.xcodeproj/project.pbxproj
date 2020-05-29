@@ -73,7 +73,6 @@
 		B5D949B3598B4ABC8358C309B2822EEF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809EB2C0303CD92CBDC8EEFDD528814B /* UIImageExtension.swift */; };
 		B7BB6B42DC4D4C58961CF5506B0C62C5 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266C99A2362D4D179712DDF798AF51D6 /* UIImageViewExtension.swift */; };
 		BD024CFCBCCF5C29D099326598FACBF1 /* FormTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2065C5B6382EA23F4999716DBD851 /* FormTabCollectionViewCell.swift */; };
-		C2D9CD0D2C8E93073860DFE60B28BB31 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 7268C0286BA1E69971337C81116771B0 /* Localizable.strings */; };
 		C32ACD670F26F1C72210D89FDB114FEA /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6441D818E8A057E835F0A634BC88641 /* TextInputTableViewCell.swift */; };
 		C63B1BC5D93C6726EDF0D7767514264E /* FirstHeaderRecentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64A7718D617986E9C20488A8D250D6 /* FirstHeaderRecentItemCell.swift */; };
 		C6F4B8FF7F989A81B8A93457B66B1552 /* SecondHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A54D2339F0BA53365D2E4DD07F3125 /* SecondHeaderButton.swift */; };
@@ -166,7 +165,6 @@
 		6C3968C525C8FD506C924AF18A4767F7 /* Pods-StantUiIosLibraryDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		712057EAFCBD30E2A5733A1C460E3C03 /* ServiceInspectionFormFilledDetailMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuView.swift; sourceTree = "<group>"; };
 		72122A8DDC97D8B99953371F4633B695 /* PhotoDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
-		7268C0286BA1E69971337C81116771B0 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7980CF8BA6EB721657A0F911BBA5BA78 /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
 		79A54D2339F0BA53365D2E4DD07F3125 /* SecondHeaderButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderButton.swift; sourceTree = "<group>"; };
 		7A0A9947FBF924071768113AA6C0EC04 /* ConstructionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
@@ -468,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				3EB66F6827A979A5D8FF1726C153A579 /* AppStrings.swift */,
-				D5F0B85D81948788C0E0FB1803E48E12 /* Localizable.strings */,
 				05CD812171F897838EC5891849EA0C2B /* Localizable-en.strings */,
 				6342C2AFD37A4885A059CDA2D9B120CB /* Localizable-pt.strings */,
 			);
@@ -987,7 +984,6 @@
 				9519380EB304B843AC73F293D1FD094D /* ItemSelection.swift in Sources */,
 				D19447014BF2D5FE73333D0D34F0985B /* Localizable-en.strings in Sources */,
 				3951BBEFE8980AE2F43B0079048DE3E6 /* Localizable-pt.strings in Sources */,
-				C2D9CD0D2C8E93073860DFE60B28BB31 /* Localizable.strings in Sources */,
 				5AF87BA60FF1059E39A1F9922A85DF03 /* MainMenuTabBarController.swift in Sources */,
 				4AD9263BA55A79588DD3F5703DED8105 /* MenuTabBarDTO.swift in Sources */,
 				246B7B017AAD01E689F139654F3DCB20 /* NSMutableAttributedStringExtension.swift in Sources */,
@@ -1045,18 +1041,6 @@
 			targetProxy = 68C07F31D0F131C74275C5A7BCFBAB52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D5F0B85D81948788C0E0FB1803E48E12 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7268C0286BA1E69971337C81116771B0 /* Localizable.strings */,
-			);
-			name = Localizable.strings;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
