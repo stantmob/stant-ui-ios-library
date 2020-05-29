@@ -57,12 +57,11 @@ public class ServiceInspectionFormFilledCard: UIView {
         percentageLabel.textColor          = .white
         percentageLabel.textAlignment      = .center
         
-        switch type {
-        case .planned:
+        if type == .planned {
             percentageLabel.backgroundColor = .darkGrayStant
-        case .executed:
+        } else if type == .executed {
             percentageLabel.backgroundColor = .blueLightStant
-        default:
+        } else {
             percentageLabel.backgroundColor = .blueDarkStant
         }
         
