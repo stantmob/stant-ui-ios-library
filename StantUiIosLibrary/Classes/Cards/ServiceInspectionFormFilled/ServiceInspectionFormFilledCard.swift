@@ -137,7 +137,5 @@ public class ServiceInspectionFormFilledCard: UIView {
 }
 
 public enum CardType {
-    case planned
-    case executed
-    case available
+    case planned, executed, available
 }
