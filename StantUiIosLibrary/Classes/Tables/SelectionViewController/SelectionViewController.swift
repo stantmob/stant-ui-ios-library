@@ -140,7 +140,7 @@ public class SelectionViewController: UIViewController {
                          bottom:   confirmButton?.topAnchor,
                          trailing: self.view.trailingAnchor)
         
-        tableView.register(SelectionTableViewCell.self, forCellReuseIdentifier: SelectionTableViewCell.identifier())
+        tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: PersonTableViewCell.identifier())
     }
     
     @objc func returnSelectedItems() {
@@ -156,12 +156,12 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SelectionTableViewCell.cellHeight
+        return PersonTableViewCell.cellHeight
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(), for: indexPath)
-                         as? SelectionTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(), for: indexPath)
+                         as? PersonTableViewCell else { return UITableViewCell() }
     
         if selectedItems.contains(indexPath.row) {
             cell.accessoryType = .checkmark
@@ -183,21 +183,21 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectionType == .single {
             for index in selectedItems {
-                let cell           = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! SelectionTableViewCell
+                let cell           = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! PersonTableViewCell
                 cell.accessoryType = .none
                 tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
             }
             selectedItems = []
         }
         
-        let cell           = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
+        let cell           = tableView.cellForRow(at: indexPath) as! PersonTableViewCell
         cell.accessoryType = .checkmark
         tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         selectedItems.append(indexPath.row)
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! SelectionTableViewCell
+        let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! PersonTableViewCell
         cell.accessoryType = .none
         selectedItems      = selectedItems.filter{ $0 != indexPath.row }
     }

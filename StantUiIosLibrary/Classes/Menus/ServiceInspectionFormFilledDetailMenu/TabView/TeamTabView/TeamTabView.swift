@@ -39,6 +39,8 @@ class TeamTabView: UIView {
         
         let seeMoreLabel           = UILabel()
         seeMoreLabel.textAlignment = .center
+        seeMoreLabel.textColor     = .darkGrayStant
+        seeMoreLabel.font          = UIFont.systemFont(ofSize: 12, weight: .bold)
         seeMoreLabel.text          = AppStrings.see_more.uppercased()
         
         seeMoreView.addSubview(seeMoreLabel)
@@ -48,6 +50,7 @@ class TeamTabView: UIView {
     func configureTableView() {
         tableView            = UITableView()
         guard let tableView  = tableView else { return }
+        tableView.separatorStyle = .none
         tableView.delegate   = self
         tableView.dataSource = self
         
@@ -57,23 +60,23 @@ class TeamTabView: UIView {
                          bottom:   seeMoreView?.topAnchor,
                          trailing: self.trailingAnchor)
         
-        tableView.register(SelectionTableViewCell.self,
-                           forCellReuseIdentifier: SelectionTableViewCell.identifier())
+        tableView.register(PersonTableViewCell.self,
+                           forCellReuseIdentifier: PersonTableViewCell.identifier())
     }
 }
 
 extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        personNames.count
+        return personNames.count
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SelectionTableViewCell.cellHeight
+        return PersonTableViewCell.cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
-                                                 for:            indexPath) as! SelectionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(),
+                                                 for:            indexPath) as! PersonTableViewCell
         
         cell.configureViewWithIcons(title:    personNames[indexPath.row],
                                     subtitle: personRoles.isEmpty ? "" : personRoles[indexPath.row],
