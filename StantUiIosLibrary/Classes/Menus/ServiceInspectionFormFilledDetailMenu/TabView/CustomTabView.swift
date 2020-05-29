@@ -18,20 +18,12 @@ class CustomTabView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(formTitle:       String,
-         teamTitle:       String,
-         attachmentTitle: String) {
-        
+    init() {
         super.init(frame: .zero)
-        configureStackView(formTitle:       formTitle,
-                           teamTitle:       teamTitle,
-                           attachmentTitle: attachmentTitle)
+        configureStackView()
     }
     
-    func configureStackView(formTitle:       String,
-                            teamTitle:       String,
-                            attachmentTitle: String) {
-        
+    func configureStackView() {
         stackView              = UIStackView()
         guard let stackView    = stackView else { return }
         stackView.alignment    = .fill
@@ -41,63 +33,61 @@ class CustomTabView: UIView {
         self.addSubview(stackView)
         stackView.fillSuperView()
         
-        configureFormButton(title: formTitle)
-        configureTeamButton(title: teamTitle)
-        configureAttachmentButton(title: attachmentTitle)
+        configureFormButton()
+        configureTeamButton()
+        configureAttachmentButton()
     }
     
-    func configureFormButton(title: String) {
+    func configureFormButton() {
         formButton            = CustomTabViewButton(frame: CGRect(x: 0, y: 0, width: 109, height: 38))
         guard let formButton  = formButton else { return }
         guard let stackView   = stackView else { return }
         
-        formButton.configure(title: title)
-        formButton.select()
+        formButton.configure(title: AppStrings.service_inspection_form_filled_details_form_title)
+        formButton.toggleSelection()
         formButton.addTarget(self, action: #selector(goToFormTabView), for: .touchUpInside)
         stackView.addArrangedSubview(formButton)
         
     }
     
     @objc func goToFormTabView() {
-        formButton?.select()
-        teamButton?.deselect()
-        attachmentButton?.deselect()
+        formButton?.tag       = 1
+        teamButton?.tag       = 0
+        attachmentButton?.tag = 0
         delegate?.goToFormTabView()
     }
     
-    func configureTeamButton(title: String) {
+    func configureTeamButton() {
         teamButton            = CustomTabViewButton(frame: CGRect(x: 0, y: 0, width: 109, height: 38))
         guard let teamButton  = teamButton else { return }
         guard let stackView   = stackView else { return }
         
-        teamButton.configure(title: title)
-        teamButton.deselect()
+        teamButton.configure(title: AppStrings.service_inspection_form_filled_details_team_title)
         teamButton.addTarget(self, action: #selector(goToTeamTabView), for: .touchUpInside)
         stackView.addArrangedSubview(teamButton)
     }
     
     @objc func goToTeamTabView() {
-        formButton?.deselect()
-        teamButton?.select()
-        attachmentButton?.deselect()
+        formButton?.tag       = 0
+        teamButton?.tag       = 1
+        attachmentButton?.tag = 0
         delegate?.goToTeamTabView()
     }
     
-    func configureAttachmentButton(title: String) {
+    func configureAttachmentButton() {
         attachmentButton            = CustomTabViewButton(frame: CGRect(x: 0, y: 0, width: 109, height: 38))
         guard let attachmentButton  = attachmentButton else { return }
         guard let stackView         = stackView else { return }
         
-        attachmentButton.configure(title: title)
-        attachmentButton.deselect()
+        attachmentButton.configure(title: AppStrings.service_inspection_form_filled_details_attachments_title)
         attachmentButton.addTarget(self, action: #selector(goToAttachmentTabView), for: .touchUpInside)
         stackView.addArrangedSubview(attachmentButton)
     }
     
     @objc func goToAttachmentTabView() {
-        formButton?.deselect()
-        teamButton?.deselect()
-        attachmentButton?.select()
+        formButton?.tag       = 0
+        teamButton?.tag       = 0
+        attachmentButton?.tag = 1
         delegate?.goToAttachmentTabView()
     }
 }

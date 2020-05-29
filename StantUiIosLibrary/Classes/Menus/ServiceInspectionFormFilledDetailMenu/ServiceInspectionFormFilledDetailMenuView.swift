@@ -33,9 +33,7 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
     }
     
     public func configureMainTabView() {
-        mainTabView           = CustomTabView(formTitle:       AppStrings.service_inspection_form_filled_details_form_title,
-                                              teamTitle:       AppStrings.service_inspection_form_filled_details_team_title,
-                                              attachmentTitle: AppStrings.service_inspection_form_filled_details_attachments_title)
+        mainTabView           = CustomTabView()
         guard let mainTabView = mainTabView else { return }
         mainTabView.delegate  = self
         
