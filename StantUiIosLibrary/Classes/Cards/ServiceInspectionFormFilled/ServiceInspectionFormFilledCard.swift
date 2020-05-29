@@ -12,10 +12,12 @@ public class ServiceInspectionFormFilledCard: UIView {
     public var messageLabel:    UILabel?
     public var quantityLabel:   UILabel?
     
-    public var percentage:   Float = 0
-    public var message:      String   = ""
-    public var quantity:     Float = 0
-    private var shadowLayer: CAShapeLayer?
+    public var percentage:       Float  = 0
+    public var quantity:         Float  = 0
+    public var measurementUnit:  String = ""
+    public var message:          String = ""
+    public var type:             CardType?
+    private var shadowLayer:     CAShapeLayer?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,17 +31,23 @@ public class ServiceInspectionFormFilledCard: UIView {
         super.layoutIfNeeded()
     }
     
-    public func configureLabels(percentage: Float, quantity: Float, message: String, type: CardType) {
-        self.percentage = percentage
-        self.message    = message
-        self.quantity   = quantity
+    public func configureLabels(percentage:      Float,
+                                quantity:        Float,
+                                measurementUnit: String,
+                                message:         String,
+                                type:            CardType) {
+        self.percentage      = percentage
+        self.quantity        = quantity
+        self.measurementUnit = measurementUnit
+        self.message         = message
+        self.type            = type
         
-        self.configurePercentageLabel(type: type)
-        self.configureMessageLabel(message: message)
-        self.configureQuantityLabel(quantity: quantity)
+        self.configurePercentageLabel()
+        self.configureMessageLabel()
+        self.configureQuantityLabel()
     }
     
-    public func configurePercentageLabel(type: CardType) {
+    public func configurePercentageLabel() {
         percentageLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
         
         guard let percentageLabel = percentageLabel else { return }
@@ -67,7 +75,7 @@ public class ServiceInspectionFormFilledCard: UIView {
         percentageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
-    public func configureMessageLabel(message: String) {
+    public func configureMessageLabel() {
         messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         guard let messageLabel = messageLabel else { return }
@@ -84,11 +92,11 @@ public class ServiceInspectionFormFilledCard: UIView {
         messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
-    public func configureQuantityLabel(quantity: Float) {
+    public func configureQuantityLabel() {
         quantityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         guard let quantityLabel     = quantityLabel else { return }
-        quantityLabel.text          = "\(String(format: "%.2f", quantity)) m²"
+        quantityLabel.text          = "\(String(format: "%.2f", quantity)) \(measurementUnit)"
         quantityLabel.textColor     = .black
         quantityLabel.font          = UIFont.systemFont(ofSize: 14.0)
         quantityLabel.textAlignment = .center
@@ -108,7 +116,11 @@ public class ServiceInspectionFormFilledCard: UIView {
         self.layer.shadowOpacity = 0.1
     }
     
-    public func setLabels(executedPercentage: Float, quantity: Float, message: String, type: CardType) {
+    public func setLabels(executedPercentage: Float,
+                          quantity:           Float,
+                          measurementUnit:    String,
+                          message:            String,
+                          type:               CardType) {
         self.backgroundColor = .white
         self.layoutIfNeeded()
         
@@ -116,10 +128,11 @@ public class ServiceInspectionFormFilledCard: UIView {
         self.removeSubviews(self.messageLabel ?? UILabel())
         self.removeSubviews(self.quantityLabel ?? UILabel())
         
-        self.configureLabels(percentage: executedPercentage,
-                             quantity:   quantity,
-                             message:    message,
-                             type:       type)
+        self.configureLabels(percentage:      executedPercentage,
+                             quantity:        quantity,
+                             measurementUnit: measurementUnit,
+                             message:         message,
+                             type:            type)
     }
 }
 

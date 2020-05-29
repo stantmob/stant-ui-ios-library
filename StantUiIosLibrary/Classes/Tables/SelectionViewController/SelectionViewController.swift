@@ -15,10 +15,10 @@ public class SelectionViewController: UIViewController {
     public var headerTitle:       String?
     public var selectionType:     SelectionType?
     public var confirmButtonText: String?
+    public var selectedItems:     [Int]    = []
     public var iconsUrls:         [String] = []
     public var itemTitles:        [String] = []
     public var itemSubtitles:     [String] = []
-    public var selectedItems:     [Int]    = []
     public var delegate:          SelectionViewDelegate?
     
     override public func viewDidLoad() {
@@ -42,6 +42,7 @@ public class SelectionViewController: UIViewController {
                           headerTitle:       String,
                           selectionType:     SelectionType,
                           confirmButtonText: String,
+                          selectedItems:     [Int],
                           itemTitles:        [String],
                           itemSubtitles:     [String] = [],
                           iconsUrls:         [String] = []) {
@@ -49,6 +50,7 @@ public class SelectionViewController: UIViewController {
         self.headerTitle       = headerTitle
         self.selectionType     = selectionType
         self.confirmButtonText = confirmButtonText
+        self.selectedItems     = selectedItems
         self.itemTitles        = itemTitles
         self.itemSubtitles     = itemSubtitles
         self.iconsUrls         = iconsUrls
@@ -148,67 +150,4 @@ public class SelectionViewController: UIViewController {
         delegate?.getSelectedItems(items: selectedItems)
         selectedItems = []
     }
-}
-
-extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemTitles.count
-    }
-    
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SelectionTableViewCell.cellHeight
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(), for: indexPath)
-                         as? SelectionTableViewCell else { return UITableViewCell() }
-    
-        if selectedItems.contains(indexPath.row) {
-            cell.accessoryType = .checkmark
-            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-        }
-        
-        if !iconsUrls.isEmpty {
-            cell.configureViewWithIcons(title:    itemTitles[indexPath.row],
-                                        subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row],
-                                        imageUrl: iconsUrls[indexPath.row])
-        } else {
-            cell.configureView(title:    itemTitles[indexPath.row],
-                               subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row])
-        }
-
-        return cell
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectionType == .single {
-            for index in selectedItems {
-                let cell           = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! SelectionTableViewCell
-                cell.accessoryType = .none
-                tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
-            }
-            selectedItems = []
-        }
-        
-        let cell           = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
-        cell.accessoryType = .checkmark
-        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-        selectedItems.append(indexPath.row)
-    }
-    
-    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! SelectionTableViewCell
-        cell.accessoryType = .none
-        selectedItems      = selectedItems.filter{ $0 != indexPath.row }
-    }
-}
-
-public enum SelectionType {
-    case single
-    case multiple
-}
-
-
-public protocol SelectionViewDelegate {
-    func getSelectedItems(items: [Int])
 }
