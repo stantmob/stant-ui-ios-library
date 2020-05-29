@@ -6,6 +6,9 @@
   
 */
 
+//General
+"see_more" = "Ver mais";
+
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsável";
 "service_inspection_form_filled_details.finalizer"   = "Finalizador";

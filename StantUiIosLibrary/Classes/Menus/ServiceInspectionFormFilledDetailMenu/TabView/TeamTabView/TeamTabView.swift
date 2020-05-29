@@ -30,30 +30,35 @@ class TeamTabView: UIView {
     func configureSeeMoreView() {
         seeMoreView           = UIView()
         guard let seeMoreView = seeMoreView else { return }
-        seeMoreView.backgroundColor = .red
         
         self.addSubview(seeMoreView)
-        seeMoreView.anchor(leading: self.leadingAnchor,
-                           bottom: self.bottomAnchor,
+        seeMoreView.anchor(leading:  self.leadingAnchor,
+                           bottom:   self.bottomAnchor,
                            trailing: self.trailingAnchor,
-                           size: CGSize(width: self.frame.width, height: 52))
+                           size:     CGSize(width: self.frame.width, height: 52))
+        
+        let seeMoreLabel           = UILabel()
+        seeMoreLabel.textAlignment = .center
+        seeMoreLabel.text          = AppStrings.see_more.uppercased()
+        
+        seeMoreView.addSubview(seeMoreLabel)
+        seeMoreLabel.fillSuperView()
     }
     
     func configureTableView() {
         tableView            = UITableView()
         guard let tableView  = tableView else { return }
-        tableView.backgroundColor = .blue
         tableView.delegate   = self
         tableView.dataSource = self
         
         self.addSubview(tableView)
-        tableView.anchor(top: self.topAnchor,
-                         leading: self.leadingAnchor,
-                         bottom: seeMoreView?.topAnchor,
+        tableView.anchor(top:      self.topAnchor,
+                         leading:  self.leadingAnchor,
+                         bottom:   seeMoreView?.topAnchor,
                          trailing: self.trailingAnchor)
         
-        tableView.register(TeamTabTableViewCell.self,
-                           forCellReuseIdentifier: TeamTabTableViewCell.identifier())
+        tableView.register(SelectionTableViewCell.self,
+                           forCellReuseIdentifier: SelectionTableViewCell.identifier())
     }
 }
 
@@ -62,11 +67,18 @@ extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
         personNames.count
     }
     
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SelectionTableViewCell.cellHeight
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TeamTabTableViewCell.identifier(),
-                                                 for:            indexPath) as! TeamTabTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
+                                                 for:            indexPath) as! SelectionTableViewCell
         
-        cell.backgroundColor = .clear
+        cell.configureViewWithIcons(title:    personNames[indexPath.row],
+                                    subtitle: personRoles.isEmpty ? "" : personRoles[indexPath.row],
+                                    imageUrl: photoUrls.isEmpty ? "" : photoUrls[indexPath.row])
+            
         return cell
     }
     

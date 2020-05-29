@@ -8,6 +8,8 @@
 import UIKit
 
 class AppStrings {
+    //General
+    public static let see_more = localized("see_more")
     
     //Service Inspection Form Filled Details
     public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")
