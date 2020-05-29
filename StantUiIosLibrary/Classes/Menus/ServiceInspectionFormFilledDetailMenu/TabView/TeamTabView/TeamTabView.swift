@@ -18,7 +18,7 @@ class TeamTabView: UIView {
         self.addSubview(label)
         label.anchor(top:      self.topAnchor,
                      leading:  self.leadingAnchor,
-                     bottom: self.bottomAnchor,
+                     bottom:   self.bottomAnchor,
                      trailing: self.trailingAnchor)
     }
 }

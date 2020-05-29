@@ -39,6 +39,9 @@ public class PhotoDetailView: UIView {
         photoImageView.showRoundedImageWith(path:              photoUrl,
                                             radius:            PhotoDetailView.photoSize / 2,
                                             activityIndicator: activityIndicator)
+        
+        photoImageView.layer.borderWidth = 2
+        photoImageView.layer.borderColor = UIColor.lightGrayStant.cgColor
     }
     
     func configureNameLabel(personName: String) {
