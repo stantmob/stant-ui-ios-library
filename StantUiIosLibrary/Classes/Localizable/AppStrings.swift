@@ -10,6 +10,10 @@ import UIKit
 class AppStrings {
     
     //Service Inspection Form Filled Details
+    public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")
+    public static let service_inspection_form_filled_details_finalizer   = localized("service_inspection_form_filled_details.finalizer")
+    public static let service_inspection_form_filled_details_approver    = localized("service_inspection_form_filled_details.approver")
+    
     public static let service_inspection_form_filled_details_form_title        = localized("service_inspection_form_filled_details.form_title")
     public static let service_inspection_form_filled_details_team_title        = localized("service_inspection_form_filled_details.team_title")
     public static let service_inspection_form_filled_details_attachments_title = localized("service_inspection_form_filled_details.attachments_title")

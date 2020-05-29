@@ -29,29 +29,52 @@ class FormTabView: UIView {
         layout.minimumInteritemSpacing = 66
         layout.minimumLineSpacing      = 26
             
-        collectionView           = UICollectionView(frame: frame, collectionViewLayout: layout)
-        guard let collectionView = collectionView else { return }
-        collectionView.delegate  = self
+        collectionView                 = UICollectionView(frame: frame, collectionViewLayout: layout)
+        guard let collectionView       = collectionView else { return }
+        collectionView.delegate        = self
+        collectionView.dataSource      = self
         collectionView.backgroundColor = .white
         
         self.addSubview(collectionView)
         collectionView.fillSuperView()
-        
-        self.collectionView?.register(FormTabCollectionViewCell.self, forCellWithReuseIdentifier: FormTabCollectionViewCell.identifier())
+
+        self.collectionView?.register(FormTabCollectionViewCell.self,
+                                      forCellWithReuseIdentifier: FormTabCollectionViewCell.identifier())
     }
 }
 
-extension FormTabView: UICollectionViewDataSource, UICollectionViewDelegate  {
+extension FormTabView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FormTabCollectionViewCell.identifier(), for: indexPath as IndexPath) as! FormTabCollectionViewCell
+    func collectionView(_ collectionView:        UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FormTabCollectionViewCell.identifier(),
+                                                      for:                 indexPath) as! FormTabCollectionViewCell
 
-        cell.titleLabel.text   = self.titles[indexPath.row]
-        cell.contentLabel.text = self.content[indexPath.row]
+        cell.titleLabel?.text   = self.titles[indexPath.row]
+        cell.contentLabel?.text = self.content[indexPath.row]
 
         return cell
+    }
+    
+    func collectionView(_ collectionView:            UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath:     IndexPath) -> CGSize {
+        return CGSize(width: self.frame.width / 2, height: self.frame.height / 2)
+    }
+    
+    func collectionView(_ collectionView:                            UICollectionView,
+                        layout collectionViewLayout:                 UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView:                       UICollectionView,
+                        layout collectionViewLayout:            UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }

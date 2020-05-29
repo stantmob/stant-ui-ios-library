@@ -15,7 +15,6 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
     var attachmentTabView: AttachmentTabView?
     
     public func configureInChargeStackView(personInChargeNames:     [String],
-                                           personInChargeRoles:     [String],
                                            personInChargePhotoUrls: [String]) {
         
         inChargeStackView           = InChargeStackView()
@@ -28,7 +27,6 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                                  size:     CGSize(width: self.frame.width, height: 82))
         
         inChargeStackView.configure(personNames:         personInChargeNames,
-                                    personInChargeRoles: personInChargeRoles,
                                     photoUrls:           personInChargePhotoUrls)
     }
     

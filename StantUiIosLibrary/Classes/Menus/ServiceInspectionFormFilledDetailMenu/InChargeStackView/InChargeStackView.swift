@@ -14,7 +14,6 @@ public class InChargeStackView: UIView {
     var approverDetail:    PhotoDetailView?
     
     func configure(personNames:         [String],
-                   personInChargeRoles: [String],
                    photoUrls:           [String]) {
         
         stackView              = UIStackView()
@@ -28,25 +27,21 @@ public class InChargeStackView: UIView {
         stackView.fillSuperView()
         
         configureResponsibleDetail(personName:         personNames[0],
-                                   personInChargeRole: personInChargeRoles[0],
                                    photoUrl:           photoUrls[0])
         
         configureFinalizerDetail(personName:         personNames[1],
-                                 personInChargeRole: personInChargeRoles[1],
                                  photoUrl:           photoUrls[1])
         
         configureApproverDetail(personName:         personNames[2],
-                                personInChargeRole: personInChargeRoles[2],
                                 photoUrl:           photoUrls[2])
     }
     
     func configureResponsibleDetail(personName:         String,
-                                    personInChargeRole: String,
                                     photoUrl:           String) {
         
         responsibleDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                             personName:         personName,
-                                            personInChargeRole: personInChargeRole,
+                                            personInChargeRole: AppStrings.service_inspection_form_filled_details_responsible,
                                             photoUrl:           photoUrl)
         
         guard let stackView         = stackView else { return }
@@ -55,12 +50,11 @@ public class InChargeStackView: UIView {
     }
     
     func configureFinalizerDetail(personName:         String,
-                                  personInChargeRole: String,
                                   photoUrl:           String) {
         
         finalizerDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                           personName:         personName,
-                                          personInChargeRole: personInChargeRole,
+                                          personInChargeRole: AppStrings.service_inspection_form_filled_details_finalizer,
                                           photoUrl:           photoUrl)
         
         guard let stackView       = stackView else { return }
@@ -69,12 +63,11 @@ public class InChargeStackView: UIView {
     }
     
     func configureApproverDetail(personName:         String,
-                                 personInChargeRole: String,
                                  photoUrl:           String) {
         
         approverDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                          personName:         personName,
-                                         personInChargeRole: personInChargeRole,
+                                         personInChargeRole: AppStrings.service_inspection_form_filled_details_approver,
                                          photoUrl:           photoUrl)
         
         guard let stackView      = stackView else { return }

@@ -13,7 +13,6 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
     var detailView: ServiceInspectionFormFilledDetailMenuView?
     
     var personInChargeNames = ["Person 1", "Person 2", "Person 3"]
-    var personInChargeRoles = ["Responsible", "Finalizer", "Approver"]
     var personNames         = (1...30).map { "Person \($0)" }
     var personRoles         = (1...30).map { "Role \($0)" }
     var photoUrls           = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
@@ -37,7 +36,6 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
                           size:     CGSize(width: self.view.frame.width, height: 281))
         
         detailView.configureInChargeStackView(personInChargeNames:     personInChargeNames,
-                                              personInChargeRoles:     personInChargeRoles,
                                               personInChargePhotoUrls: photoUrls)
 
         detailView.configureMainTabView()

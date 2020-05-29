@@ -7,6 +7,10 @@
 */
 
 //Service Inspection Form Filled Details
+"service_inspection_form_filled_details.responsible" = "Responsável";
+"service_inspection_form_filled_details.finalizer"   = "Finalizador";
+"service_inspection_form_filled_details.approver"    = "Aprovador";
+
 "service_inspection_form_filled_details.form_title"        = "Formulário";
 "service_inspection_form_filled_details.team_title"        = "Equipe";
 "service_inspection_form_filled_details.attachments_title" = "Anexos";
