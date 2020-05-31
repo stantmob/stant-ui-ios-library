@@ -28,6 +28,7 @@ class FormTabView: UIView {
     }
     
     func configureCollectionView() {
+        let layout                     = UICollectionViewFlowLayout()
         collectionView                 = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
         guard let collectionView       = collectionView else { return }
         collectionView.delegate        = self
