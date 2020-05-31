@@ -28,12 +28,7 @@ class FormTabView: UIView {
     }
     
     func configureCollectionView() {
-        let layout                     = UICollectionViewFlowLayout()
-        layout.itemSize                = CGSize(width: 94, height: 35)
-        layout.minimumInteritemSpacing = 66
-        layout.minimumLineSpacing      = 26
-            
-        collectionView                 = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectionView                 = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
         guard let collectionView       = collectionView else { return }
         collectionView.delegate        = self
         collectionView.dataSource      = self

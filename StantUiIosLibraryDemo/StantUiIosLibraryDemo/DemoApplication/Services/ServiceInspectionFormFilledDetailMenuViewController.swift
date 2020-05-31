@@ -33,7 +33,7 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
                           leading:  self.view.leadingAnchor,
                           trailing: self.view.trailingAnchor,
                           padding:  UIEdgeInsets(top: 100, left: 16, bottom: 0, right: 16),
-                          size:     CGSize(width: self.view.frame.width, height: 281))
+                          size:     CGSize(width: self.view.frame.width, height: 271))
         
         detailView.configureInChargeStackView(personInChargeNames:     personInChargeNames,
                                               personInChargePhotoUrls: photoUrls)
@@ -50,6 +50,6 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
                                     personRoles: personRoles,
                                     photoUrls:   photoUrls)
         
-        detailView.configureAttachmentTab()
+        detailView.configureAttachmentTab(photoUrls: photoUrls)
     }
 }

@@ -23,8 +23,26 @@ class TeamTabView: UIView {
         self.personRoles = personRoles
         self.photoUrls   = photoUrls
         
-        configureSeeMoreView()
         configureTableView()
+        configureSeeMoreView()
+    }
+    
+    func configureTableView() {
+        tableView                              = UITableView()
+        guard let tableView                    = tableView else { return }
+        tableView.separatorStyle               = .none
+        tableView.delegate                     = self
+        tableView.dataSource                   = self
+        tableView.showsVerticalScrollIndicator = false
+        
+        self.addSubview(tableView)
+        tableView.anchor(top:      self.topAnchor,
+                         leading:  self.leadingAnchor,
+                         trailing: self.trailingAnchor,
+                         size:     CGSize(width: self.frame.width, height: 75))
+        
+        tableView.register(PersonTableViewCell.self,
+                           forCellReuseIdentifier: PersonTableViewCell.identifier())
     }
     
     func configureSeeMoreView() {
@@ -32,10 +50,10 @@ class TeamTabView: UIView {
         guard let seeMoreView = seeMoreView else { return }
         
         self.addSubview(seeMoreView)
-        seeMoreView.anchor(leading:  self.leadingAnchor,
+        seeMoreView.anchor(top:      tableView?.bottomAnchor,
+                           leading:  self.leadingAnchor,
                            bottom:   self.bottomAnchor,
-                           trailing: self.trailingAnchor,
-                           size:     CGSize(width: self.frame.width, height: 52))
+                           trailing: self.trailingAnchor)
         
         let seeMoreLabel           = UILabel()
         seeMoreLabel.textAlignment = .center
@@ -45,23 +63,6 @@ class TeamTabView: UIView {
         
         seeMoreView.addSubview(seeMoreLabel)
         seeMoreLabel.fillSuperView()
-    }
-    
-    func configureTableView() {
-        tableView            = UITableView()
-        guard let tableView  = tableView else { return }
-        tableView.separatorStyle = .none
-        tableView.delegate   = self
-        tableView.dataSource = self
-        
-        self.addSubview(tableView)
-        tableView.anchor(top:      self.topAnchor,
-                         leading:  self.leadingAnchor,
-                         bottom:   seeMoreView?.topAnchor,
-                         trailing: self.trailingAnchor)
-        
-        tableView.register(PersonTableViewCell.self,
-                           forCellReuseIdentifier: PersonTableViewCell.identifier())
     }
 }
 
