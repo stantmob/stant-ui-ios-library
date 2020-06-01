@@ -17,6 +17,7 @@ class ServiceInspectionFormFilledCardViewController: UIViewController {
     public var quantity: Float     = 1222.88
     public var cardHeight: CGFloat = 69
     
+    public var measurementUnit:  String = "m²"
     public var plannedMessage:   String = "Planned"
     public var executedMessage:  String = "Executed"
     public var availableMessage: String = "Available"
@@ -55,6 +56,7 @@ class ServiceInspectionFormFilledCardViewController: UIViewController {
         
         cardsView.configure(executedPercentage: self.percentage,
                             quantity:           self.quantity,
+                            measurementUnit:    self.measurementUnit,
                             plannedMessage:     self.plannedMessage,
                             executedMessage:    self.executedMessage,
                             availableMessage:   self.availableMessage)
@@ -84,6 +86,7 @@ class ServiceInspectionFormFilledCardViewController: UIViewController {
         }
         cardsView?.setProgress(executedPercentage: self.percentage,
                                quantity:           self.quantity,
+                               measurementUnit:    self.measurementUnit,
                                plannedMessage:     self.plannedMessage,
                                executedMessage:    self.executedMessage,
                                availableMessage:   self.availableMessage)

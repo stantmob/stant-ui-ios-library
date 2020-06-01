@@ -121,7 +121,7 @@ extension MainViewController {
         var itemSubtitles: [String] = []
         var iconsUrls:     [String] = []
         
-        for i in 0...10 {
+        for i in 0...30 {
             itemTitles.append("Person \(i + 1)")
             itemSubtitles.append("Role \(i + 1)")
             iconsUrls.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")
@@ -133,6 +133,7 @@ extension MainViewController {
                                           headerTitle:       "Select Team",
                                           selectionType:     .multiple,
                                           confirmButtonText: "Confirm",
+                                          selectedItems:     [],
                                           itemTitles:        itemTitles,
                                           itemSubtitles:     itemSubtitles,
                                           iconsUrls:         iconsUrls)
@@ -144,7 +145,7 @@ extension MainViewController {
         var itemSubtitles: [String] = []
         var iconsUrls:     [String] = []
         
-        for i in 0...9 {
+        for i in 0...30 {
             itemTitles.append("Person \(i + 1)")
             itemSubtitles.append("Role \(i + 1)")
             iconsUrls.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")
@@ -156,6 +157,7 @@ extension MainViewController {
                                           headerTitle:       "Select Responsible",
                                           selectionType:     .single,
                                           confirmButtonText: "Confirm",
+                                          selectedItems:     [],
                                           itemTitles:        itemTitles,
                                           itemSubtitles:     itemSubtitles,
                                           iconsUrls:         iconsUrls)

@@ -123,8 +123,8 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     }
     
     public func updateContactsList(_ contacts: [ContactsInformation]) {
-        self.contactsSiteList                    = contacts
-        self.tableView?.filteredContactsList = contacts
+        self.contactsSiteList           = contacts
+        self.tableView?.allContactsList = contacts
 
         self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()
