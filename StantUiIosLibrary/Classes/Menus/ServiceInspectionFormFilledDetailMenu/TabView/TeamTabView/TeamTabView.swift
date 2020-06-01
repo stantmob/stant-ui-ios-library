@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TeamTabView: UIView {
-    var tableView:   UITableView?
-    var seeMoreView: UIView?
+public class TeamTabView: UIView {
+    public var tableView:   UITableView?
+    public var seeMoreView: UIView?
     
     var personNames: [String] = []
     var personRoles: [String] = []
@@ -67,7 +67,7 @@ class TeamTabView: UIView {
 }
 
 extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return personNames.count
     }
     
@@ -75,7 +75,7 @@ extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
         return PersonTableViewCell.cellHeight
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(),
                                                  for:            indexPath) as! PersonTableViewCell
         

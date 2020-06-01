@@ -7,11 +7,11 @@
 
 import UIKit
 
-class CustomTabViewCell: UICollectionViewCell {
-    var label:        UILabel?
-    var bottomBorder: UIView?
+public class CustomTabViewCell: UICollectionViewCell {
+    public var label:        UILabel?
+    public var bottomBorder: UIView?
 
-    override var isSelected: Bool {
+    public override var isSelected: Bool {
         didSet {
             let color              = isSelected ? UIColor.orangeStant : UIColor.darkGrayStant
             label?.textColor       = color

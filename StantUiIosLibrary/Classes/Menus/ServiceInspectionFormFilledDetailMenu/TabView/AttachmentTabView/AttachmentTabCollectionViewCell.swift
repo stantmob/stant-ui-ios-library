@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AttachmentTabCollectionViewCell: UICollectionViewCell {
+public class AttachmentTabCollectionViewCell: UICollectionViewCell {
     var imageView: UIImageView?
     
     override init(frame: CGRect) {

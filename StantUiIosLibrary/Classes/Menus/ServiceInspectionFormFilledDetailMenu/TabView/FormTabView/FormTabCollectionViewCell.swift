@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormTabCollectionViewCell: UICollectionViewCell {
+public class FormTabCollectionViewCell: UICollectionViewCell {
     var titleLabel:   UILabel?
     var contentLabel: UILabel?
     

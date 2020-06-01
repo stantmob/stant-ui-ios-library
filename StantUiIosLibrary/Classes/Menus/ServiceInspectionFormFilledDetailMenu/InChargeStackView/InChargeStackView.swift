@@ -8,10 +8,10 @@
 import UIKit
 
 public class InChargeStackView: UIView {
-    var stackView:         UIStackView?
-    var responsibleDetail: PhotoDetailView?
-    var finalizerDetail:   PhotoDetailView?
-    var approverDetail:    PhotoDetailView?
+    public var stackView:         UIStackView?
+    public var responsibleDetail: PhotoDetailView?
+    public var finalizerDetail:   PhotoDetailView?
+    public var approverDetail:    PhotoDetailView?
     
     func configure(personNames:         [String],
                    photoUrls:           [String]) {

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class FormTabView: UIView {
-    var collectionView: UICollectionView?
+public class FormTabView: UIView {
+    public var collectionView: UICollectionView?
     var content:        [String] = []
     
     var titles = [AppStrings.service_inspection_form_filled_details_begin_label,
@@ -28,7 +28,6 @@ class FormTabView: UIView {
     }
     
     func configureCollectionView() {
-        let layout                     = UICollectionViewFlowLayout()
         collectionView                 = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
         guard let collectionView       = collectionView else { return }
         collectionView.delegate        = self
@@ -44,11 +43,11 @@ class FormTabView: UIView {
 }
 
 extension FormTabView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
     
-    func collectionView(_ collectionView:        UICollectionView,
+    public func collectionView(_ collectionView:        UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FormTabCollectionViewCell.identifier(),
@@ -60,21 +59,21 @@ extension FormTabView: UICollectionViewDataSource, UICollectionViewDelegate, UIC
         return cell
     }
     
-    func collectionView(_ collectionView:            UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath:     IndexPath) -> CGSize {
+    public func collectionView(_ collectionView:            UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath:     IndexPath) -> CGSize {
         return CGSize(width: self.frame.width / 2, height: self.frame.height / 2)
     }
     
-    func collectionView(_ collectionView:                            UICollectionView,
-                        layout collectionViewLayout:                 UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView:                            UICollectionView,
+                               layout collectionViewLayout:                 UICollectionViewLayout,
+                               minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(_ collectionView:                       UICollectionView,
-                        layout collectionViewLayout:            UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView:                       UICollectionView,
+                               layout collectionViewLayout:            UICollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 }

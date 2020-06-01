@@ -8,11 +8,11 @@
 import UIKit
 
 public class ServiceInspectionFormFilledDetailMenuView: UIView {
-    var inChargeStackView: InChargeStackView?
-    var mainTabView:       CustomTabView?
-    var formTabView:       FormTabView?
-    var teamTabView:       TeamTabView?
-    var attachmentTabView: AttachmentTabView?
+    public var inChargeStackView: InChargeStackView?
+    public var mainTabView:       CustomTabView?
+    public var formTabView:       FormTabView?
+    public var teamTabView:       TeamTabView?
+    public var attachmentTabView: AttachmentTabView?
     
     public func configureInChargeStackView(personInChargeNames:     [String],
                                            personInChargePhotoUrls: [String]) {
@@ -104,15 +104,15 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
 }
 
 extension ServiceInspectionFormFilledDetailMenuView: CustomTabViewDelegate {
-    func goToFormTabView() {
+    public func goToFormTabView() {
         setVisibilty(view: formTabView)
     }
     
-    func goToTeamTabView() {
+    public func goToTeamTabView() {
         setVisibilty(view: teamTabView)
     }
     
-    func goToAttachmentTabView() {
+    public func goToAttachmentTabView() {
         setVisibilty(view: attachmentTabView)
     }
     

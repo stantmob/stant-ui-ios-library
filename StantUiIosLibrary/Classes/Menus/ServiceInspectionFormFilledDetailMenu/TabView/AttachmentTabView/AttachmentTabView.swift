@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AttachmentTabView: UIView {
-    var collectionView: UICollectionView?
-    var seeMoreView:    UIView?
+public class AttachmentTabView: UIView {
+    public var collectionView: UICollectionView?
+    public var seeMoreView:    UIView?
     var photoUrls:      [String] = []
     
     let activityIndicator = UIActivityIndicatorView(style: .gray)
@@ -63,11 +63,11 @@ class AttachmentTabView: UIView {
 }
 
 extension AttachmentTabView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoUrls.count
     }
     
-    func collectionView(_ collectionView:        UICollectionView,
+    public func collectionView(_ collectionView:        UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AttachmentTabCollectionViewCell.identifier(),
@@ -79,19 +79,19 @@ extension AttachmentTabView: UICollectionViewDataSource, UICollectionViewDelegat
         return cell
     }
     
-    func collectionView(_ collectionView:            UICollectionView,
+    public func collectionView(_ collectionView:            UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath:     IndexPath) -> CGSize {
         return CGSize(width: 69, height: 69)
     }
     
-    func collectionView(_ collectionView:                            UICollectionView,
+    public func collectionView(_ collectionView:                            UICollectionView,
                         layout collectionViewLayout:                 UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(_ collectionView:                       UICollectionView,
+    public func collectionView(_ collectionView:                       UICollectionView,
                         layout collectionViewLayout:            UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1

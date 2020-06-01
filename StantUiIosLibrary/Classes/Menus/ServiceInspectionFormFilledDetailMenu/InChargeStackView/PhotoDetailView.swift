@@ -8,9 +8,9 @@
 import UIKit
 
 public class PhotoDetailView: UIView {
-    var photoImageView: UIImageView?
-    var nameLabel:      UILabel?
-    var roleLabel:      UILabel?
+    public var photoImageView: UIImageView?
+    public var nameLabel:      UILabel?
+    public var roleLabel:      UILabel?
     
     public let activityIndicator  = UIActivityIndicatorView(style: .gray)
     static let photoSize: CGFloat = 40

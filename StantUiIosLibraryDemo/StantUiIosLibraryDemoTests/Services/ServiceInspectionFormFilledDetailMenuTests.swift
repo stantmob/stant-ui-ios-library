@@ -54,14 +54,12 @@ class ServiceInspectionFormFilledDetailMenuTests: XCTestCase {
 
     func testGeneralView() {
         self.configureDetailView()
-//        var inChargeStackView: InChargeStackView?
-//        var mainTabView:       CustomTabView?
-//        var formTabView:       FormTabView?
-//        var teamTabView:       TeamTabView?
-//        var attachmentTabView: AttachmentTabView?
+        let inChargeStackView = detailView.inChargeStackView
+        let mainTabView       = detailView.mainTabView
+        let formTabView       = detailView.formTabView
+        let teamTabView       = detailView.teamTabView
+        let attachmentTabView = detailView.attachmentTabView
         
-//        XCTAssertTrue(detailView.inChargeStackView)
-//        
 //        XCTAssertTrue(cardsView.plannedSiffCard?.isDescendant(of: cardsView) ?? false)
 //        XCTAssertTrue(cardsView.executedSiffCard?.isDescendant(of: cardsView) ?? false)
 //        XCTAssertTrue(cardsView.availableSiffCard?.isDescendant(of: cardsView) ?? false)
