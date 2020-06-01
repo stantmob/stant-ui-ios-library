@@ -9,7 +9,7 @@ import UIKit
 
 public class FormTabView: UIView {
     public var collectionView: UICollectionView?
-    public var contentList:        [String] = []
+    public var contentList:    [String] = []
     
     var titles = [AppStrings.service_inspection_form_filled_details_begin_label,
                   AppStrings.service_inspection_form_filled_details_deadline_label,
@@ -28,7 +28,8 @@ public class FormTabView: UIView {
     }
     
     func configureCollectionView() {
-        collectionView                 = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView                 = UICollectionView(frame:                frame,
+                                                          collectionViewLayout: UICollectionViewFlowLayout())
         guard let collectionView       = collectionView else { return }
         collectionView.delegate        = self
         collectionView.dataSource      = self
@@ -42,16 +43,21 @@ public class FormTabView: UIView {
     }
 }
 
-extension FormTabView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension FormTabView: UICollectionViewDataSource,
+                       UICollectionViewDelegate,
+                       UICollectionViewDelegateFlowLayout  {
+    
+    public func collectionView(_ collectionView:               UICollectionView,
+                               numberOfItemsInSection section: Int) -> Int {
         return 4
     }
     
     public func collectionView(_ collectionView:        UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FormTabCollectionViewCell.identifier(),
-                                                      for:                 indexPath) as! FormTabCollectionViewCell
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: FormTabCollectionViewCell.identifier(),
+                                 for:                 indexPath) as! FormTabCollectionViewCell
 
         cell.titleLabel?.text   = self.titles[indexPath.row]
         cell.contentLabel?.text = self.contentList[indexPath.row]

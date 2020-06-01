@@ -142,7 +142,8 @@ public class SelectionViewController: UIViewController {
                          bottom:   confirmButton?.topAnchor,
                          trailing: self.view.trailingAnchor)
         
-        tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: PersonTableViewCell.identifier())
+        tableView.register(PersonTableViewCell.self,
+                           forCellReuseIdentifier: PersonTableViewCell.identifier())
     }
     
     @objc func returnSelectedItems() {

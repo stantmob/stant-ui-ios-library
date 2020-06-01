@@ -26,8 +26,8 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                                  trailing: self.trailingAnchor,
                                  size:     CGSize(width: self.frame.width, height: 82))
         
-        inChargeStackView.configure(personNames:         personInChargeNames,
-                                    photoUrls:           personInChargePhotoUrls)
+        inChargeStackView.configure(personNames: personInChargeNames,
+                                    photoUrls:   personInChargePhotoUrls)
     }
     
     public func configureMainTabView() {

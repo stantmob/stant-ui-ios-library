@@ -25,7 +25,8 @@ public class CustomTabView: UIView {
     }
     
     func configureCollectionView() {
-        collectionView                 = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView                 = UICollectionView(frame:                .zero,
+                                                          collectionViewLayout: UICollectionViewFlowLayout())
         guard let collectionView       = collectionView else { return }
         collectionView.backgroundColor = .white
         collectionView.delegate        = self
@@ -41,16 +42,21 @@ public class CustomTabView: UIView {
     }
 }
 
-extension CustomTabView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension CustomTabView: UICollectionViewDelegate,
+                         UICollectionViewDataSource,
+                         UICollectionViewDelegateFlowLayout {
+    
+    public func collectionView(_ collectionView:               UICollectionView,
+                               numberOfItemsInSection section: Int) -> Int {
         return 3
     }
     
     public func collectionView(_ collectionView:        UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID",
-                                                      for:                 indexPath) as! CustomTabViewCell
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: "cellID",
+                                 for:                 indexPath) as! CustomTabViewCell
         
         cell.label?.text = cellTitles[indexPath.row]
         return cell

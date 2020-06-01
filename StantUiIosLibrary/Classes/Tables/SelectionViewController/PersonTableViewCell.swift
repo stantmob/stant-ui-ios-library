@@ -68,7 +68,8 @@ class PersonTableViewCell: UITableViewCell {
         cellIcon.anchor(top:     self.topAnchor,
                         leading: self.leadingAnchor,
                         padding: UIEdgeInsets(top: 11, left: 16, bottom: 0, right: 0),
-                        size:    CGSize(width: PersonTableViewCell.cellIconSize, height: PersonTableViewCell.cellIconSize))
+                        size:    CGSize(width:  PersonTableViewCell.cellIconSize,
+                                        height: PersonTableViewCell.cellIconSize))
         
         cellIcon.showRoundedImageWith(path:              imageUrl,
                                       radius:            PersonTableViewCell.cellIconSize / 2,

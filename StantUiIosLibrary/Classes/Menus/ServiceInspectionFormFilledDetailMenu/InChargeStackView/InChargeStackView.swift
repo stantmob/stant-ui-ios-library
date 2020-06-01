@@ -13,8 +13,8 @@ public class InChargeStackView: UIView {
     public var finalizerDetail:   PhotoDetailView?
     public var approverDetail:    PhotoDetailView?
     
-    func configure(personNames:         [String],
-                   photoUrls:           [String]) {
+    func configure(personNames: [String],
+                   photoUrls:   [String]) {
         
         stackView              = UIStackView()
         guard let stackView    = stackView else { return }
@@ -26,18 +26,18 @@ public class InChargeStackView: UIView {
         self.addSubview(stackView)
         stackView.fillSuperView()
         
-        configureResponsibleDetail(personName:         personNames[0],
-                                   photoUrl:           photoUrls[0])
+        configureResponsibleDetail(personName: personNames[0],
+                                   photoUrl:   photoUrls[0])
         
-        configureFinalizerDetail(personName:         personNames[1],
-                                 photoUrl:           photoUrls[1])
+        configureFinalizerDetail(personName: personNames[1],
+                                 photoUrl:   photoUrls[1])
         
-        configureApproverDetail(personName:         personNames[2],
-                                photoUrl:           photoUrls[2])
+        configureApproverDetail(personName: personNames[2],
+                                photoUrl:   photoUrls[2])
     }
     
-    func configureResponsibleDetail(personName:         String,
-                                    photoUrl:           String) {
+    func configureResponsibleDetail(personName: String,
+                                    photoUrl:   String) {
         
         responsibleDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                             personName:         personName,
@@ -49,8 +49,8 @@ public class InChargeStackView: UIView {
         stackView.addArrangedSubview(responsibleDetail)
     }
     
-    func configureFinalizerDetail(personName:         String,
-                                  photoUrl:           String) {
+    func configureFinalizerDetail(personName: String,
+                                  photoUrl:   String) {
         
         finalizerDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                           personName:         personName,
@@ -62,8 +62,8 @@ public class InChargeStackView: UIView {
         stackView.addArrangedSubview(finalizerDetail)
     }
     
-    func configureApproverDetail(personName:         String,
-                                 photoUrl:           String) {
+    func configureApproverDetail(personName: String,
+                                 photoUrl:   String) {
         
         approverDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                          personName:         personName,

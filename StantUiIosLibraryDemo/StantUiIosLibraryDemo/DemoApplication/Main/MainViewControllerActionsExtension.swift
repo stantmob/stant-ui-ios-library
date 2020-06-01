@@ -117,15 +117,9 @@ extension MainViewController {
     }
     
     func openTeamScreenDemo() {
-        var itemTitles:    [String] = []
-        var itemSubtitles: [String] = []
-        var iconsUrls:     [String] = []
-        
-        for i in 0...30 {
-            itemTitles.append("Person \(i + 1)")
-            itemSubtitles.append("Role \(i + 1)")
-            iconsUrls.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")
-        }
+        let itemTitles    = (1...30).map { "Person \($0)" }
+        let itemSubtitles = (1...30).map { "Role \($0)" }
+        let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
         
         selectionViewController.modalPresentationStyle = .fullScreen
         
@@ -141,15 +135,9 @@ extension MainViewController {
     }
     
     func openResponsibleScreenDemo() {
-        var itemTitles:    [String] = []
-        var itemSubtitles: [String] = []
-        var iconsUrls:     [String] = []
-        
-        for i in 0...30 {
-            itemTitles.append("Person \(i + 1)")
-            itemSubtitles.append("Role \(i + 1)")
-            iconsUrls.append("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")
-        }
+        let itemTitles    = (1...30).map { "Person \($0)" }
+        let itemSubtitles = (1...30).map { "Role \($0)" }
+        let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
         
         selectionViewController.modalPresentationStyle = .fullScreen
         
@@ -165,9 +153,12 @@ extension MainViewController {
     }
     
     @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
-        let serviceInspectionFormFilledDetailMenuViewController = ServiceInspectionFormFilledDetailMenuViewController()
+        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
         serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
-        self.present(serviceInspectionFormFilledDetailMenuViewController, animated: false, completion: nil)
+        
+        self.present(serviceInspectionFormFilledDetailMenuViewController,
+                     animated:   false,
+                     completion: nil)
     }
 }
 

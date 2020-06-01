@@ -245,7 +245,7 @@ class MainViewController: UIViewController {
     
     fileprivate func addServiceInspectionFormFilledDetailMenuDemo() {
         self.scrollView.addButton(title:  "SIFF detail menu demo",
-        action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
-        target: self)
+                                  action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
+                                  target: self)
     }
 }
