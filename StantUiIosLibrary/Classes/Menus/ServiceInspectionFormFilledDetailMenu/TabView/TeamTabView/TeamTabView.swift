@@ -11,9 +11,9 @@ public class TeamTabView: UIView {
     public var tableView:   UITableView?
     public var seeMoreView: UIView?
     
-    var personNames: [String] = []
-    var personRoles: [String] = []
-    var photoUrls:   [String] = []
+    public var personNames: [String] = []
+    public var personRoles: [String] = []
+    public var photoUrls:   [String] = []
 
     func configure(personNames: [String],
                    personRoles: [String] = [],

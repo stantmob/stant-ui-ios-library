@@ -9,7 +9,7 @@ import UIKit
 
 public class FormTabView: UIView {
     public var collectionView: UICollectionView?
-    var content:        [String] = []
+    public var contentList:        [String] = []
     
     var titles = [AppStrings.service_inspection_form_filled_details_begin_label,
                   AppStrings.service_inspection_form_filled_details_deadline_label,
@@ -22,7 +22,7 @@ public class FormTabView: UIView {
                    unitMeasurement: String,
                    tests:           String) {
         
-        content = [beginDate, endDate, "\(quantiy) \(unitMeasurement)", tests]
+        contentList = [beginDate, endDate, "\(quantiy) \(unitMeasurement)", tests]
         
         configureCollectionView()
     }
@@ -54,7 +54,7 @@ extension FormTabView: UICollectionViewDataSource, UICollectionViewDelegate, UIC
                                                       for:                 indexPath) as! FormTabCollectionViewCell
 
         cell.titleLabel?.text   = self.titles[indexPath.row]
-        cell.contentLabel?.text = self.content[indexPath.row]
+        cell.contentLabel?.text = self.contentList[indexPath.row]
 
         return cell
     }

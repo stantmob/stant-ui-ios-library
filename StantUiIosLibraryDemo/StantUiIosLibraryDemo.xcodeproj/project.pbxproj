@@ -47,6 +47,7 @@
 		8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */; };
 		8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
+		8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */; };
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
 		8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */; };
 		8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */; };
@@ -112,6 +113,7 @@
 		8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndIconsTests.swift; sourceTree = "<group>"; };
 		8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
+		8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuTests.swift; sourceTree = "<group>"; };
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
 		8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardTests.swift; sourceTree = "<group>"; };
 		8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */,
 				8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */,
 				8F766F02245131FF0027B628 /* QuantityBarTests.swift */,
+				8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */,
 				51E9B31E22CAA64400D47B6A /* InternActionCellTests.swift in Sources */,
 				34FE368F22F234F000F9FEAE /* InputTextCellTests.swift in Sources */,
+				8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */,
 				34FE368222F1B5F100F9FEAE /* GroupSelectionTableViewWithCollapsedSearchBarMocks.swift in Sources */,
 				8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */,
 				8F030E9923BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift in Sources */,

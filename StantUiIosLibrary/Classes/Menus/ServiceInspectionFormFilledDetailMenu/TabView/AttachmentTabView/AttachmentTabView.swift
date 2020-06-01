@@ -10,7 +10,7 @@ import UIKit
 public class AttachmentTabView: UIView {
     public var collectionView: UICollectionView?
     public var seeMoreView:    UIView?
-    var photoUrls:      [String] = []
+    public var photoUrls:      [String] = []
     
     let activityIndicator = UIActivityIndicatorView(style: .gray)
 
