@@ -123,8 +123,8 @@ public class GroupSelectionTableViewWithCollapsedSearchBar: UIView {
     }
     
     public func updateItemsList(_ items: [GroupedSelection]) {
-        self.itemsList = items
-        self.tableView?.filteredItemsList = items
+        self.itemsList               = items
+        self.tableView?.allItemsList = items
         
         self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()

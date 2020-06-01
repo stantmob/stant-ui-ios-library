@@ -14,11 +14,12 @@ class ServiceInspectionFormFilledCardTests: XCTestCase {
     
     private var cardsView: ServiceInspectionFormFilledCardStack!
     
-    let percentageList: [Float]    = [0, 0.155, 0.5, 0.84, 1]
-    var percentage:     Float      = 0
-    var quantity:       Float      = 1200
-    var viewHeight:     CGFloat    = 69
-    var viewWidth:      CGFloat    = 300
+    let percentageList:  [Float] = [0, 0.155, 0.5, 0.84, 1]
+    var percentage:      Float   = 0
+    var quantity:        Float   = 1200
+    var measurementUnit: String  = "m²"
+    var viewHeight:      CGFloat = 69
+    var viewWidth:       CGFloat = 300
     
     public var plannedMessage:   String = "Planned"
     public var executedMessage:  String = "Executed"
@@ -38,6 +39,7 @@ class ServiceInspectionFormFilledCardTests: XCTestCase {
     fileprivate func configureCardsView() {
         cardsView.configure(executedPercentage: self.percentage,
                             quantity:           self.quantity,
+                            measurementUnit:    self.measurementUnit,
                             plannedMessage:     self.plannedMessage,
                             executedMessage:    self.executedMessage,
                             availableMessage:   self.availableMessage)

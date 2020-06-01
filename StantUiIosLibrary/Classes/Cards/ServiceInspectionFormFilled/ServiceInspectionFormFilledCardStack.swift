@@ -29,6 +29,7 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
     
     public func configure(executedPercentage: Float,
                           quantity:           Float,
+                          measurementUnit:    String,
                           plannedMessage:     String,
                           executedMessage:    String,
                           availableMessage:   String) {
@@ -56,6 +57,7 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
         
         self.setProgress(executedPercentage: executedPercentage,
                          quantity:           quantity,
+                         measurementUnit:    measurementUnit,
                          plannedMessage:     plannedMessage,
                          executedMessage:    executedMessage,
                          availableMessage:   availableMessage)
@@ -74,21 +76,25 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
     
     public func setProgress(executedPercentage: Float,
                             quantity:           Float,
+                            measurementUnit:    String,
                             plannedMessage:     String,
                             executedMessage:    String,
                             availableMessage:   String) {
         plannedSiffCard?.setLabels(executedPercentage: 1,
                                    quantity:           quantity,
+                                   measurementUnit:    measurementUnit,
                                    message:            plannedMessage,
                                    type:               .planned)
         
         executedSiffCard?.setLabels(executedPercentage: executedPercentage,
                                     quantity:           executedPercentage * quantity,
+                                    measurementUnit:    measurementUnit,
                                     message:            executedMessage,
                                     type:               .executed)
         
         availableSiffCard?.setLabels(executedPercentage: 1 - executedPercentage,
                                      quantity:           (1 - executedPercentage) * quantity,
+                                     measurementUnit:    measurementUnit,
                                      message:            availableMessage,
                                      type:               .available)
     }
