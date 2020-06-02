@@ -39,6 +39,11 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.accessoryType  = .none
             }
             selectedItems = []
+        } else if selectedItems.contains(indexPath.row) {
+            let cell           = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
+            cell.accessoryType = .none
+            selectedItems      = selectedItems.filter{ $0 != indexPath.row }
+            return
         }
         
         let cell            = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
@@ -47,7 +52,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! SelectionTableViewCell
+        let cell           = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
         cell.accessoryType = .none
         selectedItems      = selectedItems.filter{ $0 != indexPath.row }
     }
