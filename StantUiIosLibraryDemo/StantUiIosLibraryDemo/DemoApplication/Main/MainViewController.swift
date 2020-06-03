@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         self.addConstructionsContactsDemoTableView()
         self.addProgressBarWithToolTipDemo()
         self.addServiceInspectionFormFilledCardDemo()
+        self.addFispsListingCardDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -196,6 +197,16 @@ class MainViewController: UIViewController {
 
     @objc func goToServiceInspectionFormFilledCardDemo() {
         self.openServiceInspectionFormFilledCardDemo()
+    }
+    
+    fileprivate func addFispsListingCardDemo() {
+        self.scrollView.addButton(title:  "Fisp Listing",
+                                  action: #selector(goFispsListingCardDemo),
+                                  target: self)
+    }
+
+    @objc func goFispsListingCardDemo() {
+        self.open(viewController: ServiceInspectionFormFilledViewController())
     }
 
     fileprivate func addConstructionsContactsDemoTableView() {
