@@ -50,15 +50,16 @@ public class TeamScreenViewController: UIViewController {
                                             icon:   UIImage(named: "back") ?? UIImage())
 
         guard let navigationView = navigationView else { return }
+        
         navigationView.configure(title:      AppStrings.service_inspection_form_filled_details_team_title,
                                  titleFont:  .systemFont(ofSize: 14, weight: .medium),
                                  leftButton: backButton)
+        
         self.view.addSubview(navigationView)
-
         navigationView.anchor(top:      self.view.topAnchor,
                               leading:  self.view.leadingAnchor,
                               trailing: self.view.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0),
+                              padding:  UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0),
                               size:     CGSize(width: 0, height: SecondHeaderView.headerHeight))
     }
     
@@ -79,7 +80,7 @@ public class TeamScreenViewController: UIViewController {
                          bottom:   self.view.bottomAnchor,
                          trailing: self.view.trailingAnchor)
         
-        tableView.register(PersonTableViewCell.self,
-                           forCellReuseIdentifier: PersonTableViewCell.identifier())
+        tableView.register(SelectionTableViewCell.self,
+                           forCellReuseIdentifier: SelectionTableViewCell.identifier())
     }
 }

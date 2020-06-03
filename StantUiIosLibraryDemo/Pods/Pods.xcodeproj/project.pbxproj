@@ -31,7 +31,7 @@
 		2A78B2363C3944697DF744596241AEEB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D41241B610BDB25D82F134C431C2B46 /* UIImageViewExtension.swift */; };
 		2AE9316C40AED7B15CB81C602796667C /* FirstHeaderRecentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C9CF165E8989055512958707F025F5 /* FirstHeaderRecentItemCell.swift */; };
 		2AF3460798D39913EE416C32B0FFD643 /* Gesturizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879DF09FDCA4C77A6C4BE3E235CBDAF /* Gesturizer.swift */; };
-		2D9ACB81AD53A719E2C38A60C457E5C0 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D166D5017515B76E587300D04A195F3 /* PersonTableViewCell.swift */; };
+		2D9ACB81AD53A719E2C38A60C457E5C0 /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D166D5017515B76E587300D04A195F3 /* SelectionTableViewCell.swift */; };
 		2F5E20FA20E54AB8C0141C0787D1D468 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		302BF4B5DB59210DE986B9C9EF55025F /* MainMenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E461BA0E2EA19303961E9B5C6103D /* MainMenuTabBarController.swift */; };
 		3AC45B59E19B5B421EC6FD45A869EE3E /* ConstructionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE8233A64E61D060F4A03D38BACBCD /* ConstructionTableView.swift */; };
@@ -148,7 +148,7 @@
 		463994F188280DD84B4FA086B90FA012 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
 		47737BFD820B1FE1FF7BC1BAD23D919A /* DefaultSearchBarDelegateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBarDelegateExtension.swift; sourceTree = "<group>"; };
 		4BF488B70815A700291CBF3326FAE01B /* Localizable-en.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = "Localizable-en.strings"; sourceTree = "<group>"; };
-		4D166D5017515B76E587300D04A195F3 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		4D166D5017515B76E587300D04A195F3 /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
 		4DFC0DA6144EC5AB6CCB110501A2FF7D /* AttachmentTabCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttachmentTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E2FB181FCCCB954FF286078BE44B9DE /* DialogButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogButton.swift; sourceTree = "<group>"; };
 		539B52516BBF8E77C861A93F6A76A078 /* RoundedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
@@ -720,7 +720,7 @@
 			children = (
 				F7FDEF4B623642C7E9F04ABE5AF7744B /* InternActionCell.swift */,
 				3691854C0499A5C56DD4AAEB667E2992 /* InternPersonCell.swift */,
-				4D166D5017515B76E587300D04A195F3 /* PersonTableViewCell.swift */,
+				4D166D5017515B76E587300D04A195F3 /* SelectionTableViewCell.swift */,
 			);
 			name = Cells;
 			path = StantUiIosLibrary/Classes/Cells;
@@ -1032,7 +1032,7 @@
 				302BF4B5DB59210DE986B9C9EF55025F /* MainMenuTabBarController.swift in Sources */,
 				659817897948281011EF8BB70821068D /* MenuTabBarDTO.swift in Sources */,
 				773D27C406CBE66BAB2B91D599F33188 /* NSMutableAttributedStringExtension.swift in Sources */,
-				2D9ACB81AD53A719E2C38A60C457E5C0 /* PersonTableViewCell.swift in Sources */,
+				2D9ACB81AD53A719E2C38A60C457E5C0 /* SelectionTableViewCell.swift in Sources */,
 				2085796661D2150CA63BADD8E207AD24 /* PhotoDetailView.swift in Sources */,
 				A2486286260DC3F012956A2CD546CA47 /* ProgressBarWithToolTip.swift in Sources */,
 				C2C6C567412C248B7C37794E3BE9BD0C /* ProgressToolTip.swift in Sources */,

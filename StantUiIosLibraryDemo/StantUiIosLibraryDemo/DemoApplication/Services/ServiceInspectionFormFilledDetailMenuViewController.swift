@@ -57,7 +57,9 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
 
 extension ServiceInspectionFormFilledDetailMenuViewController: TeamTabViewDelegate {
     func showTeamScreen() {
-        let teamScreenViewController = TeamScreenViewController()
+        let teamScreenViewController                    = TeamScreenViewController()
+        teamScreenViewController.modalPresentationStyle = .fullScreen
+        
         teamScreenViewController.configure(personNames: personNames,
                                            personRoles: personRoles,
                                            photoUrls:   photoUrls)

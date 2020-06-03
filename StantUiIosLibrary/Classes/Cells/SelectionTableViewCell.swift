@@ -1,5 +1,5 @@
 //
-//  PersonTableViewCell.swift
+//  SelectionTableViewCell.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 05/05/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonTableViewCell: UITableViewCell {
+class SelectionTableViewCell: UITableViewCell {
     var cellIcon:      UIImageView?
     var titleLabel:    UILabel?
     var subtitleLabel: UILabel?
@@ -62,17 +62,17 @@ class PersonTableViewCell: UITableViewCell {
     func configureCellIcon(imageUrl: String) {
         cellIcon           = UIImageView()
         guard let cellIcon = cellIcon else { return }
-        leftPadding        = PersonTableViewCell.cellIconSize + 14
+        leftPadding        = SelectionTableViewCell.cellIconSize + 14
         
         self.addSubview(cellIcon)
         cellIcon.anchor(top:     self.topAnchor,
                         leading: self.leadingAnchor,
                         padding: UIEdgeInsets(top: 11, left: 16, bottom: 0, right: 0),
-                        size:    CGSize(width:  PersonTableViewCell.cellIconSize,
-                                        height: PersonTableViewCell.cellIconSize))
+                        size:    CGSize(width:  SelectionTableViewCell.cellIconSize,
+                                        height: SelectionTableViewCell.cellIconSize))
         
         cellIcon.showRoundedImageWith(path:              imageUrl,
-                                      radius:            PersonTableViewCell.cellIconSize / 2,
+                                      radius:            SelectionTableViewCell.cellIconSize / 2,
                                       activityIndicator: activityIndicator)
         cellIcon.layer.borderWidth = 2
         cellIcon.layer.borderColor = UIColor.lightGrayStant.cgColor

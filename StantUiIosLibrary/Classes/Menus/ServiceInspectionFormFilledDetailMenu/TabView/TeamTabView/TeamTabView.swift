@@ -42,8 +42,8 @@ public class TeamTabView: UIView {
                          trailing: self.trailingAnchor,
                          size:     CGSize(width: self.frame.width, height: 75))
         
-        tableView.register(PersonTableViewCell.self,
-                           forCellReuseIdentifier: PersonTableViewCell.identifier())
+        tableView.register(SelectionTableViewCell.self,
+                           forCellReuseIdentifier: SelectionTableViewCell.identifier())
     }
     
     func configureSeeMoreView() {
@@ -78,14 +78,14 @@ extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView:              UITableView,
                           heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return PersonTableViewCell.cellHeight
+        return SelectionTableViewCell.cellHeight
     }
     
     public func tableView(_ tableView:            UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView
-            .dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(),
-                                 for:            indexPath) as! PersonTableViewCell
+            .dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
+                                 for:            indexPath) as! SelectionTableViewCell
         
         cell.configureViewWithIcons(title:    personNames[indexPath.row],
                                     subtitle: personRoles.isEmpty ? "" : personRoles[indexPath.row],

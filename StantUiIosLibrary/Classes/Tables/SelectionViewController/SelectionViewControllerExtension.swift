@@ -18,15 +18,15 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView:              UITableView,
                           heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return PersonTableViewCell.cellHeight
+        return SelectionTableViewCell.cellHeight
     }
     
     public func tableView(_ tableView:            UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView
-                   .dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(),
-                                        for:            indexPath)  as! PersonTableViewCell
+                   .dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
+                                        for:            indexPath)  as! SelectionTableViewCell
     
         cell.accessoryType = selectedItems.contains(indexPath.row) ? .checkmark : .none
         
@@ -48,13 +48,13 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         if selectionType == .single {
             for index in selectedItems {
                 let cell            = tableView.cellForRow(at: IndexPath(row: index, section: 0))
-                                      as! PersonTableViewCell
+                                      as! SelectionTableViewCell
                 cell.accessoryType  = .none
             }
             selectedItems = []
         }
         
-        let cell            = tableView.cellForRow(at: indexPath) as! PersonTableViewCell
+        let cell            = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
         cell.accessoryType  = .checkmark
         selectedItems.append(indexPath.row)
     }
@@ -63,7 +63,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
                           didDeselectRowAt indexPath: IndexPath) {
         
         let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0))
-                             as! PersonTableViewCell
+                             as! SelectionTableViewCell
         cell.accessoryType = .none
         selectedItems      = selectedItems.filter{ $0 != indexPath.row }
     }

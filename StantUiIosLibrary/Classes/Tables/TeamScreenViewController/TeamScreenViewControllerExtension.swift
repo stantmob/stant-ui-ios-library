@@ -18,15 +18,15 @@ extension TeamScreenViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView:              UITableView,
                           heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return PersonTableViewCell.cellHeight
+        return SelectionTableViewCell.cellHeight
     }
     
     public func tableView(_ tableView:            UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView
-        .dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(),
-                             for:            indexPath)  as! PersonTableViewCell
+        .dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
+                             for:            indexPath)  as! SelectionTableViewCell
         
         cell.configureViewWithIcons(title:    personNames[indexPath.row],
                                     subtitle: personRoles.isEmpty ? "" : personRoles[indexPath.row],
