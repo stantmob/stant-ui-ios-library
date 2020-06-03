@@ -10,6 +10,7 @@ import UIKit
 public class TeamTabView: UIView {
     public var tableView:   UITableView?
     public var seeMoreView: UIView?
+    public var delegate:    TeamTabViewDelegate?
     
     public var personNames: [String] = []
     public var personRoles: [String] = []
@@ -63,6 +64,9 @@ public class TeamTabView: UIView {
         
         seeMoreView.addSubview(seeMoreLabel)
         seeMoreLabel.fillSuperView()
+        
+        let tap = UITapGestureRecognizer(target: delegate, action: #selector(delegate?.showTeamScreen))
+        seeMoreView.addGestureRecognizer(tap)
     }
 }
 
@@ -89,4 +93,9 @@ extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
             
         return cell
     }
+}
+
+
+@objc public protocol TeamTabViewDelegate {
+    @objc func showTeamScreen()
 }
