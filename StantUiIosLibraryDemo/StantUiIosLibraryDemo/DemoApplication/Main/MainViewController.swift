@@ -44,6 +44,7 @@ class MainViewController: UIViewController {
         self.addQuantityBarDemo()
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
+        self.addServiceInspectionFormFilledDetailMenuDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -240,5 +241,11 @@ class MainViewController: UIViewController {
     
     @objc func goToResponsibleScreenDemo() {
         self.openResponsibleScreenDemo()
+    }
+    
+    fileprivate func addServiceInspectionFormFilledDetailMenuDemo() {
+        self.scrollView.addButton(title:  "SIFF detail menu demo",
+                                  action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
+                                  target: self)
     }
 }
