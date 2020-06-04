@@ -54,6 +54,8 @@ public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDeleg
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ServiceInspectionFormFilledCell.identifier(), for: indexPath) as? ServiceInspectionFormFilledCell else { return UITableViewCell() }
         
+        cell.configureViewFor(serviceInspectionFormFilled: filteredServiceInspectionFormFilledList[indexPath.row])
+        
         return cell
     }
 }

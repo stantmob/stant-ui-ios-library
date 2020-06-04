@@ -12,6 +12,16 @@ import StantUiIosLibrary
 class ServiceInspectionFormFilledViewController: UIViewController {
     
     let navigationBarHeight: CGFloat = 60
+    let cardGuid                     = ""
+    let cardStatus                   = 2
+    let cardPerformedQuantity        = "50%"
+    let cardTotalUsedArea            = 2.5
+    let cardUnitMeasurement          = "m"
+    let cardVerifiedUnit             = "Formigueiro"
+    let cardBeginAt                  = "01/04/2019"
+    let cardEndAt                    = "12/04.2019"
+    
+    
     var serviceInspectionFormFilledList = [ServiceInpectionFormFilledDto]()
     
     override func viewDidLoad() {
@@ -22,16 +32,28 @@ class ServiceInspectionFormFilledViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = .white
         
+        serviceInspectionFormFilledList.append(ServiceInpectionFormFilledDto(guid: cardGuid,
+                                                                             status:            ServiceInspectionFormFilledStatusEnum(rawValue: cardStatus)!,
+                                                                             performedQuantity: cardPerformedQuantity,
+                                                                             totalUsedArea:     Float(cardTotalUsedArea),
+                                                                             unitMeasurement:   cardUnitMeasurement,
+                                                                             verifiedUnit:      cardVerifiedUnit,
+                                                                             beginAt:           cardBeginAt,
+                                                                             endAt:             cardEndAt))
+        
         let serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
-                                                                                                               y:      navigationBarHeight,
-                                                                                                               width:  self.view.frame.width,
-                                                                                                               height: self.view.frame.height - navigationBarHeight))
+                                                                                                                            y:      navigationBarHeight,
+                                                                                                                            width:  self.view.frame.width,
+                                                                                                                            height: self.view.frame.height -                               navigationBarHeight))
         self.view.addSubview(serviceInspectionFormFilledTableView)
         serviceInspectionFormFilledTableView.anchor(top:      self.view.topAnchor,
                                                     leading:  self.view.leadingAnchor,
                                                     bottom:   self.view.bottomAnchor,
                                                     trailing: self.view.trailingAnchor,
-                                                    padding:  UIEdgeInsets(top: navigationBarHeight, left: 0, bottom: 0, right: 0))
+                                                    padding:  UIEdgeInsets(top:    navigationBarHeight,
+                                                                           left:   0,
+                                                                           bottom: 0,
+                                                                           right:  0))
         serviceInspectionFormFilledTableView.configureViewWith(serviceInpsectionFormFilledList: serviceInspectionFormFilledList,
                                                                searchBarIcon:                   UIImage(named: "search") ?? UIImage(),
                                                                searchBarPlaceholder:            "Search",

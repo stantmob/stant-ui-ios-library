@@ -2,7 +2,7 @@
 //  ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift
 //  Pods-StantUiIosLibraryDemo
 //
-//  Created by Renato on 6/4/20.
+//  Created by Renato Vieira on 6/4/20.
 //
 
 import Foundation
@@ -34,10 +34,10 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
     }
     
     public func configureViewWith(serviceInpsectionFormFilledList: [ServiceInpectionFormFilledDto],
-                                 searchBarIcon:                    UIImage,
-                                 searchBarPlaceholder:             String,
-                                 tableViewDelegate:                ServiceInspectionFormFilledTableViewDidSelectDelegate,
-                                 emptyMessage:                     String){
+                                  searchBarIcon:                   UIImage,
+                                  searchBarPlaceholder:            String,
+                                  tableViewDelegate:               ServiceInspectionFormFilledTableViewDidSelectDelegate,
+                                  emptyMessage:                    String){
         self.serviceInspectionFormFilledList = serviceInpsectionFormFilledList
         self.searchBarIcon                   = searchBarIcon
         self.searchBarPlaceholder            = searchBarPlaceholder
@@ -105,15 +105,15 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
                           padding:  UIEdgeInsets(top:    0,
                                                  left:   6,
                                                  bottom: self.frame.height - DefaultSearchBar.searchViewHeight,
-                                                 right:   6))
+                                                 right:  0))
         tableView.anchor(top:      searchView.topAnchor,
                          leading:  self.leadingAnchor,
                          bottom:   self.bottomAnchor,
                          trailing: self.trailingAnchor,
                          padding:  UIEdgeInsets(top:    DefaultSearchBar.searchViewHeight,
-                                                left:   0,
+                                                left:   14,
                                                 bottom: 0,
-                                                right:  0))
+                                                right:  8))
     }
     
     public func updateConstructionSiteList(_ serviceInspectionFormFilled: [ServiceInpectionFormFilledDto]) {
