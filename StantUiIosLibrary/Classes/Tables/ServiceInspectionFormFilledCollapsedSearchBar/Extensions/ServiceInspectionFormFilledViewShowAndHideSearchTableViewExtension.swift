@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ServiceInspectionFormFilledCollapsedSearchBar: ServiceInspectionFormFilledAndHideSearchTableViewDelegate {
+extension ServiceInspectionFormFilledTableViewWithCollapsedSearchBar: ServiceInspectionFormFilledAndHideSearchTableViewDelegate {
     public func collapseSearchView() {
         guard let searchView = searchView, let tableView = tableView else { return }
         self.removeAllConstraints()

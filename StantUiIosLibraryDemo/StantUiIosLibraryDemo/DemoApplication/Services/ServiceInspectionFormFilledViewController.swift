@@ -22,7 +22,7 @@ class ServiceInspectionFormFilledViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = .white
         
-        let serviceInspectionFormFilledTableView = ServiceInspectionFormFilledCollapsedSearchBar(frame: CGRect(x:      0,
+        let serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
                                                                                                                y:      navigationBarHeight,
                                                                                                                width:  self.view.frame.width,
                                                                                                                height: self.view.frame.height - navigationBarHeight))

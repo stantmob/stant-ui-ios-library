@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ServiceInspectionFormFilledCollapsedSearchBar: DefaultSearchViewDelegate {
+extension ServiceInspectionFormFilledTableViewWithCollapsedSearchBar: DefaultSearchViewDelegate {
     public func updateTableViewWith(search: String) {
         self.currentSearch  = search
         guard let tableView = tableView else { return }
