@@ -32,7 +32,7 @@ public class CustomTabView: UIView {
         collectionView.delegate        = self
         collectionView.dataSource      = self
         
-        collectionView.register(CustomTabViewCell.self, forCellWithReuseIdentifier: "cellID")
+        collectionView.register(CustomTabViewCell.self, forCellWithReuseIdentifier: CustomTabViewCell.identifier())
         
         self.addSubview(collectionView)
         collectionView.fillSuperView()
@@ -55,7 +55,7 @@ extension CustomTabView: UICollectionViewDelegate,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: "cellID",
+            .dequeueReusableCell(withReuseIdentifier: CustomTabViewCell.identifier(),
                                  for:                 indexPath) as! CustomTabViewCell
         
         cell.label?.text = cellTitles[indexPath.row]
