@@ -10,6 +10,7 @@ import UIKit
 public class ServiceInspectionFormFilledCellHeader: UIView {
     
     public var statusTag: UIView?
+    public var statusLabel: UILabel?
     public var circleView: UIView?
     public var dateView: UIView?
     public var beginAtLabel: UILabel?
@@ -27,11 +28,11 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         let color: UIColor?
         switch status {
             case .late:
-                color = UIColor.red
+                color = UIColor.redLightStant
             case .finished:
-                color = UIColor.yellow
+                color = UIColor.yellowSLighttant
             case .progress:
-                color = UIColor.darkGray
+                color = UIColor.darkGrayStant
             case .approved:
                 color = UIColor.greenStant
         }
@@ -44,6 +45,7 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         statusTag.anchor(top: self.topAnchor, leading: self.leadingAnchor, size: CGSize(width: 112, height: 28))
         
         configureFold()
+        configureStatusLabel(statusText: status.stringValue().uppercased())
     }
     
     fileprivate func configureFold() {
@@ -66,5 +68,18 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         self.addSubview(fold)
         fold.anchor(top:     statusTag?.bottomAnchor,
                     leading: statusTag?.leadingAnchor)
+    }
+    
+    fileprivate func configureStatusLabel(statusText: String) {
+        statusLabel = UILabel()
+        guard let statusLabel = statusLabel else { return }
+        statusLabel.text = statusText
+        statusLabel.textColor = .white
+        statusLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        
+        statusTag?.addSubview(statusLabel)
+        statusLabel.anchor(top: statusTag?.topAnchor, leading: statusTag?.leadingAnchor, padding: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 0))
+        
+        
     }
 }

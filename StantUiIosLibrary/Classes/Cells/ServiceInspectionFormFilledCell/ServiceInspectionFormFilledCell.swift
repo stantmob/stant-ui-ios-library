@@ -55,6 +55,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         guard let verifiedUnitLabel = verifiedUnitLabel else { return }
         verifiedUnitLabel.textColor = .darkStant
         verifiedUnitLabel.text      = verifiedUnit
+        verifiedUnitLabel.font      = .systemFont(ofSize: 16)
         
         self.addSubview(verifiedUnitLabel)
         verifiedUnitLabel.anchor(top: self.topAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 38, left: 14, bottom: 0, right: 0))

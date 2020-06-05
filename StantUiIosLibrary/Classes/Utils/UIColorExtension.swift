@@ -57,6 +57,14 @@ extension UIColor {
         return UIColor(red: 63/255, green: 172/255, blue: 223/255, alpha: 1)
     }
     
+    @nonobjc public class var yellowSLighttant: UIColor {
+        return UIColor(red: 255/255, green: 180/255, blue: 83/255, alpha: 1)
+    }
+    
+    @nonobjc public class var redLightStant: UIColor {
+        return UIColor(red: 212/255, green: 29/255, blue: 0/255, alpha: 1)
+    }
+    
     public func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             self.setFill()
