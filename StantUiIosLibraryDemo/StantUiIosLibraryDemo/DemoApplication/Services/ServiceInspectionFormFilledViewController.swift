@@ -22,7 +22,7 @@ class ServiceInspectionFormFilledViewController: UIViewController {
     let cardEndAt                    = "12/04/2019"
     
     
-    var serviceInspectionFormFilledList = [ServiceInpectionFormFilled]()
+    var serviceInspectionFormFilledList = [ServiceInspectionFormFilled]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +34,14 @@ class ServiceInspectionFormFilledViewController: UIViewController {
         
         
         for i in 0...3 {
-            let siff = ServiceInpectionFormFilled(guid:              cardGuid,
-                                                  status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
-                                                  performedQuantity: cardPerformedQuantity,
-                                                  totalUsedArea:     Float(cardTotalUsedArea),
-                                                  unitMeasurement:   cardUnitMeasurement,
-                                                  verifiedUnit:      cardVerifiedUnit,
-                                                  beginAt:           cardBeginAt,
-                                                  endAt:             cardEndAt)
+            let siff = ServiceInspectionFormFilled(guid:              cardGuid,
+                                                   status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
+                                                   performedQuantity: cardPerformedQuantity,
+                                                   totalUsedArea:     Float(cardTotalUsedArea),
+                                                   unitMeasurement:   cardUnitMeasurement,
+                                                   verifiedUnit:      cardVerifiedUnit + "\(i)",
+                                                   beginAt:           cardBeginAt,
+                                                   endAt:             cardEndAt)
             serviceInspectionFormFilledList.append(siff)
         }
         

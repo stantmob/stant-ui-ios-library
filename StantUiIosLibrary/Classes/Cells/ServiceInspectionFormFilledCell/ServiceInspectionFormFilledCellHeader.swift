@@ -17,7 +17,9 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     public var separatorView: UIView?
     public var endAtLabel: UILabel?
     
-    public func configure(status: ServiceInspectionFormFilledStatusEnum, beginAt: String, endAt: String) {
+    public func configure(status:  ServiceInspectionFormFilledStatusEnum,
+                          beginAt: String,
+                          endAt:   String) {
         self.configureStatusTag(status: status)
     }
     
@@ -42,7 +44,9 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         self.layoutIfNeeded()
         
         self.addSubview(statusTag)
-        statusTag.anchor(top: self.topAnchor, leading: self.leadingAnchor, size: CGSize(width: 112, height: 28))
+        statusTag.anchor(top:     self.topAnchor,
+                         leading: self.leadingAnchor,
+                         size:    CGSize(width: 112, height: 28))
         
         configureFold()
         configureStatusLabel(statusText: status.stringValue().uppercased())
@@ -59,10 +63,12 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         path.addLine(to: CGPoint(x: width, y: 0))
         
         let shape = CAShapeLayer()
-        shape.path = path
+        
+        shape.path      = path
         shape.fillColor = UIColor.darkStant.cgColor
         
         let fold = UIView()
+        
         fold.layer.insertSublayer(shape, at: 0)
         
         self.addSubview(fold)
@@ -73,9 +79,10 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     fileprivate func configureStatusLabel(statusText: String) {
         statusLabel = UILabel()
         guard let statusLabel = statusLabel else { return }
-        statusLabel.text = statusText
-        statusLabel.textColor = .white
-        statusLabel.font = .systemFont(ofSize: 12, weight: .bold)
+        
+        statusLabel.text          = statusText
+        statusLabel.textColor     = .white
+        statusLabel.font          = .systemFont(ofSize: 12, weight: .bold)
         statusLabel.textAlignment = .center
         
         statusTag?.addSubview(statusLabel)

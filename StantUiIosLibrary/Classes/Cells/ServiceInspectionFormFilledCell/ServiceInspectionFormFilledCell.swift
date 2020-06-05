@@ -34,7 +34,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.removeSubviews()
     }
     
-    public func configureViewFor(serviceInspectionFormFilled: ServiceInpectionFormFilled) {
+    public func configureViewFor(serviceInspectionFormFilled: ServiceInspectionFormFilled) {
         self.removeSubviews()
         self.configureHeaderView(status: serviceInspectionFormFilled.status, beginAt: serviceInspectionFormFilled.beginAt, endAt: serviceInspectionFormFilled.endAt)
         self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilled.verifiedUnit)
@@ -90,7 +90,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
 //    }
 }
 
-public struct ServiceInpectionFormFilled {
+public struct ServiceInspectionFormFilled {
     
     let guid:              String
     let status:            ServiceInspectionFormFilledStatusEnum
