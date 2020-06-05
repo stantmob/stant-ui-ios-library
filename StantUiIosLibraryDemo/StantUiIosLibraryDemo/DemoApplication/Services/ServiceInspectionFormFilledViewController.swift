@@ -12,12 +12,13 @@ import StantUiIosLibrary
 class ServiceInspectionFormFilledViewController: UIViewController {
     
     let navigationBarHeight: CGFloat = 60
-    let cardGuid                     = ""
+    
     let cardStatus                   = 2
-    let cardPerformedQuantity        = "50%"
-    let cardTotalUsedArea            = 2.5
-    let cardUnitMeasurement          = "m"
+    let cardPerformedQuantity        = 40.0
+    let cardTotalUsedArea            = 156.2
+    let cardUnitMeasurement          = "M"
     let cardVerifiedUnit             = "Formigueiro"
+    let cardPlannedArea              = 1000.0
     let cardBeginAt                  = "01/04/2019"
     let cardEndAt                    = "12/04/2019"
     
@@ -34,12 +35,12 @@ class ServiceInspectionFormFilledViewController: UIViewController {
         
         
         for i in 0...3 {
-            let siff = ServiceInspectionFormFilled(guid:              cardGuid,
-                                                   status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
-                                                   performedQuantity: cardPerformedQuantity,
+            let siff = ServiceInspectionFormFilled(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
+                                                   performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
                                                    totalUsedArea:     Float(cardTotalUsedArea),
                                                    unitMeasurement:   cardUnitMeasurement,
                                                    verifiedUnit:      cardVerifiedUnit + "\(i)",
+                                                   plannedArea:       Float(cardPlannedArea),
                                                    beginAt:           cardBeginAt,
                                                    endAt:             cardEndAt)
             serviceInspectionFormFilledList.append(siff)

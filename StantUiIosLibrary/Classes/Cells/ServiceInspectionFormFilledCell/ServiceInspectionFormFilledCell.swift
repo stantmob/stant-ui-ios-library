@@ -10,15 +10,13 @@ import UIKit
 public class ServiceInspectionFormFilledCell: UITableViewCell {
     
     public static let cellHeight: CGFloat = 115
+    public var color: UIColor?
     
     public var headerView: ServiceInspectionFormFilledCellHeader?
-    //public var statusLabel: UILabel?
-    //public var totalUsedAreaLabel: UILabel?
-    //public var unitMeasurementLabel: UILabel?
     public var verifiedUnitLabel: UILabel?
-    //public var beginAtLabel: UILabel?
-    //public var endAtlabel: UILabel?
-    //public var areaUsed: UILabel?
+    public var progressBar: ServiceInspectionFormFilledCellBar?
+    public var performedPercentageView : UIView?
+    public var quantityLabel: UILabel?
     
     
     
@@ -38,6 +36,9 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.removeSubviews()
         self.configureHeaderView(status: serviceInspectionFormFilled.status, beginAt: serviceInspectionFormFilled.beginAt, endAt: serviceInspectionFormFilled.endAt)
         self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilled.verifiedUnit)
+        self.configureProgressBar(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, performedQuantity: serviceInspectionFormFilled.performedQuantity)
+        self.configurePerformedPercentageView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, performedQuantity: serviceInspectionFormFilled.performedQuantity)
+        self.configureQuantityLabel(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, unitMeasurement: serviceInspectionFormFilled.unitMeasurement)
     }
     
     fileprivate func configureHeaderView(status: ServiceInspectionFormFilledStatusEnum, beginAt: String, endAt: String) {
@@ -46,7 +47,18 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.addSubview(headerView)
         headerView.anchor(top: self.topAnchor, trailing: self.trailingAnchor, size: CGSize(width: self.frame.width + 6, height: 28))
         
-        headerView.configure(status: status, beginAt: beginAt, endAt: endAt)
+        switch status {
+                   case .late:
+                       color = UIColor.redLightStant
+                   case .finished:
+                       color = UIColor.yellowSLighttant
+                   case .progress:
+                       color = UIColor.darkGrayStant
+                   case .approved:
+                       color = UIColor.greenStant
+               }
+        
+        headerView.configure(status: status, beginAt: beginAt, endAt: endAt, color: color ?? UIColor())
         
     }
     
@@ -61,60 +73,80 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         verifiedUnitLabel.anchor(top: self.topAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 38, left: 14, bottom: 0, right: 0))
     }
     
-//    fileprivate func setText(label:        UILabel,
-//                             text:         String,
-//                             textSize:     CGFloat,
-//                             textWeight:   UIFont.Weight,
-//                             textColor:    UIColor,
-//                             topAnchor:    CGFloat,
-//                             leftAnchor:   CGFloat,
-//                             bottomAnchor: CGFloat,
-//                             rightAnchor:  CGFloat) {
-//        guard let mainView = mainView else { return }
-//
-//        if #available(iOS 9.0, *) {
-//                   label.text      = text
-//                   label.font      = .systemFont(ofSize: textSize, weight: textWeight)
-//                   label.textColor = textColor
-//                   mainView.addSubview(label)
-//                   label.anchor(top:      mainView.topAnchor,
-//                                leading:  mainView.leadingAnchor,
-//                                bottom:   mainView.bottomAnchor,
-//                                trailing: mainView.trailingAnchor,
-//                                padding:  UIEdgeInsets(top:    topAnchor,
-//                                                       left:   leftAnchor,
-//                                                       bottom: bottomAnchor,
-//                                                       right:  rightAnchor))
-//        }
-//
-//    }
+    fileprivate func configureProgressBar(totalUsedArea: Float, performedQuantity: Float) {
+        progressBar = ServiceInspectionFormFilledCellBar()
+        guard let progressBar = progressBar else { return }
+        progressBar.backgroundColor = .veryLightGrayStant
+        progressBar.layer.cornerRadius = 2.5
+        
+        self.addSubview(progressBar)
+        progressBar.anchor(top: verifiedUnitLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 14, left: 14, bottom: 0, right: 14), size: CGSize(width: self.frame.width, height: 4))
+        
+        progressBar.configure(totalUsedArea: totalUsedArea, performedQuantity: performedQuantity, color: color ?? UIColor())
+    }
+    
+    fileprivate func configurePerformedPercentageView(totalUsedArea: Float, performedQuantity: Float) {
+        performedPercentageView = UIView()
+        guard let performedPercentageView = performedPercentageView else { return }
+        performedPercentageView.backgroundColor = color
+        performedPercentageView.layer.cornerRadius = 3.0
+        
+        self.addSubview(performedPercentageView)
+        performedPercentageView.anchor(top: progressBar?.bottomAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 4, left: 14, bottom: 0, right: 0), size: CGSize(width: 42, height: 18))
+        
+        let percetageLabel = UILabel()
+        var percentage = performedQuantity / totalUsedArea * 100
+        percentage = percentage <= 100 ? percentage : 100
+        percetageLabel.text = "\(truncateFloat(value: percentage))%"
+        percetageLabel.textColor = .white
+        percetageLabel.font = .systemFont(ofSize: 12, weight: .bold)
+        percetageLabel.textAlignment = .center
+        
+        performedPercentageView.addSubview(percetageLabel)
+        percetageLabel.fillSuperView()
+    }
+    
+    fileprivate func configureQuantityLabel(totalUsedArea: Float, unitMeasurement: String) {
+        quantityLabel = UILabel()
+        guard let quantityLabel = quantityLabel else { return }
+        quantityLabel.text = "de \(totalUsedArea) \(unitMeasurement)"
+        quantityLabel.textColor = .darkGrayStant
+        quantityLabel.font = .systemFont(ofSize: 12)
+        
+        self.addSubview(quantityLabel)
+        quantityLabel.anchor(top: progressBar?.bottomAnchor, leading: performedPercentageView?.trailingAnchor, padding: UIEdgeInsets(top: 5, left: 3, bottom: 0, right: 0))
+    }
+    
+    func truncateFloat(value: Float) -> String {
+        return value.truncatingRemainder(dividingBy: 1) <= 0.1 ? String(format: "%.0f", value) : String(format: "%.1f", value)
+    }
 }
 
 public struct ServiceInspectionFormFilled {
     
-    let guid:              String
-    let status:            ServiceInspectionFormFilledStatusEnum
-    let performedQuantity: String
-    let totalUsedArea:     Float
-    let unitMeasurement:   String
-    let verifiedUnit:      String
-    let beginAt:           String
-    let endAt:             String
+    let status:             ServiceInspectionFormFilledStatusEnum
+    let performedQuantity:  Float
+    let totalUsedArea:      Float
+    let unitMeasurement:    String
+    let verifiedUnit:       String
+    let plannedArea:        Float
+    let beginAt:            String
+    let endAt:              String
     
-    public init(guid:              String,
-                status:            ServiceInspectionFormFilledStatusEnum,
-                performedQuantity: String,
+    public init(status:            ServiceInspectionFormFilledStatusEnum,
+                performedQuantity: Float,
                 totalUsedArea:     Float,
                 unitMeasurement:   String,
                 verifiedUnit:      String,
+                plannedArea:       Float,
                 beginAt:           String,
                 endAt:             String) {
-        self.guid              = guid
         self.status            = status
         self.performedQuantity = performedQuantity
         self.totalUsedArea     = totalUsedArea
         self.unitMeasurement   = unitMeasurement
         self.verifiedUnit      = verifiedUnit
+        self.plannedArea       = plannedArea
         self.beginAt           = beginAt
         self.endAt             = endAt
     }
