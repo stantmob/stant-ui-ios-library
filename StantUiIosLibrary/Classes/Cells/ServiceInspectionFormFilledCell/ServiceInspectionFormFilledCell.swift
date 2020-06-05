@@ -34,9 +34,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.removeSubviews()
     }
     
-    public func configureViewFor(serviceInspectionFormFilled: ServiceInpectionFormFilledDto) {
-        self.backgroundColor = .blue
-        self.clipsToBounds = false 
+    public func configureViewFor(serviceInspectionFormFilled: ServiceInpectionFormFilled) {
         self.removeSubviews()
         self.configureHeaderView(status: serviceInspectionFormFilled.status, beginAt: serviceInspectionFormFilled.beginAt, endAt: serviceInspectionFormFilled.endAt)
         self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilled.verifiedUnit)
@@ -46,7 +44,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         headerView = ServiceInspectionFormFilledCellHeader()
         guard let headerView = headerView else { return }
         self.addSubview(headerView)
-        headerView.anchor(top: self.topAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, size: CGSize(width: 420, height: 28))
+        headerView.anchor(top: self.topAnchor, trailing: self.trailingAnchor, size: CGSize(width: self.frame.width + 6, height: 28))
         
         headerView.configure(status: status, beginAt: beginAt, endAt: endAt)
         
@@ -60,11 +58,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         
         self.addSubview(verifiedUnitLabel)
         verifiedUnitLabel.anchor(top: self.topAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 38, left: 14, bottom: 0, right: 0))
-        
     }
-    
-
-    
     
 //    fileprivate func setText(label:        UILabel,
 //                             text:         String,
@@ -95,7 +89,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
 //    }
 }
 
-public struct ServiceInpectionFormFilledDto {
+public struct ServiceInpectionFormFilled {
     
     let guid:              String
     let status:            ServiceInspectionFormFilledStatusEnum

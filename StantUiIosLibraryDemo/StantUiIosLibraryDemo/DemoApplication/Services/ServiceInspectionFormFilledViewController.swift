@@ -19,10 +19,10 @@ class ServiceInspectionFormFilledViewController: UIViewController {
     let cardUnitMeasurement          = "m"
     let cardVerifiedUnit             = "Formigueiro"
     let cardBeginAt                  = "01/04/2019"
-    let cardEndAt                    = "12/04.2019"
+    let cardEndAt                    = "12/04/2019"
     
     
-    var serviceInspectionFormFilledList = [ServiceInpectionFormFilledDto]()
+    var serviceInspectionFormFilledList = [ServiceInpectionFormFilled]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +32,18 @@ class ServiceInspectionFormFilledViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.backgroundColor = .white
         
-        serviceInspectionFormFilledList.append(ServiceInpectionFormFilledDto(guid: cardGuid,
-                                                                             status:            ServiceInspectionFormFilledStatusEnum(rawValue: cardStatus)!,
-                                                                             performedQuantity: cardPerformedQuantity,
-                                                                             totalUsedArea:     Float(cardTotalUsedArea),
-                                                                             unitMeasurement:   cardUnitMeasurement,
-                                                                             verifiedUnit:      cardVerifiedUnit,
-                                                                             beginAt:           cardBeginAt,
-                                                                             endAt:             cardEndAt))
+        
+        for i in 0...3 {
+            let siff = ServiceInpectionFormFilled(guid:              cardGuid,
+                                                  status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
+                                                  performedQuantity: cardPerformedQuantity,
+                                                  totalUsedArea:     Float(cardTotalUsedArea),
+                                                  unitMeasurement:   cardUnitMeasurement,
+                                                  verifiedUnit:      cardVerifiedUnit,
+                                                  beginAt:           cardBeginAt,
+                                                  endAt:             cardEndAt)
+            serviceInspectionFormFilledList.append(siff)
+        }
         
         let serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
                                                                                                                             y:      navigationBarHeight,

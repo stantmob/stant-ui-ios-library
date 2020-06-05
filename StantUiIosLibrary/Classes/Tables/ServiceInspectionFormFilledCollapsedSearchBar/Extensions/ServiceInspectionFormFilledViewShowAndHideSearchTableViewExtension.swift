@@ -18,9 +18,9 @@ extension ServiceInspectionFormFilledTableViewWithCollapsedSearchBar: ServiceIns
             tableView.frame     = CGRect(x: tableView.frame.minX, y: 0, width: self.frame.width,
                                          height: self.frame.height)
         }, completion: { _ in
-            tableView.anchor(top:     self.topAnchor,
-                             leading: self.leadingAnchor,
-                             bottom:  self.bottomAnchor,
+            tableView.anchor(top:      self.topAnchor,
+                             leading:  self.leadingAnchor,
+                             bottom:   self.bottomAnchor,
                              trailing: self.trailingAnchor,
                              padding:  UIEdgeInsets(top:    0,
                                                     left:   0,

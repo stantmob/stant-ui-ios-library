@@ -23,7 +23,7 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
     var emptyMessage         = String()
     var currentSearch        = ""
     
-    public var serviceInspectionFormFilledList = [ServiceInpectionFormFilledDto]()
+    public var serviceInspectionFormFilledList = [ServiceInpectionFormFilled]()
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,7 +33,7 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
         super.init(frame: frame)
     }
     
-    public func configureViewWith(serviceInpsectionFormFilledList: [ServiceInpectionFormFilledDto],
+    public func configureViewWith(serviceInpsectionFormFilledList: [ServiceInpectionFormFilled],
                                   searchBarIcon:                   UIImage,
                                   searchBarPlaceholder:            String,
                                   tableViewDelegate:               ServiceInspectionFormFilledTableViewDidSelectDelegate,
@@ -92,6 +92,7 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
                                           animationDelegate: self,
                                           selectCellDelegate: tableViewDelegate)
         tableView?.backgroundColor = .clear
+        tableView?.clipsToBounds   = false 
         if let tableView = tableView { self.addSubview(tableView) }
     }
     
@@ -116,7 +117,7 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
                                                 right:  8))
     }
     
-    public func updateConstructionSiteList(_ serviceInspectionFormFilled: [ServiceInpectionFormFilledDto]) {
+    public func updateConstructionSiteList(_ serviceInspectionFormFilled: [ServiceInpectionFormFilled]) {
         self.serviceInspectionFormFilledList                    = serviceInspectionFormFilled
         self.tableView?.filteredServiceInspectionFormFilledList = serviceInspectionFormFilled
 

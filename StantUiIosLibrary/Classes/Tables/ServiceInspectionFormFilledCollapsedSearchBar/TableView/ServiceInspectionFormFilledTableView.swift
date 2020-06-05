@@ -11,8 +11,8 @@ public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDeleg
     
     var previousScrollOffset: CGFloat  = 0
     
-    public var allServiceInspectionFormFilledList      = [ServiceInpectionFormFilledDto]()
-    public var filteredServiceInspectionFormFilledList = [ServiceInpectionFormFilledDto]()
+    public var allServiceInspectionFormFilledList      = [ServiceInpectionFormFilled]()
+    public var filteredServiceInspectionFormFilledList = [ServiceInpectionFormFilled]()
     public var currentHeightConstant: CGFloat          = DefaultSearchBar.searchViewHeight
     
     public let maxHeaderHeight: CGFloat                = DefaultSearchBar.searchViewHeight
@@ -29,7 +29,7 @@ public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDeleg
         super.init(frame: frame, style: style)
     }
     
-    public func configureTableViewWith(serviceInspectionFormFilledList: [ServiceInpectionFormFilledDto],
+    public func configureTableViewWith(serviceInspectionFormFilledList: [ServiceInpectionFormFilled],
                                        animationDelegate:               ServiceInspectionFormFilledAndHideSearchTableViewDelegate,
                                        selectCellDelegate:              ServiceInspectionFormFilledTableViewDidSelectDelegate?) {
         self.delegate        = self
