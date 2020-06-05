@@ -75,10 +75,11 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         guard let statusLabel = statusLabel else { return }
         statusLabel.text = statusText
         statusLabel.textColor = .white
-        statusLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        statusLabel.font = .systemFont(ofSize: 12, weight: .bold)
+        statusLabel.textAlignment = .center
         
         statusTag?.addSubview(statusLabel)
-        statusLabel.anchor(top: statusTag?.topAnchor, leading: statusTag?.leadingAnchor, padding: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 0))
+        statusLabel.fillSuperView()
         
         
     }
