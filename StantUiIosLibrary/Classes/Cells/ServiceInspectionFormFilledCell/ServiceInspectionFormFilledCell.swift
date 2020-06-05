@@ -38,18 +38,17 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.backgroundColor = .blue
         self.clipsToBounds = false 
         self.removeSubviews()
-        self.configureHeaderView(status: serviceInspectionFormFilled.status, beginDate: serviceInspectionFormFilled.beginAt, endDate: serviceInspectionFormFilled.endAt)
+        self.configureHeaderView(status: serviceInspectionFormFilled.status, beginAt: serviceInspectionFormFilled.beginAt, endAt: serviceInspectionFormFilled.endAt)
         self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilled.verifiedUnit)
     }
     
-    fileprivate func configureHeaderView(status: ServiceInspectionFormFilledStatusEnum, beginDate: String, endDate: String) {
+    fileprivate func configureHeaderView(status: ServiceInspectionFormFilledStatusEnum, beginAt: String, endAt: String) {
         headerView = ServiceInspectionFormFilledCellHeader()
         guard let headerView = headerView else { return }
-        
         self.addSubview(headerView)
-        headerView.anchor(top: self.topAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, size: CGSize(width: self.frame.width, height: 28))
+        headerView.anchor(top: self.topAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, size: CGSize(width: 420, height: 28))
         
-        headerView.configure(status: status, beginDate: beginDate, endDate: endDate)
+        headerView.configure(status: status, beginAt: beginAt, endAt: endAt)
         
     }
     

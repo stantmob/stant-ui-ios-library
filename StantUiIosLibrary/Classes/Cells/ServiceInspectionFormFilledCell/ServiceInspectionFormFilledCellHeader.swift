@@ -12,11 +12,11 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     public var statusTag: UIView?
     public var circleView: UIView?
     public var dateView: UIView?
-    public var beginDateLabel: UILabel?
+    public var beginAtLabel: UILabel?
     public var separatorView: UIView?
-    public var endDateLabel: UILabel?
+    public var endAtLabel: UILabel?
     
-    public func configure(status: ServiceInspectionFormFilledStatusEnum, beginDate: String, endDate: String) {
+    public func configure(status: ServiceInspectionFormFilledStatusEnum, beginAt: String, endAt: String) {
         self.configureStatusTag(status: status)
     }
     
@@ -24,9 +24,11 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         statusTag = UIView()
         guard let statusTag = statusTag else { return }
         statusTag.backgroundColor = .red
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
         
         self.addSubview(statusTag)
-        statusTag.anchor(top: self.topAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0) , size: CGSize(width: 112, height: 28))
+        statusTag.anchor(top: self.topAnchor, trailing: self.trailingAnchor, size: CGSize(width: self.frame.width + 6, height: 28))
     }
     
 }
