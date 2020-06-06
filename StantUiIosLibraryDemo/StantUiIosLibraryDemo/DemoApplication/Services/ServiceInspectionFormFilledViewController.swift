@@ -16,8 +16,8 @@ class ServiceInspectionFormFilledViewController: UIViewController {
     let cardStatus                   = 2
     let cardPerformedQuantity        = 40.0
     let cardTotalUsedArea            = 156.2
-    let cardUnitMeasurement          = "M"
-    let cardVerifiedUnit             = "Formigueiro"
+    let cardUnitMeasurement          = "m²"
+    let cardVerifiedUnit             = "Unidade Verificada"
     let cardPlannedArea              = 1000.0
     let cardBeginAt                  = "01/04/2019"
     let cardEndAt                    = "12/04/2019"
