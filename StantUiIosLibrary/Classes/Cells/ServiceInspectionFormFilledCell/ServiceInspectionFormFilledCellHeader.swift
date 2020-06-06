@@ -37,6 +37,7 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         self.addSubview(statusTag)
         statusTag.anchor(top:     self.topAnchor,
                          leading: self.leadingAnchor,
+                         padding: UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0),
                          size:    CGSize(width:  112,
                                          height: 28))
         

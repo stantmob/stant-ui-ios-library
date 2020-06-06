@@ -144,11 +144,11 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         quantityLabel.text      = "de \(totalUsedArea) \(unitMeasurement)"
         quantityLabel.textColor = .darkGrayStant
         quantityLabel.font      = .systemFont(ofSize: 12)
-        
+
         self.addSubview(quantityLabel)
         quantityLabel.anchor(top:     progressBar?.bottomAnchor,
                              leading: performedPercentageView?.trailingAnchor,
-                             padding: UIEdgeInsets(top:    5,
+                             padding: UIEdgeInsets(top:    7,
                                                    left:   3,
                                                    bottom: 0,
                                                    right:  0))
@@ -172,10 +172,10 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                                            left:   14,
                                                            bottom: 4,
                                                            right:  0),
-                                     size:    CGSize(width:  115,
+                                     size:    CGSize(width:  120,
                                                      height: 18))
         let percentagePannedLabel = UILabel()
-        let percentagePanned      = totalUsedArea / plannedArea * 100
+        var percentagePanned      = totalUsedArea / plannedArea * 100
         
         percentagePannedLabel.text          = "\(truncateFloat(value: percentagePanned))% do Planejado"
         percentagePannedLabel.textColor     = .darkGrayStant
