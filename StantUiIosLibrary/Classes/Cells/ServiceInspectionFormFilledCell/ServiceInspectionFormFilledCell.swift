@@ -44,20 +44,29 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     public func configureViewFor(serviceInspectionFormFilled: ServiceInspectionFormFilled) {
         self.removeSubviews()
         self.addMainViewWithShadow()
-        self.configureHeaderView(status: serviceInspectionFormFilled.status, beginAt: serviceInspectionFormFilled.beginAt, endAt: serviceInspectionFormFilled.endAt)
+        self.configureHeaderView(status:  serviceInspectionFormFilled.status,
+                                 beginAt: serviceInspectionFormFilled.beginAt,
+                                 endAt:   serviceInspectionFormFilled.endAt)
         self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilled.verifiedUnit)
-        self.configureProgressBar(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, performedQuantity: serviceInspectionFormFilled.performedQuantity)
-        self.configurePerformedPercentageView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, performedQuantity: serviceInspectionFormFilled.performedQuantity)
-        self.configureQuantityLabel(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, unitMeasurement: serviceInspectionFormFilled.unitMeasurement)
-        self.configurePercentagePlannedView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, plannedArea: serviceInspectionFormFilled.plannedArea)
+        self.configureProgressBar(totalUsedArea:     serviceInspectionFormFilled.totalUsedArea,
+                                  performedQuantity: serviceInspectionFormFilled.performedQuantity)
+        self.configurePerformedPercentageView(totalUsedArea:     serviceInspectionFormFilled.totalUsedArea,
+                                              performedQuantity: serviceInspectionFormFilled.performedQuantity)
+        self.configureQuantityLabel(totalUsedArea:   serviceInspectionFormFilled.totalUsedArea,
+                                    unitMeasurement: serviceInspectionFormFilled.unitMeasurement)
+        self.configurePercentagePlannedView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea,
+                                            plannedArea:   serviceInspectionFormFilled.plannedArea)
         
         self.selectionStyle = .none
     }
     
     fileprivate func configureHeaderView(status: ServiceInspectionFormFilledStatusEnum, beginAt: String, endAt: String) {
-        headerView           = ServiceInspectionFormFilledCellHeader()
+        headerView = ServiceInspectionFormFilledCellHeader()
+        
         guard let headerView = headerView else { return }
+        
         self.addSubview(headerView)
+        
         headerView.anchor(top:      self.topAnchor,
                           trailing: self.trailingAnchor,
                           size:     CGSize(width:  self.frame.width + 6,
@@ -82,13 +91,15 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     }
     
     fileprivate func configureVerifiedUnitLabel(verifiedUnit: String) {
-        verifiedUnitLabel           = UILabel()
+        verifiedUnitLabel = UILabel()
+        
         guard let verifiedUnitLabel = verifiedUnitLabel else { return }
         verifiedUnitLabel.textColor = .darkStant
         verifiedUnitLabel.text      = verifiedUnit
         verifiedUnitLabel.font      = .systemFont(ofSize: 16)
         
         self.addSubview(verifiedUnitLabel)
+        
         verifiedUnitLabel.anchor(top:     self.topAnchor,
                                  leading: self.leadingAnchor,
                                  padding: UIEdgeInsets(top:    38,
@@ -98,12 +109,14 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     }
     
     fileprivate func configureProgressBar(totalUsedArea: Float, performedQuantity: Float) {
-        progressBar                    = ServiceInspectionFormFilledCellBar()
-        guard let progressBar          = progressBar else { return }
+        progressBar = ServiceInspectionFormFilledCellBar()
+        
+        guard let progressBar = progressBar else { return }
         progressBar.backgroundColor    = .veryLightGrayStant
         progressBar.layer.cornerRadius = 2.5
         
         self.addSubview(progressBar)
+        
         progressBar.anchor(top:      verifiedUnitLabel?.bottomAnchor,
                            leading:  self.leadingAnchor,
                            trailing: self.trailingAnchor,
@@ -120,12 +133,14 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     }
     
     fileprivate func configurePerformedPercentageView(totalUsedArea: Float, performedQuantity: Float) {
-        performedPercentageView                    = UIView()
-        guard let performedPercentageView          = performedPercentageView else { return }
+        performedPercentageView = UIView()
+        
+        guard let performedPercentageView = performedPercentageView else { return }
         performedPercentageView.backgroundColor    = color
         performedPercentageView.layer.cornerRadius = 3.0
         
         self.addSubview(performedPercentageView)
+        
         performedPercentageView.anchor(top:     progressBar?.bottomAnchor,
                                        leading: self.leadingAnchor,
                                        padding: UIEdgeInsets(top:    6,
@@ -144,17 +159,20 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         percentageLabel.textAlignment = .center
         
         performedPercentageView.addSubview(percentageLabel)
+        
         percentageLabel.fillSuperView()
     }
     
     fileprivate func configureQuantityLabel(totalUsedArea: Float, unitMeasurement: String) {
-        quantityLabel           = UILabel()
+        quantityLabel = UILabel()
+        
         guard let quantityLabel = quantityLabel else { return }
         quantityLabel.text      = "de \(totalUsedArea) \(unitMeasurement)"
         quantityLabel.textColor = .darkGrayStant
         quantityLabel.font      = .systemFont(ofSize: 12)
 
         self.addSubview(quantityLabel)
+        
         quantityLabel.anchor(top:     progressBar?.bottomAnchor,
                              leading: performedPercentageView?.trailingAnchor,
                              padding: UIEdgeInsets(top:    7,
@@ -169,11 +187,13 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     
     func configurePercentagePlannedView(totalUsedArea: Float, plannedArea: Float) {
         percentagePlannedView = UIView()
+        
         guard let percentagePlannedView = percentagePlannedView else { return }
-        percentagePlannedView.backgroundColor = .lightGrayStant
+        percentagePlannedView.backgroundColor    = .lightGrayStant
         percentagePlannedView.layer.cornerRadius = 3.0
         
         self.addSubview(percentagePlannedView)
+        
         percentagePlannedView.anchor(top:     performedPercentageView?.bottomAnchor,
                                      leading: self.leadingAnchor,
                                      bottom:  self.bottomAnchor,
@@ -183,6 +203,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                                            right:  0),
                                      size:    CGSize(width:  120,
                                                      height: 18))
+        
         let percentagePlannedLabel = UILabel()
         let percentagePlanned      = totalUsedArea / plannedArea * 100
         
@@ -192,6 +213,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         percentagePlannedLabel.font          = .systemFont(ofSize: 12)
         
         percentagePlannedView.addSubview(percentagePlannedLabel)
+        
         percentagePlannedLabel.fillSuperView()
     }
     

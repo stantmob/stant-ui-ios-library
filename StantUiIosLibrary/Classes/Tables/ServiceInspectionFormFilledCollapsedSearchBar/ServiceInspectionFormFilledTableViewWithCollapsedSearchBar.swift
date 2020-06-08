@@ -144,5 +144,4 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
                                                   height: 50))
         emptyMessageLabel.isHidden = false
     }
-    
 }
