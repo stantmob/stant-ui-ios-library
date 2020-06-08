@@ -72,6 +72,4 @@ extension ServiceInspectionFormFilledViewController: ServiceInspectionFormFilled
     func didClickOnTableViewCellWith(index: Int) {
         print("Clicked on cell \(index)")
     }
-    
-    
 }

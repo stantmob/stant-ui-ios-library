@@ -9,7 +9,7 @@ import UIKit
 
 public class ServiceInspectionFormFilledCell: UITableViewCell {
     
-    public static let cellHeight: CGFloat = 115
+    public static let cellHeight: CGFloat = 125
     
     public var color:                   UIColor?
     public var headerView:              ServiceInspectionFormFilledCellHeader?
@@ -34,6 +34,13 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.removeSubviews()
     }
     
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+    
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        bounds      = bounds.inset(by: padding)
+    }
+    
     public func configureViewFor(serviceInspectionFormFilled: ServiceInspectionFormFilled) {
         self.removeSubviews()
         self.addMainViewWithShadow()
@@ -43,6 +50,8 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         self.configurePerformedPercentageView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, performedQuantity: serviceInspectionFormFilled.performedQuantity)
         self.configureQuantityLabel(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, unitMeasurement: serviceInspectionFormFilled.unitMeasurement)
         self.configurePercentagePlannedView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea, plannedArea: serviceInspectionFormFilled.plannedArea)
+        
+        self.selectionStyle = .none
     }
     
     fileprivate func configureHeaderView(status: ServiceInspectionFormFilledStatusEnum, beginAt: String, endAt: String) {
@@ -98,7 +107,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         progressBar.anchor(top:      verifiedUnitLabel?.bottomAnchor,
                            leading:  self.leadingAnchor,
                            trailing: self.trailingAnchor,
-                           padding:  UIEdgeInsets(top:    6,
+                           padding:  UIEdgeInsets(top:    8,
                                                   left:   14,
                                                   bottom: 0,
                                                   right:  14),
@@ -174,39 +183,25 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                                            right:  0),
                                      size:    CGSize(width:  120,
                                                      height: 18))
-        let percentagePannedLabel = UILabel()
-        var percentagePanned      = totalUsedArea / plannedArea * 100
+        let percentagePlannedLabel = UILabel()
+        let percentagePlanned      = totalUsedArea / plannedArea * 100
         
-        percentagePannedLabel.text          = "\(truncateFloat(value: percentagePanned))% do Planejado"
-        percentagePannedLabel.textColor     = .darkGrayStant
-        percentagePannedLabel.textAlignment = .center
-        percentagePannedLabel.font          = .systemFont(ofSize: 12)
+        percentagePlannedLabel.text          = "\(truncateFloat(value: percentagePlanned))% do Planejado"
+        percentagePlannedLabel.textColor     = .darkGrayStant
+        percentagePlannedLabel.textAlignment = .center
+        percentagePlannedLabel.font          = .systemFont(ofSize: 12)
         
-        percentagePlannedView.addSubview(percentagePannedLabel)
-        percentagePannedLabel.fillSuperView()
+        percentagePlannedView.addSubview(percentagePlannedLabel)
+        percentagePlannedLabel.fillSuperView()
     }
     
     fileprivate func addMainViewWithShadow() {
-        mainView = UIView(frame: CGRect(x: 4, y: 2, width: self.frame.width - 8, height: self.frame.height - 4))
-        guard let mainView = mainView else { return }
-        mainView.backgroundColor = .white
-        
-        self.addSubview(mainView)
-        
-        mainView.anchor(top:      self.topAnchor,
-                        leading:  self.leadingAnchor,
-                        bottom:   self.bottomAnchor,
-                        trailing: self.trailingAnchor,
-                        padding:  UIEdgeInsets(top:    2,
-                                               left:   4,
-                                               bottom: 2,
-                                               right:  4))
-        mainView.layer.applySketchShadow(color:  .shadowStant,
-                                         alpha:  0.09,
-                                         x:      0,
-                                         y:      3,
-                                         blur:   8,
-                                         spread: 3)
+        self.layer.applySketchShadow(color:  .shadowStant,
+                                     alpha:  0.09,
+                                     x:      0,
+                                     y:      3,
+                                     blur:   8,
+                                     spread: 3)
     }
 }
 

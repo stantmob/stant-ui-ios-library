@@ -50,13 +50,18 @@ public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDeleg
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ServiceInspectionFormFilledCell.cellHeight
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ServiceInspectionFormFilledCell.identifier(), for: indexPath) as? ServiceInspectionFormFilledCell else { return UITableViewCell() }
         
         cell.configureViewFor(serviceInspectionFormFilled: filteredServiceInspectionFormFilledList[indexPath.row])
         
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectCellDelegate?.didClickOnTableViewCellWith(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
