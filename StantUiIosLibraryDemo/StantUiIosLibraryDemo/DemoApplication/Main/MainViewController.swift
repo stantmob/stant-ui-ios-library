@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
     let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
+    let selectionViewController              = SelectionViewController()
     let scrollView                           = UIScrollView()
     
     var tableViewSelectedItem    = 0
@@ -40,6 +41,10 @@ class MainViewController: UIViewController {
         self.addConstructionsContactsDemoTableView()
         self.addProgressBarWithToolTipDemo()
         self.addServiceInspectionFormFilledCardDemo()
+        self.addQuantityBarDemo()
+        self.addTeamScreenDemo()
+        self.addResponsibleScreenDemo()
+        self.addServiceInspectionFormFilledDetailMenuDemo()
         self.addFispsListingCardDemo()
     }
     
@@ -190,7 +195,7 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func addServiceInspectionFormFilledCardDemo() {
-        self.scrollView.addButton(title:  "Fisp card demo",
+        self.scrollView.addButton(title:  "Siff card demo",
                                   action: #selector(goToServiceInspectionFormFilledCardDemo),
                                   target: self)
     }
@@ -198,7 +203,7 @@ class MainViewController: UIViewController {
     @objc func goToServiceInspectionFormFilledCardDemo() {
         self.openServiceInspectionFormFilledCardDemo()
     }
-    
+
     fileprivate func addFispsListingCardDemo() {
         self.scrollView.addButton(title:  "Fisp Listing",
                                   action: #selector(goFispsListingCardDemo),
@@ -210,7 +215,7 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addConstructionsContactsDemoTableView() {
-        self.scrollView.addButton(title: "Contruction Contacts Table View",
+        self.scrollView.addButton(title:  "Contruction Contacts Table View",
                                   action: #selector(gotToConstructionsContactsDemo),
                                   target: self)
     }
@@ -219,5 +224,39 @@ class MainViewController: UIViewController {
         self.open(viewController: ConstructionContactsViewController())
     }
 
+    fileprivate func addQuantityBarDemo() {
+        self.scrollView.addButton(title:  "Quantity bar demo",
+                                  action: #selector(goToQuantityBarDemo),
+                                  target: self)
+    }
 
+    @objc func goToQuantityBarDemo() {
+        self.openQuantityBarDemo()
+    }
+
+    fileprivate func addTeamScreenDemo() {
+        self.scrollView.addButton(title:  "Team screen demo",
+                                  action: #selector(goToTeamScreenDemo),
+                                  target: self)
+    }
+
+    @objc func goToTeamScreenDemo() {
+        self.openTeamScreenDemo()
+    }
+
+    fileprivate func addResponsibleScreenDemo() {
+        self.scrollView.addButton(title:  "Responsible screen demo",
+                                  action: #selector(goToResponsibleScreenDemo),
+                                  target: self)
+    }
+
+    @objc func goToResponsibleScreenDemo() {
+        self.openResponsibleScreenDemo()
+    }
+
+    fileprivate func addServiceInspectionFormFilledDetailMenuDemo() {
+        self.scrollView.addButton(title:  "SIFF detail menu demo",
+                                  action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
+                                  target: self)
+    }
 }

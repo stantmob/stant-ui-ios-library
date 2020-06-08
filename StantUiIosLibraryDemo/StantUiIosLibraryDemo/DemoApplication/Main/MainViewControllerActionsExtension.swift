@@ -111,10 +111,58 @@ extension MainViewController {
         self.navigationController?.pushViewController(serviceInspectionFormFilledCardViewController, animated: true)
     }
 
+    func openQuantityBarDemo() {
+        let quantityBarViewController = QuantityBarViewController()
+        self.navigationController?.pushViewController(quantityBarViewController, animated: true)
+    }
+    
+    func openTeamScreenDemo() {
+        let itemTitles    = (1...30).map { "Person \($0)" }
+        let itemSubtitles = (1...30).map { "Role \($0)" }
+        let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
+        
+        selectionViewController.modalPresentationStyle = .fullScreen
+        
+        selectionViewController.configure(delegate:          self,
+                                          headerTitle:       "Select Team",
+                                          selectionType:     .multiple,
+                                          confirmButtonText: "Confirm",
+                                          selectedItems:     [],
+                                          itemTitles:        itemTitles,
+                                          itemSubtitles:     itemSubtitles,
+                                          iconsUrls:         iconsUrls)
+        self.present(selectionViewController, animated: false, completion: nil)
+    }
+    
+    func openResponsibleScreenDemo() {
+        let itemTitles    = (1...30).map { "Person \($0)" }
+        let itemSubtitles = (1...30).map { "Role \($0)" }
+        let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
+        
+        selectionViewController.modalPresentationStyle = .fullScreen
+        
+        selectionViewController.configure(delegate:          self,
+                                          headerTitle:       "Select Responsible",
+                                          selectionType:     .single,
+                                          confirmButtonText: "Confirm",
+                                          selectedItems:     [],
+                                          itemTitles:        itemTitles,
+                                          itemSubtitles:     itemSubtitles,
+                                          iconsUrls:         iconsUrls)
+        self.present(selectionViewController, animated: false, completion: nil)
+    }
+    
+    @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
+        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
+        serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
+        
+        self.present(serviceInspectionFormFilledDetailMenuViewController,
+                     animated:   false,
+                     completion: nil)
+    }
 }
 
 extension MainViewController: MainMenuTabBarDelegate {
-    
     var tabBarSelectedIndex: Int {
         get {
             return tabBarLastSelectedIndex
@@ -135,6 +183,10 @@ extension MainViewController: ScrollableTableViewDialogCellDelegate {
         print("Click on cell \(title)")
         self.tableViewSelectedItem = index
     }
-    
-    
+}
+
+extension MainViewController: SelectionViewDelegate {
+    func getSelectedItems(items: [Int]) {
+        print(items)
+    }
 }

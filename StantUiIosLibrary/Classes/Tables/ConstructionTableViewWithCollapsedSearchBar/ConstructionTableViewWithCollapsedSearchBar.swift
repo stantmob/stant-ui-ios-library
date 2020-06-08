@@ -113,8 +113,8 @@ public class ConstructionTableViewWithCollapsedSearchBar: UIView {
     }
     
     public func updateConstructionSiteList(_ constructionSites: [Construction]) {
-        self.constructionSiteList                    = constructionSites
-        self.tableView?.filteredConstructionSiteList = constructionSites
+        self.constructionSiteList               = constructionSites
+        self.tableView?.allConstructionSiteList = constructionSites
 
         self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()

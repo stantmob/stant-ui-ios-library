@@ -12,6 +12,7 @@ public class GroupSelectionTableView: UITableView, UITableViewDelegate, UITableV
     var previousScrollOffset: CGFloat  = 0
     
     public var filteredItemsList              = [GroupedSelection]()
+    public var allItemsList                   = [GroupedSelection]()
     public var currentHeightConstant: CGFloat = DefaultSearchBar.searchViewHeight
     public let maxHeaderHeight: CGFloat       = DefaultSearchBar.searchViewHeight
     public let minHeaderHeight: CGFloat       = 0
@@ -36,6 +37,7 @@ public class GroupSelectionTableView: UITableView, UITableViewDelegate, UITableV
         
         self.animationDelegate  = animationDelegate
         self.selectCellDelegate = selectCellDelegate
+        self.allItemsList       = itemsList
         self.filteredItemsList  = itemsList
         self.register(GroupSelectionRowCell.self, forCellReuseIdentifier: GroupSelectionRowCell.identifier() )
     }
@@ -82,7 +84,10 @@ public class GroupSelectionTableView: UITableView, UITableViewDelegate, UITableV
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectCellDelegate?.didClickOnTableViewCellWith(indexPath: indexPath)
+        let clickedItems      = filteredItemsList[indexPath.section]
+        let clickedItemsIndex = allItemsList.firstIndex(where: {$0.sectionTitle == clickedItems.sectionTitle}) ?? indexPath.row
+        
+        selectCellDelegate?.didClickOnTableViewCellWith(indexPath: IndexPath(row: indexPath.row, section: clickedItemsIndex))
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

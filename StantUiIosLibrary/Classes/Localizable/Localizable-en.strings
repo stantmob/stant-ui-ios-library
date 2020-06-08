@@ -1,0 +1,24 @@
+/* 
+  Localizable-en.strings
+  Pods
+
+  Created by Leandro Martins on 28/05/20.
+  
+*/
+
+//General
+"see_more" = "See more";
+
+//Service Inspection Form Filled Details
+"service_inspection_form_filled_details.responsible" = "Responsible";
+"service_inspection_form_filled_details.finalizer"   = "Finalizer";
+"service_inspection_form_filled_details.approver"    = "Approver";
+
+"service_inspection_form_filled_details.form_title"        = "Form";
+"service_inspection_form_filled_details.team_title"        = "Team";
+"service_inspection_form_filled_details.attachments_title" = "Attachments";
+
+"service_inspection_form_filled_details.begin_label"    = "Begin";
+"service_inspection_form_filled_details.deadline_label" = "Deadline";
+"service_inspection_form_filled_details.quantity_label" = "Quantity";
+"service_inspection_form_filled_details.tests_label"    = "Tests";

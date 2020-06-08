@@ -110,7 +110,6 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
                              trailing: mainView.trailingAnchor,
                              padding:  UIEdgeInsets(top: 0, left: 10, bottom: 15, right: 58))
     }
-    
 }
 
 public protocol ScrollableTableViewDialogCellDelegate: class {
