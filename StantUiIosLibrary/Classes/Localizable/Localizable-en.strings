@@ -22,3 +22,12 @@
 "service_inspection_form_filled_details.deadline_label" = "Deadline";
 "service_inspection_form_filled_details.quantity_label" = "Quantity";
 "service_inspection_form_filled_details.tests_label"    = "Tests";
+
+"service_inspection_form_filled_details.progress_label"   = "progress";
+"service_inspection_form_filled_details.finished_label"   = "finished";
+"service_inspection_form_filled_details.approve_label"    = "Approve";
+"service_inspection_form_filled_details.late_label"       = "Late";
+"service_inspection_form_filled_details.of_planned_label" = "of Planned";
+"service_inspection_form_filled_details.out_of_label"     = "out of";
+
+

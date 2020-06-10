@@ -21,7 +21,5 @@ extension ServiceInspectionFormFilledTableViewWithCollapsedSearchBar: DefaultSea
         }
         
         tableView.reloadData()
-        
-        self.setEmptyMessageLabelVisibility()
     }
 }

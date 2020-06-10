@@ -25,6 +25,14 @@ class AppStrings {
     public static let service_inspection_form_filled_details_quantity_label = localized("service_inspection_form_filled_details.quantity_label")
     public static let service_inspection_form_filled_details_tests_label    = localized("service_inspection_form_filled_details.tests_label")
     
+    public static let service_inspection_form_filled_details_progress_label   = localized("service_inspection_form_filled_details.progress_label")
+    public static let service_inspection_form_filled_details_finished_label   = localized("service_inspection_form_filled_details.finished_label")
+    public static let service_inspection_form_filled_details_approve_label    = localized("service_inspection_form_filled_details.approve_label")
+    public static let service_inspection_form_filled_details_late_label       = localized("service_inspection_form_filled_details.late_label")
+    public static let service_inspection_form_filled_details_of_planned_label = localized("service_inspection_form_filled_details.of_planned_label")
+    public static let service_inspection_form_filled_details_out_of_label     = localized("service_inspection_form_filled_details.out_of_label")
+
+    
     public static func localized(_ value: String) -> String {
         let currentLanguage = Locale.current
         let bundle          = Bundle.init(identifier: "org.cocoapods.StantUiIosLibrary") ?? Bundle.main

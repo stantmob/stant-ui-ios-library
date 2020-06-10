@@ -167,7 +167,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         quantityLabel = UILabel()
         
         guard let quantityLabel = quantityLabel else { return }
-        quantityLabel.text      = "de \(totalUsedArea) \(unitMeasurement)"
+        quantityLabel.text      = "\(AppStrings.service_inspection_form_filled_details_out_of_label) \(totalUsedArea) \(unitMeasurement)"
         quantityLabel.textColor = .darkGrayStant
         quantityLabel.font      = .systemFont(ofSize: 12)
 
@@ -207,7 +207,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         let percentagePlannedLabel = UILabel()
         let percentagePlanned      = totalUsedArea / plannedArea * 100
         
-        percentagePlannedLabel.text          = "\(truncateFloat(value: percentagePlanned))% do Planejado"
+        percentagePlannedLabel.text          = "\(truncateFloat(value: percentagePlanned))% \(AppStrings.service_inspection_form_filled_details_of_planned_label)"
         percentagePlannedLabel.textColor     = .darkGrayStant
         percentagePlannedLabel.textAlignment = .center
         percentagePlannedLabel.font          = .systemFont(ofSize: 12)
@@ -264,13 +264,13 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
     public func stringValue() -> String {
         switch self {
         case .progress:
-            return "Em Progresso"
+            return AppStrings.service_inspection_form_filled_details_progress_label
         case .finished:
-            return "Finalizado"
+            return AppStrings.service_inspection_form_filled_details_finished_label
         case .approved:
-            return "Aprovado"
+            return AppStrings.service_inspection_form_filled_details_approve_label
         case .late:
-            return "Atrasada"
+            return AppStrings.service_inspection_form_filled_details_late_label
         default:
             return ""
         }
@@ -278,13 +278,13 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
     
     public static func convertFrom(string: String) -> ServiceInspectionFormFilledStatusEnum {
         switch string {
-        case "Em Progresso":
+        case AppStrings.service_inspection_form_filled_details_progress_label:
             return .progress
-        case "Finalizado":
+        case AppStrings.service_inspection_form_filled_details_finished_label:
             return .finished
-        case "Aprovado":
+        case AppStrings.service_inspection_form_filled_details_approve_label:
             return .approved
-        case "Atrasada":
+        case AppStrings.service_inspection_form_filled_details_late_label:
             return .late
         default:
             return .progress
