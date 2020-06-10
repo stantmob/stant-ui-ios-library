@@ -8,7 +8,6 @@
 import UIKit
 
 public class ServiceInspectionFormFilledCellHeader: UIView {
-    
     public var statusTag:     UIView?
     public var statusLabel:   UILabel?
     public var circleView:    UIView?
@@ -30,9 +29,8 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     }
     
     fileprivate func configureStatusTag(status: ServiceInspectionFormFilledStatusEnum, color: UIColor) {
-        statusTag = UIView()
-        
-        guard let statusTag = statusTag else { return }
+        statusTag                 = UIView()
+        guard let statusTag       = statusTag else { return }
         statusTag.backgroundColor = color
         
         self.setNeedsLayout()
@@ -58,15 +56,13 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         path.addLine(to: CGPoint(x: width, y: height))
         path.addLine(to: CGPoint(x: width, y: 0))
         
-        let shape = CAShapeLayer()
-        
+        let shape       = CAShapeLayer()
         shape.path      = path
         shape.fillColor = UIColor.darkStant.cgColor
         
         let fold = UIView()
         
         fold.layer.insertSublayer(shape, at: 0)
-        
         self.addSubview(fold)
         
         fold.anchor(top:     statusTag?.bottomAnchor,
@@ -74,23 +70,20 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     }
     
     fileprivate func configureStatusLabel(statusText: String) {
-        statusLabel = UILabel()
-        
-        guard let statusLabel = statusLabel else { return }
+        statusLabel               = UILabel()
+        guard let statusLabel     = statusLabel else { return }
         statusLabel.text          = statusText
         statusLabel.textColor     = .white
         statusLabel.font          = .systemFont(ofSize: 12, weight: .bold)
         statusLabel.textAlignment = .center
         
         statusTag?.addSubview(statusLabel)
-        
         statusLabel.fillSuperView()
     }
     
     fileprivate func configureCircle() {
-        circleView = UIView()
-        
-        guard let circleView = circleView else { return }
+        circleView                    = UIView()
+        guard let circleView          = circleView else { return }
         circleView.backgroundColor    = .blueLightStant
         circleView.layer.cornerRadius = 4
         
@@ -107,14 +100,12 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     }
     
     fileprivate func configureDateView(beginAt: String, endAt: String) {
-        dateView = UIView()
-        
-        guard let dateView = dateView else { return }
+        dateView                    = UIView()
+        guard let dateView          = dateView else { return }
         dateView.backgroundColor    = .lightGrayStant
         dateView.layer.cornerRadius = 3
         
         self.addSubview(dateView)
-        
         dateView.anchor(top:      self.topAnchor,
                         trailing: self.trailingAnchor,
                         padding:  UIEdgeInsets(top:   4,
@@ -128,15 +119,13 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     }
     
     fileprivate func configureDateLabels(beginAt: String, endAt: String) {
-        beginAtLabel = UILabel()
-        
+        beginAtLabel           = UILabel()
         guard let beginAtLabel = beginAtLabel else { return }
         beginAtLabel.text      = beginAt
         beginAtLabel.textColor = .darkGrayStant
         beginAtLabel.font      = .systemFont(ofSize: 12)
         
         dateView?.addSubview(beginAtLabel)
-        
         beginAtLabel.anchor(top:     dateView?.topAnchor,
                             leading: dateView?.leadingAnchor,
                             bottom:  dateView?.bottomAnchor,
@@ -145,14 +134,12 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
                                                   bottom: 0,
                                                   right:  0))
         
-        separatorView = UIView()
-        
-        guard let separatorView = separatorView else { return }
+        separatorView                    = UIView()
+        guard let separatorView          = separatorView else { return }
         separatorView.backgroundColor    = .darkGrayStant
         separatorView.layer.cornerRadius = 2
         
         dateView?.addSubview(separatorView)
-        
         separatorView.anchor(top:     dateView?.topAnchor,
                              leading: beginAtLabel.trailingAnchor,
                              padding: UIEdgeInsets(top:    9,
@@ -162,15 +149,13 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
                              size:    CGSize(width:  4,
                                              height: 4))
         
-        endAtLabel = UILabel()
-        
+        endAtLabel           = UILabel()
         guard let endAtLabel = endAtLabel else { return }
         endAtLabel.text      = endAt
         endAtLabel.textColor = .darkGrayStant
         endAtLabel.font      = .systemFont(ofSize: 12)
         
         dateView?.addSubview(endAtLabel)
-        
         endAtLabel.anchor(top:      dateView?.topAnchor,
                           bottom:   dateView?.bottomAnchor,
                           trailing: dateView?.trailingAnchor,

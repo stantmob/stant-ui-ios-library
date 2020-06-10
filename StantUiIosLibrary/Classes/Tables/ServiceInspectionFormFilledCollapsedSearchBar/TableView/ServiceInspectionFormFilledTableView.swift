@@ -8,13 +8,11 @@
 import UIKit
 
 public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
-    
     var previousScrollOffset: CGFloat  = 0
     
     public var allServiceInspectionFormFilledList      = [ServiceInspectionFormFilled]()
     public var filteredServiceInspectionFormFilledList = [ServiceInspectionFormFilled]()
     public var currentHeightConstant: CGFloat          = DefaultSearchBar.searchViewHeight
-    
     public let maxHeaderHeight: CGFloat                = DefaultSearchBar.searchViewHeight
     public let minHeaderHeight: CGFloat                = 0
     
@@ -32,10 +30,9 @@ public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDeleg
     public func configureTableViewWith(serviceInspectionFormFilledList: [ServiceInspectionFormFilled],
                                        animationDelegate:               ServiceInspectionFormFilledAndHideSearchTableViewDelegate,
                                        selectCellDelegate:              ServiceInspectionFormFilledTableViewDidSelectDelegate?) {
-        self.delegate        = self
-        self.dataSource      = self
-        self.separatorStyle  = .none
-        
+        self.delegate                                = self
+        self.dataSource                              = self
+        self.separatorStyle                          = .none
         self.animationDelegate                       = animationDelegate
         self.selectCellDelegate                      = selectCellDelegate
         self.filteredServiceInspectionFormFilledList = serviceInspectionFormFilledList

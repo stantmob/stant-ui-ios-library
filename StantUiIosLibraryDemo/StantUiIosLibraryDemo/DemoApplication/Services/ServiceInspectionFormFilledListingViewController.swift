@@ -1,5 +1,5 @@
 //
-//  ServiceInspectionFormFilledViewController.swift
+//  ServiceInspectionFormFilledListingViewController.swift
 //  StantUiIosLibraryDemo
 //
 //  Created by Renato Vieira on 3/25/20.
@@ -9,7 +9,7 @@
 import Foundation
 import StantUiIosLibrary
 
-class ServiceInspectionFormFilledViewController: UIViewController {
+class ServiceInspectionFormFilledListingViewController: UIViewController {
     
     let navigationBarHeight: CGFloat = 60
     
@@ -67,7 +67,7 @@ class ServiceInspectionFormFilledViewController: UIViewController {
     
 }
 
-extension ServiceInspectionFormFilledViewController: ServiceInspectionFormFilledTableViewDidSelectDelegate {
+extension ServiceInspectionFormFilledListingViewController: ServiceInspectionFormFilledTableViewDidSelectDelegate {
     func didClickOnTableViewCellWith(index: Int) {
         print("Clicked on cell \(index)")
     }

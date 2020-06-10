@@ -10,7 +10,6 @@ import UIKit
 extension ServiceInspectionFormFilledTableViewWithCollapsedSearchBar: DefaultSearchViewDelegate {
     public func updateTableViewWith(search: String) {
         self.currentSearch  = search
-        
         guard let tableView = tableView else { return }
         tableView.filteredServiceInspectionFormFilledList = serviceInspectionFormFilledList.filter { (serviceInspectionFormFilled: ServiceInspectionFormFilled) -> Bool in
             let verifiedUnit = serviceInspectionFormFilled.verifiedUnit ?? ""

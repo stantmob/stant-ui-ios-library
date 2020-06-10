@@ -211,7 +211,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func goFispsListingCardDemo() {
-        self.open(viewController: ServiceInspectionFormFilledViewController())
+        self.open(viewController: ServiceInspectionFormFilledListingViewController())
     }
 
     fileprivate func addConstructionsContactsDemoTableView() {

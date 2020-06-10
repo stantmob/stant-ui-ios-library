@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView {
-    
     public var tableView:         ServiceInspectionFormFilledTableView?
     public var searchView:        DefaultSearchBar?
     public var emptyMessageLabel: UILabel?
@@ -45,7 +44,6 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
         self.configureSearchView()
         self.configureTableView()
         self.anchorSearchAndTableView()
-        //self.setEmptyMessageLabelVisibility()
     }
     
     fileprivate func configureSearchView() {
@@ -68,8 +66,8 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
         
         tableView?.register(ServiceInspectionFormFilledCell.self, forCellReuseIdentifier: ServiceInspectionFormFilledCell.identifier())
         tableView?.configureTableViewWith(serviceInspectionFormFilledList: serviceInspectionFormFilledList,
-                                          animationDelegate: self,
-                                          selectCellDelegate: tableViewDelegate)
+                                          animationDelegate:               self,
+                                          selectCellDelegate:              tableViewDelegate)
         tableView?.backgroundColor = .clear
         tableView?.clipsToBounds   = false 
         if let tableView = tableView { self.addSubview(tableView) }
