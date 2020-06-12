@@ -46,8 +46,8 @@
 		8F030E9923BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */; };
 		8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */; };
 		8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */; };
-		8F4E18262493C012001212BB /* MethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18252493C012001212BB /* MethodListingViewController.swift */; };
-		8F4E18282493C024001212BB /* ItemListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18272493C024001212BB /* ItemListingViewController.swift */; };
+		8F4E18262493C012001212BB /* VerifiedMethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */; };
+		8F4E18282493C024001212BB /* ItemMethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
 		8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */; };
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
@@ -117,8 +117,8 @@
 		8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipTests.swift; sourceTree = "<group>"; };
 		8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndIconsTests.swift; sourceTree = "<group>"; };
 		8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarViewController.swift; sourceTree = "<group>"; };
-		8F4E18252493C012001212BB /* MethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodListingViewController.swift; sourceTree = "<group>"; };
-		8F4E18272493C024001212BB /* ItemListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListingViewController.swift; sourceTree = "<group>"; };
+		8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodListingViewController.swift; sourceTree = "<group>"; };
+		8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodListingViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
 		8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuTests.swift; sourceTree = "<group>"; };
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
@@ -454,8 +454,8 @@
 		8F4E18202493BE43001212BB /* ItemMethod */ = {
 			isa = PBXGroup;
 			children = (
-				8F4E18272493C024001212BB /* ItemListingViewController.swift */,
-				8F4E18252493C012001212BB /* MethodListingViewController.swift */,
+				8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */,
+				8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */,
 			);
 			path = ItemMethod;
 			sourceTree = "<group>";
@@ -649,10 +649,10 @@
 				34FE368C22F22B4700F9FEAE /* InputTextCellTableViewController.swift in Sources */,
 				8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */,
 				8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */,
-				8F4E18262493C012001212BB /* MethodListingViewController.swift in Sources */,
+				8F4E18262493C012001212BB /* VerifiedMethodListingViewController.swift in Sources */,
 				34ECE71322F384B500D24ED3 /* SecondHeaderViewController.swift in Sources */,
 				C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */,
-				8F4E18282493C024001212BB /* ItemListingViewController.swift in Sources */,
+				8F4E18282493C024001212BB /* ItemMethodListingViewController.swift in Sources */,
 				452DB8AC22CCF2AD00561600 /* ProfileCellTableViewController.swift in Sources */,
 				34ECE70D22F31BF300D24ED3 /* RoundedImageViewController.swift in Sources */,
 				346518D922EF6CD800BC9E0D /* GroupSelectionViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemListingViewController: UIViewController {
+class ItemMethodListingViewController: UIViewController {
     override func viewDidLoad() {
         self.view.backgroundColor = .white
     }

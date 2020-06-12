@@ -60,7 +60,8 @@
 		87AB19E66178697D11EEABE32A0D0E4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EBF71809E6DE336A8102AF559E8EA50 /* FormTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2542183C28FAF3C339829B5902BCCBCE /* FormTabCollectionViewCell.swift */; };
-		8F4E182A2493C550001212BB /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18292493C550001212BB /* MethodCell.swift */; };
+		8F8060ED2493CC4800E05229 /* VerifiedMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8060EC2493CC4800E05229 /* VerifiedMethodCell.swift */; };
+		8FEF14C72493DB160034ACD5 /* VerifiedMethodCellStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF14C62493DB160034ACD5 /* VerifiedMethodCellStatusView.swift */; };
 		907C88784166C1D782EB859662A4D0B7 /* GroupSelectionRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F5223F24336FE4D2DF76EFEEA6BF2 /* GroupSelectionRowCell.swift */; };
 		938A64BA4BA048111FFDD692CA715F1D /* GroupSelectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816716246B5EBE20CDA29120C9E31FB /* GroupSelectionHeaderView.swift */; };
 		946AC28AB6E3C466B6407F99859D48F5 /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96302B4DB58643D41FC7E44A0C80EBE /* SelectionTableViewCell.swift */; };
@@ -172,7 +173,8 @@
 		89D20CA489D0113D334A27F753517464 /* FormTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTabView.swift; sourceTree = "<group>"; };
 		8A56EC0E8159D03573E50B8618FFEF1B /* Gesturizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Gesturizer.swift; sourceTree = "<group>"; };
 		8D0A83FC669D2127CD52091126BD99D8 /* FirstHeaderRightBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRightBarButton.swift; sourceTree = "<group>"; };
-		8F4E18292493C550001212BB /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
+		8F8060EC2493CC4800E05229 /* VerifiedMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodCell.swift; sourceTree = "<group>"; };
+		8FEF14C62493DB160034ACD5 /* VerifiedMethodCellStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodCellStatusView.swift; sourceTree = "<group>"; };
 		9089E372F94A57F4683CCAAF1A8C277C /* ProgressToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressToolTip.swift; sourceTree = "<group>"; };
 		95E9B914ABC2966BEAEFC3AADAA0C61F /* ContactsViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
 		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,7 +272,7 @@
 				C35FA776CAAC6B38BBFCE03ECDBEF29F /* InternActionCell.swift */,
 				1411B8A252E8826E914463D2B02A1562 /* InternPersonCell.swift */,
 				C96302B4DB58643D41FC7E44A0C80EBE /* SelectionTableViewCell.swift */,
-				8F4E18292493C550001212BB /* MethodCell.swift */,
+				8FEF14C52493DAF20034ACD5 /* VerifiedMethodCell */,
 			);
 			name = Cells;
 			path = StantUiIosLibrary/Classes/Cells;
@@ -594,6 +596,15 @@
 				555F9F711765A2C8FBDBDC1D20DB6E9C /* MenuTabBarDTO.swift */,
 			);
 			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		8FEF14C52493DAF20034ACD5 /* VerifiedMethodCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F8060EC2493CC4800E05229 /* VerifiedMethodCell.swift */,
+				8FEF14C62493DB160034ACD5 /* VerifiedMethodCellStatusView.swift */,
+			);
+			path = VerifiedMethodCell;
 			sourceTree = "<group>";
 		};
 		91574DD42FDD79CCBF5F829AB98ABDBC /* TableView */ = {
@@ -1000,9 +1011,11 @@
 				53F2F6137C8BFCDBF265A020368C7468 /* ContactsTableViewWithCollapsedSearchBar.swift in Sources */,
 				6F68CCB9129E9EED28D527F0F5B8045F /* ContactsViewDefaultSearchViewExtension.swift in Sources */,
 				EE7AD7028CB8F64EAEE11FB68FC9BD85 /* ContactsViewShowAndHideSearchTableViewExtension.swift in Sources */,
+				8FEF14C72493DB160034ACD5 /* VerifiedMethodCellStatusView.swift in Sources */,
 				6DD257A6D3489B9DE19DE7C2D9342212 /* CustomTabView.swift in Sources */,
 				125FF1849C6DACDDE69E9671DD518E58 /* CustomTabViewCell.swift in Sources */,
 				2444D39839A89EA874E026C8E6573129 /* DateExtension.swift in Sources */,
+				8F8060ED2493CC4800E05229 /* VerifiedMethodCell.swift in Sources */,
 				E5B4D509F20267BDBBDBECC679465CF3 /* DefaultSearchBar.swift in Sources */,
 				35BAA7FAE256AFA4005E75EC97306244 /* DefaultSearchBarDelegateExtension.swift in Sources */,
 				B98239AF925B19CCBF4ADD70FCF23243 /* DialogButton.swift in Sources */,
@@ -1061,7 +1074,6 @@
 				C225533EA20F0D7CF5D22D9682B8F1E9 /* UIImageExtension.swift in Sources */,
 				39E5DCFFA525FD6D37839EE3C4118DE2 /* UIImageViewExtension.swift in Sources */,
 				273DAEBCC8073E7D082E3EB7A986669D /* UILabelExtension.swift in Sources */,
-				8F4E182A2493C550001212BB /* MethodCell.swift in Sources */,
 				08E8DCC57075D7EDEFAC8BF61D8976A4 /* UIViewExtension.swift in Sources */,
 				823308685A4926DAAF9696C0EB7B9C73 /* UIViewLayoutExtension.swift in Sources */,
 				1042725297207BBFB1A657D97174A099 /* ViewTeste.swift in Sources */,

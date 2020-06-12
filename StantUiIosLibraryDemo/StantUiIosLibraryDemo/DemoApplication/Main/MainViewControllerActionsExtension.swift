@@ -152,14 +152,14 @@ extension MainViewController {
         self.present(selectionViewController, animated: false, completion: nil)
     }
     
-    func openItemListingDemo() {
-        let itemListingViewController                    = ItemListingViewController()
+    func openItemMethodListingDemo() {
+        let itemListingViewController                    = ItemMethodListingViewController()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(itemListingViewController, animated: true)
     }
     
-    func openMethodListingDemo() {
-        let methodListingViewController                    = MethodListingViewController()
+    func openVerifiedMethodListingDemo() {
+        let methodListingViewController                    = VerifiedMethodListingViewController()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(methodListingViewController, animated: true)
     }

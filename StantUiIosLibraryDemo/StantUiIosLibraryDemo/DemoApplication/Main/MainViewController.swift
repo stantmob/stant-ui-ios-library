@@ -45,8 +45,8 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
-        self.addItemListingDemo()
-        self.addMethodListingDemo()
+        self.addItemMethodListingDemo()
+        self.addVerifiedMethodListingDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -260,23 +260,23 @@ class MainViewController: UIViewController {
                      completion: nil)
     }
     
-    fileprivate func addItemListingDemo() {
+    fileprivate func addItemMethodListingDemo() {
         self.scrollView.addButton(title:  "Item listing demo",
-        action: #selector(goToItemListingDemo),
+        action: #selector(goToItemMethodListingDemo),
         target: self)
     }
     
-    @objc func goToItemListingDemo() {
-        self.openItemListingDemo()
+    @objc func goToItemMethodListingDemo() {
+        self.openItemMethodListingDemo()
     }
     
-    fileprivate func addMethodListingDemo() {
+    fileprivate func addVerifiedMethodListingDemo() {
         self.scrollView.addButton(title:  "Method listing demo",
-        action: #selector(goToMethodListingDemo),
+        action: #selector(goToVerifiedMethodListingDemo),
         target: self)
     }
     
-    @objc func goToMethodListingDemo() {
-        self.openMethodListingDemo()
+    @objc func goToVerifiedMethodListingDemo() {
+        self.openVerifiedMethodListingDemo()
     }
 }
