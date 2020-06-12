@@ -152,13 +152,16 @@ extension MainViewController {
         self.present(selectionViewController, animated: false, completion: nil)
     }
     
-    @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
-        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
-        serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
-        
-        self.present(serviceInspectionFormFilledDetailMenuViewController,
-                     animated:   false,
-                     completion: nil)
+    func openItemListingDemo() {
+        let itemListingViewController                    = ItemListingViewController()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(itemListingViewController, animated: true)
+    }
+    
+    func openMethodListingDemo() {
+        let methodListingViewController                    = MethodListingViewController()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(methodListingViewController, animated: true)
     }
 }
 
