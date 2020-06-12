@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
+        self.addListingPlacesCard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -248,4 +249,15 @@ class MainViewController: UIViewController {
                                   action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
                                   target: self)
     }
+    
+    fileprivate func addListingPlacesCard() {
+        self.scrollView.addButton(title:  "Listing places demo",
+                                  action: #selector(gotToListingPlacesCard),
+                                  target: self)
+    }
+
+    @objc func gotToListingPlacesCard() {
+        self.open(viewController: ListingPlacesViewController())
+    }
+    
 }

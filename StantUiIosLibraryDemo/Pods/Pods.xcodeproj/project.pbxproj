@@ -60,6 +60,7 @@
 		84089D972C3DC0B2722123DE4491A66E /* ContactsViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62EE4F00F08B92A911DC95556DEBBC4 /* ContactsViewDefaultSearchViewExtension.swift */; };
 		87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88062A7CAD4E4B85C1C269DB7F429F91 /* FirstHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE04BAA8976F1FF4B2426A489A94D174 /* FirstHeaderView.swift */; };
+		880E02EA2493C3B4003FD9D0 /* ListingPlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838CC612492CDA70000E2B3 /* ListingPlacesCell.swift */; };
 		8E16014F7969CFD0CCE78558D570DED0 /* ServiceInspectionFormFilledCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83F8E8AC8417FF551710457EE19D36 /* ServiceInspectionFormFilledCardStack.swift */; };
 		8F2906C12487F63D005EE900 /* TeamScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2906C02487F63D005EE900 /* TeamScreenViewController.swift */; };
 		8F2906C32487FAD0005EE900 /* TeamScreenViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2906C22487FAD0005EE900 /* TeamScreenViewControllerExtension.swift */; };
@@ -169,6 +170,7 @@
 		7F07CC545A0B03A7467CAD338F4E3DC5 /* FilterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		82D4AAC51487F7A18118A156B560A18D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		852CD012AA0A56A0D6DC8FD45117212F /* FormTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTabView.swift; sourceTree = "<group>"; };
+		8838CC612492CDA70000E2B3 /* ListingPlacesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPlacesCell.swift; sourceTree = "<group>"; };
 		8847E9054584412CE3F6C5E4AC88A8E2 /* ContactsViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
 		8A6A8F874210E2E1197519DDD788ECEB /* SelectionViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerExtension.swift; sourceTree = "<group>"; };
 		8ADCAA30CC4B9C2DA6BD7BB6922E4855 /* FirstHeaderDropdownButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderDropdownButton.swift; sourceTree = "<group>"; };
@@ -520,6 +522,21 @@
 			path = StantUiIosLibrary/Classes/Bars;
 			sourceTree = "<group>";
 		};
+		8838CC602492CD640000E2B3 /* ListingPlacesCell */ = {
+			isa = PBXGroup;
+			children = (
+				8838CC612492CDA70000E2B3 /* ListingPlacesCell.swift */,
+			);
+			path = ListingPlacesCell;
+			sourceTree = "<group>";
+		};
+		8838CC632492CEE40000E2B3 /* ListingPlaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListingPlaces;
+			sourceTree = "<group>";
+		};
 		89AA57003174E9876EE05BB0E899751A /* ViewHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +735,7 @@
 		D15E9D9C51190E1F262EA03E1AF93B89 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8838CC602492CD640000E2B3 /* ListingPlacesCell */,
 				F7FDEF4B623642C7E9F04ABE5AF7744B /* InternActionCell.swift */,
 				3691854C0499A5C56DD4AAEB667E2992 /* InternPersonCell.swift */,
 				4D166D5017515B76E587300D04A195F3 /* SelectionTableViewCell.swift */,
@@ -767,6 +785,7 @@
 		E8376AF271C9AA9E7BC209E3485DDA40 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				8838CC632492CEE40000E2B3 /* ListingPlaces */,
 				2371DFB78D7934973E8CEBB8C97B2811 /* ConstructionTableViewWithCollapsedSearchBar */,
 				49CA9D0FD4F2063B7E6B7864AAC654AD /* ContactsTableViewWithCollapsedSearchBar */,
 				AB94CC96B2F02E37762409BF91B8A5D1 /* GroupSelectionTableViewWithCollapsedSearchBar */,
@@ -1034,6 +1053,7 @@
 				773D27C406CBE66BAB2B91D599F33188 /* NSMutableAttributedStringExtension.swift in Sources */,
 				2D9ACB81AD53A719E2C38A60C457E5C0 /* SelectionTableViewCell.swift in Sources */,
 				2085796661D2150CA63BADD8E207AD24 /* PhotoDetailView.swift in Sources */,
+				880E02EA2493C3B4003FD9D0 /* ListingPlacesCell.swift in Sources */,
 				A2486286260DC3F012956A2CD546CA47 /* ProgressBarWithToolTip.swift in Sources */,
 				C2C6C567412C248B7C37794E3BE9BD0C /* ProgressToolTip.swift in Sources */,
 				BD6934D3D9B436368B719A66C65CD50C /* QuantityBar.swift in Sources */,
