@@ -18,7 +18,7 @@ class VerifiedMethodListingViewController: UIViewController {
     public let isReinspectionList: [Bool]             = (1...12).map { index in return index % 2 == 0 }
     public let hasAttachmentList:  [Bool]             = (1...12).map { index in return index % 3 == 0 }
     
-    public let descriptionText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the                                                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and                                                         scrambled it to make a type specimen book."
+    public let descriptionText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget risus in urna imperdiet sagittis ut                             vel quam. Fusce sagittis nec nibh ac pulvinar. Nunc aliquam lorem a mauris volutpat, ornare ultricies                             urna laoreet. Morbi vitae blandit velit. Nam eleifend nec tortor non convallis."
     
     override func viewDidLoad() {
         self.view.backgroundColor = .white
@@ -53,7 +53,8 @@ extension VerifiedMethodListingViewController: UITableViewDelegate, UITableViewD
         return VerifiedMethodCell.cellHeight
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: VerifiedMethodCell.identifier(), for: indexPath) as! VerifiedMethodCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: VerifiedMethodCell.identifier(),
+                                                 for:            indexPath) as! VerifiedMethodCell
         
         cell.configure(status:          statusList[indexPath.row],
                        order:           indexPath.row + 1,
