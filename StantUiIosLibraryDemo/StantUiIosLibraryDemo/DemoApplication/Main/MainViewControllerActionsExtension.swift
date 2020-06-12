@@ -159,7 +159,7 @@ extension MainViewController {
     }
     
     func openVerifiedMethodListingDemo() {
-        let methodListingViewController                    = VerifiedMethodListingViewController()
+        let methodListingViewController                  = VerifiedMethodListingViewController()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(methodListingViewController, animated: true)
     }

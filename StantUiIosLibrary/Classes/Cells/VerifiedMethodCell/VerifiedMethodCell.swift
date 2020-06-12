@@ -86,10 +86,10 @@ public class VerifiedMethodCell: UITableViewCell {
     }
     
     fileprivate func configureAttachmentIndicator(hasAttachment: Bool) {
-        attachmentIndicator                    = UIImageView()
-        guard let attachmentIndicator          = attachmentIndicator else { return }
-        attachmentIndicator.image              = #imageLiteral(resourceName: "clip")
-        attachmentIndicator.isHidden           = !hasAttachment
+        attachmentIndicator           = UIImageView()
+        guard let attachmentIndicator = attachmentIndicator else { return }
+        attachmentIndicator.image     = UIImage(named: "clip")
+        attachmentIndicator.isHidden  = !hasAttachment
         
         self.addSubview(attachmentIndicator)
         attachmentIndicator.anchor(top:     reinspectedIndicator?.bottomAnchor,
