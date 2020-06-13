@@ -61,7 +61,6 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListingPlacesCell.identifier(), for: indexPath) as? ListingPlacesCell else { return UITableViewCell() }
-        //let filteredPlanningPlacesList = [PlanningPLaces]()
         
         cell.configureViewFor()
         

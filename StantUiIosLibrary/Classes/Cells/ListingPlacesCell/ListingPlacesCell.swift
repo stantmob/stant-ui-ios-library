@@ -15,6 +15,8 @@ public class ListingPlacesCell: UITableViewCell {
     public var locationImageView: UIView?
     public var locationImage: UIImageView?
     public var placeTitleLabel: UILabel?
+    public var subPlacesLabel: UILabel?
+    public var percentagePlacelabel: UILabel?
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,6 +44,9 @@ public class ListingPlacesCell: UITableViewCell {
         configureBar()
         addMainViewWithShadow()
         configureLocationImageView()
+        configurePlaceTitleLabel()
+        configureSubPlacesLabel()
+        configurePercentagePlaceLabel()
         
         self.selectionStyle = .none
     }
@@ -69,7 +74,15 @@ public class ListingPlacesCell: UITableViewCell {
         
         self.addSubview(locationImageView)
         
-        locationImageView.anchor(top: self.topAnchor, leading: bar?.trailingAnchor, bottom: self.bottomAnchor ,padding: UIEdgeInsets(top: 16, left: 21, bottom: 16, right: 0), size: CGSize(width: 21, height: 22))
+        locationImageView.anchor(top: self.topAnchor,
+                                 leading: bar?.trailingAnchor,
+                                 bottom: self.bottomAnchor,
+                                 padding: UIEdgeInsets(top: 16,
+                                                       left: 21,
+                                                       bottom: 16,
+                                                       right: 0),
+                                 size: CGSize(width: 21,
+                                              height: 22))
         
         locationImage = UIImageView()
         guard let locationImage = locationImage else { return }
@@ -83,21 +96,57 @@ public class ListingPlacesCell: UITableViewCell {
         
     }
     
-    fileprivate func configurePlaceTitleLabel(placeTitle: String) {
+    fileprivate func configurePlaceTitleLabel() {
         placeTitleLabel = UILabel()
         guard let placeTitleLabel = placeTitleLabel else { return }
         placeTitleLabel.textColor = .blueDarkStant
-        placeTitleLabel.text = placeTitle
+        placeTitleLabel.text = "Obra 1"
         placeTitleLabel.font = .systemFont(ofSize: 16)
         
         self.addSubview(placeTitleLabel)
         
         placeTitleLabel.anchor(top: self.topAnchor,
-                               leading: self.leadingAnchor,
+                               leading: locationImageView?.trailingAnchor,
                                bottom: self.bottomAnchor,
-                               trailing: self.trailingAnchor,
+                               padding: UIEdgeInsets(top: 5,
+                                                     left: 7,
+                                                     bottom: 18,
+                                                     right: 0),
                                size: CGSize(width: 49,
                                             height: 19))
+    }
+    
+    fileprivate func configureSubPlacesLabel() {
+        subPlacesLabel = UILabel()
+        guard let subPlacesLabel = subPlacesLabel else { return }
+        subPlacesLabel.textColor = .darkGrayStant
+        subPlacesLabel.text = "3 Sublocais"
+        subPlacesLabel.font = .systemFont(ofSize: 12)
+        
+        self.addSubview(subPlacesLabel)
+        
+        subPlacesLabel.anchor(top: placeTitleLabel?.bottomAnchor,
+                              leading: locationImageView?.trailingAnchor,
+                              bottom: self.bottomAnchor,
+                              padding: UIEdgeInsets(top: 18,
+                                                    left: 8,
+                                                    bottom: 12,
+                                                    right: 0),
+                              size: CGSize(width: 80,
+                                           height: 10))
+    }
+    
+    fileprivate func configurePercentagePlaceLabel() {
+        percentagePlacelabel = UILabel()
+        guard let percentagePlacelabel = percentagePlacelabel else { return }
+        percentagePlacelabel.textColor = .darkGrayStant
+        percentagePlacelabel.text = "100%"
+        percentagePlacelabel.font = .systemFont(ofSize: 16)
+        
+        self.addSubview(percentagePlacelabel)
+        
+        percentagePlacelabel.anchor(top: self.topAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 19, left: 0, bottom: 18, right: 30), size: CGSize(width: 50, height: 19))
+        
     }
     
     fileprivate func addMainViewWithShadow() {
@@ -113,11 +162,14 @@ public class ListingPlacesCell: UITableViewCell {
 public struct PlanningPLaces {
     
     public let placeTitle: String
-    public let percentage: Float
+    public let subPlaces:  String
+    public let percentagePlace: Float
     
     public init(placeTitle: String,
+                subPlaces:  String,
                 percentage: Float) {
         self.placeTitle = placeTitle
-        self.percentage = percentage
+        self.subPlaces  = subPlaces
+        self.percentagePlace = percentage
     }
 }
