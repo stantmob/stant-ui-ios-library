@@ -7,9 +7,9 @@
 
 import UIKit
 
-class VerifiedMethodCellStatusView: UIView {
-    var statusTag:  UIView?
-    var orderLabel: UILabel?
+public class VerifiedMethodCellStatusView: UIView {
+    public var statusTag:  UIView?
+    public var orderLabel: UILabel?
     
     func configureStatusTag(color: UIColor, order: Int) {
         statusTag                 = UIView()

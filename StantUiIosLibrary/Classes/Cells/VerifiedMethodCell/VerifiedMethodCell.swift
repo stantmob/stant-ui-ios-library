@@ -8,10 +8,10 @@
 import UIKit
 
 public class VerifiedMethodCell: UITableViewCell {
-    var statusView:           VerifiedMethodCellStatusView?
-    var reinspectedIndicator: UIView?
-    var attachmentIndicator:  UIImageView?
-    var methodDescription:    UILabel?
+    public var statusView:           VerifiedMethodCellStatusView?
+    public var reinspectedIndicator: UIView?
+    public var attachmentIndicator:  UIImageView?
+    public var methodDescription:    UILabel?
     
     public static let cellHeight: CGFloat = 69
     

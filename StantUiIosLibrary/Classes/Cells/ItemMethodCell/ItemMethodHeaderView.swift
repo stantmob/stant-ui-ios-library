@@ -7,18 +7,23 @@
 
 import UIKit
 
-public class ItemMethodHeaderView: UIView {
-    var statusTag:                   UIView?
-    var itemTitleLabel:              UILabel?
-    var reprovedInspectionIndicator: UIView?
-    var expandImageView:             UIImageView?
-    var delegate:                    ItemMethodHeaderViewDelegate?
+public class ItemMethodHeaderView: UITableViewHeaderFooterView {
+    public var statusTag:                   UIView?
+    public var itemTitleLabel:              UILabel?
+    public var reprovedInspectionIndicator: UIView?
+    public var expandImageView:             UIImageView?
+    public var delegate:                    ItemMethodHeaderViewDelegate?
     
     public static let headerHeight: CGFloat = 50
     public var isExpanded                   = false
     public var section                      = 0
     
     deinit {
+        self.removeSubviews()
+    }
+    
+    override public func prepareForReuse() {
+        super.prepareForReuse()
         self.removeSubviews()
     }
     
@@ -97,7 +102,7 @@ public class ItemMethodHeaderView: UIView {
         self.addSubview(tapView)
         tapView.anchor(top:      self.topAnchor,
                        trailing: self.trailingAnchor,
-                       padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0),
+                       padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 9),
                        size:     CGSize(width: 30, height: 30))
         
         tapView.addGestureRecognizer(tap)

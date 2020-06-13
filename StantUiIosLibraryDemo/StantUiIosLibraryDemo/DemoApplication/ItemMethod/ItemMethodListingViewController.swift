@@ -45,6 +45,7 @@ class ItemMethodListingViewController: UIViewController {
                          trailing: self.view.trailingAnchor,
                          padding:  UIEdgeInsets(top: 70, left: 1, bottom: 0, right: 0))
         
+        tableView.register(ItemMethodHeaderView.self, forHeaderFooterViewReuseIdentifier: ItemMethodHeaderView.identifier())
         tableView.register(ItemObservationCell.self, forCellReuseIdentifier: ItemObservationCell.identifier())
     }
 }
@@ -59,7 +60,9 @@ extension ItemMethodListingViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = ItemMethodHeaderView()
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemMethodHeaderView.identifier())
+                         as! ItemMethodHeaderView
+        
         headerView.configure(delegate:          self,
                              section:           section,
                              status:            statusList[section],
