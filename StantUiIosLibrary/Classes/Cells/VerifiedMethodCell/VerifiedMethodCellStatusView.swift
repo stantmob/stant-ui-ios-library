@@ -34,7 +34,7 @@ class VerifiedMethodCellStatusView: UIView {
         orderLabel.font          = .systemFont(ofSize: 12, weight: .bold)
         orderLabel.textAlignment = .center
         orderLabel.textColor     = .white
-        orderLabel.text          = order.description
+        orderLabel.text          = order.getStringWith(numberOfDigits: 2)
         
         statusTag?.addSubview(orderLabel)
         orderLabel.fillSuperView()

@@ -25,6 +25,11 @@ public class ItemObservationCell: UITableViewCell {
         self.removeSubviews()
     }
     
+    override public func prepareForReuse() {
+        super.prepareForReuse()
+        self.removeSubviews()
+    }
+    
     public func configure(observation: String) {
         observationLabel               = UILabel()
         guard let observationLabel     = observationLabel else { return }

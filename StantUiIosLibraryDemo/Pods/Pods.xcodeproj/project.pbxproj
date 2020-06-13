@@ -58,6 +58,7 @@
 		8809DD2933317ECB3A365F8DD57FD2DE /* ServiceInspectionFormFilledCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6499B68E38E71D7AF7F4D306204733B7 /* ServiceInspectionFormFilledCard.swift */; };
 		8A3443B8DBDC721799EC39050A7C2E0B /* ContactsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B92D13A00CD5728E2A1505839C6CF /* ContactsCard.swift */; };
 		8E48F3D02ABB4ADAFD2980D285BA0B60 /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBCDB5575FFEFD5AF62ECD45B78E3F /* BottomDialogWithScrollViewController.swift */; };
+		8F0960F32494518500532734 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0960F22494518500532734 /* IntExtension.swift */; };
 		8FC59616E71AB34E59878E2654A5E3D7 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504E835F3D70B6D508C18EB8785A879 /* FilterButton.swift */; };
 		8FD2633C2493F99300E7D409 /* ItemObservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2633B2493F99300E7D409 /* ItemObservationCell.swift */; };
 		8FD2633F2493FE0B00E7D409 /* ItemMethodHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2633E2493FE0B00E7D409 /* ItemMethodHeaderView.swift */; };
@@ -177,6 +178,7 @@
 		813BAFE2A7ABEC3C02FEF00590CDE54A /* FirstHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderView.swift; sourceTree = "<group>"; };
 		8656C8B624353A4A3D29B1726C434996 /* ItemSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemSelection.swift; sourceTree = "<group>"; };
 		87DC3EE5AE076DD226ACE5328B04ECE7 /* ConstructionCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
+		8F0960F22494518500532734 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		8FD2633B2493F99300E7D409 /* ItemObservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemObservationCell.swift; sourceTree = "<group>"; };
 		8FD2633E2493FE0B00E7D409 /* ItemMethodHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodHeaderView.swift; sourceTree = "<group>"; };
 		94D3BC37B179D65038ADDF9E64D1D094 /* ProgressToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressToolTip.swift; sourceTree = "<group>"; };
@@ -811,6 +813,7 @@
 			children = (
 				B889DAE69F435037AB1894BB1D8600C5 /* DateExtension.swift */,
 				59586C800161E762D074AE4B5035BC20 /* FloatExtension.swift */,
+				8F0960F22494518500532734 /* IntExtension.swift */,
 				0EAAA23E4F4EB65CF60CC28ADA39FDAE /* NSMutableAttributedStringExtension.swift */,
 				FC666C20E5DDBCAD93FE0E83EBBECA0A /* UIColorExtension.swift */,
 				9F3D6A7CB1BEA9B94211C40A29F58D44 /* UIImageExtension.swift */,
@@ -1075,6 +1078,7 @@
 				0D69DFB9730ABE83B5CB451B9C4C1754 /* SelectRecentViewController.swift in Sources */,
 				8809DD2933317ECB3A365F8DD57FD2DE /* ServiceInspectionFormFilledCard.swift in Sources */,
 				DD894DAF74933EFBDF6C596D6BCFADCF /* ServiceInspectionFormFilledCardStack.swift in Sources */,
+				8F0960F32494518500532734 /* IntExtension.swift in Sources */,
 				9D959247A8447E55080E602EE5BF5716 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */,
 				0CBFC890DC3D7CCBB7321978AE0883A7 /* StantUiIosLibrary-dummy.m in Sources */,
 				7A8D82F86034909281A86B085C717DB1 /* SyncDialogView.swift in Sources */,

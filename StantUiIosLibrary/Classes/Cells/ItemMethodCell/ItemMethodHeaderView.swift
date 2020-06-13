@@ -11,11 +11,10 @@ public class ItemMethodHeaderView: UIView {
     var statusTag:                   UIView?
     var itemTitleLabel:              UILabel?
     var reprovedInspectionIndicator: UIView?
-    var expandButton:                UIButton?
+    var expandImageView:             UIImageView?
     var delegate:                    ItemMethodHeaderViewDelegate?
     
     public static let headerHeight: CGFloat = 50
-    public var color:               UIColor = .greenStant
     public var isExpanded                   = false
     public var section                      = 0
     
@@ -41,18 +40,9 @@ public class ItemMethodHeaderView: UIView {
     }
     
     fileprivate func configureStatusTag(status: ItemMethodEnum) {
-        switch status {
-        case .notInspected:
-            color = .clear
-        case .reproved:
-            color = .redLightStant
-        case .approved:
-            color = .greenStant
-        }
-        
         statusTag                 = UIView()
         guard let statusTag       = statusTag else { return }
-        statusTag.backgroundColor = color
+        statusTag.backgroundColor = status.colorValue()
         
         self.addSubview(statusTag)
         statusTag.anchor(top:     self.topAnchor,
@@ -89,17 +79,28 @@ public class ItemMethodHeaderView: UIView {
     }
     
     fileprivate func configureExpandButton() {
-        expandButton           = UIButton()
-        guard let expandButton = expandButton else { return }
-        
+        expandImageView           = UIImageView()
+        guard let expandImageView = expandImageView else { return }
+    
         toggleButton()
-        expandButton.addTarget(self, action: #selector(handleButtonClick), for: .touchUpInside)
         
-        self.addSubview(expandButton)
-        expandButton.anchor(top:      self.topAnchor,
-                            trailing: self.trailingAnchor,
-                            padding:  UIEdgeInsets(top: 18, left: 0, bottom: 0, right: 16),
-                            size:     CGSize(width: 16, height: 14))
+        self.addSubview(expandImageView)
+        expandImageView.anchor(top:      self.topAnchor,
+                               trailing: self.trailingAnchor,
+                               padding:  UIEdgeInsets(top: 19, left: 0, bottom: 0, right: 16),
+                               size:     CGSize(width: 16, height: 14))
+        
+        let tapView             = UIView()
+        let tap                 = UITapGestureRecognizer(target: self, action: #selector(handleButtonClick))
+        tapView.backgroundColor = .clear
+        
+        self.addSubview(tapView)
+        tapView.anchor(top:      self.topAnchor,
+                       trailing: self.trailingAnchor,
+                       padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0),
+                       size:     CGSize(width: 30, height: 30))
+        
+        tapView.addGestureRecognizer(tap)
     }
     
     @objc func handleButtonClick() {
@@ -111,15 +112,26 @@ public class ItemMethodHeaderView: UIView {
     
     func toggleButton() {
         if isExpanded {
-            expandButton?.setImage(UIImage(named: "up"), for: .normal)
+            expandImageView?.image = UIImage(named: "up")
         } else {
-            expandButton?.setImage(UIImage(named: "down"), for: .normal)
+            expandImageView?.image = UIImage(named: "down")
         }
     }
 }
 
 public enum ItemMethodEnum {
-    case notInspected, reproved, approved 
+    case notInspected, reproved, approved
+    
+    public func colorValue() -> UIColor {
+        switch self {
+        case .notInspected:
+            return .clear
+        case .reproved:
+            return .redLightStant
+        case .approved:
+            return .greenStant
+        }
+    }
 }
 
 public protocol ItemMethodHeaderViewDelegate {

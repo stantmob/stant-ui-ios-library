@@ -10,14 +10,16 @@ import UIKit
 import StantUiIosLibrary
 
 class ItemMethodListingViewController: UIViewController {
-    public var tableView: UITableView?
+    public var tableView:             UITableView?
+    public var originalContentOffset: CGPoint?
     
     public let statusList: [ItemMethodEnum]  = [.approved, .reproved, .notInspected,
                                                 .approved, .reproved, .notInspected,
                                                 .approved, .reproved, .notInspected,
+                                                .approved, .reproved, .notInspected,
                                                 .approved, .reproved, .notInspected]
-    public let hasReprovedMethodList: [Bool] = (1...12).map { index in return index % 2 == 0 }
-    public var isExpandedList:        [Bool] = (1...12).map { _ in false }
+    public let hasReprovedMethodList: [Bool] = (1...15).map { index in return index % 2 == 0 }
+    public var isExpandedList:        [Bool] = (1...15).map { _ in false }
     
     public let observationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget risus in urna imperdiet sagittis ut vel quam. Fusce sagittis nec nibh ac pulvinar. Nunc aliquam lorem a mauris volutpat, ornare ultricies urna laoreet. Morbi vitae blandit velit. Nam eleifend nec tortor non convallis."
     
@@ -41,7 +43,7 @@ class ItemMethodListingViewController: UIViewController {
                          leading:  self.view.leadingAnchor,
                          bottom:   self.view.bottomAnchor,
                          trailing: self.view.trailingAnchor,
-                         padding:  UIEdgeInsets(top: 70, left: 22, bottom: 0, right: 15))
+                         padding:  UIEdgeInsets(top: 70, left: 1, bottom: 0, right: 0))
         
         tableView.register(ItemObservationCell.self, forCellReuseIdentifier: ItemObservationCell.identifier())
     }
@@ -84,12 +86,21 @@ extension ItemMethodListingViewController: UITableViewDelegate, UITableViewDataS
         
         return cell
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        originalContentOffset = nil
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let overrideOffset = originalContentOffset, scrollView.contentOffset != overrideOffset {
+            scrollView.setContentOffset(overrideOffset, animated: false)
+        }
+    }
 }
 
 extension ItemMethodListingViewController: ItemMethodHeaderViewDelegate {
     func toggleCollapse(section: Int) {
         guard let tableView = tableView else { return }
-        let offset = tableView.contentOffset
         
         if isExpandedList[section] {
             isExpandedList[section] = !isExpandedList[section]
@@ -99,6 +110,8 @@ extension ItemMethodListingViewController: ItemMethodHeaderViewDelegate {
             tableView.insertRows(at: [IndexPath(row: 0, section: section)], with: .fade)
         }
         
-        tableView.contentOffset = offset
+        if tableView.contentOffset != originalContentOffset {
+            originalContentOffset = tableView.contentOffset
+        }
     }
 }

@@ -14,7 +14,6 @@ public class VerifiedMethodCell: UITableViewCell {
     var methodDescription:    UILabel?
     
     public static let cellHeight: CGFloat = 69
-    public var color:             UIColor = .greenStant
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,6 +25,11 @@ public class VerifiedMethodCell: UITableViewCell {
     }
     
     deinit {
+        self.removeSubviews()
+    }
+    
+    override public func prepareForReuse() {
+        super.prepareForReuse()
         self.removeSubviews()
     }
     
@@ -57,18 +61,7 @@ public class VerifiedMethodCell: UITableViewCell {
                           trailing: self.trailingAnchor,
                           size:     CGSize(width: self.frame.width + 6, height: 28))
         
-        switch status {
-        case .notInspected:
-            color = .darkGrayStant
-        case .reproved:
-            color = .redLightStant
-        case .approved:
-            color = .greenStant
-        case .notApplicable:
-            color = .grayStant
-        }
-        
-        statusView.configureStatusTag(color: color, order: order)
+        statusView.configureStatusTag(color: status.colorValue(), order: order)
     }
     
     fileprivate func configureReinspectedIndicator(isReinspection: Bool) {
@@ -117,4 +110,17 @@ public class VerifiedMethodCell: UITableViewCell {
 
 public enum VerifiedMethodStatusEnum {
     case notApplicable, approved, reproved, notInspected
+    
+    public func colorValue() -> UIColor {
+        switch self {
+        case .notInspected:
+            return .darkGrayStant
+        case .reproved:
+            return .redLightStant
+        case .approved:
+            return .greenStant
+        case .notApplicable:
+            return .grayStant
+        }
+    }
 }
