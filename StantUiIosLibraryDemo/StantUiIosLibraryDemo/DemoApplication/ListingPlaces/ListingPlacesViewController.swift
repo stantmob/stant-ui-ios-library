@@ -16,7 +16,6 @@ public class ListingPlacesViewController: UIViewController {
     public var placesStatusEnum: [PlaceStatusEnum] = [.noPlanning, .hasPlanning, .allApproved, .allFinalized]
     public var placeTitleList: [String] = ["Obra 1","Obra 2","Obra 3","Obra 4"]
     public var quantitySubPlaceList: [Int] = [0, 1, 2, 3]
-//    public var hasSubPlacesList: [Bool] = [false, true, true, true]
     
     public override func viewDidLoad() {
         super.viewDidLoad()

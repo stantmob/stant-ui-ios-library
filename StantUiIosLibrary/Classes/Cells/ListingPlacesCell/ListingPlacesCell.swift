@@ -46,7 +46,6 @@ public class ListingPlacesCell: UITableViewCell {
         
         configureBar(status: status)
         configureLocationImageView()
-        //configurePlaceSubPlaceAnchor(placeTitle: placeTitle, quantitySubPlaces: quantitySubPlaces, hasSubPlaces: hasSubPlaces)
         configurePlaceTitleLabel(placeTitle: placeTitle, quantitySubPlaces: quantitySubPlaces)
         configureSubPlacesLabel(quantitySubPlaces: quantitySubPlaces)
         configurePercentagePlaceLabel()
@@ -104,16 +103,6 @@ public class ListingPlacesCell: UITableViewCell {
                                               height: 22))
         
     }
-    
-//    fileprivate func configurePlaceSubPlaceAnchor(placeTitle: String, quantitySubPlaces: Int) {
-//
-//        if quantitySubPlaces == 0{
-//            configurePlaceTitleLabel(placeTitle: placeTitle, quantitySubPlaces: quantitySubPlaces)
-//        } else {
-//            configurePlaceTitleLabel(placeTitle: placeTitle, quantitySubPlaces: quantitySubPlaces)
-//            configureSubPlacesLabel(quantitySubPlaces: quantitySubPlaces)
-//        }
-//    }
     
     fileprivate func configurePlaceTitleLabel(placeTitle: String, quantitySubPlaces: Int) {
         placeTitleLabel           = UILabel()
