@@ -13,6 +13,10 @@ public class ListingPlacesViewController: UIViewController {
     
     public var tableView: UITableView?
     public var delegate: ListingPlacesViewDelegate?
+    public var placesStatusEnum: [PlaceStatusEnum] = [.noPlanning, .hasPlanning, .allApproved, .allFinalized]
+    public var placeTitleList: [String] = ["Obra 1","Obra 2","Obra 3","Obra 4"]
+    public var quantitySubPlaceList: [Int] = [0, 1, 2, 3]
+//    public var hasSubPlacesList: [Bool] = [false, true, true, true]
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +56,7 @@ public protocol ListingPlacesViewDelegate {
 
 extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return placesStatusEnum.count
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,7 +66,9 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListingPlacesCell.identifier(), for: indexPath) as? ListingPlacesCell else { return UITableViewCell() }
         
-        cell.configureViewFor()
+        cell.configureViewFor(status:            placesStatusEnum[indexPath.row],
+                              placeTitle:        placeTitleList[indexPath.row],
+                              quantitySubPlaces: quantitySubPlaceList[indexPath.row])
         
         return cell
     }
