@@ -25,6 +25,10 @@ class AppStrings {
     public static let service_inspection_form_filled_details_quantity_label = localized("service_inspection_form_filled_details.quantity_label")
     public static let service_inspection_form_filled_details_tests_label    = localized("service_inspection_form_filled_details.tests_label")
     
+    //Place Planning
+    public static let place_planning_sub_place_label  = localized("place_planning.sub_place_label")
+    public static let place_planning_sub_places_label = localized("place_planning.sub_places_label")
+    
     public static func localized(_ value: String) -> String {
         let currentLanguage = Locale.current
         let bundle          = Bundle.init(identifier: "org.cocoapods.StantUiIosLibrary") ?? Bundle.main

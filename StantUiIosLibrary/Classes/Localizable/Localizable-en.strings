@@ -22,3 +22,7 @@
 "service_inspection_form_filled_details.deadline_label" = "Deadline";
 "service_inspection_form_filled_details.quantity_label" = "Quantity";
 "service_inspection_form_filled_details.tests_label"    = "Tests";
+
+//Place Planning
+"place_planning.sub_place_label" = "Subplace";
+"place_planning.sub_places_label" = "Subplaces";

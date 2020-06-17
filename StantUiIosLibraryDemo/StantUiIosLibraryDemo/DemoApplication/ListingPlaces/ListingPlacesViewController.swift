@@ -11,11 +11,12 @@ import StantUiIosLibrary
 
 public class ListingPlacesViewController: UIViewController {
     
-    public var tableView: UITableView?
-    public var delegate: ListingPlacesViewDelegate?
-    public var placesStatusEnum: [PlaceStatusEnum] = [.noPlanning, .hasPlanning, .allApproved, .allFinalized]
-    public var placeTitleList: [String] = ["Obra 1","Obra 2","Obra 3","Obra 4"]
-    public var quantitySubPlaceList: [Int] = [0, 1, 2, 3]
+    public var tableView:            UITableView?
+    public var placesStatusEnum:     [PlaceStatusEnum] = [.noPlanning, .hasPlanning, .allApproved, .allFinalized]
+    public var placeTitleList:       [String]          = ["Obra 1","Obra 2","Obra 3","Obra 4"]
+    public var quantitySubPlaceList: [Int]             = [0, 1, 2, 3]
+    public var percentageList:       [Float]           = [80, 32.5, 30, 110]
+    public var hasFispsList:         [Bool]            = [true, false, false, true]
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,9 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
         
         cell.configureViewFor(status:            placesStatusEnum[indexPath.row],
                               placeTitle:        placeTitleList[indexPath.row],
-                              quantitySubPlaces: quantitySubPlaceList[indexPath.row])
+                              quantitySubPlaces: quantitySubPlaceList[indexPath.row],
+                              percentage:        percentageList[indexPath.row],
+                              hasFips:           hasFispsList[indexPath.row])
         
         return cell
     }
