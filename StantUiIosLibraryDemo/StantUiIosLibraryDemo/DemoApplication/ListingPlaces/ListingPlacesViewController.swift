@@ -23,7 +23,7 @@ public class ListingPlacesViewController: UIViewController {
         
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.view.backgroundColor = .white
         

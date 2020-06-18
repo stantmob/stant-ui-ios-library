@@ -65,8 +65,6 @@ public class ListingPlacesCell: UITableViewCell {
         guard let bar       = bar else { return }
         bar.backgroundColor = status.colorValue()
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
         self.addSubview(bar)
         bar.anchor(top:     self.topAnchor,
                    leading: self.leadingAnchor,
