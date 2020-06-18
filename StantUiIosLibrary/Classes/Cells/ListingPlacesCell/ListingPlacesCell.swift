@@ -10,7 +10,7 @@ import UIKit
 public class ListingPlacesCell: UITableViewCell {
     
     public static let cellHeight:    CGFloat = 56
-    
+    public var delegate:             ListingPlacesCellDidSelectDelegate?
     public var bar:                  UIView?
     public var locationImageView:    UIView?
     public var locationImage:        UIImageView?
@@ -37,12 +37,16 @@ public class ListingPlacesCell: UITableViewCell {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 4)
+        let padding = UIEdgeInsets(top:    0,
+                                   left:   0,
+                                   bottom: 2,
+                                   right:  4)
         bounds      = bounds.inset(by: padding)
     }
     
-    public func configureViewFor(status: PlaceStatusEnum, placeTitle: String, quantitySubPlaces: Int, percentage: Float, hasFips: Bool) {
+    public func configureViewFor(delegate: ListingPlacesCellDidSelectDelegate, status: PlaceStatusEnum, placeTitle: String, quantitySubPlaces: Int, percentage: Float, hasFips: Bool) {
         self.removeSubviews()
+        self.delegate = delegate
         
         configureBar(status: status)
         configureLocationImageView()
@@ -111,20 +115,14 @@ public class ListingPlacesCell: UITableViewCell {
         placeTitleLabel.font      = .systemFont(ofSize: 16)
 
         self.addSubview(placeTitleLabel)
-        
-        quantitySubPlaces == 0 ? placeTitleLabel.anchor(top:     self.topAnchor,
-                                                        leading: locationImageView?.trailingAnchor,
-                                                        bottom:  self.bottomAnchor,
-                                                        padding: UIEdgeInsets(top:    5,
-                                                                              left:   7,
-                                                                              bottom: 5,
-                                                                              right:  0)) : placeTitleLabel.anchor(top:     self.topAnchor,
-                                                                                                                   leading: locationImageView?.trailingAnchor,
-                                                                                                                   bottom:  self.bottomAnchor,
-                                                                                                                   padding: UIEdgeInsets(top:    5,
-                                                                                                                                         left:   7,
-                                                                                                                                         bottom: 18,
-                                                                                                                                         right:  0))
+        let bottomPadding: CGFloat = quantitySubPlaces == 0 ? 5 : 18
+        placeTitleLabel.anchor(top:     self.topAnchor,
+                               leading: locationImageView?.trailingAnchor,
+                               bottom:  self.bottomAnchor,
+                               padding: UIEdgeInsets(top:    5,
+                                                     left:   7,
+                                                     bottom: bottomPadding,
+                                                     right:  0))
     }
 
     fileprivate func configureSubPlacesLabel(quantitySubPlaces: Int) {
@@ -135,12 +133,10 @@ public class ListingPlacesCell: UITableViewCell {
         subPlacesLabel.textColor = .darkGrayStant
         subPlacesLabel.font      = .systemFont(ofSize: 12)
         
-        if quantitySubPlaces == 1 {
-            subPlacesLabel.text = "\(quantitySubPlaces) \(AppStrings.place_planning_sub_place_label)"
-        } else {
-            subPlacesLabel.text = "\(quantitySubPlaces) \(AppStrings.place_planning_sub_places_label)"
-        }
-
+        let subPlaceText    = quantitySubPlaces == 1 ? "\(quantitySubPlaces) \(AppStrings.place_planning_sub_place_label)" :
+                              "\(quantitySubPlaces) \(AppStrings.place_planning_sub_places_label)"
+        subPlacesLabel.text = subPlaceText
+        
         self.addSubview(subPlacesLabel)
         subPlacesLabel.anchor(leading: locationImageView?.trailingAnchor,
                               bottom: self.bottomAnchor,
@@ -156,7 +152,7 @@ public class ListingPlacesCell: UITableViewCell {
     
     fileprivate func configurePercentagePlaceLabel(percentage: Float) {
         percentagePlacelabel           = UILabel()
-        let percentage                 = percentage <= 100 ? percentage: 100
+        let percentage                 = percentage <= 100 ? percentage : 100
         guard let percentagePlacelabel = percentagePlacelabel else { return }
         percentagePlacelabel.textColor = .darkGrayStant
         percentagePlacelabel.text      = "\(truncateFloat(value: percentage))%"
@@ -193,8 +189,7 @@ public class ListingPlacesCell: UITableViewCell {
         imageFispIcon.image     = UIImage(named: "archivePlanning")
         imageFispIcon.image     = imageFispIcon.image?.withRenderingMode(.alwaysTemplate)
         
-        
-        if hasFisps == true {
+        if hasFisps {
             imageFispIcon.tintColor = .blueLightStant
             configureGestureRecognizerRightView(hasFisps: hasFisps)
         } else {
@@ -231,10 +226,9 @@ public class ListingPlacesCell: UITableViewCell {
     }
     
     @objc func goToSubPlaces() {
-        print("Have Subplaces")
+        delegate?.goToSubPlaces()
     }
        
-    
     fileprivate func configureGestureRecognizerRightView(hasFisps: Bool) {
         rightTapView                 = UIView()
         guard let rightTapView       = rightTapView else { return }
@@ -252,7 +246,7 @@ public class ListingPlacesCell: UITableViewCell {
     }
     
     @objc func goToServiceInspectionFormFilledScreen() {
-        print("Have Fips")
+        delegate?.goToServiceInspectionFormFilledScreen()
     }
     
     fileprivate func addMainViewWithShadow() {
@@ -265,21 +259,24 @@ public class ListingPlacesCell: UITableViewCell {
     }
 }
 
+public protocol ListingPlacesCellDidSelectDelegate {
+    func goToSubPlaces()
+    func goToServiceInspectionFormFilledScreen()
+}
+
 public enum PlaceStatusEnum {
     case noPlanning, hasPlanning, allApproved, allFinalized
     
     public func colorValue() -> UIColor {
         switch self {
-        case .noPlanning:
-            return .clear
-        case .hasPlanning:
-            return .darkGrayStant
-        case .allApproved:
-            return .greenStant
-        case .allFinalized:
-            return .orangeStant
+            case .noPlanning:
+                return .clear
+            case .hasPlanning:
+                return .darkGrayStant
+            case .allApproved:
+                return .greenStant
+            case .allFinalized:
+                return .orangeStant
         }
     }
 }
-
-

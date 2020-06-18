@@ -24,6 +24,6 @@
 "service_inspection_form_filled_details.tests_label"    = "Testes";
 
 //Place Planning
-"place_planning.sub_place_label" = "Sublocal";
+"place_planning.sub_place_label"  = "Sublocal";
 "place_planning.sub_places_label" = "Sublocais";
 

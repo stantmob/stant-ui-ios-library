@@ -47,14 +47,17 @@ public class ListingPlacesViewController: UIViewController {
         
         tableView.register(ListingPlacesCell.self, forCellReuseIdentifier: ListingPlacesCell.identifier())
     }
+}
+
+extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegate, ListingPlacesCellDidSelectDelegate {
+    public func goToSubPlaces() {
+        print("Have SubPlaces")
+    }
     
-}
-
-public protocol ListingPlacesViewDelegate {
-    func didClickOnTableViewCellWith(index: Int)
-}
-
-extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegate {
+    public func goToServiceInspectionFormFilledScreen() {
+        print("Have Fisps")
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placesStatusEnum.count
     }
@@ -66,16 +69,13 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListingPlacesCell.identifier(), for: indexPath) as? ListingPlacesCell else { return UITableViewCell() }
         
-        cell.configureViewFor(status:            placesStatusEnum[indexPath.row],
+        cell.configureViewFor(delegate:          self,
+                              status:            placesStatusEnum[indexPath.row],
                               placeTitle:        placeTitleList[indexPath.row],
                               quantitySubPlaces: quantitySubPlaceList[indexPath.row],
                               percentage:        percentageList[indexPath.row],
                               hasFips:           hasFispsList[indexPath.row])
         
         return cell
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
     }
 }
