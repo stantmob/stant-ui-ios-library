@@ -1,5 +1,5 @@
 //
-//  ListingPlacesCell.swift
+//  PlacesCell.swift
 //  StantUiIosLibrary
 //
 //  Created by Renato Vieira on 6/11/20.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-public class ListingPlacesCell: UITableViewCell {
+public class PlacesCell: UITableViewCell {
     
     public static let cellHeight:    CGFloat = 56
-    public var delegate:             ListingPlacesCellDidSelectDelegate?
+    public var delegate:             PlaceCellDidSelectDelegate?
     public var bar:                  UIView?
-    public var locationImageView:    UIView?
+    public var locationView:         UIView?
     public var locationImage:        UIImageView?
     public var placeTitleLabel:      UILabel?
     public var subPlacesLabel:       UILabel?
     public var percentagePlacelabel: UILabel?
-    public var fispIconView:         UIView?
-    public var fispIconImage:        UIImageView?
+    public var siffIconView:         UIView?
+    public var siffIconImage:        UIImageView?
     public var leftTapView:          UIView?
     public var rightTapView:         UIView?
     
@@ -44,7 +44,12 @@ public class ListingPlacesCell: UITableViewCell {
         bounds      = bounds.inset(by: padding)
     }
     
-    public func configureViewFor(delegate: ListingPlacesCellDidSelectDelegate, status: PlaceStatusEnum, placeTitle: String, quantitySubPlaces: Int, percentage: Float, hasFips: Bool) {
+    public func configureViewFor(delegate:          PlaceCellDidSelectDelegate,
+                                 status:            PlaceStatusEnum,
+                                 placeTitle:        String,
+                                 quantitySubPlaces: Int,
+                                 percentage:        Float,
+                                 hasSiff:           Bool) {
         self.removeSubviews()
         self.delegate = delegate
         
@@ -53,7 +58,7 @@ public class ListingPlacesCell: UITableViewCell {
         configurePlaceTitleLabel(placeTitle: placeTitle, quantitySubPlaces: quantitySubPlaces)
         configureSubPlacesLabel(quantitySubPlaces: quantitySubPlaces)
         configurePercentagePlaceLabel(percentage: percentage)
-        configureListingPlacesIcon(hasFisps: hasFips)
+        configureListingPlacesIcon(hasSiff: hasSiff)
         configureGestureRecognizerLeftView(quantitySubPlaces: quantitySubPlaces)
         addMainViewWithShadow()
         
@@ -73,20 +78,20 @@ public class ListingPlacesCell: UITableViewCell {
     }
     
     fileprivate func configureLocationImageView() {
-        locationImageView                 = UIView()
-        guard let locationImageView       = locationImageView else { return }
-        locationImageView.backgroundColor = .white
+        locationView                 = UIView()
+        guard let locationView       = locationView else { return }
+        locationView.backgroundColor = .white
         
-        self.addSubview(locationImageView)
-        locationImageView.anchor(top:     self.topAnchor,
-                                 leading: bar?.trailingAnchor,
-                                 bottom:  self.bottomAnchor,
-                                 padding: UIEdgeInsets(top:    16,
-                                                       left:   21,
-                                                       bottom: 16,
-                                                       right:  0),
-                                 size:    CGSize(width:  21,
-                                                 height: 22))
+        self.addSubview(locationView)
+        locationView.anchor(top:     self.topAnchor,
+                            leading: bar?.trailingAnchor,
+                            bottom:  self.bottomAnchor,
+                            padding: UIEdgeInsets(top:    16,
+                                                  left:   21,
+                                                  bottom: 16,
+                                                  right:  0),
+                            size:    CGSize(width:  21,
+                                            height: 22))
         
         locationImage                    = UIImageView()
         guard let locationImage          = locationImage else { return }
@@ -96,10 +101,10 @@ public class ListingPlacesCell: UITableViewCell {
         locationImage.tintColor          = .blueDarkStant
         
         self.addSubview(locationImage)
-        locationImage.anchor(top:      locationImageView.topAnchor,
-                             leading:  locationImageView.leadingAnchor,
-                             bottom:   locationImageView.bottomAnchor,
-                             trailing: locationImageView.trailingAnchor,
+        locationImage.anchor(top:      locationView.topAnchor,
+                             leading:  locationView.leadingAnchor,
+                             bottom:   locationView.bottomAnchor,
+                             trailing: locationView.trailingAnchor,
                              size:     CGSize(width:  21,
                                               height: 22))
         
@@ -115,7 +120,7 @@ public class ListingPlacesCell: UITableViewCell {
         self.addSubview(placeTitleLabel)
         let bottomPadding: CGFloat = quantitySubPlaces == 0 ? 5 : 18
         placeTitleLabel.anchor(top:     self.topAnchor,
-                               leading: locationImageView?.trailingAnchor,
+                               leading: locationView?.trailingAnchor,
                                bottom:  self.bottomAnchor,
                                padding: UIEdgeInsets(top:    5,
                                                      left:   7,
@@ -136,7 +141,7 @@ public class ListingPlacesCell: UITableViewCell {
         subPlacesLabel.text = subPlaceText
         
         self.addSubview(subPlacesLabel)
-        subPlacesLabel.anchor(leading: locationImageView?.trailingAnchor,
+        subPlacesLabel.anchor(leading: locationView?.trailingAnchor,
                               bottom: self.bottomAnchor,
                               padding: UIEdgeInsets(top:    0,
                                                     left:   8,
@@ -166,14 +171,14 @@ public class ListingPlacesCell: UITableViewCell {
                                                            right:  50))
     }
     
-    fileprivate func configureListingPlacesIcon(hasFisps: Bool) {
-        fispIconView                    = UIView()
-        guard let fispIconView          = fispIconView else { return }
-        fispIconView.backgroundColor    = .iceGray
-        fispIconView.layer.cornerRadius = 17
+    fileprivate func configureListingPlacesIcon(hasSiff: Bool) {
+        siffIconView                    = UIView()
+        guard let siffIconView          = siffIconView else { return }
+        siffIconView.backgroundColor    = .iceGray
+        siffIconView.layer.cornerRadius = 17
         
-        self.addSubview(fispIconView)
-        fispIconView.anchor(top:      self.topAnchor,
+        self.addSubview(siffIconView)
+        siffIconView.anchor(top:      self.topAnchor,
                             trailing: self.trailingAnchor,
                             padding:  UIEdgeInsets(top:    10,
                                                    left:   0,
@@ -182,23 +187,23 @@ public class ListingPlacesCell: UITableViewCell {
                             size:     CGSize(width:  34,
                                              height: 34))
         
-        fispIconImage = UIImageView()
-        guard let imageFispIcon = fispIconImage else { return }
-        imageFispIcon.image     = UIImage(named: "archivePlanning")
-        imageFispIcon.image     = imageFispIcon.image?.withRenderingMode(.alwaysTemplate)
+        siffIconImage           = UIImageView()
+        guard let siffIconImage = siffIconImage else { return }
+        siffIconImage.image     = UIImage(named: "archivePlanning")
+        siffIconImage.image     = siffIconImage.image?.withRenderingMode(.alwaysTemplate)
         
-        if hasFisps {
-            imageFispIcon.tintColor = .blueLightStant
-            configureGestureRecognizerRightView(hasFisps: hasFisps)
+        if hasSiff {
+            siffIconImage.tintColor = .blueLightStant
+            configureGestureRecognizerRightView(hasSiff: hasSiff)
         } else {
-            imageFispIcon.tintColor = .grayStant
+            siffIconImage.tintColor = .grayStant
         }
         
-        self.addSubview(imageFispIcon)
-        imageFispIcon.anchor(top:      fispIconView.topAnchor,
-                             leading:  fispIconView.leadingAnchor,
-                             bottom:   fispIconView.bottomAnchor,
-                             trailing: fispIconView.trailingAnchor,
+        self.addSubview(siffIconImage)
+        siffIconImage.anchor(top:      siffIconView.topAnchor,
+                             leading:  siffIconView.leadingAnchor,
+                             bottom:   siffIconView.bottomAnchor,
+                             trailing: siffIconView.trailingAnchor,
                              padding:  UIEdgeInsets(top:    8,
                                                     left:   8,
                                                     bottom: 8,
@@ -214,10 +219,10 @@ public class ListingPlacesCell: UITableViewCell {
         
         self.addSubview(leftTapView)
         leftTapView.anchor(top:  self.topAnchor,
-                        leading: self.leadingAnchor,
-                        bottom:  self.bottomAnchor,
-                        size:    CGSize(width:  self.frame.width * 0.7,
-                                        height: ListingPlacesCell.cellHeight))
+                           leading: self.leadingAnchor,
+                           bottom:  self.bottomAnchor,
+                           size:    CGSize(width:  self.frame.width * 0.7,
+                                           height: PlacesCell.cellHeight))
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(goToSubPlaces))
         leftTapView.addGestureRecognizer(tap)
@@ -227,7 +232,7 @@ public class ListingPlacesCell: UITableViewCell {
         delegate?.goToSubPlaces()
     }
        
-    fileprivate func configureGestureRecognizerRightView(hasFisps: Bool) {
+    fileprivate func configureGestureRecognizerRightView(hasSiff: Bool) {
         rightTapView                 = UIView()
         guard let rightTapView       = rightTapView else { return }
         rightTapView.backgroundColor = .clear
@@ -237,7 +242,7 @@ public class ListingPlacesCell: UITableViewCell {
                             bottom:   self.bottomAnchor,
                             trailing: self.trailingAnchor,
                             size:     CGSize(width:  self.frame.width * 0.3,
-                                             height: ListingPlacesCell.cellHeight))
+                                             height: PlacesCell.cellHeight))
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(goToServiceInspectionFormFilledScreen))
         rightTapView.addGestureRecognizer(tap)
@@ -257,7 +262,7 @@ public class ListingPlacesCell: UITableViewCell {
     }
 }
 
-public protocol ListingPlacesCellDidSelectDelegate {
+public protocol PlaceCellDidSelectDelegate {
     func goToSubPlaces()
     func goToServiceInspectionFormFilledScreen()
 }

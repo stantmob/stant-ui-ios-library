@@ -16,11 +16,10 @@ public class ListingPlacesViewController: UIViewController {
     public var placeTitleList:       [String]          = ["Obra 1","Obra 2","Obra 3","Obra 4"]
     public var quantitySubPlaceList: [Int]             = [0, 1, 2, 3]
     public var percentageList:       [Float]           = [80, 32.5, 30, 110]
-    public var hasFispsList:         [Bool]            = [true, false, false, true]
+    public var hasSiffList:          [Bool]            = [true, false, false, true]
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -45,17 +44,17 @@ public class ListingPlacesViewController: UIViewController {
                          bottom:   self.view.bottomAnchor,
                          trailing: self.view.trailingAnchor)
         
-        tableView.register(ListingPlacesCell.self, forCellReuseIdentifier: ListingPlacesCell.identifier())
+        tableView.register(PlacesCell.self, forCellReuseIdentifier: PlacesCell.identifier())
     }
 }
 
-extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegate, ListingPlacesCellDidSelectDelegate {
+extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegate, PlaceCellDidSelectDelegate {
     public func goToSubPlaces() {
-        print("Have SubPlaces")
+        print("Has SubPlaces")
     }
     
     public func goToServiceInspectionFormFilledScreen() {
-        print("Have Fisps")
+        print("Has Fisps")
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,18 +62,18 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ListingPlacesCell.cellHeight
+        return PlacesCell.cellHeight
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListingPlacesCell.identifier(), for: indexPath) as? ListingPlacesCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlacesCell.identifier(), for: indexPath) as? PlacesCell else { return UITableViewCell() }
         
         cell.configureViewFor(delegate:          self,
                               status:            placesStatusEnum[indexPath.row],
                               placeTitle:        placeTitleList[indexPath.row],
                               quantitySubPlaces: quantitySubPlaceList[indexPath.row],
                               percentage:        percentageList[indexPath.row],
-                              hasFips:           hasFispsList[indexPath.row])
+                              hasSiff:           hasSiffList[indexPath.row])
         
         return cell
     }
