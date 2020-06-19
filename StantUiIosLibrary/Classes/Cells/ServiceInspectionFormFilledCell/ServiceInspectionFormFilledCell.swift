@@ -259,7 +259,7 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
         case .finished:
             return AppStrings.service_inspection_form_filled_details_finished_label
         case .approved:
-            return AppStrings.service_inspection_form_filled_details_approve_label
+            return AppStrings.service_inspection_form_filled_details_approved_label
         case .late:
             return AppStrings.service_inspection_form_filled_details_late_label
         default:
@@ -273,7 +273,7 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
             return .progress
         case AppStrings.service_inspection_form_filled_details_finished_label:
             return .finished
-        case AppStrings.service_inspection_form_filled_details_approve_label:
+        case AppStrings.service_inspection_form_filled_details_approved_label:
             return .approved
         case AppStrings.service_inspection_form_filled_details_late_label:
             return .late
