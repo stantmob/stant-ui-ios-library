@@ -10,6 +10,7 @@ import UIKit
 import StantUiIosLibrary
 
 public class ListingPlacesViewController: UIViewController {
+    var detailView: PlacesCell?
     
     public var tableView:            UITableView?
     public var placesStatusEnum:     [PlaceStatusEnum] = [.noPlanning, .hasPlanning, .allApproved, .allFinalized]

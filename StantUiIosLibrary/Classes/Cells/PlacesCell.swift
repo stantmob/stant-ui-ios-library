@@ -8,7 +8,6 @@
 import UIKit
 
 public class PlacesCell: UITableViewCell {
-    
     public static let cellHeight:    CGFloat = 56
     public var delegate:             PlaceCellDidSelectDelegate?
     public var bar:                  UIView?
