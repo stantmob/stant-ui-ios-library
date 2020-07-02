@@ -21,18 +21,13 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
     let cardPlannedArea              = 1000.0
     let cardBeginAt                  = "01/04/2019"
     let cardEndAt                    = "12/04/2019"
-    
+    var serviceInspectionFormFilledTableView: ServiceInspectionFormFilledTableViewWithCollapsedSearchBar?
+     
     
     var serviceInspectionFormFilledList = [ServiceInspectionFormFilled]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.view.backgroundColor = .white
-        
         
         for i in 0...3 {
             let siff = ServiceInspectionFormFilled(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
@@ -46,10 +41,11 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
             serviceInspectionFormFilledList.append(siff)
         }
         
-        let serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
-                                                                                                                            y:      navigationBarHeight,
-                                                                                                                            width:  self.view.frame.width,
-                                                                                                                            height: self.view.frame.height -                               navigationBarHeight))
+        serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
+                                                                                                        y:      navigationBarHeight,
+                                                                                                        width:  self.view.frame.width,
+                                                                                                        height: self.view.frame.height - navigationBarHeight))
+        guard let serviceInspectionFormFilledTableView = serviceInspectionFormFilledTableView else { return }
         self.view.addSubview(serviceInspectionFormFilledTableView)
         serviceInspectionFormFilledTableView.anchor(top:      self.view.topAnchor,
                                                     leading:  self.view.leadingAnchor,
@@ -65,6 +61,10 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
                                                                tableViewDelegate:               self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.backgroundColor = .white
+    }
 }
 
 extension ServiceInspectionFormFilledListingViewController: ServiceInspectionFormFilledTableViewDidSelectDelegate {
