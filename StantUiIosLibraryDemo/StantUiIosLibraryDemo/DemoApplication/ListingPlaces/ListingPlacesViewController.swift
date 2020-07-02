@@ -10,7 +10,6 @@ import UIKit
 import StantUiIosLibrary
 
 public class ListingPlacesViewController: UIViewController {
-    var detailView: PlacesCell?
     
     public var tableView:            UITableView?
     public var placesStatusEnum:     [PlaceStatusEnum] = [.noPlanning, .hasPlanning, .allApproved, .allFinalized]
@@ -21,13 +20,15 @@ public class ListingPlacesViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureTableView()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.view.backgroundColor = .white
         
-        configureTableView()
+        
     }
     
     func configureTableView() {

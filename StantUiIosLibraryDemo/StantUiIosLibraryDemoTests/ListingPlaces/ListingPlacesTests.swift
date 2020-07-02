@@ -22,35 +22,56 @@ class ListingPlacesTests: XCTestCase {
     
     func testInitialState() {
         viewController.loadViewIfNeeded()
-        let detailView = viewController.detailView
+        let tableView = viewController.tableView
         
-        XCTAssertNotNil(detailView)
-        XCTAssertNotNil(detailView?.bar)
-        XCTAssertNotNil(detailView?.locationView)
-        XCTAssertNotNil(detailView?.locationImage)
-        XCTAssertNotNil(detailView?.placeTitleLabel)
-        XCTAssertNotNil(detailView?.subPlacesLabel)
-        XCTAssertNotNil(detailView?.percentagePlacelabel)
-        XCTAssertNotNil(detailView?.siffIconView)
-        XCTAssertNotNil(detailView?.siffIconImage)
-        XCTAssertNotNil(detailView?.leftTapView)
-        XCTAssertNotNil(detailView?.rightTapView)
+        for index in placeTitleList.indices {
+            let cell = tableView?.dequeueReusableCell(withIdentifier: PlacesCell.identifier(),
+                                                      for:            IndexPath(row: index, section: 0)) as! PlacesCell
+            
+            cell.configureViewFor(delegate:          self,
+                                  status:            placesStatusEnum[index],
+                                  placeTitle:        placeTitleList[index],
+                                  quantitySubPlaces: quantitySubPlaceList[index],
+                                  percentage:        percentageList[index],
+                                  hasSiff:           hasSiffList[index])
+            
+            XCTAssertNotNil(tableView)
+            XCTAssertNotNil(cell.bar)
+            XCTAssertNotNil(cell.locationView)
+            XCTAssertNotNil(cell.locationImage)
+            XCTAssertNotNil(cell.placeTitleLabel)
+            
+            if quantitySubPlaceList[index] == 0 {
+                XCTAssertNil(cell.subPlacesLabel)
+            } else {
+                XCTAssertNotNil(cell.subPlacesLabel)
+            }
+            
+            XCTAssertNotNil(cell.percentagePlacelabel)
+            XCTAssertNotNil(cell.siffIconView)
+            XCTAssertNotNil(cell.siffIconImage)
+            
+            if quantitySubPlaceList[index] == 0 {
+                XCTAssertNil(cell.leftTapView)
+            } else {
+                XCTAssertNotNil(cell.leftTapView)
+            }
+            
+            if hasSiffList[index] {
+                XCTAssertNotNil(cell.rightTapView)
+            } else {
+                XCTAssertNil(cell.rightTapView)
+            }
+        }
+    }
+}
+
+extension ListingPlacesTests: PlaceCellDidSelectDelegate {
+    func goToSubPlaces() {
+        print("Places screen")
     }
     
-    func testInBar() {
-        viewController.loadViewIfNeeded()
-        let bar = viewController.detailView?.bar
-        
-        XCTAssertNotNil(bar)
-        XCTAssertEqual(bar?.placesStatusEnum, placesStatusEnum[0])
-        
-        XCTAssertNotNil(bar)
-        XCTAssertEqual(bar?.placesStatusEnum, placesStatusEnum[1])
-        
-        XCTAssertNotNil(bar)
-        XCTAssertEqual(bar?.placesStatusEnum, placesStatusEnum[2])
-        
-        XCTAssertNotNil(bar)
-        XCTAssertEqual(bar?.placesStatusEnum, placesStatusEnum[3])
+    func goToServiceInspectionFormFilledScreen() {
+         print("Siff screen")
     }
 }
