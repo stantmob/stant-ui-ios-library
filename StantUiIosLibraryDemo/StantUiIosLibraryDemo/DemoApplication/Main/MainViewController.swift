@@ -192,7 +192,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToProgressBarWithToolTipDemo() {
-        self.openProgressBarWithToolTipDemo()
+        self.open(viewController: ProgressBarWithToolTipViewController())
     }
     
     fileprivate func addServiceInspectionFormFilledCardDemo() {
@@ -202,7 +202,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func goToServiceInspectionFormFilledCardDemo() {
-        self.openServiceInspectionFormFilledCardDemo()
+        self.open(viewController: ServiceInspectionFormFilledCardViewController())
     }
 
     fileprivate func addConstructionsContactsDemoTableView() {
@@ -222,7 +222,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToQuantityBarDemo() {
-        self.openQuantityBarDemo()
+        self.open(viewController: QuantityBarViewController())
     }
     
     fileprivate func addTeamScreenDemo() {
@@ -267,7 +267,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToItemMethodListingDemo() {
-        self.openItemMethodListingDemo()
+        self.open(viewController: ItemMethodListingViewController())
     }
     
     fileprivate func addVerifiedMethodListingDemo() {
@@ -277,6 +277,6 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToVerifiedMethodListingDemo() {
-        self.openVerifiedMethodListingDemo()
+        self.open(viewController: VerifiedMethodListingViewController())
     }
 }
