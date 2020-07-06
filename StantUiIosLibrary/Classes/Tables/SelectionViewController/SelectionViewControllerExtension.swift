@@ -34,27 +34,27 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectionType == .single {
+            selectedItems = []
             for index in selectedItems {
-                let cell            = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! PersonTableViewCell
+                guard let cell      = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { continue }
                 cell.accessoryType  = .none
             }
-            selectedItems = []
         } else if selectedItems.contains(indexPath.row) {
-            let cell           = tableView.cellForRow(at: indexPath) as! PersonTableViewCell
-            cell.accessoryType = .none
             selectedItems      = selectedItems.filter{ $0 != indexPath.row }
+            guard let cell     = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { return }
+            cell.accessoryType = .none
             return
         }
         
-        let cell            = tableView.cellForRow(at: indexPath) as! PersonTableViewCell
-        cell.accessoryType  = .checkmark
+        let cell            = tableView.cellForRow(at: indexPath) as? PersonTableViewCell
+        cell?.accessoryType  = .checkmark
         selectedItems.append(indexPath.row)
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell           = tableView.cellForRow(at: indexPath) as! PersonTableViewCell
-        cell.accessoryType = .none
         selectedItems      = selectedItems.filter{ $0 != indexPath.row }
+        guard let cell     = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { return }
+        cell.accessoryType = .none
     }
 }
 
