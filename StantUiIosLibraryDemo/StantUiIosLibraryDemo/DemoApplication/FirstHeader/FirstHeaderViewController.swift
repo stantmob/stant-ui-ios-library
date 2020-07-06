@@ -37,7 +37,7 @@ class FirstHeaderViewController: UIViewController, RecentItemCellDelegate {
     fileprivate func addHeaderView() {
         header = FirstHeaderView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: FirstHeaderView.headerHeight))
         
-        let dropdownImage        = UIImage(named: "down") ?? UIImage()
+        let dropdownImage        = UIImage(named: "dropDown") ?? UIImage()
         let notificaticationIcon = UIImage(named: "notifications") ?? UIImage()
         
         let dropdownButton       = FirstHeaderDropdownButton(title: headerTitle, action: #selector(openRecentItemsDialog), target: self, image: dropdownImage)

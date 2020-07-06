@@ -14,7 +14,7 @@ class FirstHeaderTests: XCTestCase {
     
     private var testVC: TestFirstHeaderViewController!
     
-    private let dropdownImage                 = UIImage(named: "down")!
+    private let dropdownImage                 = UIImage(named: "dropDown")!
     private let notificaticationIcon          = UIImage(named: "notifications")!
     private let standardConstructionSiteImage = UIImage(named: "home")!
     

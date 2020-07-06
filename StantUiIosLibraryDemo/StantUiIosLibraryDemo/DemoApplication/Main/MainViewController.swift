@@ -45,6 +45,8 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
+        self.addItemMethodListingDemo()
+        self.addVerifiedMethodListingDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -247,5 +249,34 @@ class MainViewController: UIViewController {
         self.scrollView.addButton(title:  "SIFF detail menu demo",
                                   action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
                                   target: self)
+    }
+    
+    @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
+        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
+        serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
+        
+        self.present(serviceInspectionFormFilledDetailMenuViewController,
+                     animated:   false,
+                     completion: nil)
+    }
+    
+    fileprivate func addItemMethodListingDemo() {
+        self.scrollView.addButton(title:  "Item listing demo",
+        action: #selector(goToItemMethodListingDemo),
+        target: self)
+    }
+    
+    @objc func goToItemMethodListingDemo() {
+        self.openItemMethodListingDemo()
+    }
+    
+    fileprivate func addVerifiedMethodListingDemo() {
+        self.scrollView.addButton(title:  "Method listing demo",
+        action: #selector(goToVerifiedMethodListingDemo),
+        target: self)
+    }
+    
+    @objc func goToVerifiedMethodListingDemo() {
+        self.openVerifiedMethodListingDemo()
     }
 }
