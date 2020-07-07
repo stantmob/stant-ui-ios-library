@@ -1,5 +1,5 @@
 //
-//  ApprovedVerifiedMethodHistoryCell.swift
+//  ApprovedInspectionCell.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 07/07/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ApprovedVerifiedMethodHistoryCell: UITableViewCell {
+public class ApprovedInspectionCell: UITableViewCell {
     public var statusBadge:      CellBadge?
     public var upperSeparator:   UIView?
     public var descriptionView:  UIView?
@@ -15,7 +15,7 @@ public class ApprovedVerifiedMethodHistoryCell: UITableViewCell {
     public var descriptionLabel: UILabel?
     public var editButton:       UIButton?
     public var detailButton:     UIButton?
-    public var delegate:         VerifiedMethodHistoryDelegate?
+    public var delegate:         InspectionCellButtonDelegate?
     
     public static let cellHeight: CGFloat = 137
     
@@ -44,7 +44,10 @@ public class ApprovedVerifiedMethodHistoryCell: UITableViewCell {
         bounds      = bounds.inset(by: padding)
     }
     
-    public func configure(descriptionText: String) {
+    public func configure(delegate:        InspectionCellButtonDelegate,
+                          descriptionText: String) {
+        self.delegate = delegate
+        
         self.removeSubviews()
         addShadow()
         configureStatusBadge()
@@ -142,6 +145,7 @@ public class ApprovedVerifiedMethodHistoryCell: UITableViewCell {
                           size:     CGSize(width: 60, height: self.frame.width))
         
         editButton.setTitle(AppStrings.edit, for: .normal)
+        editButton.setTitleColor(.darkText, for: .normal)
         editButton.addTarget(delegate, action: #selector(delegate?.goToMethodEditScreen), for: .touchUpInside)
     }
     
@@ -158,11 +162,7 @@ public class ApprovedVerifiedMethodHistoryCell: UITableViewCell {
                             size:     CGSize(width: 60, height: self.frame.width))
         
         detailButton.setTitle(AppStrings.details, for: .normal)
+        detailButton.setTitleColor(.darkText, for: .normal)
         detailButton.addTarget(delegate, action: #selector(delegate?.goToMethodDetailScreen), for: .touchUpInside)
     }
-}
-
-@objc public protocol VerifiedMethodHistoryDelegate {
-    @objc func goToMethodEditScreen()
-    @objc func goToMethodDetailScreen()
 }

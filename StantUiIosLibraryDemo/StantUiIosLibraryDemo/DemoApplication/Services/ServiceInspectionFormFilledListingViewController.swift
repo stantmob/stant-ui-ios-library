@@ -42,9 +42,9 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
         }
         
         serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
-                                                                                                        y:      navigationBarHeight,
-                                                                                                        width:  self.view.frame.width,
-                                                                                                        height: self.view.frame.height - navigationBarHeight))
+                                                                                                                        y:      navigationBarHeight,
+                                                                                                                        width:  self.view.frame.width,
+                                                                                                                        height: self.view.frame.height - navigationBarHeight))
         guard let serviceInspectionFormFilledTableView = serviceInspectionFormFilledTableView else { return }
         self.view.addSubview(serviceInspectionFormFilledTableView)
         serviceInspectionFormFilledTableView.anchor(top:      self.view.topAnchor,

@@ -1,5 +1,5 @@
 //
-//  ReprovedVerifiedMethodHistoryCell.swift
+//  ReprovedInspectionCell.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 07/07/20.
@@ -7,8 +7,9 @@
 
 import UIKit
 
-public class ReprovedVerifiedMethodHistoryCell: UITableViewCell {
-    public var statusBadge:          CellBadge?
+public class ReprovedInspectionCell: UITableViewCell {
+    public var statusBadge: CellBadge?
+    public var delegate:    InspectionCellButtonDelegate?
     
     public static let cellHeight: CGFloat = 137
     
@@ -37,9 +38,11 @@ public class ReprovedVerifiedMethodHistoryCell: UITableViewCell {
         bounds      = bounds.inset(by: padding)
     }
     
-    public func configure(severity:        Int,
+    public func configure(delegate:        InspectionCellButtonDelegate,
+                          severity:        Int,
                           deadLine:        Date,
                           descriptionText: String) {
+        self.delegate = delegate
         
     }
 }

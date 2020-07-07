@@ -1,5 +1,5 @@
 //
-//  VerifiedMethodHistoryListingViewController.swift
+//  InspectionListingViewController.swift
 //  StantUiIosLibraryDemo
 //
 //  Created by Leandro Martins on 07/07/20.
@@ -9,7 +9,7 @@
 import UIKit
 import StantUiIosLibrary
 
-class VerifiedMethodHistoryListingViewController: UIViewController {
+class InspectionListingViewController: UIViewController {
     public var tableView: UITableView?
     
     public let statusList:   [VerifiedMethodStatusEnum] = [.approved, .approved, .approved, .approved]
@@ -39,35 +39,49 @@ class VerifiedMethodHistoryListingViewController: UIViewController {
                          trailing: self.view.trailingAnchor,
                          padding:  UIEdgeInsets(top: 70, left: 22, bottom: 0, right: 15))
         
-        tableView.register(ApprovedVerifiedMethodHistoryCell.self, forCellReuseIdentifier: ApprovedVerifiedMethodHistoryCell.identifier())
-        tableView.register(ReprovedVerifiedMethodHistoryCell.self, forCellReuseIdentifier: ReprovedVerifiedMethodHistoryCell.identifier())
+        tableView.register(ApprovedInspectionCell.self, forCellReuseIdentifier: ApprovedInspectionCell.identifier())
+        tableView.register(ReprovedInspectionCell.self, forCellReuseIdentifier: ReprovedInspectionCell.identifier())
     }
 }
 
-extension VerifiedMethodHistoryListingViewController: UITableViewDelegate, UITableViewDataSource {
+extension InspectionListingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ApprovedVerifiedMethodHistoryCell.cellHeight
+        return ApprovedInspectionCell.cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if statusList[indexPath.row] == .approved {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ApprovedVerifiedMethodHistoryCell.identifier(),
-                                                     for:            indexPath) as! ApprovedVerifiedMethodHistoryCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ApprovedInspectionCell.identifier(),
+                                                     for:            indexPath) as! ApprovedInspectionCell
             
-            cell.configure(descriptionText: descriptionList[indexPath.row])
+            cell.configure(delegate:        self,
+                           descriptionText: descriptionList[indexPath.row])
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ReprovedVerifiedMethodHistoryCell.identifier(),
-                                                     for:            indexPath) as! ReprovedVerifiedMethodHistoryCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReprovedInspectionCell.identifier(),
+                                                     for:            indexPath) as! ReprovedInspectionCell
             
-            cell.configure(severity:        severityList[indexPath.row],
+            cell.configure(delegate:        self,
+                           severity:        severityList[indexPath.row],
                            deadLine:        deadlineList[indexPath.row],
                            descriptionText: descriptionList[indexPath.row])
             return cell
         }
     }
+}
+
+extension InspectionListingViewController: InspectionCellButtonDelegate {
+    func goToMethodEditScreen() {
+        print("Edit screen")
+    }
+    
+    func goToMethodDetailScreen() {
+        print("Detail screen")
+    }
+    
+    
 }

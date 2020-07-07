@@ -52,7 +52,7 @@
 		8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */; };
 		8F4E18262493C012001212BB /* VerifiedMethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */; };
 		8F4E18282493C024001212BB /* ItemMethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */; };
-		8F5199A924B4B8D400AA1EFE /* VerifiedMethodHistoryListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5199A824B4B8D400AA1EFE /* VerifiedMethodHistoryListingViewController.swift */; };
+		8F5199A924B4B8D400AA1EFE /* InspectionListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5199A824B4B8D400AA1EFE /* InspectionListingViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
 		8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */; };
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
@@ -128,7 +128,7 @@
 		8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarViewController.swift; sourceTree = "<group>"; };
 		8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodListingViewController.swift; sourceTree = "<group>"; };
 		8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodListingViewController.swift; sourceTree = "<group>"; };
-		8F5199A824B4B8D400AA1EFE /* VerifiedMethodHistoryListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodHistoryListingViewController.swift; sourceTree = "<group>"; };
+		8F5199A824B4B8D400AA1EFE /* InspectionListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionListingViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
 		8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuTests.swift; sourceTree = "<group>"; };
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 			children = (
 				8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */,
 				8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */,
-				8F5199A824B4B8D400AA1EFE /* VerifiedMethodHistoryListingViewController.swift */,
+				8F5199A824B4B8D400AA1EFE /* InspectionListingViewController.swift */,
 			);
 			path = ItemMethod;
 			sourceTree = "<group>";
@@ -679,7 +679,7 @@
 				8F4E18282493C024001212BB /* ItemMethodListingViewController.swift in Sources */,
 				452DB8AC22CCF2AD00561600 /* ProfileCellTableViewController.swift in Sources */,
 				34ECE70D22F31BF300D24ED3 /* RoundedImageViewController.swift in Sources */,
-				8F5199A924B4B8D400AA1EFE /* VerifiedMethodHistoryListingViewController.swift in Sources */,
+				8F5199A924B4B8D400AA1EFE /* InspectionListingViewController.swift in Sources */,
 				346518D922EF6CD800BC9E0D /* GroupSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
