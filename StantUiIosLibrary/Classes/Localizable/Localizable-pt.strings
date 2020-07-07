@@ -22,3 +22,10 @@
 "service_inspection_form_filled_details.deadline_label" = "Prazo";
 "service_inspection_form_filled_details.quantity_label" = "Quantidade";
 "service_inspection_form_filled_details.tests_label"    = "Testes";
+
+"service_inspection_form_filled_details.progress_label"   = "Em Progresso";
+"service_inspection_form_filled_details.finished_label"   = "Finalizado";
+"service_inspection_form_filled_details.approved_label"   = "Aprovada";
+"service_inspection_form_filled_details.late_label"       = "Atrasada";
+"service_inspection_form_filled_details.of_planned_label" = "do Planejado";
+"service_inspection_form_filled_details.out_of_label"     = "de";

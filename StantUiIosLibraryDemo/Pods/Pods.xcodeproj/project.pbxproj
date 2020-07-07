@@ -7,98 +7,105 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0129796C4619A105D726BB78601E9600 /* ContactsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC3D948F5B273FD08F534DDE2F27993 /* ContactsCard.swift */; };
-		024F6327B6A3E11BA79991799D090244 /* ConstructionViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C10458F97EBEB886B704A9C81E8C6CB /* ConstructionViewDefaultSearchViewExtension.swift */; };
-		04B3E213700AFD4DA045354D7CE13A5C /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0F5659E4F67D1A656964E1BB02886C /* AppStrings.swift */; };
-		08E8DCC57075D7EDEFAC8BF61D8976A4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E081AD71F73110BBF32E2B2A9EFBF5 /* UIViewExtension.swift */; };
-		08F86847D02AEB82DECDDB7B0E030FF0 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7A5BC2B4DF91B03FCA6D44CC9AFF9A /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1042725297207BBFB1A657D97174A099 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC3CB58209C267B04AA5C8ED6D810E /* ViewTeste.swift */; };
-		125FF1849C6DACDDE69E9671DD518E58 /* CustomTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163D92FD8E5116A00760E28BC68C608C /* CustomTabViewCell.swift */; };
-		15CBC2709CEC18627886196B270AF76C /* TeamScreenViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2EBA01DB05B438995DC692BA59A216 /* TeamScreenViewControllerExtension.swift */; };
-		16379406A7E86EBE43B259223481D5AC /* TeamTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1748DC5D9BD6AF96936658C71D040E /* TeamTabView.swift */; };
-		197D578BE62766B338703EA7FE461D7F /* SelectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A31985873C4A953D4B153945A0186 /* SelectionViewControllerExtension.swift */; };
+		050F19B1894A1C44F5C4B8B878AFE6DB /* MenuTabBarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D862F089BB43D8A0AF295C60BB4059C /* MenuTabBarDTO.swift */; };
+		08B5D236C655DE1CCC1F47BE721AC217 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77ABB8B67A129DD0E41203439B4F4AF /* RoundedImageView.swift */; };
+		0F57781BAAF7E70494F481FC76B17878 /* InternActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8922BCD8FEA54FC4B882E3BE27847 /* InternActionCell.swift */; };
+		1225FBD7F3D571AE5C92A4509A179EED /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF943624B0CF92B9A8DD1B6EEA1ED794 /* CustomTabView.swift */; };
+		13090B01FBC13458EF867B28EC9F3E20 /* SelectRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E39F4C0A01D91C15D93BDFEBB35D6 /* SelectRecentViewController.swift */; };
+		147E82BF056E3AC2F492C7DC53CF10BA /* QuantityBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29888672F37FE9C96983E029DDB868E /* QuantityBar.swift */; };
+		1549CC06B5ECA02E5D441E2A62D6546D /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79769ABA774C4F31D1E1EB26D99F0FC8 /* TextInputTableViewCell.swift */; };
+		16459A24304F0C4710CC50870EF1482E /* FormTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC45CEFCD2D49B1A434C82B59B056D /* FormTabCollectionViewCell.swift */; };
+		1B1AE94BA29D1069DAA23560FE210216 /* DefaultSearchBarDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22362381C24326C49450BADDEC1979C1 /* DefaultSearchBarDelegateExtension.swift */; };
+		1B1C0E3B97DEAE9373FAF44484A081D7 /* TeamScreenViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63719C96F5417007BCACC144F6CA868 /* TeamScreenViewControllerExtension.swift */; };
+		1B380E61D7CEF500BF38C0C28EDAAC71 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD446D2F1954581A9D5A25301A79417 /* PhotoDetailView.swift */; };
 		1D8CB5DAFD255BE8BAB24FD3B6BB5828 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		1DAC5A4DE5DA73CDA023D4DABE58241E /* ConstructionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D7380BC9AA97F32AE1A3842017678 /* ConstructionTableView.swift */; };
-		1E8C79292B596B45A21A230DD8E0051A /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22117166FD1604D6A2D243A5555F6C0C /* FiltersCollectionView.swift */; };
-		22A0DA7DD987497B14846571473E44BA /* SyncDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B490FE858A9233FE272C057D314A787 /* SyncDialogView.swift */; };
-		22C2272100E0CDC7FBBA59CA1A57DA85 /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED17BC658BF5AED1E46E33F2877E9E /* ConstructionCard.swift */; };
-		2444D39839A89EA874E026C8E6573129 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE52F8D4A9299E3A1D28DC0345D32C /* DateExtension.swift */; };
-		273DAEBCC8073E7D082E3EB7A986669D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC3A7BA1D17A79318E69B34B955444 /* UILabelExtension.swift */; };
-		2B552748A38F2A576D2C239205EF3F2A /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C41E44755B9B1506B9E7CE184437A /* PhotoDetailView.swift */; };
-		2C25E9C64EC27FC23119A80E15AA878A /* InternPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411B8A252E8826E914463D2B02A1562 /* InternPersonCell.swift */; };
-		2C48FC4571037F68D64C105F009F6F3F /* ToDoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39E6222E851013FD1DE76B71FCE6CA /* ToDoBar.swift */; };
+		1EF35EDA96801DB439BC009EB95DCA17 /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70B3A22FEE3A26C2DDFFD84F6E278D /* UIViewLayoutExtension.swift */; };
+		1F5C83FAE6A90952EF1D97B1D17F31A9 /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A9E8B89C7E2714955A418DD44C0025 /* SelectionTableViewCell.swift */; };
+		2733B1F8FA089885930BC1DE80F850E6 /* InternPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83E3E7B6B7037CB899FF782C32670D6 /* InternPersonCell.swift */; };
+		27356C404B3F495444ABF7E325E88F4C /* AttachmentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62F64A43C84362E3F9B6A6305F6ABA /* AttachmentTabView.swift */; };
+		2B85CDC028BFC547E571D9C52A43B794 /* ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324B96F97BE21CF6B951DCA285C02919 /* ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift */; };
+		2D01980A6A6F5AA23F16CE1C290BF435 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D340349D1380E15B42A94EAD670404 /* FloatExtension.swift */; };
+		2E9973568C2399FFA9C28AEC57361DE6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7D7C12321EB001AA6C76A3CE86196 /* UIViewExtension.swift */; };
 		2F5E20FA20E54AB8C0141C0787D1D468 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		310C79A60D09750B6C6C5923F4631460 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D533D54C93F662F0050CF281C98F1F /* ServiceInspectionFormFilledDetailMenuView.swift */; };
-		35BAA7FAE256AFA4005E75EC97306244 /* DefaultSearchBarDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52DE212E4D74C471F568B3461E9471 /* DefaultSearchBarDelegateExtension.swift */; };
-		370114D0FA2DA785A13878EDB3D3C0DD /* GroupSelectionDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC095293E5DC952C227AA9D5CEA3449 /* GroupSelectionDefaultSearchViewExtension.swift */; };
-		39E5DCFFA525FD6D37839EE3C4118DE2 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E467CACFF13C06A884A664034FF4D4E9 /* UIImageViewExtension.swift */; };
-		3A41D187BDB19DEEE858DDAB16D5E123 /* FormTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D20CA489D0113D334A27F753517464 /* FormTabView.swift */; };
-		3A71C212581151B5F141C6F961D5891D /* FilterButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463EF830F7E922E147AAFE4B19E3521 /* FilterButtonCollectionViewCell.swift */; };
-		3B53903B59E4E8176394E77834687E38 /* MainMenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B69C6E64105B41BA0EA7DE87F46C66 /* MainMenuTabBarController.swift */; };
-		468A3A507D70D855E800E8F84F291BDD /* Localizable-en.strings in Sources */ = {isa = PBXBuildFile; fileRef = 39E88FFDB96E1D7D9E1FD722FAE79605 /* Localizable-en.strings */; };
-		4D7EA3FDF4F3C5E4E540332DF5ECFDDB /* ScrollableTableViewDialogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6966194D020556DAC09041EE35778D14 /* ScrollableTableViewDialogCell.swift */; };
-		50734D82DFE31199324CE9471D147DDF /* AttachmentTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA198709AF9C09B6D314AD66D5E060 /* AttachmentTabCollectionViewCell.swift */; };
-		53F2F6137C8BFCDBF265A020368C7468 /* ContactsTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02560C0F60E0C09BA39B391E0C88D5D1 /* ContactsTableViewWithCollapsedSearchBar.swift */; };
-		5AABC83D6C8283D873C5C91F3D67523A /* FirstHeaderDropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BC25DCA263C5BAEC90E5B64A14017E /* FirstHeaderDropdownButton.swift */; };
-		5BC320B08CECD119E12BBD1E8A063218 /* SelectRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3483C44F06029622F769B7BA6CA43 /* SelectRecentViewController.swift */; };
-		6076B3A4EC60BC18DC768C8C7727F81E /* AttachmentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852D64013F7B006B3DD71E84F2EF1D3 /* AttachmentTabView.swift */; };
-		62119076610040A5F309865026C08DE3 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88636055C7208A2DED3275FB060AEB53 /* FloatExtension.swift */; };
-		62EF80A49AF8EF303B79F023F2B13514 /* Localizable-pt.strings in Sources */ = {isa = PBXBuildFile; fileRef = 89B25351C18DBE10C49B7D9A2972C600 /* Localizable-pt.strings */; };
-		6B1F166A495D2D4E80E259DFDEB494AB /* SecondHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75488E3CD47F496DA119794ABCF148DC /* SecondHeaderView.swift */; };
-		6DD257A6D3489B9DE19DE7C2D9342212 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97985C3DBFEF4B81D523AF76A9CE9C3 /* CustomTabView.swift */; };
-		6EE961ADFC90D6AC585F1E59F1C7712E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0286ED76575430CDC21FD1A819E49C0 /* UIColorExtension.swift */; };
-		6F68CCB9129E9EED28D527F0F5B8045F /* ContactsViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9B914ABC2966BEAEFC3AADAA0C61F /* ContactsViewDefaultSearchViewExtension.swift */; };
-		78727646FCCB81ABD300A7167D7831C7 /* InternActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35FA776CAAC6B38BBFCE03ECDBEF29F /* InternActionCell.swift */; };
-		79BF1B72B915B7333639AA8122D1C743 /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0EE5B80599522DB1724DBF1680B135 /* ConstructionTableViewWithCollapsedSearchBar.swift */; };
-		79E211ACEE4BE021CF0DA87294EAED59 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565894320F9F72E6630BF4DBB9590BE /* RoundedImageView.swift */; };
-		79EFBCB2B33B65D647937C2C9FFB27BE /* ItemSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB04137D660761CDFD1322DEF508C71 /* ItemSelection.swift */; };
-		7A66BDA66A0C674A3D23AA06FD5078E1 /* ServiceInspectionFormFilledCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506E129CB683018C15026A744078779 /* ServiceInspectionFormFilledCard.swift */; };
+		354D02297036722044DF0E6E9DC0CCAB /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC243B24A5554D8E27461983FD95FD2 /* BottomDialogWithScrollViewController.swift */; };
+		35CDDF50B5DAE2AA5B2D39CB4DBAD6E1 /* ContactsTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85B299C98D55AC51EDD855B5BE4362 /* ContactsTableViewWithCollapsedSearchBar.swift */; };
+		38B10C4B93C7253C7BD95207C0CB4A58 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E9C4FB66D4210F993A69F650D9757 /* SelectionViewController.swift */; };
+		3F3FBF0B0FA9A0847A3C08ECA6B18784 /* ScrollableTableViewDialogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D082D30C8718BB834C694261E35E0CB /* ScrollableTableViewDialogCell.swift */; };
+		3F7DBDC8C969053A973ED685A3FA2112 /* ServiceInspectionFormFilledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E9D200CE0813AAB3F91ADD1BD907E3 /* ServiceInspectionFormFilledCell.swift */; };
+		44D473BEC31826258A247B6A676FACC4 /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30CE34445007108E8F3672429866B4D /* GroupSelectionShowAndHideSearchTableViewExtension.swift */; };
+		45136B5108907B054F376049DAC6E276 /* DialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C32EECE5FF344CA690DD3835961491 /* DialogButton.swift */; };
+		45E1B17107E81F63AE4AADA9E24B5221 /* ContactsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F81C4C36E224C419378195252EB713 /* ContactsTableView.swift */; };
+		463137C30F52BC35ADD3815C431342EF /* MainMenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDA461F1075F996AD6867F858FAE58 /* MainMenuTabBarController.swift */; };
+		4742C4B5ADFD1F4D28760EB118B6EA24 /* ItemMethodHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651868279E71464BA830C16F55FD853 /* ItemMethodHeaderView.swift */; };
+		486FB7AF2BE0ACD79F8C2D25AB014BCB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7CBAEDCF1D2663775435064704B0C5 /* UIImageViewExtension.swift */; };
+		4FE41F339CB1C68C1AA3A68F476CDF7E /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F872AE0245E80FC070DAD89CBDCD2ABA /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift */; };
+		53A119B270E08512E59958E15D8B2F90 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E58ED2CF863DBC4F26A7EE1C3899CFB /* UIImageExtension.swift */; };
+		57DC177E84A3A98474EDE145E2E463E0 /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC83295920EDEAAA41B0681F0F289470 /* FiltersCollectionView.swift */; };
+		5908DEA8E101E03C0D30713DD6B28E3B /* ServiceInspectionFormFilledTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601FA3B50ECC22009808EEF41AD18FBE /* ServiceInspectionFormFilledTableView.swift */; };
+		5BECB8465EB07B936D036CCBCE330BBE /* GroupSelectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFF1E16DA1591C0FE37955FEF74743 /* GroupSelectionHeaderView.swift */; };
+		5E572DB00B96A7DBD92728BE1364CB83 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BB47928B3812E81B065FF0FAE49EA /* DateExtension.swift */; };
+		5F49329761D6D41B4300034E37EEBAA8 /* FilterButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF5B65159B21543BA39A7F3D6CC8DE /* FilterButtonCollectionViewCell.swift */; };
+		61DF417D099529D05D14469ED29DD170 /* InChargeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EABE8B2FA6C3233EF5F9631717B1D5 /* InChargeStackView.swift */; };
+		6284732D13DD02D622CFC0A3EA12F75C /* ServiceInspectionFormFilledCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AE1DCB6A3A3E79AEEAC94538FD8B93 /* ServiceInspectionFormFilledCard.swift */; };
+		69F8553CC7774FB29F0F0C2F9D13622A /* ContactsViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F0DEE3BC85596EB1D42AEF2ABE72E /* ContactsViewDefaultSearchViewExtension.swift */; };
+		6A80E9958A4978F15A388077006219AC /* ItemSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF01DE81A1A496316EBC81A9DBB8CB /* ItemSelection.swift */; };
+		6DDB7BFDFE4A20988AFFB5788430C988 /* ServiceInspectionFormFilledCellBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F76B06B907EC95A3FC375F12FE5CB /* ServiceInspectionFormFilledCellBar.swift */; };
+		6E7A0BEE6DE415FCC86F99A19BE7BB24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6EFE87ACBB0BAD182ECDED3C415C3E82 /* ProgressBarWithToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135C8FFC2AA8CB0C4333255BE5D95EC /* ProgressBarWithToolTip.swift */; };
+		736F1983AFF7B0880A16043DC2126558 /* TeamScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80C72D0DE7FAB96DB50E596A76D23AC /* TeamScreenViewController.swift */; };
+		76C8255A0665FD21CF60D2884512B8B9 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC907B04AA13FEED934A5FB52C74B6 /* UILabelExtension.swift */; };
+		7A4AA897BB72419DFDE1855D37994CE6 /* ConstructionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483541B368168B57255F8D13116F74A /* ConstructionTableView.swift */; };
 		7F75A488DD8E661B9A3455E0C11DFA6E /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */; };
-		81E3D96FA26EF211C64BD43C787C374A /* QuantityBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50816162F7C92B2514887FFB8E5E68 /* QuantityBar.swift */; };
-		823308685A4926DAAF9696C0EB7B9C73 /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312171499ED1AC47DBE0147779E2BE38 /* UIViewLayoutExtension.swift */; };
-		85EDF90BA083F6030BEE7EC2B1654DFC /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33DE7AA1F328FD77BEBA1360100501 /* GroupSelectionShowAndHideSearchTableViewExtension.swift */; };
-		87AB19E66178697D11EEABE32A0D0E4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7FE324B31335E45173AB6DF326BA686E /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC42A899EC9AC1D13446E65272B1CE35 /* NSMutableAttributedStringExtension.swift */; };
+		800180F399D428D838D8143856385BD9 /* SecondHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66706BADC2EA281790A9B54A381B78CB /* SecondHeaderView.swift */; };
+		804C06BCECFD9C0CF9C5C9EDDE6DEB98 /* VerifiedMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C9900161538E7C9F8D62ADC9DC742 /* VerifiedMethodCell.swift */; };
 		87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EBF71809E6DE336A8102AF559E8EA50 /* FormTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2542183C28FAF3C339829B5902BCCBCE /* FormTabCollectionViewCell.swift */; };
-		8F03BC0624B3C14300BA7405 /* ItemObservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03BC0424B3C14300BA7405 /* ItemObservationCell.swift */; };
-		8F03BC0724B3C14300BA7405 /* ItemMethodHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03BC0524B3C14300BA7405 /* ItemMethodHeaderView.swift */; };
-		8F03BC0B24B3C15200BA7405 /* VerifiedMethodCellStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03BC0924B3C15200BA7405 /* VerifiedMethodCellStatusView.swift */; };
-		8F03BC0C24B3C15200BA7405 /* VerifiedMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03BC0A24B3C15200BA7405 /* VerifiedMethodCell.swift */; };
-		8F03BC0E24B3C18100BA7405 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03BC0D24B3C18000BA7405 /* IntExtension.swift */; };
-		907C88784166C1D782EB859662A4D0B7 /* GroupSelectionRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F5223F24336FE4D2DF76EFEEA6BF2 /* GroupSelectionRowCell.swift */; };
-		938A64BA4BA048111FFDD692CA715F1D /* GroupSelectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816716246B5EBE20CDA29120C9E31FB /* GroupSelectionHeaderView.swift */; };
-		946AC28AB6E3C466B6407F99859D48F5 /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96302B4DB58643D41FC7E44A0C80EBE /* SelectionTableViewCell.swift */; };
-		94DF834F7FE20C90ED849D2612F144DB /* FirstHeaderRightBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0A83FC669D2127CD52091126BD99D8 /* FirstHeaderRightBarButton.swift */; };
-		95CB13E40407145B0E04D2623B8E76BD /* GroupedSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A537ADC9124131C4483C769820AE29B /* GroupedSelection.swift */; };
-		970C5D75F35E527EDEF53EEC51630DF8 /* GroupSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5A0464B126A75B061D6DA739036A20 /* GroupSelectionTableView.swift */; };
-		9B22825021772059E4DD49A1AC8A4458 /* ProgressBarWithToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4682BE6C5C8F5CCC83A432E2F041F7 /* ProgressBarWithToolTip.swift */; };
-		9CEB008CB4789EE58F63279EF8DD2709 /* FirstHeaderRecentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4951BAC448BF8E5A470CFC3BFE5BE5 /* FirstHeaderRecentItem.swift */; };
-		A2228483881934AF2E8FFF963453DAA1 /* SecondHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA44DCA1C1E2761878FB488F92B8658 /* SecondHeaderButton.swift */; };
-		AC269FD726CDE9E3F3DFF38E33F02F13 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4B4D4526961EC87E57CECB545980B /* DialogViewController.swift */; };
+		8AC582BD6F91D5F1661399ADFA69D59B /* FormTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279813160553D13C92171B819603DBCE /* FormTabView.swift */; };
+		8CA1DAC23A68B19D8C1E387DF0000662 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 790246D54121C22F120E797DDC14F189 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DDB7F17BEA14922E7094BF556DAEF29 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16D27AC8D287D0C79FCB594B6D388E /* AppStrings.swift */; };
+		9177663A82ECA75788413D49793A0053 /* ConstructionsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51B284AD7B66EA23335A51AB2048EF /* ConstructionsFilter.swift */; };
+		92D8AB39408F1B58293D15F636931393 /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB13BB652B8C1BF4891F5660E33873F /* ConstructionTableViewWithCollapsedSearchBar.swift */; };
+		9667BDBDC90E2E12CCCEC66E00C46212 /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A30C9DFFDF54FFE14B00CCDB91ABA /* GroupSelectionTableViewWithCollapsedSearchBar.swift */; };
+		9826E4804AD36FD196C47C61AF66AC51 /* ItemObservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F46DB6C16ABFDA0A97C53E3FC911A5 /* ItemObservationCell.swift */; };
+		984C02D48B3B2BC79437BF91C1498A96 /* SyncDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE24267B19C2DB1DB2C6396C4B568FCF /* SyncDialogView.swift */; };
+		98D63526FE047DD64DBF2B19E18CF4A3 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE1560369889E90200769F72190576 /* ServiceInspectionFormFilledDetailMenuView.swift */; };
+		9EBE2163547F1486ED1176D4EE6B24AA /* ToDoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8016EFB53A68964CFB3FB336932644BC /* ToDoBar.swift */; };
+		9EE98FE5C16F0E3B382E5F62ED28DDA2 /* GroupSelectionRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9F9FD7B7E96B6CC8C09E8F8F6DC8C5 /* GroupSelectionRowCell.swift */; };
+		A825B1733B367D695F76866027A483C8 /* ContactsViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71404C4F9BF498F30052493B6B290D6A /* ContactsViewShowAndHideSearchTableViewExtension.swift */; };
+		AB619BF95A1BD7D7360088FF74CAD6F8 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DB8BE97364006370D9D8099D7F998 /* FilterButton.swift */; };
 		AC70186E43C34AAEE1489A36674CEFF5 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */; };
-		AC788AA3CCEAE884841D1AD26E4B74C6 /* ServiceInspectionFormFilledCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D632AB4454BB6190BD097C9782BE1B94 /* ServiceInspectionFormFilledCardStack.swift */; };
-		B2D5DDB540CB92201015B42E46E742E6 /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A16545BBCBF67E2A204026D811E59 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */; };
-		B98239AF925B19CCBF4ADD70FCF23243 /* DialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF14114A32663E2E83CFCC2966BEF68 /* DialogButton.swift */; };
-		BC12D5A5A820590B05FC2C5A20EB2A43 /* ContactsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17452C12013C8E18E3D4B13C40752442 /* ContactsTableView.swift */; };
-		BC2702AA9C8F636C91C5AB740A6A5B61 /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE72D5595C61F9151D01ABAF1F966BC /* BottomDialogWithScrollViewController.swift */; };
-		C00A26A30426B5D87F0FFE7ABEEF196A /* TeamScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705317762873FADA5461BA0E16A6065 /* TeamScreenViewController.swift */; };
-		C225533EA20F0D7CF5D22D9682B8F1E9 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B564FF560F5EE560784C7E7CFC9BE087 /* UIImageExtension.swift */; };
-		C710D984A9D334EBC814BE9A78D6DC77 /* ProgressToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9089E372F94A57F4683CCAAF1A8C277C /* ProgressToolTip.swift */; };
+		AD1339036C1DECCDEEAE52E90AED019C /* Gesturizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6CBAF3D18418854C5600DAE6B936CC /* Gesturizer.swift */; };
+		AD34C9A41F48CBBADECA909ADE35BEF5 /* VerifiedMethodCellStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED9978DD3EEFD6971E86100F1CB33A7 /* VerifiedMethodCellStatusView.swift */; };
+		AD9A208F3E3AFDAFE1F78D08462F269E /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0032CBE735F5DA81EFB5AE38F5B80069 /* StantUiIosLibrary-dummy.m */; };
+		ADE64351DE8AFD129BE70E1782C686D4 /* ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F929B50015E60CB96FAA1BCA8F6C439 /* ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift */; };
+		AFDD27E25039538C48B623EAF85615C7 /* SecondHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A79D355A2F9A610AE5C662EE44DA /* SecondHeaderButton.swift */; };
+		B4F7F6B1134F7BC9D966DD294654D917 /* AttachmentTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80301BE4228899C3336A572EE1686B50 /* AttachmentTabCollectionViewCell.swift */; };
+		BCF1D104A604ABE602D52FE062F260A0 /* FirstHeaderRightBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757639EE228548B862433FF6E3E562EB /* FirstHeaderRightBarButton.swift */; };
+		BD169BDF199F4549A45F9559A3BD4A43 /* CustomTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0D93CA8FE85B44C13276B1D0EB721A /* CustomTabViewCell.swift */; };
+		BD3C9361A55525096C16CA24C8BBB28B /* ContactsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377231C260FA98D36E5B9BEC3BB9511 /* ContactsCard.swift */; };
+		C02DF0EAC92BFAA1FF43BD052E8E6ABC /* Localizable-pt.strings in Sources */ = {isa = PBXBuildFile; fileRef = B5C131B962CF9E0C00B287F601688A6B /* Localizable-pt.strings */; };
+		C10ADFB4CD5E43236E37339727C8118D /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2906A65C9FEA41CD8E54F0CD382F96 /* DialogViewController.swift */; };
+		C10BF0BA2AEBBF79C9C16BFA39B73BA4 /* FirstHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9260ED37044403DC332999A19A3F3D /* FirstHeaderView.swift */; };
+		C34727ABDFB38265DA438B540F0E3E10 /* Localizable-en.strings in Sources */ = {isa = PBXBuildFile; fileRef = ED77A2A5351210F366D277756256C76A /* Localizable-en.strings */; };
+		C3740F79CEEF3E0CBB040AF47B04F9BF /* GroupedSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEB5D4D4EF9CD5EF4DEAA4614D0C86 /* GroupedSelection.swift */; };
 		C7A00DB5E95DD8969CE82C6DB0A79861 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		CA666D236E22959F5A4C78F28EB776FA /* InChargeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4A9437F1D84887EF6967A9A28B978 /* InChargeStackView.swift */; };
-		CAAF0F5574CD476A8718A7656164E7A7 /* FirstHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67475EE1386C088BEE6264FD0D23223 /* FirstHeaderView.swift */; };
-		CEE6E35541CB9179C284224029F17230 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F649BBDC2456631AF93AE42F1058FEB6 /* SelectionViewController.swift */; };
-		D5690FA22846236E9C56B1D1D48F3A41 /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3178716D3D2F1AF1F10E8ED6AA576 /* StantUiIosLibrary-dummy.m */; };
-		DB1C4A8214DF6E0CDB405EB46273B873 /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC420374B913C40BF6B0F5DA1BA0EE3 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */; };
-		DB40FEC2794F62A5FFAC0C1B77B59080 /* Gesturizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56EC0E8159D03573E50B8618FFEF1B /* Gesturizer.swift */; };
-		E04E0A72451467DF4C096B58706781EE /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C211E3357CEFEC07894CF8B822C76D /* TextInputTableViewCell.swift */; };
-		E124D7ADA4CD0FB1878B6F75C5195C61 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA88B0665B968F87912907104961CE6 /* FilterButton.swift */; };
-		E4DBCE938069F8B31232FD3C77C30069 /* MenuTabBarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F9F711765A2C8FBDBDC1D20DB6E9C /* MenuTabBarDTO.swift */; };
-		E5B4D509F20267BDBBDBECC679465CF3 /* DefaultSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357C73C655418E87C20332FF91C8BFA /* DefaultSearchBar.swift */; };
-		EE7AD7028CB8F64EAEE11FB68FC9BD85 /* ContactsViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BAA441EB65A2BE11BD787EBB4FE2F /* ContactsViewShowAndHideSearchTableViewExtension.swift */; };
-		EE8ABAACFCA85BD94069C4D7A0401489 /* FirstHeaderRecentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4D8C1668A4C74F1FF6ACDC8756925 /* FirstHeaderRecentItemCell.swift */; };
-		F2977638AE8469506E8C13E59B1562C5 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215CB401E89192472ACCB30653A943D8 /* NSMutableAttributedStringExtension.swift */; };
-		FD29F3C134DB974E426C57C78299576B /* ConstructionsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2B137516DB5D3F0E1132390D8DF3B /* ConstructionsFilter.swift */; };
+		CC47B68718F7817B6D329773C70C067E /* DefaultSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF1C5BE74BC6DC414C18FFC3857708 /* DefaultSearchBar.swift */; };
+		CDDDEF5ADCA89C4361C47FDE576959FE /* FirstHeaderDropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C080DC88FFDFC04F5AC19272E6F79F6 /* FirstHeaderDropdownButton.swift */; };
+		CFC71AC2758363D739115D397835349B /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CD14418EBBD92A2ED68E8D0262872 /* IntExtension.swift */; };
+		D112C21C06CBDCEC18FFF20A19EDB970 /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBEC32CAF2AA08053CD51425087476 /* ConstructionCard.swift */; };
+		D51436F3D32486306FF2D6F58B456FE6 /* GroupSelectionDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F290208E49A4F74DD49BDC5996F4C /* GroupSelectionDefaultSearchViewExtension.swift */; };
+		D54170136278BEACDDCC04B5BD7B4BEC /* SelectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2D034F55F34FA413B607CF69D84200 /* SelectionViewControllerExtension.swift */; };
+		DBF6E7DCC9D3E6AA79740389E0445B00 /* ServiceInspectionFormFilledCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85296514D472F398133937EBAFBA30 /* ServiceInspectionFormFilledCardStack.swift */; };
+		DC482817EC5461D5563F8A86EF39B240 /* TeamTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5735D069DE5BA3EB4D1EACEFC44690BD /* TeamTabView.swift */; };
+		DDBEAE179581F4ED9CA7F50082CBD18E /* FirstHeaderRecentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EE26C1EBDCD63511B6BA62C4885E7C /* FirstHeaderRecentItem.swift */; };
+		EA374465F22D6CF91D3A9C1D64115803 /* ServiceInspectionFormFilledCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2AC97E9E34153FECA3AB4E15AAAB4B /* ServiceInspectionFormFilledCellHeader.swift */; };
+		EC2BD1C66C1B69F16E77D7151EFCB4BB /* FirstHeaderRecentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EA5340DAD461A5370E2F2B6F8D825 /* FirstHeaderRecentItemCell.swift */; };
+		EC9CE5D78CD4084428375E864CAA9131 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFCBDEE4F02A1CCB83E9A9F8E78526E /* UIColorExtension.swift */; };
+		ED279151B26F3FF2FC8936278AE5FD89 /* GroupSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F85F6463C225615A8C423B6CC84181 /* GroupSelectionTableView.swift */; };
+		EFB4C169AB3824464612FAAE7212C728 /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F1575A91023FF55EC369ED605FE14 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */; };
+		F27830C560068C20A0A2DEED3FF66B1D /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C52AA4A910F1D22CC7BC9EC9C3D3DF7 /* ViewTeste.swift */; };
+		F2D32F0F793D20DFAB9ACF36CEA2EB3E /* ConstructionViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F644BB1FF969C6145C607BC3A8B98BDF /* ConstructionViewDefaultSearchViewExtension.swift */; };
+		FB0C55404E44FF0081767D0E838C4FBA /* ProgressToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706F9F3C82A06E9B56910735B3CFC258 /* ProgressToolTip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,120 +126,127 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02560C0F60E0C09BA39B391E0C88D5D1 /* ContactsTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
-		0506E129CB683018C15026A744078779 /* ServiceInspectionFormFilledCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCard.swift; sourceTree = "<group>"; };
+		0032CBE735F5DA81EFB5AE38F5B80069 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
+		00898952FB1081B542588822AFDC16CC /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
+		05EE26C1EBDCD63511B6BA62C4885E7C /* FirstHeaderRecentItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItem.swift; sourceTree = "<group>"; };
 		08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemo-umbrella.h"; sourceTree = "<group>"; };
 		0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StantUiIosLibraryDemoTests-umbrella.h"; sourceTree = "<group>"; };
-		0C10458F97EBEB886B704A9C81E8C6CB /* ConstructionViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
-		0D4951BAC448BF8E5A470CFC3BFE5BE5 /* FirstHeaderRecentItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItem.swift; sourceTree = "<group>"; };
-		0DEC3CB58209C267B04AA5C8ED6D810E /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
-		0DED17BC658BF5AED1E46E33F2877E9E /* ConstructionCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
-		0EA88B0665B968F87912907104961CE6 /* FilterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
-		0F910192AB1FD93B05FDD6A8F8580E93 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0AFF1C5BE74BC6DC414C18FFC3857708 /* DefaultSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBar.swift; sourceTree = "<group>"; };
+		0BC243B24A5554D8E27461983FD95FD2 /* BottomDialogWithScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollViewController.swift; sourceTree = "<group>"; };
+		0ED9978DD3EEFD6971E86100F1CB33A7 /* VerifiedMethodCellStatusView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerifiedMethodCellStatusView.swift; sourceTree = "<group>"; };
 		10422ACDD9F052066D63FC95B7F3E926 /* Pods-StantUiIosLibraryDemoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-Info.plist"; sourceTree = "<group>"; };
-		1411B8A252E8826E914463D2B02A1562 /* InternPersonCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternPersonCell.swift; sourceTree = "<group>"; };
-		163D92FD8E5116A00760E28BC68C608C /* CustomTabViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTabViewCell.swift; sourceTree = "<group>"; };
-		17452C12013C8E18E3D4B13C40752442 /* ContactsTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsTableView.swift; sourceTree = "<group>"; };
-		1E39E6222E851013FD1DE76B71FCE6CA /* ToDoBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToDoBar.swift; sourceTree = "<group>"; };
-		1E52DE212E4D74C471F568B3461E9471 /* DefaultSearchBarDelegateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBarDelegateExtension.swift; sourceTree = "<group>"; };
-		215CB401E89192472ACCB30653A943D8 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
-		22117166FD1604D6A2D243A5555F6C0C /* FiltersCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
-		24E4D8C1668A4C74F1FF6ACDC8756925 /* FirstHeaderRecentItemCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItemCell.swift; sourceTree = "<group>"; };
-		2542183C28FAF3C339829B5902BCCBCE /* FormTabCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTabCollectionViewCell.swift; sourceTree = "<group>"; };
-		26D533D54C93F662F0050CF281C98F1F /* ServiceInspectionFormFilledDetailMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuView.swift; sourceTree = "<group>"; };
-		26DA198709AF9C09B6D314AD66D5E060 /* AttachmentTabCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttachmentTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		165DB8BE97364006370D9D8099D7F998 /* FilterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		1E2AC97E9E34153FECA3AB4E15AAAB4B /* ServiceInspectionFormFilledCellHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCellHeader.swift; sourceTree = "<group>"; };
+		22362381C24326C49450BADDEC1979C1 /* DefaultSearchBarDelegateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBarDelegateExtension.swift; sourceTree = "<group>"; };
+		2435A79D355A2F9A610AE5C662EE44DA /* SecondHeaderButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderButton.swift; sourceTree = "<group>"; };
+		26FF01DE81A1A496316EBC81A9DBB8CB /* ItemSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemSelection.swift; sourceTree = "<group>"; };
 		2751B91001E5D1FF49E74865A2AC8C95 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		2A5A0464B126A75B061D6DA739036A20 /* GroupSelectionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableView.swift; sourceTree = "<group>"; };
-		2DC095293E5DC952C227AA9D5CEA3449 /* GroupSelectionDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
-		308A31985873C4A953D4B153945A0186 /* SelectionViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerExtension.swift; sourceTree = "<group>"; };
-		312171499ED1AC47DBE0147779E2BE38 /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
-		31A4A9437F1D84887EF6967A9A28B978 /* InChargeStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InChargeStackView.swift; sourceTree = "<group>"; };
+		279813160553D13C92171B819603DBCE /* FormTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTabView.swift; sourceTree = "<group>"; };
+		2EDC45CEFCD2D49B1A434C82B59B056D /* FormTabCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F0D93CA8FE85B44C13276B1D0EB721A /* CustomTabViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTabViewCell.swift; sourceTree = "<group>"; };
+		2FF2DE13094CD1F0416483C9822D61C9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3357C73C655418E87C20332FF91C8BFA /* DefaultSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSearchBar.swift; sourceTree = "<group>"; };
-		344329BD0456DD18D9C38A9A50B51E71 /* StantUiIosLibrary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.xcconfig; sourceTree = "<group>"; };
+		324B96F97BE21CF6B951DCA285C02919 /* ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
+		378E03ECEECB06C62E0BEDBDB9F229F3 /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
+		38A9E8B89C7E2714955A418DD44C0025 /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
 		395970EC61D8F9DE0F4570A1245BC11D /* Pods-StantUiIosLibraryDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StantUiIosLibraryDemo-frameworks.sh"; sourceTree = "<group>"; };
-		39E88FFDB96E1D7D9E1FD722FAE79605 /* Localizable-en.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = "Localizable-en.strings"; sourceTree = "<group>"; };
-		3A7A5BC2B4DF91B03FCA6D44CC9AFF9A /* StantUiIosLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-umbrella.h"; sourceTree = "<group>"; };
-		3C2EBA01DB05B438995DC692BA59A216 /* TeamScreenViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewControllerExtension.swift; sourceTree = "<group>"; };
-		429E759E718004E0C7BC03A6608AC1FF /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42C211E3357CEFEC07894CF8B822C76D /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
-		4705317762873FADA5461BA0E16A6065 /* TeamScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewController.swift; sourceTree = "<group>"; };
-		4A537ADC9124131C4483C769820AE29B /* GroupedSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupedSelection.swift; sourceTree = "<group>"; };
-		4AA44DCA1C1E2761878FB488F92B8658 /* SecondHeaderButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderButton.swift; sourceTree = "<group>"; };
-		4C1D682880F5396311977163EA6E2FB1 /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
-		555F9F711765A2C8FBDBDC1D20DB6E9C /* MenuTabBarDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuTabBarDTO.swift; sourceTree = "<group>"; };
+		3C52AA4A910F1D22CC7BC9EC9C3D3DF7 /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
+		3D862F089BB43D8A0AF295C60BB4059C /* MenuTabBarDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuTabBarDTO.swift; sourceTree = "<group>"; };
+		3E2906A65C9FEA41CD8E54F0CD382F96 /* DialogViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		429E759E718004E0C7BC03A6608AC1FF /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StantUiIosLibrary.framework; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4651868279E71464BA830C16F55FD853 /* ItemMethodHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemMethodHeaderView.swift; sourceTree = "<group>"; };
+		4A6CBAF3D18418854C5600DAE6B936CC /* Gesturizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Gesturizer.swift; sourceTree = "<group>"; };
+		4B16D27AC8D287D0C79FCB594B6D388E /* AppStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		4B2F290208E49A4F74DD49BDC5996F4C /* GroupSelectionDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
+		4D082D30C8718BB834C694261E35E0CB /* ScrollableTableViewDialogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollableTableViewDialogCell.swift; sourceTree = "<group>"; };
+		4ECBEC32CAF2AA08053CD51425087476 /* ConstructionCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionCard.swift; sourceTree = "<group>"; };
+		564F1575A91023FF55EC369ED605FE14 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		5735D069DE5BA3EB4D1EACEFC44690BD /* TeamTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamTabView.swift; sourceTree = "<group>"; };
+		57F81C4C36E224C419378195252EB713 /* ContactsTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsTableView.swift; sourceTree = "<group>"; };
+		59CEB5D4D4EF9CD5EF4DEAA4614D0C86 /* GroupedSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupedSelection.swift; sourceTree = "<group>"; };
+		5D85B299C98D55AC51EDD855B5BE4362 /* ContactsTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
+		5F929B50015E60CB96FAA1BCA8F6C439 /* ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
+		601FA3B50ECC22009808EEF41AD18FBE /* ServiceInspectionFormFilledTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledTableView.swift; sourceTree = "<group>"; };
+		66706BADC2EA281790A9B54A381B78CB /* SecondHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderView.swift; sourceTree = "<group>"; };
 		68566BDB28AAD2BAC190B1DEA4B03F7C /* Pods-StantUiIosLibraryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemo.release.xcconfig"; sourceTree = "<group>"; };
-		6966194D020556DAC09041EE35778D14 /* ScrollableTableViewDialogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollableTableViewDialogCell.swift; sourceTree = "<group>"; };
-		6AC3D948F5B273FD08F534DDE2F27993 /* ContactsCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsCard.swift; sourceTree = "<group>"; };
-		6B490FE858A9233FE272C057D314A787 /* SyncDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
 		6C3968C525C8FD506C924AF18A4767F7 /* Pods-StantUiIosLibraryDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		6D0F5659E4F67D1A656964E1BB02886C /* AppStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
-		75488E3CD47F496DA119794ABCF148DC /* SecondHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderView.swift; sourceTree = "<group>"; };
-		7CB04137D660761CDFD1322DEF508C71 /* ItemSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemSelection.swift; sourceTree = "<group>"; };
+		6CA8922BCD8FEA54FC4B882E3BE27847 /* InternActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternActionCell.swift; sourceTree = "<group>"; };
+		702F24DD5D03720F6E027A97E4C7D14F /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
+		706F9F3C82A06E9B56910735B3CFC258 /* ProgressToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressToolTip.swift; sourceTree = "<group>"; };
+		7135C8FFC2AA8CB0C4333255BE5D95EC /* ProgressBarWithToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTip.swift; sourceTree = "<group>"; };
+		71404C4F9BF498F30052493B6B290D6A /* ContactsViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		71F46DB6C16ABFDA0A97C53E3FC911A5 /* ItemObservationCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemObservationCell.swift; sourceTree = "<group>"; };
+		757639EE228548B862433FF6E3E562EB /* FirstHeaderRightBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRightBarButton.swift; sourceTree = "<group>"; };
+		77C32EECE5FF344CA690DD3835961491 /* DialogButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogButton.swift; sourceTree = "<group>"; };
+		790246D54121C22F120E797DDC14F189 /* StantUiIosLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-umbrella.h"; sourceTree = "<group>"; };
+		79769ABA774C4F31D1E1EB26D99F0FC8 /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
+		7C080DC88FFDFC04F5AC19272E6F79F6 /* FirstHeaderDropdownButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderDropdownButton.swift; sourceTree = "<group>"; };
+		7CB13BB652B8C1BF4891F5660E33873F /* ConstructionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
 		7E90D46BEBDB1B9A6958CA60DEA40C24 /* Pods-StantUiIosLibraryDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		81BC25DCA263C5BAEC90E5B64A14017E /* FirstHeaderDropdownButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderDropdownButton.swift; sourceTree = "<group>"; };
-		88636055C7208A2DED3275FB060AEB53 /* FloatExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
-		89B25351C18DBE10C49B7D9A2972C600 /* Localizable-pt.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = "Localizable-pt.strings"; sourceTree = "<group>"; };
-		89D20CA489D0113D334A27F753517464 /* FormTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTabView.swift; sourceTree = "<group>"; };
-		8A56EC0E8159D03573E50B8618FFEF1B /* Gesturizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Gesturizer.swift; sourceTree = "<group>"; };
-		8D0A83FC669D2127CD52091126BD99D8 /* FirstHeaderRightBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRightBarButton.swift; sourceTree = "<group>"; };
-		8F03BC0424B3C14300BA7405 /* ItemObservationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemObservationCell.swift; sourceTree = "<group>"; };
-		8F03BC0524B3C14300BA7405 /* ItemMethodHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMethodHeaderView.swift; sourceTree = "<group>"; };
-		8F03BC0924B3C15200BA7405 /* VerifiedMethodCellStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifiedMethodCellStatusView.swift; sourceTree = "<group>"; };
-		8F03BC0A24B3C15200BA7405 /* VerifiedMethodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifiedMethodCell.swift; sourceTree = "<group>"; };
-		8F03BC0D24B3C18000BA7405 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
-		9089E372F94A57F4683CCAAF1A8C277C /* ProgressToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressToolTip.swift; sourceTree = "<group>"; };
-		95E9B914ABC2966BEAEFC3AADAA0C61F /* ContactsViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
-		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98B69C6E64105B41BA0EA7DE87F46C66 /* MainMenuTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainMenuTabBarController.swift; sourceTree = "<group>"; };
+		8016EFB53A68964CFB3FB336932644BC /* ToDoBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToDoBar.swift; sourceTree = "<group>"; };
+		80301BE4228899C3336A572EE1686B50 /* AttachmentTabCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttachmentTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		823039711F65CBB9148C30385A00BB64 /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
+		884E39F4C0A01D91C15D93BDFEBB35D6 /* SelectRecentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectRecentViewController.swift; sourceTree = "<group>"; };
+		8B85296514D472F398133937EBAFBA30 /* ServiceInspectionFormFilledCardStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardStack.swift; sourceTree = "<group>"; };
+		8C9F9FD7B7E96B6CC8C09E8F8F6DC8C5 /* GroupSelectionRowCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionRowCell.swift; sourceTree = "<group>"; };
+		8E70B3A22FEE3A26C2DDFFD84F6E278D /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
+		8E7A30C9DFFDF54FFE14B00CCDB91ABA /* GroupSelectionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
+		948E9C4FB66D4210F993A69F650D9757 /* SelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoTests.framework; path = "Pods-StantUiIosLibraryDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemo-dummy.m"; sourceTree = "<group>"; };
-		9A4682BE6C5C8F5CCC83A432E2F041F7 /* ProgressBarWithToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTip.swift; sourceTree = "<group>"; };
-		9BE72D5595C61F9151D01ABAF1F966BC /* BottomDialogWithScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollViewController.swift; sourceTree = "<group>"; };
-		9C33DE7AA1F328FD77BEBA1360100501 /* GroupSelectionShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A45F5223F24336FE4D2DF76EFEEA6BF2 /* GroupSelectionRowCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionRowCell.swift; sourceTree = "<group>"; };
-		A463EF830F7E922E147AAFE4B19E3521 /* FilterButtonCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButtonCollectionViewCell.swift; sourceTree = "<group>"; };
-		A47C41E44755B9B1506B9E7CE184437A /* PhotoDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E58ED2CF863DBC4F26A7EE1C3899CFB /* UIImageExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		9E62F64A43C84362E3F9B6A6305F6ABA /* AttachmentTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttachmentTabView.swift; sourceTree = "<group>"; };
+		A0F85F6463C225615A8C423B6CC84181 /* GroupSelectionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableView.swift; sourceTree = "<group>"; };
+		A16CD14418EBBD92A2ED68E8D0262872 /* IntExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		A3EABE8B2FA6C3233EF5F9631717B1D5 /* InChargeStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InChargeStackView.swift; sourceTree = "<group>"; };
+		A483541B368168B57255F8D13116F74A /* ConstructionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableView.swift; sourceTree = "<group>"; };
 		A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoTests-dummy.m"; sourceTree = "<group>"; };
-		AE50816162F7C92B2514887FFB8E5E68 /* QuantityBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuantityBar.swift; sourceTree = "<group>"; };
-		B0CE52F8D4A9299E3A1D28DC0345D32C /* DateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		B3A7468EE15E9ACF50D2F7832DA68DD1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		B3E081AD71F73110BBF32E2B2A9EFBF5 /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		B564FF560F5EE560784C7E7CFC9BE087 /* UIImageExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		B565894320F9F72E6630BF4DBB9590BE /* RoundedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
-		B58A16545BBCBF67E2A204026D811E59 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
-		BDC4B4D4526961EC87E57CECB545980B /* DialogViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		A79EA5340DAD461A5370E2F2B6F8D825 /* FirstHeaderRecentItemCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRecentItemCell.swift; sourceTree = "<group>"; };
+		AD2D034F55F34FA413B607CF69D84200 /* SelectionViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerExtension.swift; sourceTree = "<group>"; };
+		AF943624B0CF92B9A8DD1B6EEA1ED794 /* CustomTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		AFBC907B04AA13FEED934A5FB52C74B6 /* UILabelExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		AFD446D2F1954581A9D5A25301A79417 /* PhotoDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		B18BB47928B3812E81B065FF0FAE49EA /* DateExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		B29888672F37FE9C96983E029DDB868E /* QuantityBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuantityBar.swift; sourceTree = "<group>"; };
+		B377231C260FA98D36E5B9BEC3BB9511 /* ContactsCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsCard.swift; sourceTree = "<group>"; };
+		B4CDA461F1075F996AD6867F858FAE58 /* MainMenuTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainMenuTabBarController.swift; sourceTree = "<group>"; };
+		B5C131B962CF9E0C00B287F601688A6B /* Localizable-pt.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = "Localizable-pt.strings"; sourceTree = "<group>"; };
+		B5CE1560369889E90200769F72190576 /* ServiceInspectionFormFilledDetailMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuView.swift; sourceTree = "<group>"; };
+		B80C72D0DE7FAB96DB50E596A76D23AC /* TeamScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewController.swift; sourceTree = "<group>"; };
+		B83E3E7B6B7037CB899FF782C32670D6 /* InternPersonCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternPersonCell.swift; sourceTree = "<group>"; };
+		BE24267B19C2DB1DB2C6396C4B568FCF /* SyncDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
 		BEC8AA4D42A2670EB8FA1427AA014653 /* Pods-StantUiIosLibraryDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemoTests.modulemap"; sourceTree = "<group>"; };
-		C35FA776CAAC6B38BBFCE03ECDBEF29F /* InternActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternActionCell.swift; sourceTree = "<group>"; };
-		C5189756D1F3B333D3E702931F5111A9 /* StantUiIosLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StantUiIosLibrary-prefix.pch"; sourceTree = "<group>"; };
-		C852D64013F7B006B3DD71E84F2EF1D3 /* AttachmentTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttachmentTabView.swift; sourceTree = "<group>"; };
-		C96302B4DB58643D41FC7E44A0C80EBE /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
-		CB0EE5B80599522DB1724DBF1680B135 /* ConstructionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
-		CCC420374B913C40BF6B0F5DA1BA0EE3 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
-		D1B2B137516DB5D3F0E1132390D8DF3B /* ConstructionsFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionsFilter.swift; sourceTree = "<group>"; };
-		D37CA948259EEA214BA97B30FC19445A /* StantUiIosLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StantUiIosLibrary.modulemap; sourceTree = "<group>"; };
+		C0AE1DCB6A3A3E79AEEAC94538FD8B93 /* ServiceInspectionFormFilledCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCard.swift; sourceTree = "<group>"; };
+		C77ABB8B67A129DD0E41203439B4F4AF /* RoundedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		CC51B284AD7B66EA23335A51AB2048EF /* ConstructionsFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionsFilter.swift; sourceTree = "<group>"; };
+		CDFCBDEE4F02A1CCB83E9A9F8E78526E /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D573C606A2CB5159F5802054438D2C15 /* Pods-StantUiIosLibraryDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StantUiIosLibraryDemo-Info.plist"; sourceTree = "<group>"; };
-		D632AB4454BB6190BD097C9782BE1B94 /* ServiceInspectionFormFilledCardStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardStack.swift; sourceTree = "<group>"; };
-		D92BAA441EB65A2BE11BD787EBB4FE2F /* ContactsViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		D63719C96F5417007BCACC144F6CA868 /* TeamScreenViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewControllerExtension.swift; sourceTree = "<group>"; };
+		D7E9D200CE0813AAB3F91ADD1BD907E3 /* ServiceInspectionFormFilledCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCell.swift; sourceTree = "<group>"; };
+		D9D340349D1380E15B42A94EAD670404 /* FloatExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		DB0A509A3A6BFC848C175623D654B237 /* Pods-StantUiIosLibraryDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		DBCC3A7BA1D17A79318E69B34B955444 /* UILabelExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		E0286ED76575430CDC21FD1A819E49C0 /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DC42A899EC9AC1D13446E65272B1CE35 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
+		DF9260ED37044403DC332999A19A3F3D /* FirstHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderView.swift; sourceTree = "<group>"; };
 		E3647F9417ECF98355D3F82965CECDD5 /* Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E3B3483C44F06029622F769B7BA6CA43 /* SelectRecentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectRecentViewController.swift; sourceTree = "<group>"; };
-		E467CACFF13C06A884A664034FF4D4E9 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		E816716246B5EBE20CDA29120C9E31FB /* GroupSelectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionHeaderView.swift; sourceTree = "<group>"; };
+		E3BF5B65159B21543BA39A7F3D6CC8DE /* FilterButtonCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FilterButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		E70F76B06B907EC95A3FC375F12FE5CB /* ServiceInspectionFormFilledCellBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCellBar.swift; sourceTree = "<group>"; };
+		E7E7D7C12321EB001AA6C76A3CE86196 /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E83A30A028EBBC5A1C6AE61B05741D37 /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E83E531C24F903CC61CC0FEE14789A18 /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StantUiIosLibraryDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E97985C3DBFEF4B81D523AF76A9CE9C3 /* CustomTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
-		EADA1F19D4D35CB4B6C80944CC43EFC3 /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		EE7D7380BC9AA97F32AE1A3842017678 /* ConstructionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableView.swift; sourceTree = "<group>"; };
+		E90C9900161538E7C9F8D62ADC9DC742 /* VerifiedMethodCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerifiedMethodCell.swift; sourceTree = "<group>"; };
+		EA7CBAEDCF1D2663775435064704B0C5 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		EC83295920EDEAAA41B0681F0F289470 /* FiltersCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
+		ED77A2A5351210F366D277756256C76A /* Localizable-en.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = "Localizable-en.strings"; sourceTree = "<group>"; };
+		EEAFF1E16DA1591C0FE37955FEF74743 /* GroupSelectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionHeaderView.swift; sourceTree = "<group>"; };
 		EFC60B91AD8D3C8812B554BCA4C0424D /* Pods-StantUiIosLibraryDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F0E3178716D3D2F1AF1F10E8ED6AA576 /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
-		F649BBDC2456631AF93AE42F1058FEB6 /* SelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
-		F67475EE1386C088BEE6264FD0D23223 /* FirstHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderView.swift; sourceTree = "<group>"; };
+		F30CE34445007108E8F3672429866B4D /* GroupSelectionShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		F3A94E948599084F7CCAD41A8E79436B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F47F0DEE3BC85596EB1D42AEF2ABE72E /* ContactsViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
+		F644BB1FF969C6145C607BC3A8B98BDF /* ConstructionViewDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
 		F851F720A52D2B6CB2100D5FB405B385 /* Pods-StantUiIosLibraryDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemo.modulemap"; sourceTree = "<group>"; };
-		FD1748DC5D9BD6AF96936658C71D040E /* TeamTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamTabView.swift; sourceTree = "<group>"; };
-		FDF14114A32663E2E83CFCC2966BEF68 /* DialogButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogButton.swift; sourceTree = "<group>"; };
-		FFCB8E560B637CF3C8F27EBE1E7BE3EC /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F872AE0245E80FC070DAD89CBDCD2ABA /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		FFCB8E560B637CF3C8F27EBE1E7BE3EC /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemo.framework; path = "Pods-StantUiIosLibraryDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,11 +258,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5043BD9AB64116DCDD19A79E2C68F6C /* Frameworks */ = {
+		AA70AB7477D67A53EE01533E840E9DE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87AB19E66178697D11EEABE32A0D0E4C /* Foundation.framework in Frameworks */,
+				6E7A0BEE6DE415FCC86F99A19BE7BB24 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,71 +286,137 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		0A09208AEFA253E02044B7DB1E82206B /* Cells */ = {
+		01AC49B1E3A5C585AAC1E09BEE0DDD93 /* QuantityBar */ = {
 			isa = PBXGroup;
 			children = (
-				8F03BC0324B3C14300BA7405 /* ItemMethodCell */,
-				8F03BC0824B3C15200BA7405 /* VerifiedMethodCell */,
-				C35FA776CAAC6B38BBFCE03ECDBEF29F /* InternActionCell.swift */,
-				1411B8A252E8826E914463D2B02A1562 /* InternPersonCell.swift */,
-				C96302B4DB58643D41FC7E44A0C80EBE /* SelectionTableViewCell.swift */,
+				B29888672F37FE9C96983E029DDB868E /* QuantityBar.swift */,
+				8016EFB53A68964CFB3FB336932644BC /* ToDoBar.swift */,
 			);
-			name = Cells;
-			path = StantUiIosLibrary/Classes/Cells;
-			sourceTree = "<group>";
-		};
-		0A6839B376461895413653480AA5904A /* QuantityBar */ = {
-			isa = PBXGroup;
-			children = (
-				AE50816162F7C92B2514887FFB8E5E68 /* QuantityBar.swift */,
-				1E39E6222E851013FD1DE76B71FCE6CA /* ToDoBar.swift */,
-			);
+			name = QuantityBar;
 			path = QuantityBar;
 			sourceTree = "<group>";
 		};
-		1498A64CAD1E0D970A89EF7CF7B1A5E8 /* TableView */ = {
+		04999698D785EE46DDA38061370F2675 /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				EE7D7380BC9AA97F32AE1A3842017678 /* ConstructionTableView.swift */,
+				0AFF1C5BE74BC6DC414C18FFC3857708 /* DefaultSearchBar.swift */,
+				22362381C24326C49450BADDEC1979C1 /* DefaultSearchBarDelegateExtension.swift */,
 			);
-			path = TableView;
+			name = SearchBar;
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
-		14C9D5C05F0205D08C8DF0BC806B13BA /* TeamScreenViewController */ = {
+		074CFB287A651DFD8B50BC8DE1990F61 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4705317762873FADA5461BA0E16A6065 /* TeamScreenViewController.swift */,
-				3C2EBA01DB05B438995DC692BA59A216 /* TeamScreenViewControllerExtension.swift */,
+				C77ABB8B67A129DD0E41203439B4F4AF /* RoundedImageView.swift */,
 			);
+			name = Images;
+			path = StantUiIosLibrary/Classes/Images;
+			sourceTree = "<group>";
+		};
+		0CD26813757740DC2EDCCE617DE9C8AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F47F0DEE3BC85596EB1D42AEF2ABE72E /* ContactsViewDefaultSearchViewExtension.swift */,
+				71404C4F9BF498F30052493B6B290D6A /* ContactsViewShowAndHideSearchTableViewExtension.swift */,
+			);
+			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10EE88FE83CBD0CEF62A55C26E70ECAF /* SelectRecentDialog */ = {
+			isa = PBXGroup;
+			children = (
+				05EE26C1EBDCD63511B6BA62C4885E7C /* FirstHeaderRecentItem.swift */,
+				A79EA5340DAD461A5370E2F2B6F8D825 /* FirstHeaderRecentItemCell.swift */,
+				884E39F4C0A01D91C15D93BDFEBB35D6 /* SelectRecentViewController.swift */,
+			);
+			name = SelectRecentDialog;
+			path = SelectRecentDialog;
+			sourceTree = "<group>";
+		};
+		11F12AF7A82A4EB06783BA861D238EFD /* ContactsTableViewWithCollapsedSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				5D85B299C98D55AC51EDD855B5BE4362 /* ContactsTableViewWithCollapsedSearchBar.swift */,
+				0CD26813757740DC2EDCCE617DE9C8AD /* Extensions */,
+				EAC9A56E2F36F59ABCA686795870B005 /* TableView */,
+			);
+			name = ContactsTableViewWithCollapsedSearchBar;
+			path = ContactsTableViewWithCollapsedSearchBar;
+			sourceTree = "<group>";
+		};
+		11F37C247EAD9D915099B381E4ED0F62 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8C9F9FD7B7E96B6CC8C09E8F8F6DC8C5 /* GroupSelectionRowCell.swift */,
+			);
+			name = Cell;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		13B34FE7B4ED788E346E7B376A5A0DF3 /* TeamScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B80C72D0DE7FAB96DB50E596A76D23AC /* TeamScreenViewController.swift */,
+				D63719C96F5417007BCACC144F6CA868 /* TeamScreenViewControllerExtension.swift */,
+			);
+			name = TeamScreenViewController;
 			path = TeamScreenViewController;
 			sourceTree = "<group>";
 		};
-		17013A16DE023A30B1DAD6BC5F124CDD /* TabView */ = {
+		140B277EC4EEA459E10E2A7141B661B3 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				E97985C3DBFEF4B81D523AF76A9CE9C3 /* CustomTabView.swift */,
-				163D92FD8E5116A00760E28BC68C608C /* CustomTabViewCell.swift */,
-				947F81F497F1E6A730AA1D6B6AB09652 /* AttachmentTabView */,
-				58D8BAF2E7EF157872ED810438BE617B /* FormTabView */,
-				1E71905CA7D831CD71B840F509CE9F3B /* TeamTabView */,
+				E112D65DBD23DA60ED114299858C1739 /* ConstructionsFilter */,
+				1B3CF1FE4E27573550FD0C66ABD6C01C /* FirstHeader */,
+				7A4BDB38EEA309E50BAF89C4B9618B43 /* SecondHeader */,
 			);
-			path = TabView;
+			name = Headers;
+			path = StantUiIosLibrary/Classes/Headers;
+			sourceTree = "<group>";
+		};
+		1B3CF1FE4E27573550FD0C66ABD6C01C /* FirstHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7C080DC88FFDFC04F5AC19272E6F79F6 /* FirstHeaderDropdownButton.swift */,
+				757639EE228548B862433FF6E3E562EB /* FirstHeaderRightBarButton.swift */,
+				DF9260ED37044403DC332999A19A3F3D /* FirstHeaderView.swift */,
+				10EE88FE83CBD0CEF62A55C26E70ECAF /* SelectRecentDialog */,
+			);
+			name = FirstHeader;
+			path = FirstHeader;
+			sourceTree = "<group>";
+		};
+		1BD4F6EAF957EE95CFACA6C929C02CA7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F3A94E948599084F7CCAD41A8E79436B /* LICENSE */,
+				2FF2DE13094CD1F0416483C9822D61C9 /* README.md */,
+				E83A30A028EBBC5A1C6AE61B05741D37 /* StantUiIosLibrary.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		1D5DF762B46D05722F6DD07F29318BE9 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E209E5DC90DFF2382346E2FC956CFC67 /* StantUiIosLibrary */,
+				3878574F0ED238ADD28828BAE234B607 /* StantUiIosLibrary */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		1E71905CA7D831CD71B840F509CE9F3B /* TeamTabView */ = {
+		1FAE98122F40E74601B522BD9E054876 /* GroupSelectionTableViewWithCollapsedSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				FD1748DC5D9BD6AF96936658C71D040E /* TeamTabView.swift */,
+				8E7A30C9DFFDF54FFE14B00CCDB91ABA /* GroupSelectionTableViewWithCollapsedSearchBar.swift */,
+				53C4DCC8D894560A8BCFFFDF411A09B0 /* Extensions */,
+				6F4CCE2A014F1FDF988A9F0A5493BC08 /* GroupedSelection */,
+				E4FCFA7C1F8364222EF29A5301CCF5F9 /* TableView */,
 			);
-			path = TeamTabView;
+			name = GroupSelectionTableViewWithCollapsedSearchBar;
+			path = GroupSelectionTableViewWithCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
 		23FBACE5A1F65A61190F8F7B794FDAB5 /* Pods-StantUiIosLibraryDemoTests */ = {
@@ -355,91 +435,128 @@
 			path = "Target Support Files/Pods-StantUiIosLibraryDemoTests";
 			sourceTree = "<group>";
 		};
-		2749D004E56EB915C899F40970062401 /* Dialogs */ = {
+		341BC04E6156E8C40D3E917ED63E63B5 /* ServiceInspectionFormFilledCollapsedSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				FFC88C17078BF404D978C43D3B4DE7EE /* BottomDialogWithScroll */,
-				7C00ABAA8AFDA600317A6EB9CD940EE0 /* DialogView */,
+				324B96F97BE21CF6B951DCA285C02919 /* ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift */,
+				60242E0A20B1C84E10F9C3AB6DAA2C98 /* Extensions */,
+				9819EB4C6EEDAA25F6330A7A0B66C699 /* TableView */,
 			);
-			name = Dialogs;
-			path = StantUiIosLibrary/Classes/Dialogs;
+			name = ServiceInspectionFormFilledCollapsedSearchBar;
+			path = ServiceInspectionFormFilledCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
-		3BF76120C86F6551A5DFFEFA5FB681BE /* Construction */ = {
+		3878574F0ED238ADD28828BAE234B607 /* StantUiIosLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				0DED17BC658BF5AED1E46E33F2877E9E /* ConstructionCard.swift */,
+				3C52AA4A910F1D22CC7BC9EC9C3D3DF7 /* ViewTeste.swift */,
+				E1FAA474F3CAFEC35E9C2545B7966D0B /* Bars */,
+				41BFAA81885C05A3C2255667F6C06A84 /* Cards */,
+				9C10CFED718DE3872CBA84690E01F7A2 /* Cells */,
+				D015638CE04C043AE922F967D63EE58C /* Dialogs */,
+				140B277EC4EEA459E10E2A7141B661B3 /* Headers */,
+				074CFB287A651DFD8B50BC8DE1990F61 /* Images */,
+				62A31431483EBC59A84BA73A6B270FA7 /* Inputs */,
+				6AABC77FB108B3472BC3C0F777019376 /* Localizable */,
+				8934C4080691AF3028026EF17D182F5C /* Menus */,
+				1BD4F6EAF957EE95CFACA6C929C02CA7 /* Pod */,
+				966B48837AEB08D748EA95AC0A09A216 /* Support Files */,
+				CB4B1309210824A3DA919FD2C076BAE0 /* Tables */,
+				DB4B526A4F337B954AA1ABE5F2D0DD74 /* Utils */,
 			);
-			path = Construction;
+			name = StantUiIosLibrary;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		3EED04D7FD669A2A7E4355D55C876DC7 /* Menus */ = {
+		3C7AA99FF81ED72679D64A9FAC37481B /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				8E258C0DC0F5C0044A7A55756E46E1F8 /* MainMenu */,
-				B1243B028798870878E45DA89F3114BF /* ServiceInspectionFormFilledDetailMenu */,
+				B377231C260FA98D36E5B9BEC3BB9511 /* ContactsCard.swift */,
 			);
-			name = Menus;
-			path = StantUiIosLibrary/Classes/Menus;
+			name = Contacts;
+			path = Contacts;
 			sourceTree = "<group>";
 		};
-		41F6FEF809E3E73664F9C9DAF50490AE /* SearchBar */ = {
+		41BFAA81885C05A3C2255667F6C06A84 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				3357C73C655418E87C20332FF91C8BFA /* DefaultSearchBar.swift */,
-				1E52DE212E4D74C471F568B3461E9471 /* DefaultSearchBarDelegateExtension.swift */,
+				FBD74A5DB9BC0C8B099F0A56BB793F63 /* Construction */,
+				3C7AA99FF81ED72679D64A9FAC37481B /* Contacts */,
+				E0C719A7AD5AFF3BBA0425C8AFAB5857 /* ServiceInspectionFormFilled */,
 			);
-			path = SearchBar;
+			name = Cards;
+			path = StantUiIosLibrary/Classes/Cards;
 			sourceTree = "<group>";
 		};
-		4D4EC7B52FED3BE67C69A8C89F4388AC /* GroupedSelection */ = {
+		53C4DCC8D894560A8BCFFFDF411A09B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4A537ADC9124131C4483C769820AE29B /* GroupedSelection.swift */,
-				7CB04137D660761CDFD1322DEF508C71 /* ItemSelection.swift */,
+				4B2F290208E49A4F74DD49BDC5996F4C /* GroupSelectionDefaultSearchViewExtension.swift */,
+				F30CE34445007108E8F3672429866B4D /* GroupSelectionShowAndHideSearchTableViewExtension.swift */,
 			);
-			path = GroupedSelection;
+			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5458E624BC2D372543978170F795B147 /* Utils */ = {
+		555B2937D0FDFE382E93280F80F2883A /* TabView */ = {
 			isa = PBXGroup;
 			children = (
-				B0CE52F8D4A9299E3A1D28DC0345D32C /* DateExtension.swift */,
-				8F03BC0D24B3C18000BA7405 /* IntExtension.swift */,
-				88636055C7208A2DED3275FB060AEB53 /* FloatExtension.swift */,
-				215CB401E89192472ACCB30653A943D8 /* NSMutableAttributedStringExtension.swift */,
-				E0286ED76575430CDC21FD1A819E49C0 /* UIColorExtension.swift */,
-				B564FF560F5EE560784C7E7CFC9BE087 /* UIImageExtension.swift */,
-				E467CACFF13C06A884A664034FF4D4E9 /* UIImageViewExtension.swift */,
-				DBCC3A7BA1D17A79318E69B34B955444 /* UILabelExtension.swift */,
-				B3E081AD71F73110BBF32E2B2A9EFBF5 /* UIViewExtension.swift */,
-				312171499ED1AC47DBE0147779E2BE38 /* UIViewLayoutExtension.swift */,
-				AB8E40EC436AB542C6D7C8656662DBC5 /* ViewHelpers */,
+				AF943624B0CF92B9A8DD1B6EEA1ED794 /* CustomTabView.swift */,
+				2F0D93CA8FE85B44C13276B1D0EB721A /* CustomTabViewCell.swift */,
+				AFBFBB7F2F83C58A4A2E4A5413D81CAC /* AttachmentTabView */,
+				FF2C72979EC3D4CDBF2436B62F7986E6 /* FormTabView */,
+				628BFDDF7289AC6E1EA4B7C74F75F381 /* TeamTabView */,
 			);
-			name = Utils;
-			path = StantUiIosLibrary/Classes/Utils;
+			name = TabView;
+			path = TabView;
 			sourceTree = "<group>";
 		};
-		58D8BAF2E7EF157872ED810438BE617B /* FormTabView */ = {
+		571BDEC6E33AB75D2DD69899B3D852BA /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				2542183C28FAF3C339829B5902BCCBCE /* FormTabCollectionViewCell.swift */,
-				89D20CA489D0113D334A27F753517464 /* FormTabView.swift */,
+				EEAFF1E16DA1591C0FE37955FEF74743 /* GroupSelectionHeaderView.swift */,
 			);
-			path = FormTabView;
+			name = Header;
+			path = Header;
 			sourceTree = "<group>";
 		};
-		623F868B288F0B99D392573146CE2FF2 /* Tables */ = {
+		5D114668EBFB0A330E5ED4E5DDEC976D /* ServiceInspectionFormFilledDetailMenu */ = {
 			isa = PBXGroup;
 			children = (
-				CD55E12425C1395C1CA2BC223755EFF7 /* ConstructionTableViewWithCollapsedSearchBar */,
-				DBA597D120142686E09BEC1ADF670413 /* ContactsTableViewWithCollapsedSearchBar */,
-				9EB38EA8A79C9602FD8EE334441ADEBA /* GroupSelectionTableViewWithCollapsedSearchBar */,
-				793AF98A894372B285538A415D9F31B5 /* SelectionViewController */,
-				14C9D5C05F0205D08C8DF0BC806B13BA /* TeamScreenViewController */,
+				B5CE1560369889E90200769F72190576 /* ServiceInspectionFormFilledDetailMenuView.swift */,
+				BAC1F3351A22A3C8D2C94D04AB9D2FD7 /* InChargeStackView */,
+				555B2937D0FDFE382E93280F80F2883A /* TabView */,
 			);
-			name = Tables;
-			path = StantUiIosLibrary/Classes/Tables;
+			name = ServiceInspectionFormFilledDetailMenu;
+			path = ServiceInspectionFormFilledDetailMenu;
+			sourceTree = "<group>";
+		};
+		60242E0A20B1C84E10F9C3AB6DAA2C98 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F929B50015E60CB96FAA1BCA8F6C439 /* ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift */,
+				F872AE0245E80FC070DAD89CBDCD2ABA /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift */,
+			);
+			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		628BFDDF7289AC6E1EA4B7C74F75F381 /* TeamTabView */ = {
+			isa = PBXGroup;
+			children = (
+				5735D069DE5BA3EB4D1EACEFC44690BD /* TeamTabView.swift */,
+			);
+			name = TeamTabView;
+			path = TeamTabView;
+			sourceTree = "<group>";
+		};
+		62A31431483EBC59A84BA73A6B270FA7 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				79769ABA774C4F31D1E1EB26D99F0FC8 /* TextInputTableViewCell.swift */,
+			);
+			name = Inputs;
+			path = StantUiIosLibrary/Classes/Inputs;
 			sourceTree = "<group>";
 		};
 		66364AA4EC25D66A03D81060EA30C0AF /* Products */ = {
@@ -452,203 +569,96 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		66E7BE68AEAF73072828B4EB4018F973 /* Pod */ = {
+		6AABC77FB108B3472BC3C0F777019376 /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7468EE15E9ACF50D2F7832DA68DD1 /* LICENSE */,
-				0F910192AB1FD93B05FDD6A8F8580E93 /* README.md */,
-				EADA1F19D4D35CB4B6C80944CC43EFC3 /* StantUiIosLibrary.podspec */,
+				4B16D27AC8D287D0C79FCB594B6D388E /* AppStrings.swift */,
+				ED77A2A5351210F366D277756256C76A /* Localizable-en.strings */,
+				B5C131B962CF9E0C00B287F601688A6B /* Localizable-pt.strings */,
 			);
-			name = Pod;
+			name = Localizable;
+			path = StantUiIosLibrary/Classes/Localizable;
 			sourceTree = "<group>";
 		};
-		681C9CD88C614D29931B3EC9A43A5D60 /* SelectRecentDialog */ = {
+		6B45CD5CC1E3E77E0D46E77A5FD9915A /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				0D4951BAC448BF8E5A470CFC3BFE5BE5 /* FirstHeaderRecentItem.swift */,
-				24E4D8C1668A4C74F1FF6ACDC8756925 /* FirstHeaderRecentItemCell.swift */,
-				E3B3483C44F06029622F769B7BA6CA43 /* SelectRecentViewController.swift */,
+				A483541B368168B57255F8D13116F74A /* ConstructionTableView.swift */,
 			);
-			path = SelectRecentDialog;
+			name = TableView;
+			path = TableView;
 			sourceTree = "<group>";
 		};
-		6E9079AECFD14460DAA9A25840BE21A7 /* Extensions */ = {
+		6C95CB4EF65A8F20544EB24D2B94B7F9 /* ConstructionTableViewWithCollapsedSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				95E9B914ABC2966BEAEFC3AADAA0C61F /* ContactsViewDefaultSearchViewExtension.swift */,
-				D92BAA441EB65A2BE11BD787EBB4FE2F /* ContactsViewShowAndHideSearchTableViewExtension.swift */,
+				7CB13BB652B8C1BF4891F5660E33873F /* ConstructionTableViewWithCollapsedSearchBar.swift */,
+				DDA5B754613649931E147AE34CBDB856 /* Extensions */,
+				6B45CD5CC1E3E77E0D46E77A5FD9915A /* TableView */,
 			);
-			path = Extensions;
+			name = ConstructionTableViewWithCollapsedSearchBar;
+			path = ConstructionTableViewWithCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
-		718A70464D5F9484D4F4EE298A4A131D /* Cards */ = {
+		6F4CCE2A014F1FDF988A9F0A5493BC08 /* GroupedSelection */ = {
 			isa = PBXGroup;
 			children = (
-				3BF76120C86F6551A5DFFEFA5FB681BE /* Construction */,
-				B39655D96810A0EBE2A49AD1787A9D4F /* Contacts */,
-				DED81B3232DAF78D11865F15B417059A /* ServiceInspectionFormFilled */,
+				59CEB5D4D4EF9CD5EF4DEAA4614D0C86 /* GroupedSelection.swift */,
+				26FF01DE81A1A496316EBC81A9DBB8CB /* ItemSelection.swift */,
 			);
-			name = Cards;
-			path = StantUiIosLibrary/Classes/Cards;
+			name = GroupedSelection;
+			path = GroupedSelection;
 			sourceTree = "<group>";
 		};
-		73875B4D9C8B8D61E9D1C7B82B2D1791 /* Support Files */ = {
+		72059F0DC4C79920EF3C2980093196D2 /* ServiceInspectionFormFilledCell */ = {
 			isa = PBXGroup;
 			children = (
-				D37CA948259EEA214BA97B30FC19445A /* StantUiIosLibrary.modulemap */,
-				344329BD0456DD18D9C38A9A50B51E71 /* StantUiIosLibrary.xcconfig */,
-				F0E3178716D3D2F1AF1F10E8ED6AA576 /* StantUiIosLibrary-dummy.m */,
-				4C1D682880F5396311977163EA6E2FB1 /* StantUiIosLibrary-Info.plist */,
-				C5189756D1F3B333D3E702931F5111A9 /* StantUiIosLibrary-prefix.pch */,
-				3A7A5BC2B4DF91B03FCA6D44CC9AFF9A /* StantUiIosLibrary-umbrella.h */,
+				D7E9D200CE0813AAB3F91ADD1BD907E3 /* ServiceInspectionFormFilledCell.swift */,
+				E70F76B06B907EC95A3FC375F12FE5CB /* ServiceInspectionFormFilledCellBar.swift */,
+				1E2AC97E9E34153FECA3AB4E15AAAB4B /* ServiceInspectionFormFilledCellHeader.swift */,
 			);
-			name = "Support Files";
-			path = "StantUiIosLibraryDemo/Pods/Target Support Files/StantUiIosLibrary";
+			name = ServiceInspectionFormFilledCell;
+			path = ServiceInspectionFormFilledCell;
 			sourceTree = "<group>";
 		};
-		77F5768E49A20AFD7FAC49B4E8075142 /* Cell */ = {
+		7A4BDB38EEA309E50BAF89C4B9618B43 /* SecondHeader */ = {
 			isa = PBXGroup;
 			children = (
-				A45F5223F24336FE4D2DF76EFEEA6BF2 /* GroupSelectionRowCell.swift */,
+				2435A79D355A2F9A610AE5C662EE44DA /* SecondHeaderButton.swift */,
+				66706BADC2EA281790A9B54A381B78CB /* SecondHeaderView.swift */,
 			);
-			path = Cell;
+			name = SecondHeader;
+			path = SecondHeader;
 			sourceTree = "<group>";
 		};
-		7907C10D51091F7BDEA353C2ECF56D23 /* Extensions */ = {
+		81A91882B110DBEB35ABDEF14E5CBBE8 /* ViewHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				0C10458F97EBEB886B704A9C81E8C6CB /* ConstructionViewDefaultSearchViewExtension.swift */,
-				B58A16545BBCBF67E2A204026D811E59 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */,
+				4A6CBAF3D18418854C5600DAE6B936CC /* Gesturizer.swift */,
 			);
-			path = Extensions;
+			name = ViewHelpers;
+			path = ViewHelpers;
 			sourceTree = "<group>";
 		};
-		793AF98A894372B285538A415D9F31B5 /* SelectionViewController */ = {
+		8934C4080691AF3028026EF17D182F5C /* Menus */ = {
 			isa = PBXGroup;
 			children = (
-				F649BBDC2456631AF93AE42F1058FEB6 /* SelectionViewController.swift */,
-				308A31985873C4A953D4B153945A0186 /* SelectionViewControllerExtension.swift */,
+				C8FBC28CEF87067FEBEDF1694B230AD7 /* MainMenu */,
+				5D114668EBFB0A330E5ED4E5DDEC976D /* ServiceInspectionFormFilledDetailMenu */,
 			);
-			path = SelectionViewController;
+			name = Menus;
+			path = StantUiIosLibrary/Classes/Menus;
 			sourceTree = "<group>";
 		};
-		7B48546FE907024AFDCCDB4F21DE82FF /* Images */ = {
+		89D6FB29BEC513A45E0E4448F8C0C49C /* DialogView */ = {
 			isa = PBXGroup;
 			children = (
-				B565894320F9F72E6630BF4DBB9590BE /* RoundedImageView.swift */,
+				77C32EECE5FF344CA690DD3835961491 /* DialogButton.swift */,
+				3E2906A65C9FEA41CD8E54F0CD382F96 /* DialogViewController.swift */,
+				BE24267B19C2DB1DB2C6396C4B568FCF /* SyncDialogView.swift */,
 			);
-			name = Images;
-			path = StantUiIosLibrary/Classes/Images;
-			sourceTree = "<group>";
-		};
-		7C00ABAA8AFDA600317A6EB9CD940EE0 /* DialogView */ = {
-			isa = PBXGroup;
-			children = (
-				FDF14114A32663E2E83CFCC2966BEF68 /* DialogButton.swift */,
-				BDC4B4D4526961EC87E57CECB545980B /* DialogViewController.swift */,
-				6B490FE858A9233FE272C057D314A787 /* SyncDialogView.swift */,
-			);
+			name = DialogView;
 			path = DialogView;
-			sourceTree = "<group>";
-		};
-		7E4FD6E272D132A3D74E7191544B2962 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2DC095293E5DC952C227AA9D5CEA3449 /* GroupSelectionDefaultSearchViewExtension.swift */,
-				9C33DE7AA1F328FD77BEBA1360100501 /* GroupSelectionShowAndHideSearchTableViewExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		81A4666B7BFE856F76B7CC8A56653768 /* ConstructionsFilter */ = {
-			isa = PBXGroup;
-			children = (
-				D1B2B137516DB5D3F0E1132390D8DF3B /* ConstructionsFilter.swift */,
-				0EA88B0665B968F87912907104961CE6 /* FilterButton.swift */,
-				A463EF830F7E922E147AAFE4B19E3521 /* FilterButtonCollectionViewCell.swift */,
-				22117166FD1604D6A2D243A5555F6C0C /* FiltersCollectionView.swift */,
-			);
-			path = ConstructionsFilter;
-			sourceTree = "<group>";
-		};
-		84FDC3E03F3D61D476438D564EC5E738 /* InChargeStackView */ = {
-			isa = PBXGroup;
-			children = (
-				31A4A9437F1D84887EF6967A9A28B978 /* InChargeStackView.swift */,
-				A47C41E44755B9B1506B9E7CE184437A /* PhotoDetailView.swift */,
-			);
-			path = InChargeStackView;
-			sourceTree = "<group>";
-		};
-		8CE82765F45ABD100F3F4DEC19406571 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				17452C12013C8E18E3D4B13C40752442 /* ContactsTableView.swift */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		8DC0212824502B225B44440D6BAD25EA /* Inputs */ = {
-			isa = PBXGroup;
-			children = (
-				42C211E3357CEFEC07894CF8B822C76D /* TextInputTableViewCell.swift */,
-			);
-			name = Inputs;
-			path = StantUiIosLibrary/Classes/Inputs;
-			sourceTree = "<group>";
-		};
-		8E258C0DC0F5C0044A7A55756E46E1F8 /* MainMenu */ = {
-			isa = PBXGroup;
-			children = (
-				98B69C6E64105B41BA0EA7DE87F46C66 /* MainMenuTabBarController.swift */,
-				555F9F711765A2C8FBDBDC1D20DB6E9C /* MenuTabBarDTO.swift */,
-			);
-			path = MainMenu;
-			sourceTree = "<group>";
-		};
-		8F03BC0324B3C14300BA7405 /* ItemMethodCell */ = {
-			isa = PBXGroup;
-			children = (
-				8F03BC0424B3C14300BA7405 /* ItemObservationCell.swift */,
-				8F03BC0524B3C14300BA7405 /* ItemMethodHeaderView.swift */,
-			);
-			path = ItemMethodCell;
-			sourceTree = "<group>";
-		};
-		8F03BC0824B3C15200BA7405 /* VerifiedMethodCell */ = {
-			isa = PBXGroup;
-			children = (
-				8F03BC0924B3C15200BA7405 /* VerifiedMethodCellStatusView.swift */,
-				8F03BC0A24B3C15200BA7405 /* VerifiedMethodCell.swift */,
-			);
-			path = VerifiedMethodCell;
-			sourceTree = "<group>";
-		};
-		91574DD42FDD79CCBF5F829AB98ABDBC /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				2A5A0464B126A75B061D6DA739036A20 /* GroupSelectionTableView.swift */,
-				77F5768E49A20AFD7FAC49B4E8075142 /* Cell */,
-				954B92A730B4037C33D6ACAD9A21AEB3 /* Header */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		947F81F497F1E6A730AA1D6B6AB09652 /* AttachmentTabView */ = {
-			isa = PBXGroup;
-			children = (
-				26DA198709AF9C09B6D314AD66D5E060 /* AttachmentTabCollectionViewCell.swift */,
-				C852D64013F7B006B3DD71E84F2EF1D3 /* AttachmentTabView.swift */,
-			);
-			path = AttachmentTabView;
-			sourceTree = "<group>";
-		};
-		954B92A730B4037C33D6ACAD9A21AEB3 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				E816716246B5EBE20CDA29120C9E31FB /* GroupSelectionHeaderView.swift */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		955C3D925E3322FAE1AD96B821E145AD /* Pods-StantUiIosLibraryDemo */ = {
@@ -668,61 +678,81 @@
 			path = "Target Support Files/Pods-StantUiIosLibraryDemo";
 			sourceTree = "<group>";
 		};
-		99C7BAF99BF4D0173D491F6F5B10CFAB /* FirstHeader */ = {
+		966B48837AEB08D748EA95AC0A09A216 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				81BC25DCA263C5BAEC90E5B64A14017E /* FirstHeaderDropdownButton.swift */,
-				8D0A83FC669D2127CD52091126BD99D8 /* FirstHeaderRightBarButton.swift */,
-				F67475EE1386C088BEE6264FD0D23223 /* FirstHeaderView.swift */,
-				681C9CD88C614D29931B3EC9A43A5D60 /* SelectRecentDialog */,
+				702F24DD5D03720F6E027A97E4C7D14F /* StantUiIosLibrary.modulemap */,
+				00898952FB1081B542588822AFDC16CC /* StantUiIosLibrary.xcconfig */,
+				0032CBE735F5DA81EFB5AE38F5B80069 /* StantUiIosLibrary-dummy.m */,
+				378E03ECEECB06C62E0BEDBDB9F229F3 /* StantUiIosLibrary-Info.plist */,
+				823039711F65CBB9148C30385A00BB64 /* StantUiIosLibrary-prefix.pch */,
+				790246D54121C22F120E797DDC14F189 /* StantUiIosLibrary-umbrella.h */,
 			);
-			path = FirstHeader;
+			name = "Support Files";
+			path = "StantUiIosLibraryDemo/Pods/Target Support Files/StantUiIosLibrary";
 			sourceTree = "<group>";
 		};
-		9EB38EA8A79C9602FD8EE334441ADEBA /* GroupSelectionTableViewWithCollapsedSearchBar */ = {
+		9819EB4C6EEDAA25F6330A7A0B66C699 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				CCC420374B913C40BF6B0F5DA1BA0EE3 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */,
-				7E4FD6E272D132A3D74E7191544B2962 /* Extensions */,
-				4D4EC7B52FED3BE67C69A8C89F4388AC /* GroupedSelection */,
-				91574DD42FDD79CCBF5F829AB98ABDBC /* TableView */,
+				601FA3B50ECC22009808EEF41AD18FBE /* ServiceInspectionFormFilledTableView.swift */,
 			);
-			path = GroupSelectionTableViewWithCollapsedSearchBar;
+			name = TableView;
+			path = TableView;
 			sourceTree = "<group>";
 		};
-		AB8E40EC436AB542C6D7C8656662DBC5 /* ViewHelpers */ = {
+		9C10CFED718DE3872CBA84690E01F7A2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8A56EC0E8159D03573E50B8618FFEF1B /* Gesturizer.swift */,
+				6CA8922BCD8FEA54FC4B882E3BE27847 /* InternActionCell.swift */,
+				B83E3E7B6B7037CB899FF782C32670D6 /* InternPersonCell.swift */,
+				38A9E8B89C7E2714955A418DD44C0025 /* SelectionTableViewCell.swift */,
+				D7F4D81167A2F73855B4EA58F122CCA7 /* ItemMethodCell */,
+				72059F0DC4C79920EF3C2980093196D2 /* ServiceInspectionFormFilledCell */,
+				FEE78A1303183FEE478782D774BE0AF1 /* VerifiedMethodCell */,
 			);
-			path = ViewHelpers;
+			name = Cells;
+			path = StantUiIosLibrary/Classes/Cells;
 			sourceTree = "<group>";
 		};
-		B1243B028798870878E45DA89F3114BF /* ServiceInspectionFormFilledDetailMenu */ = {
+		A53CF0E531D85F10652579E821CC60EC /* ProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				26D533D54C93F662F0050CF281C98F1F /* ServiceInspectionFormFilledDetailMenuView.swift */,
-				84FDC3E03F3D61D476438D564EC5E738 /* InChargeStackView */,
-				17013A16DE023A30B1DAD6BC5F124CDD /* TabView */,
+				7135C8FFC2AA8CB0C4333255BE5D95EC /* ProgressBarWithToolTip.swift */,
+				706F9F3C82A06E9B56910735B3CFC258 /* ProgressToolTip.swift */,
 			);
-			path = ServiceInspectionFormFilledDetailMenu;
+			name = ProgressBar;
+			path = ProgressBar;
 			sourceTree = "<group>";
 		};
-		B39655D96810A0EBE2A49AD1787A9D4F /* Contacts */ = {
+		AFBFBB7F2F83C58A4A2E4A5413D81CAC /* AttachmentTabView */ = {
 			isa = PBXGroup;
 			children = (
-				6AC3D948F5B273FD08F534DDE2F27993 /* ContactsCard.swift */,
+				80301BE4228899C3336A572EE1686B50 /* AttachmentTabCollectionViewCell.swift */,
+				9E62F64A43C84362E3F9B6A6305F6ABA /* AttachmentTabView.swift */,
 			);
-			path = Contacts;
+			name = AttachmentTabView;
+			path = AttachmentTabView;
 			sourceTree = "<group>";
 		};
-		BE39DEF3C6E58BA2ECDDFE74B71898FD /* SecondHeader */ = {
+		B711D0E760BF02ADBC2ECC768C1AC63E /* BottomDialogWithScroll */ = {
 			isa = PBXGroup;
 			children = (
-				4AA44DCA1C1E2761878FB488F92B8658 /* SecondHeaderButton.swift */,
-				75488E3CD47F496DA119794ABCF148DC /* SecondHeaderView.swift */,
+				0BC243B24A5554D8E27461983FD95FD2 /* BottomDialogWithScrollViewController.swift */,
+				4D082D30C8718BB834C694261E35E0CB /* ScrollableTableViewDialogCell.swift */,
 			);
-			path = SecondHeader;
+			name = BottomDialogWithScroll;
+			path = BottomDialogWithScroll;
+			sourceTree = "<group>";
+		};
+		BAC1F3351A22A3C8D2C94D04AB9D2FD7 /* InChargeStackView */ = {
+			isa = PBXGroup;
+			children = (
+				A3EABE8B2FA6C3233EF5F9631717B1D5 /* InChargeStackView.swift */,
+				AFD446D2F1954581A9D5A25301A79417 /* PhotoDetailView.swift */,
+			);
+			name = InChargeStackView;
+			path = InChargeStackView;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -733,23 +763,38 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CC9D9F4BA534FF391D1FF8F2D9A2270B /* ProgressBar */ = {
+		C8FBC28CEF87067FEBEDF1694B230AD7 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				9A4682BE6C5C8F5CCC83A432E2F041F7 /* ProgressBarWithToolTip.swift */,
-				9089E372F94A57F4683CCAAF1A8C277C /* ProgressToolTip.swift */,
+				B4CDA461F1075F996AD6867F858FAE58 /* MainMenuTabBarController.swift */,
+				3D862F089BB43D8A0AF295C60BB4059C /* MenuTabBarDTO.swift */,
 			);
-			path = ProgressBar;
+			name = MainMenu;
+			path = MainMenu;
 			sourceTree = "<group>";
 		};
-		CD55E12425C1395C1CA2BC223755EFF7 /* ConstructionTableViewWithCollapsedSearchBar */ = {
+		CB4B1309210824A3DA919FD2C076BAE0 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
-				CB0EE5B80599522DB1724DBF1680B135 /* ConstructionTableViewWithCollapsedSearchBar.swift */,
-				7907C10D51091F7BDEA353C2ECF56D23 /* Extensions */,
-				1498A64CAD1E0D970A89EF7CF7B1A5E8 /* TableView */,
+				6C95CB4EF65A8F20544EB24D2B94B7F9 /* ConstructionTableViewWithCollapsedSearchBar */,
+				11F12AF7A82A4EB06783BA861D238EFD /* ContactsTableViewWithCollapsedSearchBar */,
+				1FAE98122F40E74601B522BD9E054876 /* GroupSelectionTableViewWithCollapsedSearchBar */,
+				CDA8D64450B55B29B91994094755D2ED /* SelectionViewController */,
+				341BC04E6156E8C40D3E917ED63E63B5 /* ServiceInspectionFormFilledCollapsedSearchBar */,
+				13B34FE7B4ED788E346E7B376A5A0DF3 /* TeamScreenViewController */,
 			);
-			path = ConstructionTableViewWithCollapsedSearchBar;
+			name = Tables;
+			path = StantUiIosLibrary/Classes/Tables;
+			sourceTree = "<group>";
+		};
+		CDA8D64450B55B29B91994094755D2ED /* SelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				948E9C4FB66D4210F993A69F650D9757 /* SelectionViewController.swift */,
+				AD2D034F55F34FA413B607CF69D84200 /* SelectionViewControllerExtension.swift */,
+			);
+			name = SelectionViewController;
+			path = SelectionViewController;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -763,6 +808,16 @@
 			);
 			sourceTree = "<group>";
 		};
+		D015638CE04C043AE922F967D63EE58C /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				B711D0E760BF02ADBC2ECC768C1AC63E /* BottomDialogWithScroll */,
+				89D6FB29BEC513A45E0E4448F8C0C49C /* DialogView */,
+			);
+			name = Dialogs;
+			path = StantUiIosLibrary/Classes/Dialogs;
+			sourceTree = "<group>";
+		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,97 +826,135 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DBA597D120142686E09BEC1ADF670413 /* ContactsTableViewWithCollapsedSearchBar */ = {
+		D7F4D81167A2F73855B4EA58F122CCA7 /* ItemMethodCell */ = {
 			isa = PBXGroup;
 			children = (
-				02560C0F60E0C09BA39B391E0C88D5D1 /* ContactsTableViewWithCollapsedSearchBar.swift */,
-				6E9079AECFD14460DAA9A25840BE21A7 /* Extensions */,
-				8CE82765F45ABD100F3F4DEC19406571 /* TableView */,
+				4651868279E71464BA830C16F55FD853 /* ItemMethodHeaderView.swift */,
+				71F46DB6C16ABFDA0A97C53E3FC911A5 /* ItemObservationCell.swift */,
 			);
-			path = ContactsTableViewWithCollapsedSearchBar;
+			name = ItemMethodCell;
+			path = ItemMethodCell;
 			sourceTree = "<group>";
 		};
-		DDA227D29E5844F76E3A013CED41A736 /* Localizable */ = {
+		DB4B526A4F337B954AA1ABE5F2D0DD74 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6D0F5659E4F67D1A656964E1BB02886C /* AppStrings.swift */,
-				39E88FFDB96E1D7D9E1FD722FAE79605 /* Localizable-en.strings */,
-				89B25351C18DBE10C49B7D9A2972C600 /* Localizable-pt.strings */,
+				B18BB47928B3812E81B065FF0FAE49EA /* DateExtension.swift */,
+				D9D340349D1380E15B42A94EAD670404 /* FloatExtension.swift */,
+				A16CD14418EBBD92A2ED68E8D0262872 /* IntExtension.swift */,
+				DC42A899EC9AC1D13446E65272B1CE35 /* NSMutableAttributedStringExtension.swift */,
+				CDFCBDEE4F02A1CCB83E9A9F8E78526E /* UIColorExtension.swift */,
+				9E58ED2CF863DBC4F26A7EE1C3899CFB /* UIImageExtension.swift */,
+				EA7CBAEDCF1D2663775435064704B0C5 /* UIImageViewExtension.swift */,
+				AFBC907B04AA13FEED934A5FB52C74B6 /* UILabelExtension.swift */,
+				E7E7D7C12321EB001AA6C76A3CE86196 /* UIViewExtension.swift */,
+				8E70B3A22FEE3A26C2DDFFD84F6E278D /* UIViewLayoutExtension.swift */,
+				81A91882B110DBEB35ABDEF14E5CBBE8 /* ViewHelpers */,
 			);
-			name = Localizable;
-			path = StantUiIosLibrary/Classes/Localizable;
+			name = Utils;
+			path = StantUiIosLibrary/Classes/Utils;
 			sourceTree = "<group>";
 		};
-		DED81B3232DAF78D11865F15B417059A /* ServiceInspectionFormFilled */ = {
+		DDA5B754613649931E147AE34CBDB856 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0506E129CB683018C15026A744078779 /* ServiceInspectionFormFilledCard.swift */,
-				D632AB4454BB6190BD097C9782BE1B94 /* ServiceInspectionFormFilledCardStack.swift */,
+				F644BB1FF969C6145C607BC3A8B98BDF /* ConstructionViewDefaultSearchViewExtension.swift */,
+				564F1575A91023FF55EC369ED605FE14 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */,
 			);
+			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E0C719A7AD5AFF3BBA0425C8AFAB5857 /* ServiceInspectionFormFilled */ = {
+			isa = PBXGroup;
+			children = (
+				C0AE1DCB6A3A3E79AEEAC94538FD8B93 /* ServiceInspectionFormFilledCard.swift */,
+				8B85296514D472F398133937EBAFBA30 /* ServiceInspectionFormFilledCardStack.swift */,
+			);
+			name = ServiceInspectionFormFilled;
 			path = ServiceInspectionFormFilled;
 			sourceTree = "<group>";
 		};
-		E209E5DC90DFF2382346E2FC956CFC67 /* StantUiIosLibrary */ = {
+		E112D65DBD23DA60ED114299858C1739 /* ConstructionsFilter */ = {
 			isa = PBXGroup;
 			children = (
-				0DEC3CB58209C267B04AA5C8ED6D810E /* ViewTeste.swift */,
-				F7DB327BFA825957956F4A0503153A1E /* Bars */,
-				718A70464D5F9484D4F4EE298A4A131D /* Cards */,
-				0A09208AEFA253E02044B7DB1E82206B /* Cells */,
-				2749D004E56EB915C899F40970062401 /* Dialogs */,
-				E4379B0421FA9EADB9F21BDD12CCE9A6 /* Headers */,
-				7B48546FE907024AFDCCDB4F21DE82FF /* Images */,
-				8DC0212824502B225B44440D6BAD25EA /* Inputs */,
-				DDA227D29E5844F76E3A013CED41A736 /* Localizable */,
-				3EED04D7FD669A2A7E4355D55C876DC7 /* Menus */,
-				66E7BE68AEAF73072828B4EB4018F973 /* Pod */,
-				73875B4D9C8B8D61E9D1C7B82B2D1791 /* Support Files */,
-				623F868B288F0B99D392573146CE2FF2 /* Tables */,
-				5458E624BC2D372543978170F795B147 /* Utils */,
+				CC51B284AD7B66EA23335A51AB2048EF /* ConstructionsFilter.swift */,
+				165DB8BE97364006370D9D8099D7F998 /* FilterButton.swift */,
+				E3BF5B65159B21543BA39A7F3D6CC8DE /* FilterButtonCollectionViewCell.swift */,
+				EC83295920EDEAAA41B0681F0F289470 /* FiltersCollectionView.swift */,
 			);
-			name = StantUiIosLibrary;
-			path = ../..;
+			name = ConstructionsFilter;
+			path = ConstructionsFilter;
 			sourceTree = "<group>";
 		};
-		E4379B0421FA9EADB9F21BDD12CCE9A6 /* Headers */ = {
+		E1FAA474F3CAFEC35E9C2545B7966D0B /* Bars */ = {
 			isa = PBXGroup;
 			children = (
-				81A4666B7BFE856F76B7CC8A56653768 /* ConstructionsFilter */,
-				99C7BAF99BF4D0173D491F6F5B10CFAB /* FirstHeader */,
-				BE39DEF3C6E58BA2ECDDFE74B71898FD /* SecondHeader */,
-			);
-			name = Headers;
-			path = StantUiIosLibrary/Classes/Headers;
-			sourceTree = "<group>";
-		};
-		F7DB327BFA825957956F4A0503153A1E /* Bars */ = {
-			isa = PBXGroup;
-			children = (
-				CC9D9F4BA534FF391D1FF8F2D9A2270B /* ProgressBar */,
-				0A6839B376461895413653480AA5904A /* QuantityBar */,
-				41F6FEF809E3E73664F9C9DAF50490AE /* SearchBar */,
+				A53CF0E531D85F10652579E821CC60EC /* ProgressBar */,
+				01AC49B1E3A5C585AAC1E09BEE0DDD93 /* QuantityBar */,
+				04999698D785EE46DDA38061370F2675 /* SearchBar */,
 			);
 			name = Bars;
 			path = StantUiIosLibrary/Classes/Bars;
 			sourceTree = "<group>";
 		};
-		FFC88C17078BF404D978C43D3B4DE7EE /* BottomDialogWithScroll */ = {
+		E4FCFA7C1F8364222EF29A5301CCF5F9 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				9BE72D5595C61F9151D01ABAF1F966BC /* BottomDialogWithScrollViewController.swift */,
-				6966194D020556DAC09041EE35778D14 /* ScrollableTableViewDialogCell.swift */,
+				A0F85F6463C225615A8C423B6CC84181 /* GroupSelectionTableView.swift */,
+				11F37C247EAD9D915099B381E4ED0F62 /* Cell */,
+				571BDEC6E33AB75D2DD69899B3D852BA /* Header */,
 			);
-			path = BottomDialogWithScroll;
+			name = TableView;
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		EAC9A56E2F36F59ABCA686795870B005 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				57F81C4C36E224C419378195252EB713 /* ContactsTableView.swift */,
+			);
+			name = TableView;
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		FBD74A5DB9BC0C8B099F0A56BB793F63 /* Construction */ = {
+			isa = PBXGroup;
+			children = (
+				4ECBEC32CAF2AA08053CD51425087476 /* ConstructionCard.swift */,
+			);
+			name = Construction;
+			path = Construction;
+			sourceTree = "<group>";
+		};
+		FEE78A1303183FEE478782D774BE0AF1 /* VerifiedMethodCell */ = {
+			isa = PBXGroup;
+			children = (
+				E90C9900161538E7C9F8D62ADC9DC742 /* VerifiedMethodCell.swift */,
+				0ED9978DD3EEFD6971E86100F1CB33A7 /* VerifiedMethodCellStatusView.swift */,
+			);
+			name = VerifiedMethodCell;
+			path = VerifiedMethodCell;
+			sourceTree = "<group>";
+		};
+		FF2C72979EC3D4CDBF2436B62F7986E6 /* FormTabView */ = {
+			isa = PBXGroup;
+			children = (
+				2EDC45CEFCD2D49B1A434C82B59B056D /* FormTabCollectionViewCell.swift */,
+				279813160553D13C92171B819603DBCE /* FormTabView.swift */,
+			);
+			name = FormTabView;
+			path = FormTabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9AB7967A67AEECD32B5F8BEBF9B9913B /* Headers */ = {
+		BB449DAA1D30F38CDE8EFEF4CDBCB3B9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08F86847D02AEB82DECDDB7B0E030FF0 /* StantUiIosLibrary-umbrella.h in Headers */,
+				8CA1DAC23A68B19D8C1E387DF0000662 /* StantUiIosLibrary-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,12 +998,12 @@
 		};
 		700FA4C1FD72FEEE1830AC61D6CF9210 /* StantUiIosLibrary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E29497F51DE61C78437B9EE760FB030A /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */;
+			buildConfigurationList = 3B7107CBC81AEFF8B61BC3C559A7AF4D /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */;
 			buildPhases = (
-				9AB7967A67AEECD32B5F8BEBF9B9913B /* Headers */,
-				D65870BED834ED67C8597B0D3595F6EC /* Sources */,
-				B5043BD9AB64116DCDD19A79E2C68F6C /* Frameworks */,
-				8614D0822FFB870BF10F184E9F1F6CDB /* Resources */,
+				BB449DAA1D30F38CDE8EFEF4CDBCB3B9 /* Headers */,
+				5F26B79E46867068166145692242EBA8 /* Sources */,
+				AA70AB7477D67A53EE01533E840E9DE9 /* Frameworks */,
+				D6A3A138A6C7322E26031AB6EE33889F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -976,14 +1069,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8614D0822FFB870BF10F184E9F1F6CDB /* Resources */ = {
+		8E6C2657AC5EA7AC2157FB0549FC9255 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E6C2657AC5EA7AC2157FB0549FC9255 /* Resources */ = {
+		D6A3A138A6C7322E26031AB6EE33889F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -993,6 +1086,104 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F26B79E46867068166145692242EBA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDB7F17BEA14922E7094BF556DAEF29 /* AppStrings.swift in Sources */,
+				B4F7F6B1134F7BC9D966DD294654D917 /* AttachmentTabCollectionViewCell.swift in Sources */,
+				27356C404B3F495444ABF7E325E88F4C /* AttachmentTabView.swift in Sources */,
+				354D02297036722044DF0E6E9DC0CCAB /* BottomDialogWithScrollViewController.swift in Sources */,
+				D112C21C06CBDCEC18FFF20A19EDB970 /* ConstructionCard.swift in Sources */,
+				9177663A82ECA75788413D49793A0053 /* ConstructionsFilter.swift in Sources */,
+				7A4AA897BB72419DFDE1855D37994CE6 /* ConstructionTableView.swift in Sources */,
+				92D8AB39408F1B58293D15F636931393 /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */,
+				F2D32F0F793D20DFAB9ACF36CEA2EB3E /* ConstructionViewDefaultSearchViewExtension.swift in Sources */,
+				EFB4C169AB3824464612FAAE7212C728 /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */,
+				BD3C9361A55525096C16CA24C8BBB28B /* ContactsCard.swift in Sources */,
+				45E1B17107E81F63AE4AADA9E24B5221 /* ContactsTableView.swift in Sources */,
+				35CDDF50B5DAE2AA5B2D39CB4DBAD6E1 /* ContactsTableViewWithCollapsedSearchBar.swift in Sources */,
+				69F8553CC7774FB29F0F0C2F9D13622A /* ContactsViewDefaultSearchViewExtension.swift in Sources */,
+				A825B1733B367D695F76866027A483C8 /* ContactsViewShowAndHideSearchTableViewExtension.swift in Sources */,
+				1225FBD7F3D571AE5C92A4509A179EED /* CustomTabView.swift in Sources */,
+				BD169BDF199F4549A45F9559A3BD4A43 /* CustomTabViewCell.swift in Sources */,
+				5E572DB00B96A7DBD92728BE1364CB83 /* DateExtension.swift in Sources */,
+				CC47B68718F7817B6D329773C70C067E /* DefaultSearchBar.swift in Sources */,
+				1B1AE94BA29D1069DAA23560FE210216 /* DefaultSearchBarDelegateExtension.swift in Sources */,
+				45136B5108907B054F376049DAC6E276 /* DialogButton.swift in Sources */,
+				C10ADFB4CD5E43236E37339727C8118D /* DialogViewController.swift in Sources */,
+				AB619BF95A1BD7D7360088FF74CAD6F8 /* FilterButton.swift in Sources */,
+				5F49329761D6D41B4300034E37EEBAA8 /* FilterButtonCollectionViewCell.swift in Sources */,
+				57DC177E84A3A98474EDE145E2E463E0 /* FiltersCollectionView.swift in Sources */,
+				CDDDEF5ADCA89C4361C47FDE576959FE /* FirstHeaderDropdownButton.swift in Sources */,
+				DDBEAE179581F4ED9CA7F50082CBD18E /* FirstHeaderRecentItem.swift in Sources */,
+				EC2BD1C66C1B69F16E77D7151EFCB4BB /* FirstHeaderRecentItemCell.swift in Sources */,
+				BCF1D104A604ABE602D52FE062F260A0 /* FirstHeaderRightBarButton.swift in Sources */,
+				C10BF0BA2AEBBF79C9C16BFA39B73BA4 /* FirstHeaderView.swift in Sources */,
+				2D01980A6A6F5AA23F16CE1C290BF435 /* FloatExtension.swift in Sources */,
+				16459A24304F0C4710CC50870EF1482E /* FormTabCollectionViewCell.swift in Sources */,
+				8AC582BD6F91D5F1661399ADFA69D59B /* FormTabView.swift in Sources */,
+				AD1339036C1DECCDEEAE52E90AED019C /* Gesturizer.swift in Sources */,
+				C3740F79CEEF3E0CBB040AF47B04F9BF /* GroupedSelection.swift in Sources */,
+				D51436F3D32486306FF2D6F58B456FE6 /* GroupSelectionDefaultSearchViewExtension.swift in Sources */,
+				5BECB8465EB07B936D036CCBCE330BBE /* GroupSelectionHeaderView.swift in Sources */,
+				9EE98FE5C16F0E3B382E5F62ED28DDA2 /* GroupSelectionRowCell.swift in Sources */,
+				44D473BEC31826258A247B6A676FACC4 /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */,
+				ED279151B26F3FF2FC8936278AE5FD89 /* GroupSelectionTableView.swift in Sources */,
+				9667BDBDC90E2E12CCCEC66E00C46212 /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */,
+				61DF417D099529D05D14469ED29DD170 /* InChargeStackView.swift in Sources */,
+				0F57781BAAF7E70494F481FC76B17878 /* InternActionCell.swift in Sources */,
+				2733B1F8FA089885930BC1DE80F850E6 /* InternPersonCell.swift in Sources */,
+				CFC71AC2758363D739115D397835349B /* IntExtension.swift in Sources */,
+				4742C4B5ADFD1F4D28760EB118B6EA24 /* ItemMethodHeaderView.swift in Sources */,
+				9826E4804AD36FD196C47C61AF66AC51 /* ItemObservationCell.swift in Sources */,
+				6A80E9958A4978F15A388077006219AC /* ItemSelection.swift in Sources */,
+				C34727ABDFB38265DA438B540F0E3E10 /* Localizable-en.strings in Sources */,
+				C02DF0EAC92BFAA1FF43BD052E8E6ABC /* Localizable-pt.strings in Sources */,
+				463137C30F52BC35ADD3815C431342EF /* MainMenuTabBarController.swift in Sources */,
+				050F19B1894A1C44F5C4B8B878AFE6DB /* MenuTabBarDTO.swift in Sources */,
+				7FE324B31335E45173AB6DF326BA686E /* NSMutableAttributedStringExtension.swift in Sources */,
+				1B380E61D7CEF500BF38C0C28EDAAC71 /* PhotoDetailView.swift in Sources */,
+				6EFE87ACBB0BAD182ECDED3C415C3E82 /* ProgressBarWithToolTip.swift in Sources */,
+				FB0C55404E44FF0081767D0E838C4FBA /* ProgressToolTip.swift in Sources */,
+				147E82BF056E3AC2F492C7DC53CF10BA /* QuantityBar.swift in Sources */,
+				08B5D236C655DE1CCC1F47BE721AC217 /* RoundedImageView.swift in Sources */,
+				3F3FBF0B0FA9A0847A3C08ECA6B18784 /* ScrollableTableViewDialogCell.swift in Sources */,
+				AFDD27E25039538C48B623EAF85615C7 /* SecondHeaderButton.swift in Sources */,
+				800180F399D428D838D8143856385BD9 /* SecondHeaderView.swift in Sources */,
+				1F5C83FAE6A90952EF1D97B1D17F31A9 /* SelectionTableViewCell.swift in Sources */,
+				38B10C4B93C7253C7BD95207C0CB4A58 /* SelectionViewController.swift in Sources */,
+				D54170136278BEACDDCC04B5BD7B4BEC /* SelectionViewControllerExtension.swift in Sources */,
+				13090B01FBC13458EF867B28EC9F3E20 /* SelectRecentViewController.swift in Sources */,
+				6284732D13DD02D622CFC0A3EA12F75C /* ServiceInspectionFormFilledCard.swift in Sources */,
+				DBF6E7DCC9D3E6AA79740389E0445B00 /* ServiceInspectionFormFilledCardStack.swift in Sources */,
+				3F7DBDC8C969053A973ED685A3FA2112 /* ServiceInspectionFormFilledCell.swift in Sources */,
+				6DDB7BFDFE4A20988AFFB5788430C988 /* ServiceInspectionFormFilledCellBar.swift in Sources */,
+				EA374465F22D6CF91D3A9C1D64115803 /* ServiceInspectionFormFilledCellHeader.swift in Sources */,
+				98D63526FE047DD64DBF2B19E18CF4A3 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */,
+				5908DEA8E101E03C0D30713DD6B28E3B /* ServiceInspectionFormFilledTableView.swift in Sources */,
+				2B85CDC028BFC547E571D9C52A43B794 /* ServiceInspectionFormFilledTableViewWithCollapsedSearchBar.swift in Sources */,
+				ADE64351DE8AFD129BE70E1782C686D4 /* ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift in Sources */,
+				4FE41F339CB1C68C1AA3A68F476CDF7E /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift in Sources */,
+				AD9A208F3E3AFDAFE1F78D08462F269E /* StantUiIosLibrary-dummy.m in Sources */,
+				984C02D48B3B2BC79437BF91C1498A96 /* SyncDialogView.swift in Sources */,
+				736F1983AFF7B0880A16043DC2126558 /* TeamScreenViewController.swift in Sources */,
+				1B1C0E3B97DEAE9373FAF44484A081D7 /* TeamScreenViewControllerExtension.swift in Sources */,
+				DC482817EC5461D5563F8A86EF39B240 /* TeamTabView.swift in Sources */,
+				1549CC06B5ECA02E5D441E2A62D6546D /* TextInputTableViewCell.swift in Sources */,
+				9EBE2163547F1486ED1176D4EE6B24AA /* ToDoBar.swift in Sources */,
+				EC9CE5D78CD4084428375E864CAA9131 /* UIColorExtension.swift in Sources */,
+				53A119B270E08512E59958E15D8B2F90 /* UIImageExtension.swift in Sources */,
+				486FB7AF2BE0ACD79F8C2D25AB014BCB /* UIImageViewExtension.swift in Sources */,
+				76C8255A0665FD21CF60D2884512B8B9 /* UILabelExtension.swift in Sources */,
+				2E9973568C2399FFA9C28AEC57361DE6 /* UIViewExtension.swift in Sources */,
+				1EF35EDA96801DB439BC009EB95DCA17 /* UIViewLayoutExtension.swift in Sources */,
+				804C06BCECFD9C0CF9C5C9EDDE6DEB98 /* VerifiedMethodCell.swift in Sources */,
+				AD34C9A41F48CBBADECA909ADE35BEF5 /* VerifiedMethodCellStatusView.swift in Sources */,
+				F27830C560068C20A0A2DEED3FF66B1D /* ViewTeste.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FA0CD4B4E0DC271F06279A23519A140 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1006,97 +1197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F75A488DD8E661B9A3455E0C11DFA6E /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D65870BED834ED67C8597B0D3595F6EC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04B3E213700AFD4DA045354D7CE13A5C /* AppStrings.swift in Sources */,
-				50734D82DFE31199324CE9471D147DDF /* AttachmentTabCollectionViewCell.swift in Sources */,
-				6076B3A4EC60BC18DC768C8C7727F81E /* AttachmentTabView.swift in Sources */,
-				8F03BC0B24B3C15200BA7405 /* VerifiedMethodCellStatusView.swift in Sources */,
-				BC2702AA9C8F636C91C5AB740A6A5B61 /* BottomDialogWithScrollViewController.swift in Sources */,
-				22C2272100E0CDC7FBBA59CA1A57DA85 /* ConstructionCard.swift in Sources */,
-				FD29F3C134DB974E426C57C78299576B /* ConstructionsFilter.swift in Sources */,
-				1DAC5A4DE5DA73CDA023D4DABE58241E /* ConstructionTableView.swift in Sources */,
-				79BF1B72B915B7333639AA8122D1C743 /* ConstructionTableViewWithCollapsedSearchBar.swift in Sources */,
-				024F6327B6A3E11BA79991799D090244 /* ConstructionViewDefaultSearchViewExtension.swift in Sources */,
-				B2D5DDB540CB92201015B42E46E742E6 /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */,
-				0129796C4619A105D726BB78601E9600 /* ContactsCard.swift in Sources */,
-				BC12D5A5A820590B05FC2C5A20EB2A43 /* ContactsTableView.swift in Sources */,
-				53F2F6137C8BFCDBF265A020368C7468 /* ContactsTableViewWithCollapsedSearchBar.swift in Sources */,
-				6F68CCB9129E9EED28D527F0F5B8045F /* ContactsViewDefaultSearchViewExtension.swift in Sources */,
-				EE7AD7028CB8F64EAEE11FB68FC9BD85 /* ContactsViewShowAndHideSearchTableViewExtension.swift in Sources */,
-				6DD257A6D3489B9DE19DE7C2D9342212 /* CustomTabView.swift in Sources */,
-				125FF1849C6DACDDE69E9671DD518E58 /* CustomTabViewCell.swift in Sources */,
-				2444D39839A89EA874E026C8E6573129 /* DateExtension.swift in Sources */,
-				E5B4D509F20267BDBBDBECC679465CF3 /* DefaultSearchBar.swift in Sources */,
-				35BAA7FAE256AFA4005E75EC97306244 /* DefaultSearchBarDelegateExtension.swift in Sources */,
-				B98239AF925B19CCBF4ADD70FCF23243 /* DialogButton.swift in Sources */,
-				AC269FD726CDE9E3F3DFF38E33F02F13 /* DialogViewController.swift in Sources */,
-				E124D7ADA4CD0FB1878B6F75C5195C61 /* FilterButton.swift in Sources */,
-				3A71C212581151B5F141C6F961D5891D /* FilterButtonCollectionViewCell.swift in Sources */,
-				1E8C79292B596B45A21A230DD8E0051A /* FiltersCollectionView.swift in Sources */,
-				5AABC83D6C8283D873C5C91F3D67523A /* FirstHeaderDropdownButton.swift in Sources */,
-				9CEB008CB4789EE58F63279EF8DD2709 /* FirstHeaderRecentItem.swift in Sources */,
-				EE8ABAACFCA85BD94069C4D7A0401489 /* FirstHeaderRecentItemCell.swift in Sources */,
-				94DF834F7FE20C90ED849D2612F144DB /* FirstHeaderRightBarButton.swift in Sources */,
-				CAAF0F5574CD476A8718A7656164E7A7 /* FirstHeaderView.swift in Sources */,
-				62119076610040A5F309865026C08DE3 /* FloatExtension.swift in Sources */,
-				8F03BC0624B3C14300BA7405 /* ItemObservationCell.swift in Sources */,
-				8EBF71809E6DE336A8102AF559E8EA50 /* FormTabCollectionViewCell.swift in Sources */,
-				3A41D187BDB19DEEE858DDAB16D5E123 /* FormTabView.swift in Sources */,
-				DB40FEC2794F62A5FFAC0C1B77B59080 /* Gesturizer.swift in Sources */,
-				95CB13E40407145B0E04D2623B8E76BD /* GroupedSelection.swift in Sources */,
-				370114D0FA2DA785A13878EDB3D3C0DD /* GroupSelectionDefaultSearchViewExtension.swift in Sources */,
-				938A64BA4BA048111FFDD692CA715F1D /* GroupSelectionHeaderView.swift in Sources */,
-				907C88784166C1D782EB859662A4D0B7 /* GroupSelectionRowCell.swift in Sources */,
-				85EDF90BA083F6030BEE7EC2B1654DFC /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */,
-				970C5D75F35E527EDEF53EEC51630DF8 /* GroupSelectionTableView.swift in Sources */,
-				DB1C4A8214DF6E0CDB405EB46273B873 /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */,
-				CA666D236E22959F5A4C78F28EB776FA /* InChargeStackView.swift in Sources */,
-				78727646FCCB81ABD300A7167D7831C7 /* InternActionCell.swift in Sources */,
-				2C25E9C64EC27FC23119A80E15AA878A /* InternPersonCell.swift in Sources */,
-				79EFBCB2B33B65D647937C2C9FFB27BE /* ItemSelection.swift in Sources */,
-				468A3A507D70D855E800E8F84F291BDD /* Localizable-en.strings in Sources */,
-				62EF80A49AF8EF303B79F023F2B13514 /* Localizable-pt.strings in Sources */,
-				3B53903B59E4E8176394E77834687E38 /* MainMenuTabBarController.swift in Sources */,
-				8F03BC0C24B3C15200BA7405 /* VerifiedMethodCell.swift in Sources */,
-				E4DBCE938069F8B31232FD3C77C30069 /* MenuTabBarDTO.swift in Sources */,
-				F2977638AE8469506E8C13E59B1562C5 /* NSMutableAttributedStringExtension.swift in Sources */,
-				2B552748A38F2A576D2C239205EF3F2A /* PhotoDetailView.swift in Sources */,
-				9B22825021772059E4DD49A1AC8A4458 /* ProgressBarWithToolTip.swift in Sources */,
-				C710D984A9D334EBC814BE9A78D6DC77 /* ProgressToolTip.swift in Sources */,
-				81E3D96FA26EF211C64BD43C787C374A /* QuantityBar.swift in Sources */,
-				79E211ACEE4BE021CF0DA87294EAED59 /* RoundedImageView.swift in Sources */,
-				4D7EA3FDF4F3C5E4E540332DF5ECFDDB /* ScrollableTableViewDialogCell.swift in Sources */,
-				A2228483881934AF2E8FFF963453DAA1 /* SecondHeaderButton.swift in Sources */,
-				6B1F166A495D2D4E80E259DFDEB494AB /* SecondHeaderView.swift in Sources */,
-				946AC28AB6E3C466B6407F99859D48F5 /* SelectionTableViewCell.swift in Sources */,
-				CEE6E35541CB9179C284224029F17230 /* SelectionViewController.swift in Sources */,
-				197D578BE62766B338703EA7FE461D7F /* SelectionViewControllerExtension.swift in Sources */,
-				5BC320B08CECD119E12BBD1E8A063218 /* SelectRecentViewController.swift in Sources */,
-				8F03BC0E24B3C18100BA7405 /* IntExtension.swift in Sources */,
-				7A66BDA66A0C674A3D23AA06FD5078E1 /* ServiceInspectionFormFilledCard.swift in Sources */,
-				AC788AA3CCEAE884841D1AD26E4B74C6 /* ServiceInspectionFormFilledCardStack.swift in Sources */,
-				310C79A60D09750B6C6C5923F4631460 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */,
-				D5690FA22846236E9C56B1D1D48F3A41 /* StantUiIosLibrary-dummy.m in Sources */,
-				22A0DA7DD987497B14846571473E44BA /* SyncDialogView.swift in Sources */,
-				C00A26A30426B5D87F0FFE7ABEEF196A /* TeamScreenViewController.swift in Sources */,
-				15CBC2709CEC18627886196B270AF76C /* TeamScreenViewControllerExtension.swift in Sources */,
-				16379406A7E86EBE43B259223481D5AC /* TeamTabView.swift in Sources */,
-				E04E0A72451467DF4C096B58706781EE /* TextInputTableViewCell.swift in Sources */,
-				2C48FC4571037F68D64C105F009F6F3F /* ToDoBar.swift in Sources */,
-				6EE961ADFC90D6AC585F1E59F1C7712E /* UIColorExtension.swift in Sources */,
-				C225533EA20F0D7CF5D22D9682B8F1E9 /* UIImageExtension.swift in Sources */,
-				39E5DCFFA525FD6D37839EE3C4118DE2 /* UIImageViewExtension.swift in Sources */,
-				273DAEBCC8073E7D082E3EB7A986669D /* UILabelExtension.swift in Sources */,
-				08E8DCC57075D7EDEFAC8BF61D8976A4 /* UIViewExtension.swift in Sources */,
-				823308685A4926DAAF9696C0EB7B9C73 /* UIViewLayoutExtension.swift in Sources */,
-				1042725297207BBFB1A657D97174A099 /* ViewTeste.swift in Sources */,
-				8F03BC0724B3C14300BA7405 /* ItemMethodHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,42 +1381,6 @@
 			};
 			name = Release;
 		};
-		5AB502187AC1E3B3E006D1C05A28EA35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 344329BD0456DD18D9C38A9A50B51E71 /* StantUiIosLibrary.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
-				PRODUCT_MODULE_NAME = StantUiIosLibrary;
-				PRODUCT_NAME = StantUiIosLibrary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		5DC1C2C4B3FE26EAFDF122B109682B62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68566BDB28AAD2BAC190B1DEA4B03F7C /* Pods-StantUiIosLibraryDemo.release.xcconfig */;
@@ -1355,6 +1419,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		81D644393ACAE06F5D025F8A37795E27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00898952FB1081B542588822AFDC16CC /* StantUiIosLibrary.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
+				PRODUCT_MODULE_NAME = StantUiIosLibrary;
+				PRODUCT_NAME = StantUiIosLibrary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B5AA096459BA4706C932F87EB782E6C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1432,9 +1531,9 @@
 			};
 			name = Debug;
 		};
-		D2AA4C4E1D9194FC1E7E8B7523E71A37 /* Debug */ = {
+		EF4523D218803CDA81E8AFBE83318590 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 344329BD0456DD18D9C38A9A50B51E71 /* StantUiIosLibrary.xcconfig */;
+			baseConfigurationReference = 00898952FB1081B542588822AFDC16CC /* StantUiIosLibrary.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1462,10 +1561,11 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1475,6 +1575,15 @@
 			buildConfigurations = (
 				CC42AC089F60A9E01E17691B485D3FE6 /* Debug */,
 				2A3940FD278B44C688D824F298228EE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B7107CBC81AEFF8B61BC3C559A7AF4D /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81D644393ACAE06F5D025F8A37795E27 /* Debug */,
+				EF4523D218803CDA81E8AFBE83318590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1493,15 +1602,6 @@
 			buildConfigurations = (
 				B5AA096459BA4706C932F87EB782E6C1 /* Debug */,
 				5DC1C2C4B3FE26EAFDF122B109682B62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E29497F51DE61C78437B9EE760FB030A /* Build configuration list for PBXNativeTarget "StantUiIosLibrary" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D2AA4C4E1D9194FC1E7E8B7523E71A37 /* Debug */,
-				5AB502187AC1E3B3E006D1C05A28EA35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

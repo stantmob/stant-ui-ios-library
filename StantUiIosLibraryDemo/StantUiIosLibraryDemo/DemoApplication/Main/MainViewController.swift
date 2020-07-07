@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
+        self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
         self.addVerifiedMethodListingDemo()
     }
@@ -192,7 +193,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToProgressBarWithToolTipDemo() {
-        self.openProgressBarWithToolTipDemo()
+        self.open(viewController: ProgressBarWithToolTipViewController())
     }
     
     fileprivate func addServiceInspectionFormFilledCardDemo() {
@@ -202,7 +203,17 @@ class MainViewController: UIViewController {
     }
 
     @objc func goToServiceInspectionFormFilledCardDemo() {
-        self.openServiceInspectionFormFilledCardDemo()
+        self.open(viewController: ServiceInspectionFormFilledCardViewController())
+    }
+
+    fileprivate func addSiffListingCardDemo() {
+        self.scrollView.addButton(title:  "Siff Listing",
+                                  action: #selector(goToSiffListingCardDemo),
+                                  target: self)
+    }
+
+    @objc func goToSiffListingCardDemo() {
+        self.open(viewController: ServiceInspectionFormFilledListingViewController())
     }
 
     fileprivate func addConstructionsContactsDemoTableView() {
@@ -220,63 +231,63 @@ class MainViewController: UIViewController {
                                   action: #selector(goToQuantityBarDemo),
                                   target: self)
     }
-    
+
     @objc func goToQuantityBarDemo() {
-        self.openQuantityBarDemo()
+        self.open(viewController: QuantityBarViewController())
     }
-    
+
     fileprivate func addTeamScreenDemo() {
         self.scrollView.addButton(title:  "Team screen demo",
                                   action: #selector(goToTeamScreenDemo),
                                   target: self)
     }
-    
+
     @objc func goToTeamScreenDemo() {
         self.openTeamScreenDemo()
     }
-    
+
     fileprivate func addResponsibleScreenDemo() {
         self.scrollView.addButton(title:  "Responsible screen demo",
                                   action: #selector(goToResponsibleScreenDemo),
                                   target: self)
     }
-    
+
     @objc func goToResponsibleScreenDemo() {
         self.openResponsibleScreenDemo()
     }
-    
+
     fileprivate func addServiceInspectionFormFilledDetailMenuDemo() {
         self.scrollView.addButton(title:  "SIFF detail menu demo",
                                   action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
                                   target: self)
     }
-    
+
     @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
         let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
         serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
-        
+
         self.present(serviceInspectionFormFilledDetailMenuViewController,
                      animated:   false,
                      completion: nil)
     }
-    
+
     fileprivate func addItemMethodListingDemo() {
         self.scrollView.addButton(title:  "Item listing demo",
         action: #selector(goToItemMethodListingDemo),
         target: self)
     }
-    
+
     @objc func goToItemMethodListingDemo() {
-        self.openItemMethodListingDemo()
+        self.open(viewController: ItemMethodListingViewController())
     }
-    
+
     fileprivate func addVerifiedMethodListingDemo() {
         self.scrollView.addButton(title:  "Method listing demo",
         action: #selector(goToVerifiedMethodListingDemo),
         target: self)
     }
-    
+
     @objc func goToVerifiedMethodListingDemo() {
-        self.openVerifiedMethodListingDemo()
+        self.open(viewController: VerifiedMethodListingViewController())
     }
 }

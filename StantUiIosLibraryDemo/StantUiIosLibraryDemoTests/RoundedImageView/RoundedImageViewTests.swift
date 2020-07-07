@@ -82,8 +82,8 @@ class RoundedImageViewTests: XCTestCase {
     }
     
     fileprivate func checkEqualityBetween(givenIcon: UIImage, generatedIcon: UIImage) {
-        let data1 = givenIcon.pngData() as? NSData
-        let data2 = generatedIcon.pngData() as? NSData
+        let data1 = givenIcon.pngData() as NSData?
+        let data2 = generatedIcon.pngData() as NSData?
         
         XCTAssertEqual(data1, data2)
     }
