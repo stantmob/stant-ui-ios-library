@@ -1,4 +1,8 @@
 language: swift
+cache:
+  bundler:   true
+  cocoapods: true
+  timeout:   1000
 osx_image: xcode10.2
 
 before_install:
