@@ -10,6 +10,7 @@
 "see_more" = "Ver mais";
 "edit"     = "Editar";
 "details"  = "Detalhes";
+"deadline" = "Prazo";
 
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsável";

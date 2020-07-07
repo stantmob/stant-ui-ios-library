@@ -10,9 +10,10 @@ import UIKit
 public class CellBadge: UIView {
     public var statusView: UIView?
     public var titleLabel: UILabel?
+    public var foldView:   UIView?
     
     func configureBadge(color: UIColor, title: String, size: CGSize) {
-        statusView                 = UIView()
+        statusView                = UIView()
         guard let statusTag       = statusView else { return }
         statusTag.backgroundColor = color
         
@@ -54,12 +55,13 @@ public class CellBadge: UIView {
         shape.path      = path
         shape.fillColor = UIColor.darkStant.cgColor
 
-        let fold = UIView()
+        foldView           = UIView()
+        guard let foldView = foldView else { return }
+        
+        foldView.layer.insertSublayer(shape, at: 0)
+        self.addSubview(foldView)
 
-        fold.layer.insertSublayer(shape, at: 0)
-        self.addSubview(fold)
-
-        fold.anchor(top:     statusView?.bottomAnchor,
-                    leading: statusView?.leadingAnchor)
+        foldView.anchor(top:     statusView?.bottomAnchor,
+                        leading: statusView?.leadingAnchor)
     }
 }

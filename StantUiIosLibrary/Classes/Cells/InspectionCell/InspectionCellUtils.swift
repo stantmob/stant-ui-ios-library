@@ -13,7 +13,7 @@ public enum InspectionStatusEnum {
     public func stringValue() -> String {
         switch self {
         case .reproved:
-            return AppStrings.verified_method_details_approved_label
+            return AppStrings.verified_method_details_reproved_label
         case .approved:
             return AppStrings.verified_method_details_approved_label
         }
@@ -29,8 +29,7 @@ public enum InspectionStatusEnum {
     }
 }
 
-
 @objc public protocol InspectionCellButtonDelegate {
-    @objc func goToMethodEditScreen()
-    @objc func goToMethodDetailScreen()
+    @objc func goToInspectionEditScreen()
+    @objc func goToInspectionDetailScreen()
 }

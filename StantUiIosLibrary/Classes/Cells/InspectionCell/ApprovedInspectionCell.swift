@@ -74,8 +74,8 @@ public class ApprovedInspectionCell: UITableViewCell {
                            trailing: self.trailingAnchor,
                            size:     CGSize(width: self.frame.width + 6, height: 28))
         
-        statusBadge.configureBadge(color: VerifiedMethodStatusEnum.approved.colorValue(),
-                                   title: VerifiedMethodStatusEnum.approved.stringValue().uppercased(),
+        statusBadge.configureBadge(color: InspectionStatusEnum.approved.colorValue(),
+                                   title: InspectionStatusEnum.approved.stringValue().uppercased(),
                                    size:  CGSize(width: 112, height: 28))
     }
     
@@ -146,7 +146,7 @@ public class ApprovedInspectionCell: UITableViewCell {
         
         editButton.setTitle(AppStrings.edit, for: .normal)
         editButton.setTitleColor(.darkText, for: .normal)
-        editButton.addTarget(delegate, action: #selector(delegate?.goToMethodEditScreen), for: .touchUpInside)
+        editButton.addTarget(delegate, action: #selector(delegate?.goToInspectionEditScreen), for: .touchUpInside)
     }
     
     fileprivate func configureDetailButton() {
@@ -163,6 +163,6 @@ public class ApprovedInspectionCell: UITableViewCell {
         
         detailButton.setTitle(AppStrings.details, for: .normal)
         detailButton.setTitleColor(.darkText, for: .normal)
-        detailButton.addTarget(delegate, action: #selector(delegate?.goToMethodDetailScreen), for: .touchUpInside)
+        detailButton.addTarget(delegate, action: #selector(delegate?.goToInspectionDetailScreen), for: .touchUpInside)
     }
 }

@@ -12,6 +12,7 @@ class AppStrings {
     public static let see_more = localized("see_more")
     public static let edit     = localized("edit")
     public static let details  = localized("details")
+    public static let deadline = localized("deadline")
     
     //Service Inspection Form Filled Details
     public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")

@@ -12,10 +12,10 @@ import StantUiIosLibrary
 class InspectionListingViewController: UIViewController {
     public var tableView: UITableView?
     
-    public let statusList:   [VerifiedMethodStatusEnum] = [.approved, .approved, .approved, .approved]
+    public let statusList:   [VerifiedMethodStatusEnum] = [.reproved, .reproved, .reproved, .approved]
     public let severityList: [Int]                      = [5, 3, 1, 0]
-    public let createdAtList                            = [Date(), Date(), Date(), Date()]
-    public let deadlineList                             = [Date(), Date(), Date(), Date()]
+    public let createdAtList                            = ["01/01/2020", "01/01/2020", "01/01/2020", "01/01/2020"]
+    public let deadlineList                             = ["01/01/2020", "01/01/2020", "01/01/2020", "01/01/2020"]
     public let descriptionList                          = (0...3).map{"My description \($0 + 1)"}
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ extension InspectionListingViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ApprovedInspectionCell.cellHeight
+        return statusList[indexPath.row] == .approved ? ApprovedInspectionCell.cellHeight : ReprovedInspectionCell.cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,7 +67,7 @@ extension InspectionListingViewController: UITableViewDelegate, UITableViewDataS
             
             cell.configure(delegate:        self,
                            severity:        severityList[indexPath.row],
-                           deadLine:        deadlineList[indexPath.row],
+                           deadline:        deadlineList[indexPath.row],
                            descriptionText: descriptionList[indexPath.row])
             return cell
         }
@@ -75,13 +75,11 @@ extension InspectionListingViewController: UITableViewDelegate, UITableViewDataS
 }
 
 extension InspectionListingViewController: InspectionCellButtonDelegate {
-    func goToMethodEditScreen() {
+    func goToInspectionEditScreen() {
         print("Edit screen")
     }
     
-    func goToMethodDetailScreen() {
+    func goToInspectionDetailScreen() {
         print("Detail screen")
     }
-    
-    
 }
