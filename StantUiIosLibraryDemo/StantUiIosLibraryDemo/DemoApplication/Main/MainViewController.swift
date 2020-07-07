@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
         self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
         self.addVerifiedMethodListingDemo()
+        self.addVerifiedMethodHistoryListingDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -207,7 +208,7 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addSiffListingCardDemo() {
-        self.scrollView.addButton(title:  "Siff Listing",
+        self.scrollView.addButton(title:  "SIFF Listing demo",
                                   action: #selector(goToSiffListingCardDemo),
                                   target: self)
     }
@@ -289,5 +290,15 @@ class MainViewController: UIViewController {
 
     @objc func goToVerifiedMethodListingDemo() {
         self.open(viewController: VerifiedMethodListingViewController())
+    }
+    
+    fileprivate func addVerifiedMethodHistoryListingDemo() {
+        self.scrollView.addButton(title:  "Method History demo",
+        action: #selector(goToVerifiedMethodHistoryListingDemo),
+        target: self)
+    }
+    
+    @objc func goToVerifiedMethodHistoryListingDemo() {
+        self.open(viewController: VerifiedMethodHistoryListingViewController())
     }
 }

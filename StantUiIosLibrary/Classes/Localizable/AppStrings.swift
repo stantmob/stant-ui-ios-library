@@ -10,6 +10,8 @@ import UIKit
 class AppStrings {
     //General
     public static let see_more = localized("see_more")
+    public static let edit     = localized("edit")
+    public static let details  = localized("details")
     
     //Service Inspection Form Filled Details
     public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")
@@ -32,7 +34,16 @@ class AppStrings {
     public static let service_inspection_form_filled_details_of_planned_label = localized("service_inspection_form_filled_details.of_planned_label")
     public static let service_inspection_form_filled_details_out_of_label     = localized("service_inspection_form_filled_details.out_of_label")
 
+    //Verified Method Details
+    public static let verified_method_details_not_inspected_label  = localized("verified_method_details.not_inspected_label")
+    public static let verified_method_details_approved_label       = localized("verified_method_details.approved_label")
+    public static let verified_method_details_reproved_label       = localized("verified_method_details.reproved_label")
+    public static let verified_method_details_not_applicable_label = localized("verified_method_details.not_applicable_label")
     
+    //Inspection Status
+    public static let inspection_status_approved = localized("inspection_status.approved")
+    public static let inspection_status_reproved = localized("inspection_status.reproved")
+
     public static func localized(_ value: String) -> String {
         let currentLanguage = Locale.current
         let bundle          = Bundle.init(identifier: "org.cocoapods.StantUiIosLibrary") ?? Bundle.main

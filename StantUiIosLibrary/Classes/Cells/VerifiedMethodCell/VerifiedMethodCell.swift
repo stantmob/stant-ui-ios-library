@@ -8,7 +8,7 @@
 import UIKit
 
 public class VerifiedMethodCell: UITableViewCell {
-    public var statusView:           VerifiedMethodCellStatusView?
+    public var statusBadge:          CellBadge?
     public var reinspectedIndicator: UIView?
     public var attachmentIndicator:  UIImageView?
     public var methodDescription:    UILabel?
@@ -46,22 +46,24 @@ public class VerifiedMethodCell: UITableViewCell {
                           hasAttachment:   Bool,
                           descriptionText: String) {
         
-        configureHeaderView(status: status, order: order)
+        configureStatusBadge(status: status, order: order)
         configureReinspectedIndicator(isReinspection: isReinspection)
         configureAttachmentIndicator(hasAttachment: hasAttachment)
         configureMethodDescription(descriptionText: descriptionText)
     }
     
-    fileprivate func configureHeaderView(status: VerifiedMethodStatusEnum, order: Int) {
-        statusView           = VerifiedMethodCellStatusView()
-        guard let statusView = statusView else { return }
+    fileprivate func configureStatusBadge(status: VerifiedMethodStatusEnum, order: Int) {
+        statusBadge           = CellBadge()
+        guard let statusBadge = statusBadge else { return }
         
-        self.addSubview(statusView)
-        statusView.anchor(top:      self.topAnchor,
-                          trailing: self.trailingAnchor,
-                          size:     CGSize(width: self.frame.width + 6, height: 28))
+        self.addSubview(statusBadge)
+        statusBadge.anchor(top:      self.topAnchor,
+                           trailing: self.trailingAnchor,
+                           size:     CGSize(width: self.frame.width + 6, height: 28))
         
-        statusView.configureStatusTag(color: status.colorValue(), order: order)
+        statusBadge.configureBadge(color: status.colorValue(),
+                                   title: order.getStringWith(numberOfDigits: 2),
+                                   size:  CGSize(width: 37, height: 28))
     }
     
     fileprivate func configureReinspectedIndicator(isReinspection: Bool) {
@@ -72,7 +74,7 @@ public class VerifiedMethodCell: UITableViewCell {
         reinspectedIndicator.isHidden           = !isReinspection
         
         self.addSubview(reinspectedIndicator)
-        reinspectedIndicator.anchor(top:     statusView?.bottomAnchor,
+        reinspectedIndicator.anchor(top:     statusBadge?.bottomAnchor,
                                     leading: self.leadingAnchor,
                                     padding: UIEdgeInsets(top: 7, left: 10, bottom: 0, right: 0),
                                     size:    CGSize(width: 8, height: 8))
@@ -110,6 +112,19 @@ public class VerifiedMethodCell: UITableViewCell {
 
 public enum VerifiedMethodStatusEnum {
     case notApplicable, approved, reproved, notInspected
+    
+    public func stringValue() -> String {
+        switch self {
+        case .notInspected:
+            return AppStrings.verified_method_details_not_inspected_label
+        case .reproved:
+            return AppStrings.verified_method_details_approved_label
+        case .approved:
+            return AppStrings.verified_method_details_approved_label
+        case .notApplicable:
+            return AppStrings.verified_method_details_not_applicable_label
+        }
+    }
     
     public func colorValue() -> UIColor {
         switch self {

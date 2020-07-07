@@ -11,8 +11,7 @@ public class ServiceInspectionFormFilledCellBar: UIView {
     var progressView: UIView?
     
     public func configure(totalUsedArea: Float, performedQuantity: Float, color: UIColor) {
-        let percentage: CGFloat = CGFloat(performedQuantity / totalUsedArea)
-        
+        let percentage: CGFloat         = CGFloat(performedQuantity / totalUsedArea)
         progressView                    = UIView()
         guard let progressView          = progressView else { return }
         progressView.backgroundColor    = color
@@ -29,5 +28,4 @@ public class ServiceInspectionFormFilledCellBar: UIView {
                                             height: self.frame.height))
         
     }
-    
 }

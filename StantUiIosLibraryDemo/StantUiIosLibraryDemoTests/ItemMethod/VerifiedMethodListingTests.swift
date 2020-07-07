@@ -40,7 +40,7 @@ class VerifiedMethodListingTests: XCTestCase {
                            hasAttachment:   hasAttachmentList[index],
                            descriptionText: descriptionText)
             
-            XCTAssertEqual(cell.statusView?.statusTag?.backgroundColor, statusList[index].colorValue())
+            XCTAssertEqual(cell.statusBadge?.statusView?.backgroundColor, statusList[index].colorValue())
             XCTAssertEqual(cell.reinspectedIndicator?.isHidden, !isReinspectionList[index])
             XCTAssertEqual(cell.attachmentIndicator?.isHidden, !hasAttachmentList[index])
         }
