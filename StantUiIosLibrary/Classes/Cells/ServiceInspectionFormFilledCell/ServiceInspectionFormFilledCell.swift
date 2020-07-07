@@ -262,8 +262,6 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
             return AppStrings.service_inspection_form_filled_details_approved_label
         case .late:
             return AppStrings.service_inspection_form_filled_details_late_label
-        default:
-            return ""
         }
     }
     

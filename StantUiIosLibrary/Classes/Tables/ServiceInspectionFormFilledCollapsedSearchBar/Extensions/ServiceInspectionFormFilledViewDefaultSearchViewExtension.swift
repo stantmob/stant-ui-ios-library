@@ -12,7 +12,7 @@ extension ServiceInspectionFormFilledTableViewWithCollapsedSearchBar: DefaultSea
         self.currentSearch  = search
         guard let tableView = tableView else { return }
         tableView.filteredServiceInspectionFormFilledList = serviceInspectionFormFilledList.filter { (serviceInspectionFormFilled: ServiceInspectionFormFilled) -> Bool in
-            let verifiedUnit = serviceInspectionFormFilled.verifiedUnit ?? ""
+            let verifiedUnit = serviceInspectionFormFilled.verifiedUnit
             return verifiedUnit.lowercased().contains(search.lowercased())
         }
         if search.isEmpty {
