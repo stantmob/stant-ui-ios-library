@@ -74,7 +74,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                    case .late:
                        color = UIColor.redLightStant
                    case .finished:
-                       color = UIColor.yellowSLighttant
+                       color = UIColor.yellowLightStant
                    case .progress:
                        color = UIColor.darkGrayStant
                    case .approved:

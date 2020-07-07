@@ -45,7 +45,9 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
-        self.addFispsListingCardDemo()
+        self.addSiffListingCardDemo()
+        self.addItemMethodListingDemo()
+        self.addVerifiedMethodListingDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,7 +193,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToProgressBarWithToolTipDemo() {
-        self.openProgressBarWithToolTipDemo()
+        self.open(viewController: ProgressBarWithToolTipViewController())
     }
     
     fileprivate func addServiceInspectionFormFilledCardDemo() {
@@ -201,16 +203,16 @@ class MainViewController: UIViewController {
     }
 
     @objc func goToServiceInspectionFormFilledCardDemo() {
-        self.openServiceInspectionFormFilledCardDemo()
+        self.open(viewController: ServiceInspectionFormFilledCardViewController())
     }
 
-    fileprivate func addFispsListingCardDemo() {
-        self.scrollView.addButton(title:  "Fisp Listing",
-                                  action: #selector(goFispsListingCardDemo),
+    fileprivate func addSiffListingCardDemo() {
+        self.scrollView.addButton(title:  "Siff Listing",
+                                  action: #selector(goToSiffListingCardDemo),
                                   target: self)
     }
 
-    @objc func goFispsListingCardDemo() {
+    @objc func goToSiffListingCardDemo() {
         self.open(viewController: ServiceInspectionFormFilledListingViewController())
     }
 
@@ -231,7 +233,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func goToQuantityBarDemo() {
-        self.openQuantityBarDemo()
+        self.open(viewController: QuantityBarViewController())
     }
 
     fileprivate func addTeamScreenDemo() {
@@ -258,5 +260,34 @@ class MainViewController: UIViewController {
         self.scrollView.addButton(title:  "SIFF detail menu demo",
                                   action: #selector(goToServiceInspectionFormFilledDetailMenuDemo),
                                   target: self)
+    }
+
+    @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
+        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
+        serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
+
+        self.present(serviceInspectionFormFilledDetailMenuViewController,
+                     animated:   false,
+                     completion: nil)
+    }
+
+    fileprivate func addItemMethodListingDemo() {
+        self.scrollView.addButton(title:  "Item listing demo",
+        action: #selector(goToItemMethodListingDemo),
+        target: self)
+    }
+
+    @objc func goToItemMethodListingDemo() {
+        self.open(viewController: ItemMethodListingViewController())
+    }
+
+    fileprivate func addVerifiedMethodListingDemo() {
+        self.scrollView.addButton(title:  "Method listing demo",
+        action: #selector(goToVerifiedMethodListingDemo),
+        target: self)
+    }
+
+    @objc func goToVerifiedMethodListingDemo() {
+        self.open(viewController: VerifiedMethodListingViewController())
     }
 }

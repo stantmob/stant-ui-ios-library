@@ -6,7 +6,6 @@
 //  Copyright © 2020 Stant. All rights reserved.
 //
 
-
 import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo

@@ -21,6 +21,10 @@ extension UIColor {
         return UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1)
     }
     
+    @nonobjc public class var grayStant: UIColor {
+        return UIColor(red: 206/255, green: 206/255, blue: 213/255, alpha: 1)
+    }
+
     @nonobjc public class var darkGrayStant: UIColor {
         return UIColor(red: 133/255, green: 133/255, blue: 150/255, alpha: 1)
     }
@@ -61,14 +65,14 @@ extension UIColor {
         return UIColor(red: 63/255, green: 172/255, blue: 223/255, alpha: 1)
     }
     
-    @nonobjc public class var yellowSLighttant: UIColor {
+    @nonobjc public class var yellowLightStant: UIColor {
         return UIColor(red: 255/255, green: 180/255, blue: 83/255, alpha: 1)
     }
-    
+
     @nonobjc public class var redLightStant: UIColor {
         return UIColor(red: 212/255, green: 29/255, blue: 0/255, alpha: 1)
     }
-    
+
     public func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             self.setFill()
