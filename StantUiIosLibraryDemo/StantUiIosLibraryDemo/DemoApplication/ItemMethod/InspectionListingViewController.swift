@@ -24,11 +24,11 @@ class InspectionListingViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = .white
-        populateInspectionList()
+        groupedInspectionList     = populateInspectionList()
         configureTableView()
     }
     
-    func populateInspectionList() {
+    func populateInspectionList() -> [(key: String, value: [InspectionCellData])] {
         var inspectionList = [InspectionCellData]()
         for i in (0..<10) {
             let inpectionCellData = InspectionCellData(createdAt:       createdAtList[i],
@@ -40,7 +40,7 @@ class InspectionListingViewController: UIViewController {
             inspectionList.append(inpectionCellData)
         }
         
-        groupedInspectionList = Dictionary(grouping: inspectionList, by: { $0.createdAt }).sorted(by: { $0.0 > $1.0 })
+        return Dictionary(grouping: inspectionList, by: { $0.createdAt }).sorted(by: { $0.0 > $1.0 })
     }
     
     func configureTableView() {
