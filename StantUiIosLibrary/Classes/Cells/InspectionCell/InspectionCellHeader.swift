@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class InspectionCellHeader: UIView {
+public class InspectionCellHeader: UITableViewHeaderFooterView {
     public var indicatorView:  UIView?
     public var createdAtView:  UIView?
     public var createdAtLabel: UILabel?

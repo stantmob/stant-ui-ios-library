@@ -29,23 +29,42 @@ class InspectionListingTests: XCTestCase {
         XCTAssertNotNil(viewController.tableView)
         groupedInspectionList = viewController.populateInspectionList()
         guard let tableView   = viewController.tableView else { return }
+        XCTAssertEqual(tableView.numberOfSections, 5)
         
-//        for index in statusList.indices {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: VerifiedMethodCell.identifier(),
-//                                                     for:            IndexPath(row: index, section: 0)) as! VerifiedMethodCell
-//
-//            XCTAssertNotNil(cell)
-//
-//            cell.configure(status:          statusList[index],
-//                           order:           index + 1,
-//                           isReinspection:  isReinspectionList[index],
-//                           hasAttachment:   hasAttachmentList[index],
-//                           descriptionText: descriptionText)
-//
-//            XCTAssertEqual(cell.statusBadge?.statusView?.backgroundColor, statusList[index].colorValue())
-//            XCTAssertEqual(cell.reinspectedIndicator?.isHidden, !isReinspectionList[index])
-//            XCTAssertEqual(cell.attachmentIndicator?.isHidden, !hasAttachmentList[index])
-//        }
+        for (section, group) in groupedInspectionList.enumerated() {            
+            for (row, inspectionCellData) in group.value.enumerated() {
+                XCTAssertEqual(inspectionCellData.createdAt, group.key)
+                
+                if inspectionCellData.status == .approved {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: ApprovedInspectionCell.identifier(),
+                                                             for:            IndexPath(row: row, section: section)) as? ApprovedInspectionCell
+                    checkApprovedCell(cell: cell, inspectionCellData: inspectionCellData)
+                } else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: ReprovedInspectionCell.identifier(),
+                                                             for:            IndexPath(row: row, section: section)) as? ReprovedInspectionCell
+                    checkReprovedCell(cell: cell, inspectionCellData: inspectionCellData)
+                }
+            }
+        }
+    }
+    
+    func checkApprovedCell(cell: ApprovedInspectionCell?, inspectionCellData: InspectionCellData) {
+        cell?.configure(delegate:        viewController,
+                        descriptionText: inspectionCellData.descriptionText)
+        XCTAssertEqual(cell?.subviews.count, 4)
+        for subview in cell?.subviews ?? [] {
+            XCTAssertNotNil(subview)
+        }
     }
 
+    func checkReprovedCell(cell: ReprovedInspectionCell?, inspectionCellData: InspectionCellData) {
+        cell?.configure(delegate:        viewController,
+                        severity:        inspectionCellData.severity,
+                        deadline:        inspectionCellData.deadline,
+                        descriptionText: inspectionCellData.descriptionText)
+        XCTAssertEqual(cell?.subviews.count, 7)
+        for subview in cell?.subviews ?? [] {
+            XCTAssertNotNil(subview)
+        }
+    }
 }
