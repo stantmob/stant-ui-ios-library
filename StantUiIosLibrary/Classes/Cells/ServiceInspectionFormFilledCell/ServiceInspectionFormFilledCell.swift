@@ -111,7 +111,6 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         progressBar.layer.cornerRadius = 2.5
         
         self.addSubview(progressBar)
-        
         progressBar.anchor(top:      verifiedUnitLabel?.bottomAnchor,
                            leading:  self.leadingAnchor,
                            trailing: self.trailingAnchor,
@@ -119,7 +118,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                                   left:   14,
                                                   bottom: 0,
                                                   right:  14),
-                           size:     CGSize(width:  self.frame.width,
+                           size:     CGSize(width:  0,
                                             height: 4))
         
         progressBar.configure(totalUsedArea:     totalUsedArea,

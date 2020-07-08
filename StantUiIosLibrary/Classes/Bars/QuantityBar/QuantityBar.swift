@@ -45,18 +45,14 @@ public class QuantityBar: UIView {
     }
     
     fileprivate func configureMainBar() {
-        mainBar = UIStackView()
-        
+        mainBar           = UIStackView()
         guard let mainBar = mainBar else { return }
         mainBar.axis      = .horizontal
         mainBar.spacing   = self.positionIndicator == self.frame.width ? 0 : 1
         
         self.addSubview(mainBar)
-        
         mainBar.anchor(top:      self.topAnchor,
                        leading:  self.leadingAnchor,
-                       bottom:   self.bottomAnchor,
-                       trailing: self.trailingAnchor,
                        size:     CGSize(width: self.frame.width, height: self.barHeight))
         
         self.setNeedsLayout()
@@ -67,10 +63,9 @@ public class QuantityBar: UIView {
     }
     
     fileprivate func configureDoneBar() {
-        doneBar           = UIView()
-        guard let doneBar = doneBar else { return }
-        guard let mainBar = mainBar else { return }
-        
+        doneBar                    = UIView()
+        guard let doneBar          = doneBar else { return }
+        guard let mainBar          = mainBar else { return }
         doneBar.backgroundColor    = .blueLightStant
         doneBar.layer.cornerRadius = self.barHeight / 2
         doneBar.clipsToBounds      = true
@@ -78,22 +73,19 @@ public class QuantityBar: UIView {
         mainBar.addArrangedSubview(doneBar)
         doneBar.anchor(top:     mainBar.topAnchor,
                        leading: mainBar.leadingAnchor,
-                       bottom:  mainBar.bottomAnchor,
                        size:    CGSize(width:  self.positionIndicator == 0 ? 0.1 : self.positionIndicator,
-                                       height: mainBar.frame.height))
+                                       height: 0))
     }
     
     fileprivate func configureToDoBar() {
-        toDoBar           = ToDoBar()
-        guard let mainBar = mainBar else { return }
-        guard let toDoBar = toDoBar else { return }
-        
+        toDoBar                    = ToDoBar()
+        guard let mainBar          = mainBar else { return }
+        guard let toDoBar          = toDoBar else { return }
         toDoBar.layer.cornerRadius = self.barHeight / 2
         toDoBar.clipsToBounds      = true
         
         mainBar.addArrangedSubview(toDoBar)
         toDoBar.anchor(top:      mainBar.topAnchor,
-                       bottom:   mainBar.bottomAnchor,
                        trailing: mainBar.trailingAnchor,
                        size:     CGSize(width:  mainBar.frame.width - self.positionIndicator,
                                         height: barHeight))

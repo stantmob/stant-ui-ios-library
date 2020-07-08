@@ -25,7 +25,7 @@ public class ServiceInspectionFormFilledCellBar: UIView {
                             leading: self.leadingAnchor,
                             bottom:  self.bottomAnchor,
                             size:    CGSize(width:  self.frame.width * percentage ,
-                                            height: self.frame.height))
+                                            height: 0))
         
     }
 }
