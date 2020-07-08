@@ -43,7 +43,7 @@ public class ReprovedInspectionCell: UITableViewCell {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         bounds      = bounds.inset(by: padding)
     }
     
@@ -52,7 +52,6 @@ public class ReprovedInspectionCell: UITableViewCell {
                           deadline:        String,
                           descriptionText: String) {
         self.delegate = delegate
-        
         self.removeSubviews()
         addShadow()
         configureStatusBadge()
@@ -109,7 +108,7 @@ public class ReprovedInspectionCell: UITableViewCell {
         self.addSubview(deadlineTitleLabel)
         deadlineTitleLabel.anchor(top:     self.topAnchor,
                                   leading: self.leadingAnchor,
-                                  padding: UIEdgeInsets(top: 12, left: 235, bottom: 0, right: 0))
+                                  padding: UIEdgeInsets(top: 12, left: self.frame.width * 0.73, bottom: 0, right: 0))
     }
     
     fileprivate func configureDeadlineLabel(deadline: String) {
@@ -122,7 +121,7 @@ public class ReprovedInspectionCell: UITableViewCell {
         self.addSubview(deadlineLabel)
         deadlineLabel.anchor(top:     self.topAnchor,
                              leading: self.leadingAnchor,
-                             padding: UIEdgeInsets(top: 25, left: 235, bottom: 0, right: 0))
+                             padding: UIEdgeInsets(top: 25, left: self.frame.width * 0.73, bottom: 0, right: 0))
     }
     
     fileprivate func configureDescriptionView(descriptionText: String) {
@@ -136,25 +135,30 @@ public class ReprovedInspectionCell: UITableViewCell {
                                padding:  UIEdgeInsets(top: 51, left: 0, bottom: 0, right: 0),
                                size:     CGSize(width: self.frame.width, height: 46))
         
-        configureDescriptionViewSeparators()
+        configureUpperDescriptionViewSeparators()
+        configureLowerDescriptionViewSeparators()
         configureDescriptionLabel(descriptionText: descriptionText)
     }
     
-    fileprivate func configureDescriptionViewSeparators() {
+    fileprivate func configureUpperDescriptionViewSeparators() {
         upperSeparator                 = UIView()
-        lowerSeparator                 = UIView()
         guard let descriptionView      = descriptionView,
-              let upperSeparator       = upperSeparator,
-              let lowerSeparator       = lowerSeparator else { return }
+              let upperSeparator       = upperSeparator else { return }
         upperSeparator.backgroundColor = .lightGrayStant
-        lowerSeparator.backgroundColor = .lightGrayStant
         
         descriptionView.addSubview(upperSeparator)
         upperSeparator.anchor(top:      descriptionView.topAnchor,
                               leading:  descriptionView.leadingAnchor,
                               trailing: descriptionView.trailingAnchor,
                               size:     CGSize(width: descriptionView.frame.width, height: 1))
-        
+    }
+    
+    fileprivate func configureLowerDescriptionViewSeparators() {
+        lowerSeparator                 = UIView()
+        guard let descriptionView      = descriptionView,
+              let lowerSeparator       = lowerSeparator else { return }
+        lowerSeparator.backgroundColor = .lightGrayStant
+
         descriptionView.addSubview(lowerSeparator)
         lowerSeparator.anchor(leading:  descriptionView.leadingAnchor,
                               bottom:   descriptionView.bottomAnchor,
@@ -179,9 +183,9 @@ public class ReprovedInspectionCell: UITableViewCell {
     }
     
     fileprivate func configureEditButton(){
-        editButton                       = UIButton()
-        guard let editButton             = editButton else { return }
-        editButton.titleLabel?.font      = .systemFont(ofSize: 12)
+        editButton                  = UIButton()
+        guard let editButton        = editButton else { return }
+        editButton.titleLabel?.font = .systemFont(ofSize: 12)
 
         self.addSubview(editButton)
         editButton.anchor(top:      descriptionView?.bottomAnchor,
@@ -196,9 +200,9 @@ public class ReprovedInspectionCell: UITableViewCell {
     }
     
     fileprivate func configureDetailButton() {
-        detailButton                       = UIButton()
-        guard let detailButton             = detailButton else { return }
-        detailButton.titleLabel?.font      = .systemFont(ofSize: 12)
+        detailButton                  = UIButton()
+        guard let detailButton        = detailButton else { return }
+        detailButton.titleLabel?.font = .systemFont(ofSize: 12)
 
         self.addSubview(detailButton)
         detailButton.anchor(top:      descriptionView?.bottomAnchor,

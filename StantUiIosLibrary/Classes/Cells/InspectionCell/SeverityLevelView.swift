@@ -11,7 +11,6 @@ public class SeverityLevelView: UIView {
     func configure(severity: Int) {
         for i in (0...4) {
             let color: UIColor = severity >= (i + 1) ? .yellowStant : .darkGrayStant
-            
             configureView(index: i, color: color)
         }
     }

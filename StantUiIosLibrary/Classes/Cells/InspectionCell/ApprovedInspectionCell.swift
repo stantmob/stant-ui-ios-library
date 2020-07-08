@@ -40,14 +40,13 @@ public class ApprovedInspectionCell: UITableViewCell {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         bounds      = bounds.inset(by: padding)
     }
     
     public func configure(delegate:        InspectionCellButtonDelegate,
                           descriptionText: String) {
         self.delegate = delegate
-        
         self.removeSubviews()
         addShadow()
         configureStatusBadge()
@@ -90,25 +89,30 @@ public class ApprovedInspectionCell: UITableViewCell {
                                padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                                size:     CGSize(width: self.frame.width, height: 46))
         
-        configureDescriptionViewSeparators()
+        configureUpperDescriptionViewSeparators()
+        configureLowerDescriptionViewSeparators()
         configureDescriptionLabel(descriptionText: descriptionText)
     }
     
-    fileprivate func configureDescriptionViewSeparators() {
+    fileprivate func configureUpperDescriptionViewSeparators() {
         upperSeparator                 = UIView()
-        lowerSeparator                 = UIView()
         guard let descriptionView      = descriptionView,
-              let upperSeparator       = upperSeparator,
-              let lowerSeparator       = lowerSeparator else { return }
+              let upperSeparator       = upperSeparator else { return }
         upperSeparator.backgroundColor = .lightGrayStant
-        lowerSeparator.backgroundColor = .lightGrayStant
         
         descriptionView.addSubview(upperSeparator)
         upperSeparator.anchor(top:      descriptionView.topAnchor,
                               leading:  descriptionView.leadingAnchor,
                               trailing: descriptionView.trailingAnchor,
                               size:     CGSize(width: descriptionView.frame.width, height: 1))
-        
+    }
+    
+    fileprivate func configureLowerDescriptionViewSeparators() {
+        lowerSeparator                 = UIView()
+        guard let descriptionView      = descriptionView,
+              let lowerSeparator       = lowerSeparator else { return }
+        lowerSeparator.backgroundColor = .lightGrayStant
+
         descriptionView.addSubview(lowerSeparator)
         lowerSeparator.anchor(leading:  descriptionView.leadingAnchor,
                               bottom:   descriptionView.bottomAnchor,
@@ -120,10 +124,10 @@ public class ApprovedInspectionCell: UITableViewCell {
         descriptionLabel               = UILabel()
         guard let descriptionLabel     = descriptionLabel,
               let descriptionView      = descriptionView else { return }
+        descriptionLabel.numberOfLines = 2
         descriptionLabel.textColor     = .darkGrayStant
         descriptionLabel.font          = .systemFont(ofSize: 12)
         descriptionLabel.text          = descriptionText
-        descriptionLabel.numberOfLines = 2
         
         descriptionView.addSubview(descriptionLabel)
         descriptionLabel.anchor(top:      descriptionView.topAnchor,
@@ -133,9 +137,9 @@ public class ApprovedInspectionCell: UITableViewCell {
     }
     
     fileprivate func configureEditButton(){
-        editButton                       = UIButton()
-        guard let editButton             = editButton else { return }
-        editButton.titleLabel?.font      = .systemFont(ofSize: 12)
+        editButton                  = UIButton()
+        guard let editButton        = editButton else { return }
+        editButton.titleLabel?.font = .systemFont(ofSize: 12)
 
         self.addSubview(editButton)
         editButton.anchor(top:      descriptionView?.bottomAnchor,
@@ -150,9 +154,9 @@ public class ApprovedInspectionCell: UITableViewCell {
     }
     
     fileprivate func configureDetailButton() {
-        detailButton                       = UIButton()
-        guard let detailButton             = detailButton else { return }
-        detailButton.titleLabel?.font      = .systemFont(ofSize: 12)
+        detailButton                  = UIButton()
+        guard let detailButton        = detailButton else { return }
+        detailButton.titleLabel?.font = .systemFont(ofSize: 12)
 
         self.addSubview(detailButton)
         detailButton.anchor(top:      descriptionView?.bottomAnchor,
