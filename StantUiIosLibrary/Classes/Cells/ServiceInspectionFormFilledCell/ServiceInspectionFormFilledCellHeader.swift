@@ -37,8 +37,7 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         
         statusBadge.configureBadge(color: color,
                                    title: status.stringValue().uppercased(),
-                                   size:  CGSize(width:  112,
-                                                 height: 28))
+                                   size:  CGSize(width:  112, height: 28))
     }
     
     fileprivate func configureCircle() {

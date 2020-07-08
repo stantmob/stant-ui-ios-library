@@ -42,26 +42,32 @@ public class CellBadge: UIView {
     }
     
     fileprivate func configureFold() {
-        let width  = 6
-        let height = 7
-        let path   = CGMutablePath()
+        let width:  CGFloat = 6
+        let height: CGFloat = 7
+        let path            = makeTriangle(width: width, height: height)
+        let shape           = CAShapeLayer()
+        foldView            = UIView()
+        guard let foldView  = foldView else { return }
+    
+        self.addSubview(foldView)
+        foldView.anchor(top:     statusView?.bottomAnchor,
+                        leading: statusView?.leadingAnchor,
+                        size:    CGSize(width: width, height: height))
+        
+        shape.path      = path
+        shape.fillColor = UIColor.darkStant.cgColor
 
+        foldView.layer.insertSublayer(shape, at: 0)
+    }
+    
+    fileprivate func makeTriangle(width: CGFloat, height: CGFloat) -> CGMutablePath {
+        let path  = CGMutablePath()
+        
         path.move(to: CGPoint(x: width, y: 0))
         path.addLine(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: width, y: height))
         path.addLine(to: CGPoint(x: width, y: 0))
-
-        let shape       = CAShapeLayer()
-        shape.path      = path
-        shape.fillColor = UIColor.darkStant.cgColor
-
-        foldView           = UIView()
-        guard let foldView = foldView else { return }
         
-        foldView.layer.insertSublayer(shape, at: 0)
-        self.addSubview(foldView)
-
-        foldView.anchor(top:     statusView?.bottomAnchor,
-                        leading: statusView?.leadingAnchor)
+        return path
     }
 }
