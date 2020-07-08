@@ -9,10 +9,7 @@ import UIKit
 
 public class ApprovedInspectionCell: UITableViewCell {
     public var statusBadge:      CellBadge?
-    public var upperSeparator:   UIView?
-    public var descriptionView:  UIView?
-    public var lowerSeparator:   UIView?
-    public var descriptionLabel: UILabel?
+    public var descriptionView:  InspectionDescriptionView?
     public var editButton:       UIButton?
     public var detailButton:     UIButton?
     public var delegate:         InspectionCellButtonDelegate?
@@ -79,7 +76,7 @@ public class ApprovedInspectionCell: UITableViewCell {
     }
     
     fileprivate func configureDescriptionView(descriptionText: String) {
-        descriptionView           = UIView()
+        descriptionView           = InspectionDescriptionView()
         guard let descriptionView = descriptionView else { return }
 
         self.addSubview(descriptionView)
@@ -89,48 +86,7 @@ public class ApprovedInspectionCell: UITableViewCell {
                                padding:  UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 16),
                                size:     CGSize(width: 0, height: 46))
         
-        configureUpperDescriptionViewSeparator()
-        configureLowerDescriptionViewSeparator()
-        configureDescriptionLabel(descriptionText: descriptionText)
-    }
-    
-    fileprivate func configureUpperDescriptionViewSeparator() {
-        upperSeparator                 = UIView()
-        guard let descriptionView      = descriptionView,
-              let upperSeparator       = upperSeparator else { return }
-        upperSeparator.backgroundColor = .lightGrayStant
-        
-        self.addSubview(upperSeparator)
-        upperSeparator.anchor(top:      descriptionView.topAnchor,
-                              leading:  self.leadingAnchor,
-                              trailing: self.trailingAnchor,
-                              size:     CGSize(width: 0, height: 1))
-    }
-    
-    fileprivate func configureLowerDescriptionViewSeparator() {
-        lowerSeparator                 = UIView()
-        guard let descriptionView      = descriptionView,
-              let lowerSeparator       = lowerSeparator else { return }
-        lowerSeparator.backgroundColor = .lightGrayStant
-
-        self.addSubview(lowerSeparator)
-        lowerSeparator.anchor(leading:  self.leadingAnchor,
-                              bottom:   descriptionView.bottomAnchor,
-                              trailing: self.trailingAnchor,
-                              size:     CGSize(width: 0, height: 1))
-    }
-    
-    fileprivate func configureDescriptionLabel(descriptionText: String) {
-        descriptionLabel               = UILabel()
-        guard let descriptionLabel     = descriptionLabel,
-              let descriptionView      = descriptionView else { return }
-        descriptionLabel.numberOfLines = 2
-        descriptionLabel.textColor     = .darkGrayStant
-        descriptionLabel.font          = .systemFont(ofSize: 12)
-        descriptionLabel.text          = descriptionText
-        
-        descriptionView.addSubview(descriptionLabel)
-        descriptionLabel.fillSuperView()
+        descriptionView.configure(descriptionText: descriptionText)
     }
     
     fileprivate func configureEditButton(){
