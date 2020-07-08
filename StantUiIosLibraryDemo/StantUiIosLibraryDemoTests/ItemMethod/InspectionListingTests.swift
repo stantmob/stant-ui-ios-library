@@ -13,7 +13,7 @@ import StantUiIosLibrary
 class InspectionListingTests: XCTestCase {
     public var groupedInspectionList                = [(key: String, value: [InspectionCellData])]()
     public let severityList: [Int]                  = [5, 3, 1, 0, 4, 3, 2, 0, 3, 5]
-    public let descriptionList                      = (0..<10).map{"My description \($0 + 1)"}
+    public let descriptionList                      = (0..<10).map{"My really long description \($0 + 1)!!!!!! My really long description \($0 + 1)!!!!!!"}
     public let statusList:   [InspectionStatusEnum] = [.reproved, .approved, .reproved, .approved, .reproved,
                                                        .approved, .reproved, .approved, .reproved, .approved]
     public let createdAtList                        = ["06/01/2020", "25/01/2020", "25/01/2020", "07/01/2020", "18/01/2020",
@@ -51,7 +51,7 @@ class InspectionListingTests: XCTestCase {
     func checkApprovedCell(cell: ApprovedInspectionCell?, inspectionCellData: InspectionCellData) {
         cell?.configure(delegate:        viewController,
                         descriptionText: inspectionCellData.descriptionText)
-        XCTAssertEqual(cell?.subviews.count, 4)
+        XCTAssertEqual(cell?.subviews.count, 6)
         for subview in cell?.subviews ?? [] {
             XCTAssertNotNil(subview)
         }
@@ -62,7 +62,7 @@ class InspectionListingTests: XCTestCase {
                         severity:        inspectionCellData.severity,
                         deadline:        inspectionCellData.deadline,
                         descriptionText: inspectionCellData.descriptionText)
-        XCTAssertEqual(cell?.subviews.count, 7)
+        XCTAssertEqual(cell?.subviews.count, 9)
         for subview in cell?.subviews ?? [] {
             XCTAssertNotNil(subview)
         }

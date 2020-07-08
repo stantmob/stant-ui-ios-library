@@ -86,38 +86,38 @@ public class ApprovedInspectionCell: UITableViewCell {
         descriptionView.anchor(top:      statusBadge?.bottomAnchor,
                                leading:  self.leadingAnchor,
                                trailing: self.trailingAnchor,
-                               padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
-                               size:     CGSize(width: self.frame.width, height: 46))
+                               padding:  UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 16),
+                               size:     CGSize(width: 0, height: 46))
         
-        configureUpperDescriptionViewSeparators()
-        configureLowerDescriptionViewSeparators()
+        configureUpperDescriptionViewSeparator()
+        configureLowerDescriptionViewSeparator()
         configureDescriptionLabel(descriptionText: descriptionText)
     }
     
-    fileprivate func configureUpperDescriptionViewSeparators() {
+    fileprivate func configureUpperDescriptionViewSeparator() {
         upperSeparator                 = UIView()
         guard let descriptionView      = descriptionView,
               let upperSeparator       = upperSeparator else { return }
         upperSeparator.backgroundColor = .lightGrayStant
         
-        descriptionView.addSubview(upperSeparator)
+        self.addSubview(upperSeparator)
         upperSeparator.anchor(top:      descriptionView.topAnchor,
-                              leading:  descriptionView.leadingAnchor,
-                              trailing: descriptionView.trailingAnchor,
-                              size:     CGSize(width: descriptionView.frame.width, height: 1))
+                              leading:  self.leadingAnchor,
+                              trailing: self.trailingAnchor,
+                              size:     CGSize(width: 0, height: 1))
     }
     
-    fileprivate func configureLowerDescriptionViewSeparators() {
+    fileprivate func configureLowerDescriptionViewSeparator() {
         lowerSeparator                 = UIView()
         guard let descriptionView      = descriptionView,
               let lowerSeparator       = lowerSeparator else { return }
         lowerSeparator.backgroundColor = .lightGrayStant
 
-        descriptionView.addSubview(lowerSeparator)
-        lowerSeparator.anchor(leading:  descriptionView.leadingAnchor,
+        self.addSubview(lowerSeparator)
+        lowerSeparator.anchor(leading:  self.leadingAnchor,
                               bottom:   descriptionView.bottomAnchor,
-                              trailing: descriptionView.trailingAnchor,
-                              size:     CGSize(width: descriptionView.frame.width, height: 1))
+                              trailing: self.trailingAnchor,
+                              size:     CGSize(width: 0, height: 1))
     }
     
     fileprivate func configureDescriptionLabel(descriptionText: String) {
@@ -130,10 +130,7 @@ public class ApprovedInspectionCell: UITableViewCell {
         descriptionLabel.text          = descriptionText
         
         descriptionView.addSubview(descriptionLabel)
-        descriptionLabel.anchor(top:      descriptionView.topAnchor,
-                                leading:  descriptionView.leadingAnchor,
-                                trailing: descriptionView.trailingAnchor,
-                                padding:  UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 16))
+        descriptionLabel.fillSuperView()
     }
     
     fileprivate func configureEditButton(){
