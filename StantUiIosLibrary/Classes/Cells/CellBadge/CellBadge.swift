@@ -8,13 +8,13 @@
 import UIKit
 
 public class CellBadge: UIView {
-    public var statusView: UIView?
+    public var statusTag:  UIView?
     public var titleLabel: UILabel?
     public var foldView:   UIView?
     
     func configureBadge(color: UIColor, title: String, size: CGSize) {
-        statusView                = UIView()
-        guard let statusTag       = statusView else { return }
+        statusTag                 = UIView()
+        guard let statusTag       = statusTag else { return }
         statusTag.backgroundColor = color
         
         self.setNeedsLayout()
@@ -37,7 +37,7 @@ public class CellBadge: UIView {
         titleLabel.textColor     = .white
         titleLabel.text          = title
         
-        statusView?.addSubview(titleLabel)
+        statusTag?.addSubview(titleLabel)
         titleLabel.fillSuperView()
     }
     
@@ -50,8 +50,8 @@ public class CellBadge: UIView {
         guard let foldView  = foldView else { return }
     
         self.addSubview(foldView)
-        foldView.anchor(top:     statusView?.bottomAnchor,
-                        leading: statusView?.leadingAnchor,
+        foldView.anchor(top:     statusTag?.bottomAnchor,
+                        leading: statusTag?.leadingAnchor,
                         size:    CGSize(width: width, height: height))
         
         shape.path      = path
