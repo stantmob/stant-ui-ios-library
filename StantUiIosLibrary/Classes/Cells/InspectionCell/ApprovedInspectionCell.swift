@@ -146,7 +146,7 @@ public class ApprovedInspectionCell: UITableViewCell {
                           bottom:   self.bottomAnchor,
                           trailing: self.trailingAnchor,
                           padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 92),
-                          size:     CGSize(width: 60, height: self.frame.width))
+                          size:     CGSize(width: 60, height: 0))
         
         editButton.setTitle(AppStrings.edit, for: .normal)
         editButton.setTitleColor(.darkText, for: .normal)
@@ -163,7 +163,7 @@ public class ApprovedInspectionCell: UITableViewCell {
                             bottom:   self.bottomAnchor,
                             trailing: self.trailingAnchor,
                             padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16),
-                            size:     CGSize(width: 60, height: self.frame.width))
+                            size:     CGSize(width: 60, height: 0))
         
         detailButton.setTitle(AppStrings.details, for: .normal)
         detailButton.setTitleColor(.darkText, for: .normal)
