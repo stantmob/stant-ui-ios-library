@@ -10,7 +10,7 @@ import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
-class ItemMethodListingTests: XCTestCase {
+class ItemListingTests: XCTestCase {
     public let statusList: [ItemMethodEnum]  = [.approved, .reproved, .notInspected,
                                                 .approved, .reproved, .notInspected,
                                                 .approved, .reproved, .notInspected,
@@ -21,7 +21,7 @@ class ItemMethodListingTests: XCTestCase {
     
     public let observationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget risus in urna imperdiet sagittis ut vel quam. Fusce sagittis nec nibh ac pulvinar. Nunc aliquam lorem a mauris volutpat, ornare ultricies urna laoreet. Morbi vitae blandit velit. Nam eleifend nec tortor non convallis."
     
-    let viewController = ItemMethodListingViewController()
+    let viewController = ItemListingViewController()
     
     func testInitialState() {
         viewController.loadViewIfNeeded()
@@ -31,8 +31,8 @@ class ItemMethodListingTests: XCTestCase {
         guard let tableView = viewController.tableView else { return }
         
         for index in statusList.indices {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemMethodHeaderView.identifier())
-                         as! ItemMethodHeaderView
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+                         as! ItemHeaderView
             
             header.configure(delegate:          viewController,
                              section:           index,
@@ -54,8 +54,8 @@ class ItemMethodListingTests: XCTestCase {
         guard let tableView = viewController.tableView else { return }
         
         for index in statusList.indices {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemMethodHeaderView.identifier())
-                         as! ItemMethodHeaderView
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+                         as! ItemHeaderView
             
             header.configure(delegate:          viewController,
                              section:           index,

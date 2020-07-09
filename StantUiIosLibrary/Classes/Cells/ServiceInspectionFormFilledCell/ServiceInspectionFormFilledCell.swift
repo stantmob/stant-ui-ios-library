@@ -36,23 +36,23 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         bounds      = bounds.inset(by: padding)
     }
     
-    public func configureViewFor(serviceInspectionFormFilled: ServiceInspectionFormFilled) {
+    public func configureViewFor(serviceInspectionFormFilledDto: ServiceInspectionFormFilledDto) {
         self.removeSubviews()
         self.addShadow()
-        self.configureHeaderView(status:  serviceInspectionFormFilled.status,
-                                 beginAt: serviceInspectionFormFilled.beginAt,
-                                 endAt:   serviceInspectionFormFilled.endAt)
-        self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilled.verifiedUnit)
-        self.configureProgressBar(status:            serviceInspectionFormFilled.status,
-                                  totalUsedArea:     serviceInspectionFormFilled.totalUsedArea,
-                                  performedQuantity: serviceInspectionFormFilled.performedQuantity)
-        self.configurePerformedPercentageView(status:            serviceInspectionFormFilled.status,
-                                              totalUsedArea:     serviceInspectionFormFilled.totalUsedArea,
-                                              performedQuantity: serviceInspectionFormFilled.performedQuantity)
-        self.configureQuantityLabel(totalUsedArea:   serviceInspectionFormFilled.totalUsedArea,
-                                    unitMeasurement: serviceInspectionFormFilled.unitMeasurement)
-        self.configurePercentagePlannedView(totalUsedArea: serviceInspectionFormFilled.totalUsedArea,
-                                            plannedArea:   serviceInspectionFormFilled.plannedArea)
+        self.configureHeaderView(status:  serviceInspectionFormFilledDto.status,
+                                 beginAt: serviceInspectionFormFilledDto.beginAt,
+                                 endAt:   serviceInspectionFormFilledDto.endAt)
+        self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilledDto.verifiedUnit)
+        self.configureProgressBar(status:            serviceInspectionFormFilledDto.status,
+                                  totalUsedArea:     serviceInspectionFormFilledDto.totalUsedArea,
+                                  performedQuantity: serviceInspectionFormFilledDto.performedQuantity)
+        self.configurePerformedPercentageView(status:            serviceInspectionFormFilledDto.status,
+                                              totalUsedArea:     serviceInspectionFormFilledDto.totalUsedArea,
+                                              performedQuantity: serviceInspectionFormFilledDto.performedQuantity)
+        self.configureQuantityLabel(totalUsedArea:   serviceInspectionFormFilledDto.totalUsedArea,
+                                    unitMeasurement: serviceInspectionFormFilledDto.unitMeasurement)
+        self.configurePercentagePlannedView(totalUsedArea: serviceInspectionFormFilledDto.totalUsedArea,
+                                            plannedArea:   serviceInspectionFormFilledDto.plannedArea)
         
         self.selectionStyle = .none
     }

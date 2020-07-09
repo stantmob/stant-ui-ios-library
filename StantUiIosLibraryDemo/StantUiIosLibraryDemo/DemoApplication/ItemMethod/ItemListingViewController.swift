@@ -9,7 +9,7 @@
 import UIKit
 import StantUiIosLibrary
 
-class ItemMethodListingViewController: UIViewController {
+class ItemListingViewController: UIViewController {
     public var tableView:             UITableView?
     public var originalContentOffset: CGPoint?
     
@@ -45,23 +45,23 @@ class ItemMethodListingViewController: UIViewController {
                          trailing: self.view.trailingAnchor,
                          padding:  UIEdgeInsets(top: 70, left: 1, bottom: 0, right: 0))
         
-        tableView.register(ItemMethodHeaderView.self, forHeaderFooterViewReuseIdentifier: ItemMethodHeaderView.identifier())
+        tableView.register(ItemHeaderView.self, forHeaderFooterViewReuseIdentifier: ItemHeaderView.identifier())
         tableView.register(ItemObservationCell.self, forCellReuseIdentifier: ItemObservationCell.identifier())
     }
 }
 
-extension ItemMethodListingViewController: UITableViewDelegate, UITableViewDataSource {
+extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return statusList.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return ItemMethodHeaderView.headerHeight
+        return ItemHeaderView.headerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemMethodHeaderView.identifier())
-                         as! ItemMethodHeaderView
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+                         as! ItemHeaderView
         
         headerView.configure(delegate:          self,
                              section:           section,
@@ -101,7 +101,7 @@ extension ItemMethodListingViewController: UITableViewDelegate, UITableViewDataS
     }
 }
 
-extension ItemMethodListingViewController: ItemMethodHeaderViewDelegate {
+extension ItemListingViewController: ItemMethodHeaderViewDelegate {
     func toggleCollapse(section: Int) {
         guard let tableView = tableView else { return }
         

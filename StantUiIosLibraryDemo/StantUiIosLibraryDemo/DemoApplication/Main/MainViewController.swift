@@ -279,7 +279,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func goToItemMethodListingDemo() {
-        self.open(viewController: ItemMethodListingViewController())
+        self.open(viewController: ItemListingViewController())
     }
 
     fileprivate func addVerifiedMethodListingDemo() {

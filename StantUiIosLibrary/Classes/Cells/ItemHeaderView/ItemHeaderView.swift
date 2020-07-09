@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ItemMethodHeaderView: UITableViewHeaderFooterView {
+public class ItemHeaderView: UITableViewHeaderFooterView {
     public var statusTag:                   UIView?
     public var itemTitleLabel:              UILabel?
     public var reprovedInspectionIndicator: UIView?

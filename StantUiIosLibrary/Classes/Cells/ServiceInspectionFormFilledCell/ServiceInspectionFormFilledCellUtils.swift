@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct ServiceInspectionFormFilled {
+public struct ServiceInspectionFormFilledDto {
     let status:             ServiceInspectionFormFilledStatusEnum
     let performedQuantity:  Float
     let totalUsedArea:      Float
