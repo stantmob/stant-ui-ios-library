@@ -12,12 +12,24 @@ import StantUiIosLibrary
 class ItemMethodDetailViewController: UIViewController {
     public var cardsView: ItemMethodDetailCard?
     
+    let navigationBarHeight: CGFloat = 60
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.backgroundColor = .white
+        
+        self.layoutCardsView()
+    }
+    
+    func layoutCardsView() {
+        cardsView = ItemMethodDetailCard(frame: CGRect(x: 0, y: navigationBarHeight, width: self.view.frame.width, height: self.view.frame.height - navigationBarHeight))
+        
+        guard let cardsView = cardsView else { return }
+        self.view.addSubview(cardsView)
+        cardsView.configure()
     }
 }
