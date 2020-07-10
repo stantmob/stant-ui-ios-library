@@ -73,6 +73,68 @@ extension UIView {
         border.frame           = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
     }
+    
+    func addBorders(edges:     UIRectEdge,
+                    thickness: CGFloat,
+                    color:     UIColor,
+                    padding:   UIEdgeInsets = .zero) {
+        
+        if edges.isEmpty { return }
+        
+        if edges.contains(.all) {
+            self.layer.borderWidth = thickness
+            self.layer.borderColor = color.cgColor
+            return
+        }
+        
+        if edges.contains(.top) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: 0, height: thickness))
+        }
+        
+        if edges.contains(.left) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: thickness, height: 0))
+        }
+        
+        if edges.contains(.bottom) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: 0, height: thickness))
+        }
+        
+        if edges.contains(.right) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(top:      self.topAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: thickness, height: 0))
+        }
+    }
 }
 
 extension CALayer {

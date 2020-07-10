@@ -36,10 +36,14 @@ class AppStrings {
     public static let service_inspection_form_filled_details_out_of_label     = localized("service_inspection_form_filled_details.out_of_label")
 
     //Verified Method Details
-    public static let verified_method_details_not_inspected_label  = localized("verified_method_details.not_inspected_label")
-    public static let verified_method_details_approved_label       = localized("verified_method_details.approved_label")
-    public static let verified_method_details_reproved_label       = localized("verified_method_details.reproved_label")
-    public static let verified_method_details_not_applicable_label = localized("verified_method_details.not_applicable_label")
+    public static let verified_method_details_not_filled_label            = localized("verified_method_details.not_filled_label")
+    public static let verified_method_details_approved_label              = localized("verified_method_details.approved_label")
+    public static let verified_method_details_reproved_label              = localized("verified_method_details.reproved_label")
+    public static let verified_method_details_not_applicable_label        = localized("verified_method_details.not_applicable_label")
+    public static let verified_method_details_not_filled_label_plural     = localized("verified_method_details.not_filled_label_plural")
+    public static let verified_method_details_approved_label_plural       = localized("verified_method_details.approved_label_plural")
+    public static let verified_method_details_reproved_label_plural       = localized("verified_method_details.reproved_label_plural")
+    public static let verified_method_details_not_applicable_label_plural = localized("verified_method_details.not_applicable_label_plural")
     
     //Inspection Status
     public static let inspection_status_approved = localized("inspection_status.approved")

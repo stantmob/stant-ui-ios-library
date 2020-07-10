@@ -47,7 +47,6 @@ class MainViewController: UIViewController {
         self.addServiceInspectionFormFilledDetailMenuDemo()
         self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
-        self.addVerifiedMethodListingDemo()
         self.addInspectionListingDemo()
     }
     
@@ -273,23 +272,13 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addItemMethodListingDemo() {
-        self.scrollView.addButton(title:  "Item listing demo",
+        self.scrollView.addButton(title:  "Item-Method listing demo",
         action: #selector(goToItemMethodListingDemo),
         target: self)
     }
 
     @objc func goToItemMethodListingDemo() {
         self.open(viewController: ItemListingViewController())
-    }
-
-    fileprivate func addVerifiedMethodListingDemo() {
-        self.scrollView.addButton(title:  "Method listing demo",
-        action: #selector(goToVerifiedMethodListingDemo),
-        target: self)
-    }
-
-    @objc func goToVerifiedMethodListingDemo() {
-        self.open(viewController: VerifiedMethodListingViewController())
     }
     
     fileprivate func addInspectionListingDemo() {

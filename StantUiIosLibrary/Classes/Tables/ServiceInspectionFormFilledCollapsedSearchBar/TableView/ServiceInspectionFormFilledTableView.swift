@@ -13,8 +13,8 @@ public class ServiceInspectionFormFilledTableView: UITableView, UITableViewDeleg
     public var allServiceInspectionFormFilledDtoList      = [ServiceInspectionFormFilledDto]()
     public var filteredServiceInspectionFormFilledDtoList = [ServiceInspectionFormFilledDto]()
     public var currentHeightConstant: CGFloat             = DefaultSearchBar.searchViewHeight
-    public let maxHeaderHeight: CGFloat                   = DefaultSearchBar.searchViewHeight
-    public let minHeaderHeight: CGFloat                   = 0
+    public let maxHeaderHeight:       CGFloat             = DefaultSearchBar.searchViewHeight
+    public let minHeaderHeight:       CGFloat             = 0
     
     public var animationDelegate: ServiceInspectionFormFilledAndHideSearchTableViewDelegate?
     var selectCellDelegate:       ServiceInspectionFormFilledTableViewDidSelectDelegate?

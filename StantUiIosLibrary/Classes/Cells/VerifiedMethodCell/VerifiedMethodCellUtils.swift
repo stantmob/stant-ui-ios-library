@@ -8,12 +8,12 @@
 import UIKit
 
 public enum VerifiedMethodStatusEnum {
-    case notApplicable, approved, reproved, notInspected
+    case notApplicable, approved, reproved, notFilled
     
     public func stringValue() -> String {
         switch self {
-        case .notInspected:
-            return AppStrings.verified_method_details_not_inspected_label
+        case .notFilled:
+            return AppStrings.verified_method_details_not_filled_label
         case .reproved:
             return AppStrings.verified_method_details_approved_label
         case .approved:
@@ -25,7 +25,7 @@ public enum VerifiedMethodStatusEnum {
     
     public func colorValue() -> UIColor {
         switch self {
-        case .notInspected:
+        case .notFilled:
             return .darkGrayStant
         case .reproved:
             return .redLightStant
