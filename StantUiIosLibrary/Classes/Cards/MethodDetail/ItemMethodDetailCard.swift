@@ -10,15 +10,16 @@ import UIKit
 public class ItemMethodDetailCard: UIView {
     public var view: UIView?
     public var descriptionLabel: UILabel?
-    public var detailDescriptionLabel: UILabel?
+    public var methodItemDescriptionLabel: UILabel?
     public var upperSeparator: UIView?
     public var lowerSeparator: UIView?
-    public var noApplicableView: UIView?
-    public var noApplicableLabel: UILabel?
-    public var noApllicableSwitch: UISwitch?
+    public var notApplicableView: UIView?
+    public var notApplicableLabel: UILabel?
+    public var notApplicableSwitch: UISwitch?
     public var approveButton: UIButton?
     public var repproveButton: UIButton?
     public var inspectionLabel: UILabel?
+    public var delegate: ItemMethodButtonDelegate?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,17 +29,18 @@ public class ItemMethodDetailCard: UIView {
         super.init(frame: frame)
     }
     
-    public func configure() {
+    public func configure(delegate: ItemMethodButtonDelegate, methodItemDescription: String) {
+        self.delegate = delegate
         self.removeSubviews()
         addShadow()
         configureView()
         configureDescriptionLabel()
-        configureDetailDescriptionLabel()
-        configureUpperNoApplicableViewSeparator()
-        configureNoApplicableView()
-        configureNoApplicableLabel()
-        configureNoApllicableSwitch()
-        configureLowerNoApplicableViewSeparator()
+        configureMethodItemDescriptionLabel(methodItemDescription: methodItemDescription)
+        configureUpperNotApplicableViewSeparator()
+        configureNotApplicableView()
+        configureNotApplicableLabel()
+        configureNotApplicableSwitch()
+        configureLowerNotApplicableViewSeparator()
         configureApprovedButton()
         configureRepprovedButton()
         configureInspectionLabel()
@@ -72,70 +74,74 @@ public class ItemMethodDetailCard: UIView {
         descriptionLabel.anchor(top: self.topAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 0))
     }
     
-    fileprivate func configureDetailDescriptionLabel() {
-        detailDescriptionLabel = UILabel()
-        guard let detailDescriptionLabel = detailDescriptionLabel else { return }
-        detailDescriptionLabel.backgroundColor = .white
-        detailDescriptionLabel.textColor = .darkGrayStant
-        detailDescriptionLabel.text = "Observar a eliminação de qualquer foco de umidade de modo que a superfície apresente-se seca quando da execução da pintura"
-        detailDescriptionLabel.font = .systemFont(ofSize: 11)
-        detailDescriptionLabel.numberOfLines = 3
+    fileprivate func configureMethodItemDescriptionLabel(methodItemDescription: String) {
+        methodItemDescriptionLabel = UILabel()
+        guard let methodItemDescriptionLabel = methodItemDescriptionLabel else { return }
+        methodItemDescriptionLabel.backgroundColor = .white
+        methodItemDescriptionLabel.textColor = .darkGrayStant
+        methodItemDescriptionLabel.text = methodItemDescription
+        methodItemDescriptionLabel.font = .systemFont(ofSize: 11)
+        methodItemDescriptionLabel.numberOfLines = 0
+        methodItemDescriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        methodItemDescriptionLabel.sizeToFit()
         
-        self.addSubview(detailDescriptionLabel)
+        self.addSubview(methodItemDescriptionLabel)
         
-        detailDescriptionLabel.anchor(top: descriptionLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 5, left: 16, bottom: 0, right: 16))
+        methodItemDescriptionLabel.anchor(top: descriptionLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 5, left: 16, bottom: 0, right: 16))
     }
     
-    fileprivate func configureUpperNoApplicableViewSeparator() {
+    fileprivate func configureUpperNotApplicableViewSeparator() {
         upperSeparator = UIView()
         guard let  upperSeparator = upperSeparator else { return }
         upperSeparator.backgroundColor = .grayStant
         
         self.addSubview(upperSeparator)
         
-        upperSeparator.anchor(top: detailDescriptionLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0), size: CGSize(width: 0, height: 1))
+        upperSeparator.anchor(top: methodItemDescriptionLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0), size: CGSize(width: 0, height: 1))
     }
     
-    fileprivate func configureLowerNoApplicableViewSeparator() {
+    fileprivate func configureLowerNotApplicableViewSeparator() {
         lowerSeparator = UIView()
         guard let  lowerSeparator = lowerSeparator else { return }
         lowerSeparator.backgroundColor = .grayStant
         
         self.addSubview(lowerSeparator)
         
-        lowerSeparator.anchor(top: noApplicableLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0), size: CGSize(width: 0, height: 1))
+        lowerSeparator.anchor(top: notApplicableLabel?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0), size: CGSize(width: 0, height: 1))
     }
     
-    fileprivate func configureNoApplicableView() {
-        noApplicableView = UIView()
-        guard let noApplicableView = noApplicableView else { return }
-        noApplicableView.backgroundColor = .backgroundStant
+    fileprivate func configureNotApplicableView() {
+        notApplicableView = UIView()
+        guard let notApplicableView = notApplicableView else { return }
+        notApplicableView.backgroundColor = .backgroundStant
         
-        self.addSubview(noApplicableView)
+        self.addSubview(notApplicableView)
         
-        noApplicableView.anchor(top: upperSeparator?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, size: CGSize(width: self.frame.width, height: 48))
+        notApplicableView.anchor(top: upperSeparator?.bottomAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, size: CGSize(width: self.frame.width, height: 48))
     }
     
-    fileprivate func configureNoApplicableLabel() {
-        noApplicableLabel = UILabel()
-        guard let noApplicableLabel = noApplicableLabel else { return }
-        noApplicableLabel.backgroundColor = .white
-        noApplicableLabel.textColor = .darkStant
-        noApplicableLabel.text = "Não Aplicável"
-        noApplicableLabel.font = .systemFont(ofSize: 16)
+    fileprivate func configureNotApplicableLabel() {
+        notApplicableLabel = UILabel()
+        guard let notApplicableLabel = notApplicableLabel else { return }
+        notApplicableLabel.backgroundColor = .white
+        notApplicableLabel.textColor = .darkStant
+        notApplicableLabel.text = "Não Aplicável"
+        notApplicableLabel.font = .systemFont(ofSize: 16)
         
-        self.addSubview(noApplicableLabel)
+        self.addSubview(notApplicableLabel)
         
-        noApplicableLabel.anchor(top: noApplicableView?.topAnchor, leading: noApplicableView?.leadingAnchor, bottom: noApplicableView?.bottomAnchor, padding: UIEdgeInsets(top: 15, left: 16, bottom: 14, right: 0))
+        notApplicableLabel.anchor(top: notApplicableView?.topAnchor, leading: notApplicableView?.leadingAnchor, bottom: notApplicableView?.bottomAnchor, padding: UIEdgeInsets(top: 15, left: 16, bottom: 14, right: 0))
     }
     
-    fileprivate func configureNoApllicableSwitch() {
-        noApllicableSwitch = UISwitch()
-        guard let noApllicableSwitch = noApllicableSwitch else { return }
+    fileprivate func configureNotApplicableSwitch() {
+        notApplicableSwitch = UISwitch()
+        guard let notApplicableSwitch = notApplicableSwitch else { return }
         
-        self.addSubview(noApllicableSwitch)
+        self.addSubview(notApplicableSwitch)
         
-        noApllicableSwitch.anchor(top: noApplicableView?.topAnchor, bottom: noApplicableView?.bottomAnchor, trailing: noApplicableView?.trailingAnchor, padding: UIEdgeInsets(top: 15, left: 0, bottom: 14, right: 16), size: CGSize(width: 51, height: 31))
+        notApplicableSwitch.anchor(top: notApplicableView?.topAnchor, bottom: notApplicableView?.bottomAnchor, trailing: notApplicableView?.trailingAnchor, padding: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 16), size: CGSize(width: 51, height: 31))
+        
+        notApplicableSwitch.addTarget(self, action: #selector(toggleButtons), for: UIControl.Event.valueChanged)
     }
     
     fileprivate func configureApprovedButton() {
@@ -146,10 +152,12 @@ public class ItemMethodDetailCard: UIView {
         approveButton.layer.cornerRadius = 3
         
         self.addSubview(approveButton)
-        approveButton.anchor(top: noApplicableView?.bottomAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 16, left: 34, bottom: 0 , right: 0), size: CGSize(width: 140, height: 50))
+        approveButton.anchor(top: notApplicableView?.bottomAnchor, leading: self.leadingAnchor, padding: UIEdgeInsets(top: 16, left: 34, bottom: 0 , right: 0), size: CGSize(width: 140, height: 50))
         
         approveButton.setTitle("APROVAR", for: .normal)
         approveButton.setTitleColor(.white, for: .normal)
+        approveButton.addTarget(delegate, action: #selector(delegate?.goToAddApproveInspectionData), for: .touchUpInside)
+        makeShadow(button: approveButton)
     }
     
     fileprivate func configureRepprovedButton() {
@@ -160,10 +168,12 @@ public class ItemMethodDetailCard: UIView {
         repproveButton.layer.cornerRadius = 3
         
         self.addSubview(repproveButton)
-        repproveButton.anchor(top: noApplicableView?.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0 , right: 34), size: CGSize(width: 140, height: 50))
+        repproveButton.anchor(top: notApplicableView?.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 16, left: 0, bottom: 0 , right: 34), size: CGSize(width: 140, height: 50))
         
         repproveButton.setTitle("REPROVAR", for: .normal)
         repproveButton.setTitleColor(.white, for: .normal)
+        repproveButton.addTarget(delegate, action: #selector(delegate?.goToAddRepproveInspectionData), for: .touchUpInside)
+        makeShadow(button: repproveButton)
     }
     
     fileprivate func configureInspectionLabel() {
@@ -179,6 +189,14 @@ public class ItemMethodDetailCard: UIView {
         inspectionLabel.anchor(top: approveButton?.bottomAnchor, leading: self.leadingAnchor, bottom: view?.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 15, left: 152, bottom: 8, right: 152))
     }
     
+    @objc fileprivate func toggleButtons() {
+        guard let approveButton = approveButton, let repproveButton = repproveButton  else { return}
+        approveButton.isEnabled = approveButton.isEnabled ? false : true
+        approveButton.backgroundColor = approveButton.isEnabled ? .greenStant : .lightGray
+        repproveButton.isEnabled =  repproveButton.isEnabled ? false : true
+        repproveButton.backgroundColor = approveButton.isEnabled ? .redLightStant : .lightGray
+    }
+    
     fileprivate func addShadow() {
         self.layer.applySketchShadow(color:  .shadowStant,
                                      alpha:  0.09,
@@ -188,11 +206,15 @@ public class ItemMethodDetailCard: UIView {
                                      spread: 0)
     }
     
-    public func makeShadow() {
-        self.layer.shadowPath    = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shadowRadius  = 4
-        self.layer.shadowOffset  = CGSize(width: 0, height: 3)
-        self.layer.shadowOpacity = 0.1
+    public func makeShadow(button: UIButton) {
+        button.layer.shadowPath    = UIBezierPath(rect: button.bounds).cgPath
+        button.layer.shadowRadius  = 4
+        button.layer.shadowOffset  = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 0.1
     }
-    
+}
+
+@objc public protocol ItemMethodButtonDelegate {
+    @objc func goToAddApproveInspectionData()
+    @objc func goToAddRepproveInspectionData()
 }

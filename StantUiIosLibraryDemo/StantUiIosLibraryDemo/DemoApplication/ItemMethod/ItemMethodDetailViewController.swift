@@ -11,6 +11,7 @@ import StantUiIosLibrary
 
 class ItemMethodDetailViewController: UIViewController {
     public var cardsView: ItemMethodDetailCard?
+    public var methodItemDescription: String = "Observar a eliminação de qualquer foco de umindade de modo que a superfície apresente-se seca quando da execução da pintura"
     
     let navigationBarHeight: CGFloat = 60
     
@@ -30,6 +31,16 @@ class ItemMethodDetailViewController: UIViewController {
         
         guard let cardsView = cardsView else { return }
         self.view.addSubview(cardsView)
-        cardsView.configure()
+        cardsView.configure(delegate: self, methodItemDescription: methodItemDescription)
+    }
+}
+
+extension ItemMethodDetailViewController: ItemMethodButtonDelegate {
+    func goToAddApproveInspectionData() {
+        print("Approved")
+    }
+    
+    func goToAddRepproveInspectionData() {
+        print("Repproved")
     }
 }
