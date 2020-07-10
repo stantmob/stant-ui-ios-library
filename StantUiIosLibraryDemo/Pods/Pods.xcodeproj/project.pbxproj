@@ -60,7 +60,7 @@
 		800180F399D428D838D8143856385BD9 /* SecondHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A15B666D7C57F65D8E79CCEB3480C3 /* SecondHeaderView.swift */; };
 		804C06BCECFD9C0CF9C5C9EDDE6DEB98 /* VerifiedMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6580F0D3E3015C9D05A3268E6BAA872 /* VerifiedMethodCell.swift */; };
 		87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8853018324B56FB500252B2E /* ItemMethodDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853017F24B5631F00252B2E /* ItemMethodDetailCard.swift */; };
+		8853018324B56FB500252B2E /* VerifiedMethodDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853017F24B5631F00252B2E /* VerifiedMethodDetailCard.swift */; };
 		8AC582BD6F91D5F1661399ADFA69D59B /* FormTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587D23184EA6A3FB82557A722ED076F /* FormTabView.swift */; };
 		8CA1DAC23A68B19D8C1E387DF0000662 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 239DCC6F5714FD88C8511FE7BD55FE33 /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DDB7F17BEA14922E7094BF556DAEF29 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6A9F11E9922364FD0CE03D6C89A96B /* AppStrings.swift */; };
@@ -194,7 +194,7 @@
 		8566036E889C0330770029634823BA0A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8653766CB381C024F3676FB3799CC627 /* Localizable-en.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = "Localizable-en.strings"; sourceTree = "<group>"; };
 		8686FDC55C206CD6A5487AA718E67C43 /* TeamScreenViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewControllerExtension.swift; sourceTree = "<group>"; };
-		8853017F24B5631F00252B2E /* ItemMethodDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodDetailCard.swift; sourceTree = "<group>"; };
+		8853017F24B5631F00252B2E /* VerifiedMethodDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodDetailCard.swift; sourceTree = "<group>"; };
 		88E32FE4EF5BBAEF860DDF503A1973C7 /* ConstructionTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionTableView.swift; sourceTree = "<group>"; };
 		88FBA5B9757C66556761ADA4B50C9049 /* DialogViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		8C1C4DED37E00950B418F94F070C1B3D /* ServiceInspectionFormFilledCellHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCellHeader.swift; sourceTree = "<group>"; };
@@ -634,7 +634,7 @@
 		8853017E24B562EC00252B2E /* MethodDetail */ = {
 			isa = PBXGroup;
 			children = (
-				8853017F24B5631F00252B2E /* ItemMethodDetailCard.swift */,
+				8853017F24B5631F00252B2E /* VerifiedMethodDetailCard.swift */,
 			);
 			path = MethodDetail;
 			sourceTree = "<group>";
@@ -1115,7 +1115,7 @@
 				2733B1F8FA089885930BC1DE80F850E6 /* InternPersonCell.swift in Sources */,
 				CFC71AC2758363D739115D397835349B /* IntExtension.swift in Sources */,
 				4742C4B5ADFD1F4D28760EB118B6EA24 /* ItemMethodHeaderView.swift in Sources */,
-				8853018324B56FB500252B2E /* ItemMethodDetailCard.swift in Sources */,
+				8853018324B56FB500252B2E /* VerifiedMethodDetailCard.swift in Sources */,
 				9826E4804AD36FD196C47C61AF66AC51 /* ItemObservationCell.swift in Sources */,
 				6A80E9958A4978F15A388077006219AC /* ItemSelection.swift in Sources */,
 				C34727ABDFB38265DA438B540F0E3E10 /* Localizable-en.strings in Sources */,

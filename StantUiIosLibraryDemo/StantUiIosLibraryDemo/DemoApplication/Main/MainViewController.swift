@@ -299,6 +299,6 @@ class MainViewController: UIViewController {
     }
 
     @objc func goToMethodDetailCardDemo() {
-        self.open(viewController: ItemMethodDetailViewController())
+        self.open(viewController: VerifiedMethodDetailViewController())
     }
 }
