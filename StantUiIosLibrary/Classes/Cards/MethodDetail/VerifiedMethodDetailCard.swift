@@ -19,7 +19,6 @@ public class VerifiedMethodDetailView: UIView {
     public var approveButton:              UIButton?
     public var reproveButton:              UIButton?
     public var inspectionLabel:            UILabel?
-    public var tapView:                    UIView?
     public var delegate:                   ItemMethodButtonDelegate?
     
     required public init?(coder aDecoder: NSCoder) {
@@ -276,13 +275,13 @@ public class VerifiedMethodDetailView: UIView {
                                       message:        AppStrings.verified_method_details_warning_message_action,
                                       preferredStyle: .alert)
             
-        alert.addAction(UIAlertAction(title:   AppStrings.verified_method_details_warning_button_ok ,
-                                      style:   .default,
-                                      handler: nil))
-        
-        if let present = delegate {
-               present.present(alert: alert)
-        }
+            alert.addAction(UIAlertAction(title:   AppStrings.verified_method_details_warning_button_ok ,
+                                          style:   .default,
+                                          handler: nil))
+            
+            if let present = delegate {
+                   present.present(alert: alert)
+            }
     }
 
     fileprivate func addShadow() {
