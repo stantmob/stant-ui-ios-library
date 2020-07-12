@@ -32,7 +32,7 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
     
     public func configure(delegate:          ItemHeaderViewDelegate,
                           section:           Int,
-                          status:            ItemEnum,
+                          status:            ItemStatusEnum,
                           hasReprovedMethod: Bool,
                           isExpanded:        Bool,
                           itemTitle:         String) {
@@ -48,7 +48,7 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
         self.addBorders(edges: [.bottom], thickness: 1, color: .lightGrayStant)
     }
     
-    fileprivate func configureStatusTag(status: ItemEnum) {
+    fileprivate func configureStatusTag(status: ItemStatusEnum) {
         statusTag                 = UIView()
         guard let statusTag       = statusTag else { return }
         statusTag.backgroundColor = status.colorValue()

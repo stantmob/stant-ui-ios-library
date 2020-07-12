@@ -72,9 +72,9 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
     }
     
     public func makeShadow() {
-        plannedSiffCard?.makeShadow()
-        executedSiffCard?.makeShadow()
-        availableSiffCard?.makeShadow()
+        plannedSiffCard?.layer.applySketchShadow(color: .darkGrayStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
+        executedSiffCard?.layer.applySketchShadow(color: .darkGrayStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
+        availableSiffCard?.layer.applySketchShadow(color: .darkGrayStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
     }
     
     public func setProgress(executedPercentage: Float,

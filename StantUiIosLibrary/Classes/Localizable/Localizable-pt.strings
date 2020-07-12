@@ -33,15 +33,19 @@
 "service_inspection_form_filled_details.of_planned_label" = "do Planejado";
 "service_inspection_form_filled_details.out_of_label"     = "de";
 
+//Item status
+"item_status.not_filled_label"        = "Não Preenchido";
+"item_status.approved_label"          = "Aprovado";
+"item_status.reproved_label"          = "Reprovado";
+"item_status.not_filled_label_plural" = "Não Preenchidos";
+"item_status.approved_label_plural"   = "Aprovados";
+"item_status.reproved_label_plural"   = "Reprovados";
+
 //Verified Method Details
-"verified_method_details.not_filled_label"            = "Não Preenchido";
-"verified_method_details.approved_label"              = "Aprovado";
-"verified_method_details.reproved_label"              = "Reprovado";
-"verified_method_details.not_applicable_label"        = "Não Aplicável";
-"verified_method_details.not_filled_label_plural"     = "Não Preenchidos";
-"verified_method_details.approved_label_plural"       = "Aprovados";
-"verified_method_details.reproved_label_plural"       = "Reprovados";
-"verified_method_details.not_applicable_label_plural" = "Não Aplicáveis";
+"verified_method_status.not_inspected_label"  = "Não Inspecionado";
+"verified_method_status.approved_label"       = "Aprovado";
+"verified_method_status.reproved_label"       = "Reprovado";
+"verified_method_status.not_applicable_label" = "Não Aplicável";
 
 //Inspection Status
 "inspection_status.approved" = "Aprovada";

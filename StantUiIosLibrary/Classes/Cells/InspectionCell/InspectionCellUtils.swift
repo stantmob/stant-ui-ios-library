@@ -13,9 +13,9 @@ public enum InspectionStatusEnum {
     public func stringValue() -> String {
         switch self {
         case .reproved:
-            return AppStrings.verified_method_details_reproved_label
+            return AppStrings.verified_method_status_reproved_label
         case .approved:
-            return AppStrings.verified_method_details_approved_label
+            return AppStrings.verified_method_status_approved_label
         }
     }
     

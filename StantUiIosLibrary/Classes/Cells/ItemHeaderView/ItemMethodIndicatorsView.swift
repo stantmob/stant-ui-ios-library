@@ -42,8 +42,8 @@ public class ItemMethodIndicatorsView: UIView {
     
     fileprivate func configureApprovedLabel(approvedNumber: Int) {
         let text                = approvedNumber != 1 ?
-                                  AppStrings.verified_method_details_approved_label_plural :
-                                  AppStrings.verified_method_details_approved_label
+                                  AppStrings.item_status_approved_label_plural :
+                                  AppStrings.item_status_approved_label_plural
         
         approvedLabel           = UILabel()
         guard let approvedLabel = approvedLabel else { return }
@@ -73,8 +73,8 @@ public class ItemMethodIndicatorsView: UIView {
     
     fileprivate func configureReprovedLabel(reprovedNumber: Int) {
         let text                = reprovedNumber != 1 ?
-                                  AppStrings.verified_method_details_reproved_label_plural :
-                                  AppStrings.verified_method_details_reproved_label
+                                  AppStrings.item_status_reproved_label_plural :
+                                  AppStrings.item_status_reproved_label
         
         reprovedLabel           = UILabel()
         guard let reprovedLabel = reprovedLabel else { return }
@@ -104,8 +104,8 @@ public class ItemMethodIndicatorsView: UIView {
     
     fileprivate func configureNotFilledLabel(notFilledNumber: Int) {
         let text                 = notFilledNumber != 1 ?
-                                   AppStrings.verified_method_details_not_filled_label_plural :
-                                   AppStrings.verified_method_details_not_filled_label
+                                   AppStrings.item_status_not_filled_label_plural :
+                                   AppStrings.item_status_not_filled_label
         
         notFilledLabel           = UILabel()
         guard let notFilledLabel = notFilledLabel else { return }

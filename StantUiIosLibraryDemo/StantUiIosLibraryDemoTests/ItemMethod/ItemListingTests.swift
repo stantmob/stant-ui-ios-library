@@ -10,13 +10,13 @@ import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
-//TEST METHODS!!!!
+//TODO: TEST METHODS!!!!
 class ItemListingTests: XCTestCase {
-    public let statusList:            [ItemEnum]  = [.approved, .reproved, .notInspected,
-                                                     .approved, .reproved, .notInspected,
-                                                     .approved, .reproved, .notInspected,
-                                                     .approved, .reproved, .notInspected,
-                                                     .approved, .reproved, .notInspected]
+    public let statusList:            [ItemStatusEnum]  = [.approved, .reproved, .notFilled,
+                                                           .approved, .reproved, .notFilled,
+                                                           .approved, .reproved, .notFilled,
+                                                           .approved, .reproved, .notFilled,
+                                                           .approved, .reproved, .notFilled]
     public let hasReprovedMethodList: [Bool]      = (1...15).map { index in return index % 2 == 0 }
     public var isExpandedList:        [Bool]      = (1...15).map { _ in false }
     
@@ -27,15 +27,15 @@ class ItemListingTests: XCTestCase {
     func testInitialState() {
         viewController.loadViewIfNeeded()
         
-        XCTAssertNotNil(viewController.itemMethodTableView)
+        XCTAssertNotNil(viewController.tableView)
         
-        guard let itemMethodTableView = viewController.itemMethodTableView else { return }
+        guard let tableView = viewController.tableView else { return }
         
         for index in statusList.indices {
-            let header = itemMethodTableView.tableView?.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
                          as! ItemHeaderView
             
-            header.configure(delegate:          itemMethodTableView,
+            header.configure(delegate:          viewController,
                              section:           index,
                              status:            statusList[index],
                              hasReprovedMethod: !hasReprovedMethodList[index],
@@ -50,26 +50,26 @@ class ItemListingTests: XCTestCase {
     func testClick() {
         viewController.loadViewIfNeeded()
         
-        XCTAssertNotNil(viewController.itemMethodTableView)
+        XCTAssertNotNil(viewController.tableView)
         
-        guard let itemMethodTableView = viewController.itemMethodTableView else { return }
+        guard let tableView = viewController.tableView else { return }
         
         for index in statusList.indices {
-            let header = itemMethodTableView.tableView?.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
                          as! ItemHeaderView
             
-            header.configure(delegate:          itemMethodTableView,
+            header.configure(delegate:          viewController,
                              section:           index,
                              status:            statusList[index],
                              hasReprovedMethod: !hasReprovedMethodList[index],
                              isExpanded:        isExpandedList[index],
                              itemTitle:         "Item \(index)")
             
-            XCTAssertEqual(itemMethodTableView.tableView?.numberOfRows(inSection: index), 0)
-            itemMethodTableView.toggleCollapse(section: index)
-            XCTAssertEqual(itemMethodTableView.tableView?.numberOfRows(inSection: index), 5)
-            itemMethodTableView.toggleCollapse(section: index)
-            XCTAssertEqual(itemMethodTableView.tableView?.numberOfRows(inSection: index), 0)
+            XCTAssertEqual(tableView.numberOfRows(inSection: index), 0)
+            viewController.toggleCollapse(section: index)
+            XCTAssertEqual(tableView.numberOfRows(inSection: index), 5)
+            viewController.toggleCollapse(section: index)
+            XCTAssertEqual(tableView.numberOfRows(inSection: index), 0)
         }
     }
 }
