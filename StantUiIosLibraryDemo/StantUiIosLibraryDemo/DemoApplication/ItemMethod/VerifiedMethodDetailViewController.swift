@@ -41,7 +41,7 @@ class VerifiedMethodDetailViewController: UIViewController {
     }
 }
 
-extension VerifiedMethodDetailViewController: ItemMethodButtonDelegate {
+extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
     func goToAddApproveInspectionData() {
         print("Approved")
     }

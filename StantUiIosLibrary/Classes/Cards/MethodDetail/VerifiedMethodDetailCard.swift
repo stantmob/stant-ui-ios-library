@@ -19,7 +19,7 @@ public class VerifiedMethodDetailView: UIView {
     public var approveButton:              UIButton?
     public var reproveButton:              UIButton?
     public var inspectionLabel:            UILabel?
-    public var delegate:                   ItemMethodButtonDelegate?
+    public var delegate:                   VerifiedMethodDetailViewDelegate?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,7 +29,7 @@ public class VerifiedMethodDetailView: UIView {
         super.init(frame: frame)
     }
     
-    public func configure(delegate:              ItemMethodButtonDelegate,
+    public func configure(delegate:              VerifiedMethodDetailViewDelegate,
                           methodItemDescription: String) {
         self.delegate = delegate
         self.removeSubviews()
@@ -301,7 +301,7 @@ public class VerifiedMethodDetailView: UIView {
     }
 }
 
-@objc public protocol ItemMethodButtonDelegate {
+@objc public protocol VerifiedMethodDetailViewDelegate {
     @objc func goToAddApproveInspectionData()
     @objc func goToAddReproveInspectionData()
     @objc func present(alert: UIAlertController)
