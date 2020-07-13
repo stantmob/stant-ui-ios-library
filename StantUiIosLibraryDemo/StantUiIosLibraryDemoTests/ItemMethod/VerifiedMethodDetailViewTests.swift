@@ -26,8 +26,8 @@ class VerifiedMethodDetailViewTests: XCTestCase {
         var reproveAction = verifiedMethodDetailView.reproveButton?.actions(forTarget:       viewController,
                                                                              forControlEvent: .touchUpInside)
         
-        XCTAssertEqual(approveAction?[0], "goToAddApproveInspectionData")
-        XCTAssertEqual(reproveAction?[0], "goToAddReproveInspectionData")
+        XCTAssertEqual(approveAction?[0], "goToApproveVerifiedMethod")
+        XCTAssertEqual(reproveAction?[0], "goToReproveVerifiedMethod")
         
         verifiedMethodDetailView.notApplicableSwitch?.isOn = true
         verifiedMethodDetailView.notApplicableSwitch?.sendActions(for: .valueChanged)
