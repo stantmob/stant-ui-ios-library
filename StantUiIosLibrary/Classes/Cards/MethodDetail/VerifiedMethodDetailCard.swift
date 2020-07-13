@@ -8,7 +8,6 @@
 import UIKit
 
 public class VerifiedMethodDetailView: UIView {
-    public var view:                       UIView?
     public var descriptionLabel:           UILabel?
     public var methodItemDescriptionLabel: UILabel?
     public var upperSeparator:             UIView?
@@ -33,8 +32,8 @@ public class VerifiedMethodDetailView: UIView {
                           methodItemDescription: String) {
         self.delegate = delegate
         self.removeSubviews()
-        addShadow()
-        configureView()
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
         configureDescriptionLabel()
         configureMethodItemDescriptionLabel(methodItemDescription: methodItemDescription)
         configureUpperNotApplicableViewSeparator()
@@ -45,20 +44,6 @@ public class VerifiedMethodDetailView: UIView {
         configureApprovedButton()
         configureReprovedButton()
         configureInspectionLabel()
-    }
-    
-    fileprivate func configureView() {
-        view                 = UIView()
-        guard let view       = view else { return }
-        view.backgroundColor = .white
-        
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
-        self.addSubview(view)
-        view.anchor(leading:  self.leadingAnchor,
-                    trailing: self.trailingAnchor,
-                    size:     CGSize(width:  360,
-                                     height: 260))
     }
     
     fileprivate func configureDescriptionLabel() {
@@ -141,6 +126,7 @@ public class VerifiedMethodDetailView: UIView {
         self.addSubview(notApplicableView)
         notApplicableView.anchor(top:      upperSeparator?.bottomAnchor,
                                  leading:  self.leadingAnchor,
+                                 bottom:   lowerSeparator?.topAnchor,
                                  trailing: self.trailingAnchor,
                                  size:     CGSize(width: self.frame.width,
                                                   height: 48))
@@ -199,7 +185,7 @@ public class VerifiedMethodDetailView: UIView {
                              size:    CGSize(width:  140,
                                              height: 50))
         
-        approveButton.addTarget(delegate, action: #selector(delegate?.goToAddApproveInspectionData), for: .touchUpInside)
+        approveButton.addTarget(delegate, action: #selector(delegate?.goToApproveVerifiedMethod), for: .touchUpInside)
         approveButton.setTitle(AppStrings.verified_method_details_approved_title_button.uppercased(), for: .normal)
         approveButton.setTitleColor(.white, for: .normal)
         
@@ -223,7 +209,7 @@ public class VerifiedMethodDetailView: UIView {
                              size:     CGSize(width:  140,
                                               height: 50))
         
-        reproveButton.addTarget(delegate, action: #selector(delegate?.goToAddReproveInspectionData), for: .touchUpInside)
+        reproveButton.addTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
         reproveButton.setTitle(AppStrings.verified_method_details_reproved_title_button.uppercased(), for: .normal)
         reproveButton.setTitleColor(.white, for: .normal)
         
@@ -242,11 +228,10 @@ public class VerifiedMethodDetailView: UIView {
         self.addSubview(inspectionLabel)
         inspectionLabel.anchor(top:      approveButton?.bottomAnchor,
                                leading:  self.leadingAnchor,
-                               bottom:   view?.bottomAnchor,
                                trailing: self.trailingAnchor,
-                               padding:  UIEdgeInsets(top:    15,
+                               padding:  UIEdgeInsets(top:    16,
                                                       left:   152,
-                                                      bottom: 8,
+                                                      bottom: 0,
                                                       right:  152))
     }
     
@@ -255,16 +240,16 @@ public class VerifiedMethodDetailView: UIView {
         
         if (!notApplicableSwitch!.isOn) {
             approveButton.removeTarget(self, action: #selector(warningAction), for: .touchUpInside)
-            approveButton.addTarget(delegate, action: #selector(delegate?.goToAddApproveInspectionData), for: .touchUpInside)
+            approveButton.addTarget(delegate, action: #selector(delegate?.goToApproveVerifiedMethod), for: .touchUpInside)
             approveButton.backgroundColor = .greenStant
             reproveButton.removeTarget(self, action: #selector(warningAction), for: .touchUpInside)
-            reproveButton.addTarget(delegate, action: #selector(delegate?.goToAddReproveInspectionData), for: .touchUpInside)
+            reproveButton.addTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
             reproveButton.backgroundColor = .redLightStant
         } else {
-            approveButton.removeTarget(delegate, action: #selector(delegate?.goToAddApproveInspectionData), for: .touchUpInside)
+            approveButton.removeTarget(delegate, action: #selector(delegate?.goToApproveVerifiedMethod), for: .touchUpInside)
             approveButton.addTarget(self, action: #selector(warningAction), for: .touchUpInside)
             approveButton.backgroundColor = .darkGrayStant
-            reproveButton.removeTarget(delegate, action: #selector(delegate?.goToAddReproveInspectionData), for: .touchUpInside)
+            reproveButton.removeTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
             reproveButton.addTarget(self, action: #selector(warningAction), for: .touchUpInside)
             reproveButton.backgroundColor = .darkGrayStant
         }
@@ -284,15 +269,6 @@ public class VerifiedMethodDetailView: UIView {
             }
     }
 
-    fileprivate func addShadow() {
-        self.layer.applySketchShadow(color:  .shadowStant,
-                                     alpha:  0.09,
-                                     x:      0,
-                                     y:      3,
-                                     blur:   8,
-                                     spread: 0)
-    }
-    
     public func makeShadow(button: UIButton) {
         button.layer.shadowPath    = UIBezierPath(rect: button.bounds).cgPath
         button.layer.shadowRadius  = 4
@@ -302,7 +278,7 @@ public class VerifiedMethodDetailView: UIView {
 }
 
 @objc public protocol VerifiedMethodDetailViewDelegate {
-    @objc func goToAddApproveInspectionData()
-    @objc func goToAddReproveInspectionData()
+    @objc func goToApproveVerifiedMethod()
+    @objc func goToReproveVerifiedMethod()
     @objc func present(alert: UIAlertController)
 }

@@ -11,13 +11,12 @@ import StantUiIosLibrary
 
 class VerifiedMethodDetailViewController: UIViewController {
     public var verifiedMethodDetailView: VerifiedMethodDetailView?
-    public var methodItemDescription: String = "Observar a eliminação de qualquer foco de umidade de modo que a superfície apresente-se seca quando da execução da pintura"
+    public var methodItemDescription:    String = "Observar a eliminação de qualquer foco de umidade de modo que a superfície apresente-se seca quando da execução da pintura"
     
     let navigationBarHeight: CGFloat = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.layoutCardsView()
     }
     
@@ -42,11 +41,11 @@ class VerifiedMethodDetailViewController: UIViewController {
 }
 
 extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
-    func goToAddApproveInspectionData() {
+    func goToApproveVerifiedMethod() {
         print("Approved")
     }
     
-    func goToAddReproveInspectionData() {
+    func goToReproveVerifiedMethod() {
         print("Reproved")
     }
     
