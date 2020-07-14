@@ -81,10 +81,17 @@ public class SecondHeaderView: UIView {
     }
     
     fileprivate func add(button: SecondHeaderButton, alignment: NSTextAlignment, tag: Int) {
-        let buttonWithImage = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        let buttonWithImage                = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        buttonWithImage.backgroundColor    = .iceGrayStant
+        buttonWithImage.layer.cornerRadius = 18
+        buttonWithImage.imageEdgeInsets    = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
         buttonWithImage.setImage(button.icon, for: .normal)
         buttonWithImage.isUserInteractionEnabled = true
         buttonWithImage.addTarget(button.target, action: button.action, for: .touchUpInside)
+        
+        buttonWithImage.imageView?.image     = buttonWithImage.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        buttonWithImage.imageView?.tintColor = UIColor.darkGrayStant
         
         self.addSubview(buttonWithImage)
         buttonWithImage.anchor(size: CGSize(width: 36, height: 36))

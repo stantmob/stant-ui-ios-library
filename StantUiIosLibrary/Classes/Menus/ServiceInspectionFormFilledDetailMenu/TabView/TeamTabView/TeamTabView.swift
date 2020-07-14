@@ -58,12 +58,14 @@ public class TeamTabView: UIView {
         
         let seeMoreLabel           = UILabel()
         seeMoreLabel.textAlignment = .center
-        seeMoreLabel.textColor     = .darkGrayStant
+        seeMoreLabel.textColor     = personNames.isEmpty ? .lightGrayStant : .darkGrayStant
         seeMoreLabel.font          = UIFont.systemFont(ofSize: 12, weight: .bold)
         seeMoreLabel.text          = AppStrings.see_more.uppercased()
         
         seeMoreView.addSubview(seeMoreLabel)
         seeMoreLabel.fillSuperView()
+        
+        if personNames.isEmpty { return }
         
         let tap = UITapGestureRecognizer(target: delegate, action: #selector(delegate?.showTeamScreen))
         seeMoreView.addGestureRecognizer(tap)
