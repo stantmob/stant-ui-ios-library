@@ -41,7 +41,7 @@ public class VerifiedMethodCell: UITableViewCell {
         bounds      = bounds.inset(by: padding)
     }
 
-    public func configure(status:          VerifiedMethodStatusEnum,
+    public func configure(status:          VerifiedMethodCellTypeEnum,
                           order:           Int,
                           isReinspection:  Bool,
                           hasAttachment:   Bool,
@@ -69,7 +69,7 @@ public class VerifiedMethodCell: UITableViewCell {
         self.layoutIfNeeded()
     }
     
-    fileprivate func configureStatusBadge(status: VerifiedMethodStatusEnum, order: Int) {
+    fileprivate func configureStatusBadge(status: VerifiedMethodCellTypeEnum, order: Int) {
         statusBadge           = CellBadge()
         guard let statusBadge = statusBadge,
               let mainView    = mainView else { return }

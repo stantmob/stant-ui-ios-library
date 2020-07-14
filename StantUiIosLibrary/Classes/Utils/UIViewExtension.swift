@@ -13,7 +13,7 @@ extension UIView {
         return "\(String(describing: self.self))Identifier"
     }
     
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    public func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path   = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask   = CAShapeLayer()
         mask.path  = path.cgPath
@@ -55,17 +55,17 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = true
     }
     
-    func addBottomBorderWithColor(color: UIColor = .veryLightGrayStant, width: CGFloat = 1) {
+    func addBottomBorderWithColor(color: UIColor = .iceGrayStant, width: CGFloat = 1) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame           = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
     }
     
-    func addBorders(edges:     UIRectEdge,
-                    thickness: CGFloat,
-                    color:     UIColor,
-                    padding:   UIEdgeInsets = .zero) {
+     public func addBorders(edges:     UIRectEdge,
+                            thickness: CGFloat,
+                            color:     UIColor,
+                            padding:   UIEdgeInsets = .zero) {
         
         if edges.isEmpty { return }
         

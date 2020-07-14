@@ -28,7 +28,7 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
         super.viewDidLoad()
         
         for i in 0...3 {
-            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
+            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledCellTypeEnum(rawValue: i)!,
                                                       performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
                                                       totalUsedArea:     Float(cardTotalUsedArea),
                                                       unitMeasurement:   cardUnitMeasurement,

@@ -35,14 +35,6 @@ class AppStrings {
     public static let service_inspection_form_filled_details_of_planned_label = localized("service_inspection_form_filled_details.of_planned_label")
     public static let service_inspection_form_filled_details_out_of_label     = localized("service_inspection_form_filled_details.out_of_label")
 
-    //Item status
-    public static let item_status_not_filled_label        = localized("item_status.not_filled_label")
-    public static let item_status_approved_label          = localized("item_status.approved_label")
-    public static let item_status_reproved_label          = localized("item_status.reproved_label")
-    public static let item_status_not_filled_label_plural = localized("item_status.not_filled_label_plural")
-    public static let item_status_approved_label_plural   = localized("item_status.approved_label_plural")
-    public static let item_status_reproved_label_plural   = localized("item_status.reproved_label_plural")
-
     //Verified Method Details
     public static let verified_method_status_not_inspected_label  = localized("verified_method_status.not_inspected_label")
     public static let verified_method_status_approved_label       = localized("verified_method_status.approved_label")

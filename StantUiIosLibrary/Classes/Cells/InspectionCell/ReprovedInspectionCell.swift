@@ -78,8 +78,8 @@ public class ReprovedInspectionCell: UITableViewCell {
                            trailing: self.trailingAnchor,
                            size:     CGSize(width: self.frame.width + 6, height: 28))
         
-        statusBadge.configureBadge(color: InspectionStatusEnum.reproved.colorValue(),
-                                   title: InspectionStatusEnum.reproved.stringValue().uppercased(),
+        statusBadge.configureBadge(color: InspectionCellTypeEnum.reproved.colorValue(),
+                                   title: InspectionCellTypeEnum.reproved.stringValue().uppercased(),
                                    size:  CGSize(width: 112, height: 28))
     }
     

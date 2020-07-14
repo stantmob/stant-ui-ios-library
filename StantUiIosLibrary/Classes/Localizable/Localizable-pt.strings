@@ -33,14 +33,6 @@
 "service_inspection_form_filled_details.of_planned_label" = "do Planejado";
 "service_inspection_form_filled_details.out_of_label"     = "de";
 
-//Item status
-"item_status.not_filled_label"        = "Não Preenchido";
-"item_status.approved_label"          = "Aprovado";
-"item_status.reproved_label"          = "Reprovado";
-"item_status.not_filled_label_plural" = "Não Preenchidos";
-"item_status.approved_label_plural"   = "Aprovados";
-"item_status.reproved_label_plural"   = "Reprovados";
-
 //Verified Method Details
 "verified_method_status.not_inspected_label"  = "Não Inspecionado";
 "verified_method_status.approved_label"       = "Aprovado";

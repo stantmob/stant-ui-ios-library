@@ -29,14 +29,14 @@ class ServiceInspectionFormFilledListingTests: XCTestCase {
         let serviceInspectionFormFilledTableView = viewController.serviceInspectionFormFilledTableView
         
         for i in 0...3 {
-            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
-                                                   performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
-                                                   totalUsedArea:     Float(cardTotalUsedArea),
-                                                   unitMeasurement:   cardUnitMeasurement,
-                                                   verifiedUnit:      cardVerifiedUnit + "\(i)",
-                                                   plannedArea:       Float(cardPlannedArea),
-                                                   beginAt:           cardBeginAt,
-                                                   endAt:             cardEndAt)
+            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledCellTypeEnum(rawValue: i)!,
+                                                      performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
+                                                      totalUsedArea:     Float(cardTotalUsedArea),
+                                                      unitMeasurement:   cardUnitMeasurement,
+                                                      verifiedUnit:      cardVerifiedUnit + "\(i)",
+                                                      plannedArea:       Float(cardPlannedArea),
+                                                      beginAt:           cardBeginAt,
+                                                      endAt:             cardEndAt)
             serviceInspectionFormFilledList.append(siff)
         }
         

@@ -32,7 +32,7 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
     
     public func configure(delegate:          ItemHeaderViewDelegate,
                           section:           Int,
-                          status:            ItemStatusEnum,
+                          status:            ItemCellTypeEnum,
                           hasReprovedMethod: Bool,
                           isExpanded:        Bool,
                           itemTitle:         String) {
@@ -48,7 +48,7 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
         self.addBorders(edges: [.bottom], thickness: 1, color: .lightGrayStant)
     }
     
-    fileprivate func configureStatusTag(status: ItemStatusEnum) {
+    fileprivate func configureStatusTag(status: ItemCellTypeEnum) {
         statusTag                 = UIView()
         guard let statusTag       = statusTag else { return }
         statusTag.backgroundColor = status.colorValue()
@@ -121,9 +121,9 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
     
     func toggleButton() {
         if isExpanded {
-            expandImageView?.image = UIImage(named: "up")
+            expandImageView?.image = UIImage(named: "collapseUp")
         } else {
-            expandImageView?.image = UIImage(named: "down")
+            expandImageView?.image = UIImage(named: "collapseDown")
         }
     }
 }

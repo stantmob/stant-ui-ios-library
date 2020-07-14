@@ -8,12 +8,12 @@
 import UIKit
 
 public struct VerifiedMethodDto { //TODO: it should be in inspections app
-    public var status:          VerifiedMethodStatusEnum?
+    public var status:          VerifiedMethodCellTypeEnum?
     public var observationText: String?
     public var isReinspection:  Bool?
     public var hasAttachment:   Bool?
     
-    public init(status:          VerifiedMethodStatusEnum,
+    public init(status:          VerifiedMethodCellTypeEnum,
                 observationText: String,
                 isReinspection:  Bool,
                 hasAttachment:   Bool) {
@@ -25,8 +25,8 @@ public struct VerifiedMethodDto { //TODO: it should be in inspections app
     }
 }
 
-public enum VerifiedMethodStatusEnum {
-    case notApplicable, approved, reproved, notInspected
+public enum VerifiedMethodCellTypeEnum: Int {
+    case notApplicable = 0, approved = 1, reproved = 2, notInspected = 3
     
     public func stringValue() -> String {
         switch self {

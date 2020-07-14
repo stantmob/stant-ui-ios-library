@@ -8,7 +8,7 @@
 import UIKit
 
 public struct ServiceInspectionFormFilledDto {
-    let status:             ServiceInspectionFormFilledStatusEnum
+    let status:             ServiceInspectionFormFilledCellTypeEnum
     let performedQuantity:  Float
     let totalUsedArea:      Float
     let unitMeasurement:    String
@@ -17,7 +17,7 @@ public struct ServiceInspectionFormFilledDto {
     let beginAt:            String
     let endAt:              String
     
-    public init(status:            ServiceInspectionFormFilledStatusEnum,
+    public init(status:            ServiceInspectionFormFilledCellTypeEnum,
                 performedQuantity: Float,
                 totalUsedArea:     Float,
                 unitMeasurement:   String,
@@ -36,7 +36,7 @@ public struct ServiceInspectionFormFilledDto {
     }
 }
 
-public enum ServiceInspectionFormFilledStatusEnum: Int {
+public enum ServiceInspectionFormFilledCellTypeEnum: Int {
     case progress = 0, finished = 1, approved = 2, late = 3
     
     public func stringValue() -> String {
@@ -65,7 +65,7 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
         }
     }
     
-    public static func convertFrom(string: String) -> ServiceInspectionFormFilledStatusEnum {
+    public static func convertFrom(string: String) -> ServiceInspectionFormFilledCellTypeEnum {
         switch string {
         case AppStrings.service_inspection_form_filled_details_progress_label:
             return .progress

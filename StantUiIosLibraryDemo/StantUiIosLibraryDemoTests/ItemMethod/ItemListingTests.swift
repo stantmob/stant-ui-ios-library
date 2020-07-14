@@ -10,13 +10,12 @@ import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
-//TODO: TEST METHODS!!!!
 class ItemListingTests: XCTestCase {
-    public let statusList:            [ItemStatusEnum]  = [.approved, .reproved, .notFilled,
-                                                           .approved, .reproved, .notFilled,
-                                                           .approved, .reproved, .notFilled,
-                                                           .approved, .reproved, .notFilled,
-                                                           .approved, .reproved, .notFilled]
+    public let statusList:            [ItemCellTypeEnum]  = [.approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled]
     public let hasReprovedMethodList: [Bool]      = (1...15).map { index in return index % 2 == 0 }
     public var isExpandedList:        [Bool]      = (1...15).map { _ in false }
     

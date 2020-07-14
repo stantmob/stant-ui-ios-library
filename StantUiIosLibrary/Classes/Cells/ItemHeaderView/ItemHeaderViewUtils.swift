@@ -6,7 +6,7 @@
 //
 
 public struct ItemMethodDto { //TODO: it should be in inspections app
-    public var status:             ItemStatusEnum?
+    public var status:             ItemCellTypeEnum?
     public var title:              String?
     public var observation:        String?
     public var hasReprovedMethod:  Bool?
@@ -33,8 +33,8 @@ public struct ItemMethodDto { //TODO: it should be in inspections app
     }
 }
 
-public enum ItemStatusEnum {
-    case notFilled, reproved, approved
+public enum ItemCellTypeEnum: Int {
+    case notFilled = 0, reproved = 1, approved = 2
     
     public func colorValue() -> UIColor {
         switch self {

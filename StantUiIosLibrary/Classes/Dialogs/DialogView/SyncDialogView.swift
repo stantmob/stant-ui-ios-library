@@ -86,7 +86,7 @@ public class SyncDialogView: UIView {
         fullProgressBarView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 5))
         
         guard let fullProgressBarView = fullProgressBarView else { return }
-        fullProgressBarView.backgroundColor    = .veryLightGrayStant
+        fullProgressBarView.backgroundColor    = .iceGrayStant
         fullProgressBarView.layer.cornerRadius = 2.5
         self.addSubview(fullProgressBarView)
         

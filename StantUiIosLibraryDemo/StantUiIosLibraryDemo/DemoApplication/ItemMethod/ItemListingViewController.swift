@@ -10,46 +10,28 @@ import UIKit
 import StantUiIosLibrary
 
 class ItemListingViewController: UIViewController {
-    public var itemMethodIndicatorsView: ItemMethodIndicatorsView?
     public var tableView:                UITableView?
     public var originalContentOffset:    CGPoint?
     
-    public let itemStatusList:        [ItemStatusEnum] = [.approved, .reproved, .notFilled,
-                                                          .approved, .reproved, .notFilled,
-                                                          .approved, .reproved, .notFilled,
-                                                          .approved, .reproved, .notFilled,
-                                                          .approved, .reproved, .notFilled]
+    public let itemStatusList:        [ItemCellTypeEnum] = [.approved, .reproved, .notFilled,
+                                                            .approved, .reproved, .notFilled,
+                                                            .approved, .reproved, .notFilled,
+                                                            .approved, .reproved, .notFilled,
+                                                            .approved, .reproved, .notFilled]
     public let hasReprovedMethodList: [Bool]     = (1...15).map { index in return index % 2 == 0 }
     public var isExpandedList:        [Bool]     = (1...15).map { _ in false }
     public let observationList:       [String]   = (1...15).map { index in return index % 2 == 0 ?
                                                                                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit" : ""}
     
-    public let verifiedMethodStatusList: [VerifiedMethodStatusEnum] = [.notApplicable, .notInspected, .reproved, .approved]
-    public let isReinspectionList:       [Bool]                     = (1...4).map { index in return index % 2 == 0 }
-    public let hasAttachmentList:        [Bool]                     = (1...4).map { index in return index % 3 == 0 }
-    public let observationText                                      = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    public let verifiedMethodStatusList: [VerifiedMethodCellTypeEnum] = [.notApplicable, .notInspected, .reproved, .approved]
+    public let isReinspectionList:       [Bool]                       = (1...4).map { index in return index % 2 == 0 }
+    public let hasAttachmentList:        [Bool]                       = (1...4).map { index in return index % 3 == 0 }
+    public let observationText                                        = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     
     override func viewDidLoad() {
         self.view.backgroundColor = .white
 
-        configureItemMethodIndicatorsView()
         configureTableView()
-    }
-    
-    func configureItemMethodIndicatorsView() {
-        itemMethodIndicatorsView           = ItemMethodIndicatorsView()
-        guard let itemMethodIndicatorsView = itemMethodIndicatorsView else { return }
-        
-        self.view.addSubview(itemMethodIndicatorsView)
-        itemMethodIndicatorsView.anchor(top:      self.view.topAnchor,
-                                        leading:  self.view.leadingAnchor,
-                                        trailing: self.view.trailingAnchor,
-                                        padding:  UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0),
-                                        size:     CGSize(width: 0, height: 38))
-        
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-        itemMethodIndicatorsView.configure(approvedNumber: 3, reprovedNumber: 1, notFilledNumber: 5)
     }
     
     func configureTableView() {
@@ -63,7 +45,7 @@ class ItemListingViewController: UIViewController {
         tableView.sectionFooterHeight          = 2
         
         self.view.addSubview(tableView)
-        tableView.anchor(top:      itemMethodIndicatorsView?.bottomAnchor,
+        tableView.anchor(top:      self.view.topAnchor,
                          leading:  self.view.leadingAnchor,
                          bottom:   self.view.bottomAnchor,
                          trailing: self.view.trailingAnchor)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum InspectionStatusEnum {
+public enum InspectionCellTypeEnum {
     case approved, reproved
     
     public func stringValue() -> String {
