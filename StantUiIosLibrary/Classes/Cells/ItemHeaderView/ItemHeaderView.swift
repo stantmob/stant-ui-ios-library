@@ -42,9 +42,9 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
         self.isExpanded = isExpanded
         
         configureStatusTag(status: status)
-        configureItemTitleLabel(itemTitle: itemTitle)
         configureReprovedInspectionIndicator(hasReprovedMethod: hasReprovedMethod)
         configureExpandButton()
+        configureItemTitleLabel(itemTitle: itemTitle)
         self.addBorders(edges: [.bottom], thickness: 1, color: .lightGrayStant)
     }
     
@@ -58,19 +58,6 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
                          leading: self.leadingAnchor,
                          bottom:  self.bottomAnchor,
                          size:    CGSize(width: 6, height: 0))
-    }
-    
-    fileprivate func configureItemTitleLabel(itemTitle: String) {
-        itemTitleLabel           = UILabel()
-        guard let itemTitleLabel = itemTitleLabel else { return }
-        itemTitleLabel.textColor = .darkGrayStant
-        itemTitleLabel.font      = .systemFont(ofSize: 16, weight: .regular)
-        itemTitleLabel.text      = itemTitle
-        
-        self.addSubview(itemTitleLabel)
-        itemTitleLabel.anchor(top:     self.topAnchor,
-                              leading: self.leadingAnchor,
-                              padding: UIEdgeInsets(top: 15, left: 16, bottom: 0, right: 0))
     }
     
     fileprivate func configureReprovedInspectionIndicator(hasReprovedMethod: Bool) {
@@ -110,6 +97,22 @@ public class ItemHeaderView: UITableViewHeaderFooterView {
                        size:     CGSize(width: 30, height: 30))
         
         tapView.addGestureRecognizer(tap)
+    }
+    
+    fileprivate func configureItemTitleLabel(itemTitle: String) {
+        itemTitleLabel               = UILabel()
+        guard let itemTitleLabel     = itemTitleLabel else { return }
+        itemTitleLabel.textColor     = .darkGrayStant
+        itemTitleLabel.font          = .systemFont(ofSize: 16, weight: .regular)
+        itemTitleLabel.text          = itemTitle
+        itemTitleLabel.numberOfLines = 2
+        
+        self.addSubview(itemTitleLabel)
+        itemTitleLabel.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: reprovedInspectionIndicator?.leadingAnchor,
+                              padding:  UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0))
     }
     
     @objc func handleButtonClick() {

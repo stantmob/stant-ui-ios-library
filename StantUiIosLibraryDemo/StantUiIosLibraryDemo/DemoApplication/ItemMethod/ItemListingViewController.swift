@@ -23,10 +23,10 @@ class ItemListingViewController: UIViewController {
     public let observationList:       [String]   = (1...15).map { index in return index % 2 == 0 ?
                                                                                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit" : ""}
     
-    public let verifiedMethodStatusList: [VerifiedMethodCellTypeEnum] = [.notApplicable, .notInspected, .reproved, .approved]
-    public let isReinspectionList:       [Bool]                       = (1...4).map { index in return index % 2 == 0 }
-    public let hasAttachmentList:        [Bool]                       = (1...4).map { index in return index % 3 == 0 }
-    public let observationText                                        = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    public let verifiedMethodStatusList: [MethodCellTypeEnum] = [.notApplicable, .notInspected, .reproved, .approved]
+    public let hasReinspectionList:      [Bool]               = (1...4).map { index in return index % 2 == 0 }
+    public let hasAttachmentList:        [Bool]               = (1...4).map { index in return index % 3 == 0 }
+    public let observationText                                = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     
     override func viewDidLoad() {
         self.view.backgroundColor = .white
@@ -52,7 +52,7 @@ class ItemListingViewController: UIViewController {
         
         tableView.register(ItemHeaderView.self, forHeaderFooterViewReuseIdentifier: ItemHeaderView.identifier())
         tableView.register(ItemObservationCell.self, forCellReuseIdentifier: ItemObservationCell.identifier())
-        tableView.register(VerifiedMethodCell.self, forCellReuseIdentifier: VerifiedMethodCell.identifier())
+        tableView.register(MethodCell.self, forCellReuseIdentifier: MethodCell.identifier())
     }
 }
 
@@ -87,7 +87,7 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 0 {
             return observationList[indexPath.section].isEmpty ? 0 : ItemObservationCell.cellHeight
         }
-        return VerifiedMethodCell.cellHeight
+        return MethodCell.cellHeight
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,12 +99,12 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: VerifiedMethodCell.identifier(),
-                                                 for:            indexPath) as! VerifiedMethodCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MethodCell.identifier(),
+                                                 for:            indexPath) as! MethodCell
         
         cell.configure(status:          verifiedMethodStatusList[indexPath.row - 1],
                        order:           indexPath.row,
-                       isReinspection:  isReinspectionList[indexPath.row - 1],
+                       hasReinspection: hasReinspectionList[indexPath.row - 1],
                        hasAttachment:   hasAttachmentList[indexPath.row - 1],
                        descriptionText: observationText)
         

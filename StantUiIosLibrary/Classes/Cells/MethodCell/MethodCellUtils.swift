@@ -1,5 +1,5 @@
 //
-//  VerifiedMethodCellUtils.swift
+//  MethodCellUtils.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 07/07/20.
@@ -7,26 +7,8 @@
 
 import UIKit
 
-public struct VerifiedMethodDto { //TODO: it should be in inspections app
-    public var status:          VerifiedMethodCellTypeEnum?
-    public var observationText: String?
-    public var isReinspection:  Bool?
-    public var hasAttachment:   Bool?
-    
-    public init(status:          VerifiedMethodCellTypeEnum,
-                observationText: String,
-                isReinspection:  Bool,
-                hasAttachment:   Bool) {
-        
-        self.status          = status
-        self.observationText = observationText
-        self.isReinspection  = isReinspection
-        self.hasAttachment   = hasAttachment
-    }
-}
-
-public enum VerifiedMethodCellTypeEnum: Int {
-    case notApplicable = 0, approved = 1, reproved = 2, notInspected = 3
+public enum MethodCellTypeEnum: Int {
+    case notApplicable = 0, reproved = 1, approved = 2, notInspected = 3
     
     public func stringValue() -> String {
         switch self {
@@ -38,6 +20,19 @@ public enum VerifiedMethodCellTypeEnum: Int {
             return AppStrings.verified_method_status_approved_label
         case .notApplicable:
             return AppStrings.verified_method_status_not_applicable_label
+        }
+    }
+    
+    public static  func getStatusFromInt(value: Int) -> MethodCellTypeEnum {
+        switch value {
+        case 0:
+            return MethodCellTypeEnum.notApplicable
+        case 1:
+            return MethodCellTypeEnum.reproved
+        case 2:
+            return MethodCellTypeEnum.approved
+        default:
+            return MethodCellTypeEnum.notInspected
         }
     }
     
