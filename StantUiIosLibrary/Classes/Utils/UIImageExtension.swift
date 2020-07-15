@@ -51,7 +51,7 @@ extension UIImage {
             .roundedRectImageFromImage(cornerRadius: size.height/2)
     }
     
-    static func getFrom(url givenUrl: String, _ callback: @escaping (UIImage) -> Void) {
+    public static func getFrom(url givenUrl: String, _ callback: @escaping (UIImage) -> Void) {
         var image = UIImage()
         DispatchQueue.global(qos: .background).async {
             do {

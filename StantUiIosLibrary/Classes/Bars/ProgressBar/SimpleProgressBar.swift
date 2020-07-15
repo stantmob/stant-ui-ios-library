@@ -11,42 +11,36 @@ public class SimpleProgressBar: UIView {
     public var backgroundView: UIView?
     public var barView:        UIView?
     
-    public func configure(percentage:   CGFloat,
-                          barColor:     UIColor,
-                          cornerRadius: CGFloat = 2.5) {
+    public func configure() {
+        backgroundView                 = UIView()
+        guard let backgroundView       = backgroundView else { return }
+        backgroundView.backgroundColor = .iceGrayStant
         
-        configureBackgroundView(cornerRadius: cornerRadius)
-        configureBarView(percentage:   percentage,
-                         color:        barColor,
-                         cornerRadius: cornerRadius)
-    }
-    
-    fileprivate func configureBackgroundView(cornerRadius: CGFloat) {
-        backgroundView                    = UIView()
-        guard let backgroundView          = backgroundView else { return }
-        backgroundView.backgroundColor    = .iceGrayStant
-        backgroundView.layer.cornerRadius = cornerRadius
-
         self.setNeedsLayout()
         self.layoutIfNeeded()
-        
+        backgroundView.layer.cornerRadius = self.frame.height / 2
+
         self.addSubview(backgroundView)
         backgroundView.anchor(top:     self.topAnchor,
                               leading: self.leadingAnchor,
-                              size:    CGSize(width: self.frame.width, height: self.frame.height))
+                              bottom:  self.bottomAnchor,
+                              size:    CGSize(width: self.frame.width, height: 0))
     }
     
-    fileprivate func configureBarView(percentage:   CGFloat,
-                                      color:        UIColor,
-                                      cornerRadius: CGFloat) {
-        barView                    = UIView()
-        guard let backgroundView   = backgroundView,
-              let barView          = barView else { return }
-        barView.backgroundColor    = color
-        barView.layer.cornerRadius = cornerRadius
+    public func setPercentage(percentage:   CGFloat,
+                              color:        UIColor) {
+        
+        barView?.removeFromSuperview()
+        
+        let percentage           = percentage > 1 ? 1 : percentage
+        barView                  = UIView()
+        guard let backgroundView = backgroundView,
+              let barView        = barView else { return }
+        barView.backgroundColor  = color
         
         self.setNeedsLayout()
         self.layoutIfNeeded()
+        barView.layer.cornerRadius = self.frame.height / 2
         
         backgroundView.addSubview(barView)
         barView.anchor(top:     backgroundView.topAnchor,
@@ -54,5 +48,4 @@ public class SimpleProgressBar: UIView {
                        bottom:  backgroundView.bottomAnchor,
                        size:    CGSize(width:  backgroundView.frame.width * percentage, height: 0))
     }
-
 }

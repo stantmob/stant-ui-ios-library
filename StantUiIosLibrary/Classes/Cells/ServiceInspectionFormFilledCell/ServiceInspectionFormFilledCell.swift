@@ -69,7 +69,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     fileprivate func configureHeaderView(status:  ServiceInspectionFormFilledCellTypeEnum,
                                          beginAt: String,
                                          endAt:   String) {
-        headerView = ServiceInspectionFormFilledCellHeader()
+        headerView           = ServiceInspectionFormFilledCellHeader()
         guard let headerView = headerView else { return }
         
         self.addSubview(headerView)
@@ -105,16 +105,17 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         progressBar                    = SimpleProgressBar()
         guard let progressBar          = progressBar else { return }
         progressBar.backgroundColor    = .iceGrayStant
-        progressBar.layer.cornerRadius = 2.5
         
         self.addSubview(progressBar)
         progressBar.anchor(top:      verifiedUnitLabel?.bottomAnchor,
                            leading:  self.leadingAnchor,
                            trailing: self.trailingAnchor,
-                           padding:  UIEdgeInsets(top: 8, left: 14, bottom: 0, right: 14),
+                           padding:  UIEdgeInsets(top: 11, left: 14, bottom: 0, right: 14),
                            size:     CGSize(width: 0, height: 4))
-        progressBar.configure(percentage: CGFloat(performedQuantity / totalUsedArea),
-                              barColor:   status.colorValue())
+        
+        progressBar.configure()
+        progressBar.setPercentage(percentage:   CGFloat(performedQuantity / totalUsedArea),
+                                  color:        status.colorValue())
     }
     
     fileprivate func configurePerformedPercentageView(status:            ServiceInspectionFormFilledCellTypeEnum,
@@ -129,7 +130,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         
         performedPercentageView.anchor(top:     progressBar?.bottomAnchor,
                                        leading: self.leadingAnchor,
-                                       padding: UIEdgeInsets(top: 7, left: 14, bottom: 0, right: 0),
+                                       padding: UIEdgeInsets(top: 4, left: 14, bottom: 0, right: 0),
                                        size:    CGSize(width: 42, height: 18))
         
         let percentageLabel           = UILabel()
@@ -156,7 +157,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         
         quantityLabel.anchor(top:     progressBar?.bottomAnchor,
                              leading: performedPercentageView?.trailingAnchor,
-                             padding: UIEdgeInsets(top: 8, left: 3, bottom: 0, right: 0))
+                             padding: UIEdgeInsets(top: 5, left: 3, bottom: 0, right: 0))
     }
     
     func configurePercentagePlannedView(totalUsedArea: Float, plannedArea: Float) {
@@ -170,7 +171,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         percentagePlannedView.anchor(top:     performedPercentageView?.bottomAnchor,
                                      leading: self.leadingAnchor,
                                      bottom:  self.bottomAnchor,
-                                     padding: UIEdgeInsets(top: 6, left: 14, bottom: 4, right: 0),
+                                     padding: UIEdgeInsets(top: 5, left: 14, bottom: 4, right: 0),
                                      size:    CGSize(width: 120,  height: 18))
         
         let percentagePlannedLabel = UILabel()
