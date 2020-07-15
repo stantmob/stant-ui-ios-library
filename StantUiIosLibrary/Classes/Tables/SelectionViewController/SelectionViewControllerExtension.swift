@@ -35,10 +35,6 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectionType == .single {
             selectedItems = []
-            for index in selectedItems {
-                guard let cell      = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { continue }
-                cell.accessoryType  = .none
-            }
         } else if selectedItems.contains(indexPath.row) {
             selectedItems      = selectedItems.filter{ $0 != indexPath.row }
             guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
@@ -47,7 +43,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let cell            = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell
-        cell?.accessoryType  = .checkmark
+        cell?.accessoryType = .checkmark
         selectedItems.append(indexPath.row)
     }
     
