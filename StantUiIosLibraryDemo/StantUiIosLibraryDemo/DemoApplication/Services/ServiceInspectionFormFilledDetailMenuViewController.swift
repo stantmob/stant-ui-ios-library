@@ -46,10 +46,24 @@ class ServiceInspectionFormFilledDetailMenuViewController: UIViewController {
                                     unitMeasurement: "m²",
                                     tests:           "0")
         
-        detailView.configureTeamTab(personNames: personNames,
+        detailView.configureTeamTab(delegate:    self,
+                                    personNames: personNames,
                                     personRoles: personRoles,
                                     photoUrls:   photoUrls)
         
         detailView.configureAttachmentTab(photoUrls: photoUrls)
+    }
+}
+
+extension ServiceInspectionFormFilledDetailMenuViewController: TeamTabViewDelegate {
+    func showTeamScreen() {
+        let teamScreenViewController                    = TeamScreenViewController()
+        teamScreenViewController.modalPresentationStyle = .fullScreen
+        
+        teamScreenViewController.configure(personNames: personNames,
+                                           personRoles: personRoles,
+                                           photoUrls:   photoUrls)
+        
+        present(teamScreenViewController, animated: true, completion: nil)
     }
 }

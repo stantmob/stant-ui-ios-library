@@ -101,21 +101,6 @@ extension MainViewController {
         self.navigationController?.pushViewController(tabBar, animated: true)
     }
     
-    func openProgressBarWithToolTipDemo() {
-        let progressBarWithToolTipViewController = ProgressBarWithToolTipViewController()
-        self.navigationController?.pushViewController(progressBarWithToolTipViewController, animated: true)
-    }
-    
-    func openServiceInspectionFormFilledCardDemo() {
-        let serviceInspectionFormFilledCardViewController = ServiceInspectionFormFilledCardViewController()
-        self.navigationController?.pushViewController(serviceInspectionFormFilledCardViewController, animated: true)
-    }
-
-    func openQuantityBarDemo() {
-        let quantityBarViewController = QuantityBarViewController()
-        self.navigationController?.pushViewController(quantityBarViewController, animated: true)
-    }
-    
     func openTeamScreenDemo() {
         let itemTitles    = (1...30).map { "Person \($0)" }
         let itemSubtitles = (1...30).map { "Role \($0)" }
@@ -152,14 +137,6 @@ extension MainViewController {
         self.present(selectionViewController, animated: false, completion: nil)
     }
     
-    @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
-        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
-        serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
-        
-        self.present(serviceInspectionFormFilledDetailMenuViewController,
-                     animated:   false,
-                     completion: nil)
-    }
 }
 
 extension MainViewController: MainMenuTabBarDelegate {

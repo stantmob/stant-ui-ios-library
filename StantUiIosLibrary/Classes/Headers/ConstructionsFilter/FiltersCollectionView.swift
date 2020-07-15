@@ -51,7 +51,9 @@ public class FiltersCollectionView: UICollectionView, UICollectionViewDataSource
         self.buttons = buttons
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    private func collectionView(_ collectionView:            UICollectionView,
+                                layout collectionViewLayout: UICollectionViewLayout,
+                                sizeForItemAt indexPath:     IndexPath) -> CGSize {
         return CGSize(width: CGFloat(90), height: CGFloat(28))
     }
     

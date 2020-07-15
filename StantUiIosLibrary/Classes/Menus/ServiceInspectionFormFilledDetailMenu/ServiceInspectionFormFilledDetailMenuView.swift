@@ -67,12 +67,14 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                               tests:           tests)
     }
     
-    public func configureTeamTab(personNames: [String],
+    public func configureTeamTab(delegate:    TeamTabViewDelegate,
+                                 personNames: [String],
                                  personRoles: [String] = [],
                                  photoUrls:   [String] = []) {
        
         teamTabView           = TeamTabView()
         guard let teamTabView = teamTabView else { return }
+        teamTabView.delegate  = delegate
         teamTabView.isHidden  = true
         
         self.addSubview(teamTabView)

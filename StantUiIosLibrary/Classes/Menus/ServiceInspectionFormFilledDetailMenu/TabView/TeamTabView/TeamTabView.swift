@@ -10,6 +10,7 @@ import UIKit
 public class TeamTabView: UIView {
     public var tableView:   UITableView?
     public var seeMoreView: UIView?
+    public var delegate:    TeamTabViewDelegate?
     
     public var personNames: [String] = []
     public var personRoles: [String] = []
@@ -41,8 +42,8 @@ public class TeamTabView: UIView {
                          trailing: self.trailingAnchor,
                          size:     CGSize(width: self.frame.width, height: 75))
         
-        tableView.register(PersonTableViewCell.self,
-                           forCellReuseIdentifier: PersonTableViewCell.identifier())
+        tableView.register(SelectionTableViewCell.self,
+                           forCellReuseIdentifier: SelectionTableViewCell.identifier())
     }
     
     func configureSeeMoreView() {
@@ -63,6 +64,9 @@ public class TeamTabView: UIView {
         
         seeMoreView.addSubview(seeMoreLabel)
         seeMoreLabel.fillSuperView()
+        
+        let tap = UITapGestureRecognizer(target: delegate, action: #selector(delegate?.showTeamScreen))
+        seeMoreView.addGestureRecognizer(tap)
     }
 }
 
@@ -74,14 +78,14 @@ extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView:              UITableView,
                           heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return PersonTableViewCell.cellHeight
+        return SelectionTableViewCell.cellHeight
     }
     
     public func tableView(_ tableView:            UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView
-            .dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(),
-                                 for:            indexPath) as! PersonTableViewCell
+            .dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
+                                 for:            indexPath) as! SelectionTableViewCell
         
         cell.configureViewWithIcons(title:    personNames[indexPath.row],
                                     subtitle: personRoles.isEmpty ? "" : personRoles[indexPath.row],
@@ -89,4 +93,9 @@ extension TeamTabView: UITableViewDelegate, UITableViewDataSource {
             
         return cell
     }
+}
+
+
+@objc public protocol TeamTabViewDelegate {
+    @objc func showTeamScreen()
 }

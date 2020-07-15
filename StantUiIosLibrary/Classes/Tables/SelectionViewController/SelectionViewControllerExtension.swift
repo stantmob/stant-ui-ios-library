@@ -11,12 +11,12 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return PersonTableViewCell.cellHeight
+        return SelectionTableViewCell.cellHeight
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.identifier(), for: indexPath)
-                         as? PersonTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(), for: indexPath)
+                         as? SelectionTableViewCell else { return UITableViewCell() }
     
         cell.accessoryType = selectedItems.contains(indexPath.row) ? .checkmark : .none
         
@@ -36,24 +36,24 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         if selectionType == .single {
             selectedItems = []
             for index in selectedItems {
-                guard let cell      = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { continue }
+                guard let cell      = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { continue }
                 cell.accessoryType  = .none
             }
         } else if selectedItems.contains(indexPath.row) {
             selectedItems      = selectedItems.filter{ $0 != indexPath.row }
-            guard let cell     = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { return }
+            guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
             cell.accessoryType = .none
             return
         }
         
-        let cell            = tableView.cellForRow(at: indexPath) as? PersonTableViewCell
+        let cell            = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell
         cell?.accessoryType  = .checkmark
         selectedItems.append(indexPath.row)
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedItems      = selectedItems.filter{ $0 != indexPath.row }
-        guard let cell     = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { return }
+        guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
         cell.accessoryType = .none
     }
 }
