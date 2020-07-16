@@ -20,6 +20,7 @@ public class PlacesCell: UITableViewCell {
     public var siffIconImage:        UIImageView?
     public var leftTapView:          UIView?
     public var rightTapView:         UIView?
+    public var index = 0
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -44,6 +45,7 @@ public class PlacesCell: UITableViewCell {
     }
     
     public func configureViewFor(delegate:          PlaceCellDidSelectDelegate,
+                                 index:             Int,
                                  status:            PlaceStatusEnum,
                                  placeTitle:        String,
                                  quantitySubPlaces: Int,
@@ -51,6 +53,7 @@ public class PlacesCell: UITableViewCell {
                                  hasSiff:           Bool) {
         self.removeSubviews()
         self.delegate = delegate
+        self.index    = index
         
         configureBar(status: status)
         configureLocationImageView()
@@ -228,7 +231,7 @@ public class PlacesCell: UITableViewCell {
     }
     
     @objc func goToSubPlaces() {
-        delegate?.goToSubPlaces()
+        delegate?.goToSubPlaces(index: index)
     }
        
     fileprivate func configureGestureRecognizerRightView(hasSiff: Bool) {
@@ -262,7 +265,7 @@ public class PlacesCell: UITableViewCell {
 }
 
 public protocol PlaceCellDidSelectDelegate {
-    func goToSubPlaces()
+    func goToSubPlaces(index: Int)
     func goToServiceInspectionFormFilledScreen()
 }
 
