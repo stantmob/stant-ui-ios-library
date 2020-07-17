@@ -51,7 +51,7 @@ public class ListingPlacesViewController: UIViewController {
 }
 
 extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegate, PlaceCellDidSelectDelegate {
-    public func goToSubPlaces() {
+    public func goToSubPlaces(index: Int) {
         print("Has SubPlaces")
     }
     
@@ -71,6 +71,7 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlacesCell.identifier(), for: indexPath) as? PlacesCell else { return UITableViewCell() }
         
         cell.configureViewFor(delegate:          self,
+                              index:             indexPath.row,
                               status:            placesStatusEnum[indexPath.row],
                               placeTitle:        placeTitleList[indexPath.row],
                               quantitySubPlaces: quantitySubPlaceList[indexPath.row],
