@@ -60,7 +60,7 @@ public class TeamTabView: UIView {
         seeMoreLabel.textAlignment = .center
         seeMoreLabel.textColor     = personNames.isEmpty ? .lightGrayStant : .darkGrayStant
         seeMoreLabel.font          = UIFont.systemFont(ofSize: 12, weight: .bold)
-        seeMoreLabel.text          = AppStrings.see_more.uppercased()
+        seeMoreLabel.text          = LibraryStrings.see_more.uppercased()
         
         seeMoreView.addSubview(seeMoreLabel)
         seeMoreLabel.fillSuperView()

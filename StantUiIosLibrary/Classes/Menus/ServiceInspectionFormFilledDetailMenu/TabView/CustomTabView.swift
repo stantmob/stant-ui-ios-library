@@ -11,9 +11,9 @@ public class CustomTabView: UIView {
     public var collectionView: UICollectionView?
     public var delegate:       CustomTabViewDelegate?
     
-    public let cellTitles = [AppStrings.service_inspection_form_filled_details_form_title,
-                             AppStrings.service_inspection_form_filled_details_team_title,
-                             AppStrings.service_inspection_form_filled_details_attachments_title]
+    public let cellTitles = [LibraryStrings.service_inspection_form_filled_details_form_title,
+                             LibraryStrings.service_inspection_form_filled_details_team_title,
+                             LibraryStrings.service_inspection_form_filled_details_attachments_title]
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

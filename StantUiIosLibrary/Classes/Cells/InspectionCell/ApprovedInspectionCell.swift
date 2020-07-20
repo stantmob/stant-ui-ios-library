@@ -101,7 +101,7 @@ public class ApprovedInspectionCell: UITableViewCell {
                           padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 92),
                           size:     CGSize(width: 60, height: 0))
         
-        editButton.setTitle(AppStrings.edit, for: .normal)
+        editButton.setTitle(LibraryStrings.edit, for: .normal)
         editButton.setTitleColor(.darkText, for: .normal)
         editButton.addTarget(delegate, action: #selector(delegate?.goToInspectionEditScreen), for: .touchUpInside)
     }
@@ -118,7 +118,7 @@ public class ApprovedInspectionCell: UITableViewCell {
                             padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16),
                             size:     CGSize(width: 60, height: 0))
         
-        detailButton.setTitle(AppStrings.details, for: .normal)
+        detailButton.setTitle(LibraryStrings.details, for: .normal)
         detailButton.setTitleColor(.darkText, for: .normal)
         detailButton.addTarget(delegate, action: #selector(delegate?.goToInspectionDetailScreen), for: .touchUpInside)
     }

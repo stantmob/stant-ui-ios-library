@@ -13,13 +13,13 @@ public enum MethodCellTypeEnum: Int {
     public func stringValue() -> String {
         switch self {
         case .notInspected:
-            return AppStrings.verified_method_status_not_inspected_label
+            return LibraryStrings.verified_method_status_not_inspected_label
         case .reproved:
-            return AppStrings.verified_method_status_approved_label
+            return LibraryStrings.verified_method_status_approved_label
         case .approved:
-            return AppStrings.verified_method_status_approved_label
+            return LibraryStrings.verified_method_status_approved_label
         case .notApplicable:
-            return AppStrings.verified_method_status_not_applicable_label
+            return LibraryStrings.verified_method_status_not_applicable_label
         }
     }
     

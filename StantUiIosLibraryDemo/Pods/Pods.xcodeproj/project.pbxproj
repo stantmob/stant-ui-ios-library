@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E042D13519685AAA96C111BC950CFB /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7939B9D2E2843E7CE0A111689CA5F5 /* AppStrings.swift */; };
+		00E042D13519685AAA96C111BC950CFB /* LibraryStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7939B9D2E2843E7CE0A111689CA5F5 /* LibraryStrings.swift */; };
 		05AA1B1456F53F783C00AF2CC2D85360 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E47D73F35BC46EB1D93F05B3413229 /* DialogViewController.swift */; };
 		09BB41AE68A8AB24F85EF1F9B1DB1282 /* FilterButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CDF9342AFDB2269B2150F03F59744 /* FilterButtonCollectionViewCell.swift */; };
 		0B4C3E48559D6B86DE8E9540A476DAE4 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26912591A98A034D47F5328CE92D92 /* TextInputTableViewCell.swift */; };
@@ -173,15 +173,15 @@
 		33794D5D42A5DF32D9C7D62EF4337649 /* SecondHeaderButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderButton.swift; sourceTree = "<group>"; };
 		345E56DE4A27C61F7A9F04483DF9AD64 /* GroupedSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupedSelection.swift; sourceTree = "<group>"; };
 		34CF52F7FDAF197F5A1BB87E07E68043 /* ProgressToolTip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProgressToolTip.swift; sourceTree = "<group>"; };
-		36B49347963B5FED9924E6030C3A2F57 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		36B49347963B5FED9924E6030C3A2F57 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		38F579728FA9095D09D859F7B526BA05 /* ServiceInspectionFormFilledTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledTableView.swift; sourceTree = "<group>"; };
 		391C7F042A2DB58A1939A6B261A4B463 /* ToDoBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToDoBar.swift; sourceTree = "<group>"; };
 		395970EC61D8F9DE0F4570A1245BC11D /* Pods-StantUiIosLibraryDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StantUiIosLibraryDemo-frameworks.sh"; sourceTree = "<group>"; };
 		3DE311CE10B1E508A8312883BB4AFB80 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
 		414C52603AD6ECB3053986B3F4C31699 /* ServiceInspectionFormFilledCellHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCellHeader.swift; sourceTree = "<group>"; };
-		429E759E718004E0C7BC03A6608AC1FF /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StantUiIosLibrary.framework; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		429E759E718004E0C7BC03A6608AC1FF /* StantUiIosLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StantUiIosLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456551120078FB7D10F603251181EB69 /* ContactsTableViewWithCollapsedSearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsTableViewWithCollapsedSearchBar.swift; sourceTree = "<group>"; };
-		474C9E0F030786263E2B70AC9673507F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		474C9E0F030786263E2B70AC9673507F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CE7917E24BAF8970C06DE358DD45521 /* TeamScreenViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewControllerExtension.swift; sourceTree = "<group>"; };
 		4E28D60052471670D03DD8B29F093FD2 /* ServiceInspectionFormFilledDetailMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuView.swift; sourceTree = "<group>"; };
 		4FC71DF3A94128E740591147306C5A56 /* UIViewLayoutExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewLayoutExtension.swift; sourceTree = "<group>"; };
@@ -214,10 +214,10 @@
 		8D2D958D7BD658E92E56DCF3DFB91DB2 /* ServiceInspectionFormFilledCellUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCellUtils.swift; sourceTree = "<group>"; };
 		8D880C0DE4E250D7B2A696DEE6BBC6B5 /* FirstHeaderRightBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderRightBarButton.swift; sourceTree = "<group>"; };
 		8F1DF458E48095BBC5741BB4FC3B6F86 /* SyncDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SyncDialogView.swift; sourceTree = "<group>"; };
-		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemoTests.framework; path = "Pods-StantUiIosLibraryDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97FE1A4C1F6EFF66410B38672FA50E73 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98DF9A0AFB3AF12531EB48FDA50DDB28 /* StantUiIosLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StantUiIosLibrary-Info.plist"; sourceTree = "<group>"; };
 		991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemo-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A003C3CC05501D4E6A3E823FC0EFCB76 /* CustomTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		A23675FFC5FC82240A0070DAE5C8CBF0 /* ViewTeste.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewTeste.swift; path = StantUiIosLibrary/Classes/ViewTeste.swift; sourceTree = "<group>"; };
 		A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StantUiIosLibraryDemoTests-dummy.m"; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		E85DB6D578BBCBEFC7BCCCC2ED01B0BD /* GroupSelectionHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionHeaderView.swift; sourceTree = "<group>"; };
 		E8A4FA50CCD299F0CD2D3F4BED39F23F /* FirstHeaderDropdownButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderDropdownButton.swift; sourceTree = "<group>"; };
 		EAE90B3B9C3D73E700D46A059B665746 /* GroupSelectionDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
-		EC11315D3DFB163A3E7669776FDA99D9 /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EC11315D3DFB163A3E7669776FDA99D9 /* StantUiIosLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = StantUiIosLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EEE7FF8A0D3F5BDC8729108DFE863A22 /* CellBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellBadge.swift; sourceTree = "<group>"; };
 		EFC60B91AD8D3C8812B554BCA4C0424D /* Pods-StantUiIosLibraryDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StantUiIosLibraryDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F041DDA627D195F8DF25D63CF1E137DB /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
@@ -261,9 +261,9 @@
 		FAF1B587EB520492DCABD945857162CC /* TeamScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamScreenViewController.swift; sourceTree = "<group>"; };
 		FB2E62122A5DFC0001A3BF94E42ADB4D /* ConstructionsFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionsFilter.swift; sourceTree = "<group>"; };
 		FDD6D070C8599D57B84E581AE8D09C69 /* InternActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternActionCell.swift; sourceTree = "<group>"; };
-		FE7939B9D2E2843E7CE0A111689CA5F5 /* AppStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		FE7939B9D2E2843E7CE0A111689CA5F5 /* LibraryStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryStrings.swift; sourceTree = "<group>"; };
 		FF0AE6BFF3D6897AF7C495BC0CDBCF38 /* QuantityBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuantityBar.swift; sourceTree = "<group>"; };
-		FFCB8E560B637CF3C8F27EBE1E7BE3EC /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StantUiIosLibraryDemo.framework; path = "Pods-StantUiIosLibraryDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFCB8E560B637CF3C8F27EBE1E7BE3EC /* Pods_StantUiIosLibraryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFFDC45D749A74776DB7643595D8EC80 /* FirstHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirstHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -309,7 +309,6 @@
 			children = (
 				38F579728FA9095D09D859F7B526BA05 /* ServiceInspectionFormFilledTableView.swift */,
 			);
-			name = TableView;
 			path = TableView;
 			sourceTree = "<group>";
 		};
@@ -319,7 +318,6 @@
 				C24798B5BF8C969707A66C6070DCFF25 /* ServiceInspectionFormFilledViewDefaultSearchViewExtension.swift */,
 				F041DDA627D195F8DF25D63CF1E137DB /* ServiceInspectionFormFilledViewShowAndHideSearchTableViewExtension.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -329,7 +327,6 @@
 				2942BD5A08382EC8DB192A008AE4F58C /* MethodCell.swift */,
 				826F040AAC3A851216C4B67ECAD9EFE5 /* MethodCellUtils.swift */,
 			);
-			name = MethodCell;
 			path = MethodCell;
 			sourceTree = "<group>";
 		};
@@ -339,7 +336,6 @@
 				5A79D21143FAE760BAC681B8ECC218EF /* ContactsViewDefaultSearchViewExtension.swift */,
 				E3958262BB8E6741B857FF401682EFBC /* ContactsViewShowAndHideSearchTableViewExtension.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -348,7 +344,6 @@
 			children = (
 				E85DB6D578BBCBEFC7BCCCC2ED01B0BD /* GroupSelectionHeaderView.swift */,
 			);
-			name = Header;
 			path = Header;
 			sourceTree = "<group>";
 		};
@@ -365,7 +360,6 @@
 			children = (
 				1A9134F920EFE896F3B0F5426C903353 /* ContactsTableView.swift */,
 			);
-			name = TableView;
 			path = TableView;
 			sourceTree = "<group>";
 		};
@@ -392,7 +386,6 @@
 				34CF52F7FDAF197F5A1BB87E07E68043 /* ProgressToolTip.swift */,
 				13F8EADBF241A2C1223EE69D1C7B8FD5 /* SimpleProgressBar.swift */,
 			);
-			name = ProgressBar;
 			path = ProgressBar;
 			sourceTree = "<group>";
 		};
@@ -402,7 +395,6 @@
 				1C905BCEB69D7AB677E9C411966FBD73 /* DefaultSearchBar.swift */,
 				E0C9490E9915CFE916E1203F8FE50464 /* DefaultSearchBarDelegateExtension.swift */,
 			);
-			name = SearchBar;
 			path = SearchBar;
 			sourceTree = "<group>";
 		};
@@ -413,7 +405,6 @@
 				22E47D73F35BC46EB1D93F05B3413229 /* DialogViewController.swift */,
 				8F1DF458E48095BBC5741BB4FC3B6F86 /* SyncDialogView.swift */,
 			);
-			name = DialogView;
 			path = DialogView;
 			sourceTree = "<group>";
 		};
@@ -422,7 +413,6 @@
 			children = (
 				21BC10C4A8FC4727DBD9EC2B55E4B630 /* ContactsCard.swift */,
 			);
-			name = Contacts;
 			path = Contacts;
 			sourceTree = "<group>";
 		};
@@ -432,7 +422,6 @@
 				345E56DE4A27C61F7A9F04483DF9AD64 /* GroupedSelection.swift */,
 				1868517BDE3AC6AC7C8645244B739935 /* ItemSelection.swift */,
 			);
-			name = GroupedSelection;
 			path = GroupedSelection;
 			sourceTree = "<group>";
 		};
@@ -443,7 +432,6 @@
 				AD10EF6992DC100862598F0C335FB8AC /* ItemHeaderViewUtils.swift */,
 				1C061398773EBB1DD4A0D45A8841976B /* ItemObservationCell.swift */,
 			);
-			name = ItemHeaderView;
 			path = ItemHeaderView;
 			sourceTree = "<group>";
 		};
@@ -496,7 +484,6 @@
 				57F7444CCDBA0523EE4DC735459EE63C /* InChargeStackView.swift */,
 				C2E3E09CAA4EDBA2065A6EDC93E249CD /* PhotoDetailView.swift */,
 			);
-			name = InChargeStackView;
 			path = InChargeStackView;
 			sourceTree = "<group>";
 		};
@@ -506,7 +493,6 @@
 				FF0AE6BFF3D6897AF7C495BC0CDBCF38 /* QuantityBar.swift */,
 				391C7F042A2DB58A1939A6B261A4B463 /* ToDoBar.swift */,
 			);
-			name = QuantityBar;
 			path = QuantityBar;
 			sourceTree = "<group>";
 		};
@@ -526,14 +512,13 @@
 				414C52603AD6ECB3053986B3F4C31699 /* ServiceInspectionFormFilledCellHeader.swift */,
 				8D2D958D7BD658E92E56DCF3DFB91DB2 /* ServiceInspectionFormFilledCellUtils.swift */,
 			);
-			name = ServiceInspectionFormFilledCell;
 			path = ServiceInspectionFormFilledCell;
 			sourceTree = "<group>";
 		};
 		5A346ECD4F14FAC8CFE6D04854A3944E /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				FE7939B9D2E2843E7CE0A111689CA5F5 /* AppStrings.swift */,
+				FE7939B9D2E2843E7CE0A111689CA5F5 /* LibraryStrings.swift */,
 				1006772ED7006C8F0945185567DC1222 /* Localizable-en.strings */,
 				6C5A96346A207CF1FDF7CC10D42ED98B /* Localizable-pt.strings */,
 			);
@@ -547,7 +532,6 @@
 				33794D5D42A5DF32D9C7D62EF4337649 /* SecondHeaderButton.swift */,
 				BD6034EB10CC44DC81BA9D68DA0C8076 /* SecondHeaderView.swift */,
 			);
-			name = SecondHeader;
 			path = SecondHeader;
 			sourceTree = "<group>";
 		};
@@ -556,7 +540,6 @@
 			children = (
 				B5EB95891498CBE1424E491F952F01C0 /* Gesturizer.swift */,
 			);
-			name = ViewHelpers;
 			path = ViewHelpers;
 			sourceTree = "<group>";
 		};
@@ -565,7 +548,6 @@
 			children = (
 				1FFA4DD558AD722271A2EBBD1AA2BA40 /* TeamTabView.swift */,
 			);
-			name = TeamTabView;
 			path = TeamTabView;
 			sourceTree = "<group>";
 		};
@@ -585,7 +567,6 @@
 				0FE7835A4548E1B6C431F14196C86D71 /* AttachmentTabCollectionViewCell.swift */,
 				07746C9C1FDC5F1FA7DDAC791559E080 /* AttachmentTabView.swift */,
 			);
-			name = AttachmentTabView;
 			path = AttachmentTabView;
 			sourceTree = "<group>";
 		};
@@ -617,7 +598,6 @@
 				33C328407330B341C1AC91BB9EA6E1CC /* GroupedSelection */,
 				FB4AAACD8F0C02B84C8E22E42064634B /* TableView */,
 			);
-			name = GroupSelectionTableViewWithCollapsedSearchBar;
 			path = GroupSelectionTableViewWithCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
@@ -649,7 +629,6 @@
 				DF714CB854A728C788EC06E0765B4DEC /* FormTabView */,
 				62A013E77641E583DADB521942D355D2 /* TeamTabView */,
 			);
-			name = TabView;
 			path = TabView;
 			sourceTree = "<group>";
 		};
@@ -658,7 +637,6 @@
 			children = (
 				5E00673A36B779366317DCBFC7483410 /* ConstructionCard.swift */,
 			);
-			name = Construction;
 			path = Construction;
 			sourceTree = "<group>";
 		};
@@ -668,7 +646,6 @@
 				8823AE62C867D3752E32A02DC80E8477 /* ServiceInspectionFormFilledCard.swift */,
 				C6009A4A5FAB04BD15FD264FE8000D37 /* ServiceInspectionFormFilledCardStack.swift */,
 			);
-			name = ServiceInspectionFormFilled;
 			path = ServiceInspectionFormFilled;
 			sourceTree = "<group>";
 		};
@@ -678,7 +655,6 @@
 				FAF1B587EB520492DCABD945857162CC /* TeamScreenViewController.swift */,
 				4CE7917E24BAF8970C06DE358DD45521 /* TeamScreenViewControllerExtension.swift */,
 			);
-			name = TeamScreenViewController;
 			path = TeamScreenViewController;
 			sourceTree = "<group>";
 		};
@@ -688,7 +664,6 @@
 				517BE856F9358037DAF4D04BF6C01691 /* SelectionViewController.swift */,
 				201FEA494665EE959A5542F26A425480 /* SelectionViewControllerExtension.swift */,
 			);
-			name = SelectionViewController;
 			path = SelectionViewController;
 			sourceTree = "<group>";
 		};
@@ -698,7 +673,6 @@
 				2BA9CD11068138E5EEEA353F96A4703B /* BottomDialogWithScrollViewController.swift */,
 				DDF72595152588ABD6942F5C0F0A5955 /* ScrollableTableViewDialogCell.swift */,
 			);
-			name = BottomDialogWithScroll;
 			path = BottomDialogWithScroll;
 			sourceTree = "<group>";
 		};
@@ -724,7 +698,6 @@
 			children = (
 				0FF66F0FA2ECC57746DF8E7ED0D2D95C /* ConstructionTableView.swift */,
 			);
-			name = TableView;
 			path = TableView;
 			sourceTree = "<group>";
 		};
@@ -733,7 +706,6 @@
 			children = (
 				752A8A00EC4B307F7A8585FFD0A53EA7 /* GroupSelectionRowCell.swift */,
 			);
-			name = Cell;
 			path = Cell;
 			sourceTree = "<group>";
 		};
@@ -744,7 +716,6 @@
 				15AA77978F1EFAA21F6A7786B4D55737 /* Extensions */,
 				1FAD3296D60EBF635841665BF47A3402 /* TableView */,
 			);
-			name = ContactsTableViewWithCollapsedSearchBar;
 			path = ContactsTableViewWithCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
@@ -769,7 +740,6 @@
 				F0C312EE6F7E68BF0D50E615DD59596D /* FirstHeaderRecentItemCell.swift */,
 				780DE8CDC346BCB5704D291FF0A7E601 /* SelectRecentViewController.swift */,
 			);
-			name = SelectRecentDialog;
 			path = SelectRecentDialog;
 			sourceTree = "<group>";
 		};
@@ -789,7 +759,6 @@
 				EAE90B3B9C3D73E700D46A059B665746 /* GroupSelectionDefaultSearchViewExtension.swift */,
 				B8536471591E7848E3FB6DA4724C5884 /* GroupSelectionShowAndHideSearchTableViewExtension.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -817,7 +786,6 @@
 				875072B7365A39498E2749F5D73712E9 /* ReprovedInspectionCell.swift */,
 				B8EAB90606AA3F4BE57FFBBFA005BB11 /* SubComponents */,
 			);
-			name = InspectionCell;
 			path = InspectionCell;
 			sourceTree = "<group>";
 		};
@@ -828,7 +796,6 @@
 				C92A0394B0AD87ED38A1771A1DF60DB9 /* InspectionDescriptionView.swift */,
 				F8669E822DC15A0E18D9BDC613F849C1 /* SeverityLevelView.swift */,
 			);
-			name = SubComponents;
 			path = SubComponents;
 			sourceTree = "<group>";
 		};
@@ -848,7 +815,6 @@
 				7F9CDF9342AFDB2269B2150F03F59744 /* FilterButtonCollectionViewCell.swift */,
 				1BD6E0C79B6EF94B75F7472A372960D2 /* FiltersCollectionView.swift */,
 			);
-			name = ConstructionsFilter;
 			path = ConstructionsFilter;
 			sourceTree = "<group>";
 		};
@@ -869,7 +835,6 @@
 				2E04DA8907F7B4347F5CBC1ABDC4A826 /* MainMenuTabBarController.swift */,
 				31C725BDB21C3E31CED334B1637FA786 /* MenuTabBarDTO.swift */,
 			);
-			name = MainMenu;
 			path = MainMenu;
 			sourceTree = "<group>";
 		};
@@ -900,7 +865,6 @@
 				FFFDC45D749A74776DB7643595D8EC80 /* FirstHeaderView.swift */,
 				A709922B8CC761087996E3AAB7E4F8D3 /* SelectRecentDialog */,
 			);
-			name = FirstHeader;
 			path = FirstHeader;
 			sourceTree = "<group>";
 		};
@@ -911,7 +875,6 @@
 				1076FAA7B4B16BCA4E3E1E414B3242D8 /* Extensions */,
 				033BA239E1EB5DAE73922A04E99AA57F /* TableView */,
 			);
-			name = ServiceInspectionFormFilledCollapsedSearchBar;
 			path = ServiceInspectionFormFilledCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
@@ -920,7 +883,6 @@
 			children = (
 				EEE7FF8A0D3F5BDC8729108DFE863A22 /* CellBadge.swift */,
 			);
-			name = CellBadge;
 			path = CellBadge;
 			sourceTree = "<group>";
 		};
@@ -930,7 +892,6 @@
 				869CF5829F9AE63E34C4F9C0BBE89BF7 /* FormTabCollectionViewCell.swift */,
 				E7328C7F6CC1A2F75EE2510DBD8C4158 /* FormTabView.swift */,
 			);
-			name = FormTabView;
 			path = FormTabView;
 			sourceTree = "<group>";
 		};
@@ -941,7 +902,6 @@
 				F69B7264F5DA7DE5D5DFFD7B2541165F /* Extensions */,
 				987AD7E093A8529E909E611F7C6A4A1C /* TableView */,
 			);
-			name = ConstructionTableViewWithCollapsedSearchBar;
 			path = ConstructionTableViewWithCollapsedSearchBar;
 			sourceTree = "<group>";
 		};
@@ -961,7 +921,6 @@
 				6DA425CF40422299412FEAC54FA0FC2B /* ConstructionViewDefaultSearchViewExtension.swift */,
 				3DE311CE10B1E508A8312883BB4AFB80 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -972,7 +931,6 @@
 				455463945DFE8FCD48E0259521AC1CD2 /* InChargeStackView */,
 				78221A0F2C601C78DD4DAB6EC9FFC6F9 /* TabView */,
 			);
-			name = ServiceInspectionFormFilledDetailMenu;
 			path = ServiceInspectionFormFilledDetailMenu;
 			sourceTree = "<group>";
 		};
@@ -997,7 +955,6 @@
 				9E1AE70ECFDEC52257FEC56BA9F44585 /* Cell */,
 				1BCAB7A7F93FB3EF738B8F845C5983F1 /* Header */,
 			);
-			name = TableView;
 			path = TableView;
 			sourceTree = "<group>";
 		};
@@ -1145,7 +1102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC10313B2D30197CA72F88E2D7C5142 /* ApprovedInspectionCell.swift in Sources */,
-				00E042D13519685AAA96C111BC950CFB /* AppStrings.swift in Sources */,
+				00E042D13519685AAA96C111BC950CFB /* LibraryStrings.swift in Sources */,
 				6B097D1B1B32E5F12CB93D25E279681C /* AttachmentTabCollectionViewCell.swift in Sources */,
 				18CAB177B810165A372624BC101AE0D7 /* AttachmentTabView.swift in Sources */,
 				3A21946B7888E525E86359D515DED2D7 /* BottomDialogWithScrollViewController.swift in Sources */,

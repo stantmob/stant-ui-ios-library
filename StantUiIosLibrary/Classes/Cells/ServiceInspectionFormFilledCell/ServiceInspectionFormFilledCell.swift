@@ -149,7 +149,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     fileprivate func configureQuantityLabel(totalUsedArea: Float, unitMeasurement: String) {
         quantityLabel           = UILabel()
         guard let quantityLabel = quantityLabel else { return }
-        quantityLabel.text      = "\(AppStrings.service_inspection_form_filled_details_out_of_label) \(totalUsedArea) \(unitMeasurement)"
+        quantityLabel.text      = "\(LibraryStrings.service_inspection_form_filled_details_out_of_label) \(totalUsedArea) \(unitMeasurement)"
         quantityLabel.textColor = .darkGrayStant
         quantityLabel.font      = .systemFont(ofSize: 12)
 
@@ -177,7 +177,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         let percentagePlannedLabel = UILabel()
         let percentagePlanned      = totalUsedArea / plannedArea * 100
         
-        percentagePlannedLabel.text          = "\(percentagePlanned.cleanValue)% \(AppStrings.service_inspection_form_filled_details_of_planned_label)"
+        percentagePlannedLabel.text          = "\(percentagePlanned.cleanValue)% \(LibraryStrings.service_inspection_form_filled_details_of_planned_label)"
         percentagePlannedLabel.textColor     = .darkGrayStant
         percentagePlannedLabel.textAlignment = .center
         percentagePlannedLabel.font          = .systemFont(ofSize: 12)

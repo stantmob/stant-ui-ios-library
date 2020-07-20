@@ -33,13 +33,6 @@ public class MethodCell: UITableViewCell {
         super.prepareForReuse()
         self.removeSubviews()
     }
-    
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
-        bounds      = bounds.inset(by: padding)
-    }
 
     public func configure(status:          MethodCellTypeEnum,
                           order:           Int,

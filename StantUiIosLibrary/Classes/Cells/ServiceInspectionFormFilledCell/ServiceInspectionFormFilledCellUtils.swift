@@ -42,13 +42,13 @@ public enum ServiceInspectionFormFilledCellTypeEnum: Int {
     public func stringValue() -> String {
         switch self {
         case .progress:
-            return AppStrings.service_inspection_form_filled_details_progress_label
+            return LibraryStrings.service_inspection_form_filled_details_progress_label
         case .finished:
-            return AppStrings.service_inspection_form_filled_details_finished_label
+            return LibraryStrings.service_inspection_form_filled_details_finished_label
         case .approved:
-            return AppStrings.service_inspection_form_filled_details_approved_label
+            return LibraryStrings.service_inspection_form_filled_details_approved_label
         case .late:
-            return AppStrings.service_inspection_form_filled_details_late_label
+            return LibraryStrings.service_inspection_form_filled_details_late_label
         }
     }
     
@@ -67,13 +67,13 @@ public enum ServiceInspectionFormFilledCellTypeEnum: Int {
     
     public static func convertFrom(string: String) -> ServiceInspectionFormFilledCellTypeEnum {
         switch string {
-        case AppStrings.service_inspection_form_filled_details_progress_label:
+        case LibraryStrings.service_inspection_form_filled_details_progress_label:
             return .progress
-        case AppStrings.service_inspection_form_filled_details_finished_label:
+        case LibraryStrings.service_inspection_form_filled_details_finished_label:
             return .finished
-        case AppStrings.service_inspection_form_filled_details_approved_label:
+        case LibraryStrings.service_inspection_form_filled_details_approved_label:
             return .approved
-        case AppStrings.service_inspection_form_filled_details_late_label:
+        case LibraryStrings.service_inspection_form_filled_details_late_label:
             return .late
         default:
             return .progress

@@ -11,10 +11,10 @@ public class FormTabView: UIView {
     public var collectionView: UICollectionView?
     public var contentList:    [String] = []
     
-    var titles = [AppStrings.service_inspection_form_filled_details_begin_label,
-                  AppStrings.service_inspection_form_filled_details_deadline_label,
-                  AppStrings.service_inspection_form_filled_details_quantity_label,
-                  AppStrings.service_inspection_form_filled_details_tests_label]
+    var titles = [LibraryStrings.service_inspection_form_filled_details_begin_label,
+                  LibraryStrings.service_inspection_form_filled_details_deadline_label,
+                  LibraryStrings.service_inspection_form_filled_details_quantity_label,
+                  LibraryStrings.service_inspection_form_filled_details_tests_label]
 
     func configure(beginDate:       String,
                    endDate:         String,

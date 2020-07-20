@@ -7,10 +7,11 @@
 */
 
 //General
-"see_more" = "Ver mais";
-"edit"     = "Editar";
-"details"  = "Detalhes";
-"deadline" = "Prazo";
+"see_more"       = "Ver mais";
+"edit"           = "Editar";
+"details"        = "Detalhes";
+"deadline"       = "Prazo";
+"approve_method" = "Aprovar";
 
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsável";
@@ -38,6 +39,7 @@
 "verified_method_status.approved_label"       = "Aprovado";
 "verified_method_status.reproved_label"       = "Reprovado";
 "verified_method_status.not_applicable_label" = "Não Aplicável";
+"verified_method_status.approve_method"       = "Aprovar";
 
 //Inspection Status
 "inspection_status.approved" = "Aprovada";
