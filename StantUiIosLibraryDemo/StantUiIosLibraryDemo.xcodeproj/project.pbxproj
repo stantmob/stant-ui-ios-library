@@ -47,6 +47,8 @@
 		882D19F0248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D19EF248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift */; };
 		8F030E9923BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */; };
 		8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */; };
+		8F0432C324C9D44E00D3D245 /* ListingPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0432C224C9D44E00D3D245 /* ListingPlacesViewController.swift */; };
+		8F0432C824C9D50F00D3D245 /* ListingPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0432C724C9D50F00D3D245 /* ListingPlacesTests.swift */; };
 		8F20AED1249454D700C6CA19 /* ItemMethodListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20AED0249454D700C6CA19 /* ItemMethodListingTests.swift */; };
 		8F20AED3249454EC00C6CA19 /* VerifiedMethodListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20AED2249454EC00C6CA19 /* VerifiedMethodListingTests.swift */; };
 		8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */; };
@@ -124,6 +126,8 @@
 		8EBEC5E99F6246C718F3ED92 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipTests.swift; sourceTree = "<group>"; };
 		8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndIconsTests.swift; sourceTree = "<group>"; };
+		8F0432C224C9D44E00D3D245 /* ListingPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesViewController.swift; sourceTree = "<group>"; };
+		8F0432C724C9D50F00D3D245 /* ListingPlacesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesTests.swift; sourceTree = "<group>"; };
 		8F20AED0249454D700C6CA19 /* ItemMethodListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodListingTests.swift; sourceTree = "<group>"; };
 		8F20AED2249454EC00C6CA19 /* VerifiedMethodListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodListingTests.swift; sourceTree = "<group>"; };
 		8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				8F20AECF2494545300C6CA19 /* ItemMethod */,
 				452DB89522CBF73C00561600 /* Utils */,
 				34CA9E8422D6807D00E671D4 /* BottomDialogWithScroll */,
+				8F0432C624C9D50F00D3D245 /* ListingPlaces */,
 				347958E722CA2917003D7CC4 /* ConstructionTableViewWithCollapsedSearchBar */,
 				3445BC5522B7D66300C62011 /* MainMenuTabBar */,
 				53D2813D22A1AF10007064F1 /* SyncDialog */,
@@ -273,6 +278,7 @@
 				34DFB90322956D33002D92FB /* Main */,
 				34DFB9042295731B002D92FB /* ConstructionCard */,
 				C752BDC823C64FD40093DCF0 /* ConstructionContacts */,
+				8F0432C124C9D44E00D3D245 /* ListingPlaces */,
 				349CE98F229875A10066A6E7 /* ConstructionsFilter */,
 				343FF2C6229F14E400B96C60 /* FirstHeader */,
 				34ECE71122F3849200D24ED3 /* SecondHeader */,
@@ -452,6 +458,22 @@
 				882CCF4524AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8F0432C124C9D44E00D3D245 /* ListingPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				8F0432C224C9D44E00D3D245 /* ListingPlacesViewController.swift */,
+			);
+			path = ListingPlaces;
+			sourceTree = "<group>";
+		};
+		8F0432C624C9D50F00D3D245 /* ListingPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				8F0432C724C9D50F00D3D245 /* ListingPlacesTests.swift */,
+			);
+			path = ListingPlaces;
 			sourceTree = "<group>";
 		};
 		8F14491C23AACDC800BD0E7D /* Services */ = {
@@ -668,6 +690,7 @@
 				34518E7722B28942004D1833 /* MainViewControllerActionsExtension.swift in Sources */,
 				34518E7922B28A54004D1833 /* UIViewExtension.swift in Sources */,
 				8FDC5413247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift in Sources */,
+				8F0432C324C9D44E00D3D245 /* ListingPlacesViewController.swift in Sources */,
 				34DFB90622957331002D92FB /* ConstructionCardViewController.swift in Sources */,
 				51E9B31A22CA8EEA00D47B6A /* CellWithImageTableViewController.swift in Sources */,
 				C752BDDF23C658A80093DCF0 /* MainViewController.swift in Sources */,
@@ -703,6 +726,7 @@
 				343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */,
 				452DB8AE22CD23E400561600 /* InternPersonCellTests.swift in Sources */,
 				3445BC5722B7D68200C62011 /* MainMenuTabBarTests.swift in Sources */,
+				8F0432C824C9D50F00D3D245 /* ListingPlacesTests.swift in Sources */,
 				8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */,
 				8F20AED3249454EC00C6CA19 /* VerifiedMethodListingTests.swift in Sources */,
 				452DB89722CBF79000561600 /* XCTestExtensions.swift in Sources */,

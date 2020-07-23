@@ -13,7 +13,11 @@ class AppStrings {
     public static let edit     = localized("edit")
     public static let details  = localized("details")
     public static let deadline = localized("deadline")
-    
+
+    //Place Planning
+    public static let place_planning_sub_place_label  = localized("place_planning.sub_place_label")
+    public static let place_planning_sub_places_label = localized("place_planning.sub_places_label")
+
     //Service Inspection Form Filled Details
     public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")
     public static let service_inspection_form_filled_details_finalizer   = localized("service_inspection_form_filled_details.finalizer")
@@ -40,7 +44,7 @@ class AppStrings {
     public static let verified_method_details_approved_label       = localized("verified_method_details.approved_label")
     public static let verified_method_details_reproved_label       = localized("verified_method_details.reproved_label")
     public static let verified_method_details_not_applicable_label = localized("verified_method_details.not_applicable_label")
-    
+
     //Inspection Status
     public static let inspection_status_approved = localized("inspection_status.approved")
     public static let inspection_status_reproved = localized("inspection_status.reproved")

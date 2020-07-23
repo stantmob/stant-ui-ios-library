@@ -12,6 +12,10 @@
 "details"  = "Details";
 "deadline" = "Deadline";
 
+//Place Planning
+"place_planning.sub_place_label"  = "Subplace";
+"place_planning.sub_places_label" = "Subplaces";
+
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsible";
 "service_inspection_form_filled_details.finalizer"   = "Finalizer";

@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
+        self.addListingPlacesCard()
         self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
         self.addVerifiedMethodListingDemo()
@@ -263,6 +264,17 @@ class MainViewController: UIViewController {
                                   target: self)
     }
 
+    fileprivate func addListingPlacesCard() {
+        self.scrollView.addButton(title:  "Listing places demo",
+                                  action: #selector(gotToListingPlacesCard),
+                                  target: self)
+    }
+
+    @objc func gotToListingPlacesCard() {
+        self.open(viewController: ListingPlacesViewController())
+    }
+
+
     @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
         let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
         serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
@@ -291,13 +303,13 @@ class MainViewController: UIViewController {
     @objc func goToVerifiedMethodListingDemo() {
         self.open(viewController: VerifiedMethodListingViewController())
     }
-    
+
     fileprivate func addInspectionListingDemo() {
         self.scrollView.addButton(title:  "Inspection listing demo",
         action: #selector(goToInspectionListingDemo),
         target: self)
     }
-    
+
     @objc func goToInspectionListingDemo() {
         self.open(viewController: InspectionListingViewController())
     }
