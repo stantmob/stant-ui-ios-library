@@ -8,18 +8,17 @@
 import UIKit
 
 public class BottomDialogWithScrollViewController: UIViewController {
-    
     public weak var cellDelegate: ScrollableTableViewDialogCellDelegate?
     
     private var backgroundView: UIView?
-    private var mainView: UIView?
-    public var tableView: UITableView?
-    private var gesturizer: Gesturizer?
+    private var mainView:       UIView?
+    public var tableView:       UITableView?
+    private var gesturizer:     Gesturizer?
     
     private var items                   = [String]()
     private var icons                   = [String]()
-    private var mainViewHeight: CGFloat = 374
     private var selectedItemIndex       = 0
+    private var mainViewHeight: CGFloat = 374
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,7 +26,9 @@ public class BottomDialogWithScrollViewController: UIViewController {
     }
     
     deinit {
-        self.view.removeSubviews()
+        if let view = self.view {
+            view.removeSubviews()
+        }
     }
     
     @objc func dismissViewController() {
@@ -67,7 +68,7 @@ public class BottomDialogWithScrollViewController: UIViewController {
     }
     
     fileprivate func configureBackgroundView() {
-        guard let backgroundView = backgroundView else { return }
+        guard let backgroundView       = backgroundView else { return }
         backgroundView.backgroundColor = .black
         backgroundView.alpha           = 0.3
         
@@ -76,31 +77,31 @@ public class BottomDialogWithScrollViewController: UIViewController {
         
         let tableViewHeight = (self.view.frame.height * 0.6) - 38
         
-        backgroundView.anchor(top: self.view.topAnchor,
-                              leading: self.view.leadingAnchor,
-                              bottom: self.view.bottomAnchor,
+        backgroundView.anchor(top:      self.view.topAnchor,
+                              leading:  self.view.leadingAnchor,
+                              bottom:   self.view.bottomAnchor,
                               trailing: self.view.trailingAnchor,
-                              padding: UIEdgeInsets(top: 0, left: 0, bottom: CGFloat(tableViewHeight), right: 0))
+                              padding:  UIEdgeInsets(top: 0, left: 0, bottom: CGFloat(tableViewHeight), right: 0))
     }
     
     fileprivate func configureMainView() {
-        guard let mainView = mainView else { return }
+        guard let mainView       = mainView else { return }
         mainView.backgroundColor = .white
         mainView.roundCorners(corners: [.topLeft, .topRight], radius: 5.0)
         
         mainViewHeight = (self.view.frame.height * 0.6)
         
-        mainView.anchor(leading: self.view.leadingAnchor,
-                        bottom: self.view.bottomAnchor,
+        mainView.anchor(leading:  self.view.leadingAnchor,
+                        bottom:   self.view.bottomAnchor,
                         trailing: self.view.trailingAnchor,
-                        padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                        size: CGSize(width: 0, height: mainViewHeight))
+                        padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                        size:     CGSize(width: 0, height: mainViewHeight))
         self.addSubviewsInsideDialog()
     }
     
     fileprivate func addSubviewsInsideDialog() {
         guard let mainView = mainView else { return }
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 120, height: 6))
+        let view           = UIView(frame: CGRect(x: 0, y: 0, width: 120, height: 6))
         
         tableView = UITableView(frame: CGRect(x: 0,
                                               y: 0,
@@ -125,13 +126,13 @@ public class BottomDialogWithScrollViewController: UIViewController {
     }
     
     fileprivate func adjustDetailViewOnTop(view: UIView) {
-        guard let mainView = mainView else { return }
+        guard let mainView      = mainView else { return }
         view.layer.cornerRadius = 3.5
         view.backgroundColor    = .lightGrayStant
         
-        view.anchor(top: mainView.topAnchor,
+        view.anchor(top:     mainView.topAnchor,
                     padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0),
-                    size: CGSize(width: 120, height: 6))
+                    size:    CGSize(width: 120, height: 6))
         view.anchorCenterX(anchorX: mainView.centerXAnchor)
     }
     
@@ -145,21 +146,23 @@ public class BottomDialogWithScrollViewController: UIViewController {
         tableView.isScrollEnabled          = true
         tableView.allowsMultipleSelection  = false
         
-        tableView.register(ScrollableTableViewDialogCell.self, forCellReuseIdentifier: ScrollableTableViewDialogCell.identifier())
+        tableView.register(ScrollableTableViewDialogCell.self,
+                           forCellReuseIdentifier: ScrollableTableViewDialogCell.identifier())
         
-        tableView.anchor(top: mainView.topAnchor,
-                         leading: mainView.leadingAnchor,
-                         bottom: mainView.bottomAnchor,
+        tableView.anchor(top:      mainView.topAnchor,
+                         leading:  mainView.leadingAnchor,
+                         bottom:   mainView.bottomAnchor,
                          trailing: mainView.trailingAnchor,
-                         padding: UIEdgeInsets(top: 38, left: 0, bottom: 0, right: 0))
+                         padding:  UIEdgeInsets(top: 38, left: 0, bottom: 0, right: 0))
         
-        tableView.selectRow(at: IndexPath(row: selectedItemIndex, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.middle)
+        tableView.selectRow(at:             IndexPath(row: selectedItemIndex, section: 0),
+                            animated:       true,
+                            scrollPosition: UITableView.ScrollPosition.middle)
     }
     
 }
 
 extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableViewDataSource {
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -169,9 +172,10 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ScrollableTableViewDialogCell.identifier()) as? ScrollableTableViewDialogCell else {
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ScrollableTableViewDialogCell.identifier())
+                         as? ScrollableTableViewDialogCell else {
+                            return UITableViewCell()
+                         }
         
         cell.selectionStyle = .none
         
@@ -180,7 +184,6 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         } else {
             cell.configureViewWith(title: items[indexPath.row], imageURL: icons[indexPath.row])
         }
-        
         
         if indexPath.row == selectedItemIndex {
             cell.accessoryType = .checkmark
@@ -198,14 +201,14 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
     }
     
     fileprivate func selectTableViewCellAt(indexPath: IndexPath) {
-        let cell = tableView(tableView ?? UITableView(), cellForRowAt: indexPath) as? ScrollableTableViewDialogCell
+        let cell            = tableView(tableView ?? UITableView(), cellForRowAt: indexPath) as? ScrollableTableViewDialogCell
         cell?.accessoryType = .checkmark
         
         cellDelegate?.clickOnCellWith(index: indexPath.row, title: cell?.cellTextLabel?.text ?? "")
         
         if selectedItemIndex != indexPath.row {
             for(index, _) in items.enumerated() {
-                let cell = tableView(tableView ?? UITableView(), cellForRowAt: IndexPath(row: index, section: 0))
+                let cell           = tableView(tableView ?? UITableView(), cellForRowAt: IndexPath(row: index, section: 0))
                 cell.accessoryType = .none
                 tableView?.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
             }
@@ -216,6 +219,4 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         cell.accessoryType = .none
     }
-    
 }
-

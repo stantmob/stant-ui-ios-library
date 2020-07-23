@@ -106,7 +106,7 @@ public class FirstHeaderView: UIView {
         navigationItem.image = rightNavigationItem.image ?? UIImage()
         
         let action                 = rightNavigationItem.action ?? Selector.init(String())
-        let rightNavigationItemTap = UITapGestureRecognizer(target: rightNavigationItem.target ?? UIViewController(), action: action)
+        let rightNavigationItemTap = UITapGestureRecognizer(target: rightNavigationItem.target, action: action)
         
         navigationItem.isUserInteractionEnabled = true
         navigationItem.addGestureRecognizer(rightNavigationItemTap)

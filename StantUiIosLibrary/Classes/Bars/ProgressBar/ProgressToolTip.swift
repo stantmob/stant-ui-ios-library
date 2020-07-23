@@ -1,6 +1,6 @@
 //
 //  ProgressToolTip.swift
-//  Pods-StantUiIosLibraryDemo
+//  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 23/12/19.
 //
@@ -11,10 +11,10 @@ public class ProgressToolTip: UIView {
     public var progressLabel: UILabel?
     public var indicatorView: UIImageView?
     
-    public var percentage: Float            = 0
+    public var percentage:          Float   = 0
     public var progressLabelHeight: CGFloat = 18
-    public var progressLabelWidth: CGFloat  = 103
-    public var message: String              = ""
+    public var progressLabelWidth:  CGFloat = 103
+    public var message:             String  = ""
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -72,29 +72,5 @@ public class ProgressToolTip: UIView {
                              leading: self.leadingAnchor,
                              padding: UIEdgeInsets(top: 0, left: leftPadding - 5, bottom: 3.5, right: 0),
                              size:    CGSize(width: 10, height: 5))
-    }
-}
-
-extension Float {
-    var cleanValue: String {
-        return self.truncatingRemainder(dividingBy: 1) <= 0.00001 ? String(format: "%.0f", self) : String(format: "%.1f", self)
-    }
-}
-
-extension NSMutableAttributedString {
-    func bold(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 12.0)]
-        let boldString                           = NSMutableAttributedString(string:text, attributes: attrs)
-        append(boldString)
-        
-        return self
-    }
-    
-    func normal(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 12.0)]
-        let normal                               = NSAttributedString(string: text, attributes: attrs)
-        append(normal)
-        
-        return self
     }
 }

@@ -34,7 +34,7 @@ class SecondHeaderViewController: UIViewController {
                                subtitle: "Subtitle",
                                titleButton: SecondHeaderButton(action: #selector(clickOnTitleButton),
                                                                target: self,
-                                                               icon: UIImage(named: "down") ?? UIImage()),
+                                                               icon: UIImage(named: "dropDown") ?? UIImage()),
                                leftButton: SecondHeaderButton(action: #selector(dismissViewController),
                                                               target: self,
                                                               icon: UIImage(named: "back") ?? UIImage()),

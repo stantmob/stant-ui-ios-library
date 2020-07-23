@@ -105,7 +105,7 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
                                           warningMessage:        warningMessage,
                                           guidance:              guidance,
                                           cancel:                cancel)
-              
+
         tableView?.backgroundColor = .clear
         tableView?.presenterDelegate = presenterDelegate
 
@@ -154,7 +154,7 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     }
     
     public func updateContactsList(_ contacts: [ContactsInformation]) {
-        self.contactsSiteList = contacts
+        self.contactsSiteList                = contacts
         self.tableView?.filteredContactsList = contacts
 
         self.updateTableViewWith(search: currentSearch)

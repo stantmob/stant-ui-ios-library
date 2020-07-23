@@ -1,5 +1,5 @@
 //
-//  ProgressBarWithToolTipView.swift
+//  ProgressBarWithToolTip.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 18/12/19.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ProgressBarWithToolTipView: UIView {
+public class ProgressBarWithToolTip: UIView {
     public var progressToolTip: ProgressToolTip?
     public var progressBar:     UIStackView?
     public var doneBar:         UIView?
@@ -47,9 +47,9 @@ public class ProgressBarWithToolTipView: UIView {
     }
     
     fileprivate func configureProgressToolTip() {
-        progressToolTip = ProgressToolTip(frame: self.frame)
-        
+        progressToolTip           = ProgressToolTip(frame: self.frame)
         guard let progressToolTip = progressToolTip else { return }
+        
         self.addSubview(progressToolTip)
         progressToolTip.configure(percentage:        self.percentage,
                                   positionIndicator: self.positionIndicator,
@@ -65,32 +65,28 @@ public class ProgressBarWithToolTipView: UIView {
     }
     
     fileprivate func configureProgressBar() {
-        progressBar = UIStackView()
-        
+        progressBar           = UIStackView()
         guard let progressBar = progressBar else { return }
         progressBar.axis      = .horizontal
         progressBar.spacing   = self.positionIndicator == self.frame.width ? 0 : 1
         
         self.addSubview(progressBar)
-        
         progressBar.anchor(top:      progressToolTip?.bottomAnchor,
                            leading:  self.leadingAnchor,
                            trailing: self.trailingAnchor,
-                           size:     CGSize(width: self.frame.width, height: self.barHeight))
+                           size:     CGSize(width: 0, height: self.barHeight))
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(showProgress))
         progressBar.addGestureRecognizer(tap)
-
+        
         configureDoneBar()
         configureRemainingBar()
     }
     
     fileprivate func configureDoneBar() {
-        doneBar = UIView()
-        
-        guard let doneBar     = doneBar else { return }
-        guard let progressBar = progressBar else { return }
-        
+        doneBar                    = UIView()
+        guard let doneBar          = doneBar,
+              let progressBar      = progressBar else { return }
         doneBar.backgroundColor    = .blueLightStant
         doneBar.layer.cornerRadius = self.barHeight / 2
         doneBar.clipsToBounds      = true
@@ -100,15 +96,13 @@ public class ProgressBarWithToolTipView: UIView {
                        leading: progressBar.leadingAnchor,
                        bottom:  progressBar.bottomAnchor,
                        size:    CGSize(width:  self.positionIndicator == 0 ? 0.1 : self.positionIndicator,
-                                       height: progressBar.frame.height))
+                                       height: 0))
     }
     
     fileprivate func configureRemainingBar() {
-        remainingBar = UIView()
-        
-        guard let remainingBar = remainingBar else { return }
-        guard let progressBar  = progressBar else { return }
-        
+        remainingBar                    = UIView()
+        guard let remainingBar          = remainingBar,
+              let progressBar           = progressBar else { return }
         remainingBar.backgroundColor    = .blueDarkStant
         remainingBar.layer.cornerRadius = self.barHeight / 2
         remainingBar.clipsToBounds      = true
@@ -118,9 +112,10 @@ public class ProgressBarWithToolTipView: UIView {
                             bottom:   progressBar.bottomAnchor,
                             trailing: progressBar.trailingAnchor,
                             size:     CGSize(width:  progressBar.frame.width - self.positionIndicator,
-                                             height: progressBar.frame.height))
+                                             height: 0))
     }
     
+    //This function is only used on Demo
     public func setProgress(percentage: Float) {
         self.removeSubviews(progressToolTip ?? UIView())
         self.removeSubviews(progressBar ?? UIView())
