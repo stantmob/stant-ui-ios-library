@@ -38,7 +38,6 @@ public class ToDoBar: UIView {
         mainBar.spacing   = 0
         
         self.addSubview(mainBar)
-        
         mainBar.anchor(top:      self.topAnchor,
                        leading:  self.leadingAnchor,
                        bottom:   self.bottomAnchor,
@@ -52,30 +51,30 @@ public class ToDoBar: UIView {
     }
 
     func configureSelectedToDoBar() {
-        selectedToDoBar           = UIView()
-        guard let selectedToDoBar = selectedToDoBar else { return }
-        guard let mainBar         = mainBar else { return }
-
+        selectedToDoBar                 = UIView()
+        guard let selectedToDoBar       = selectedToDoBar else { return }
+        guard let mainBar               = mainBar else { return }
         selectedToDoBar.backgroundColor = .blueStant
+        
         mainBar.addArrangedSubview(selectedToDoBar)
         selectedToDoBar.anchor(top:     mainBar.topAnchor,
                                leading: mainBar.leadingAnchor,
                                bottom:  mainBar.bottomAnchor,
                                size:    CGSize(width:  self.positionIndicator == 0 ? 0.1 : self.positionIndicator,
-                                               height: mainBar.frame.height))
+                                               height: 0))
     }
     
     func configureRemainingBar() {
-        remainingBar           = UIView()
-        guard let remainingBar = remainingBar else { return }
-        guard let mainBar      = mainBar else { return }
-        
+        remainingBar                 = UIView()
+        guard let remainingBar       = remainingBar else { return }
+        guard let mainBar            = mainBar else { return }
         remainingBar.backgroundColor = .blueDarkStant
+        
         mainBar.addArrangedSubview(remainingBar)
         remainingBar.anchor(top:      mainBar.topAnchor,
                             bottom:   mainBar.bottomAnchor,
                             trailing: mainBar.trailingAnchor,
                             size:     CGSize(width:  mainBar.frame.width - self.positionIndicator,
-                                             height: mainBar.frame.height))
+                                             height: 0))
     }
 }

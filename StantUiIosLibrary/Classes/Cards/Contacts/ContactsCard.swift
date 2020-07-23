@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 public class ContactsCard: UITableViewCell {
     
@@ -17,8 +18,18 @@ public class ContactsCard: UITableViewCell {
     public var mailButton:        UIButton?
     public var phoneButton:       UIButton?
     public var presenterDelegate: ContactsTableViewShowPresenter?
-    public var photoImageView:    RoundedImageView?
-       
+    public var photoImageView:    UIImageView?
+    var person:                   ContactsInformation?
+    
+    var callToMessage         = String()
+    var mailMessage           = String()
+    var supportWarningMessage = String()
+    var makeCall              = String()
+    var sendEmail             = String()
+    var warningMessage        = String()
+    var guidance              = String()
+    var cancel                = String()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -39,7 +50,7 @@ public class ContactsCard: UITableViewCell {
         
         self.addMainViewWithShadow()
         
-        self.configureImageWith(url: contact.photo ?? String())
+        self.configureImageWith(imageUrl: contact.photo ?? String() )
         
         self.configure(name:  contact.name ?? String(),
                        role:  contact.role ?? String(),
@@ -51,6 +62,12 @@ public class ContactsCard: UITableViewCell {
     }
     
     private func setButtonsActionsFor(mail: String, phone: String) {
+        person = ContactsInformation(name:  "",
+                                     role:  "",
+                                     photo: "",
+                                     mail:  mail,
+                                     phone: phone)
+        
         if !mail.isEmpty {
             mailButton?.addTarget(self, action: #selector(mailAction), for: .touchUpInside)
         }
@@ -60,18 +77,78 @@ public class ContactsCard: UITableViewCell {
         }
     }
     
-    @objc func mailAction(sender: UIButton) {
-        let alert = UIAlertController(title: "Mail", message: "Send a mail button was clicked!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
+    //MARK: - IBAction
+    
+    @IBAction func phoneAction(sender: UIButton) {
+        guard let currentPerson = person else {return}
+           
+        let alert = UIAlertController(title: self.callToMessage, message: currentPerson.phone, preferredStyle: .alert)
+            
+        alert.addAction(UIAlertAction(title: self.makeCall + "        ", style: .default, handler: { (_) in
+            let url = URL(string: "TEL://\(currentPerson.phone as! String)")
+            if let url = url {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+           }
+        }))
+               
+        alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
+        }))
+        
         if let present = presenterDelegate {
-            present.present(alert: alert)
+           present.present(alert: alert)
         }
     }
+    
+    @IBAction func mailAction(sender: UIButton) {
+        self.openEmailPopup()
+    }
+    
+    func openEmailPopup() {
+        guard let currentPerson = person else {return}
+        let alert = UIAlertController(title: self.mailMessage, message: currentPerson.mail, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: self.sendEmail + "        ", style: .default, handler: { (_) in
+                   self.sendMail()
+        }))
+           
+        alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
+        }))
 
-    @objc func phoneAction(sender: UIButton) {
-        let alert = UIAlertController(title: "Phone", message: "Call a phone button was clicked!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        if let present = presenterDelegate {
+           present.present(alert: alert)
+        }
+    }
+    
+    func sendMail() {
+        if MFMailComposeViewController.canSendMail() {
+            self.openEmail()
+       } else {
+           self.showAlertToGoGuidance()
+       }
+    }
+    
+    func openEmail() {
+        guard let currentPerson = person else{return}
+        let mailViewController                 = MFMailComposeViewController()
+        mailViewController.mailComposeDelegate = presenterDelegate as? MFMailComposeViewControllerDelegate
+        mailViewController.setToRecipients([(currentPerson.mail ?? "")])
+        
+        if let present = presenterDelegate {
+            present.present(alert: mailViewController)
+        }
+    }
+    
+    
+    func showAlertToGoGuidance() {
+        let alert = UIAlertController(title: self.supportWarningMessage, message: self.warningMessage, preferredStyle: .alert)
+                
+        alert.addAction(UIAlertAction(title: self.guidance + "       ", style: .default, handler: { (_) in
+            if let url = URL(string: "https://support.apple.com/pt-br/HT201320") {
+                UIApplication.shared.open(url)
+            }
+        }))
+                
+        alert.addAction(UIAlertAction(title: self.cancel, style: .cancel, handler: { (_) in
+        }))
         
         if let present = presenterDelegate {
             present.present(alert: alert)
@@ -80,10 +157,10 @@ public class ContactsCard: UITableViewCell {
     
     public func set(mail: String, phone: String) {
         mailButton = UIButton()
-        mailButton?.setImage(UIImage(named: "mail"), for: .normal)
+        mailButton?.setImage(UIImage(named: "mailIcon"), for: .normal)
         
         phoneButton = UIButton()
-        phoneButton?.setImage(UIImage(named: "call"), for: .normal)
+        phoneButton?.setImage(UIImage(named: "callIcon"), for: .normal)
         
         if mail.isEmpty {
             self.mailButton?.imageView?.set(color: .darkGrayStant)
@@ -197,11 +274,11 @@ public class ContactsCard: UITableViewCell {
         
     }
     
-    fileprivate func configureImageWith(url: String) {
-        photoImageView = RoundedImageView(frame: CGRect(x:      19,
-                                                        y:      173,
-                                                        width:  35,
-                                                        height: 35))
+    fileprivate func configureImageWith(imageUrl: String) {
+        photoImageView = UIImageView(frame: CGRect(x:      19,
+                                                   y:      173,
+                                                   width:  35,
+                                                   height: 35))
 
         guard let photoImageView = photoImageView else { return }
     
@@ -209,16 +286,21 @@ public class ContactsCard: UITableViewCell {
         if #available(iOS 9.0, *) {
             photoImageView.anchor(top:     self.topAnchor,
                                   leading: self.leadingAnchor,
-                                  padding: UIEdgeInsets(top: 15, left: 23, bottom: 0, right: 306),
-                                  size:    CGSize(width: 20, height: 20))
+                                  padding: UIEdgeInsets(top:    26,
+                                                        left:   30,
+                                                        bottom: 0,
+                                                        right:  306),
+                                  size:    CGSize(width:  1,
+                                                  height: 1))
         }
-        photoImageView.set(iconURL: url, iconDiameter: 40, iconBorder: 2)
+
         photoImageView.tag = 1
+        photoImageView.setRoundedImageView(iconURL: imageUrl, iconDiameter: 40, iconBorder: 2)
     }
 }
 
 public protocol ContactsTableViewShowPresenter: class {
-    func present(alert: UIAlertController)
+    func present(alert: UIViewController)
 }
 
 public struct ContactsInformation {

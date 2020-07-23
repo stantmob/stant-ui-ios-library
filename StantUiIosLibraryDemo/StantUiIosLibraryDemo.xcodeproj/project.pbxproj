@@ -43,12 +43,20 @@
 		51E9B31E22CAA64400D47B6A /* InternActionCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E9B31D22CAA64400D47B6A /* InternActionCellTests.swift */; };
 		53D2813722A152F6007064F1 /* FirstHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2813622A152F6007064F1 /* FirstHeaderTests.swift */; };
 		53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2813922A1737F007064F1 /* TestFirstHeaderViewController.swift */; };
-		882DAB3C249C4A800073D9B3 /* ListingPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882DAB3B249C4A800073D9B3 /* ListingPlacesTests.swift */; };
-		8838CC6A2492EB460000E2B3 /* ListingPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838CC5E2492BE6F0000E2B3 /* ListingPlacesViewController.swift */; };
+		882CCF4624AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CCF4524AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift */; };
+		882D19F0248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D19EF248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift */; };
 		8F030E9923BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */; };
 		8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */; };
+		8F0432C324C9D44E00D3D245 /* ListingPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0432C224C9D44E00D3D245 /* ListingPlacesViewController.swift */; };
+		8F0432C824C9D50F00D3D245 /* ListingPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0432C724C9D50F00D3D245 /* ListingPlacesTests.swift */; };
+		8F20AED1249454D700C6CA19 /* ItemMethodListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20AED0249454D700C6CA19 /* ItemMethodListingTests.swift */; };
+		8F20AED3249454EC00C6CA19 /* VerifiedMethodListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20AED2249454EC00C6CA19 /* VerifiedMethodListingTests.swift */; };
 		8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */; };
+		8F4E18262493C012001212BB /* VerifiedMethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */; };
+		8F4E18282493C024001212BB /* ItemMethodListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */; };
+		8F5199A924B4B8D400AA1EFE /* InspectionListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5199A824B4B8D400AA1EFE /* InspectionListingViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
+		8FA29A5C24B63C5F00FBB3A3 /* InspectionListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA29A5B24B63C5F00FBB3A3 /* InspectionListingTests.swift */; };
 		8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */; };
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
 		8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */; };
@@ -113,13 +121,21 @@
 		53D2813922A1737F007064F1 /* TestFirstHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFirstHeaderViewController.swift; sourceTree = "<group>"; };
 		54AE81ECD26EDF6118025C2A /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7FDF70B4C0871FD5384B616C /* Pods-StantUiIosLibraryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemo.release.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.release.xcconfig"; sourceTree = "<group>"; };
-		882DAB3B249C4A800073D9B3 /* ListingPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPlacesTests.swift; sourceTree = "<group>"; };
-		8838CC5E2492BE6F0000E2B3 /* ListingPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPlacesViewController.swift; sourceTree = "<group>"; };
+		882CCF4524AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledListingTests.swift; sourceTree = "<group>"; };
+		882D19EF248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledListingViewController.swift; sourceTree = "<group>"; };
 		8EBEC5E99F6246C718F3ED92 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F030E9823BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipTests.swift; sourceTree = "<group>"; };
 		8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndIconsTests.swift; sourceTree = "<group>"; };
+		8F0432C224C9D44E00D3D245 /* ListingPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesViewController.swift; sourceTree = "<group>"; };
+		8F0432C724C9D50F00D3D245 /* ListingPlacesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesTests.swift; sourceTree = "<group>"; };
+		8F20AED0249454D700C6CA19 /* ItemMethodListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodListingTests.swift; sourceTree = "<group>"; };
+		8F20AED2249454EC00C6CA19 /* VerifiedMethodListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodListingTests.swift; sourceTree = "<group>"; };
 		8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarViewController.swift; sourceTree = "<group>"; };
+		8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedMethodListingViewController.swift; sourceTree = "<group>"; };
+		8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMethodListingViewController.swift; sourceTree = "<group>"; };
+		8F5199A824B4B8D400AA1EFE /* InspectionListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionListingViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
+		8FA29A5B24B63C5F00FBB3A3 /* InspectionListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionListingTests.swift; sourceTree = "<group>"; };
 		8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuTests.swift; sourceTree = "<group>"; };
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
 		8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardTests.swift; sourceTree = "<group>"; };
@@ -233,10 +249,11 @@
 		34DFB8E2229495F7002D92FB /* StantUiIosLibraryDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				882DAB3A249C4A4E0073D9B3 /* ListingPlaces */,
 				8F030E9723BFC66B009CDEA4 /* Services */,
+				8F20AECF2494545300C6CA19 /* ItemMethod */,
 				452DB89522CBF73C00561600 /* Utils */,
 				34CA9E8422D6807D00E671D4 /* BottomDialogWithScroll */,
+				8F0432C624C9D50F00D3D245 /* ListingPlaces */,
 				347958E722CA2917003D7CC4 /* ConstructionTableViewWithCollapsedSearchBar */,
 				3445BC5522B7D66300C62011 /* MainMenuTabBar */,
 				53D2813D22A1AF10007064F1 /* SyncDialog */,
@@ -256,11 +273,12 @@
 		34DFB90222956D15002D92FB /* DemoApplication */ = {
 			isa = PBXGroup;
 			children = (
-				8838CC5D249283DA0000E2B3 /* ListingPlaces */,
 				8F14491C23AACDC800BD0E7D /* Services */,
+				8F4E18202493BE43001212BB /* ItemMethod */,
 				34DFB90322956D33002D92FB /* Main */,
 				34DFB9042295731B002D92FB /* ConstructionCard */,
 				C752BDC823C64FD40093DCF0 /* ConstructionContacts */,
+				8F0432C124C9D44E00D3D245 /* ListingPlaces */,
 				349CE98F229875A10066A6E7 /* ConstructionsFilter */,
 				343FF2C6229F14E400B96C60 /* FirstHeader */,
 				34ECE71122F3849200D24ED3 /* SecondHeader */,
@@ -430,22 +448,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		882DAB3A249C4A4E0073D9B3 /* ListingPlaces */ = {
-			isa = PBXGroup;
-			children = (
-				882DAB3B249C4A800073D9B3 /* ListingPlacesTests.swift */,
-			);
-			path = ListingPlaces;
-			sourceTree = "<group>";
-		};
-		8838CC5D249283DA0000E2B3 /* ListingPlaces */ = {
-			isa = PBXGroup;
-			children = (
-				8838CC5E2492BE6F0000E2B3 /* ListingPlacesViewController.swift */,
-			);
-			path = ListingPlaces;
-			sourceTree = "<group>";
-		};
 		8F030E9723BFC66B009CDEA4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,19 +455,57 @@
 				8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */,
 				8F766F02245131FF0027B628 /* QuantityBarTests.swift */,
 				8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */,
+				882CCF4524AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8F0432C124C9D44E00D3D245 /* ListingPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				8F0432C224C9D44E00D3D245 /* ListingPlacesViewController.swift */,
+			);
+			path = ListingPlaces;
+			sourceTree = "<group>";
+		};
+		8F0432C624C9D50F00D3D245 /* ListingPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				8F0432C724C9D50F00D3D245 /* ListingPlacesTests.swift */,
+			);
+			path = ListingPlaces;
 			sourceTree = "<group>";
 		};
 		8F14491C23AACDC800BD0E7D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				882D19EF248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift */,
 				8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */,
 				8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */,
 				8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */,
 				8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8F20AECF2494545300C6CA19 /* ItemMethod */ = {
+			isa = PBXGroup;
+			children = (
+				8F20AED0249454D700C6CA19 /* ItemMethodListingTests.swift */,
+				8F20AED2249454EC00C6CA19 /* VerifiedMethodListingTests.swift */,
+				8FA29A5B24B63C5F00FBB3A3 /* InspectionListingTests.swift */,
+			);
+			path = ItemMethod;
+			sourceTree = "<group>";
+		};
+		8F4E18202493BE43001212BB /* ItemMethod */ = {
+			isa = PBXGroup;
+			children = (
+				8F4E18272493C024001212BB /* ItemMethodListingViewController.swift */,
+				8F4E18252493C012001212BB /* VerifiedMethodListingViewController.swift */,
+				8F5199A824B4B8D400AA1EFE /* InspectionListingViewController.swift */,
+			);
+			path = ItemMethod;
 			sourceTree = "<group>";
 		};
 		C752BDC823C64FD40093DCF0 /* ConstructionContacts */ = {
@@ -646,11 +686,11 @@
 				349CE991229875DD0066A6E7 /* ConstructionsFilterViewController.swift in Sources */,
 				343FF2C8229F151200B96C60 /* FirstHeaderViewController.swift in Sources */,
 				8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */,
-				8838CC6A2492EB460000E2B3 /* ListingPlacesViewController.swift in Sources */,
 				34DFB8CF229495F5002D92FB /* AppDelegate.swift in Sources */,
 				34518E7722B28942004D1833 /* MainViewControllerActionsExtension.swift in Sources */,
 				34518E7922B28A54004D1833 /* UIViewExtension.swift in Sources */,
 				8FDC5413247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift in Sources */,
+				8F0432C324C9D44E00D3D245 /* ListingPlacesViewController.swift in Sources */,
 				34DFB90622957331002D92FB /* ConstructionCardViewController.swift in Sources */,
 				51E9B31A22CA8EEA00D47B6A /* CellWithImageTableViewController.swift in Sources */,
 				C752BDDF23C658A80093DCF0 /* MainViewController.swift in Sources */,
@@ -658,10 +698,14 @@
 				34FE368C22F22B4700F9FEAE /* InputTextCellTableViewController.swift in Sources */,
 				8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */,
 				8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */,
+				882D19F0248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift in Sources */,
+				8F4E18262493C012001212BB /* VerifiedMethodListingViewController.swift in Sources */,
 				34ECE71322F384B500D24ED3 /* SecondHeaderViewController.swift in Sources */,
 				C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */,
+				8F4E18282493C024001212BB /* ItemMethodListingViewController.swift in Sources */,
 				452DB8AC22CCF2AD00561600 /* ProfileCellTableViewController.swift in Sources */,
 				34ECE70D22F31BF300D24ED3 /* RoundedImageViewController.swift in Sources */,
+				8F5199A924B4B8D400AA1EFE /* InspectionListingViewController.swift in Sources */,
 				346518D922EF6CD800BC9E0D /* GroupSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,8 +715,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				349CE9932298762E0066A6E7 /* ConstructionsFilterTests.swift in Sources */,
+				8F20AED1249454D700C6CA19 /* ItemMethodListingTests.swift in Sources */,
 				53D2813722A152F6007064F1 /* FirstHeaderTests.swift in Sources */,
 				34ECE71B22F4676000D24ED3 /* SecondHeaderTests.swift in Sources */,
+				8FA29A5C24B63C5F00FBB3A3 /* InspectionListingTests.swift in Sources */,
 				34FE368022F1B4D400F9FEAE /* GroupSelectionTableViewWithCollapsedSearchBarTests.swift in Sources */,
 				347958EB22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift in Sources */,
 				34ECE71022F3762600D24ED3 /* RoundedImageViewTests.swift in Sources */,
@@ -680,7 +726,9 @@
 				343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */,
 				452DB8AE22CD23E400561600 /* InternPersonCellTests.swift in Sources */,
 				3445BC5722B7D68200C62011 /* MainMenuTabBarTests.swift in Sources */,
+				8F0432C824C9D50F00D3D245 /* ListingPlacesTests.swift in Sources */,
 				8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */,
+				8F20AED3249454EC00C6CA19 /* VerifiedMethodListingTests.swift in Sources */,
 				452DB89722CBF79000561600 /* XCTestExtensions.swift in Sources */,
 				34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */,
 				51E9B31E22CAA64400D47B6A /* InternActionCellTests.swift in Sources */,
@@ -688,9 +736,9 @@
 				8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */,
 				34FE368222F1B5F100F9FEAE /* GroupSelectionTableViewWithCollapsedSearchBarMocks.swift in Sources */,
 				8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */,
+				882CCF4624AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift in Sources */,
 				8F030E9923BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift in Sources */,
 				34CA9E8622D680A200E671D4 /* BottomDialogWithScrollTests.swift in Sources */,
-				882DAB3C249C4A800073D9B3 /* ListingPlacesTests.swift in Sources */,
 				347958E922CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift in Sources */,
 				34ECE71D22F46F0000D24ED3 /* SecondHeaderViewControllerMock.swift in Sources */,
 				53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */,

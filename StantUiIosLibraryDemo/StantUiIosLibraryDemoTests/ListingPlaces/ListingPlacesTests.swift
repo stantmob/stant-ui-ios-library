@@ -18,7 +18,7 @@ class ListingPlacesTests: XCTestCase {
     public var percentageList:       [Float]           = [80, 32.5, 30, 110]
     public var hasSiffList:          [Bool]            = [true, false, false, true]
     
-    let viewController                                 = ListingPlacesViewController()
+    let viewController = ListingPlacesViewController()
     
     func testInitialState() {
         viewController.loadViewIfNeeded()
@@ -28,7 +28,8 @@ class ListingPlacesTests: XCTestCase {
             let cell = tableView?.dequeueReusableCell(withIdentifier: PlacesCell.identifier(),
                                                       for:            IndexPath(row: index, section: 0)) as! PlacesCell
             
-            cell.configureViewFor(delegate:          self,
+            cell.configureViewFor(delegate:          viewController,
+                                  index:             index,
                                   status:            placesStatusEnum[index],
                                   placeTitle:        placeTitleList[index],
                                   quantitySubPlaces: quantitySubPlaceList[index],
@@ -63,15 +64,5 @@ class ListingPlacesTests: XCTestCase {
                 XCTAssertNil(cell.rightTapView)
             }
         }
-    }
-}
-
-extension ListingPlacesTests: PlaceCellDidSelectDelegate {
-    func goToSubPlaces() {
-        print("Places screen")
-    }
-    
-    func goToServiceInspectionFormFilledScreen() {
-         print("Siff screen")
     }
 }
