@@ -29,6 +29,7 @@ class ListingPlacesTests: XCTestCase {
                                                       for:            IndexPath(row: index, section: 0)) as! PlacesCell
             
             cell.configureViewFor(delegate:          self,
+                                  index:             index,
                                   status:            placesStatusEnum[index],
                                   placeTitle:        placeTitleList[index],
                                   quantitySubPlaces: quantitySubPlaceList[index],
@@ -67,7 +68,7 @@ class ListingPlacesTests: XCTestCase {
 }
 
 extension ListingPlacesTests: PlaceCellDidSelectDelegate {
-    func goToSubPlaces() {
+    func goToSubPlaces(index: Int) {
         print("Places screen")
     }
     

@@ -46,7 +46,6 @@ public class GroupSelectionTableViewWithCollapsedSearchBar: UIView {
         self.configureEmptyMessageLabel()
         self.configureSearchView()
         self.configureTableView()
-        self.anchorSearchAndTableView()
         self.setEmptyMessageLabelVisibility()
         self.addTags()
     }
@@ -59,65 +58,55 @@ public class GroupSelectionTableViewWithCollapsedSearchBar: UIView {
     }
     
     fileprivate func configureSearchView() {
-        searchView = DefaultSearchBar(frame: CGRect(x: 0,
-                                                    y: 0,
-                                                    width: self.frame.width,
-                                                    height: DefaultSearchBar.searchViewHeight))
+        searchView = DefaultSearchBar()
         guard let searchView = searchView else { return }
+        
         self.addSubview(searchView)
-        searchView.configureViewWith(delegate: self,
-                                     image: searchBarIcon,
+        searchView.anchor(top:      self.topAnchor,
+                          leading:  self.leadingAnchor,
+                          trailing: self.trailingAnchor)
+        
+        searchView.configureViewWith(delegate:        self,
+                                     image:           searchBarIcon,
                                      placeholderText: searchBarPlaceholder)
     }
-    
-    
+
     fileprivate func configureTableView() {
-        tableView = GroupSelectionTableView(frame: CGRect(x: 0,
-                                                          y: DefaultSearchBar.searchViewHeight,
-                                                          width: self.frame.width,
+        tableView = GroupSelectionTableView(frame: CGRect(x:      0,
+                                                          y:      DefaultSearchBar.searchViewHeight,
+                                                          width:  self.frame.width,
                                                           height: self.frame.height),
                                             style: .grouped)
         
         tableView?.register(ConstructionCard.self, forCellReuseIdentifier: ConstructionCard.identifier())
-        tableView?.configureTableViewWith(itemsList: itemsList,
-                                          animationDelegate: self,
+        tableView?.configureTableViewWith(itemsList:          itemsList,
+                                          animationDelegate:  self,
                                           selectCellDelegate: tableViewDelegate)
         tableView?.backgroundColor = .clear
     
         if let tableView = tableView { self.addSubview(tableView) }
-    }
-    
-    fileprivate func anchorSearchAndTableView() {
-        guard let tableView = tableView, let searchView = searchView else { return }
         
-        searchView.anchor(top: self.topAnchor,
-                          leading: self.leadingAnchor,
-                          bottom: self.bottomAnchor,
-                          trailing: self.trailingAnchor,
-                          padding: UIEdgeInsets(top: 0,
-                                                left: 6,
-                                                bottom: self.frame.height - DefaultSearchBar.searchViewHeight,
-                                                right: 6))
-        tableView.anchor(top: searchView.topAnchor,
-                         leading: self.leadingAnchor,
-                         bottom: self.bottomAnchor,
-                         trailing: self.trailingAnchor,
-                         padding: UIEdgeInsets(top: DefaultSearchBar.searchViewHeight, left: 0, bottom: 0, right: 0))
-    }
+            tableView?.anchor(top:      searchView?.topAnchor,
+                              leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  UIEdgeInsets(top: DefaultSearchBar.searchViewHeight, left: 0, bottom: 0, right: 0))
+        }
     
     fileprivate func configureEmptyMessageLabel() {
         emptyMessageLabel?.removeFromSuperview()
-        emptyMessageLabel = UILabel(frame: CGRect(x: 0,
-                                                  y: DefaultSearchBar.searchViewHeight,
-                                                  width: self.frame.width,
+        emptyMessageLabel = UILabel(frame: CGRect(x:      0,
+                                                  y:      DefaultSearchBar.searchViewHeight,
+                                                  width:  self.frame.width,
                                                   height: self.frame.height))
         
         guard let emptyMessageLabel = emptyMessageLabel else { return }
-        emptyMessageLabel.configure(text: emptyMessage,
+        emptyMessageLabel.configure(text:      emptyMessage,
                                     alignment: .left,
-                                    size: 16,
-                                    weight: .regular,
-                                    color: .darkStant)
+                                    size:      16,
+                                    weight:    .regular,
+                                    color:     .darkStant)
+        
         self.addSubview(emptyMessageLabel)
         emptyMessageLabel.numberOfLines = 0
     }
@@ -132,8 +121,10 @@ public class GroupSelectionTableViewWithCollapsedSearchBar: UIView {
     
     func setEmptyMessageLabelVisibility() {
         let listIsNotEmpty = !(tableView?.filteredItemsList.isEmpty ?? false)
+        
         if listIsNotEmpty {
             emptyMessageLabel?.isHidden = true
+            
             return
         }
         
