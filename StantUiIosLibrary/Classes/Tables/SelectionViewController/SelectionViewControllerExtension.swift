@@ -5,28 +5,18 @@
 //  Created by Leandro Martins on 21/05/20.
 //
 
-import UIKit
-
 extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    public func tableView(_ tableView:                   UITableView,
-                          numberOfRowsInSection section: Int) -> Int {
-        
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemTitles.count
     }
     
-    public func tableView(_ tableView:              UITableView,
-                          heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SelectionTableViewCell.cellHeight
     }
     
-    public func tableView(_ tableView:            UITableView,
-                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView
-                   .dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(),
-                                        for:            indexPath)  as! SelectionTableViewCell
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectionTableViewCell.identifier(), for: indexPath)
+                         as? SelectionTableViewCell else { return UITableViewCell() }
     
         cell.accessoryType = selectedItems.contains(indexPath.row) ? .checkmark : .none
         
@@ -42,30 +32,25 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    public func tableView(_ tableView:              UITableView,
-                          didSelectRowAt indexPath: IndexPath) {
-        
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectionType == .single {
-            for index in selectedItems {
-                let cell            = tableView.cellForRow(at: IndexPath(row: index, section: 0))
-                                      as! SelectionTableViewCell
-                cell.accessoryType  = .none
-            }
             selectedItems = []
+        } else if selectedItems.contains(indexPath.row) {
+            selectedItems      = selectedItems.filter{ $0 != indexPath.row }
+            guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
+            cell.accessoryType = .none
+            return
         }
         
-        let cell            = tableView.cellForRow(at: indexPath) as! SelectionTableViewCell
-        cell.accessoryType  = .checkmark
+        let cell            = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell
+        cell?.accessoryType = .checkmark
         selectedItems.append(indexPath.row)
     }
     
-    public func tableView(_ tableView:                UITableView,
-                          didDeselectRowAt indexPath: IndexPath) {
-        
-        let cell           = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0))
-                             as! SelectionTableViewCell
-        cell.accessoryType = .none
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedItems      = selectedItems.filter{ $0 != indexPath.row }
+        guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
+        cell.accessoryType = .none
     }
 }
 

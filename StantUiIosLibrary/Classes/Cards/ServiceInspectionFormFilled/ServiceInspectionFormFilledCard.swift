@@ -36,6 +36,7 @@ public class ServiceInspectionFormFilledCard: UIView {
                                 measurementUnit: String,
                                 message:         String,
                                 type:            CardType) {
+        
         self.percentage      = percentage
         self.quantity        = quantity
         self.measurementUnit = measurementUnit
@@ -48,9 +49,8 @@ public class ServiceInspectionFormFilledCard: UIView {
     }
     
     public func configurePercentageLabel() {
-        percentageLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
-        
-        guard let percentageLabel = percentageLabel else { return }
+        percentageLabel                    = UILabel(frame: CGRect(x: 0, y: 10, width: 0, height: 0))
+        guard let percentageLabel          = percentageLabel else { return }
         percentageLabel.layer.cornerRadius = 4
         percentageLabel.clipsToBounds      = true
         percentageLabel.attributedText     = NSMutableAttributedString().bold("\((self.percentage * 100).cleanValue)%")
@@ -66,34 +66,28 @@ public class ServiceInspectionFormFilledCard: UIView {
         }
         
         self.addSubview(percentageLabel)
-        
         percentageLabel.anchor(top:     self.topAnchor,
                                padding: UIEdgeInsets(top: -10, left: 0, bottom: 0, right: 0),
                                size:    CGSize(width: 42, height: 19))
-        
         percentageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     public func configureMessageLabel() {
-        messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
-        guard let messageLabel = messageLabel else { return }
+        messageLabel               = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        guard let messageLabel     = messageLabel else { return }
         messageLabel.text          = message
         messageLabel.textColor     = .darkGrayStant
         messageLabel.font          = UIFont.systemFont(ofSize: 14.0)
         messageLabel.textAlignment = .center
         
         self.addSubview(messageLabel)
-        
         messageLabel.anchor(top:     self.topAnchor,
                             padding: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0))
-        
         messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     public func configureQuantityLabel() {
-        quantityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
+        quantityLabel               = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         guard let quantityLabel     = quantityLabel else { return }
         quantityLabel.text          = "\(String(format: "%.2f", quantity)) \(measurementUnit)"
         quantityLabel.textColor     = .black
@@ -101,10 +95,8 @@ public class ServiceInspectionFormFilledCard: UIView {
         quantityLabel.textAlignment = .center
         
         self.addSubview(quantityLabel)
-        
         quantityLabel.anchor(bottom:  self.bottomAnchor,
-                            padding: UIEdgeInsets(top: 0, left: 0, bottom: 11, right: 0))
-        
+                             padding: UIEdgeInsets(top: 0, left: 0, bottom: 11, right: 0))
         quantityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
@@ -120,6 +112,7 @@ public class ServiceInspectionFormFilledCard: UIView {
                           measurementUnit:    String,
                           message:            String,
                           type:               CardType) {
+        
         self.backgroundColor = .white
         self.layoutIfNeeded()
         

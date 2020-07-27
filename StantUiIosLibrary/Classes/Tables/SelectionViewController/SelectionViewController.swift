@@ -68,7 +68,7 @@ public class SelectionViewController: UIViewController {
                           leading:  self.view.leadingAnchor,
                           trailing: self.view.trailingAnchor,
                           padding:  UIEdgeInsets(top: 40 , left: 0, bottom: 0, right: 0),
-                          size:     CGSize(width: self.view.frame.width, height: 56))
+                          size:     CGSize(width: 0, height: 56))
     }
     
     func setTitleLabel() {
@@ -121,7 +121,7 @@ public class SelectionViewController: UIViewController {
                              bottom:   self.view.bottomAnchor,
                              trailing: self.view.trailingAnchor,
                              padding:  UIEdgeInsets(top: 2 , left: 16, bottom: 16, right: 16),
-                             size:     CGSize(width: self.view.frame.width, height: 50))
+                             size:     CGSize(width: 0, height: 50))
         
         confirmButton.addTarget(self, action: #selector(returnSelectedItems), for: .touchUpInside)
     }

@@ -151,15 +151,6 @@ extension MainViewController {
                                           iconsUrls:         iconsUrls)
         self.present(selectionViewController, animated: false, completion: nil)
     }
-    
-    @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
-        let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
-        serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
-        
-        self.present(serviceInspectionFormFilledDetailMenuViewController,
-                     animated:   false,
-                     completion: nil)
-    }
 }
 
 extension MainViewController: MainMenuTabBarDelegate {

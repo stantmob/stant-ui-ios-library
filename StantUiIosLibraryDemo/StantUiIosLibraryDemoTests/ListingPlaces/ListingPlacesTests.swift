@@ -18,7 +18,7 @@ class ListingPlacesTests: XCTestCase {
     public var percentageList:       [Float]           = [80, 32.5, 30, 110]
     public var hasSiffList:          [Bool]            = [true, false, false, true]
     
-    let viewController                                 = ListingPlacesViewController()
+    let viewController = ListingPlacesViewController()
     
     func testInitialState() {
         viewController.loadViewIfNeeded()

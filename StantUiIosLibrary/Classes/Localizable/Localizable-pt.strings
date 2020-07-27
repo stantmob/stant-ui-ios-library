@@ -8,6 +8,13 @@
 
 //General
 "see_more" = "Ver mais";
+"edit"     = "Editar";
+"details"  = "Detalhes";
+"deadline" = "Prazo";
+
+//Place Planning
+"place_planning.sub_place_label"  = "Sublocal";
+"place_planning.sub_places_label" = "Sublocais";
 
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsável";
@@ -23,7 +30,19 @@
 "service_inspection_form_filled_details.quantity_label" = "Quantidade";
 "service_inspection_form_filled_details.tests_label"    = "Testes";
 
-//Place Planning
-"place_planning.sub_place_label"  = "Sublocal";
-"place_planning.sub_places_label" = "Sublocais";
+"service_inspection_form_filled_details.progress_label"   = "Em Progresso";
+"service_inspection_form_filled_details.finished_label"   = "Finalizado";
+"service_inspection_form_filled_details.approved_label"   = "Aprovada";
+"service_inspection_form_filled_details.late_label"       = "Atrasada";
+"service_inspection_form_filled_details.of_planned_label" = "do Planejado";
+"service_inspection_form_filled_details.out_of_label"     = "de";
 
+//Verified Method Details
+"verified_method_details.not_inspected_label"  = "Não Inspecionado";
+"verified_method_details.approved_label"       = "Aprovado";
+"verified_method_details.reproved_label"       = "Reprovado";
+"verified_method_details.not_applicable_label" = "Não Aplicável";
+
+//Inspection Status
+"inspection_status.approved" = "Aprovada";
+"inspection_status.reproved" = "Reprovada";

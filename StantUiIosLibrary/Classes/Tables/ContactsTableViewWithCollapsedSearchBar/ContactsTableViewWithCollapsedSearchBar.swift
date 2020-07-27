@@ -31,11 +31,19 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
            super.init(frame: frame)
     }
     
-    public func configureViewWith(contactsList:         [ContactsInformation],
-                                  searchBarIcon:        UIImage,
-                                  searchBarPlaceholder: String,
-                                  tableViewDelegate:    ContactsTableViewDidSelectDelegate,
-                                  emptyMessage:         String) {
+    public func configureViewWith(contactsList:          [ContactsInformation],
+                                  searchBarIcon:         UIImage,
+                                  searchBarPlaceholder:  String,
+                                  tableViewDelegate:     ContactsTableViewDidSelectDelegate,
+                                  emptyMessage:          String,
+                                  callToMessage:         String,
+                                  mailMessage:           String,
+                                  supportWarningMessage: String,
+                                  makeCall:              String,
+                                  sendMail:              String,
+                                  warningMessage:        String,
+                                  guidance:              String,
+                                  cancel:                String) {
         
         self.tableViewDelegate    = tableViewDelegate
         self.contactsSiteList     = contactsList
@@ -46,7 +54,14 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         
         self.configureEmptyMessageLabel()
         self.configureSearchView()
-        self.configureTableView()
+        self.configureTableView(callToMessage:         callToMessage,
+                                mailMessage:           mailMessage,
+                                supportWarningMessage: supportWarningMessage,
+                                makeCall:              makeCall,
+                                sendMail:              sendMail,
+                                warningMessage:        warningMessage,
+                                guidance:              guidance,
+                                cancel:                cancel)
         self.setEmptyMessageLabelVisibility()
     }
     
@@ -54,18 +69,25 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         searchView = DefaultSearchBar()
         
         guard let searchView = searchView else { return }
-        
+
         self.addSubview(searchView)
         searchView.anchor(top:      self.topAnchor,
                           leading:  self.leadingAnchor,
                           trailing: self.trailingAnchor)
-        
+
         searchView.configureViewWith(delegate:        self,
                                      image:           searchBarIcon,
                                      placeholderText: searchBarPlaceholder)
     }
     
-    fileprivate func configureTableView() {
+    fileprivate func configureTableView(callToMessage:         String,
+                                        mailMessage:           String,
+                                        supportWarningMessage: String,
+                                        makeCall:              String,
+                                        sendMail:              String,
+                                        warningMessage:        String,
+                                        guidance:              String,
+                                        cancel:                String){
         tableView = ContactsTableView(frame: CGRect(x:      0,
                                                     y:      DefaultSearchBar.searchViewHeight,
                                                     width:  self.frame.width,
@@ -73,17 +95,25 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
         
         tableView?.register(ContactsCard.self, forCellReuseIdentifier: ContactsCard.identifier())
         
-        tableView?.configureTableViewWith(contactsList:       contactsSiteList,
-                                          animationDelegate:  self,
-                                          selectCellDelegate: tableViewDelegate)
+        tableView?.configureTableViewWith(contactsList:          contactsSiteList,
+                                          animationDelegate:     self,
+                                          selectCellDelegate:    tableViewDelegate,
+                                          callToMessage:         callToMessage,
+                                          mailMessage:           mailMessage,
+                                          supportWarningMessage: supportWarningMessage,
+                                          makeCall:              makeCall,
+                                          sendMail:              sendMail,
+                                          warningMessage:        warningMessage,
+                                          guidance:              guidance,
+                                          cancel:                cancel)
         tableView?.backgroundColor   = .clear
         tableView?.presenterDelegate = presenterDelegate
-        
+
         if let tableView = tableView {
             self.addSubview(tableView)
         }
         
-        tableView?.anchor(top: searchView?.topAnchor,
+        tableView?.anchor(top:      searchView?.topAnchor,
                           leading:  self.leadingAnchor,
                           bottom:   self.bottomAnchor,
                           trailing: self.trailingAnchor,
@@ -108,8 +138,8 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     }
     
     public func updateContactsList(_ contacts: [ContactsInformation]) {
-        self.contactsSiteList           = contacts
-        self.tableView?.allContactsList = contacts
+        self.contactsSiteList                = contacts
+        self.tableView?.filteredContactsList = contacts
 
         self.updateTableViewWith(search: currentSearch)
         self.setEmptyMessageLabelVisibility()
@@ -117,7 +147,7 @@ public class ContactsTableViewWithCollapseSearchBar: UIView {
     
     func setEmptyMessageLabelVisibility() {
         let listIsNotEmpty = !(tableView?.filteredContactsList.isEmpty ?? false)
-        
+
         if listIsNotEmpty {
             emptyMessageLabel?.isHidden = true
             return

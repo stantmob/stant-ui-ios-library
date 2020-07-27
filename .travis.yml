@@ -1,4 +1,8 @@
 language: swift
+cache:
+  bundler:   true
+  cocoapods: true
+  timeout:   1000
 osx_image: xcode10.2
 
 before_install:
@@ -7,4 +11,4 @@ before_install:
   - pod install
 
 script:
-  - xcodebuild -workspace StantUiIosLibraryDemo.xcworkspace -scheme StantUiIosLibraryDemoTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.2' test ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace StantUiIosLibraryDemo.xcworkspace -scheme StantUiIosLibraryDemoTests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.2' test ONLY_ACTIVE_ARCH=YES
