@@ -31,9 +31,11 @@ public class VerifiedMethodDetailView: UIView {
     public func configure(delegate:              VerifiedMethodDetailViewDelegate,
                           methodItemDescription: String) {
         self.delegate = delegate
+        
         self.removeSubviews()
         self.setNeedsLayout()
         self.layoutIfNeeded()
+        
         configureDescriptionLabel()
         configureMethodItemDescriptionLabel(methodItemDescription: methodItemDescription)
         configureUpperNotApplicableViewSeparator()

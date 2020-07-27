@@ -50,11 +50,9 @@ class AppStrings {
     public static let verified_method_details_warning_button_ok      = localized("verified_method_details.warning_button_ok")
     
 
-    //Verified Method Details
     public static let verified_method_details_not_inspected_label  = localized("verified_method_details.not_inspected_label")
     public static let verified_method_details_approved_label       = localized("verified_method_details.approved_label")
     public static let verified_method_details_reproved_label       = localized("verified_method_details.reproved_label")
-    public static let verified_method_details_not_applicable_label = localized("verified_method_details.not_applicable_label")
 
     //Inspection Status
     public static let inspection_status_approved = localized("inspection_status.approved")

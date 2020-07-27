@@ -45,7 +45,6 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
-        self.addListingPlacesCard()
         self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
         self.addVerifiedMethodListingDemo()
