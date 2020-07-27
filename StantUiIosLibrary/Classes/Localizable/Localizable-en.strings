@@ -8,6 +8,13 @@
 
 //General
 "see_more" = "See more";
+"edit"     = "Edit";
+"details"  = "Details";
+"deadline" = "Deadline";
+
+//Place Planning
+"place_planning.sub_place_label"  = "Subplace";
+"place_planning.sub_places_label" = "Subplaces";
 
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsible";
@@ -23,8 +30,8 @@
 "service_inspection_form_filled_details.quantity_label" = "Quantity";
 "service_inspection_form_filled_details.tests_label"    = "Tests";
 
-"service_inspection_form_filled_details.progress_label"   = "progress";
-"service_inspection_form_filled_details.finished_label"   = "finished";
+"service_inspection_form_filled_details.progress_label"   = "In Progress";
+"service_inspection_form_filled_details.finished_label"   = "Finished";
 "service_inspection_form_filled_details.approved_label"   = "Approved";
 "service_inspection_form_filled_details.late_label"       = "Late";
 "service_inspection_form_filled_details.of_planned_label" = "of Planned";
@@ -42,3 +49,6 @@
 
 
 
+//Inspection Status
+"inspection_status.approved" = "Approved";
+"inspection_status.reproved" = "Reproved";

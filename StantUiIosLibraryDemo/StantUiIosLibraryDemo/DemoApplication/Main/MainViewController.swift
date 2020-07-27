@@ -45,10 +45,12 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
+        self.addListingPlacesCard()
         self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
         self.addVerifiedMethodListingDemo()
         self.addMethodDetailCardDemo()
+        self.addInspectionListingDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -291,7 +293,7 @@ class MainViewController: UIViewController {
     @objc func goToVerifiedMethodListingDemo() {
         self.open(viewController: VerifiedMethodListingViewController())
     }
-    
+
     fileprivate func addMethodDetailCardDemo() {
         self.scrollView.addButton(title:  "Method Detail Demo",
                                   action: #selector(goToMethodDetailCardDemo),
@@ -300,5 +302,15 @@ class MainViewController: UIViewController {
 
     @objc func goToMethodDetailCardDemo() {
         self.open(viewController: VerifiedMethodDetailViewController())
+    }
+
+    fileprivate func addInspectionListingDemo() {
+        self.scrollView.addButton(title:  "Inspection listing demo",
+        action: #selector(goToInspectionListingDemo),
+        target: self)
+    }
+
+    @objc func goToInspectionListingDemo() {
+        self.open(viewController: InspectionListingViewController())
     }
 }

@@ -20,13 +20,17 @@ extension UIColor {
     @nonobjc public class var lightGrayStant: UIColor {
         return UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1)
     }
-    
-    @nonobjc public class var grayStant: UIColor {
-        return UIColor(red: 206/255, green: 206/255, blue: 213/255, alpha: 1)
-    }
 
     @nonobjc public class var darkGrayStant: UIColor {
         return UIColor(red: 133/255, green: 133/255, blue: 150/255, alpha: 1)
+    }
+    
+    @nonobjc public class var iceGray: UIColor {
+        return UIColor(red: 233/255, green: 233/255, blue: 236/255, alpha: 1)
+    }
+    
+    @nonobjc public class var grayStant: UIColor {
+        return UIColor(red: 206/255, green: 206/255, blue: 213/255, alpha: 1)
     }
     
     @nonobjc public class var orangeStant: UIColor {
@@ -69,6 +73,10 @@ extension UIColor {
         return UIColor(red: 255/255, green: 180/255, blue: 83/255, alpha: 1)
     }
 
+    @nonobjc public class var yellowStant: UIColor {
+        return UIColor(red: 236/255, green: 133/255, blue: 0/255, alpha: 1)
+    }
+    
     @nonobjc public class var redLightStant: UIColor {
         return UIColor(red: 212/255, green: 29/255, blue: 0/255, alpha: 1)
     }

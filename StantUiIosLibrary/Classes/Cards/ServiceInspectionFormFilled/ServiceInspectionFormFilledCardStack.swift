@@ -33,6 +33,7 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
                           plannedMessage:     String,
                           executedMessage:    String,
                           availableMessage:   String) {
+        
         self.alignment    = .fill
         self.distribution = .fillEqually
         self.axis         = .horizontal
@@ -53,7 +54,9 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
                                                                           width:  cardWidth,
                                                                           height: cardHeight))
         
-        guard let plannedSiffCard = plannedSiffCard, let executedSiffCard = executedSiffCard, let availableSiffCard = availableSiffCard else { return }
+        guard let plannedSiffCard   = plannedSiffCard,
+              let executedSiffCard  = executedSiffCard,
+              let availableSiffCard = availableSiffCard else { return }
         
         self.setProgress(executedPercentage: executedPercentage,
                          quantity:           quantity,
@@ -80,6 +83,7 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
                             plannedMessage:     String,
                             executedMessage:    String,
                             availableMessage:   String) {
+        
         plannedSiffCard?.setLabels(executedPercentage: 1,
                                    quantity:           quantity,
                                    measurementUnit:    measurementUnit,
