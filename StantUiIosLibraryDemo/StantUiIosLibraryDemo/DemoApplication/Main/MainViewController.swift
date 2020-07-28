@@ -45,10 +45,10 @@ class MainViewController: UIViewController {
         self.addTeamScreenDemo()
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
-        self.addListingPlacesCard()
         self.addSiffListingCardDemo()
         self.addItemMethodListingDemo()
         self.addVerifiedMethodListingDemo()
+        self.addMethodDetailCardDemo()
         self.addInspectionListingDemo()
     }
     
@@ -209,7 +209,7 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addSiffListingCardDemo() {
-        self.scrollView.addButton(title:  "SIFF Listing demo",
+        self.scrollView.addButton(title:  "Siff Listing",
                                   action: #selector(goToSiffListingCardDemo),
                                   target: self)
     }
@@ -264,17 +264,6 @@ class MainViewController: UIViewController {
                                   target: self)
     }
 
-    fileprivate func addListingPlacesCard() {
-        self.scrollView.addButton(title:  "Listing places demo",
-                                  action: #selector(gotToListingPlacesCard),
-                                  target: self)
-    }
-
-    @objc func gotToListingPlacesCard() {
-        self.open(viewController: ListingPlacesViewController())
-    }
-
-
     @objc func goToServiceInspectionFormFilledDetailMenuDemo() {
         let serviceInspectionFormFilledDetailMenuViewController                    = ServiceInspectionFormFilledDetailMenuViewController()
         serviceInspectionFormFilledDetailMenuViewController.modalPresentationStyle = .fullScreen
@@ -302,6 +291,16 @@ class MainViewController: UIViewController {
 
     @objc func goToVerifiedMethodListingDemo() {
         self.open(viewController: VerifiedMethodListingViewController())
+    }
+
+    fileprivate func addMethodDetailCardDemo() {
+        self.scrollView.addButton(title:  "Method Detail Demo",
+                                  action: #selector(goToMethodDetailCardDemo),
+                                  target: self)
+    }
+
+    @objc func goToMethodDetailCardDemo() {
+        self.open(viewController: VerifiedMethodDetailViewController())
     }
 
     fileprivate func addInspectionListingDemo() {
