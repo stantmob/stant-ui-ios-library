@@ -7,11 +7,18 @@
 */
 
 //General
-"see_more"       = "Ver mais";
-"edit"           = "Editar";
-"details"        = "Detalhes";
-"deadline"       = "Prazo";
-"approve_method" = "Aprovar";
+"see_more"    = "Ver mais";
+"edit"        = "Editar";
+"details"     = "Detalhes";
+"deadline"    = "Prazo";
+"description" = "Descrição";
+"approve"     = "Aprovar";
+"reprove"     = "Reprovar";
+"inspections" = "Inspeções";
+
+//Place Planning
+"place_planning.sub_place_label"  = "Sublocal";
+"place_planning.sub_places_label" = "Sublocais";
 
 //Service Inspection Form Filled Details
 "service_inspection_form_filled_details.responsible" = "Responsável";
@@ -35,11 +42,12 @@
 "service_inspection_form_filled_details.out_of_label"     = "de";
 
 //Verified Method Details
-"verified_method_status.not_inspected_label"  = "Não Inspecionado";
-"verified_method_status.approved_label"       = "Aprovado";
-"verified_method_status.reproved_label"       = "Reprovado";
-"verified_method_status.not_applicable_label" = "Não Aplicável";
-"verified_method_status.approve_method"       = "Aprovar";
+"verified_method_status.not_inspected_label"     = "Não Inspecionado";
+"verified_method_status.approved_label"          = "Aprovado";
+"verified_method_status.reproved_label"          = "Reprovado";
+"verified_method_status.not_applicable_label"    = "Não Aplicável";
+"verified_method_details.warning_title_action"   = "Aviso";
+"verified_method_details.warning_message_action" = "O método está com o Status de “Não Aplicável”, para aprova-lo ou reprova-lo desabilite esta função";
 
 //Inspection Status
 "inspection_status.approved" = "Aprovada";

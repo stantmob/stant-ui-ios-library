@@ -168,8 +168,8 @@ class InternPersonCellTests: XCTestCase {
     
     func testIfItDoesSetMailAndCallImages() throws {
         try given("Generated mail and phone images") {
-            self.mailImage  = UIImage(named: "mail")
-            self.phoneImage = UIImage(named: "call")
+            self.mailImage  = UIImage(named: "mailIcon")
+            self.phoneImage = UIImage(named: "callIcon")
         }
         
         try when("Set to the cell") {
@@ -198,8 +198,8 @@ class InternPersonCellTests: XCTestCase {
     
     func testIfItDoesSetMailButton() throws {
         try given("A generated button and the needed setup") {
-            self.mailImage  = UIImage(named: "mail")
-            self.phoneImage = UIImage(named: "call")
+            self.mailImage  = UIImage(named: "mailIcon")
+            self.phoneImage = UIImage(named: "callIcon")
             self.mailButton = UIButton()
         }
         
@@ -221,8 +221,8 @@ class InternPersonCellTests: XCTestCase {
 
     func testIfItDoesSetPhoneButton() throws {
         try given("A generated button and the needed setup") {
-            self.mailImage   = UIImage(named: "mail")
-            self.phoneImage  = UIImage(named: "call")
+            self.mailImage   = UIImage(named: "mailIcon")
+            self.phoneImage  = UIImage(named: "callIcon")
             self.phoneButton = UIButton()
         }
         
@@ -244,8 +244,8 @@ class InternPersonCellTests: XCTestCase {
 
     func testIfItDoesSetButtonsAndImagesForMailAndPhone() throws {
         try given("Generated buttons and the needed setup") {
-            self.mailImage   = UIImage(named: "mail")
-            self.phoneImage  = UIImage(named: "call")
+            self.mailImage   = UIImage(named: "mailIcon")
+            self.phoneImage  = UIImage(named: "callIcon")
             self.phoneButton = UIButton()
             self.mailButton  = UIButton()
         }

@@ -1,5 +1,5 @@
 //
-//  AppStrings.swift
+//  LibraryStrings.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 28/05/20.
@@ -9,10 +9,18 @@ import UIKit
 
 class LibraryStrings {
     //General
-    public static let see_more = localized("see_more")
-    public static let edit     = localized("edit")
-    public static let details  = localized("details")
-    public static let deadline = localized("deadline")
+    public static let see_more    = localized("see_more")
+    public static let edit        = localized("edit")
+    public static let details     = localized("details")
+    public static let deadline    = localized("deadline")
+    public static let description = localized("description")
+    public static let approve     = localized("approve")
+    public static let reprove     = localized("reprove")
+    public static let inspections = localized("inspections")
+    
+    //Place Planning
+    public static let place_planning_sub_place_label  = localized("place_planning.sub_place_label")
+    public static let place_planning_sub_places_label = localized("place_planning.sub_places_label")
     
     //Service Inspection Form Filled Details
     public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")
@@ -36,10 +44,12 @@ class LibraryStrings {
     public static let service_inspection_form_filled_details_out_of_label     = localized("service_inspection_form_filled_details.out_of_label")
 
     //Verified Method Details
-    public static let verified_method_status_not_inspected_label  = localized("verified_method_status.not_inspected_label")
-    public static let verified_method_status_approved_label       = localized("verified_method_status.approved_label")
-    public static let verified_method_status_reproved_label       = localized("verified_method_status.reproved_label")
-    public static let verified_method_status_not_applicable_label = localized("verified_method_status.not_applicable_label")
+    public static let verified_method_status_not_inspected_label     = localized("verified_method_status.not_inspected_label")
+    public static let verified_method_status_approved_label          = localized("verified_method_status.approved_label")
+    public static let verified_method_status_reproved_label          = localized("verified_method_status.reproved_label")
+    public static let verified_method_status_not_applicable_label    = localized("verified_method_status.not_applicable_label")
+    public static let verified_method_details_warning_title_action   = localized("verified_method_details.warning_title_action")
+    public static let verified_method_details_warning_message_action = localized("verified_method_details.warning_message_action")
     
     //Inspection Status
     public static let inspection_status_approved = localized("inspection_status.approved")

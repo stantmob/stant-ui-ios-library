@@ -46,6 +46,7 @@ class MainViewController: UIViewController {
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
         self.addSiffListingCardDemo()
+        self.addMethodDetailDemo()
         self.addItemMethodListingDemo()
         self.addInspectionListingDemo()
     }
@@ -271,6 +272,17 @@ class MainViewController: UIViewController {
                      completion: nil)
     }
 
+    fileprivate func addMethodDetailDemo() {
+        self.scrollView.addButton(title:  "Method Detail Demo",
+                                  action: #selector(goToItemMethodDetailDemo),
+                                  target: self)
+    }
+
+    @objc func goToItemMethodDetailDemo() {
+        self.open(viewController: VerifiedMethodDetailViewController())
+    }
+    
+    
     fileprivate func addItemMethodListingDemo() {
         self.scrollView.addButton(title:  "Item-Method listing demo",
         action: #selector(goToItemMethodListingDemo),
