@@ -28,7 +28,7 @@ class ListingPlacesTests: XCTestCase {
             let cell = tableView?.dequeueReusableCell(withIdentifier: PlacesCell.identifier(),
                                                       for:            IndexPath(row: index, section: 0)) as! PlacesCell
             
-            cell.configureViewFor(delegate:          viewController,
+            cell.configureViewFor(delegate:          self,
                                   index:             index,
                                   status:            placesStatusEnum[index],
                                   placeTitle:        placeTitleList[index],
@@ -64,5 +64,15 @@ class ListingPlacesTests: XCTestCase {
                 XCTAssertNil(cell.rightTapView)
             }
         }
+    }
+}
+
+extension ListingPlacesTests: PlaceCellDidSelectDelegate {
+    func goToSubPlaces(index: Int) {
+        print("Places screen")
+    }
+    
+    func goToServiceInspectionFormFilledScreen() {
+         print("Siff screen")
     }
 }

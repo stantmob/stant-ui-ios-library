@@ -18,25 +18,24 @@ public class DefaultSearchBar: UIView {
     
     var isSearchEnable     = true
     var didTapCancelButton = false
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
+
     public func configureViewWith(delegate: DefaultSearchViewDelegate, image: UIImage, placeholderText: String) {
         self.backgroundColor = .clear
         self.delegate        = delegate
+        self.anchor(size: CGSize(width: 0, height: DefaultSearchBar.searchViewHeight))
         
-        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0,
-                                              width: self.frame.width - 12,
-                                              height: self.frame.height))
+        searchBar      = UISearchBar()
         searchBar?.tag = 1
         guard let searchBar = searchBar else { return }
         self.addSubview(searchBar)
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+        
+        searchBar.anchor(top:      self.topAnchor,
+                         leading:  self.leadingAnchor,
+                         bottom:   self.bottomAnchor,
+                         trailing: self.trailingAnchor,
+                         padding:  UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6))
         
         searchBar.delegate        = self
         searchBar.barTintColor    = .white
@@ -54,7 +53,6 @@ public class DefaultSearchBar: UIView {
         searchTextField.layer.cornerRadius = 4
         UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.systemFont(ofSize: 16)
     }
-    
 }
 
 public protocol DefaultSearchViewDelegate: class {
