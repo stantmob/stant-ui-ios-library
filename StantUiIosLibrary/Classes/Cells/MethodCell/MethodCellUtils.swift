@@ -23,7 +23,7 @@ public enum MethodCellTypeEnum: Int {
         }
     }
     
-    public static  func getStatusFromInt(value: Int) -> MethodCellTypeEnum {
+    public static func getStatusFromInt(value: Int) -> MethodCellTypeEnum {
         switch value {
         case 0:
             return MethodCellTypeEnum.notApplicable

@@ -71,6 +71,11 @@ public class ServiceInspectionFormFilledCardStack: UIStackView {
         
     }
     
+    //To set the shadow, implement the following function on the View Controller that contains the cardStack
+//    override func viewDidLayoutSubviews() {
+//        cardStack?.makeShadow()
+//    }
+    
     public func makeShadow() {
         plannedSiffCard?.layer.applySketchShadow(color: .darkGrayStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
         executedSiffCard?.layer.applySketchShadow(color: .darkGrayStant, alpha: 0.09, x: 0, y: 3, blur: 8, spread: 3)
