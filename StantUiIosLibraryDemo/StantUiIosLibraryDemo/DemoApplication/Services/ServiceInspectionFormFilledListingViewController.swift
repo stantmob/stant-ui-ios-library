@@ -12,12 +12,13 @@ import StantUiIosLibrary
 class ServiceInspectionFormFilledListingViewController: UIViewController {
     var tableView: UITableView?
     
-    let unitMeasurement              = "m²"
-    let beginAt                      = "01/04/2019"
-    let endAt                        = "12/04/2019"
-    let plannedArea:         Float   = 1000.0
-    let totalUsedArea:       Float   = 156.2
-    let navigationBarHeight: CGFloat = 60
+    let unitMeasurement = "m²"
+    let beginAt         = "01/04/2019"
+    let endAt           = "12/04/2019"
+    
+    let planningQuantity:         Float   = 1000.0
+    let approvedMethodPercentage: Float   = 0.6
+    let navigationBarHeight:      CGFloat = 60
     
     let siffStatusList        = (0...3).map{ ServiceInspectionFormFilledCellTypeEnum(rawValue: $0)! }
     let performedQuantityList = (0...3).map{ Float(40) * Float($0 + 1) }
@@ -62,14 +63,14 @@ extension ServiceInspectionFormFilledListingViewController: UITableViewDelegate,
                                                            for:            indexPath)
                 as? ServiceInspectionFormFilledCell else { return UITableViewCell() }
             
-            cell.configureViewFor(status:            siffStatusList[indexPath.row],
-                                  beginAt:           beginAt,
-                                  endAt:             endAt,
-                                  verifiedUnit:      verifiedUnitList[indexPath.row],
-                                  unitMeasurement:   unitMeasurement,
-                                  totalUsedArea:     totalUsedArea,
-                                  performedQuantity: performedQuantityList[indexPath.row],
-                                  plannedArea:       plannedArea)
+            cell.configureViewFor(status:                   siffStatusList[indexPath.row],
+                                  beginAt:                  beginAt,
+                                  endAt:                    endAt,
+                                  verifiedUnit:             verifiedUnitList[indexPath.row],
+                                  unitMeasurement:          unitMeasurement,
+                                  performedQuantity:        performedQuantityList[indexPath.row],
+                                  approvedMethodPercentage: approvedMethodPercentage,
+                                  planningQuantity:         planningQuantity)
             
             return cell
         }

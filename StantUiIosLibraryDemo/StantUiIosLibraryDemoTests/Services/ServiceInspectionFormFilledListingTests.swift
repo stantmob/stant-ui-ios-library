@@ -11,12 +11,13 @@ import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
 class ServiceInspectionFormFilledListingTests: XCTestCase {
-    let unitMeasurement              = "m²"
-    let beginAt                      = "01/04/2019"
-    let endAt                        = "12/04/2019"
-    let plannedArea:         Float   = 1000.0
-    let totalUsedArea:       Float   = 156.2
-    let navigationBarHeight: CGFloat = 60
+    let unitMeasurement = "m²"
+    let beginAt         = "01/04/2019"
+    let endAt           = "12/04/2019"
+    
+    let planningQuantity:         Float   = 1000.0
+    let approvedMethodPercentage: Float   = 0.6
+    let navigationBarHeight:      CGFloat = 60
     
     let siffStatusList        = (0...3).map{ ServiceInspectionFormFilledCellTypeEnum(rawValue: $0)! }
     let performedQuantityList = (0...3).map{ Float(40) * Float($0 + 1) }
@@ -34,14 +35,14 @@ class ServiceInspectionFormFilledListingTests: XCTestCase {
                                                      for:            IndexPath(row: index, section: 0)) as!
                                                      ServiceInspectionFormFilledCell
             
-            cell.configureViewFor(status:            siffStatusList[index],
-                                 beginAt:           beginAt,
-                                 endAt:             endAt,
-                                 verifiedUnit:      verifiedUnitList[index],
-                                 unitMeasurement:   unitMeasurement,
-                                 totalUsedArea:     totalUsedArea,
-                                 performedQuantity: performedQuantityList[index],
-                                 plannedArea:       plannedArea)
+            cell.configureViewFor(status:                   siffStatusList[index],
+                                  beginAt:                  beginAt,
+                                  endAt:                    endAt,
+                                  verifiedUnit:             verifiedUnitList[index],
+                                  unitMeasurement:          unitMeasurement,
+                                  performedQuantity:        performedQuantityList[index],
+                                  approvedMethodPercentage: approvedMethodPercentage,
+                                  planningQuantity:         planningQuantity)
         
             XCTAssertNotNil(cell.headerView)
             XCTAssertNotNil(cell.verifiedUnitLabel)
