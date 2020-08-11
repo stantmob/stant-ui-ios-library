@@ -44,7 +44,7 @@
 //Verified Method Details
 "verified_method_status.not_inspected_label"     = "Not Inspected";
 "verified_method_status.approved_label"          = "Approved";
-"verified_method_status.reproved_label"          = "Repproved";
+"verified_method_status.reproved_label"          = "Reproved";
 "verified_method_status.not_applicable_label"    = "Not Applicable";
 "verified_method_details.warning_title_action"   = "Warning";
 "verified_method_details.warning_message_action" = "The method has the status of “Not Applicable”, to approve or disapprove it disable this function.";

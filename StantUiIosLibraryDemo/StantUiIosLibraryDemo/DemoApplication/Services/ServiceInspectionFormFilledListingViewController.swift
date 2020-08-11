@@ -10,53 +10,37 @@ import Foundation
 import StantUiIosLibrary
 
 class ServiceInspectionFormFilledListingViewController: UIViewController {
-    var serviceInspectionFormFilledTableView: ServiceInspectionFormFilledTableViewWithCollapsedSearchBar?
+    var tableView: UITableView?
     
-    let cardStatus                   = 2
-    let cardPerformedQuantity        = 40.0
-    let cardTotalUsedArea            = 156.2
-    let cardUnitMeasurement          = "m²"
-    let cardVerifiedUnit             = "Unidade Verificada"
-    let cardPlannedArea              = 1000.0
-    let cardBeginAt                  = "01/04/2019"
-    let cardEndAt                    = "12/04/2019"
-    let navigationBarHeight: CGFloat = 60
+    let unitMeasurement = "m²"
+    let beginAt         = "01/04/2019"
+    let endAt           = "12/04/2019"
     
-    var serviceInspectionFormFilledList = [ServiceInspectionFormFilledDto]()
+    let planningQuantity:         Float   = 1000.0
+    let approvedMethodPercentage: Float   = 0.6
+    let navigationBarHeight:      CGFloat = 60
+    
+    let siffStatusList        = (0...3).map{ ServiceInspectionFormFilledCellTypeEnum(rawValue: $0)! }
+    let performedQuantityList = (0...3).map{ Float(40) * Float($0 + 1) }
+    let verifiedUnitList      = (0...3).map{ "Unidade Verificada \($0 + 1)" }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView                = UITableView()
+        guard let tableView      = tableView else { return }
+        tableView.delegate       = self
+        tableView.dataSource     = self
+        tableView.separatorStyle = .none
+        tableView.clipsToBounds  = false 
         
-        for i in 0...3 {
-            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledCellTypeEnum(rawValue: i)!,
-                                                      performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
-                                                      totalUsedArea:     Float(cardTotalUsedArea),
-                                                      unitMeasurement:   cardUnitMeasurement,
-                                                      verifiedUnit:      cardVerifiedUnit + "\(i)",
-                                                      plannedArea:       Float(cardPlannedArea),
-                                                      beginAt:           cardBeginAt,
-                                                      endAt:             cardEndAt)
-            serviceInspectionFormFilledList.append(siff)
-        }
-        
-        serviceInspectionFormFilledTableView = ServiceInspectionFormFilledTableViewWithCollapsedSearchBar(frame: CGRect(x:      0,
-                                                                                                                        y:      navigationBarHeight,
-                                                                                                                        width:  self.view.frame.width,
-                                                                                                                        height: self.view.frame.height - navigationBarHeight))
-        guard let serviceInspectionFormFilledTableView = serviceInspectionFormFilledTableView else { return }
-        self.view.addSubview(serviceInspectionFormFilledTableView)
-        serviceInspectionFormFilledTableView.anchor(top:      self.view.topAnchor,
-                                                    leading:  self.view.leadingAnchor,
-                                                    bottom:   self.view.bottomAnchor,
-                                                    trailing: self.view.trailingAnchor,
-                                                    padding:  UIEdgeInsets(top:    navigationBarHeight,
-                                                                           left:   0,
-                                                                           bottom: 0,
-                                                                           right:  0))
-        serviceInspectionFormFilledTableView.configureViewWith(serviceInpsectionFormFilledList: serviceInspectionFormFilledList,
-                                                               searchBarIcon:                   UIImage(named: "search") ?? UIImage(),
-                                                               searchBarPlaceholder:            "Search",
-                                                               tableViewDelegate:               self)
+        self.view.addSubview(tableView)
+        tableView.anchor(top:      self.view.topAnchor,
+                         leading:  self.view.leadingAnchor,
+                         bottom:   self.view.bottomAnchor,
+                         trailing: self.view.trailingAnchor,
+                         padding:  UIEdgeInsets(top: navigationBarHeight, left: 16, bottom: 0, right: 16))
+        tableView.register(ServiceInspectionFormFilledCell.self,
+                           forCellReuseIdentifier: ServiceInspectionFormFilledCell.identifier())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +49,37 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
     }
 }
 
-extension ServiceInspectionFormFilledListingViewController: ServiceInspectionFormFilledTableViewDidSelectDelegate {
+extension ServiceInspectionFormFilledListingViewController: UITableViewDelegate, UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return siffStatusList.count
+        }
+        
+        public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return ServiceInspectionFormFilledCell.cellHeight
+        }
+
+        public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ServiceInspectionFormFilledCell.identifier(),
+                                                           for:            indexPath)
+                as? ServiceInspectionFormFilledCell else { return UITableViewCell() }
+            
+            cell.configureViewFor(status:                   siffStatusList[indexPath.row],
+                                  beginAt:                  beginAt,
+                                  endAt:                    endAt,
+                                  verifiedUnit:             verifiedUnitList[indexPath.row],
+                                  unitMeasurement:          unitMeasurement,
+                                  performedQuantity:        performedQuantityList[indexPath.row],
+                                  approvedMethodPercentage: approvedMethodPercentage,
+                                  planningQuantity:         planningQuantity)
+            
+            return cell
+        }
+        
+        public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            self.didClickOnTableViewCellWith(index: indexPath.row)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    
     func didClickOnTableViewCellWith(index: Int) {
         print("Clicked on cell \(index)")
     }

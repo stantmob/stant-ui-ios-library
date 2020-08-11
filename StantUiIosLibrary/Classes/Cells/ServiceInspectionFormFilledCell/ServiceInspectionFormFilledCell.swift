@@ -36,23 +36,32 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         bounds      = bounds.inset(by: padding)
     }
     
-    public func configureViewFor(serviceInspectionFormFilledDto: ServiceInspectionFormFilledDto) {
+    public func configureViewFor(status:                   ServiceInspectionFormFilledCellTypeEnum,
+                                 beginAt:                  String,
+                                 endAt:                    String,
+                                 verifiedUnit:             String,
+                                 unitMeasurement:          String,
+                                 performedQuantity:        Float,
+                                 approvedMethodPercentage: Float,
+                                 planningQuantity:         Float) {
         self.removeSubviews()
         self.addShadow()
-        self.configureHeaderView(status:  serviceInspectionFormFilledDto.status,
-                                 beginAt: serviceInspectionFormFilledDto.beginAt,
-                                 endAt:   serviceInspectionFormFilledDto.endAt)
-        self.configureVerifiedUnitLabel(verifiedUnit: serviceInspectionFormFilledDto.verifiedUnit)
-        self.configureProgressBar(status:            serviceInspectionFormFilledDto.status,
-                                  totalUsedArea:     serviceInspectionFormFilledDto.totalUsedArea,
-                                  performedQuantity: serviceInspectionFormFilledDto.performedQuantity)
-        self.configurePerformedPercentageView(status:            serviceInspectionFormFilledDto.status,
-                                              totalUsedArea:     serviceInspectionFormFilledDto.totalUsedArea,
-                                              performedQuantity: serviceInspectionFormFilledDto.performedQuantity)
-        self.configureQuantityLabel(totalUsedArea:   serviceInspectionFormFilledDto.totalUsedArea,
-                                    unitMeasurement: serviceInspectionFormFilledDto.unitMeasurement)
-        self.configurePercentagePlannedView(totalUsedArea: serviceInspectionFormFilledDto.totalUsedArea,
-                                            plannedArea:   serviceInspectionFormFilledDto.plannedArea)
+        
+        self.configureHeaderView(status:  status,
+                                 beginAt: beginAt,
+                                 endAt:   endAt)
+        
+        self.configureVerifiedUnitLabel(verifiedUnit: verifiedUnit)
+        
+        self.configureProgressBar(status:                   status,
+                                  approvedMethodPercentage: approvedMethodPercentage)
+        
+        self.configurePerformedPercentageView(status:                   status,
+                                              approvedMethodPercentage: approvedMethodPercentage)
+        
+        self.configureQuantityLabel(performedQuantity: performedQuantity, unitMeasurement: unitMeasurement)
+        
+        self.configurePercentagePlannedView(performedQuantity: performedQuantity, planningQuantity: planningQuantity)
         
         self.selectionStyle = .none
     }
@@ -69,6 +78,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
     fileprivate func configureHeaderView(status:  ServiceInspectionFormFilledCellTypeEnum,
                                          beginAt: String,
                                          endAt:   String) {
+        
         headerView           = ServiceInspectionFormFilledCellHeader()
         guard let headerView = headerView else { return }
         
@@ -97,10 +107,9 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                  leading: self.leadingAnchor,
                                  padding: UIEdgeInsets(top: 38, left: 14, bottom: 0, right: 0))
     }
-    
-    fileprivate func configureProgressBar(status:            ServiceInspectionFormFilledCellTypeEnum,
-                                          totalUsedArea:     Float,
-                                          performedQuantity: Float) {
+     
+    fileprivate func configureProgressBar(status:                   ServiceInspectionFormFilledCellTypeEnum,
+                                          approvedMethodPercentage: Float) {
         
         progressBar                    = SimpleProgressBar()
         guard let progressBar          = progressBar else { return }
@@ -114,13 +123,13 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                            size:     CGSize(width: 0, height: 4))
         
         progressBar.configure()
-        progressBar.setPercentage(percentage:   CGFloat(performedQuantity / totalUsedArea),
-                                  color:        status.colorValue())
+        progressBar.setPercentage(percentage: CGFloat(approvedMethodPercentage),
+                                  color:      status.colorValue())
     }
     
-    fileprivate func configurePerformedPercentageView(status:            ServiceInspectionFormFilledCellTypeEnum,
-                                                      totalUsedArea:     Float,
-                                                      performedQuantity: Float) {
+    fileprivate func configurePerformedPercentageView(status:                   ServiceInspectionFormFilledCellTypeEnum,
+                                                      approvedMethodPercentage: Float) {
+        
         performedPercentageView                    = UIView()
         guard let performedPercentageView          = performedPercentageView else { return }
         performedPercentageView.backgroundColor    = status.colorValue()
@@ -134,7 +143,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                        size:    CGSize(width: 42, height: 18))
         
         let percentageLabel           = UILabel()
-        var percentage                = performedQuantity / totalUsedArea * 100
+        var percentage                = approvedMethodPercentage * 100
         percentage                    = percentage <= 100 ? percentage : 100
         percentageLabel.text          = "\(percentage.cleanValue)%"
         percentageLabel.textColor     = .white
@@ -146,10 +155,11 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
         percentageLabel.fillSuperView()
     }
     
-    fileprivate func configureQuantityLabel(totalUsedArea: Float, unitMeasurement: String) {
+    fileprivate func configureQuantityLabel(performedQuantity: Float,
+                                            unitMeasurement:   String) {
         quantityLabel           = UILabel()
         guard let quantityLabel = quantityLabel else { return }
-        quantityLabel.text      = "\(LibraryStrings.service_inspection_form_filled_details_out_of_label) \(totalUsedArea) \(unitMeasurement)"
+        quantityLabel.text      = "\(LibraryStrings.service_inspection_form_filled_details_out_of_label) \(performedQuantity) \(unitMeasurement)"
         quantityLabel.textColor = .darkGrayStant
         quantityLabel.font      = .systemFont(ofSize: 12)
 
@@ -160,7 +170,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                              padding: UIEdgeInsets(top: 5, left: 3, bottom: 0, right: 0))
     }
     
-    func configurePercentagePlannedView(totalUsedArea: Float, plannedArea: Float) {
+    func configurePercentagePlannedView(performedQuantity: Float, planningQuantity: Float) {
         percentagePlannedView                    = UIView()
         guard let percentagePlannedView          = percentagePlannedView else { return }
         percentagePlannedView.backgroundColor    = .lightGrayStant
@@ -175,7 +185,7 @@ public class ServiceInspectionFormFilledCell: UITableViewCell {
                                      size:    CGSize(width: 120,  height: 18))
         
         let percentagePlannedLabel = UILabel()
-        let percentagePlanned      = totalUsedArea / plannedArea * 100
+        let percentagePlanned      = performedQuantity / planningQuantity * 100
         
         percentagePlannedLabel.text          = "\(percentagePlanned.cleanValue)% \(LibraryStrings.service_inspection_form_filled_details_of_planned_label)"
         percentagePlannedLabel.textColor     = .darkGrayStant

@@ -7,35 +7,6 @@
 
 import UIKit
 
-public struct ServiceInspectionFormFilledDto {
-    let status:             ServiceInspectionFormFilledCellTypeEnum
-    let performedQuantity:  Float
-    let totalUsedArea:      Float
-    let unitMeasurement:    String
-    let verifiedUnit:       String
-    let plannedArea:        Float
-    let beginAt:            String
-    let endAt:              String
-    
-    public init(status:            ServiceInspectionFormFilledCellTypeEnum,
-                performedQuantity: Float,
-                totalUsedArea:     Float,
-                unitMeasurement:   String,
-                verifiedUnit:      String,
-                plannedArea:       Float,
-                beginAt:           String,
-                endAt:             String) {
-        self.status            = status
-        self.performedQuantity = performedQuantity
-        self.totalUsedArea     = totalUsedArea
-        self.unitMeasurement   = unitMeasurement
-        self.verifiedUnit      = verifiedUnit
-        self.plannedArea       = plannedArea
-        self.beginAt           = beginAt
-        self.endAt             = endAt
-    }
-}
-
 public enum ServiceInspectionFormFilledCellTypeEnum: Int {
     case progress = 0, finished = 1, approved = 2, late = 3
     
@@ -49,6 +20,19 @@ public enum ServiceInspectionFormFilledCellTypeEnum: Int {
             return LibraryStrings.service_inspection_form_filled_details_approved_label
         case .late:
             return LibraryStrings.service_inspection_form_filled_details_late_label
+        }
+    }
+    
+    public static func getStatusFromInt(value: Int) -> ServiceInspectionFormFilledCellTypeEnum {
+        switch value {
+        case 0:
+            return ServiceInspectionFormFilledCellTypeEnum.progress
+        case 1:
+            return ServiceInspectionFormFilledCellTypeEnum.finished
+        case 2:
+            return ServiceInspectionFormFilledCellTypeEnum.approved
+        default:
+            return ServiceInspectionFormFilledCellTypeEnum.late
         }
     }
     

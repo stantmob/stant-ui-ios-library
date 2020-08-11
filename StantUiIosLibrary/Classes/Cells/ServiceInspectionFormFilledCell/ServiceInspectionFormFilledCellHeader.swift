@@ -28,8 +28,8 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     }
     
     fileprivate func configureStatusBadge(status: ServiceInspectionFormFilledCellTypeEnum, color: UIColor) {
-        statusBadge               = CellBadge()
-        guard let statusBadge     = statusBadge else { return }
+        statusBadge           = CellBadge()
+        guard let statusBadge = statusBadge else { return }
 
         self.addSubview(statusBadge)
         statusBadge.anchor(top:     self.topAnchor,
@@ -67,12 +67,8 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         self.addSubview(dateView)
         dateView.anchor(top:      self.topAnchor,
                         trailing: self.trailingAnchor,
-                        padding:  UIEdgeInsets(top:   4,
-                                               left:   0,
-                                               bottom: 0,
-                                               right:  14),
-                        size:     CGSize(width:  150,
-                                         height: 22))
+                        padding:  UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 14),
+                        size:     CGSize(width: 152, height: 22))
         
         configureDateLabels(beginAt: beginAt, endAt: endAt)
     }
@@ -88,10 +84,7 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         beginAtLabel.anchor(top:     dateView?.topAnchor,
                             leading: dateView?.leadingAnchor,
                             bottom:  dateView?.bottomAnchor,
-                            padding: UIEdgeInsets(top:    0,
-                                                  left:   4,
-                                                  bottom: 0,
-                                                  right:  0))
+                            padding: UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0))
         
         separatorView                    = UIView()
         guard let separatorView          = separatorView else { return }
@@ -101,12 +94,8 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         dateView?.addSubview(separatorView)
         separatorView.anchor(top:     dateView?.topAnchor,
                              leading: beginAtLabel.trailingAnchor,
-                             padding: UIEdgeInsets(top:    9,
-                                                   left:   5,
-                                                   bottom: 0,
-                                                   right:  0),
-                             size:    CGSize(width:  4,
-                                             height: 4))
+                             padding: UIEdgeInsets(top: 9, left: 4, bottom: 0, right: 0),
+                             size:    CGSize(width: 4, height: 4))
         
         endAtLabel           = UILabel()
         guard let endAtLabel = endAtLabel else { return }
@@ -116,11 +105,8 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
         
         dateView?.addSubview(endAtLabel)
         endAtLabel.anchor(top:      dateView?.topAnchor,
+                          leading:  separatorView.trailingAnchor,
                           bottom:   dateView?.bottomAnchor,
-                          trailing: dateView?.trailingAnchor,
-                          padding:  UIEdgeInsets(top:   0,
-                                                left:   0,
-                                                bottom: 0,
-                                                right:  4))
+                          padding:  UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0))
     }
 }
