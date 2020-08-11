@@ -72,7 +72,7 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
                                                 mailMessage:           "Mail",
                                                 supportWarningMessage: "Warning Message",
                                                 makeCall:              "Make call                 ",
-                                                sendEmail:             "Send Mail                 ",
+                                                sendMail:              "Send Mail                 ",
                                                 warningMessage:        "Warning Message",
                                                 guidance:              "Guidance                  ",
                                                 cancel:                "Cancel")
