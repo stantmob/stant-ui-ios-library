@@ -10,8 +10,7 @@ import Foundation
 import StantUiIosLibrary
 
 class ServiceInspectionFormFilledListingViewController: UIViewController {
-    
-    let navigationBarHeight: CGFloat = 60
+    var serviceInspectionFormFilledTableView: ServiceInspectionFormFilledTableViewWithCollapsedSearchBar?
     
     let cardStatus                   = 2
     let cardPerformedQuantity        = 40.0
@@ -21,23 +20,22 @@ class ServiceInspectionFormFilledListingViewController: UIViewController {
     let cardPlannedArea              = 1000.0
     let cardBeginAt                  = "01/04/2019"
     let cardEndAt                    = "12/04/2019"
-    var serviceInspectionFormFilledTableView: ServiceInspectionFormFilledTableViewWithCollapsedSearchBar?
-     
+    let navigationBarHeight: CGFloat = 60
     
-    var serviceInspectionFormFilledList = [ServiceInspectionFormFilled]()
+    var serviceInspectionFormFilledList = [ServiceInspectionFormFilledDto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for i in 0...3 {
-            let siff = ServiceInspectionFormFilled(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
-                                                   performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
-                                                   totalUsedArea:     Float(cardTotalUsedArea),
-                                                   unitMeasurement:   cardUnitMeasurement,
-                                                   verifiedUnit:      cardVerifiedUnit + "\(i)",
-                                                   plannedArea:       Float(cardPlannedArea),
-                                                   beginAt:           cardBeginAt,
-                                                   endAt:             cardEndAt)
+            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledCellTypeEnum(rawValue: i)!,
+                                                      performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
+                                                      totalUsedArea:     Float(cardTotalUsedArea),
+                                                      unitMeasurement:   cardUnitMeasurement,
+                                                      verifiedUnit:      cardVerifiedUnit + "\(i)",
+                                                      plannedArea:       Float(cardPlannedArea),
+                                                      beginAt:           cardBeginAt,
+                                                      endAt:             cardEndAt)
             serviceInspectionFormFilledList.append(siff)
         }
         

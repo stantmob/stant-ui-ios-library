@@ -12,7 +12,7 @@ import StantUiIosLibrary
 
 class ServiceInspectionFormFilledListingTests: XCTestCase {
     
-    var serviceInspectionFormFilledList = [ServiceInspectionFormFilled]()
+    var serviceInspectionFormFilledList = [ServiceInspectionFormFilledDto]()
     
     let cardStatus            = 2
     let cardPerformedQuantity = 40.0
@@ -29,14 +29,14 @@ class ServiceInspectionFormFilledListingTests: XCTestCase {
         let serviceInspectionFormFilledTableView = viewController.serviceInspectionFormFilledTableView
         
         for i in 0...3 {
-            let siff = ServiceInspectionFormFilled(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
-                                                   performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
-                                                   totalUsedArea:     Float(cardTotalUsedArea),
-                                                   unitMeasurement:   cardUnitMeasurement,
-                                                   verifiedUnit:      cardVerifiedUnit + "\(i)",
-                                                   plannedArea:       Float(cardPlannedArea),
-                                                   beginAt:           cardBeginAt,
-                                                   endAt:             cardEndAt)
+            let siff = ServiceInspectionFormFilledDto(status:            ServiceInspectionFormFilledCellTypeEnum(rawValue: i)!,
+                                                      performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
+                                                      totalUsedArea:     Float(cardTotalUsedArea),
+                                                      unitMeasurement:   cardUnitMeasurement,
+                                                      verifiedUnit:      cardVerifiedUnit + "\(i)",
+                                                      plannedArea:       Float(cardPlannedArea),
+                                                      beginAt:           cardBeginAt,
+                                                      endAt:             cardEndAt)
             serviceInspectionFormFilledList.append(siff)
         }
         
@@ -49,7 +49,7 @@ class ServiceInspectionFormFilledListingTests: XCTestCase {
             let cell = serviceInspectionFormFilledTableView?.tableView?.dequeueReusableCell(withIdentifier: ServiceInspectionFormFilledCell.identifier(),
                                                                                             for:            IndexPath(row: index, section: 0)) as! ServiceInspectionFormFilledCell
             
-            cell.configureViewFor(serviceInspectionFormFilled: serviceInspectionFormFilledList[index])
+            cell.configureViewFor(serviceInspectionFormFilledDto: serviceInspectionFormFilledList[index])
         
             XCTAssertNotNil(cell.headerView)
             XCTAssertNotNil(cell.verifiedUnitLabel)

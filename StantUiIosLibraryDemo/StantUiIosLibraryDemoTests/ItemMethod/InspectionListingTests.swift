@@ -11,15 +11,15 @@ import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
 class InspectionListingTests: XCTestCase {
-    public var groupedInspectionList                = [(key: String, value: [InspectionCellData])]()
-    public let severityList: [Int]                  = [5, 3, 1, 0, 4, 3, 2, 0, 3, 5]
-    public let descriptionList                      = (0..<10).map{"My really long description \($0 + 1)!!! My really long description \($0 + 1)!!!"}
-    public let statusList:   [InspectionStatusEnum] = [.reproved, .approved, .reproved, .approved, .reproved,
-                                                       .approved, .reproved, .approved, .reproved, .approved]
-    public let createdAtList                        = ["06/01/2020", "25/01/2020", "25/01/2020", "07/01/2020", "18/01/2020",
-                                                       "06/01/2020", "18/01/2020", "25/01/2020", "06/01/2020", "03/01/2020"]
-    public let deadlineList                         = ["25/01/2020", "30/01/2020", "19/01/2020", "21/01/2020", "30/01/2020",
-                                                       "28/01/2020", "03/01/2020", "31/01/2020", "16/01/2020", "01/01/2020"]
+    public var groupedInspectionList                  = [(key: String, value: [InspectionCellData])]()
+    public let severityList: [Int]                    = [5, 3, 1, 0, 4, 3, 2, 0, 3, 5]
+    public let descriptionList                        = (0..<10).map{"My really long description \($0 + 1)!!! My really long description \($0 + 1)!!!"}
+    public let statusList:   [InspectionCellTypeEnum] = [.reproved, .approved, .reproved, .approved, .reproved,
+                                                         .approved, .reproved, .approved, .reproved, .approved]
+    public let createdAtList                          = ["06/01/2020", "25/01/2020", "25/01/2020", "07/01/2020", "18/01/2020",
+                                                         "06/01/2020", "18/01/2020", "25/01/2020", "06/01/2020", "03/01/2020"]
+    public let deadlineList                           = ["25/01/2020", "30/01/2020", "19/01/2020", "21/01/2020", "30/01/2020",
+                                                         "28/01/2020", "03/01/2020", "31/01/2020", "16/01/2020", "01/01/2020"]
     
     let viewController = InspectionListingViewController()
     

@@ -100,13 +100,6 @@ public class ServiceInspectionFormFilledCard: UIView {
         quantityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
-    public func makeShadow() {
-        self.layer.shadowPath    = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shadowRadius  = 4
-        self.layer.shadowOffset  = CGSize(width: 0, height: 3)
-        self.layer.shadowOpacity = 0.1
-    }
-    
     public func setLabels(executedPercentage: Float,
                           quantity:           Float,
                           measurementUnit:    String,

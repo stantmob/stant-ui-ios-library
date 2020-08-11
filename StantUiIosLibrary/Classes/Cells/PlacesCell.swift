@@ -138,8 +138,8 @@ public class PlacesCell: UITableViewCell {
         subPlacesLabel.textColor = .darkGrayStant
         subPlacesLabel.font      = .systemFont(ofSize: 12)
         
-        let subPlaceText    = quantitySubPlaces == 1 ? "\(quantitySubPlaces) \(AppStrings.place_planning_sub_place_label)" :
-                              "\(quantitySubPlaces) \(AppStrings.place_planning_sub_places_label)"
+        let subPlaceText    = quantitySubPlaces == 1 ? "\(quantitySubPlaces) \(LibraryStrings.place_planning_sub_place_label)" :
+                              "\(quantitySubPlaces) \(LibraryStrings.place_planning_sub_places_label)"
         subPlacesLabel.text = subPlaceText
         
         self.addSubview(subPlacesLabel)

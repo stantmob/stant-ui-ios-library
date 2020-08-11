@@ -10,18 +10,18 @@ import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
-class ItemMethodListingTests: XCTestCase {
-    public let statusList: [ItemMethodEnum]  = [.approved, .reproved, .notInspected,
-                                                .approved, .reproved, .notInspected,
-                                                .approved, .reproved, .notInspected,
-                                                .approved, .reproved, .notInspected,
-                                                .approved, .reproved, .notInspected]
-    public let hasReprovedMethodList: [Bool] = (1...15).map { index in return index % 2 == 0 }
-    public var isExpandedList:        [Bool] = (1...15).map { _ in false }
+class ItemListingTests: XCTestCase {
+    public let statusList:            [ItemCellTypeEnum]  = [.approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled,
+                                                             .approved, .reproved, .notFilled]
+    public let hasReprovedMethodList: [Bool]      = (1...15).map { index in return index % 2 == 0 }
+    public var isExpandedList:        [Bool]      = (1...15).map { _ in false }
     
     public let observationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget risus in urna imperdiet sagittis ut vel quam. Fusce sagittis nec nibh ac pulvinar. Nunc aliquam lorem a mauris volutpat, ornare ultricies urna laoreet. Morbi vitae blandit velit. Nam eleifend nec tortor non convallis."
     
-    let viewController = ItemMethodListingViewController()
+    let viewController = ItemListingViewController()
     
     func testInitialState() {
         viewController.loadViewIfNeeded()
@@ -31,8 +31,8 @@ class ItemMethodListingTests: XCTestCase {
         guard let tableView = viewController.tableView else { return }
         
         for index in statusList.indices {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemMethodHeaderView.identifier())
-                         as! ItemMethodHeaderView
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+                         as! ItemHeaderView
             
             header.configure(delegate:          viewController,
                              section:           index,
@@ -54,8 +54,8 @@ class ItemMethodListingTests: XCTestCase {
         guard let tableView = viewController.tableView else { return }
         
         for index in statusList.indices {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemMethodHeaderView.identifier())
-                         as! ItemMethodHeaderView
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ItemHeaderView.identifier())
+                         as! ItemHeaderView
             
             header.configure(delegate:          viewController,
                              section:           index,
@@ -66,7 +66,7 @@ class ItemMethodListingTests: XCTestCase {
             
             XCTAssertEqual(tableView.numberOfRows(inSection: index), 0)
             viewController.toggleCollapse(section: index)
-            XCTAssertEqual(tableView.numberOfRows(inSection: index), 1)
+            XCTAssertEqual(tableView.numberOfRows(inSection: index), 5)
             viewController.toggleCollapse(section: index)
             XCTAssertEqual(tableView.numberOfRows(inSection: index), 0)
         }

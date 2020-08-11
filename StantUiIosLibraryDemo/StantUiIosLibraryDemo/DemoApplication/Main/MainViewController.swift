@@ -46,9 +46,8 @@ class MainViewController: UIViewController {
         self.addResponsibleScreenDemo()
         self.addServiceInspectionFormFilledDetailMenuDemo()
         self.addSiffListingCardDemo()
+        self.addMethodDetailDemo()
         self.addItemMethodListingDemo()
-        self.addVerifiedMethodListingDemo()
-        self.addMethodDetailCardDemo()
         self.addInspectionListingDemo()
     }
     
@@ -209,7 +208,7 @@ class MainViewController: UIViewController {
     }
 
     fileprivate func addSiffListingCardDemo() {
-        self.scrollView.addButton(title:  "Siff Listing",
+        self.scrollView.addButton(title:  "SIFF Listing demo",
                                   action: #selector(goToSiffListingCardDemo),
                                   target: self)
     }
@@ -273,42 +272,33 @@ class MainViewController: UIViewController {
                      completion: nil)
     }
 
+    fileprivate func addMethodDetailDemo() {
+        self.scrollView.addButton(title:  "Method Detail Demo",
+                                  action: #selector(goToItemMethodDetailDemo),
+                                  target: self)
+    }
+
+    @objc func goToItemMethodDetailDemo() {
+        self.open(viewController: VerifiedMethodDetailViewController())
+    }
+    
+    
     fileprivate func addItemMethodListingDemo() {
-        self.scrollView.addButton(title:  "Item listing demo",
+        self.scrollView.addButton(title:  "Item-Method listing demo",
         action: #selector(goToItemMethodListingDemo),
         target: self)
     }
 
     @objc func goToItemMethodListingDemo() {
-        self.open(viewController: ItemMethodListingViewController())
+        self.open(viewController: ItemListingViewController())
     }
-
-    fileprivate func addVerifiedMethodListingDemo() {
-        self.scrollView.addButton(title:  "Method listing demo",
-        action: #selector(goToVerifiedMethodListingDemo),
-        target: self)
-    }
-
-    @objc func goToVerifiedMethodListingDemo() {
-        self.open(viewController: VerifiedMethodListingViewController())
-    }
-
-    fileprivate func addMethodDetailCardDemo() {
-        self.scrollView.addButton(title:  "Method Detail Demo",
-                                  action: #selector(goToMethodDetailCardDemo),
-                                  target: self)
-    }
-
-    @objc func goToMethodDetailCardDemo() {
-        self.open(viewController: VerifiedMethodDetailViewController())
-    }
-
+    
     fileprivate func addInspectionListingDemo() {
         self.scrollView.addButton(title:  "Inspection listing demo",
         action: #selector(goToInspectionListingDemo),
         target: self)
     }
-
+    
     @objc func goToInspectionListingDemo() {
         self.open(viewController: InspectionListingViewController())
     }

@@ -7,10 +7,14 @@
 */
 
 //General
-"see_more" = "See more";
-"edit"     = "Edit";
-"details"  = "Details";
-"deadline" = "Deadline";
+"see_more"    = "See more";
+"edit"        = "Edit";
+"details"     = "Details";
+"deadline"    = "Deadline";
+"description" = "Description";
+"approve"     = "Approve";
+"reprove"     = "Reprove";
+"inspections" = "Inspections";
 
 //Place Planning
 "place_planning.sub_place_label"  = "Subplace";
@@ -37,16 +41,13 @@
 "service_inspection_form_filled_details.of_planned_label" = "of Planned";
 "service_inspection_form_filled_details.out_of_label"     = "out of";
 
- //Verified Method Details
-"verified_method_details.description_label"      = "Description";
-"verified_method_details.not_applicable_label"   = "Not Applicable";
-"verified_method_details.inspections_label"      = "Inspections";
-"verified_method_details.approved_title_button"  = "Approve";
-"verified_method_details.reproved_title_button"  = "Reproved";
+//Verified Method Details
+"verified_method_status.not_inspected_label"     = "Not Inspected";
+"verified_method_status.approved_label"          = "Approved";
+"verified_method_status.reproved_label"          = "Repproved";
+"verified_method_status.not_applicable_label"    = "Not Applicable";
 "verified_method_details.warning_title_action"   = "Warning";
 "verified_method_details.warning_message_action" = "The method has the status of “Not Applicable”, to approve or disapprove it disable this function.";
-"verified_method_details.warning_button_ok"      = "Ok";
-
 
 //Inspection Status
 "inspection_status.approved" = "Approved";

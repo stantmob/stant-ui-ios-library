@@ -53,7 +53,7 @@ public class VerifiedMethodDetailView: UIView {
         guard let descriptionLabel       = descriptionLabel else { return }
         descriptionLabel.backgroundColor = .white
         descriptionLabel.textColor       = .darkStant
-        descriptionLabel.text            = AppStrings.verified_method_details_description_label
+        descriptionLabel.text            = LibraryStrings.description
         descriptionLabel.font            = .systemFont(ofSize: 16)
         
         self.addSubview(descriptionLabel)
@@ -139,7 +139,7 @@ public class VerifiedMethodDetailView: UIView {
         guard let notApplicableLabel       = notApplicableLabel else { return }
         notApplicableLabel.backgroundColor = .white
         notApplicableLabel.textColor       = .darkStant
-        notApplicableLabel.text            = AppStrings.verified_method_details_not_applicable_label
+        notApplicableLabel.text            = LibraryStrings.verified_method_status_not_applicable_label
         notApplicableLabel.font            = .systemFont(ofSize: 16)
         
         self.addSubview(notApplicableLabel)
@@ -188,7 +188,7 @@ public class VerifiedMethodDetailView: UIView {
                                              height: 50))
         
         approveButton.addTarget(delegate, action: #selector(delegate?.goToApproveVerifiedMethod), for: .touchUpInside)
-        approveButton.setTitle(AppStrings.verified_method_details_approved_title_button.uppercased(), for: .normal)
+        approveButton.setTitle(LibraryStrings.approve.uppercased(), for: .normal)
         approveButton.setTitleColor(.white, for: .normal)
         
         makeShadow(button: approveButton)
@@ -212,7 +212,7 @@ public class VerifiedMethodDetailView: UIView {
                                               height: 50))
         
         reproveButton.addTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
-        reproveButton.setTitle(AppStrings.verified_method_details_reproved_title_button.uppercased(), for: .normal)
+        reproveButton.setTitle(LibraryStrings.reprove.uppercased(), for: .normal)
         reproveButton.setTitleColor(.white, for: .normal)
         
         makeShadow(button: reproveButton)
@@ -223,7 +223,7 @@ public class VerifiedMethodDetailView: UIView {
         guard let inspectionLabel       = inspectionLabel else { return }
         inspectionLabel.backgroundColor = .white
         inspectionLabel.font            = .systemFont(ofSize: 12, weight: .bold)
-        inspectionLabel.text            = AppStrings.verified_method_details_inspections_label
+        inspectionLabel.text            = LibraryStrings.inspections
         inspectionLabel.textColor       = .darkGrayStant
         inspectionLabel.textAlignment   = .center
         
@@ -258,11 +258,11 @@ public class VerifiedMethodDetailView: UIView {
     }
     
     @objc func warningAction() {
-        let alert = UIAlertController(title:          AppStrings.verified_method_details_warning_title_action,
-                                      message:        AppStrings.verified_method_details_warning_message_action,
+        let alert = UIAlertController(title:          LibraryStrings.verified_method_details_warning_title_action,
+                                      message:        LibraryStrings.verified_method_details_warning_message_action,
                                       preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title:   AppStrings.verified_method_details_warning_button_ok ,
+            alert.addAction(UIAlertAction(title:   "Ok",
                                           style:   .default,
                                           handler: nil))
             

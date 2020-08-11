@@ -21,7 +21,7 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
     var searchOnTableView    = String()
     var currentSearch        = ""
     
-    public var serviceInspectionFormFilledList = [ServiceInspectionFormFilled]()
+    public var serviceInspectionFormFilledList = [ServiceInspectionFormFilledDto]()
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,7 +31,7 @@ public class ServiceInspectionFormFilledTableViewWithCollapsedSearchBar : UIView
         super.init(frame: frame)
     }
     
-    public func configureViewWith(serviceInpsectionFormFilledList: [ServiceInspectionFormFilled],
+    public func configureViewWith(serviceInpsectionFormFilledList: [ServiceInspectionFormFilledDto],
                                   searchBarIcon:                   UIImage,
                                   searchBarPlaceholder:            String,
                                   tableViewDelegate:               ServiceInspectionFormFilledTableViewDidSelectDelegate){

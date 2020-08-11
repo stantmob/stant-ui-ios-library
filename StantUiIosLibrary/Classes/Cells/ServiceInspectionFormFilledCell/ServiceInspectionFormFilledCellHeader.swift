@@ -15,7 +15,7 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
     public var separatorView: UIView?
     public var endAtLabel:    UILabel?
 
-    public func configure(status:  ServiceInspectionFormFilledStatusEnum,
+    public func configure(status:  ServiceInspectionFormFilledCellTypeEnum,
                           beginAt: String,
                           endAt:   String,
                           color:   UIColor) {
@@ -27,7 +27,7 @@ public class ServiceInspectionFormFilledCellHeader: UIView {
                                endAt:   endAt)
     }
     
-    fileprivate func configureStatusBadge(status: ServiceInspectionFormFilledStatusEnum, color: UIColor) {
+    fileprivate func configureStatusBadge(status: ServiceInspectionFormFilledCellTypeEnum, color: UIColor) {
         statusBadge               = CellBadge()
         guard let statusBadge     = statusBadge else { return }
 

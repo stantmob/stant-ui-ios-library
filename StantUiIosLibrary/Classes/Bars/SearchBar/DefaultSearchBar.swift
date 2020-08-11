@@ -50,7 +50,7 @@ public class DefaultSearchBar: UIView {
         
         searchTextField.leftView           = imageView
         searchTextField.layer.borderWidth  = 2.0
-        searchTextField.layer.borderColor  = UIColor.veryLightGrayStant.cgColor
+        searchTextField.layer.borderColor  = UIColor.iceGrayStant.cgColor
         searchTextField.layer.cornerRadius = 4
         UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.systemFont(ofSize: 16)
     }

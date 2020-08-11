@@ -1,5 +1,5 @@
 //
-//  AppStrings.swift
+//  LibraryStrings.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 28/05/20.
@@ -7,17 +7,21 @@
 
 import UIKit
 
-class AppStrings {
+class LibraryStrings {
     //General
-    public static let see_more = localized("see_more")
-    public static let edit     = localized("edit")
-    public static let details  = localized("details")
-    public static let deadline = localized("deadline")
-
+    public static let see_more    = localized("see_more")
+    public static let edit        = localized("edit")
+    public static let details     = localized("details")
+    public static let deadline    = localized("deadline")
+    public static let description = localized("description")
+    public static let approve     = localized("approve")
+    public static let reprove     = localized("reprove")
+    public static let inspections = localized("inspections")
+    
     //Place Planning
     public static let place_planning_sub_place_label  = localized("place_planning.sub_place_label")
     public static let place_planning_sub_places_label = localized("place_planning.sub_places_label")
-
+    
     //Service Inspection Form Filled Details
     public static let service_inspection_form_filled_details_responsible = localized("service_inspection_form_filled_details.responsible")
     public static let service_inspection_form_filled_details_finalizer   = localized("service_inspection_form_filled_details.finalizer")
@@ -38,22 +42,15 @@ class AppStrings {
     public static let service_inspection_form_filled_details_late_label       = localized("service_inspection_form_filled_details.late_label")
     public static let service_inspection_form_filled_details_of_planned_label = localized("service_inspection_form_filled_details.of_planned_label")
     public static let service_inspection_form_filled_details_out_of_label     = localized("service_inspection_form_filled_details.out_of_label")
-    
+
     //Verified Method Details
-    public static let verified_method_details_description_label      = localized("verified_method_details.description_label")
-    public static let verified_method_details_not_applicable_label   = localized("verified_method_details.not_applicable_label")
-    public static let verified_method_details_inspections_label      = localized("verified_method_details.inspections_label")
-    public static let verified_method_details_approved_title_button  = localized("verified_method_details.approved_title_button")
-    public static let verified_method_details_reproved_title_button  = localized("verified_method_details.reproved_title_button")
+    public static let verified_method_status_not_inspected_label     = localized("verified_method_status.not_inspected_label")
+    public static let verified_method_status_approved_label          = localized("verified_method_status.approved_label")
+    public static let verified_method_status_reproved_label          = localized("verified_method_status.reproved_label")
+    public static let verified_method_status_not_applicable_label    = localized("verified_method_status.not_applicable_label")
     public static let verified_method_details_warning_title_action   = localized("verified_method_details.warning_title_action")
     public static let verified_method_details_warning_message_action = localized("verified_method_details.warning_message_action")
-    public static let verified_method_details_warning_button_ok      = localized("verified_method_details.warning_button_ok")
     
-
-    public static let verified_method_details_not_inspected_label  = localized("verified_method_details.not_inspected_label")
-    public static let verified_method_details_approved_label       = localized("verified_method_details.approved_label")
-    public static let verified_method_details_reproved_label       = localized("verified_method_details.reproved_label")
-
     //Inspection Status
     public static let inspection_status_approved = localized("inspection_status.approved")
     public static let inspection_status_reproved = localized("inspection_status.reproved")

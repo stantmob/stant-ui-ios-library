@@ -8,7 +8,6 @@
 import UIKit
 
 public class SecondHeaderView: UIView {
-
     public static let headerHeight: CGFloat = 52
     
     required public init?(coder aDecoder: NSCoder) {
@@ -23,11 +22,11 @@ public class SecondHeaderView: UIView {
         self.removeSubviews()
     }
     
-    public func configure(title: String,
-                          titleFont: UIFont = .systemFont(ofSize: 18, weight: .bold),
-                          subtitle: String? = nil,
+    public func configure(title:       String,
+                          titleFont:   UIFont = .systemFont(ofSize: 18, weight: .bold),
+                          subtitle:    String? = nil,
                           titleButton: SecondHeaderButton? = nil,
-                          leftButton: SecondHeaderButton? = nil,
+                          leftButton:  SecondHeaderButton? = nil,
                           rightButton: SecondHeaderButton? = nil) {
         self.backgroundColor = .white
         self.layer.applySketchShadow(color: .shadowStant, alpha: 0.07, x: 0, y: 5, blur: 8, spread: 0)
@@ -39,15 +38,12 @@ public class SecondHeaderView: UIView {
         if let button   = rightButton { self.add(button: button, alignment: .right, tag: 4) }
     }
     
-    fileprivate func addMainTitle(_ title: String,
-                                  button: SecondHeaderButton?,
+    fileprivate func addMainTitle(_ title:     String,
+                                  button:      SecondHeaderButton?,
                                   hasSubtitle: Bool,
-                                  tag: Int,
-                                  font: UIFont) {
-        let titleButton = UIButton(frame: CGRect(x: 0,
-                                                 y: 0,
-                                                 width: self.frame.width,
-                                                 height: SecondHeaderView.headerHeight))
+                                  tag:         Int,
+                                  font:        UIFont) {
+        let titleButton = UIButton()
         titleButton.setImage(button?.icon, for: .normal)
         titleButton.setTitle(title, for: .normal)
         titleButton.setTitleColor(.darkStant, for: .normal)
@@ -62,57 +58,53 @@ public class SecondHeaderView: UIView {
         
         self.addSubview(titleButton)
         
-        if hasSubtitle {
-            titleButton.anchor(top: self.topAnchor,
-                               leading: self.leadingAnchor,
-                               bottom: self.bottomAnchor,
-                               trailing: self.trailingAnchor,
-                               padding: UIEdgeInsets(top: 11, left: 52, bottom: 19, right: 52))
-        } else {
-           titleButton.anchor(top: self.topAnchor,
-                              leading: self.leadingAnchor,
-                              bottom: self.bottomAnchor,
-                              trailing: self.trailingAnchor,
-                              padding: UIEdgeInsets(top: 11, left: 52, bottom: 11, right: 52))
-        }
+        titleButton.anchor(top:      self.topAnchor,
+                           leading:  self.leadingAnchor,
+                           trailing: self.trailingAnchor,
+                           padding:  UIEdgeInsets(top: 11, left: 0, bottom: 0, right: 0))
         titleButton.tag = tag
     }
     
     fileprivate func addSubtitle(_ subtitle: String, tag: Int) {
-        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        subtitleLabel.configure(text: subtitle,
+        let subtitleLabel = UILabel()
+        subtitleLabel.configure(text:      subtitle,
                                 alignment: .center,
-                                size: 12,
-                                weight: .regular,
-                                color: .darkGrayStant)
+                                size:      12,
+                                weight:    .regular,
+                                color:     .darkGrayStant)
         self.addSubview(subtitleLabel)
-        subtitleLabel.anchor(top: self.topAnchor,
-                             leading: self.leadingAnchor,
-                             bottom: self.bottomAnchor,
+        subtitleLabel.anchor(top:      self.topAnchor,
+                             leading:  self.leadingAnchor,
                              trailing: self.trailingAnchor,
-                             padding: UIEdgeInsets(top: 32, left: 52, bottom: 6, right: 52))
+                             padding:  UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0))
         subtitleLabel.tag = tag
     }
     
     fileprivate func add(button: SecondHeaderButton, alignment: NSTextAlignment, tag: Int) {
-        let buttonWithImage = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        let buttonWithImage                = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        buttonWithImage.backgroundColor    = .iceGrayStant
+        buttonWithImage.layer.cornerRadius = 18
+        buttonWithImage.imageEdgeInsets    = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
         buttonWithImage.setImage(button.icon, for: .normal)
         buttonWithImage.isUserInteractionEnabled = true
         buttonWithImage.addTarget(button.target, action: button.action, for: .touchUpInside)
+        
+        buttonWithImage.imageView?.image     = buttonWithImage.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        buttonWithImage.imageView?.tintColor = UIColor.darkGrayStant
         
         self.addSubview(buttonWithImage)
         buttonWithImage.anchor(size: CGSize(width: 36, height: 36))
         
         if alignment == .left {
-        buttonWithImage.anchor(top: self.topAnchor,
+        buttonWithImage.anchor(top:     self.topAnchor,
                                leading: self.leadingAnchor,
                                padding: UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 0))
         } else {
-            buttonWithImage.anchor(top: self.topAnchor,
+            buttonWithImage.anchor(top:      self.topAnchor,
                                    trailing: self.trailingAnchor,
-                                   padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 16))
+                                   padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 16))
         }
         buttonWithImage.tag = tag
     }
-
 }

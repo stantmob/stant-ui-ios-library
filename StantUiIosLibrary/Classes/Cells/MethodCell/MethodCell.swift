@@ -1,5 +1,5 @@
 //
-//  VerifiedMethodCell.swift
+//  MethodCell.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 12/06/20.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-public class VerifiedMethodCell: UITableViewCell {
+public class MethodCell: UITableViewCell {
+    public var mainView:             UIView?
     public var statusBadge:          CellBadge?
     public var reinspectedIndicator: UIView?
     public var attachmentIndicator:  UIImageView?
@@ -32,80 +33,93 @@ public class VerifiedMethodCell: UITableViewCell {
         super.prepareForReuse()
         self.removeSubviews()
     }
-    
-    override public func layoutSubviews() {
-        super.layoutSubviews()
 
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
-        bounds      = bounds.inset(by: padding)
-    }
-
-    public func configure(status:          VerifiedMethodStatusEnum,
+    public func configure(status:          MethodCellTypeEnum,
                           order:           Int,
-                          isReinspection:  Bool,
+                          hasReinspection: Bool,
                           hasAttachment:   Bool,
                           descriptionText: String) {
         
+        configureMainView()
         configureStatusBadge(status: status, order: order)
-        configureReinspectedIndicator(isReinspection: isReinspection)
+        configureReinspectedIndicator(hasReinspection: hasReinspection)
         configureAttachmentIndicator(hasAttachment: hasAttachment)
         configureMethodDescription(descriptionText: descriptionText)
     }
     
-    fileprivate func configureStatusBadge(status: VerifiedMethodStatusEnum, order: Int) {
-        statusBadge           = CellBadge()
-        guard let statusBadge = statusBadge else { return }
+    fileprivate func configureMainView() {
+        mainView           = UIView()
+        guard let mainView = mainView else { return }
         
-        self.addSubview(statusBadge)
-        statusBadge.anchor(top:      self.topAnchor,
-                           trailing: self.trailingAnchor,
-                           size:     CGSize(width: self.frame.width + 6, height: 28))
+        self.addSubview(mainView)
+        mainView.anchor(top:      self.topAnchor,
+                        leading:  self.leadingAnchor,
+                        bottom:   self.bottomAnchor,
+                        trailing: self.trailingAnchor,
+                        padding:  UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 15))
+        
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+    }
+    
+    fileprivate func configureStatusBadge(status: MethodCellTypeEnum, order: Int) {
+        statusBadge           = CellBadge()
+        guard let statusBadge = statusBadge,
+              let mainView    = mainView else { return }
+        
+        mainView.addSubview(statusBadge)
+        statusBadge.anchor(top:      mainView.topAnchor,
+                           trailing: mainView.trailingAnchor,
+                           size:     CGSize(width: mainView.frame.width + 6, height: 28))
         
         statusBadge.configureBadge(color: status.colorValue(),
                                    title: order.getStringWith(numberOfDigits: 2),
                                    size:  CGSize(width: 37, height: 28))
     }
     
-    fileprivate func configureReinspectedIndicator(isReinspection: Bool) {
+    fileprivate func configureReinspectedIndicator(hasReinspection: Bool) {
         reinspectedIndicator                    = UIView()
-        guard let reinspectedIndicator          = reinspectedIndicator else { return }
+        guard let reinspectedIndicator          = reinspectedIndicator,
+              let mainView                      = mainView else { return }
         reinspectedIndicator.layer.cornerRadius = 4
         reinspectedIndicator.backgroundColor    = .redLightStant
-        reinspectedIndicator.isHidden           = !isReinspection
+        reinspectedIndicator.isHidden           = !hasReinspection
         
-        self.addSubview(reinspectedIndicator)
+        mainView.addSubview(reinspectedIndicator)
         reinspectedIndicator.anchor(top:     statusBadge?.bottomAnchor,
-                                    leading: self.leadingAnchor,
+                                    leading: mainView.leadingAnchor,
                                     padding: UIEdgeInsets(top: 7, left: 10, bottom: 0, right: 0),
                                     size:    CGSize(width: 8, height: 8))
     }
     
     fileprivate func configureAttachmentIndicator(hasAttachment: Bool) {
         attachmentIndicator           = UIImageView()
-        guard let attachmentIndicator = attachmentIndicator else { return }
+        guard let attachmentIndicator = attachmentIndicator,
+              let mainView            = mainView else { return }
         attachmentIndicator.image     = UIImage(named: "clip")
         attachmentIndicator.isHidden  = !hasAttachment
         
-        self.addSubview(attachmentIndicator)
+        mainView.addSubview(attachmentIndicator)
         attachmentIndicator.anchor(top:     reinspectedIndicator?.bottomAnchor,
-                                   leading: self.leadingAnchor,
+                                   leading: mainView.leadingAnchor,
                                    padding: UIEdgeInsets(top: 5, left: 7, bottom: 0, right: 0),
                                    size:    CGSize(width: 13, height: 13))
     }
     
     fileprivate func configureMethodDescription(descriptionText: String) {
         methodDescription               = UILabel()
-        guard let methodDescription     = methodDescription else { return }
+        guard let methodDescription     = methodDescription,
+              let mainView              = mainView else { return }
         methodDescription.numberOfLines = 3
         methodDescription.textColor     = .darkGrayStant
         methodDescription.font          = .systemFont(ofSize: 12, weight: .regular)
         methodDescription.text          = descriptionText
         
-        self.addSubview(methodDescription)
-        methodDescription.anchor(top:      self.topAnchor,
-                                 leading:  self.leadingAnchor,
-                                 bottom:   self.bottomAnchor,
-                                 trailing: self.trailingAnchor,
+        mainView.addSubview(methodDescription)
+        methodDescription.anchor(top:      mainView.topAnchor,
+                                 leading:  mainView.leadingAnchor,
+                                 bottom:   mainView.bottomAnchor,
+                                 trailing: mainView.trailingAnchor,
                                  padding:  UIEdgeInsets(top: 6, left: 43, bottom: 6, right: 12))
     }
 }

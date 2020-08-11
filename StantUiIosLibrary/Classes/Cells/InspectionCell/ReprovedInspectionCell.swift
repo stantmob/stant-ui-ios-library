@@ -78,8 +78,8 @@ public class ReprovedInspectionCell: UITableViewCell {
                            trailing: self.trailingAnchor,
                            size:     CGSize(width: self.frame.width + 6, height: 28))
         
-        statusBadge.configureBadge(color: InspectionStatusEnum.reproved.colorValue(),
-                                   title: InspectionStatusEnum.reproved.stringValue().uppercased(),
+        statusBadge.configureBadge(color: InspectionCellTypeEnum.reproved.colorValue(),
+                                   title: InspectionCellTypeEnum.reproved.stringValue().uppercased(),
                                    size:  CGSize(width: 112, height: 28))
     }
     
@@ -100,7 +100,7 @@ public class ReprovedInspectionCell: UITableViewCell {
         guard let deadlineTitleLabel = deadlineTitleLabel else { return }
         deadlineTitleLabel.textColor = .darkGrayStant
         deadlineTitleLabel.font      = .systemFont(ofSize: 12, weight: .regular)
-        deadlineTitleLabel.text      = AppStrings.deadline
+        deadlineTitleLabel.text      = LibraryStrings.deadline
         
         self.addSubview(deadlineTitleLabel)
         deadlineTitleLabel.anchor(top:     self.topAnchor,
@@ -147,7 +147,7 @@ public class ReprovedInspectionCell: UITableViewCell {
                           padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 92),
                           size:     CGSize(width: 60, height: 0))
         
-        editButton.setTitle(AppStrings.edit, for: .normal)
+        editButton.setTitle(LibraryStrings.edit, for: .normal)
         editButton.setTitleColor(.darkText, for: .normal)
         editButton.addTarget(delegate, action: #selector(delegate?.goToInspectionEditScreen), for: .touchUpInside)
     }
@@ -164,7 +164,7 @@ public class ReprovedInspectionCell: UITableViewCell {
                             padding:  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16),
                             size:     CGSize(width: 60, height: 0))
         
-        detailButton.setTitle(AppStrings.details, for: .normal)
+        detailButton.setTitle(LibraryStrings.details, for: .normal)
         detailButton.setTitleColor(.darkText, for: .normal)
         detailButton.addTarget(delegate, action: #selector(delegate?.goToInspectionDetailScreen), for: .touchUpInside)
     }

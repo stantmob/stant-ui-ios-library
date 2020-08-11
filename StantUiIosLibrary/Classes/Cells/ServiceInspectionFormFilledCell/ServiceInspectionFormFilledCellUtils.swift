@@ -7,8 +7,8 @@
 
 import UIKit
 
-public struct ServiceInspectionFormFilled {
-    let status:             ServiceInspectionFormFilledStatusEnum
+public struct ServiceInspectionFormFilledDto {
+    let status:             ServiceInspectionFormFilledCellTypeEnum
     let performedQuantity:  Float
     let totalUsedArea:      Float
     let unitMeasurement:    String
@@ -17,7 +17,7 @@ public struct ServiceInspectionFormFilled {
     let beginAt:            String
     let endAt:              String
     
-    public init(status:            ServiceInspectionFormFilledStatusEnum,
+    public init(status:            ServiceInspectionFormFilledCellTypeEnum,
                 performedQuantity: Float,
                 totalUsedArea:     Float,
                 unitMeasurement:   String,
@@ -36,19 +36,19 @@ public struct ServiceInspectionFormFilled {
     }
 }
 
-public enum ServiceInspectionFormFilledStatusEnum: Int {
+public enum ServiceInspectionFormFilledCellTypeEnum: Int {
     case progress = 0, finished = 1, approved = 2, late = 3
     
     public func stringValue() -> String {
         switch self {
         case .progress:
-            return AppStrings.service_inspection_form_filled_details_progress_label
+            return LibraryStrings.service_inspection_form_filled_details_progress_label
         case .finished:
-            return AppStrings.service_inspection_form_filled_details_finished_label
+            return LibraryStrings.service_inspection_form_filled_details_finished_label
         case .approved:
-            return AppStrings.service_inspection_form_filled_details_approved_label
+            return LibraryStrings.service_inspection_form_filled_details_approved_label
         case .late:
-            return AppStrings.service_inspection_form_filled_details_late_label
+            return LibraryStrings.service_inspection_form_filled_details_late_label
         }
     }
     
@@ -65,15 +65,15 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
         }
     }
     
-    public static func convertFrom(string: String) -> ServiceInspectionFormFilledStatusEnum {
+    public static func convertFrom(string: String) -> ServiceInspectionFormFilledCellTypeEnum {
         switch string {
-        case AppStrings.service_inspection_form_filled_details_progress_label:
+        case LibraryStrings.service_inspection_form_filled_details_progress_label:
             return .progress
-        case AppStrings.service_inspection_form_filled_details_finished_label:
+        case LibraryStrings.service_inspection_form_filled_details_finished_label:
             return .finished
-        case AppStrings.service_inspection_form_filled_details_approved_label:
+        case LibraryStrings.service_inspection_form_filled_details_approved_label:
             return .approved
-        case AppStrings.service_inspection_form_filled_details_late_label:
+        case LibraryStrings.service_inspection_form_filled_details_late_label:
             return .late
         default:
             return .progress
