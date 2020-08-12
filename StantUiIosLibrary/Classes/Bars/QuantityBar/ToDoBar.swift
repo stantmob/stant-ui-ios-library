@@ -43,8 +43,7 @@ public class ToDoBar: UIView {
                        bottom:   self.bottomAnchor,
                        trailing: self.trailingAnchor)
         
-        mainBar.setNeedsLayout()
-        mainBar.layoutIfNeeded()
+        mainBar.updateLayout()
         
         configureSelectedToDoBar()
         configureRemainingBar()

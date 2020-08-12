@@ -17,8 +17,7 @@ public class CellBadge: UIView {
         guard let statusTag       = statusTag else { return }
         statusTag.backgroundColor = color
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         
         self.addSubview(statusTag)
         statusTag.anchor(top:     self.topAnchor,

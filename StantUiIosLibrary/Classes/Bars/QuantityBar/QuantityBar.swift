@@ -55,8 +55,7 @@ public class QuantityBar: UIView {
                        leading:  self.leadingAnchor,
                        size:     CGSize(width: self.frame.width, height: self.barHeight))
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         
         configureDoneBar()
         configureToDoBar()
@@ -90,8 +89,7 @@ public class QuantityBar: UIView {
                        size:     CGSize(width:  mainBar.frame.width - self.positionIndicator,
                                         height: barHeight))
         
-        toDoBar.setNeedsLayout()
-        toDoBar.layoutIfNeeded()
+        toDoBar.updateLayout()
         
         toDoBar.configure(quantity:               totalQuantity * (1 - donePercentage),
                           selectedToDoPercentage: selectedToDoPercentage)

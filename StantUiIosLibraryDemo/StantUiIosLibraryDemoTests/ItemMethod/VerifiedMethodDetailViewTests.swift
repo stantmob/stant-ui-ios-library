@@ -11,7 +11,6 @@ import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
 class VerifiedMethodDetailViewTests: XCTestCase {
-    
     let viewController = VerifiedMethodDetailViewController()
     
     func testInitialState() {
@@ -28,6 +27,8 @@ class VerifiedMethodDetailViewTests: XCTestCase {
         
         XCTAssertEqual(approveAction?[0], "goToApproveVerifiedMethod")
         XCTAssertEqual(reproveAction?[0], "goToReproveVerifiedMethod")
+        XCTAssertEqual(verifiedMethodDetailView.inspectionLabel?.isHidden, false)
+        XCTAssertEqual(viewController.tableView?.isHidden, false)
         
         verifiedMethodDetailView.notApplicableSwitch?.isOn = true
         verifiedMethodDetailView.notApplicableSwitch?.sendActions(for: .valueChanged)
@@ -39,6 +40,8 @@ class VerifiedMethodDetailViewTests: XCTestCase {
         
         XCTAssertEqual(approveAction?[0], "warningAction")
         XCTAssertEqual(reproveAction?[0], "warningAction")
+        XCTAssertEqual(verifiedMethodDetailView.inspectionLabel?.isHidden, true)
+        XCTAssertEqual(viewController.tableView?.isHidden, true)
     }
 }
 

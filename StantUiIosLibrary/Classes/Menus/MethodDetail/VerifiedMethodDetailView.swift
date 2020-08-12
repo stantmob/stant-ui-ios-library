@@ -30,11 +30,11 @@ public class VerifiedMethodDetailView: UIView {
     
     public func configure(delegate:              VerifiedMethodDetailViewDelegate,
                           methodItemDescription: String) {
-        self.delegate = delegate
+        self.delegate        = delegate
+        self.backgroundColor = .white
         
         self.removeSubviews()
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         
         configureDescriptionLabel()
         configureMethodItemDescriptionLabel(methodItemDescription: methodItemDescription)
@@ -238,7 +238,8 @@ public class VerifiedMethodDetailView: UIView {
     }
     
     @objc public func toggleButtons() {
-        guard let approveButton = approveButton, let reproveButton = reproveButton  else { return}
+        guard let approveButton = approveButton,
+              let reproveButton = reproveButton else { return}
         
         if (!notApplicableSwitch!.isOn) {
             approveButton.removeTarget(self, action: #selector(warningAction), for: .touchUpInside)
@@ -247,6 +248,9 @@ public class VerifiedMethodDetailView: UIView {
             reproveButton.removeTarget(self, action: #selector(warningAction), for: .touchUpInside)
             reproveButton.addTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
             reproveButton.backgroundColor = .redLightStant
+            
+            delegate?.setApplicable()
+            inspectionLabel?.isHidden = false
         } else {
             approveButton.removeTarget(delegate, action: #selector(delegate?.goToApproveVerifiedMethod), for: .touchUpInside)
             approveButton.addTarget(self, action: #selector(warningAction), for: .touchUpInside)
@@ -254,6 +258,9 @@ public class VerifiedMethodDetailView: UIView {
             reproveButton.removeTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
             reproveButton.addTarget(self, action: #selector(warningAction), for: .touchUpInside)
             reproveButton.backgroundColor = .darkGrayStant
+            
+            delegate?.setNotApplicable()
+            inspectionLabel?.isHidden = true
         }
     }
     
@@ -267,7 +274,7 @@ public class VerifiedMethodDetailView: UIView {
                                           handler: nil))
             
             if let present = delegate {
-                   present.present(alert: alert)
+                   present.presentAlert(alert: alert)
             }
     }
 
@@ -282,5 +289,7 @@ public class VerifiedMethodDetailView: UIView {
 @objc public protocol VerifiedMethodDetailViewDelegate {
     @objc func goToApproveVerifiedMethod()
     @objc func goToReproveVerifiedMethod()
-    @objc func present(alert: UIAlertController)
+    @objc func setNotApplicable()
+    @objc func setApplicable()
+    @objc func presentAlert(alert: UIAlertController)
 }

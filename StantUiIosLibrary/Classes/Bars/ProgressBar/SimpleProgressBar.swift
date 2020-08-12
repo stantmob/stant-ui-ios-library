@@ -16,8 +16,7 @@ public class SimpleProgressBar: UIView {
         guard let backgroundView       = backgroundView else { return }
         backgroundView.backgroundColor = .iceGrayStant
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         backgroundView.layer.cornerRadius = self.frame.height / 2
 
         self.addSubview(backgroundView)
@@ -38,8 +37,7 @@ public class SimpleProgressBar: UIView {
               let barView        = barView else { return }
         barView.backgroundColor  = color
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         barView.layer.cornerRadius = self.frame.height / 2
         
         backgroundView.addSubview(barView)
