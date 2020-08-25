@@ -55,8 +55,8 @@ extension ListingPlacesViewController: UITableViewDataSource, UITableViewDelegat
         print("Has SubPlaces")
     }
     
-    public func goToServiceInspectionFormFilledScreen() {
-        print("Has Fisps")
+    public func goToServiceInspectionFormFilledScreen(index: Int) {
+        print("Has Siffs")
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

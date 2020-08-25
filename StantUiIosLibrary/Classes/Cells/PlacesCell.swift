@@ -251,7 +251,7 @@ public class PlacesCell: UITableViewCell {
     }
     
     @objc func goToServiceInspectionFormFilledScreen() {
-        delegate?.goToServiceInspectionFormFilledScreen()
+        delegate?.goToServiceInspectionFormFilledScreen(index: index)
     }
     
     fileprivate func addMainViewWithShadow() {
@@ -266,7 +266,7 @@ public class PlacesCell: UITableViewCell {
 
 public protocol PlaceCellDidSelectDelegate {
     func goToSubPlaces(index: Int)
-    func goToServiceInspectionFormFilledScreen()
+    func goToServiceInspectionFormFilledScreen(index: Int)
 }
 
 public enum PlaceStatusEnum {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		02D8A180B95E9CB4E0B3E5835EA001A2 /* TeamScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B8B5820B34EDA405C928C9FE37686 /* TeamScreenViewController.swift */; };
-		02E242E4907C4B053C24693A34D386BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		0883FDED187E3B3C4C40F879A4D4B33E /* DefaultSearchBarDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD71DFA67FE10CE5732CB568DF91DF /* DefaultSearchBarDelegateExtension.swift */; };
 		0894B95E6DA9B2C48031ABBB45ED4F5F /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1958F99909260E639F33223615C385BD /* SelectionViewController.swift */; };
 		0B6E62B5FCC62C3889D7B543CA6D90D8 /* ReprovedInspectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFBC496505EC69D7FB218AAC07BE7F /* ReprovedInspectionCell.swift */; };
@@ -17,6 +16,7 @@
 		175E8A4026732D0F9CC8670DC607FC48 /* Localizable-pt.strings in Sources */ = {isa = PBXBuildFile; fileRef = 050BAA2226FBB93A227E5F2E62DD2D02 /* Localizable-pt.strings */; };
 		1BD08DCD650805AA5A3E2D6B08968B44 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EBC3CB28AD2154B6FE23482DC7F9B2 /* FilterButton.swift */; };
 		1D527884D67071C523665F63FEF0EA0D /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032644DA3F5B4E9A04B6073831CD3F7 /* MethodCell.swift */; };
+		1D8CB5DAFD255BE8BAB24FD3B6BB5828 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		21DD7E7874878E831A3931BAEAE5C68C /* SelectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB64BC353646D8E01D5E30023F8B02 /* SelectionViewControllerExtension.swift */; };
 		22E683D2DEC1525A8827FFF2DB626809 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5C0B17643939D8E862E3AD51A7F697 /* DateExtension.swift */; };
 		24C17AF381E22D9AD5C01DF14EDBDC3E /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC41714733DC611A406F15D3DA98BE /* ItemHeaderView.swift */; };
@@ -24,6 +24,7 @@
 		27AE11490990EE74018E4EE6A995067B /* AttachmentTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74AE0C6CCCF8E2FCF580640BD9FC7E /* AttachmentTabCollectionViewCell.swift */; };
 		2AAE00ED75C5A1405B33A13320B82BD0 /* SimpleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB38534F8F19D8F000F9EAEAD8A263 /* SimpleProgressBar.swift */; };
 		2DF2827D31F4577DD36B197EB93B505D /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16474B58FDDF70BE54A22FD6531F4E50 /* BottomDialogWithScrollViewController.swift */; };
+		2F5E20FA20E54AB8C0141C0787D1D468 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3058632915DD10AEE69E0B62B9795241 /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB63DC6FB03547645F7F352FA0D6333 /* FiltersCollectionView.swift */; };
 		36C832A63A77522132A040AB07EE21AE /* MenuTabBarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319AAACCB16B08C7905078959F8D99DC /* MenuTabBarDTO.swift */; };
 		3BDE3B344985D00BCCF44294D4B63BD7 /* Gesturizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04279A1169843746DE4398CA1FDE385 /* Gesturizer.swift */; };
@@ -33,7 +34,6 @@
 		3EA2017D56E3A0B19B58EAC2C5A638EB /* ScrollableTableViewDialogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9864A25B48724E7D7AFAF0D6B8AD3E /* ScrollableTableViewDialogCell.swift */; };
 		3F42849F6200FDCD3AE209FD9EF82644 /* SecondHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703F6DA0704F94290DBB62342BE28BB /* SecondHeaderView.swift */; };
 		407A8E420C834BE80F49DF121782151A /* TeamScreenViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82CDF30C5A706E9C612576C4097C591 /* TeamScreenViewControllerExtension.swift */; };
-		44ECA23B064132F6832DE5C078D4948D /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */; };
 		46C0F9B7BA6BAB05FD1ECE381A3A89D8 /* ItemSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB57471C4EBC1C662DE8AA33A24B77 /* ItemSelection.swift */; };
 		4885FD100516244D537E0CA2055D5EDD /* SecondHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F383F49054BBFD7ED57A8CC314C84B6 /* SecondHeaderButton.swift */; };
 		4B391C89605FADBCC39C38815C25B142 /* SyncDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B6AC1189DBFB91F9DF88ECF2085BA /* SyncDialogView.swift */; };
@@ -53,10 +53,11 @@
 		79C479971DF211C00303122E150B35EE /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391AFC5882B5344633910D1E4C6EEFB /* UILabelExtension.swift */; };
 		7C667873701BF973B2180900A6532628 /* ServiceInspectionFormFilledCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C2A5C26456DF92D3A01B42BD938DD /* ServiceInspectionFormFilledCellHeader.swift */; };
 		7F43D0D8C17380C54B230633815B56B2 /* StantUiIosLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19582B74E4B17B778E87697D2C01198C /* StantUiIosLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F9BA60F05613617DD4057D9038777A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7F75A488DD8E661B9A3455E0C11DFA6E /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */; };
 		81F0EDE345D8D92E3C64EB5319F752F9 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199585D2D660461D3C67117BC38B118 /* DialogViewController.swift */; };
 		821DAB3808BD2E7D71AC2C8DFD7465E5 /* Localizable-en.strings in Sources */ = {isa = PBXBuildFile; fileRef = C8ED9F710D8291897391C75E822AB70B /* Localizable-en.strings */; };
 		83F16A02A5BDB14B7016EBC4366A3934 /* ProgressBarWithToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625721693F4C4848961E79BF4D9DD52 /* ProgressBarWithToolTip.swift */; };
+		87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88E5A562CEC49831D42BE4E3B5F4EA48 /* FormTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7E3C1C5C40364BA1072C5CC17A21A /* FormTabCollectionViewCell.swift */; };
 		8D02B896673F9B382670B1F10BB4058D /* MethodCellUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7899FF97A1C593E7CFE8E23E98F5EBE /* MethodCellUtils.swift */; };
 		8DEF26CF6805E16CDEA815E54ABA57F0 /* ConstructionViewDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A58DA62AAF04A04B5606B3971A22BA /* ConstructionViewDefaultSearchViewExtension.swift */; };
@@ -77,7 +78,7 @@
 		A1F533CD2E2790C43017042286CFA0F9 /* PlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE9A30BBE8AE26945614992D6C71ED6 /* PlacesCell.swift */; };
 		A3961007B9C4FF67FC094AE25FA2A209 /* ServiceInspectionFormFilledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199801CC0CA4AD4227EDD8D504A8BAF /* ServiceInspectionFormFilledCell.swift */; };
 		AB6BDCA87738295330F37BCAD4C12DC4 /* GroupSelectionDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C518F3663C632BD329F49C3261CD961A /* GroupSelectionDefaultSearchViewExtension.swift */; };
-		AD54B08988203EE4CC352ABCCD1DB796 /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */; };
+		AC70186E43C34AAEE1489A36674CEFF5 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 991758855CDECF7CA4066B8A052A51B8 /* Pods-StantUiIosLibraryDemo-dummy.m */; };
 		B336B4C11C2DCAF99C0EA8C317F360B8 /* DefaultSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B8761E2F3210F56D7D5846677B06E4 /* DefaultSearchBar.swift */; };
 		B51502187E8C55F80590E5921323212C /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5A6F5D906D6A9FFA2BA7FAB2DA3433 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */; };
 		B5734629275C0369FCA7D2E55384B3CD /* ConstructionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3D1DC15A69EC3A5B59AA80C8B711A /* ConstructionCard.swift */; };
@@ -94,6 +95,7 @@
 		C4B07BE2632472BEC8EBE45DC04B6DF4 /* ContactsViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8212C1F03D7AA1497033A21C031270B0 /* ContactsViewShowAndHideSearchTableViewExtension.swift */; };
 		C5E2583E4F30F63F7F9585B4E6BAD218 /* InternPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AA0712E47F8EDC148589C30507E25 /* InternPersonCell.swift */; };
 		C697426D76F2C55CE6B43C619CD93DAE /* FormTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B436BDB6353611A6543298C8D63D1 /* FormTabView.swift */; };
+		C7A00DB5E95DD8969CE82C6DB0A79861 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		CC7109C425BF486FFD8D94D54679F9DD /* QuantityBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9773194EC0D9B6A54C36DFB3B7C7F /* QuantityBar.swift */; };
 		D44C3A0407247F8C98DF2CB6D4900C5E /* ToDoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558C97ADCC1CA7477DBB362B3AEC734 /* ToDoBar.swift */; };
 		D4703C4CADAA26404A70CBCAC51F4BA4 /* UIViewLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B14A5183B378865C95C737E9DC49 /* UIViewLayoutExtension.swift */; };
@@ -104,11 +106,9 @@
 		EDE3B0E042242E3D11C574BFEC1A1A31 /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC57DBF9E80A6AF13B71E6BCEFEF68 /* ViewTeste.swift */; };
 		EE60C5354BC375AA4CA0FEAA8DEDA464 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB6249BC0ED4AEC88B66A56B628EA0E /* UIColorExtension.swift */; };
 		F02F28259F716D78F43E27BFBD953088 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B8A9694FF862C960EA3F35A51EF489 /* IntExtension.swift */; };
-		F0FE96B267D4867EC1A8058E67ACCFCE /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D699B9A7572A64A4AFA90DCE6659A7 /* Pods-StantUiIosLibraryDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F16F7C399EB6D8C975709C94E1752A89 /* ServiceInspectionFormFilledCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D8A7941F0DDBC746B02173440FF6E /* ServiceInspectionFormFilledCardStack.swift */; };
 		F2186308AEBAD062A6C8669A5DA30D91 /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034725D17B1A3068EE5890E3A06E1BC /* GroupSelectionShowAndHideSearchTableViewExtension.swift */; };
 		F627C886D09A5B3AEEAD6FD6AD2E35E8 /* InChargeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B782CE9C147520468AB8D175EB3340F5 /* InChargeStackView.swift */; };
-		F6944A9141B279753BD73E04714E7839 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC842E4FA2607AB313AE77481D876C9 /* Pods-StantUiIosLibraryDemoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7220F06D9A9BAFD5C93B7279F7D9263 /* SelectRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8324C6623CEA485EDE07475ECBAB01BA /* SelectRecentViewController.swift */; };
 		F9E5679FA09B2C6DF03FF160EEFC9B9D /* ConstructionViewShowAndHideSearchTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F85CFB662C55128DFF9E48F740A0C /* ConstructionViewShowAndHideSearchTableViewExtension.swift */; };
 		FB26B14608CF76D79127238B81F6C21F /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E37E4FF13DCB0D315FD54670F814 /* NSMutableAttributedStringExtension.swift */; };
@@ -116,14 +116,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A5333DC61C0B87D1CBDC3F8FDA40487B /* PBXContainerItemProxy */ = {
+		434B4FEF5F283CF9989B477775B91006 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0F3B72BA0DCE3379161B7F2BFEFC1AA3;
 			remoteInfo = "Pods-StantUiIosLibraryDemo";
 		};
-		A797F316CB7D50F7AD36E8D0A6AA310E /* PBXContainerItemProxy */ = {
+		68C07F31D0F131C74275C5A7BCFBAB52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -273,19 +273,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C078CA258955A003B4F634AD9F8D648 /* Frameworks */ = {
+		8FB09C3C5ED8B2A49CDC3374585BD3C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9BA60F05613617DD4057D9038777A0 /* Foundation.framework in Frameworks */,
+				1D8CB5DAFD255BE8BAB24FD3B6BB5828 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB373DAA70CAE577BE43256B8446F75A /* Frameworks */ = {
+		C5CE39318D1A36815F6E43A76A7798BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E242E4907C4B053C24693A34D386BD /* Foundation.framework in Frameworks */,
+				C7A00DB5E95DD8969CE82C6DB0A79861 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,22 +982,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0B0D2EED83DA056A10B30ACA0F0C1792 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0FE96B267D4867EC1A8058E67ACCFCE /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		160D321733B5DA1B49887DE7657A425C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F6944A9141B279753BD73E04714E7839 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		49156FD0DCE36A695F5FA7BEE30F4C70 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1006,22 +990,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA71C075733334A38D8C55711D28BEE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F5E20FA20E54AB8C0141C0787D1D468 /* Pods-StantUiIosLibraryDemoTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1FA5785718C49842D6ECA420741A329 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87E669EAD449CDE8AFF08C69D6AFB732 /* Pods-StantUiIosLibraryDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0F3B72BA0DCE3379161B7F2BFEFC1AA3 /* Pods-StantUiIosLibraryDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 070FFC0566C025DB307A2D9D00361CAF /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemo" */;
+			buildConfigurationList = 730B3B662E32441885B666E10D223AFE /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemo" */;
 			buildPhases = (
-				0B0D2EED83DA056A10B30ACA0F0C1792 /* Headers */,
-				9EF35D2B729133344EA5CFDCBF6F4799 /* Sources */,
-				8C078CA258955A003B4F634AD9F8D648 /* Frameworks */,
-				B3DE0667F79B07831719D64818581E04 /* Resources */,
+				F1FA5785718C49842D6ECA420741A329 /* Headers */,
+				8FA0CD4B4E0DC271F06279A23519A140 /* Sources */,
+				C5CE39318D1A36815F6E43A76A7798BE /* Frameworks */,
+				4D893B411E2F1FC42090917256B5FFAE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D5AE43516D0B412DA4D8810A34431689 /* PBXTargetDependency */,
+				D1024E8E8E59858E286C0ED04433539C /* PBXTargetDependency */,
 			);
 			name = "Pods-StantUiIosLibraryDemo";
 			productName = "Pods-StantUiIosLibraryDemo";
@@ -1048,17 +1048,17 @@
 		};
 		9A27DACC043FAD93EB44ABFE89E52E23 /* Pods-StantUiIosLibraryDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AE182589561264378818488D9428D5C /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemoTests" */;
+			buildConfigurationList = 162CB128CAE6B3BCDAB0DBB5DE1C8EBF /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemoTests" */;
 			buildPhases = (
-				160D321733B5DA1B49887DE7657A425C /* Headers */,
-				6978B91E62FC42028C0278273EA2BE22 /* Sources */,
-				DB373DAA70CAE577BE43256B8446F75A /* Frameworks */,
-				F48301D92D14E06AAE2978B6215CF0E7 /* Resources */,
+				EA71C075733334A38D8C55711D28BEE4 /* Headers */,
+				AD8EB8C0D4D58E16FF91E9E38CE78CCF /* Sources */,
+				8FB09C3C5ED8B2A49CDC3374585BD3C5 /* Frameworks */,
+				8E6C2657AC5EA7AC2157FB0549FC9255 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E30E3D8C253B96284AC5B3E5319F34F5 /* PBXTargetDependency */,
+				B004D0E947F23D28CDF47E8C1DA41874 /* PBXTargetDependency */,
 			);
 			name = "Pods-StantUiIosLibraryDemoTests";
 			productName = "Pods-StantUiIosLibraryDemoTests";
@@ -1095,6 +1095,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4D893B411E2F1FC42090917256B5FFAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61DD0BE5E362794756E8ED7BA7B3D0F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1102,14 +1109,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3DE0667F79B07831719D64818581E04 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F48301D92D14E06AAE2978B6215CF0E7 /* Resources */ = {
+		8E6C2657AC5EA7AC2157FB0549FC9255 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1224,36 +1224,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6978B91E62FC42028C0278273EA2BE22 /* Sources */ = {
+		8FA0CD4B4E0DC271F06279A23519A140 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD54B08988203EE4CC352ABCCD1DB796 /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */,
+				AC70186E43C34AAEE1489A36674CEFF5 /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EF35D2B729133344EA5CFDCBF6F4799 /* Sources */ = {
+		AD8EB8C0D4D58E16FF91E9E38CE78CCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44ECA23B064132F6832DE5C078D4948D /* Pods-StantUiIosLibraryDemo-dummy.m in Sources */,
+				7F75A488DD8E661B9A3455E0C11DFA6E /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D5AE43516D0B412DA4D8810A34431689 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = StantUiIosLibrary;
-			target = 700FA4C1FD72FEEE1830AC61D6CF9210 /* StantUiIosLibrary */;
-			targetProxy = A797F316CB7D50F7AD36E8D0A6AA310E /* PBXContainerItemProxy */;
-		};
-		E30E3D8C253B96284AC5B3E5319F34F5 /* PBXTargetDependency */ = {
+		B004D0E947F23D28CDF47E8C1DA41874 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-StantUiIosLibraryDemo";
 			target = 0F3B72BA0DCE3379161B7F2BFEFC1AA3 /* Pods-StantUiIosLibraryDemo */;
-			targetProxy = A5333DC61C0B87D1CBDC3F8FDA40487B /* PBXContainerItemProxy */;
+			targetProxy = 434B4FEF5F283CF9989B477775B91006 /* PBXContainerItemProxy */;
+		};
+		D1024E8E8E59858E286C0ED04433539C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StantUiIosLibrary;
+			target = 700FA4C1FD72FEEE1830AC61D6CF9210 /* StantUiIosLibrary */;
+			targetProxy = 68C07F31D0F131C74275C5A7BCFBAB52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1321,6 +1321,45 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		2A3940FD278B44C688D824F298228EE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB0A509A3A6BFC848C175623D654B237 /* Pods-StantUiIosLibraryDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1418,46 +1457,7 @@
 			};
 			name = Release;
 		};
-		A12213A2B9F45877F1D26A76B9DA23EA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB0A509A3A6BFC848C175623D654B237 /* Pods-StantUiIosLibraryDemoTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-StantUiIosLibraryDemoTests/Pods-StantUiIosLibraryDemoTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B19858C7D20ABDDB7D59FD4DDB8F96EB /* Release */ = {
+		5DC1C2C4B3FE26EAFDF122B109682B62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68566BDB28AAD2BAC190B1DEA4B03F7C /* Pods-StantUiIosLibraryDemo.release.xcconfig */;
 			buildSettings = {
@@ -1496,42 +1496,7 @@
 			};
 			name = Release;
 		};
-		BACD224EAD851E19E1F6CD5771B72242 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A06CE1BE662289586410F2CF36CD48 /* StantUiIosLibrary.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
-				PRODUCT_MODULE_NAME = StantUiIosLibrary;
-				PRODUCT_NAME = StantUiIosLibrary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EC1B682408C674F7416386828189D6C3 /* Debug */ = {
+		B5AA096459BA4706C932F87EB782E6C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2751B91001E5D1FF49E74865A2AC8C95 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */;
 			buildSettings = {
@@ -1569,7 +1534,42 @@
 			};
 			name = Debug;
 		};
-		EFC6D2CD9760538B514CEF0D2AFB51EB /* Debug */ = {
+		BACD224EAD851E19E1F6CD5771B72242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95A06CE1BE662289586410F2CF36CD48 /* StantUiIosLibrary.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/StantUiIosLibrary/StantUiIosLibrary.modulemap";
+				PRODUCT_MODULE_NAME = StantUiIosLibrary;
+				PRODUCT_NAME = StantUiIosLibrary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC42AC089F60A9E01E17691B485D3FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E83E531C24F903CC61CC0FEE14789A18 /* Pods-StantUiIosLibraryDemoTests.debug.xcconfig */;
 			buildSettings = {
@@ -1610,20 +1610,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		070FFC0566C025DB307A2D9D00361CAF /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemo" */ = {
+		162CB128CAE6B3BCDAB0DBB5DE1C8EBF /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC1B682408C674F7416386828189D6C3 /* Debug */,
-				B19858C7D20ABDDB7D59FD4DDB8F96EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3AE182589561264378818488D9428D5C /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EFC6D2CD9760538B514CEF0D2AFB51EB /* Debug */,
-				A12213A2B9F45877F1D26A76B9DA23EA /* Release */,
+				CC42AC089F60A9E01E17691B485D3FE6 /* Debug */,
+				2A3940FD278B44C688D824F298228EE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1633,6 +1624,15 @@
 			buildConfigurations = (
 				204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */,
 				3CCC6195EDBEE5DA2A49DF962113BE16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		730B3B662E32441885B666E10D223AFE /* Build configuration list for PBXNativeTarget "Pods-StantUiIosLibraryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5AA096459BA4706C932F87EB782E6C1 /* Debug */,
+				5DC1C2C4B3FE26EAFDF122B109682B62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
