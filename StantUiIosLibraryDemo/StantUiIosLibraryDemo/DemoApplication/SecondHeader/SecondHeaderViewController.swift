@@ -40,7 +40,7 @@ class SecondHeaderViewController: UIViewController {
                                                               icon: UIImage(named: "back") ?? UIImage()),
                                rightButton: SecondHeaderButton(action: #selector(clickOnRightButton),
                                                                target: self,
-                                                               icon: UIImage(named: "grey") ?? UIImage()))
+                                                               icon: UIImage(named: "plusIcon") ?? UIImage()))
       
     }
     

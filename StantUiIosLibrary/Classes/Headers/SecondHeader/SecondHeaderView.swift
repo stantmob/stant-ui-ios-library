@@ -86,13 +86,10 @@ public class SecondHeaderView: UIView {
         buttonWithImage.layer.cornerRadius = 18
         buttonWithImage.imageEdgeInsets    = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        buttonWithImage.setImage(button.icon, for: .normal)
+        buttonWithImage.setImage(button.icon?.withRenderingMode(.alwaysTemplate), for: .normal)
         buttonWithImage.isUserInteractionEnabled = true
+        buttonWithImage.imageView?.tintColor     = UIColor.darkGrayStant
         buttonWithImage.addTarget(button.target, action: button.action, for: .touchUpInside)
-        
-        //buttonWithImage.imageView?.layer.cornerRadius = 18
-//        buttonWithImage.imageView?.image     = buttonWithImage.imageView?.image?.withRenderingMode(.alwaysTemplate)
-//        buttonWithImage.tintColor            = UIColor.darkGrayStant
         
         self.addSubview(buttonWithImage)
         buttonWithImage.anchor(size: CGSize(width: 36, height: 36))
