@@ -90,8 +90,9 @@ public class SecondHeaderView: UIView {
         buttonWithImage.isUserInteractionEnabled = true
         buttonWithImage.addTarget(button.target, action: button.action, for: .touchUpInside)
         
-        buttonWithImage.imageView?.image     = buttonWithImage.imageView?.image?.withRenderingMode(.alwaysOriginal)
-        buttonWithImage.tintColor            = UIColor.darkGrayStant
+        buttonWithImage.imageView?.layer.cornerRadius = 18
+//        buttonWithImage.imageView?.image     = buttonWithImage.imageView?.image?.withRenderingMode(.alwaysTemplate)
+//        buttonWithImage.tintColor            = UIColor.darkGrayStant
         
         self.addSubview(buttonWithImage)
         buttonWithImage.anchor(size: CGSize(width: 36, height: 36))

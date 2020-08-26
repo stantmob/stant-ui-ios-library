@@ -40,7 +40,7 @@ class SecondHeaderViewController: UIViewController {
                                                               icon: UIImage(named: "back") ?? UIImage()),
                                rightButton: SecondHeaderButton(action: #selector(clickOnRightButton),
                                                                target: self,
-                                                               icon: UIImage(named: "plusIcon") ?? UIImage()))
+                                                               icon: UIImage(named: "grey") ?? UIImage()))
       
     }
     
@@ -71,6 +71,5 @@ class SecondHeaderViewController: UIViewController {
     @objc func clickOnRightButton() {
         print("Click on right button")
     }
-    
 }
 
