@@ -44,8 +44,7 @@ class QuantityBarViewController: UIViewController {
                                trailing: self.view.trailingAnchor,
                                padding:  UIEdgeInsets(top: 50, left: 16, bottom: 0, right: 16))
         
-        quantityBarView.setNeedsLayout()
-        quantityBarView.layoutIfNeeded()
+        quantityBarView.updateLayout()
         quantityBarView.configure(totalQuantity: totalQuantity, doneQuantity: doneQuantity)
     }
     
@@ -63,8 +62,7 @@ class QuantityBarViewController: UIViewController {
                                trailing: self.view.trailingAnchor,
                                padding:  UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16))
         
-        buttonStackView.setNeedsLayout()
-        buttonStackView.layoutIfNeeded()
+        buttonStackView.updateLayout()
         
         layoutOneThirdButton()
         layoutHalfButton()

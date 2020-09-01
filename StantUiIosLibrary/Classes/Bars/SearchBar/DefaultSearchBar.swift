@@ -34,8 +34,7 @@ public class DefaultSearchBar: UIView {
         searchBar.layer.borderColor = UIColor.white.cgColor
         
         self.addSubview(searchBar)
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         
         searchBar.anchor(top:      self.topAnchor,
                          leading:  self.leadingAnchor,

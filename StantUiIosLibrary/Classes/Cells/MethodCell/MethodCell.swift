@@ -58,8 +58,7 @@ public class MethodCell: UITableViewCell {
                         trailing: self.trailingAnchor,
                         padding:  UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 15))
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
     }
     
     fileprivate func configureStatusBadge(status: MethodCellTypeEnum, order: Int) {

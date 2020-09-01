@@ -20,6 +20,11 @@ extension UIView {
         layer.mask = mask
     }
     
+    public func updateLayout() {
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+    }
+    
     func addSubviews(_ views: UIView...) {
         views.forEach{addSubview($0)}
     }

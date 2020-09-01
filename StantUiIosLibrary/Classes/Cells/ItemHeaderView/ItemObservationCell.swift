@@ -47,8 +47,7 @@ public class ItemObservationCell: UITableViewCell {
                         trailing: self.trailingAnchor,
                         padding:  UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 15))
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
     }
     
     func configureObservationLabel(observation: String) {
