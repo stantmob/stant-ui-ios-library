@@ -113,21 +113,24 @@ public class PlacesCell: UITableViewCell {
     }
     
     fileprivate func configurePlaceTitleLabel(placeTitle: String, quantitySubPlaces: Int) {
-        placeTitleLabel           = UILabel()
-        guard let placeTitleLabel = placeTitleLabel else { return }
-        placeTitleLabel.textColor = .blueDarkStant
-        placeTitleLabel.text      = placeTitle
-        placeTitleLabel.font      = .systemFont(ofSize: 16)
+        placeTitleLabel               = UILabel()
+        guard let placeTitleLabel     = placeTitleLabel else { return }
+        placeTitleLabel.textColor     = .blueDarkStant
+        placeTitleLabel.text          = placeTitle
+        placeTitleLabel.font          = .systemFont(ofSize: 16)
+        placeTitleLabel.numberOfLines = 1
+        placeTitleLabel.sizeToFit()
 
         self.addSubview(placeTitleLabel)
         let bottomPadding: CGFloat = quantitySubPlaces == 0 ? 5 : 18
-        placeTitleLabel.anchor(top:     self.topAnchor,
-                               leading: locationView?.trailingAnchor,
-                               bottom:  self.bottomAnchor,
-                               padding: UIEdgeInsets(top:    5,
-                                                     left:   7,
-                                                     bottom: bottomPadding,
-                                                     right:  0))
+        placeTitleLabel.anchor(top:      self.topAnchor,
+                               leading:  locationView?.trailingAnchor,
+                               bottom:   self.bottomAnchor,
+                               trailing: self.trailingAnchor,
+                               padding:  UIEdgeInsets(top:    5,
+                                                      left:   7,
+                                                      bottom: bottomPadding,
+                                                      right:  100))
     }
 
     fileprivate func configureSubPlacesLabel(quantitySubPlaces: Int) {

@@ -27,8 +27,6 @@ public class ListingPlacesViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.view.backgroundColor = .white
-        
-        
     }
     
     func configureTableView() {
