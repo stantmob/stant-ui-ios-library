@@ -11,45 +11,38 @@ import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
 class ServiceInspectionFormFilledListingTests: XCTestCase {
+    let unitMeasurement = "m²"
+    let beginAt         = "01/04/2019"
+    let endAt           = "12/04/2019"
     
-    var serviceInspectionFormFilledList = [ServiceInspectionFormFilled]()
+    let planningQuantity:         Float   = 1000.0
+    let approvedMethodPercentage: Float   = 0.6
+    let navigationBarHeight:      CGFloat = 60
     
-    let cardStatus            = 2
-    let cardPerformedQuantity = 40.0
-    let cardTotalUsedArea     = 156.2
-    let cardUnitMeasurement   = "m²"
-    let cardVerifiedUnit      = "Unidade Verificada"
-    let cardPlannedArea       = 1000.0
-    let cardBeginAt           = "01/04/2019"
-    let cardEndAt             = "12/04/2019"
+    let siffStatusList        = (0...3).map{ ServiceInspectionFormFilledCellTypeEnum(rawValue: $0)! }
+    let performedQuantityList = (0...3).map{ Float(40) * Float($0 + 1) }
+    let verifiedUnitList      = (0...3).map{ "Unidade Verificada \($0 + 1)" }
+    
     let viewController        = ServiceInspectionFormFilledListingViewController()
     
     func testInitialState() {
         viewController.loadViewIfNeeded()
-        let serviceInspectionFormFilledTableView = viewController.serviceInspectionFormFilledTableView
         
-        for i in 0...3 {
-            let siff = ServiceInspectionFormFilled(status:            ServiceInspectionFormFilledStatusEnum(rawValue: i)!,
-                                                   performedQuantity: Float(cardPerformedQuantity) * Float(i + 1),
-                                                   totalUsedArea:     Float(cardTotalUsedArea),
-                                                   unitMeasurement:   cardUnitMeasurement,
-                                                   verifiedUnit:      cardVerifiedUnit + "\(i)",
-                                                   plannedArea:       Float(cardPlannedArea),
-                                                   beginAt:           cardBeginAt,
-                                                   endAt:             cardEndAt)
-            serviceInspectionFormFilledList.append(siff)
-        }
+        guard let tableView = viewController.tableView else { return }
         
-        serviceInspectionFormFilledTableView?.configureViewWith(serviceInpsectionFormFilledList: serviceInspectionFormFilledList,
-                                                                searchBarIcon:                   UIImage(named: "search") ?? UIImage(),
-                                                                searchBarPlaceholder:            "Search",
-                                                                tableViewDelegate:               self)
-        
-        for index in serviceInspectionFormFilledList.indices {
-            let cell = serviceInspectionFormFilledTableView?.tableView?.dequeueReusableCell(withIdentifier: ServiceInspectionFormFilledCell.identifier(),
-                                                                                            for:            IndexPath(row: index, section: 0)) as! ServiceInspectionFormFilledCell
+        for index in siffStatusList.indices {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ServiceInspectionFormFilledCell.identifier(),
+                                                     for:            IndexPath(row: index, section: 0)) as!
+                                                     ServiceInspectionFormFilledCell
             
-            cell.configureViewFor(serviceInspectionFormFilled: serviceInspectionFormFilledList[index])
+            cell.configureViewFor(status:                   siffStatusList[index],
+                                  beginAt:                  beginAt,
+                                  endAt:                    endAt,
+                                  verifiedUnit:             verifiedUnitList[index],
+                                  unitMeasurement:          unitMeasurement,
+                                  performedQuantity:        performedQuantityList[index],
+                                  approvedMethodPercentage: approvedMethodPercentage,
+                                  planningQuantity:         planningQuantity)
         
             XCTAssertNotNil(cell.headerView)
             XCTAssertNotNil(cell.verifiedUnitLabel)
@@ -60,11 +53,4 @@ class ServiceInspectionFormFilledListingTests: XCTestCase {
         }
     }
 }
-
-extension ServiceInspectionFormFilledListingTests: ServiceInspectionFormFilledTableViewDidSelectDelegate {
-    func didClickOnTableViewCellWith(index: Int) {
-        print("Clicked on cell \(index)")
-    }
-}
-
 

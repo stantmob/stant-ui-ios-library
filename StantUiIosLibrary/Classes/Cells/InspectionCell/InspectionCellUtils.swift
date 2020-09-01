@@ -7,15 +7,15 @@
 
 import UIKit
 
-public enum InspectionStatusEnum {
+public enum InspectionCellTypeEnum {
     case approved, reproved
     
     public func stringValue() -> String {
         switch self {
         case .reproved:
-            return AppStrings.verified_method_details_reproved_label
+            return LibraryStrings.verified_method_status_reproved_label
         case .approved:
-            return AppStrings.verified_method_details_approved_label
+            return LibraryStrings.verified_method_status_approved_label
         }
     }
     

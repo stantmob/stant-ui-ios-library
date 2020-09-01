@@ -10,7 +10,7 @@ import UIKit
 public class SeverityLevelView: UIView {
     func configure(severity: Int) {
         for i in (0...4) {
-            let color: UIColor = severity >= (i + 1) ? .yellowStant : .darkGrayStant
+            let color: UIColor = severity >= (i + 1) ? getColor(severityLevel: severity) : .darkGrayStant
             configureView(index: i, color: color)
         }
     }
@@ -26,5 +26,20 @@ public class SeverityLevelView: UIView {
                     leading: self.leadingAnchor,
                     padding: UIEdgeInsets(top: 0, left: leftPadding, bottom: 0, right: 0),
                     size:    CGSize(width: 7, height: 7))
+    }
+    
+    func getColor(severityLevel: Int) -> UIColor {
+        switch severityLevel {
+        case 1:
+            return .greenStant
+        case 2:
+            return .yellowLightStant
+        case 3:
+            return .yellowLightStant
+        case 4:
+            return .yellowStant
+        default:
+            return .redLightStant
+        }
     }
 }

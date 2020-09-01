@@ -24,12 +24,17 @@ public class DefaultSearchBar: UIView {
         self.delegate        = delegate
         self.anchor(size: CGSize(width: 0, height: DefaultSearchBar.searchViewHeight))
         
-        searchBar      = UISearchBar()
-        searchBar?.tag = 1
-        guard let searchBar = searchBar else { return }
+        searchBar              = UISearchBar()
+        guard let searchBar    = searchBar else { return }
+        searchBar.tag          = 1
+        searchBar.delegate     = self
+        searchBar.barTintColor = .white
+        searchBar.placeholder  = placeholderText
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = UIColor.white.cgColor
+        
         self.addSubview(searchBar)
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.updateLayout()
         
         searchBar.anchor(top:      self.topAnchor,
                          leading:  self.leadingAnchor,
@@ -37,10 +42,12 @@ public class DefaultSearchBar: UIView {
                          trailing: self.trailingAnchor,
                          padding:  UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6))
         
-        searchBar.delegate        = self
-        searchBar.barTintColor    = .white
-        searchBar.placeholder     = placeholderText
-        searchBar.backgroundImage = UIImage()
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.backgroundColor    = .clear
+            searchBar.searchTextField.layer.borderWidth  = 2
+            searchBar.searchTextField.layer.cornerRadius = 4
+            searchBar.searchTextField.layer.borderColor  = UIColor.iceGrayStant.cgColor
+        }
         
         let searchTextField = searchBar.subviews[0].subviews.last as? UITextField ?? UITextField()
         let imageView       = UIImageView(frame: CGRect(x: 5, y: 0, width: 20, height: 20))
@@ -48,9 +55,9 @@ public class DefaultSearchBar: UIView {
         imageView.tintColor = .darkGrayStant
         
         searchTextField.leftView           = imageView
-        searchTextField.layer.borderWidth  = 2.0
-        searchTextField.layer.borderColor  = UIColor.veryLightGrayStant.cgColor
+        searchTextField.layer.borderWidth  = 2
         searchTextField.layer.cornerRadius = 4
+        searchTextField.layer.borderColor  = UIColor.iceGrayStant.cgColor
         UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont.systemFont(ofSize: 16)
     }
 }

@@ -13,11 +13,16 @@ extension UIView {
         return "\(String(describing: self.self))Identifier"
     }
     
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    public func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path   = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask   = CAShapeLayer()
         mask.path  = path.cgPath
         layer.mask = mask
+    }
+    
+    public func updateLayout() {
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
     
     func addSubviews(_ views: UIView...) {
@@ -55,33 +60,83 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = true
     }
     
-    func dropShadow(scale: Bool = true) {
-        self.layer.masksToBounds = false
-        self.layer.shadowColor   = UIColor.darkGray.cgColor
-        self.layer.shadowOpacity = 0.1
-        self.layer.shadowOffset  = CGSize(width: 0, height: 3)
-        self.layer.shadowRadius  = 15
-        
-        self.layer.shadowPath         = UIBezierPath(rect: bounds).cgPath
-        self.layer.shouldRasterize    = true
-        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-    
-    func addBottomBorderWithColor(color: UIColor = .veryLightGrayStant, width: CGFloat = 1) {
+    func addBottomBorderWithColor(color: UIColor = .iceGrayStant, width: CGFloat = 1) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame           = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
     }
+    
+     public func addBorders(edges:     UIRectEdge,
+                            thickness: CGFloat,
+                            color:     UIColor,
+                            padding:   UIEdgeInsets = .zero) {
+        
+        if edges.isEmpty { return }
+        
+        if edges.contains(.all) {
+            self.layer.borderWidth = thickness
+            self.layer.borderColor = color.cgColor
+            return
+        }
+        
+        if edges.contains(.top) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: 0, height: thickness))
+        }
+        
+        if edges.contains(.left) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: thickness, height: 0))
+        }
+        
+        if edges.contains(.bottom) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: 0, height: thickness))
+        }
+        
+        if edges.contains(.right) {
+            let borderView             = UIView()
+            borderView.backgroundColor = color
+            
+            self.addSubview(borderView)
+            borderView.anchor(top:      self.topAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  padding,
+                              size:     CGSize(width: thickness, height: 0))
+        }
+    }
 }
 
 extension CALayer {
-    func applySketchShadow(color: UIColor  = .black,
-                           alpha: Float    = 0.5,
-                           x: CGFloat      = 0,
-                           y: CGFloat      = 2,
-                           blur: CGFloat   = 4,
-                           spread: CGFloat = 0) {
+    func applySketchShadow(color:  UIColor  = .black,
+                           alpha:  Float    = 0.5,
+                           x:      CGFloat  = 0,
+                           y:      CGFloat  = 2,
+                           blur:   CGFloat  = 4,
+                           spread: CGFloat  = 0) {
         shadowColor   = color.cgColor
         shadowOpacity = alpha
         shadowOffset  = CGSize(width: x, height: y)

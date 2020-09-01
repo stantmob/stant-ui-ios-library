@@ -7,12 +7,12 @@
 
 import UIKit
 
-public class ItemMethodHeaderView: UITableViewHeaderFooterView {
+public class ItemHeaderView: UITableViewHeaderFooterView {
     public var statusTag:                   UIView?
     public var itemTitleLabel:              UILabel?
     public var reprovedInspectionIndicator: UIView?
     public var expandImageView:             UIImageView?
-    public var delegate:                    ItemMethodHeaderViewDelegate?
+    public var delegate:                    ItemHeaderViewDelegate?
     
     public static let headerHeight: CGFloat = 50
     public var isExpanded                   = false
@@ -24,27 +24,31 @@ public class ItemMethodHeaderView: UITableViewHeaderFooterView {
     
     override public func prepareForReuse() {
         super.prepareForReuse()
-        self.removeSubviews()
+        statusTag?.removeFromSuperview()
+        itemTitleLabel?.removeFromSuperview()
+        reprovedInspectionIndicator?.removeFromSuperview()
+        expandImageView?.removeFromSuperview()
     }
     
-    public func configure(delegate:          ItemMethodHeaderViewDelegate,
+    public func configure(delegate:          ItemHeaderViewDelegate,
                           section:           Int,
-                          status:            ItemMethodEnum,
+                          status:            ItemCellTypeEnum,
                           hasReprovedMethod: Bool,
                           isExpanded:        Bool,
                           itemTitle:         String) {
         
-        self.delegate        = delegate
-        self.section         = section
-        self.isExpanded      = isExpanded
+        self.delegate   = delegate
+        self.section    = section
+        self.isExpanded = isExpanded
         
         configureStatusTag(status: status)
-        configureItemTitleLabel(itemTitle: itemTitle)
         configureReprovedInspectionIndicator(hasReprovedMethod: hasReprovedMethod)
         configureExpandButton()
+        configureItemTitleLabel(itemTitle: itemTitle)
+        self.addBorders(edges: [.bottom], thickness: 1, color: .lightGrayStant)
     }
     
-    fileprivate func configureStatusTag(status: ItemMethodEnum) {
+    fileprivate func configureStatusTag(status: ItemCellTypeEnum) {
         statusTag                 = UIView()
         guard let statusTag       = statusTag else { return }
         statusTag.backgroundColor = status.colorValue()
@@ -53,20 +57,7 @@ public class ItemMethodHeaderView: UITableViewHeaderFooterView {
         statusTag.anchor(top:     self.topAnchor,
                          leading: self.leadingAnchor,
                          bottom:  self.bottomAnchor,
-                         size:    CGSize(width: 6, height: self.frame.height))
-    }
-    
-    fileprivate func configureItemTitleLabel(itemTitle: String) {
-        itemTitleLabel           = UILabel()
-        guard let itemTitleLabel = itemTitleLabel else { return }
-        itemTitleLabel.textColor = .darkGrayStant
-        itemTitleLabel.font      = .systemFont(ofSize: 16, weight: .regular)
-        itemTitleLabel.text      = itemTitle
-        
-        self.addSubview(itemTitleLabel)
-        itemTitleLabel.anchor(top:     self.topAnchor,
-                              leading: self.leadingAnchor,
-                              padding: UIEdgeInsets(top: 15, left: 16, bottom: 0, right: 0))
+                         size:    CGSize(width: 6, height: 0))
     }
     
     fileprivate func configureReprovedInspectionIndicator(hasReprovedMethod: Bool) {
@@ -108,6 +99,22 @@ public class ItemMethodHeaderView: UITableViewHeaderFooterView {
         tapView.addGestureRecognizer(tap)
     }
     
+    fileprivate func configureItemTitleLabel(itemTitle: String) {
+        itemTitleLabel               = UILabel()
+        guard let itemTitleLabel     = itemTitleLabel else { return }
+        itemTitleLabel.textColor     = .darkGrayStant
+        itemTitleLabel.font          = .systemFont(ofSize: 16, weight: .regular)
+        itemTitleLabel.text          = itemTitle
+        itemTitleLabel.numberOfLines = 2
+        
+        self.addSubview(itemTitleLabel)
+        itemTitleLabel.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: reprovedInspectionIndicator?.leadingAnchor,
+                              padding:  UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0))
+    }
+    
     @objc func handleButtonClick() {
         isExpanded = !isExpanded
         delegate?.toggleCollapse(section: section)
@@ -117,28 +124,9 @@ public class ItemMethodHeaderView: UITableViewHeaderFooterView {
     
     func toggleButton() {
         if isExpanded {
-            expandImageView?.image = UIImage(named: "up")
+            expandImageView?.image = UIImage(named: "collapseUp")
         } else {
-            expandImageView?.image = UIImage(named: "down")
+            expandImageView?.image = UIImage(named: "collapseDown")
         }
     }
-}
-
-public enum ItemMethodEnum {
-    case notInspected, reproved, approved
-    
-    public func colorValue() -> UIColor {
-        switch self {
-        case .notInspected:
-            return .clear
-        case .reproved:
-            return .redLightStant
-        case .approved:
-            return .greenStant
-        }
-    }
-}
-
-public protocol ItemMethodHeaderViewDelegate {
-    func toggleCollapse(section: Int)
 }

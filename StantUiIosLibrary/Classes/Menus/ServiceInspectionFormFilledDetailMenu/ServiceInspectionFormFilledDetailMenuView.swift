@@ -24,7 +24,7 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
         inChargeStackView.anchor(top:      self.topAnchor,
                                  leading:  self.leadingAnchor,
                                  trailing: self.trailingAnchor,
-                                 size:     CGSize(width: self.frame.width, height: 82))
+                                 size:     CGSize(width: 0, height: 82))
         
         inChargeStackView.configure(personNames: personInChargeNames,
                                     photoUrls:   personInChargePhotoUrls)
@@ -40,7 +40,7 @@ public class ServiceInspectionFormFilledDetailMenuView: UIView {
                            leading:  self.leadingAnchor,
                            trailing: self.trailingAnchor,
                            padding:  UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0),
-                           size:     CGSize(width: self.frame.width, height: 38))
+                           size:     CGSize(width: 0, height: 38))
     }
     
     public func configureFormTab(beginDate:       String,

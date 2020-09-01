@@ -41,7 +41,7 @@ public class InChargeStackView: UIView {
         
         responsibleDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                             personName:         personName,
-                                            personInChargeRole: AppStrings.service_inspection_form_filled_details_responsible,
+                                            personInChargeRole: LibraryStrings.service_inspection_form_filled_details_responsible,
                                             photoUrl:           photoUrl)
         
         guard let stackView         = stackView else { return }
@@ -54,7 +54,7 @@ public class InChargeStackView: UIView {
         
         finalizerDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                           personName:         personName,
-                                          personInChargeRole: AppStrings.service_inspection_form_filled_details_finalizer,
+                                          personInChargeRole: LibraryStrings.service_inspection_form_filled_details_finalizer,
                                           photoUrl:           photoUrl)
         
         guard let stackView       = stackView else { return }
@@ -67,7 +67,7 @@ public class InChargeStackView: UIView {
         
         approverDetail = PhotoDetailView(frame:              CGRect(x: 0, y: 0, width: 100, height: 82),
                                          personName:         personName,
-                                         personInChargeRole: AppStrings.service_inspection_form_filled_details_approver,
+                                         personInChargeRole: LibraryStrings.service_inspection_form_filled_details_approver,
                                          photoUrl:           photoUrl)
         
         guard let stackView      = stackView else { return }

@@ -13,7 +13,7 @@ extension UIColor {
         return UIColor(red: 60/255, green: 60/255, blue: 70/255, alpha: 1)
     }
     
-    @nonobjc public class var veryLightGrayStant: UIColor {
+    @nonobjc public class var iceGrayStant: UIColor {
         return UIColor(red: 233/255, green: 233/255, blue: 236/255, alpha: 1)
     }
     

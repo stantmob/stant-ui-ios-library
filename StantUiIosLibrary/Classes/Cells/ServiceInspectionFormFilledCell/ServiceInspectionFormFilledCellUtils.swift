@@ -7,48 +7,32 @@
 
 import UIKit
 
-public struct ServiceInspectionFormFilled {
-    let status:             ServiceInspectionFormFilledStatusEnum
-    let performedQuantity:  Float
-    let totalUsedArea:      Float
-    let unitMeasurement:    String
-    let verifiedUnit:       String
-    let plannedArea:        Float
-    let beginAt:            String
-    let endAt:              String
-    
-    public init(status:            ServiceInspectionFormFilledStatusEnum,
-                performedQuantity: Float,
-                totalUsedArea:     Float,
-                unitMeasurement:   String,
-                verifiedUnit:      String,
-                plannedArea:       Float,
-                beginAt:           String,
-                endAt:             String) {
-        self.status            = status
-        self.performedQuantity = performedQuantity
-        self.totalUsedArea     = totalUsedArea
-        self.unitMeasurement   = unitMeasurement
-        self.verifiedUnit      = verifiedUnit
-        self.plannedArea       = plannedArea
-        self.beginAt           = beginAt
-        self.endAt             = endAt
-    }
-}
-
-public enum ServiceInspectionFormFilledStatusEnum: Int {
+public enum ServiceInspectionFormFilledCellTypeEnum: Int {
     case progress = 0, finished = 1, approved = 2, late = 3
     
     public func stringValue() -> String {
         switch self {
         case .progress:
-            return AppStrings.service_inspection_form_filled_details_progress_label
+            return LibraryStrings.service_inspection_form_filled_details_progress_label
         case .finished:
-            return AppStrings.service_inspection_form_filled_details_finished_label
+            return LibraryStrings.service_inspection_form_filled_details_finished_label
         case .approved:
-            return AppStrings.service_inspection_form_filled_details_approved_label
+            return LibraryStrings.service_inspection_form_filled_details_approved_label
         case .late:
-            return AppStrings.service_inspection_form_filled_details_late_label
+            return LibraryStrings.service_inspection_form_filled_details_late_label
+        }
+    }
+    
+    public static func getStatusFromInt(value: Int) -> ServiceInspectionFormFilledCellTypeEnum {
+        switch value {
+        case 0:
+            return ServiceInspectionFormFilledCellTypeEnum.progress
+        case 1:
+            return ServiceInspectionFormFilledCellTypeEnum.finished
+        case 2:
+            return ServiceInspectionFormFilledCellTypeEnum.approved
+        default:
+            return ServiceInspectionFormFilledCellTypeEnum.late
         }
     }
     
@@ -65,15 +49,15 @@ public enum ServiceInspectionFormFilledStatusEnum: Int {
         }
     }
     
-    public static func convertFrom(string: String) -> ServiceInspectionFormFilledStatusEnum {
+    public static func convertFrom(string: String) -> ServiceInspectionFormFilledCellTypeEnum {
         switch string {
-        case AppStrings.service_inspection_form_filled_details_progress_label:
+        case LibraryStrings.service_inspection_form_filled_details_progress_label:
             return .progress
-        case AppStrings.service_inspection_form_filled_details_finished_label:
+        case LibraryStrings.service_inspection_form_filled_details_finished_label:
             return .finished
-        case AppStrings.service_inspection_form_filled_details_approved_label:
+        case LibraryStrings.service_inspection_form_filled_details_approved_label:
             return .approved
-        case AppStrings.service_inspection_form_filled_details_late_label:
+        case LibraryStrings.service_inspection_form_filled_details_late_label:
             return .late
         default:
             return .progress

@@ -51,7 +51,7 @@ public class TeamScreenViewController: UIViewController {
 
         guard let navigationView = navigationView else { return }
         
-        navigationView.configure(title:      AppStrings.service_inspection_form_filled_details_team_title,
+        navigationView.configure(title:      LibraryStrings.service_inspection_form_filled_details_team_title,
                                  titleFont:  .systemFont(ofSize: 14, weight: .medium),
                                  leftButton: backButton)
         
