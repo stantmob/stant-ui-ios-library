@@ -1,0 +1,67 @@
+//
+//  FormCustomTextField.swift
+//  StantUiIosLibrary
+//
+//  Created by Leandro Martins on 02/09/20.
+//
+
+import UIKit
+
+public class FormCustomTextField: UITextField {
+    var placeholderLabel:   UILabel?
+    var requiredFieldLabel: UILabel?
+    
+    public func configureTextField(placeholder:  String,
+                                   required:     Bool,
+                                   keyboardType: UIKeyboardType = .default) {
+        
+        self.keyboardType          = keyboardType
+        self.attributedPlaceholder = NSAttributedString(string:     placeholder,
+                                                        attributes: [NSAttributedString.Key
+                                                                    .foregroundColor: UIColor.darkGrayStant])
+
+        self.addBorders(edges:     [.bottom],
+                        thickness: 1,
+                        color:     .darkGrayStant)
+        
+        if required { addRequiredFieldLabel() }
+        
+        addPlaceHolderLabel(placeholder: placeholder)
+        self.addLeftPadding(width: 12)
+        
+        self.addTarget(self, action: #selector(togglePlaceholderLabel), for: .allEditingEvents)
+    }
+    
+    func addRequiredFieldLabel() {
+        requiredFieldLabel           = UILabel()
+        guard let requiredFieldLabel = requiredFieldLabel else { return }
+        requiredFieldLabel.font      = .systemFont(ofSize: 12, weight: .light)
+        requiredFieldLabel.textColor = .darkGrayStant
+        requiredFieldLabel.text      = "    " + LibraryStrings.required_field
+        
+        self.addSubview(requiredFieldLabel)
+        requiredFieldLabel.anchor(top:     self.bottomAnchor,
+                                  leading: leadingAnchor,
+                                  padding: UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0),
+                                  size:    CGSize(width: self.frame.width, height: 14))
+    }
+    
+    func addPlaceHolderLabel(placeholder: String) {
+        placeholderLabel           = UILabel()
+        guard let placeholderLabel = placeholderLabel else { return }
+        placeholderLabel.font      = .systemFont(ofSize: 12, weight: .regular)
+        placeholderLabel.textColor = .black
+        placeholderLabel.text      = "    " + placeholder
+        placeholderLabel.isHidden  = true
+        
+        self.addSubview(placeholderLabel)
+        placeholderLabel.anchor(top:     self.topAnchor,
+                                leading: leadingAnchor,
+                                size:    CGSize(width: self.frame.width, height: 14))
+    }
+    
+    @objc public func togglePlaceholderLabel() {
+        placeholderLabel?.isHidden    = self.text == ""
+        requiredFieldLabel?.textColor = .darkGrayStant
+    }
+}

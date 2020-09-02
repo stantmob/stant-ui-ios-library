@@ -9,15 +9,22 @@ import UIKit
 
 class LibraryStrings {
     //General
-    public static let see_more    = localized("see_more")
-    public static let edit        = localized("edit")
-    public static let details     = localized("details")
-    public static let deadline    = localized("deadline")
-    public static let description = localized("description")
-    public static let approve     = localized("approve")
-    public static let reprove     = localized("reprove")
-    public static let inspections = localized("inspections")
+    public static let see_more       = localized("see_more")
+    public static let edit           = localized("edit")
+    public static let details        = localized("details")
+    public static let deadline       = localized("deadline")
+    public static let description    = localized("description")
+    public static let approve        = localized("approve")
+    public static let reprove        = localized("reprove")
+    public static let inspections    = localized("inspections")
+    public static let required_field = localized("required_field")
+    public static let confirm        = localized("confirm")
+    public static let cancel         = localized("cancel")
     
+    //Date format
+    public static let date_format           = localized("date_format")
+    public static let date_format_day_month = localized("date_format_day_month")
+
     //Place Planning
     public static let place_planning_sub_place_label  = localized("place_planning.sub_place_label")
     public static let place_planning_sub_places_label = localized("place_planning.sub_places_label")

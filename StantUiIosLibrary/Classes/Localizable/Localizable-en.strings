@@ -7,14 +7,21 @@
 */
 
 //General
-"see_more"    = "See more";
-"edit"        = "Edit";
-"details"     = "Details";
-"deadline"    = "Deadline";
-"description" = "Description";
-"approve"     = "Approve";
-"reprove"     = "Reprove";
-"inspections" = "Inspections";
+"see_more"       = "See more";
+"edit"           = "Edit";
+"details"        = "Details";
+"deadline"       = "Deadline";
+"description"    = "Description";
+"approve"        = "Approve";
+"reprove"        = "Reprove";
+"inspections"    = "Inspections";
+"required_field" = "Required";
+"confirm"        = "Confirm";
+"cancel"         = "Cancel";
+
+//Date format
+"date_format"           = "MM/dd/yyyy";
+"date_format_day_month" = "MM/dd";
 
 //Place Planning
 "place_planning.sub_place_label"  = "Subplace";

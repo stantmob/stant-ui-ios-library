@@ -1,0 +1,122 @@
+//
+//  ReproveInspectionViewController.swift
+//  StantUiIosLibraryDemo
+//
+//  Created by Leandro Martins on 02/09/20.
+//  Copyright © 2020 Stant. All rights reserved.
+//
+
+import UIKit
+import StantUiIosLibrary
+
+class ReproveInspectionViewController: UIViewController {
+    var defaultTextField: FormCustomTextField?
+    var numericTextField: FormCustomTextField?
+    var beginDatePicker:  CustomDatePicker?
+    var endDatePicker:    CustomDatePicker?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        
+        configureDefaultTextField()
+        configureNumericTextField()
+        configureBeginDatePicker()
+        configureEndDatePicker()
+    }
+    
+    func configureDefaultTextField() {
+        defaultTextField           = FormCustomTextField()
+        guard let defaultTextField = defaultTextField else { return }
+        
+        defaultTextField.configureTextField(placeholder: "My text field",
+                                        required:    false)
+        
+        self.view.addSubview(defaultTextField)
+        defaultTextField.anchor(top:      self.view.topAnchor,
+                                leading:  self.view.leadingAnchor,
+                                trailing: self.view.trailingAnchor,
+                                padding:  UIEdgeInsets(top: 100, left:  10, bottom: 0, right: 10),
+                                size:     CGSize(width: 0, height: 50))
+    }
+    
+    func configureNumericTextField() {
+        numericTextField           = FormCustomTextField()
+        guard let numericTextField = numericTextField else { return }
+        
+        numericTextField.configureTextField(placeholder:  "My numeric field",
+                                        required:      true,
+                                        keyboardType:  .numberPad)
+        
+        self.view.addSubview(numericTextField)
+        numericTextField.anchor(top:      defaultTextField?.bottomAnchor,
+                                leading:  self.view.leadingAnchor,
+                                trailing: self.view.trailingAnchor,
+                                padding:  UIEdgeInsets(top: 20, left:  10, bottom: 0, right: 10),
+                                size:     CGSize(width: 0, height: 50))
+    }
+    
+    func configureBeginDatePicker() {
+        beginDatePicker           = CustomDatePicker()
+        guard let beginDatePicker = beginDatePicker else { return }
+        
+        self.view.addSubview(beginDatePicker)
+        beginDatePicker.anchor(top:      numericTextField?.bottomAnchor,
+                               leading:  self.view.leadingAnchor,
+                               trailing: self.view.trailingAnchor,
+                               padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 10),
+                               size:     CGSize(width: 0, height: 50))
+        
+        beginDatePicker.configureDatePicker(placeholder: "Begin",
+                                            required:    true,
+                                            delegate:    self)
+    }
+    
+    func configureEndDatePicker() {
+        endDatePicker           = CustomDatePicker()
+        guard let endDatePicker = endDatePicker else { return }
+        
+        self.view.addSubview(endDatePicker)
+        endDatePicker.anchor(top:      beginDatePicker?.bottomAnchor,
+                             leading:  self.view.leadingAnchor,
+                             trailing: self.view.trailingAnchor,
+                             padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 10),
+                             size:     CGSize(width: 0, height: 50))
+        
+        endDatePicker.configureDatePicker(placeholder: "End",
+                                          required:    false,
+                                          delegate:    self)
+    }
+}
+
+extension ReproveInspectionViewController: CustomDatePickerDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard var text = textField.text else { return false }
+        
+        if string == "" {
+            text = String(text.dropLast())
+            
+            if text.last == "/" {
+                text = String(text.dropLast())
+            }
+            
+            textField.text = text
+            return false
+        }
+        
+        if (text.count == 2 || text.count == 5){
+            textField.text? += "/"
+        }
+        
+        if textField.text?.count ?? 0 < 10 {
+            textField.text! += string
+        }
+        
+        return false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let validDate  = Date().isValidDate(string: textField.text ?? "") != nil
+        textField.text = validDate ? textField.text : ""
+    }
+}
