@@ -71,6 +71,5 @@ class SecondHeaderViewController: UIViewController {
     @objc func clickOnRightButton() {
         print("Click on right button")
     }
-    
 }
 
