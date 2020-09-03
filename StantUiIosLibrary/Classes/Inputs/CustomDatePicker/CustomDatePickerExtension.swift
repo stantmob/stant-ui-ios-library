@@ -27,7 +27,7 @@ extension CustomDatePicker {
         self.becomeFirstResponder()
     }
     
-    @objc func confirmDatePicker(_ sender: UIBarButtonItem){
+    @objc func confirmDatePicker(){
         if let datePicker = self.inputView as? UIDatePicker {
             let formatter        = DateFormatter()
             formatter.dateFormat = LibraryStrings.date_format
@@ -40,18 +40,18 @@ extension CustomDatePicker {
         
         guard let text = self.text else { return }
         
-        let validDate    = Date().isValidDate(string: text) != nil
-        self.text        = validDate ? text : ""
+        let validDate    = datePicker.isValidDate(string: text) != nil
+        self.text        = validDate ? text : (required ? datePicker.date.toString() : "")
         self.currentText = text
-        datePicker.date  = Date().isValidDate(string: text) ?? Date()
+        datePicker.date  = datePicker.isValidDate(string: text) ?? Date()
         
         self.endEditing(true)
         self.togglePlaceholderLabel()
     }
     
-    @objc func cancelDatePicker(_ sender: UIBarButtonItem) {
+    @objc func cancelDatePicker() {
         self.text       = currentText
-        datePicker.date = Date().isValidDate(string: self.text ?? "") ?? Date()
+        datePicker.date = datePicker.isValidDate(string: self.text ?? "") ?? Date()
         self.endEditing(true)
     }
     
@@ -59,6 +59,7 @@ extension CustomDatePicker {
          if action == #selector(UIResponderStandardEditActions.paste(_:)) {
              return false
          }
+        
          return super.canPerformAction(action, withSender: sender)
     }
 }

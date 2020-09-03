@@ -8,8 +8,7 @@
 import UIKit
 
 public class CustomDatePicker: FormCustomTextField {
-    let datePicker  = UIDatePicker()
-    var currentText = ""
+    let datePicker = UIDatePicker()
     
     public func configureDatePicker(placeholder: String,
                                     required:    Bool,
@@ -29,21 +28,22 @@ public class CustomDatePicker: FormCustomTextField {
         self.addGestureRecognizer(tap)
     }
     
-    public func setBar() -> UIToolbar {
-        let toolBar           = UIToolbar()
-        toolBar.barStyle      = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor     = UIColor.black
+    public override func setBar() -> UIToolbar {
+        let toolBar             = UIToolbar()
+        toolBar.barStyle        = UIBarStyle.default
+        toolBar.isTranslucent   = true
+        toolBar.tintColor       = UIColor.black
+        self.inputAccessoryView = nil
         toolBar.sizeToFit()
 
         let cancelButton  = UIBarButtonItem(title:  LibraryStrings.cancel,
                                             style:  .plain,
                                             target: self,
-                                            action: #selector(cancelDatePicker(_:)));
+                                            action: #selector(cancelDatePicker))
         let confirmButton = UIBarButtonItem(title:  LibraryStrings.confirm,
                                             style:  .plain,
                                             target: self,
-                                            action: #selector(confirmDatePicker(_:)));
+                                            action: #selector(confirmDatePicker))
         let spaceButton   = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
                                             target:              nil,
                                             action:              nil)
@@ -63,5 +63,23 @@ public class CustomDatePicker: FormCustomTextField {
         self.rightView                                                       = calendarButton
         self.rightViewMode                                                   = .always
         self.rightView?.widthAnchor.constraint(equalToConstant: 38).isActive = true
+    }
+    
+    public func setDateRestrictions(defaultValue: Date  = Date(),
+                                    minimumDate:  Date? = nil,
+                                    maximumDate:  Date? = nil) {
+        
+        let formatter        = DateFormatter()
+        formatter.dateFormat = LibraryStrings.date_format
+        self.text            = formatter.string(from: datePicker.date)
+        datePicker.date      = defaultValue
+        
+        if let minimumDate = minimumDate {
+            datePicker.minimumDate = minimumDate
+        }
+        
+        if let maximumDate = maximumDate {
+            datePicker.maximumDate = maximumDate
+        }
     }
 }

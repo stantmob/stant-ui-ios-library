@@ -11,13 +11,12 @@ extension Date {
     public func isValidDate(string: String) -> Date? {
         if string == "" { return nil }
         let dateFormatter        = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy" //AppStrings.date_format
+        dateFormatter.dateFormat = LibraryStrings.date_format
         
         return dateFormatter.date(from: string)
     }
-
     
-    func toString(with format: String = "dd/MM/yyyy") -> String {
+    func toString(with format: String = LibraryStrings.date_format) -> String {
         let dateFormatter        = DateFormatter()
         let timeZone             = TimeZone(identifier: "America/Sao_Paulo")!
         let locale               = Locale(identifier: "pt_BR")

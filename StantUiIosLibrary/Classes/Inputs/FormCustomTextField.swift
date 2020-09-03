@@ -10,11 +10,14 @@ import UIKit
 public class FormCustomTextField: UITextField {
     var placeholderLabel:   UILabel?
     var requiredFieldLabel: UILabel?
+    var required:           Bool   = false
+    var currentText:        String = ""
     
     public func configureTextField(placeholder:  String,
                                    required:     Bool,
                                    keyboardType: UIKeyboardType = .default) {
         
+        self.required              = required
         self.keyboardType          = keyboardType
         self.attributedPlaceholder = NSAttributedString(string:     placeholder,
                                                         attributes: [NSAttributedString.Key
@@ -30,6 +33,30 @@ public class FormCustomTextField: UITextField {
         self.addLeftPadding(width: 12)
         
         self.addTarget(self, action: #selector(togglePlaceholderLabel), for: .allEditingEvents)
+        self.inputAccessoryView = setBar()
+    }
+    
+    public func setBar() -> UIToolbar {
+        let toolBar           = UIToolbar()
+        toolBar.barStyle      = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor     = UIColor.black
+        toolBar.sizeToFit()
+
+        let cancelButton  = UIBarButtonItem(title:  LibraryStrings.cancel,
+                                            style:  .plain,
+                                            target: self,
+                                            action: #selector(cancelEditing))
+        let confirmButton = UIBarButtonItem(title:  LibraryStrings.confirm,
+                                            style:  .plain,
+                                            target: self,
+                                            action: #selector(confirmEditing))
+        let spaceButton   = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
+                                            target:              nil,
+                                            action:              nil)
+
+        toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: false)
+        return toolBar
     }
     
     func addRequiredFieldLabel() {
@@ -63,5 +90,15 @@ public class FormCustomTextField: UITextField {
     @objc public func togglePlaceholderLabel() {
         placeholderLabel?.isHidden    = self.text == ""
         requiredFieldLabel?.textColor = .darkGrayStant
+    }
+    
+    @objc func cancelEditing() {
+        self.text = currentText
+        self.endEditing(true)
+    }
+    
+    @objc func confirmEditing() {
+        currentText = self.text ?? ""
+        self.endEditing(true)
     }
 }

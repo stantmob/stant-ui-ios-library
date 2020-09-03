@@ -30,7 +30,7 @@ class ReproveInspectionViewController: UIViewController {
         guard let defaultTextField = defaultTextField else { return }
         
         defaultTextField.configureTextField(placeholder: "My text field",
-                                        required:    false)
+                                            required:    false)
         
         self.view.addSubview(defaultTextField)
         defaultTextField.anchor(top:      self.view.topAnchor,
@@ -45,8 +45,8 @@ class ReproveInspectionViewController: UIViewController {
         guard let numericTextField = numericTextField else { return }
         
         numericTextField.configureTextField(placeholder:  "My numeric field",
-                                        required:      true,
-                                        keyboardType:  .numberPad)
+                                            required:      true,
+                                            keyboardType:  .numberPad)
         
         self.view.addSubview(numericTextField)
         numericTextField.anchor(top:      defaultTextField?.bottomAnchor,
@@ -68,7 +68,7 @@ class ReproveInspectionViewController: UIViewController {
                                size:     CGSize(width: 0, height: 50))
         
         beginDatePicker.configureDatePicker(placeholder: "Begin",
-                                            required:    true,
+                                            required:    false,
                                             delegate:    self)
     }
     
@@ -84,8 +84,10 @@ class ReproveInspectionViewController: UIViewController {
                              size:     CGSize(width: 0, height: 50))
         
         endDatePicker.configureDatePicker(placeholder: "End",
-                                          required:    false,
+                                          required:    true,
                                           delegate:    self)
+        
+        endDatePicker.setDateRestrictions(minimumDate: Date().addingTimeInterval(-86400), maximumDate: Date().addingTimeInterval(86400))
     }
 }
 
