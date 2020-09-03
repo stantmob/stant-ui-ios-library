@@ -8,10 +8,10 @@
 import UIKit
 
 public class CustomFormTextField: UITextField {
-    var placeholderLabel:   UILabel?
-    var requiredFieldLabel: UILabel?
-    var required:           Bool   = false
-    var currentText:        String = ""
+    public var placeholderLabel:   UILabel?
+    public var requiredFieldLabel: UILabel?
+    public var required:           Bool   = false
+    public var currentText:        String = ""
     
     public func configureTextField(placeholder:  String,
                                    required:     Bool,
@@ -85,6 +85,11 @@ public class CustomFormTextField: UITextField {
         placeholderLabel.anchor(top:     self.topAnchor,
                                 leading: leadingAnchor,
                                 size:    CGSize(width: self.frame.width, height: 14))
+    }
+    
+    public func setText(text: String) {
+        self.text = text
+        self.togglePlaceholderLabel()
     }
     
     @objc public func togglePlaceholderLabel() {

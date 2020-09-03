@@ -65,6 +65,7 @@
 		87B9677A4FD7062BCEDFC8B223A441AB /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09CD63CAEFA18DFBAF546B76F844D9 /* TextInputTableViewCell.swift */; };
 		88A19C21B7D61402648E18D24508214F /* GroupSelectionDefaultSearchViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D38E2ECD480918F59853D6162E3F6B /* GroupSelectionDefaultSearchViewExtension.swift */; };
 		8B8B4BEF9159B9C7E0B0CD9E1427CEC1 /* InChargeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067417C01B9DF06F4D472856A878AA3E /* InChargeStackView.swift */; };
+		8F59A39825019C8E003E681A /* RadioButtonBottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59A39725019C8E003E681A /* RadioButtonBottomDialogWithScrollViewController.swift */; };
 		8F90C7F825011F13007A49AD /* UIDatePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90C7F725011F13007A49AD /* UIDatePickerExtension.swift */; };
 		8F9810A425012CF400297E6D /* RadioButtonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9810A325012CF400297E6D /* RadioButtonSelectionViewController.swift */; };
 		8F9810A825012FB300297E6D /* CustomRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9810A725012FB300297E6D /* CustomRadioButton.swift */; };
@@ -79,7 +80,7 @@
 		9BAD24C47A3D4302B78CE1E81157D80B /* CustomTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E68002759F0EFA25F18F1FD2367886 /* CustomTabViewCell.swift */; };
 		A22C794FE0A67422D26636C9E60FE219 /* ContactsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84765C2518CA1E04B7FD760A518385 /* ContactsTableView.swift */; };
 		A2C1B9061ADD6A17537AE6F87E4833F1 /* ConstructionsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A01572C0726C289669F75EF7CD98D5 /* ConstructionsFilter.swift */; };
-		A85CEAB4FFC0DEFF3BEA6B55C6281CC9 /* BottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD4AF8BEABE1889C9DEBC591E97283 /* BottomDialogWithScrollViewController.swift */; };
+		A85CEAB4FFC0DEFF3BEA6B55C6281CC9 /* CheckMarkBottomDialogWithScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD4AF8BEABE1889C9DEBC591E97283 /* CheckMarkBottomDialogWithScrollViewController.swift */; };
 		AD54B08988203EE4CC352ABCCD1DB796 /* Pods-StantUiIosLibraryDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F7ADFD043D9C7E201B681A0131DE0 /* Pods-StantUiIosLibraryDemoTests-dummy.m */; };
 		AF7E6598B10D9A1A0F37F3C25597A799 /* FirstHeaderRecentItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28DA7066F4E2AA00E66224A4420D8F /* FirstHeaderRecentItemCell.swift */; };
 		B2FB1B638C12AB56E8C5B29948678C0B /* ViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6714C3AB614DB9477958B8E8E017FE /* ViewTeste.swift */; };
@@ -218,6 +219,7 @@
 		89EED8E3C2B36D716A262E88F92A1FA5 /* CustomTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		8A3A5983A9A61263C5096237D95EA22F /* UIImageExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		8E80D14AB5C777C84057D23188C947CD /* SecondHeaderButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderButton.swift; sourceTree = "<group>"; };
+		8F59A39725019C8E003E681A /* RadioButtonBottomDialogWithScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonBottomDialogWithScrollViewController.swift; sourceTree = "<group>"; };
 		8F90C7F725011F13007A49AD /* UIDatePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtension.swift; sourceTree = "<group>"; };
 		8F9810A325012CF400297E6D /* RadioButtonSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonSelectionViewController.swift; sourceTree = "<group>"; };
 		8F9810A725012FB300297E6D /* CustomRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButton.swift; sourceTree = "<group>"; };
@@ -237,7 +239,7 @@
 		A97D7AFE2DFED4A7DC36BE3ADE1BAFC9 /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A991E227F8C2DE645A5F8719D57D5B21 /* ContactsCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsCard.swift; sourceTree = "<group>"; };
 		AE6FE016FE76B6FBCEE8AFA244484091 /* ToDoBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToDoBar.swift; sourceTree = "<group>"; };
-		B1BD4AF8BEABE1889C9DEBC591E97283 /* BottomDialogWithScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollViewController.swift; sourceTree = "<group>"; };
+		B1BD4AF8BEABE1889C9DEBC591E97283 /* CheckMarkBottomDialogWithScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckMarkBottomDialogWithScrollViewController.swift; sourceTree = "<group>"; };
 		B2F36B2276DF90AD59B40EBB188E4406 /* StantUiIosLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.debug.xcconfig; sourceTree = "<group>"; };
 		B4792F5706B5002BB428C2E2F9DB3C4F /* StantUiIosLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StantUiIosLibrary-dummy.m"; sourceTree = "<group>"; };
 		B7DA2637AB9620849CC2C5839623173A /* StantUiIosLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.release.xcconfig; sourceTree = "<group>"; };
@@ -893,8 +895,9 @@
 		E42FB5FB416E624ED0E0DF8C4D47288E /* BottomDialogWithScroll */ = {
 			isa = PBXGroup;
 			children = (
-				B1BD4AF8BEABE1889C9DEBC591E97283 /* BottomDialogWithScrollViewController.swift */,
+				B1BD4AF8BEABE1889C9DEBC591E97283 /* CheckMarkBottomDialogWithScrollViewController.swift */,
 				30D56C2A25AC353EBED8E537412923A5 /* ScrollableTableViewDialogCell.swift */,
+				8F59A39725019C8E003E681A /* RadioButtonBottomDialogWithScrollViewController.swift */,
 			);
 			path = BottomDialogWithScroll;
 			sourceTree = "<group>";
@@ -1157,7 +1160,7 @@
 				ED0A3B84EC9E3AD017243FD9F974F237 /* ApprovedInspectionCell.swift in Sources */,
 				77825C5E6024CC5D0355DE16C705669B /* AttachmentTabCollectionViewCell.swift in Sources */,
 				DF2F876836324F2B091B8504EE7F9D0B /* AttachmentTabView.swift in Sources */,
-				A85CEAB4FFC0DEFF3BEA6B55C6281CC9 /* BottomDialogWithScrollViewController.swift in Sources */,
+				A85CEAB4FFC0DEFF3BEA6B55C6281CC9 /* CheckMarkBottomDialogWithScrollViewController.swift in Sources */,
 				50FED699244E59C920207E71D7647366 /* CellBadge.swift in Sources */,
 				C3DD5A0922BB8BE6E6D24FCEA0EA12F1 /* ConstructionCard.swift in Sources */,
 				A2C1B9061ADD6A17537AE6F87E4833F1 /* ConstructionsFilter.swift in Sources */,
@@ -1204,6 +1207,7 @@
 				1668D8970329ACB5FFACB5B132F50D09 /* InspectionCellHeader.swift in Sources */,
 				2EBB4A30C41C7F6DE6E132A833C025D1 /* InspectionCellUtils.swift in Sources */,
 				2303030D4B4AC679ED5BA31DCFEB05ED /* InspectionDescriptionView.swift in Sources */,
+				8F59A39825019C8E003E681A /* RadioButtonBottomDialogWithScrollViewController.swift in Sources */,
 				EF92679F2F62D477F976E1159FF155FF /* InternActionCell.swift in Sources */,
 				EF80A944C0CE0E686C27E8A221760843 /* InternPersonCell.swift in Sources */,
 				9A0010C67C60FE98689116084702ADA2 /* IntExtension.swift in Sources */,

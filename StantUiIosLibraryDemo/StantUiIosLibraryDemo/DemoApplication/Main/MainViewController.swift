@@ -12,7 +12,7 @@ import StantUiIosLibrary
 class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
-    let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
+    let bottomDialogWithScrollViewController = CheckMarkBottomDialogWithScrollViewController()
     let checkMarkSelectionViewController     = CheckMarkSelectionViewController()
     let radioButtonSelectionViewController   = RadioButtonSelectionViewController()
     let scrollView                           = UIScrollView()

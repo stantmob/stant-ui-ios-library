@@ -8,7 +8,7 @@
 import UIKit
 
 public class CustomDatePicker: CustomFormTextField {
-    let datePicker = UIDatePicker()
+    public let datePicker = UIDatePicker()
     
     public func configureDatePicker(placeholder: String,
                                     required:    Bool,
@@ -71,8 +71,8 @@ public class CustomDatePicker: CustomFormTextField {
         
         let formatter        = DateFormatter()
         formatter.dateFormat = LibraryStrings.date_format
-        self.text            = formatter.string(from: datePicker.date)
         datePicker.date      = defaultValue
+        self.setText(text: formatter.string(from: datePicker.date))
         
         if let minimumDate = minimumDate {
             datePicker.minimumDate = minimumDate

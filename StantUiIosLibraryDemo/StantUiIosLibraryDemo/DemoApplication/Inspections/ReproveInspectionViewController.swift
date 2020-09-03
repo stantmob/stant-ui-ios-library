@@ -15,6 +15,9 @@ class ReproveInspectionViewController: UIViewController {
     var beginDatePicker:   CustomDatePicker?
     var endDatePicker:     CustomDatePicker?
     var severityTextField: CustomFormTextField?
+
+    var selectSeverityIndex = 0
+    let severityLevels      = ["Very Low", "Low", "Medium", "High", "Very High"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +102,8 @@ class ReproveInspectionViewController: UIViewController {
         severityTextField.configureTextField(placeholder: "Severity",
                                              required:    false)
         
+        severityTextField.setText(text: severityLevels[0])
+        
         self.view.addSubview(severityTextField)
         severityTextField.anchor(top:      endDatePicker?.bottomAnchor,
                                  leading:  self.view.leadingAnchor,
@@ -111,12 +116,18 @@ class ReproveInspectionViewController: UIViewController {
     }
     
     @objc func openSeverityDialog() {
-        let items = ["Very Low", "Low", "Medium", "High", "Very High"]
+        var views = [UIView]()
         
-        let dialogViewController                    = BottomDialogWithScrollViewController()
+        for i in 0...4 {
+            let severityView = SeverityLevelView(frame: CGRect(x: 0, y: 0, width: 52, height: 8))
+            severityView.configure(severity: i + 1)
+            views.append(severityView)
+        }
+        
+        let dialogViewController                    = RadioButtonBottomDialogWithScrollViewController()
         dialogViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         dialogViewController.cellDelegate           = self
-        dialogViewController.configureView(items: items, selectedItemIndex: 0)
+        dialogViewController.configureView(items: severityLevels, leftViews: views, selectedItemIndex: selectSeverityIndex)
         
         self.present(dialogViewController, animated: false, completion: nil)
     }
@@ -124,7 +135,8 @@ class ReproveInspectionViewController: UIViewController {
 
 extension ReproveInspectionViewController: ScrollableTableViewDialogCellDelegate {
     func clickOnCellWith(index: Int, title: String) {
-        print(title)
+        selectSeverityIndex = index
+        severityTextField?.setText(text: title)
     }
 }
 
