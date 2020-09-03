@@ -13,7 +13,8 @@ class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
     let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
-    let selectionViewController              = SelectionViewController()
+    let checkMarkSelectionViewController     = CheckMarkSelectionViewController()
+    let radioButtonSelectionViewController   = RadioButtonSelectionViewController()
     let scrollView                           = UIScrollView()
     
     var tableViewSelectedItem    = 0

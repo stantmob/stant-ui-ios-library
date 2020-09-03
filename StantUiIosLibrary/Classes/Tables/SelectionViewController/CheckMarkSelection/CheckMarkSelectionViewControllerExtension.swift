@@ -1,11 +1,11 @@
 //
-//  SelectionViewControllerExtension.swift
+//  CheckMarkSelectionViewControllerExtension.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 21/05/20.
 //
 
-extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
+extension CheckMarkSelectionViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemTitles.count
     }

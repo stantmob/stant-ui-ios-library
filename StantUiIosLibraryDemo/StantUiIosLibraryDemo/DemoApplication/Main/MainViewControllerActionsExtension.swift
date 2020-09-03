@@ -121,17 +121,17 @@ extension MainViewController {
         let itemSubtitles = (1...30).map { "Role \($0)" }
         let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
         
-        selectionViewController.modalPresentationStyle = .fullScreen
+        radioButtonSelectionViewController.modalPresentationStyle = .fullScreen
         
-        selectionViewController.configure(delegate:          self,
-                                          headerTitle:       "Select Team",
-                                          selectionType:     .multiple,
-                                          confirmButtonText: "Confirm",
-                                          selectedItems:     [],
-                                          itemTitles:        itemTitles,
-                                          itemSubtitles:     itemSubtitles,
-                                          iconsUrls:         iconsUrls)
-        self.present(selectionViewController, animated: false, completion: nil)
+        radioButtonSelectionViewController.configure(delegate:          self,
+                                                     headerTitle:       "Select Team",
+                                                     selectionType:     .multiple,
+                                                     confirmButtonText: "Confirm",
+                                                     selectedItems:     [],
+                                                     itemTitles:        itemTitles,
+                                                     itemSubtitles:     itemSubtitles,
+                                                     iconsUrls:         iconsUrls)
+        self.present(radioButtonSelectionViewController, animated: false, completion: nil)
     }
     
     func openResponsibleScreenDemo() {
@@ -139,17 +139,17 @@ extension MainViewController {
         let itemSubtitles = (1...30).map { "Role \($0)" }
         let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
         
-        selectionViewController.modalPresentationStyle = .fullScreen
+        checkMarkSelectionViewController.modalPresentationStyle = .fullScreen
         
-        selectionViewController.configure(delegate:          self,
-                                          headerTitle:       "Select Responsible",
-                                          selectionType:     .single,
-                                          confirmButtonText: "Confirm",
-                                          selectedItems:     [],
-                                          itemTitles:        itemTitles,
-                                          itemSubtitles:     itemSubtitles,
-                                          iconsUrls:         iconsUrls)
-        self.present(selectionViewController, animated: false, completion: nil)
+        checkMarkSelectionViewController.configure(delegate:          self,
+                                                   headerTitle:       "Select Responsible",
+                                                   selectionType:     .single,
+                                                   confirmButtonText: "Confirm",
+                                                   selectedItems:     [],
+                                                   itemTitles:        itemTitles,
+                                                   itemSubtitles:     itemSubtitles,
+                                                   iconsUrls:         iconsUrls)
+        self.present(checkMarkSelectionViewController, animated: false, completion: nil)
     }
 }
 

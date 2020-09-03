@@ -10,8 +10,8 @@ import UIKit
 import StantUiIosLibrary
 
 class ReproveInspectionViewController: UIViewController {
-    var defaultTextField: FormCustomTextField?
-    var numericTextField: FormCustomTextField?
+    var defaultTextField: CustomFormTextField?
+    var numericTextField: CustomFormTextField?
     var beginDatePicker:  CustomDatePicker?
     var endDatePicker:    CustomDatePicker?
     
@@ -26,7 +26,7 @@ class ReproveInspectionViewController: UIViewController {
     }
     
     func configureDefaultTextField() {
-        defaultTextField           = FormCustomTextField()
+        defaultTextField           = CustomFormTextField()
         guard let defaultTextField = defaultTextField else { return }
         
         defaultTextField.configureTextField(placeholder: "My text field",
@@ -41,7 +41,7 @@ class ReproveInspectionViewController: UIViewController {
     }
     
     func configureNumericTextField() {
-        numericTextField           = FormCustomTextField()
+        numericTextField           = CustomFormTextField()
         guard let numericTextField = numericTextField else { return }
         
         numericTextField.configureTextField(placeholder:  "My numeric field",

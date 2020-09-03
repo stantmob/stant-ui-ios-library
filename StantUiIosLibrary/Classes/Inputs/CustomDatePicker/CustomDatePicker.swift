@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class CustomDatePicker: FormCustomTextField {
+public class CustomDatePicker: CustomFormTextField {
     let datePicker = UIDatePicker()
     
     public func configureDatePicker(placeholder: String,

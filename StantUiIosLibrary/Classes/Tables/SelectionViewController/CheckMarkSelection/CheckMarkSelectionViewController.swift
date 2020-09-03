@@ -1,5 +1,5 @@
 //
-//  SelectionViewController.swift
+//  CheckMarkSelectionViewController.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 05/05/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SelectionViewController: UIViewController {
+public class CheckMarkSelectionViewController: UIViewController {
     public var headerView:        UIView?
     public var tableView:         UITableView?
     public var confirmButton:     UIButton?
@@ -17,6 +17,7 @@ public class SelectionViewController: UIViewController {
     public var confirmButtonText: String?
     public var selectedItems:     [Int]    = []
     public var iconsUrls:         [String] = []
+    public var leftViews:         [UIView] = []
     public var itemTitles:        [String] = []
     public var itemSubtitles:     [String] = []
     public var delegate:          SelectionViewDelegate?
@@ -89,15 +90,19 @@ public class SelectionViewController: UIViewController {
     func setCloseButton() {
         let closeButton                = UIButton()
         guard let headerView           = headerView else { return }
-        closeButton.backgroundColor    = .lightGrayStant
-        closeButton.layer.cornerRadius = 22
-        closeButton.setImage(UIImage(named: "close"), for: .normal)
+        closeButton.backgroundColor    = .iceGrayStant
+        closeButton.layer.cornerRadius = 18
+        closeButton.imageEdgeInsets    = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
+        closeButton.setImage(UIImage(named: "close")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        closeButton.isUserInteractionEnabled = true
+        closeButton.imageView?.tintColor     = UIColor.darkGrayStant
         
         headerView.addSubview(closeButton)
         closeButton.anchor(top:      headerView.topAnchor,
                            trailing: headerView.trailingAnchor,
                            padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 16),
-                           size:     CGSize(width: 44, height: 44))
+                           size:     CGSize(width: 36, height: 36))
         closeButton.addTarget(self, action: #selector(dimissScreen), for: .touchUpInside)
     }
     

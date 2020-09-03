@@ -1,5 +1,5 @@
 //
-//  FormCustomTextField.swift
+//  CustomFormTextField.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 02/09/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class FormCustomTextField: UITextField {
+public class CustomFormTextField: UITextField {
     var placeholderLabel:   UILabel?
     var requiredFieldLabel: UILabel?
     var required:           Bool   = false
