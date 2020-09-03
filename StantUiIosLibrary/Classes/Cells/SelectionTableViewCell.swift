@@ -39,7 +39,7 @@ class SelectionTableViewCell: UITableViewCell {
         subtitleLabel = nil
     }
     
-    func configureView(title: String, subtitle: String) {
+    func configureSimpleView(title: String, subtitle: String) {
         configureTitleLabel(title:       title,
                             topPadding:  (subtitle.isEmpty ? 10 : 0),
                             leftPadding: leftPadding)

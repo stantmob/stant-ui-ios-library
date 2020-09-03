@@ -48,8 +48,8 @@ public class RadioButtonSelectionViewController: CheckMarkSelectionViewControlle
                                         subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row],
                                         imageUrl: iconsUrls[indexPath.row])
         } else {
-            cell.configureView(title:    itemTitles[indexPath.row],
-                               subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row])
+            cell.configureSimpleView(title:    itemTitles[indexPath.row],
+                                     subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row])
         }
 
         return cell

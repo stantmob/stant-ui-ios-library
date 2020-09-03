@@ -17,7 +17,6 @@ public class CheckMarkSelectionViewController: UIViewController {
     public var confirmButtonText: String?
     public var selectedItems:     [Int]    = []
     public var iconsUrls:         [String] = []
-    public var leftViews:         [UIView] = []
     public var itemTitles:        [String] = []
     public var itemSubtitles:     [String] = []
     public var delegate:          SelectionViewDelegate?

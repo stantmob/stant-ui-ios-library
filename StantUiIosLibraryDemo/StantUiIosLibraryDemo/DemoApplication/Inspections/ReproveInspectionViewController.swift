@@ -10,10 +10,11 @@ import UIKit
 import StantUiIosLibrary
 
 class ReproveInspectionViewController: UIViewController {
-    var defaultTextField: CustomFormTextField?
-    var numericTextField: CustomFormTextField?
-    var beginDatePicker:  CustomDatePicker?
-    var endDatePicker:    CustomDatePicker?
+    var defaultTextField:  CustomFormTextField?
+    var numericTextField:  CustomFormTextField?
+    var beginDatePicker:   CustomDatePicker?
+    var endDatePicker:     CustomDatePicker?
+    var severityTextField: CustomFormTextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ReproveInspectionViewController: UIViewController {
         configureNumericTextField()
         configureBeginDatePicker()
         configureEndDatePicker()
+        configureSeverityTextField()
     }
     
     func configureDefaultTextField() {
@@ -88,6 +90,41 @@ class ReproveInspectionViewController: UIViewController {
                                           delegate:    self)
         
         endDatePicker.setDateRestrictions(minimumDate: Date().addingTimeInterval(-86400), maximumDate: Date().addingTimeInterval(86400))
+    }
+    
+    func configureSeverityTextField() {
+        severityTextField           = CustomFormTextField()
+        guard let severityTextField = severityTextField else { return }
+        
+        severityTextField.configureTextField(placeholder: "Severity",
+                                             required:    false)
+        
+        self.view.addSubview(severityTextField)
+        severityTextField.anchor(top:      endDatePicker?.bottomAnchor,
+                                 leading:  self.view.leadingAnchor,
+                                 trailing: self.view.trailingAnchor,
+                                 padding:  UIEdgeInsets(top: 31, left:  10, bottom: 0, right: 10),
+                                 size:     CGSize(width: 0, height: 50))
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openSeverityDialog))
+        severityTextField.addGestureRecognizer(tap)
+    }
+    
+    @objc func openSeverityDialog() {
+        let items = ["Very Low", "Low", "Medium", "High", "Very High"]
+        
+        let dialogViewController                    = BottomDialogWithScrollViewController()
+        dialogViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        dialogViewController.cellDelegate           = self
+        dialogViewController.configureView(items: items, selectedItemIndex: 0)
+        
+        self.present(dialogViewController, animated: false, completion: nil)
+    }
+}
+
+extension ReproveInspectionViewController: ScrollableTableViewDialogCellDelegate {
+    func clickOnCellWith(index: Int, title: String) {
+        print(title)
     }
 }
 
