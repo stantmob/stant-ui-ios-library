@@ -82,11 +82,11 @@ class GroupSelectionTableViewWithCollapsedSearchBarTests: XCTestCase {
         XCTAssertEqual(headerTitleLabel?.textColor, blueDarkColor)
         XCTAssertEqual(headerTitleLabel?.font, .systemFont(ofSize: 16, weight: .regular))
         
-        XCTAssertEqual(headerFirstDateLabel?.text, "08/10/2016")
+        XCTAssertEqual(headerFirstDateLabel?.text, "10/08/2016")
         XCTAssertEqual(headerFirstDateLabel?.textColor, darkGrayColor)
         XCTAssertEqual(headerFirstDateLabel?.font, .systemFont(ofSize: 11, weight: .regular))
         
-        XCTAssertEqual(headerSecondDateLabel?.text, "11/12/2030")
+        XCTAssertEqual(headerSecondDateLabel?.text, "12/11/2030")
         XCTAssertEqual(headerSecondDateLabel?.textColor, darkGrayColor)
         XCTAssertEqual(headerSecondDateLabel?.font, .systemFont(ofSize: 11, weight: .regular))
     }

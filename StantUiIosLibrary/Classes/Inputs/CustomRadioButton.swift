@@ -8,8 +8,8 @@
 import UIKit
 
 public class CustomRadioButton: UIView {
-    var buttonView: UIView?
-    var innerView:  UIView?
+    public var buttonView: UIView?
+    public var innerView:  UIView?
     
     public func configure(size: CGSize, color: UIColor) {
         self.frame                    = CGRect(x: 0, y: 0, width: size.width, height : size.height)

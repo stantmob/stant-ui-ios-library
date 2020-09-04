@@ -1,19 +1,19 @@
 //
-//  BottomDialogWithScrollTests.swift
+//  BottomDialogWithScrollAndLeftViewsTests.swift
 //  StantUiIosLibraryDemoTests
 //
-//  Created by Mac Mini Novo on 10/07/19.
-//  Copyright © 2019 Stant. All rights reserved.
+//  Created by Leandro Martins on 04/09/20.
+//  Copyright © 2020 Stant. All rights reserved.
 //
 
 import XCTest
 import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
-class BottomDialogWithScrollTests: XCTestCase {
+class BottomDialogWithScrollAndLeftViewsTests: XCTestCase {
     let viewController = BottomDialogTestViewController()
-    let items          = ["Item 01", "Item 02", "Item 03", "Item 04", "Item 05",
-                          "Item 06", "Item 07", "Item 08", "Item 09", "Item 10"]
+    let items          = ["Item 01", "Item 02", "Item 03", "Item 04", "Item 05"]
+    let leftView       = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
     
     override func setUp() {
         super.setUp()
@@ -21,19 +21,23 @@ class BottomDialogWithScrollTests: XCTestCase {
     }
     
     fileprivate func showBottomDialog() {
+        let leftViews                            = (1...5).map{_ in leftView}
         viewController.bottomDialog.cellDelegate = viewController
-        viewController.bottomDialog.configureView(items: items, selectedItemIndex: viewController.selectedItemIndex)
+        
+        viewController.bottomDialog.configureView(items:             items,
+                                                  leftViews:         leftViews,
+                                                  selectedItemIndex: viewController.selectedItemIndex)
         viewController.present(viewController.bottomDialog, animated: false, completion: nil)
     }
     
     func testDialogInformation() {
         let firstCell  = viewController.bottomDialog.tableView(viewController.bottomDialog.tableView ?? UITableView(),
-                                                              cellForRowAt: IndexPath(row: 0, section: 0)) as? ScrollableTableViewDialogCell
+                                                               cellForRowAt: IndexPath(row: 0, section: 0)) as? ScrollableTableViewDialogCell
         let secondCell = viewController.bottomDialog.tableView(viewController.bottomDialog.tableView ?? UITableView(),
-                                                              cellForRowAt: IndexPath(row: 1, section: 0)) as? ScrollableTableViewDialogCell
+                                                               cellForRowAt: IndexPath(row: 1, section: 0)) as? ScrollableTableViewDialogCell
         
-        XCTAssertEqual(viewController.bottomDialog.tableView?.numberOfRows(inSection: 0), 10)
-        XCTAssertEqual(firstCell?.cellTextLabel?.text, "Item 01")
+        XCTAssertEqual(viewController.bottomDialog.tableView?.numberOfRows(inSection: 0), 5)
+        XCTAssertEqual(firstCell?.cellIcon?.image?.size, CGSize(width: 50, height: 10))
         XCTAssertEqual(firstCell?.accessoryType, UITableViewCell.AccessoryType.checkmark)
         XCTAssertEqual(secondCell?.accessoryType, UITableViewCell.AccessoryType.none)
     }
@@ -57,19 +61,5 @@ class BottomDialogWithScrollTests: XCTestCase {
         XCTAssertEqual(firstCell?.accessoryType, UITableViewCell.AccessoryType.none)
         XCTAssertEqual(secondCell?.accessoryType, UITableViewCell.AccessoryType.checkmark)
     }
-    
-  
-}
 
-class BottomDialogTestViewController: UIViewController, ScrollableTableViewDialogCellDelegate {
-    let bottomDialog      = CheckMarkBottomDialogWithScrollViewController()
-    var selectedItemIndex = 0
-    var didClickOnCell    = false
-    
-    func clickOnCellWith(index: Int, title: String) {
-        didClickOnCell    = true
-        selectedItemIndex = index
-    }
-    
 }
-

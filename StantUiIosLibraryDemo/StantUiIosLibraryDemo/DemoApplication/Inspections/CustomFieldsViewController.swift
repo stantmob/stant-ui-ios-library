@@ -1,5 +1,5 @@
 //
-//  ReproveInspectionViewController.swift
+//  CustomFieldsViewController.swift
 //  StantUiIosLibraryDemo
 //
 //  Created by Leandro Martins on 02/09/20.
@@ -9,7 +9,7 @@
 import UIKit
 import StantUiIosLibrary
 
-class ReproveInspectionViewController: UIViewController {
+class CustomFieldsViewController: UIViewController {
     var defaultTextField:  CustomFormTextField?
     var numericTextField:  CustomFormTextField?
     var beginDatePicker:   CustomDatePicker?
@@ -133,23 +133,21 @@ class ReproveInspectionViewController: UIViewController {
     }
 }
 
-extension ReproveInspectionViewController: ScrollableTableViewDialogCellDelegate {
+extension CustomFieldsViewController: ScrollableTableViewDialogCellDelegate {
     func clickOnCellWith(index: Int, title: String) {
         selectSeverityIndex = index
         severityTextField?.setText(text: title)
     }
 }
 
-extension ReproveInspectionViewController: CustomDatePickerDelegate {
+extension CustomFieldsViewController: CustomDatePickerDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard var text = textField.text else { return false }
         
         if string == "" {
             text = String(text.dropLast())
             
-            if text.last == "/" {
-                text = String(text.dropLast())
-            }
+            if text.last == "/" { text = String(text.dropLast()) }
             
             textField.text = text
             return false

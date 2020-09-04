@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         self.addMethodDetailDemo()
         self.addItemMethodListingDemo()
         self.addPlacesListingDemo()
-        self.addInspectionReproval()
+        self.addCustomFieldsDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -305,13 +305,13 @@ class MainViewController: UIViewController {
         self.open(viewController: ListingPlacesViewController())
     }
     
-    fileprivate func addInspectionReproval() {
-        self.scrollView.addButton(title:  "Inspection Reproval demo",
-                                  action: #selector(goToInspectionReprovalDemo),
+    fileprivate func addCustomFieldsDemo() {
+        self.scrollView.addButton(title:  "Custom Fields demo",
+                                  action: #selector(goToCustomFieldsDemo),
                                   target: self)
     }
     
-    @objc func goToInspectionReprovalDemo() {
-        self.open(viewController: ReproveInspectionViewController())
+    @objc func goToCustomFieldsDemo() {
+        self.open(viewController: CustomFieldsViewController())
     }
 }

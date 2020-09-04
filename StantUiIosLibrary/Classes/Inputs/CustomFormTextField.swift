@@ -97,12 +97,12 @@ public class CustomFormTextField: UITextField {
         requiredFieldLabel?.textColor = .darkGrayStant
     }
     
-    @objc func cancelEditing() {
+    @objc public func cancelEditing() {
         self.text = currentText
         self.endEditing(true)
     }
     
-    @objc func confirmEditing() {
+    @objc public func confirmEditing() {
         currentText = self.text ?? ""
         self.endEditing(true)
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectionTableViewCell: UITableViewCell {
+public class SelectionTableViewCell: UITableViewCell {
     var cellIcon:      UIImageView?
     var titleLabel:    UILabel?
     var subtitleLabel: UILabel?

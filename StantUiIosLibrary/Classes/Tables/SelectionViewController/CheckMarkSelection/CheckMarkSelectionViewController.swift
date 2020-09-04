@@ -28,10 +28,6 @@ public class CheckMarkSelectionViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.view.backgroundColor = .white
-
-        configureHeaderView()
-        configureConfirmButton()
-        configureTableView()
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
@@ -54,6 +50,10 @@ public class CheckMarkSelectionViewController: UIViewController {
         self.itemTitles        = itemTitles
         self.itemSubtitles     = itemSubtitles
         self.iconsUrls         = iconsUrls
+        
+        configureHeaderView()
+        configureConfirmButton()
+        configureTableView()
     }
     
     func configureHeaderView() {
@@ -148,6 +148,7 @@ public class CheckMarkSelectionViewController: UIViewController {
         
         tableView.register(SelectionTableViewCell.self,
                            forCellReuseIdentifier: SelectionTableViewCell.identifier())
+        
     }
     
     @objc func returnSelectedItems() {

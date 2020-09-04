@@ -52,7 +52,10 @@
 		8F20AED1249454D700C6CA19 /* ItemListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F20AED0249454D700C6CA19 /* ItemListingTests.swift */; };
 		8F3728CC24508EDB00C549EF /* QuantityBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */; };
 		8F4E18282493C024001212BB /* ItemListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4E18272493C024001212BB /* ItemListingViewController.swift */; };
-		8F6CF2242500014900077FF8 /* ReproveInspectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CF2232500014900077FF8 /* ReproveInspectionViewController.swift */; };
+		8F52A165250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A164250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift */; };
+		8F52A16A2502766800B9F504 /* SelectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */; };
+		8F52A16C25029D0800B9F504 /* CustomFormTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */; };
+		8F6CF2242500014900077FF8 /* CustomFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
 		8F76A5FA24FE8CB900605307 /* ListingPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F76A5F924FE8CB900605307 /* ListingPlacesViewController.swift */; };
 		8F80535524D06BC90079C21B /* VerifiedMethodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80535424D06BC90079C21B /* VerifiedMethodDetailViewController.swift */; };
@@ -128,7 +131,10 @@
 		8F20AED0249454D700C6CA19 /* ItemListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListingTests.swift; sourceTree = "<group>"; };
 		8F3728CB24508EDB00C549EF /* QuantityBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarViewController.swift; sourceTree = "<group>"; };
 		8F4E18272493C024001212BB /* ItemListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListingViewController.swift; sourceTree = "<group>"; };
-		8F6CF2232500014900077FF8 /* ReproveInspectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReproveInspectionViewController.swift; sourceTree = "<group>"; };
+		8F52A164250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndLeftViewsTests.swift; sourceTree = "<group>"; };
+		8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerTests.swift; sourceTree = "<group>"; };
+		8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormTextFieldTests.swift; sourceTree = "<group>"; };
+		8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldsViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
 		8F76A5F924FE8CB900605307 /* ListingPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesViewController.swift; sourceTree = "<group>"; };
 		8F80535424D06BC90079C21B /* VerifiedMethodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifiedMethodDetailViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 			children = (
 				34CA9E8522D680A200E671D4 /* BottomDialogWithScrollTests.swift */,
 				8F03A49D23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift */,
+				8F52A164250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift */,
 			);
 			path = BottomDialogWithScroll;
 			sourceTree = "<group>";
@@ -247,6 +254,7 @@
 		34DFB8E2229495F7002D92FB /* StantUiIosLibraryDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8F52A166250275B200B9F504 /* Inputs */,
 				8F030E9723BFC66B009CDEA4 /* Services */,
 				8F20AECF2494545300C6CA19 /* ItemMethod */,
 				452DB89522CBF73C00561600 /* Utils */,
@@ -497,10 +505,19 @@
 			path = ItemMethod;
 			sourceTree = "<group>";
 		};
+		8F52A166250275B200B9F504 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */,
+				8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
 		8F6CF2222500011E00077FF8 /* Inspections */ = {
 			isa = PBXGroup;
 			children = (
-				8F6CF2232500014900077FF8 /* ReproveInspectionViewController.swift */,
+				8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */,
 			);
 			path = Inspections;
 			sourceTree = "<group>";
@@ -709,7 +726,7 @@
 				C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */,
 				8F1C5C4D24E46FF500B8A6A1 /* VerifiedMethodDetailViewControllerExtension.swift in Sources */,
 				8F4E18282493C024001212BB /* ItemListingViewController.swift in Sources */,
-				8F6CF2242500014900077FF8 /* ReproveInspectionViewController.swift in Sources */,
+				8F6CF2242500014900077FF8 /* CustomFieldsViewController.swift in Sources */,
 				452DB8AC22CCF2AD00561600 /* ProfileCellTableViewController.swift in Sources */,
 				34ECE70D22F31BF300D24ED3 /* RoundedImageViewController.swift in Sources */,
 				346518D922EF6CD800BC9E0D /* GroupSelectionViewController.swift in Sources */,
@@ -727,6 +744,8 @@
 				34FE368022F1B4D400F9FEAE /* GroupSelectionTableViewWithCollapsedSearchBarTests.swift in Sources */,
 				347958EB22CB92DF003D7CC4 /* ConstructionTableViewWithCollapsedSearchMocks.swift in Sources */,
 				34ECE71022F3762600D24ED3 /* RoundedImageViewTests.swift in Sources */,
+				8F52A16A2502766800B9F504 /* SelectionViewControllerTests.swift in Sources */,
+				8F52A165250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift in Sources */,
 				34D4F2DC22CE403C0073A46E /* MainMenuTabBarControllerMock.swift in Sources */,
 				343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */,
 				452DB8AE22CD23E400561600 /* InternPersonCellTests.swift in Sources */,
@@ -736,6 +755,7 @@
 				452DB89722CBF79000561600 /* XCTestExtensions.swift in Sources */,
 				34DFB8E4229495F7002D92FB /* ConstructionCardTests.swift in Sources */,
 				51E9B31E22CAA64400D47B6A /* InternActionCellTests.swift in Sources */,
+				8F52A16C25029D0800B9F504 /* CustomFormTextFieldTests.swift in Sources */,
 				34FE368F22F234F000F9FEAE /* InputTextCellTests.swift in Sources */,
 				8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */,
 				34FE368222F1B5F100F9FEAE /* GroupSelectionTableViewWithCollapsedSearchBarMocks.swift in Sources */,
