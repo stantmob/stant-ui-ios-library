@@ -15,6 +15,7 @@ class CustomFieldsViewController: UIViewController {
     var beginDatePicker:   CustomDatePicker?
     var endDatePicker:     CustomDatePicker?
     var severityTextField: CustomFormTextField?
+    var textView:          MultiLineTextView?
 
     var selectSeverityIndex = 0
     let severityLevels      = ["Very Low", "Low", "Medium", "High", "Very High"]
@@ -28,14 +29,12 @@ class CustomFieldsViewController: UIViewController {
         configureBeginDatePicker()
         configureEndDatePicker()
         configureSeverityTextField()
+        configureTextView()
     }
     
     func configureDefaultTextField() {
         defaultTextField           = CustomFormTextField()
         guard let defaultTextField = defaultTextField else { return }
-        
-        defaultTextField.configureTextField(placeholder: "My text field",
-                                            required:    false)
         
         self.view.addSubview(defaultTextField)
         defaultTextField.anchor(top:      self.view.topAnchor,
@@ -43,15 +42,14 @@ class CustomFieldsViewController: UIViewController {
                                 trailing: self.view.trailingAnchor,
                                 padding:  UIEdgeInsets(top: 100, left:  10, bottom: 0, right: 10),
                                 size:     CGSize(width: 0, height: 50))
+        
+        defaultTextField.configureTextField(placeholder: "My text field",
+                                            required:    false)
     }
     
     func configureNumericTextField() {
         numericTextField           = CustomFormTextField()
         guard let numericTextField = numericTextField else { return }
-        
-        numericTextField.configureTextField(placeholder:  "My numeric field",
-                                            required:      true,
-                                            keyboardType:  .numberPad)
         
         self.view.addSubview(numericTextField)
         numericTextField.anchor(top:      defaultTextField?.bottomAnchor,
@@ -59,6 +57,10 @@ class CustomFieldsViewController: UIViewController {
                                 trailing: self.view.trailingAnchor,
                                 padding:  UIEdgeInsets(top: 20, left:  10, bottom: 0, right: 10),
                                 size:     CGSize(width: 0, height: 50))
+        
+        numericTextField.configureTextField(placeholder:  "My numeric field",
+                                            required:      true,
+                                            keyboardType:  .numberPad)
     }
     
     func configureBeginDatePicker() {
@@ -99,17 +101,16 @@ class CustomFieldsViewController: UIViewController {
         severityTextField           = CustomFormTextField()
         guard let severityTextField = severityTextField else { return }
         
-        severityTextField.configureTextField(placeholder: "Severity",
-                                             required:    false)
-        
-        severityTextField.setText(text: severityLevels[0])
-        
         self.view.addSubview(severityTextField)
         severityTextField.anchor(top:      endDatePicker?.bottomAnchor,
                                  leading:  self.view.leadingAnchor,
                                  trailing: self.view.trailingAnchor,
                                  padding:  UIEdgeInsets(top: 31, left:  10, bottom: 0, right: 10),
                                  size:     CGSize(width: 0, height: 50))
+        
+        severityTextField.configureTextField(placeholder: "Severity",
+                                             required:    false)
+        severityTextField.setText(text: severityLevels[0])
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(openSeverityDialog))
         severityTextField.addGestureRecognizer(tap)
@@ -131,6 +132,21 @@ class CustomFieldsViewController: UIViewController {
         
         self.present(dialogViewController, animated: false, completion: nil)
     }
+    
+    func configureTextView() {
+        textView           = MultiLineTextView(frame: CGRect())
+        guard let textView = textView else { return }
+        
+        self.view.addSubview(textView)
+        textView.anchor(top:      severityTextField?.bottomAnchor,
+                        leading:  self.view.leadingAnchor,
+                        trailing: self.view.trailingAnchor,
+                        padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 10),
+                        size:     CGSize(width: 0, height: 100))
+        
+        textView.configureTextView(title:           "Observation",
+                                   maxCharQuantity: 20 )
+    }
 }
 
 extension CustomFieldsViewController: ScrollableTableViewDialogCellDelegate {
@@ -141,7 +157,10 @@ extension CustomFieldsViewController: ScrollableTableViewDialogCellDelegate {
 }
 
 extension CustomFieldsViewController: CustomDatePickerDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField:                    UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string:       String) -> Bool {
+        
         guard var text = textField.text else { return false }
         
         if string == "" {

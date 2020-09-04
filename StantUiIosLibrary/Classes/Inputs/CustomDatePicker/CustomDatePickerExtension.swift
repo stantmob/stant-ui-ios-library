@@ -8,7 +8,9 @@
 import UIKit
 
 public protocol CustomDatePickerDelegate: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    func textField(_ textField:                    UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string:       String) -> Bool
     func textFieldDidEndEditing(_ textField: UITextField)
 }
 

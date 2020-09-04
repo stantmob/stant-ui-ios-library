@@ -15,7 +15,7 @@
 "approve"        = "Approve";
 "reprove"        = "Reprove";
 "inspections"    = "Inspections";
-"required_field" = "Required";
+"required_field" = "*Required";
 "confirm"        = "Confirm";
 "cancel"         = "Cancel";
 

@@ -19,6 +19,7 @@ public class CustomFormTextField: UITextField {
         
         self.required              = required
         self.keyboardType          = keyboardType
+        self.backgroundColor       = .backgroundStant
         self.attributedPlaceholder = NSAttributedString(string:     placeholder,
                                                         attributes: [NSAttributedString.Key
                                                                     .foregroundColor: UIColor.darkGrayStant])
@@ -68,7 +69,7 @@ public class CustomFormTextField: UITextField {
         
         self.addSubview(requiredFieldLabel)
         requiredFieldLabel.anchor(top:     self.bottomAnchor,
-                                  leading: leadingAnchor,
+                                  leading: self.leadingAnchor,
                                   padding: UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0),
                                   size:    CGSize(width: self.frame.width, height: 14))
     }
@@ -78,12 +79,12 @@ public class CustomFormTextField: UITextField {
         guard let placeholderLabel = placeholderLabel else { return }
         placeholderLabel.font      = .systemFont(ofSize: 12, weight: .regular)
         placeholderLabel.textColor = .black
-        placeholderLabel.text      = "    " + placeholder
+        placeholderLabel.text      = "    " + placeholder + (required ? "*" : "")
         placeholderLabel.isHidden  = true
         
         self.addSubview(placeholderLabel)
         placeholderLabel.anchor(top:     self.topAnchor,
-                                leading: leadingAnchor,
+                                leading: self.leadingAnchor,
                                 size:    CGSize(width: self.frame.width, height: 14))
     }
     

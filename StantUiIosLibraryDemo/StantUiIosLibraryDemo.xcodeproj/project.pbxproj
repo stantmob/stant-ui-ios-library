@@ -64,6 +64,7 @@
 		8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */; };
 		8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */; };
 		8FDC5413247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */; };
+		8FE133D82502B2AA00D99C8D /* CustomDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */; };
 		C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730D6CF23C7A141003DEE68 /* ConstructionContactsViewController.swift */; };
 		C752BDDF23C658A80093DCF0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFB8D0229495F5002D92FB /* MainViewController.swift */; };
 		D2E1E8AE91A78FEB347A195A /* Pods_StantUiIosLibraryDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E8F41059BD359E59E73FF7 /* Pods_StantUiIosLibraryDemo.framework */; };
@@ -143,6 +144,7 @@
 		8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardTests.swift; sourceTree = "<group>"; };
 		8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipViewController.swift; sourceTree = "<group>"; };
 		8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuViewController.swift; sourceTree = "<group>"; };
+		8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerTests.swift; sourceTree = "<group>"; };
 		937D001B176CBE6EDAE59850 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C730D6CF23C7A141003DEE68 /* ConstructionContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionContactsViewController.swift; sourceTree = "<group>"; };
 		DC062C9F0556D38B24D99EF0 /* Pods-StantUiIosLibraryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StantUiIosLibraryDemo.debug.xcconfig"; path = "Target Support Files/Pods-StantUiIosLibraryDemo/Pods-StantUiIosLibraryDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			children = (
 				8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */,
 				8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */,
+				8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				882CCF4624AE754B00024A74 /* ServiceInspectionFormFilledListingTests.swift in Sources */,
 				8F030E9923BFC6A1009CDEA4 /* ProgressBarWithToolTipTests.swift in Sources */,
 				34CA9E8622D680A200E671D4 /* BottomDialogWithScrollTests.swift in Sources */,
+				8FE133D82502B2AA00D99C8D /* CustomDatePickerTests.swift in Sources */,
 				347958E922CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift in Sources */,
 				34ECE71D22F46F0000D24ED3 /* SecondHeaderViewControllerMock.swift in Sources */,
 				53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */,

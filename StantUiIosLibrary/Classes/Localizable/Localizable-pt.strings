@@ -15,7 +15,7 @@
 "approve"        = "Aprovar";
 "reprove"        = "Reprovar";
 "inspections"    = "Inspeções";
-"required_field" = "Obrigatório";
+"required_field" = "*Obrigatório";
 "confirm"        = "Confirmar";
 "cancel"         = "Cancelar";
 

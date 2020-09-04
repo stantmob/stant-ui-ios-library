@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LibraryStrings {
+public class LibraryStrings {
     //General
     public static let see_more       = localized("see_more")
     public static let edit           = localized("edit")
