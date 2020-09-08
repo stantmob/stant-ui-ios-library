@@ -692,20 +692,20 @@
 			path = BottomDialogWithScroll;
 			sourceTree = "<group>";
 		};
-		8FD17FE32507B27F003A0691 /* PhotoScrollView */ = {
+		8FD17FE32507B27F003A0691 /* PhotoInputView */ = {
 			isa = PBXGroup;
 			children = (
 				8FD17FE42507B2A3003A0691 /* PhotoInputView.swift */,
 				8FD17FE62507BD87003A0691 /* PhotoCollectionViewCell.swift */,
 				8FD17FE82507C5F7003A0691 /* PhotoCollectionView.swift */,
 			);
-			path = PhotoScrollView;
+			path = PhotoInputView;
 			sourceTree = "<group>";
 		};
 		8FF61BC0C4FA479AEACEFCC62BDED0D1 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
-				8FD17FE32507B27F003A0691 /* PhotoScrollView */,
+				8FD17FE32507B27F003A0691 /* PhotoInputView */,
 				269512168054B7FB79D63150B200A597 /* CustomFormTextField.swift */,
 				0D3948A10A9B9C1956B8A385E4C5F064 /* CustomRadioButton.swift */,
 				0D0B321FC811285DA2E182F5BE06F1DA /* TextInputTableViewCell.swift */,
