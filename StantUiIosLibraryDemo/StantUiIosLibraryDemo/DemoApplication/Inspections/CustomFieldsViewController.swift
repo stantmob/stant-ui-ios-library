@@ -10,12 +10,15 @@ import UIKit
 import StantUiIosLibrary
 
 class CustomFieldsViewController: UIViewController {
+    var mainView:          UIScrollView?
+    var contentView:       UIView?
     var defaultTextField:  CustomFormTextField?
     var numericTextField:  CustomFormTextField?
     var beginDatePicker:   CustomDatePicker?
     var endDatePicker:     CustomDatePicker?
     var severityTextField: CustomFormTextField?
     var textView:          MultiLineTextView?
+    var photoScrollView:   PhotoScrollView?
 
     var selectSeverityIndex = 0
     let severityLevels      = ["Very Low", "Low", "Medium", "High", "Very High"]
@@ -24,23 +27,51 @@ class CustomFieldsViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
+        configureMainView()
         configureDefaultTextField()
         configureNumericTextField()
         configureBeginDatePicker()
         configureEndDatePicker()
         configureSeverityTextField()
         configureTextView()
+        configurePhotoScrollView()
+    }
+    
+    func configureMainView() {
+        mainView           = UIScrollView()
+        guard let mainView = mainView else { return }
+        
+        self.view.addSubview(mainView)
+        mainView.anchor(top:      self.view.topAnchor,
+                        leading:  self.view.leadingAnchor,
+                        bottom:   self.view.bottomAnchor,
+                        trailing: self.view.trailingAnchor)
+        
+        self.view.updateLayout()
+        
+        contentView           = UIView()
+        guard let contentView = contentView else { return }
+        
+        mainView.addSubview(contentView)
+        contentView.anchor(top:      mainView.topAnchor,
+                           leading:  mainView.leadingAnchor,
+                           bottom:   mainView.bottomAnchor,
+                           trailing: mainView.trailingAnchor)
+        
+        contentView.widthAnchor.constraint(equalToConstant: mainView.frame.width).isActive = true
+        contentView.heightAnchor.constraint(equalToConstant: 900).isActive = true
     }
     
     func configureDefaultTextField() {
         defaultTextField           = CustomFormTextField()
-        guard let defaultTextField = defaultTextField else { return }
+        guard let defaultTextField = defaultTextField,
+              let contentView      = contentView else { return }
         
-        self.view.addSubview(defaultTextField)
-        defaultTextField.anchor(top:      self.view.topAnchor,
-                                leading:  self.view.leadingAnchor,
-                                trailing: self.view.trailingAnchor,
-                                padding:  UIEdgeInsets(top: 100, left:  10, bottom: 0, right: 10),
+        contentView.addSubview(defaultTextField)
+        defaultTextField.anchor(top:      contentView.topAnchor,
+                                leading:  contentView.leadingAnchor,
+                                trailing: contentView.trailingAnchor,
+                                padding:  UIEdgeInsets(top: 20, left:  10, bottom: 0, right: 10),
                                 size:     CGSize(width: 0, height: 50))
         
         defaultTextField.configureTextField(placeholder: "My text field",
@@ -49,12 +80,13 @@ class CustomFieldsViewController: UIViewController {
     
     func configureNumericTextField() {
         numericTextField           = CustomFormTextField()
-        guard let numericTextField = numericTextField else { return }
+        guard let numericTextField = numericTextField,
+              let contentView      = contentView else { return }
         
-        self.view.addSubview(numericTextField)
+        contentView.addSubview(numericTextField)
         numericTextField.anchor(top:      defaultTextField?.bottomAnchor,
-                                leading:  self.view.leadingAnchor,
-                                trailing: self.view.trailingAnchor,
+                                leading:  contentView.leadingAnchor,
+                                trailing: contentView.trailingAnchor,
                                 padding:  UIEdgeInsets(top: 20, left:  10, bottom: 0, right: 10),
                                 size:     CGSize(width: 0, height: 50))
         
@@ -65,12 +97,13 @@ class CustomFieldsViewController: UIViewController {
     
     func configureBeginDatePicker() {
         beginDatePicker           = CustomDatePicker()
-        guard let beginDatePicker = beginDatePicker else { return }
+        guard let beginDatePicker = beginDatePicker,
+              let contentView     = contentView else { return }
         
-        self.view.addSubview(beginDatePicker)
+        contentView.addSubview(beginDatePicker)
         beginDatePicker.anchor(top:      numericTextField?.bottomAnchor,
-                               leading:  self.view.leadingAnchor,
-                               trailing: self.view.trailingAnchor,
+                               leading:  contentView.leadingAnchor,
+                               trailing: contentView.trailingAnchor,
                                padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 10),
                                size:     CGSize(width: 0, height: 50))
         
@@ -81,12 +114,13 @@ class CustomFieldsViewController: UIViewController {
     
     func configureEndDatePicker() {
         endDatePicker           = CustomDatePicker()
-        guard let endDatePicker = endDatePicker else { return }
+        guard let endDatePicker = endDatePicker,
+              let contentView   = contentView else { return }
         
-        self.view.addSubview(endDatePicker)
+        contentView.addSubview(endDatePicker)
         endDatePicker.anchor(top:      beginDatePicker?.bottomAnchor,
-                             leading:  self.view.leadingAnchor,
-                             trailing: self.view.trailingAnchor,
+                             leading:  contentView.leadingAnchor,
+                             trailing: contentView.trailingAnchor,
                              padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 10),
                              size:     CGSize(width: 0, height: 50))
         
@@ -99,12 +133,13 @@ class CustomFieldsViewController: UIViewController {
     
     func configureSeverityTextField() {
         severityTextField           = CustomFormTextField()
-        guard let severityTextField = severityTextField else { return }
+        guard let severityTextField = severityTextField,
+              let contentView       = contentView else { return }
         
-        self.view.addSubview(severityTextField)
+        contentView.addSubview(severityTextField)
         severityTextField.anchor(top:      endDatePicker?.bottomAnchor,
-                                 leading:  self.view.leadingAnchor,
-                                 trailing: self.view.trailingAnchor,
+                                 leading:  contentView.leadingAnchor,
+                                 trailing: contentView.trailingAnchor,
                                  padding:  UIEdgeInsets(top: 31, left:  10, bottom: 0, right: 10),
                                  size:     CGSize(width: 0, height: 50))
         
@@ -134,18 +169,33 @@ class CustomFieldsViewController: UIViewController {
     }
     
     func configureTextView() {
-        textView           = MultiLineTextView(frame: CGRect())
-        guard let textView = textView else { return }
+        textView              = MultiLineTextView(frame: CGRect())
+        guard let textView    = textView,
+              let contentView = contentView else { return }
         
-        self.view.addSubview(textView)
+        contentView.addSubview(textView)
         textView.anchor(top:      severityTextField?.bottomAnchor,
-                        leading:  self.view.leadingAnchor,
-                        trailing: self.view.trailingAnchor,
+                        leading:  contentView.leadingAnchor,
+                        trailing: contentView.trailingAnchor,
                         padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 10),
                         size:     CGSize(width: 0, height: 100))
         
         textView.configureTextView(title:           "Observation",
                                    maxCharQuantity: 20 )
+    }
+    
+    func configurePhotoScrollView() {
+        photoScrollView           = PhotoScrollView()
+        guard let photoScrollView = photoScrollView,
+              let contentView     = contentView else { return }
+        
+        self.view.addSubview(photoScrollView)
+        photoScrollView.anchor(top:      textView?.bottomAnchor,
+                               leading:  contentView.leadingAnchor,
+                               trailing: contentView.trailingAnchor,
+                               padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 0))
+        
+        photoScrollView.configure(photoUrls: [])
     }
 }
 

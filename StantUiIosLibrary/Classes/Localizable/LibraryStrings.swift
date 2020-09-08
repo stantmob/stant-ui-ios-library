@@ -20,6 +20,7 @@ public class LibraryStrings {
     public static let required_field = localized("required_field")
     public static let confirm        = localized("confirm")
     public static let cancel         = localized("cancel")
+    public static let photos         = localized("photos")
     
     //Date format
     public static let date_format           = localized("date_format")

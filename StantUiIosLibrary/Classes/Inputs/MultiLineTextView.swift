@@ -14,6 +14,7 @@ public class MultiLineTextView: UIView {
     
     public var currentCharQuantity = 0
     public var maxCharQuantity     = 1
+    public var currentText         = ""
     
     public func configureTextView(title: String, maxCharQuantity: Int) {
         self.maxCharQuantity = maxCharQuantity
@@ -45,7 +46,8 @@ public class MultiLineTextView: UIView {
         textView.backgroundColor                    = .backgroundStant
         textView.textContainer.maximumNumberOfLines = 5
         textView.textContainer.lineBreakMode        = .byWordWrapping
-
+        textView.inputAccessoryView                 = setBar()
+        
         self.addSubview(textView)
         textView.anchor(top:      titleLabel?.bottomAnchor,
                         leading:  self.leadingAnchor,
@@ -63,6 +65,29 @@ public class MultiLineTextView: UIView {
                       size:     CGSize(width: 0, height: 1))
     }
     
+    func setBar() -> UIToolbar {
+        let toolBar           = UIToolbar()
+        toolBar.barStyle      = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor     = UIColor.black
+        toolBar.sizeToFit()
+
+        let cancelButton  = UIBarButtonItem(title:  LibraryStrings.cancel,
+                                            style:  .plain,
+                                            target: self,
+                                            action: #selector(cancelEditing))
+        let confirmButton = UIBarButtonItem(title:  LibraryStrings.confirm,
+                                            style:  .plain,
+                                            target: self,
+                                            action: #selector(confirmEditing))
+        let spaceButton   = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
+                                            target:              nil,
+                                            action:              nil)
+
+        toolBar.setItems([cancelButton, spaceButton, confirmButton], animated: false)
+        return toolBar
+    }
+    
     func addCharacterCounter() {
         characterCounter           = UILabel()
         guard let characterCounter = characterCounter else { return }
@@ -74,6 +99,16 @@ public class MultiLineTextView: UIView {
         characterCounter.anchor(top:      textView?.bottomAnchor,
                                 trailing: self.trailingAnchor,
                                 padding:  UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 12))
+    }
+    
+    @objc public func cancelEditing() {
+        self.textView?.text = currentText
+        self.endEditing(true)
+    }
+    
+    @objc public func confirmEditing() {
+        currentText = self.textView?.text ?? ""
+        self.endEditing(true)
     }
 }
 

@@ -18,6 +18,7 @@
 "required_field" = "*Required";
 "confirm"        = "Confirm";
 "cancel"         = "Cancel";
+"photos"         = "Photos";
 
 //Date format
 "date_format"           = "MM/dd/yyyy";
