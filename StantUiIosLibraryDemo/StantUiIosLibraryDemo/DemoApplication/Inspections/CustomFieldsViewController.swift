@@ -61,7 +61,7 @@ class CustomFieldsViewController: UIViewController {
                            trailing: mainView.trailingAnchor)
         
         contentView.widthAnchor.constraint(equalToConstant: mainView.frame.width).isActive = true
-        contentView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+        contentView.heightAnchor.constraint(equalToConstant: 900).isActive                 = true
     }
     
     func configureDefaultTextField() {
@@ -165,8 +165,10 @@ class CustomFieldsViewController: UIViewController {
         let dialogViewController                    = RadioButtonBottomDialogWithScrollViewController()
         dialogViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         dialogViewController.cellDelegate           = self
-        dialogViewController.configureView(items: severityLevels, leftViews: views, selectedItemIndex: selectSeverityIndex)
         
+        dialogViewController.configureView(items:             severityLevels,
+                                           leftViews:         views,
+                                           selectedItemIndex: selectSeverityIndex)
         self.present(dialogViewController, animated: false, completion: nil)
     }
     
