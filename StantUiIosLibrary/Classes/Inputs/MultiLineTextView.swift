@@ -102,7 +102,9 @@ public class MultiLineTextView: UIView {
     }
     
     @objc public func cancelEditing() {
-        self.textView?.text = currentText
+        self.textView?.text         = currentText
+        self.currentCharQuantity    = currentText.count
+        self.characterCounter?.text = "\(currentCharQuantity)/\(maxCharQuantity)"
         self.endEditing(true)
     }
     
