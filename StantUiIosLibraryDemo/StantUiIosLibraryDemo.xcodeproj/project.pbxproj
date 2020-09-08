@@ -63,6 +63,7 @@
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
 		8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */; };
 		8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */; };
+		8FD17FE22507AE40003A0691 /* MultiLineTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD17FE12507AE40003A0691 /* MultiLineTextViewTests.swift */; };
 		8FDC5413247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */; };
 		8FE133D82502B2AA00D99C8D /* CustomDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */; };
 		C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730D6CF23C7A141003DEE68 /* ConstructionContactsViewController.swift */; };
@@ -143,6 +144,7 @@
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
 		8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardTests.swift; sourceTree = "<group>"; };
 		8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipViewController.swift; sourceTree = "<group>"; };
+		8FD17FE12507AE40003A0691 /* MultiLineTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextViewTests.swift; sourceTree = "<group>"; };
 		8FDC5412247EAF5E00443DF4 /* ServiceInspectionFormFilledDetailMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuViewController.swift; sourceTree = "<group>"; };
 		8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerTests.swift; sourceTree = "<group>"; };
 		937D001B176CBE6EDAE59850 /* Pods_StantUiIosLibraryDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StantUiIosLibraryDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -513,6 +515,7 @@
 				8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */,
 				8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */,
 				8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */,
+				8FD17FE12507AE40003A0691 /* MultiLineTextViewTests.swift */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				8FE133D82502B2AA00D99C8D /* CustomDatePickerTests.swift in Sources */,
 				347958E922CA296A003D7CC4 /* ConstructionTableViewWithCollapsedSearchBarTests.swift in Sources */,
 				34ECE71D22F46F0000D24ED3 /* SecondHeaderViewControllerMock.swift in Sources */,
+				8FD17FE22507AE40003A0691 /* MultiLineTextViewTests.swift in Sources */,
 				53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */,
 				8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */,
 			);
