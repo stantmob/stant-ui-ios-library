@@ -10,8 +10,8 @@ import UIKit
 public class PhotoCollectionView: UIView {
     var addPhotoButton: UIButton?
     var collectionView: UICollectionView?
-    var photoUrls:      [String] = []
     var delegate:       PhotoCollectionViewDelegate?
+    var photoUrls:      [String] = []
     let photoDimension: CGFloat  = 56
     
     public func configure(photoUrls: [String],
