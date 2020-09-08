@@ -8,12 +8,12 @@
 import UIKit
 
 public class PhotoInputView: UIView {
-    var titleLabel:          UILabel?
-    var photoCounter:        UILabel?
-    var galleryButton:       UIButton?
-    var photoCollectionView: PhotoCollectionView?
-    var photoCollectionViewDelegate:            PhotoCollectionViewDelegate?
-    var photoUrls:           [String] = []
+    public var titleLabel:                  UILabel?
+    public var photoCounter:                UILabel?
+    public var galleryButton:               UIButton?
+    public var photoCollectionView:         PhotoCollectionView?
+    public var photoCollectionViewDelegate: PhotoCollectionViewDelegate?
+    public var photoUrls:                   [String] = []
     
     public func configure(photoUrls:                   [String],
                           photoCollectionViewDelegate: PhotoCollectionViewDelegate) {

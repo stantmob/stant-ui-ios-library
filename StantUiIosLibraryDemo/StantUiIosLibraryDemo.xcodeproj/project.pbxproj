@@ -58,6 +58,7 @@
 		8F6CF2242500014900077FF8 /* CustomFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
 		8F76A5FA24FE8CB900605307 /* ListingPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F76A5F924FE8CB900605307 /* ListingPlacesViewController.swift */; };
+		8F80408B2507E75200506065 /* PhotoInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80408A2507E75200506065 /* PhotoInputViewTests.swift */; };
 		8F80535524D06BC90079C21B /* VerifiedMethodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80535424D06BC90079C21B /* VerifiedMethodDetailViewController.swift */; };
 		8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */; };
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
@@ -139,6 +140,7 @@
 		8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldsViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
 		8F76A5F924FE8CB900605307 /* ListingPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesViewController.swift; sourceTree = "<group>"; };
+		8F80408A2507E75200506065 /* PhotoInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInputViewTests.swift; sourceTree = "<group>"; };
 		8F80535424D06BC90079C21B /* VerifiedMethodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifiedMethodDetailViewController.swift; sourceTree = "<group>"; };
 		8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuTests.swift; sourceTree = "<group>"; };
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */,
 				8FE133D72502B2AA00D99C8D /* CustomDatePickerTests.swift */,
 				8FD17FE12507AE40003A0691 /* MultiLineTextViewTests.swift */,
+				8F80408A2507E75200506065 /* PhotoInputViewTests.swift */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				34D4F2DC22CE403C0073A46E /* MainMenuTabBarControllerMock.swift in Sources */,
 				343FF2BE229D74BE00B96C60 /* SyncDialogTests.swift in Sources */,
 				452DB8AE22CD23E400561600 /* InternPersonCellTests.swift in Sources */,
+				8F80408B2507E75200506065 /* PhotoInputViewTests.swift in Sources */,
 				8F1C5C5424E47A6800B8A6A1 /* VerifiedMethodDetailViewTests.swift in Sources */,
 				3445BC5722B7D68200C62011 /* MainMenuTabBarTests.swift in Sources */,
 				8F03A49E23A7FE22004FF6EC /* BottomDialogWithScrollAndIconsTests.swift in Sources */,
