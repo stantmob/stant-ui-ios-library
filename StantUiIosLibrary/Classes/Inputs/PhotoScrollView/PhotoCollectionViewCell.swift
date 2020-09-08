@@ -8,22 +8,59 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    var imageView: UIImageView?
+    var imageView:      UIImageView?
+    var closeButton:    UIButton?
+    var delegate:       PhotoCollectionViewDelegate?
+    var index:          Int      = 0
+    let photoDimension: CGFloat  = 56
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureImageView()
+    func configure(path:     String,
+                   index:    Int,
+                   delegate: PhotoCollectionViewDelegate) {
+        
+        self.index    = index
+        self.delegate = delegate
+        
+        configureImageView(path: path)
+        configureCloseButton()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configureImageView() {
+    func configureImageView(path: String) {
         imageView           = UIImageView()
         guard let imageView = imageView else { return }
         
         self.addSubview(imageView)
         imageView.fillSuperView()
+        
+        imageView.showRoundedImageWith(path:   path,
+                                       radius: photoDimension / 2)
     }
+    
+    func configureCloseButton() {
+        closeButton           = UIButton()
+        guard let closeButton = closeButton else { return }
+        
+        self.addSubview(closeButton)
+        closeButton.anchor(leading: self.leadingAnchor,
+                           bottom:  self.bottomAnchor,
+                           padding: UIEdgeInsets(top: 0, left: 42, bottom: 44, right: 0),
+                           size:    CGSize(width: 20, height: 20))
+        
+        closeButton.backgroundColor      = .iceGrayStant
+        closeButton.layer.cornerRadius   = 10
+        closeButton.imageEdgeInsets      = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        closeButton.imageView?.tintColor = UIColor.black
+        
+        closeButton.addTarget(self, action: #selector(removePhoto), for: .touchUpInside)
+        closeButton.setImage(UIImage(named: "close")?.withRenderingMode(.alwaysTemplate),
+                                for: .normal)
+    }
+    
+    @objc func removePhoto() {
+        delegate?.removePhotoAtIndex(index: index)
+    }
+}
+
+public protocol PhotoCollectionViewDelegate {
+    func removePhotoAtIndex(index: Int)
 }

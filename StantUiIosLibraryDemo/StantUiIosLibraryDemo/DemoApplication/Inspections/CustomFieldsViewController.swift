@@ -18,10 +18,11 @@ class CustomFieldsViewController: UIViewController {
     var endDatePicker:     CustomDatePicker?
     var severityTextField: CustomFormTextField?
     var textView:          MultiLineTextView?
-    var photoScrollView:   PhotoScrollView?
+    var photoInputView:    PhotoInputView?
 
     var selectSeverityIndex = 0
     let severityLevels      = ["Very Low", "Low", "Medium", "High", "Very High"]
+    var photoUrls           = (1...10).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +39,9 @@ class CustomFieldsViewController: UIViewController {
     }
     
     func configureMainView() {
-        mainView           = UIScrollView()
-        guard let mainView = mainView else { return }
+        mainView                              = UIScrollView()
+        guard let mainView                    = mainView else { return }
+        mainView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(mainView)
         mainView.anchor(top:      self.view.topAnchor,
@@ -185,17 +187,19 @@ class CustomFieldsViewController: UIViewController {
     }
     
     func configurePhotoScrollView() {
-        photoScrollView           = PhotoScrollView()
-        guard let photoScrollView = photoScrollView,
-              let contentView     = contentView else { return }
+        photoInputView           = PhotoInputView()
+        guard let photoInputView = photoInputView,
+              let contentView    = contentView else { return }
         
-        self.view.addSubview(photoScrollView)
-        photoScrollView.anchor(top:      textView?.bottomAnchor,
-                               leading:  contentView.leadingAnchor,
-                               trailing: contentView.trailingAnchor,
-                               padding:  UIEdgeInsets(top: 31, left: 10, bottom: 0, right: 0))
+        self.view.addSubview(photoInputView)
+        photoInputView.anchor(top:      textView?.bottomAnchor,
+                              leading:  contentView.leadingAnchor,
+                              trailing: contentView.trailingAnchor,
+                              padding:  UIEdgeInsets(top: 31, left: 0, bottom: 0, right: 0),
+                              size:     CGSize(width: 0, height: 122))
         
-        photoScrollView.configure(photoUrls: [])
+        photoInputView.configure(photoUrls:                    photoUrls,
+                                 photoCollectionViewDelegate:  self)
     }
 }
 
@@ -236,5 +240,11 @@ extension CustomFieldsViewController: CustomDatePickerDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         let validDate  = Date().isValidDate(string: textField.text ?? "") != nil
         textField.text = validDate ? textField.text : ""
+    }
+}
+
+extension CustomFieldsViewController: PhotoCollectionViewDelegate {
+    public func removePhotoAtIndex(index: Int) {
+        print("Removing photo at index \(index)")
     }
 }

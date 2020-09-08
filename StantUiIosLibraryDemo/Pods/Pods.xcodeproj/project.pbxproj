@@ -71,8 +71,9 @@
 		8DEFF1FD2C196BF773ECA65AA97856A0 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDB64A91C12760D6A5932DD625E840 /* DialogViewController.swift */; };
 		8EAA407DBAB850A7B2233742BB30FBF0 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3434E2E3ECF1FC0D3172F1D8C9C0F0FB /* CustomTabView.swift */; };
 		8EE0BF2488CF0F5123E2B529EFE88E71 /* GroupSelectionTableViewWithCollapsedSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F847BB43C33AA4FF5696C73EC6E1E0 /* GroupSelectionTableViewWithCollapsedSearchBar.swift */; };
-		8FD17FE52507B2A3003A0691 /* PhotoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD17FE42507B2A3003A0691 /* PhotoScrollView.swift */; };
+		8FD17FE52507B2A3003A0691 /* PhotoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD17FE42507B2A3003A0691 /* PhotoInputView.swift */; };
 		8FD17FE72507BD87003A0691 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD17FE62507BD87003A0691 /* PhotoCollectionViewCell.swift */; };
+		8FD17FE92507C5F7003A0691 /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD17FE82507C5F7003A0691 /* PhotoCollectionView.swift */; };
 		8FE133DA2502C1C900D99C8D /* MultiLineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE133D92502C1C900D99C8D /* MultiLineTextView.swift */; };
 		906642FFB634F0BFECC0E6E90848D8CB /* CustomDatePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39498CD1D86579F061B4083698776BAA /* CustomDatePickerExtension.swift */; };
 		918B348C7667BB385D73C99328415F6B /* StantUiIosLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7A980B358B596DFA1E728B38633 /* StantUiIosLibrary-dummy.m */; };
@@ -212,8 +213,9 @@
 		8A0B0FEDE9C2E0B80215A54410F0AD5A /* TeamTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeamTabView.swift; sourceTree = "<group>"; };
 		8E4ECDCFA8EF5023562A8104F7EDEE6A /* GroupSelectionShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
 		8F786A7A487E6C7E301CDE8C6BDE8F32 /* GroupSelectionDefaultSearchViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GroupSelectionDefaultSearchViewExtension.swift; sourceTree = "<group>"; };
-		8FD17FE42507B2A3003A0691 /* PhotoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScrollView.swift; sourceTree = "<group>"; };
+		8FD17FE42507B2A3003A0691 /* PhotoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInputView.swift; sourceTree = "<group>"; };
 		8FD17FE62507BD87003A0691 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8FD17FE82507C5F7003A0691 /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 		8FE133D92502C1C900D99C8D /* MultiLineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextView.swift; sourceTree = "<group>"; };
 		9092F4FFDDE93211A50F9ECD9A1E0EAB /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		90AF515351BA818A515D138D6C85BE6D /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -693,8 +695,9 @@
 		8FD17FE32507B27F003A0691 /* PhotoScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				8FD17FE42507B2A3003A0691 /* PhotoScrollView.swift */,
+				8FD17FE42507B2A3003A0691 /* PhotoInputView.swift */,
 				8FD17FE62507BD87003A0691 /* PhotoCollectionViewCell.swift */,
+				8FD17FE82507C5F7003A0691 /* PhotoCollectionView.swift */,
 			);
 			path = PhotoScrollView;
 			sourceTree = "<group>";
@@ -1176,6 +1179,7 @@
 			files = (
 				CE0F16C04A26FC81C01F0EB36525BC0D /* ApprovedInspectionCell.swift in Sources */,
 				E593FCB75977092FA7E776F70A5BD959 /* AttachmentTabCollectionViewCell.swift in Sources */,
+				8FD17FE92507C5F7003A0691 /* PhotoCollectionView.swift in Sources */,
 				E978B5C9FC133A0FEB8CDA5E45A473A9 /* AttachmentTabView.swift in Sources */,
 				115885FDDED69211081FCF14A31A3857 /* CellBadge.swift in Sources */,
 				E2FFEFBE84EE10736BABC82343546D42 /* CheckMarkBottomDialogWithScrollViewController.swift in Sources */,
@@ -1220,7 +1224,7 @@
 				2104F44C0AD056AE992A2FC34F0E9A9C /* GroupedSelection.swift in Sources */,
 				093EA7EA2F4FF619432C31288C2634D2 /* GroupSelectionDefaultSearchViewExtension.swift in Sources */,
 				B20DEE8E8E185A03E99F289BABA49B01 /* GroupSelectionHeaderView.swift in Sources */,
-				8FD17FE52507B2A3003A0691 /* PhotoScrollView.swift in Sources */,
+				8FD17FE52507B2A3003A0691 /* PhotoInputView.swift in Sources */,
 				9A7A6839DCE0965C0FD6313ECEF815F6 /* GroupSelectionRowCell.swift in Sources */,
 				077CA146124822AB8D56190C51F1905E /* GroupSelectionShowAndHideSearchTableViewExtension.swift in Sources */,
 				29A0BBCC3D20559B7CE28BE09CB7E0DC /* GroupSelectionTableView.swift in Sources */,
