@@ -30,7 +30,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         guard let imageView = imageView else { return }
         
         self.addSubview(imageView)
-        imageView.fillSuperView()
+        imageView.anchor(top: self.topAnchor,
+                         leading: self.leadingAnchor,
+                         padding: UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0),
+                         size:    CGSize(width: photoDimension, height: photoDimension))
         
         imageView.showRoundedImageWith(path:   path,
                                        radius: photoDimension / 2)
@@ -43,7 +46,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         self.addSubview(closeButton)
         closeButton.anchor(leading: self.leadingAnchor,
                            bottom:  self.bottomAnchor,
-                           padding: UIEdgeInsets(top: 0, left: 42, bottom: 44, right: 0),
+                           padding: UIEdgeInsets(top: 0, left: 43, bottom: 42, right: 0),
                            size:    CGSize(width: 20, height: 20))
         
         closeButton.backgroundColor      = .iceGrayStant

@@ -15,7 +15,7 @@ public class PhotoCollectionView: UIView {
     let photoDimension: CGFloat  = 56
     
     public func configure(photoUrls: [String],
-                          delegate: PhotoCollectionViewDelegate) {
+                          delegate:  PhotoCollectionViewDelegate) {
         
         self.backgroundColor = .backgroundStant
         self.photoUrls       = photoUrls
@@ -60,7 +60,7 @@ public class PhotoCollectionView: UIView {
                               leading:  addPhotoButton?.trailingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 13, left: 15, bottom: 13, right: 0))
+                              padding:  UIEdgeInsets(top: 7, left: 15, bottom: 13, right: 0))
         
         collectionView.register(PhotoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier())
@@ -97,7 +97,7 @@ extension PhotoCollectionView: UICollectionViewDataSource,
     public func collectionView(_ collectionView:            UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath:     IndexPath) -> CGSize {
-        return CGSize(width: photoDimension, height: photoDimension)
+        return CGSize(width: photoDimension, height: photoDimension + 7)
     }
     
     public func collectionView(_ collectionView:                            UICollectionView,
