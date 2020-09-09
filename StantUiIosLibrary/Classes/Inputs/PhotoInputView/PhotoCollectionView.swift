@@ -94,6 +94,12 @@ extension PhotoCollectionView: UICollectionViewDataSource,
         return cell
     }
     
+    public func collectionView(_ collectionView:          UICollectionView,
+                               didSelectItemAt indexPath: IndexPath) {
+        
+        print("Cell in index \(indexPath.row) selected")
+    }
+    
     public func collectionView(_ collectionView:            UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath:     IndexPath) -> CGSize {
@@ -109,6 +115,6 @@ extension PhotoCollectionView: UICollectionViewDataSource,
     public func collectionView(_ collectionView:                       UICollectionView,
                                layout collectionViewLayout:            UICollectionViewLayout,
                                minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 12
     }
 }

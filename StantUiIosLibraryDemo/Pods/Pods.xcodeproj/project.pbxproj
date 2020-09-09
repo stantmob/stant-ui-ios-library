@@ -72,6 +72,7 @@
 		8BDE02910F3D4F8E32471A186E62ECDF /* CustomFormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6ABDD5CB36FE18FA87D4B91AC87F4B /* CustomFormTextField.swift */; };
 		8C32FD7119E5EB234DDAC47782617FA4 /* CheckMarkSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD5366DABFBAD46A39D1DE8B4A2672 /* CheckMarkSelectionViewController.swift */; };
 		8D05245FA111B51FFA23265D881B277B /* SecondHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CFFD78C77DFED3CB5DDCBB916E1989 /* SecondHeaderView.swift */; };
+		8F6DE40825091AA800D34ECB /* CustomSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6DE40725091AA800D34ECB /* CustomSwitchView.swift */; };
 		92A3625A65ED2783F2024261DCA90091 /* CheckMarkSelectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA60F3705F515BF8E4E927320CD447 /* CheckMarkSelectionViewControllerExtension.swift */; };
 		934184FA25029946A96B9E85C5EA5407 /* GroupedSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7523B575E161B9A0BC57135E49E024 /* GroupedSelection.swift */; };
 		949F80A3151EDA03A9DBD323ED7D9128 /* ServiceInspectionFormFilledDetailMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CBE4AB98413DE10D6B573D0BDFB2A0 /* ServiceInspectionFormFilledDetailMenuView.swift */; };
@@ -212,6 +213,7 @@
 		8D08D38FCD9F95E90BCF1F995F4CAC38 /* InChargeStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InChargeStackView.swift; sourceTree = "<group>"; };
 		8D1984ADC7AD33149BBD433247B5A5DB /* SelectRecentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectRecentViewController.swift; sourceTree = "<group>"; };
 		8D381F609A203558D38979F92FBF8F95 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		8F6DE40725091AA800D34ECB /* CustomSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchView.swift; sourceTree = "<group>"; };
 		8FCA60F3705F515BF8E4E927320CD447 /* CheckMarkSelectionViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckMarkSelectionViewControllerExtension.swift; sourceTree = "<group>"; };
 		9111CBDAF1C39A0D2C77BE1696501368 /* PhotoDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 		920178FC17939EA936FDAE8AC4EA1DB3 /* ContactsCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsCard.swift; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				4D126052985DDC3140DF147DC22A22F8 /* PhotoCollectionView.swift */,
 				0BF9E694D5E92667995F486533A67759 /* PhotoCollectionViewCell.swift */,
 				5AB956292A62F0E730B89CE45237B622 /* PhotoInputView.swift */,
+				8F6DE40725091AA800D34ECB /* CustomSwitchView.swift */,
 			);
 			path = PhotoInputView;
 			sourceTree = "<group>";
@@ -1242,6 +1245,7 @@
 				05E33DE33DD157C8EC58FE0FAD0512EB /* PhotoDetailView.swift in Sources */,
 				9E831CCB21C32C74032EC7E38993E482 /* PhotoInputView.swift in Sources */,
 				BF4F0EF4940DB1577639D5A6F9B16DF7 /* PlacesCell.swift in Sources */,
+				8F6DE40825091AA800D34ECB /* CustomSwitchView.swift in Sources */,
 				6CC45F3B4AB4220B95DCA361914FC43A /* ProgressBarWithToolTip.swift in Sources */,
 				8561206866693774E9C5608FEB4AB725 /* ProgressToolTip.swift in Sources */,
 				96BC8462B3440175768E7306C556E8C4 /* QuantityBar.swift in Sources */,

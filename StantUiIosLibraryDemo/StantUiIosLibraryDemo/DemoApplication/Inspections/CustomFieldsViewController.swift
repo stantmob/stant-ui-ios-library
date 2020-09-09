@@ -19,7 +19,8 @@ class CustomFieldsViewController: UIViewController {
     var severityTextField: CustomFormTextField?
     var textView:          MultiLineTextView?
     var photoInputView:    PhotoInputView?
-
+    var switchView:        CustomSwitchView?
+    
     var selectSeverityIndex = 0
     let severityLevels      = ["Very Low", "Low", "Medium", "High", "Very High"]
     var photoUrls           = (1...10).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
@@ -36,6 +37,7 @@ class CustomFieldsViewController: UIViewController {
         configureSeverityTextField()
         configureTextView()
         configurePhotoScrollView()
+        configureSwitchView()
     }
     
     func configureMainView() {
@@ -193,7 +195,7 @@ class CustomFieldsViewController: UIViewController {
         guard let photoInputView = photoInputView,
               let contentView    = contentView else { return }
         
-        self.view.addSubview(photoInputView)
+        contentView.addSubview(photoInputView)
         photoInputView.anchor(top:      textView?.bottomAnchor,
                               leading:  contentView.leadingAnchor,
                               trailing: contentView.trailingAnchor,
@@ -202,6 +204,21 @@ class CustomFieldsViewController: UIViewController {
         
         photoInputView.configure(photoUrls:                    photoUrls,
                                  photoCollectionViewDelegate:  self)
+    }
+    
+    func configureSwitchView() {
+        switchView            = CustomSwitchView()
+        guard let switchView  = switchView,
+              let contentView = contentView else { return }
+        
+        contentView.addSubview(switchView)
+        switchView.anchor(top:      photoInputView?.bottomAnchor,
+                          leading:  contentView.leadingAnchor,
+                          trailing: contentView.trailingAnchor,
+                          padding:  UIEdgeInsets(top: 31, left: 0, bottom: 0, right: 0),
+                          size:     CGSize(width: 0, height: 50))
+        
+        switchView.configure(switchLabel: "My switch")
     }
 }
 
