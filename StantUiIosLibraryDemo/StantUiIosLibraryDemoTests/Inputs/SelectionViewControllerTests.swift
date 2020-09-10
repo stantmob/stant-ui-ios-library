@@ -15,7 +15,7 @@ class SelectionViewControllerTests: XCTestCase {
     let selectionViewController = CheckMarkSelectionViewController()
     let itemTitles              = (1...3).map { "Person \($0)" }
     let itemSubtitles           = (1...3).map { "Role \($0)" }
-    let iconsUrls               = (1...3).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
+    let iconsUrls               = (1...3).map { _ in UIImage.defaultImageUrl }
     
     var tableView: UITableView?
     var cell1:     UITableViewCell?

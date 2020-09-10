@@ -12,7 +12,7 @@ import StantUiIosLibrary
 
 class PhotoInputViewTests: XCTestCase {
     let viewController      = CustomFieldsViewController()
-    var photoUrls           = (1...10).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
+    var photoUrls           = (1...10).map { _ in UIImage.defaultImageUrl }
     
     func testInitialState() {
         viewController.loadViewIfNeeded()

@@ -14,7 +14,7 @@ class ConstructionCardViewController: UIViewController {
     let navigationBarHeight: CGFloat = 60
     let cardTitle                    = "Some title"
     let cardSubtitle                 = "Some subtitle"
-    let cardUrl                      = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+    let cardUrl                      = UIImage.defaultImageUrl
     let cardColor                    = UIColor.blue
     let cardPercentage: CGFloat      = 50
     

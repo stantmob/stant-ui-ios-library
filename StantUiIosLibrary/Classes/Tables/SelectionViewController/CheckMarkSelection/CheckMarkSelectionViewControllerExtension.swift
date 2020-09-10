@@ -33,8 +33,10 @@ extension CheckMarkSelectionViewController: UITableViewDelegate, UITableViewData
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectionType == .single {
-            selectedItems = []
+        if selectionType == .single && !selectedItems.isEmpty {
+            let cell            = tableView.cellForRow(at: IndexPath(row: selectedItems[0], section: 0))                    as? SelectionTableViewCell
+            cell?.accessoryType = .none
+            selectedItems       = []
         } else if selectedItems.contains(indexPath.row) {
             selectedItems      = selectedItems.filter{ $0 != indexPath.row }
             guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }

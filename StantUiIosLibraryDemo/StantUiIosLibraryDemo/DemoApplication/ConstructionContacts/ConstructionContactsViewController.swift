@@ -14,7 +14,7 @@ class ConstructionContactsViewController: UIViewController, ContactsTableViewSho
     let navigationBarHeight: CGFloat = 60
     let name                         = "Steve Jobs"
     let role                         = "Developer IOS"
-    let contactPhoto                 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+    let contactPhoto                 = UIImage.defaultImageUrl
     let contactEmail                 = "stant@stant.com.br"
     let contactPhone                 = "82999999999"
     

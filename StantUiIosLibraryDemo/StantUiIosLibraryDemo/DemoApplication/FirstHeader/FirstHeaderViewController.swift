@@ -59,9 +59,9 @@ class FirstHeaderViewController: UIViewController, RecentItemCellDelegate {
         let recentItems = [FirstHeaderRecentItem(title: "Construction Site List",
                                                  image: standardConstructionSiteImage, url: nil),
                            FirstHeaderRecentItem(title: "Construction Site 01",
-                                                 image: nil, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"),
+                                                 image: nil, url: UIImage.defaultImageUrl),
                            FirstHeaderRecentItem(title: "Construction Site 02",
-                                                 image:  nil, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw")]
+                                                 image:  nil, url: UIImage.defaultImageUrl)]
 
         recentItemsViewController                        = SelectRecentViewController()
 
