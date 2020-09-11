@@ -30,7 +30,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         guard let imageView = imageView else { return }
         
         self.addSubview(imageView)
-        imageView.anchor(top: self.topAnchor,
+        imageView.anchor(top:     self.topAnchor,
                          leading: self.leadingAnchor,
                          padding: UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0),
                          size:    CGSize(width: photoDimension, height: photoDimension))
