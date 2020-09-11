@@ -127,8 +127,8 @@ extension MultiLineTextView: UITextViewDelegate {
             return linesAfterChange <= textView.textContainer.maximumNumberOfLines
         }
 
-        let newText              = (textView.text as NSString).replacingCharacters(in: range, with: text)
-        let numberOfChars        = newText.count
+        let newText       = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.count
         
         if self.currentCharQuantity != numberOfChars && numberOfChars <= self.maxCharQuantity{
             self.currentCharQuantity    = numberOfChars

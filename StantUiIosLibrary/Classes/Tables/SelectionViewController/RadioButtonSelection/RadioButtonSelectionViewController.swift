@@ -59,24 +59,26 @@ public class RadioButtonSelectionViewController: CheckMarkSelectionViewControlle
         if selectionType == .single {
             selectedItems = []
         } else if selectedItems.contains(indexPath.row) {
-            selectedItems                   = selectedItems.filter{ $0 != indexPath.row }
-            guard let cell                  = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
-            let radioButton                 = cell.accessoryView as? CustomRadioButton
-            radioButton?.deselect()
+            selectedItems   = selectedItems.filter{ $0 != indexPath.row }
+            guard let cell  = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
+            let radioButton = cell.accessoryView as? CustomRadioButton
             
+            radioButton?.deselect()
             return
         }
         
-        let cell                         = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell
-        let radioButton                  = cell?.accessoryView as? CustomRadioButton
+        let cell        = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell
+        let radioButton = cell?.accessoryView as? CustomRadioButton
+        
         radioButton?.select()
         selectedItems.append(indexPath.row)
     }
     
     public override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedItems                    = selectedItems.filter{ $0 != indexPath.row }
-        guard let cell                   = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
-        let radioButton                  = cell.accessoryView as? CustomRadioButton
+        selectedItems   = selectedItems.filter{ $0 != indexPath.row }
+        guard let cell  = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }
+        let radioButton = cell.accessoryView as? CustomRadioButton
+        
         radioButton?.deselect()
     }
 }
