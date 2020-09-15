@@ -51,6 +51,7 @@ class MainViewController: UIViewController {
         self.addItemMethodListingDemo()
         self.addPlacesListingDemo()
         self.addCustomFieldsDemo()
+        self.addCustomDetailFieldsDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -313,5 +314,15 @@ class MainViewController: UIViewController {
     
     @objc func goToCustomFieldsDemo() {
         self.open(viewController: CustomFieldsViewController())
+    }
+    
+    fileprivate func addCustomDetailFieldsDemo() {
+        self.scrollView.addButton(title:  "Custom Detail Fields demo",
+                                  action: #selector(goToCustomDetailFieldsDemo),
+                                  target: self)
+    }
+    
+    @objc func goToCustomDetailFieldsDemo() {
+        self.open(viewController: CustomDetailFieldsViewController())
     }
 }

@@ -61,6 +61,7 @@
 		8F80408B2507E75200506065 /* PhotoInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80408A2507E75200506065 /* PhotoInputViewTests.swift */; };
 		8F80535524D06BC90079C21B /* VerifiedMethodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F80535424D06BC90079C21B /* VerifiedMethodDetailViewController.swift */; };
 		8FB2A6E724857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */; };
+		8FB3A21E2511420100AEE306 /* CustomDetailFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3A21D2511420100AEE306 /* CustomDetailFieldsViewController.swift */; };
 		8FBE26D723C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */; };
 		8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */; };
 		8FC2EFA823AAE88400184A1E /* ProgressBarWithToolTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */; };
@@ -143,6 +144,7 @@
 		8F80408A2507E75200506065 /* PhotoInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInputViewTests.swift; sourceTree = "<group>"; };
 		8F80535424D06BC90079C21B /* VerifiedMethodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifiedMethodDetailViewController.swift; sourceTree = "<group>"; };
 		8FB2A6E624857D3200EDB0BD /* ServiceInspectionFormFilledDetailMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledDetailMenuTests.swift; sourceTree = "<group>"; };
+		8FB3A21D2511420100AEE306 /* CustomDetailFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailFieldsViewController.swift; sourceTree = "<group>"; };
 		8FBE26D623C7B67C002C488C /* ServiceInspectionFormFilledCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardViewController.swift; sourceTree = "<group>"; };
 		8FBE26D823C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInspectionFormFilledCardTests.swift; sourceTree = "<group>"; };
 		8FC2EFA723AAE88400184A1E /* ProgressBarWithToolTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithToolTipViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */,
+				8FB3A21D2511420100AEE306 /* CustomDetailFieldsViewController.swift */,
 			);
 			path = Inspections;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				882D19F0248E8F7E007DFCB8 /* ServiceInspectionFormFilledListingViewController.swift in Sources */,
 				34ECE71322F384B500D24ED3 /* SecondHeaderViewController.swift in Sources */,
 				C730D6D023C7A141003DEE68 /* ConstructionContactsViewController.swift in Sources */,
+				8FB3A21E2511420100AEE306 /* CustomDetailFieldsViewController.swift in Sources */,
 				8F1C5C4D24E46FF500B8A6A1 /* VerifiedMethodDetailViewControllerExtension.swift in Sources */,
 				8F4E18282493C024001212BB /* ItemListingViewController.swift in Sources */,
 				8F6CF2242500014900077FF8 /* CustomFieldsViewController.swift in Sources */,

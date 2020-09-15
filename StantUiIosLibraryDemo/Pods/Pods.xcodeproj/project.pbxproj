@@ -74,6 +74,8 @@
 		8452A796514340022CA3E2E64022D9A8 /* ReprovedInspectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC56BDE01C3E759C9B9BFC721540FCF4 /* ReprovedInspectionCell.swift */; };
 		87135F974B49013059581DDB42682B7D /* ServiceInspectionFormFilledCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD889A85CD52D25F9297F18A3CCC286 /* ServiceInspectionFormFilledCellHeader.swift */; };
 		876503A78C6B03E2A9A9040022FAB170 /* Localizable-en.strings in Sources */ = {isa = PBXBuildFile; fileRef = 631404C42CD134656FD9917730CB1C09 /* Localizable-en.strings */; };
+		8FB3A221251142DA00AEE306 /* TextDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3A220251142DA00AEE306 /* TextDetailCard.swift */; };
+		8FB3A2232511505800AEE306 /* SeverityDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB3A2222511505800AEE306 /* SeverityDetailCard.swift */; };
 		91774D70ADA374EFA9E7B51C3C549D00 /* SimpleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB428B7E0E7E1A241F3988FEBA74B774 /* SimpleProgressBar.swift */; };
 		94DC68D23D825CC6DD3D1A49A4295AD6 /* MenuTabBarDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB5B29EB53419BF40B524F0FC4DB6D /* MenuTabBarDTO.swift */; };
 		95FC7BCDDE2E5804F5C8516299368854 /* FilterButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD29A4C9D8A8F27D43D452592C1CA2 /* FilterButtonCollectionViewCell.swift */; };
@@ -210,6 +212,8 @@
 		8D08D38FCD9F95E90BCF1F995F4CAC38 /* InChargeStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InChargeStackView.swift; sourceTree = "<group>"; };
 		8D1984ADC7AD33149BBD433247B5A5DB /* SelectRecentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SelectRecentViewController.swift; sourceTree = "<group>"; };
 		8D381F609A203558D38979F92FBF8F95 /* ConstructionViewShowAndHideSearchTableViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstructionViewShowAndHideSearchTableViewExtension.swift; sourceTree = "<group>"; };
+		8FB3A220251142DA00AEE306 /* TextDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetailCard.swift; sourceTree = "<group>"; };
+		8FB3A2222511505800AEE306 /* SeverityDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityDetailCard.swift; sourceTree = "<group>"; };
 		8FCA60F3705F515BF8E4E927320CD447 /* CheckMarkSelectionViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckMarkSelectionViewControllerExtension.swift; sourceTree = "<group>"; };
 		9111CBDAF1C39A0D2C77BE1696501368 /* InChargePersonDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InChargePersonDetailView.swift; sourceTree = "<group>"; };
 		920178FC17939EA936FDAE8AC4EA1DB3 /* ContactsCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactsCard.swift; sourceTree = "<group>"; };
@@ -473,7 +477,6 @@
 		2C291B13EA81D9D314E61CC6AF8E8B5D /* PhotoInputView */ = {
 			isa = PBXGroup;
 			children = (
-				F822154299344D36760D9D3FC5CCA62C /* CustomSwitchView.swift */,
 				F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoCollectionView.swift */,
 				ACEA17FAFD527BB71D63AABBC935477E /* PhotoCollectionViewCell.swift */,
 				CDDD66BD7B94182C672971C2E33332BA /* PhotoInputView.swift */,
@@ -543,6 +546,7 @@
 		69B654ACE2620888FE8E6DFFE1E51489 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				8FB3A21F2511423D00AEE306 /* Details */,
 				B57B97B9870C78727A0BB8116CC3CF49 /* Construction */,
 				CBFBE994EFF5AC918501C2087313CFDB /* Contacts */,
 				DE55862513814BE64CF55AF7195872D2 /* ServiceInspectionFormFilled */,
@@ -558,6 +562,7 @@
 				2E1ED020971C903B708FCEB4795BE2E2 /* CustomRadioButton.swift */,
 				25DF7C175AD61C4E7192F089B13873C4 /* MultiLineTextView.swift */,
 				C9EBE1E104207E876EC413927FDD5731 /* TextInputTableViewCell.swift */,
+				F822154299344D36760D9D3FC5CCA62C /* CustomSwitchView.swift */,
 				A5235F3BF177DC3CE3CA817C5E04BB67 /* CustomDatePicker */,
 				2C291B13EA81D9D314E61CC6AF8E8B5D /* PhotoInputView */,
 			);
@@ -669,6 +674,15 @@
 			);
 			name = Tables;
 			path = StantUiIosLibrary/Classes/Tables;
+			sourceTree = "<group>";
+		};
+		8FB3A21F2511423D00AEE306 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8FB3A220251142DA00AEE306 /* TextDetailCard.swift */,
+				8FB3A2222511505800AEE306 /* SeverityDetailCard.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		955C3D925E3322FAE1AD96B821E145AD /* Pods-StantUiIosLibraryDemo */ = {
@@ -1193,6 +1207,7 @@
 				449F87F1D8A01ED198AB71F97CEF79E4 /* DefaultSearchBar.swift in Sources */,
 				691113C825514F1E0E942F10831210C6 /* DefaultSearchBarDelegateExtension.swift in Sources */,
 				D9587628EB0BD5FD014CEEC4E8E76338 /* DialogButton.swift in Sources */,
+				8FB3A2232511505800AEE306 /* SeverityDetailCard.swift in Sources */,
 				144179AD39762E97302C2CC18A6B5BF2 /* DialogViewController.swift in Sources */,
 				816E77365DCF70949D14C2B7327C8833 /* FilterButton.swift in Sources */,
 				95FC7BCDDE2E5804F5C8516299368854 /* FilterButtonCollectionViewCell.swift in Sources */,
@@ -1238,6 +1253,7 @@
 				9AC3045BC28555E732F5BF3B0097079F /* InChargePersonDetailView.swift in Sources */,
 				5EF1CFBA2E63CBA9DBE93DFD8E9B3D7D /* PhotoInputView.swift in Sources */,
 				5C632371BF567FF03243E6CA298D1CA1 /* PlacesCell.swift in Sources */,
+				8FB3A221251142DA00AEE306 /* TextDetailCard.swift in Sources */,
 				5D2B08C3BF30FB59870F863F9B918E3C /* ProgressBarWithToolTip.swift in Sources */,
 				4081C5F70150682CA0C3800DF9818D03 /* ProgressToolTip.swift in Sources */,
 				B0F77590959F97EB3CBE600B8E441D32 /* QuantityBar.swift in Sources */,
