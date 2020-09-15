@@ -69,7 +69,7 @@
 		7F9BA60F05613617DD4057D9038777A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		816E77365DCF70949D14C2B7327C8833 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F31B302C916E5B305DC02E17367D2 /* FilterButton.swift */; };
 		81FA7F22EDFFA93AFA3E8320041D3CE4 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBE1E104207E876EC413927FDD5731 /* TextInputTableViewCell.swift */; };
-		84404ADA00491F674F2E3B8E6781C5DE /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoCollectionView.swift */; };
+		84404ADA00491F674F2E3B8E6781C5DE /* PhotoInputCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoInputCollectionView.swift */; };
 		8444F6879B2B21064D185C30FA78DF06 /* GroupSelectionRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0015BC9F8138F2B0F5EBDBD72BC4398F /* GroupSelectionRowCell.swift */; };
 		8452A796514340022CA3E2E64022D9A8 /* ReprovedInspectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC56BDE01C3E759C9B9BFC721540FCF4 /* ReprovedInspectionCell.swift */; };
 		87135F974B49013059581DDB42682B7D /* ServiceInspectionFormFilledCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD889A85CD52D25F9297F18A3CCC286 /* ServiceInspectionFormFilledCellHeader.swift */; };
@@ -287,7 +287,7 @@
 		F289D0DE7780AAA3D08AECA088EFE243 /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F332C25D4929C9DAB572876D99CCDDC7 /* ScrollableTableViewDialogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollableTableViewDialogCell.swift; sourceTree = "<group>"; };
 		F5CFFD78C77DFED3CB5DDCBB916E1989 /* SecondHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecondHeaderView.swift; sourceTree = "<group>"; };
-		F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoInputCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhotoInputCollectionView.swift; sourceTree = "<group>"; };
 		F822154299344D36760D9D3FC5CCA62C /* CustomSwitchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomSwitchView.swift; sourceTree = "<group>"; };
 		F82DB1767C1C544030BFFA28832C131F /* StantUiIosLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StantUiIosLibrary.release.xcconfig; sourceTree = "<group>"; };
 		F851F720A52D2B6CB2100D5FB405B385 /* Pods-StantUiIosLibraryDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StantUiIosLibraryDemo.modulemap"; sourceTree = "<group>"; };
@@ -477,8 +477,7 @@
 		2C291B13EA81D9D314E61CC6AF8E8B5D /* PhotoInputView */ = {
 			isa = PBXGroup;
 			children = (
-				F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoCollectionView.swift */,
-				ACEA17FAFD527BB71D63AABBC935477E /* PhotoCollectionViewCell.swift */,
+				F6EFA46FC6F342D9C26B5FA360BD8ED8 /* PhotoInputCollectionView.swift */,
 				CDDD66BD7B94182C672971C2E33332BA /* PhotoInputView.swift */,
 			);
 			path = PhotoInputView;
@@ -718,6 +717,7 @@
 				4A5C48B674FFE3EDBB916F04D010F510 /* InternPersonCell.swift */,
 				B917BCC3ED5DDF313EA01BE280A4AC6F /* PlacesCell.swift */,
 				43C639B7F993F9379CDC41757D053A69 /* SelectionTableViewCell.swift */,
+				ACEA17FAFD527BB71D63AABBC935477E /* PhotoCollectionViewCell.swift */,
 				2A0A47E62D16497029DF7A9A61E54C53 /* CellBadge */,
 				C8C88477D1A52707D72F2B0C4AC4548D /* InspectionCell */,
 				8A5B184EA5D15C20A28CEC39AF9DAE9D /* ItemHeaderView */,
@@ -1248,7 +1248,7 @@
 				7AE9D99DEEC177AFEAB36C16F84BA89F /* MethodCellUtils.swift in Sources */,
 				2A6753EDF5B1DE98F0894D1A6E43F37C /* MultiLineTextView.swift in Sources */,
 				576DBB3CBA56E6ACD42ACBEAC6DD6B5E /* NSMutableAttributedStringExtension.swift in Sources */,
-				84404ADA00491F674F2E3B8E6781C5DE /* PhotoCollectionView.swift in Sources */,
+				84404ADA00491F674F2E3B8E6781C5DE /* PhotoInputCollectionView.swift in Sources */,
 				EA0102FF9E4FC88C2363714486FD0572 /* PhotoCollectionViewCell.swift in Sources */,
 				9AC3045BC28555E732F5BF3B0097079F /* InChargePersonDetailView.swift in Sources */,
 				5EF1CFBA2E63CBA9DBE93DFD8E9B3D7D /* PhotoInputView.swift in Sources */,

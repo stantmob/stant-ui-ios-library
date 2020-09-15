@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class PhotoCollectionView: UIView {
+public class PhotoInputCollectionView: UIView {
     var addPhotoButton: UIButton?
     var collectionView: UICollectionView?
     var delegate:       PhotoCollectionViewDelegate?
@@ -71,9 +71,9 @@ public class PhotoCollectionView: UIView {
     }
 }
 
-extension PhotoCollectionView: UICollectionViewDataSource,
-                               UICollectionViewDelegate,
-                               UICollectionViewDelegateFlowLayout  {
+extension PhotoInputCollectionView: UICollectionViewDataSource,
+                                    UICollectionViewDelegate,
+                                    UICollectionViewDelegateFlowLayout  {
     
     public func collectionView(_ collectionView:               UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {

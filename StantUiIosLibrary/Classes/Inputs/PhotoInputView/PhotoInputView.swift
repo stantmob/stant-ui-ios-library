@@ -11,7 +11,7 @@ public class PhotoInputView: UIView {
     public var titleLabel:                  UILabel?
     public var photoCounter:                UILabel?
     public var galleryButton:               UIButton?
-    public var photoCollectionView:         PhotoCollectionView?
+    public var photoInputCollectionView:    PhotoInputCollectionView?
     public var photoCollectionViewDelegate: PhotoCollectionViewDelegate?
     public var photoUrls:                   [String] = []
     
@@ -24,7 +24,7 @@ public class PhotoInputView: UIView {
         configureTitleLabel()
         configurePhotoCounter()
         configureGalleryButton()
-        configurePhotoCollectionView()
+        configurePhotoInputCollectionView()
     }
     
     func configureTitleLabel() {
@@ -68,18 +68,18 @@ public class PhotoInputView: UIView {
         galleryButton.imageView?.tintColor = UIColor.darkGrayStant
     }
     
-    func configurePhotoCollectionView() {
-        photoCollectionView      = PhotoCollectionView()
-        guard let collectionView = photoCollectionView else { return }
+    func configurePhotoInputCollectionView() {
+        photoInputCollectionView           = PhotoInputCollectionView()
+        guard let photoInputCollectionView = photoInputCollectionView else { return }
         
-        self.addSubview(collectionView)
-        collectionView.anchor(top:      galleryButton?.bottomAnchor,
-                              leading:  self.leadingAnchor,
-                              trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 8, left: 13, bottom: 0, right: 0),
-                              size:     CGSize(width: 0, height: 82))
+        self.addSubview(photoInputCollectionView)
+        photoInputCollectionView.anchor(top:      galleryButton?.bottomAnchor,
+                                        leading:  self.leadingAnchor,
+                                        trailing: self.trailingAnchor,
+                                        padding:  UIEdgeInsets(top: 8, left: 13, bottom: 0, right: 0),
+                                        size:     CGSize(width: 0, height: 82))
         
-        collectionView.configure(photoUrls: photoUrls,
-                                 delegate:  photoCollectionViewDelegate!)
+        photoInputCollectionView.configure(photoUrls: photoUrls,
+                                           delegate:  photoCollectionViewDelegate!)
     }
 }
