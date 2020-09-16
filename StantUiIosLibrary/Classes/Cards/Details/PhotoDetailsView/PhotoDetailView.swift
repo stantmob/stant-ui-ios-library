@@ -1,25 +1,22 @@
 //
-//  PhotoInputView.swift
+//  PhotoDetailView.swift
 //  StantUiIosLibrary
 //
-//  Created by Leandro Martins on 08/09/20.
+//  Created by Leandro Martins on 15/09/20.
 //
 
 import UIKit
 
-public class PhotoInputView: UIView {
-    public var titleLabel:                  UILabel?
-    public var photoCounter:                UILabel?
-    public var galleryButton:               UIButton?
-    public var photoCollectionView:         PhotoInputCollectionView?
-    public var photoCollectionViewDelegate: PhotoInputCollectionViewDelegate?
-    public var photoUrls:                   [String] = []
+public class PhotoDetailView: UIView {
+    public var titleLabel:          UILabel?
+    public var photoCounter:        UILabel?
+    public var galleryButton:       UIButton?
+    public var photoCollectionView: PhotoDetailCollectionView?
+    public var photoUrls:           [String] = []
     
-    public func configure(photoUrls:                   [String],
-                          photoCollectionViewDelegate: PhotoInputCollectionViewDelegate) {
+    public func configure(photoUrls: [String]) {
         
         self.photoUrls                    = photoUrls
-        self.photoCollectionViewDelegate  = photoCollectionViewDelegate
         
         configureTitleLabel()
         configurePhotoCounter()
@@ -63,23 +60,22 @@ public class PhotoInputView: UIView {
                              padding:  UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 16),
                              size:     CGSize(width: 14, height: 14))
         
-        galleryButton.setImage(UIImage(named: "edit")?.withRenderingMode(.alwaysTemplate),
+        galleryButton.setImage(UIImage(named: "cameraIcon")?.withRenderingMode(.alwaysTemplate),
                                for: .normal)
         galleryButton.imageView?.tintColor = UIColor.darkGrayStant
     }
     
     func configurePhotoInputCollectionView() {
-        photoCollectionView           = PhotoInputCollectionView()
+        photoCollectionView           = PhotoDetailCollectionView()
         guard let photoCollectionView = photoCollectionView else { return }
         
         self.addSubview(photoCollectionView)
         photoCollectionView.anchor(top:      galleryButton?.bottomAnchor,
                                    leading:  self.leadingAnchor,
                                    trailing: self.trailingAnchor,
-                                   padding:  UIEdgeInsets(top: 8, left: 13, bottom: 0, right: 0),
+                                   padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                                    size:     CGSize(width: 0, height: 82))
         
-        photoCollectionView.configure(photoUrls: photoUrls,
-                                      delegate:  photoCollectionViewDelegate!)
+        photoCollectionView.configure(photoUrls: photoUrls)
     }
 }

@@ -262,7 +262,7 @@ extension CustomFieldsViewController: CustomDatePickerDelegate {
     }
 }
 
-extension CustomFieldsViewController: PhotoCollectionViewDelegate {
+extension CustomFieldsViewController: PhotoInputCollectionViewDelegate {
     public func removePhotoAtIndex(index: Int) {
         print("Removing photo at index \(index)")
     }

@@ -10,13 +10,19 @@ import UIKit
 import StantUiIosLibrary
 
 class CustomDetailFieldsViewController: UIViewController {
-    var textView:     TextDetailCard?
-    var severityView: SeverityDetailCard?
+    var textView:        TextDetailCard?
+    var severityView:    SeverityDetailCard?
+    var photoDetailView: PhotoDetailView?
+    
+    let severityLevels = ["Very Low", "Low", "Medium", "High", "Very High"]
+    var photoUrls      = (1...10).map { _ in UIImage.defaultImageUrl }
     
     override func viewDidLoad() {
         self.view.backgroundColor = .white
+        
         configureTextView()
         configureSeverityDetailCard()
+        configurePhotoDetailView()
     }
     
     func configureTextView() {
@@ -44,6 +50,20 @@ class CustomDetailFieldsViewController: UIViewController {
                             padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0),
                             size:     CGSize(width: 0, height: 80))
         
-        severityView.configure(title: "Gravidade", severityLevel: "Média", severity: 3)
+        severityView.configure(title: "Gravidade", severityLevel: severityLevels[2], severity: 2)
+    }
+    
+    func configurePhotoDetailView () {
+        photoDetailView           = PhotoDetailView()
+        guard let photoDetailView = photoDetailView else { return }
+        
+        self.view.addSubview(photoDetailView)
+        photoDetailView.anchor(top:      severityView?.bottomAnchor,
+                               leading:  self.view.leadingAnchor,
+                               trailing: self.view.trailingAnchor,
+                               padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0),
+                               size:     CGSize(width: 0, height: 122))
+        
+        photoDetailView.configure(photoUrls: photoUrls)
     }
 }

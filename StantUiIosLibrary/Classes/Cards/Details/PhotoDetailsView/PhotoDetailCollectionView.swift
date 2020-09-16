@@ -1,48 +1,22 @@
 //
-//  PhotoCollectionView.swift
+//  PhotoDetailCollectionView.swift
 //  StantUiIosLibrary
 //
-//  Created by Leandro Martins on 08/09/20.
+//  Created by Leandro Martins on 15/09/20.
 //
 
 import UIKit
 
-public class PhotoInputCollectionView: UIView {
-    var addPhotoButton: UIButton?
+public class PhotoDetailCollectionView: UIView {
     var collectionView: UICollectionView?
-    var delegate:       PhotoInputCollectionViewDelegate?
     var photoUrls:      [String] = []
     let photoDimension: CGFloat  = 56
     
-    public func configure(photoUrls: [String],
-                          delegate:  PhotoInputCollectionViewDelegate) {
-        
-        self.backgroundColor = .backgroundStant
+    public func configure(photoUrls: [String]) {
+        self.backgroundColor = .red
         self.photoUrls       = photoUrls
-        self.delegate        = delegate
-        
-        configureAddPhotoButton()
+
         configureCollectionView()
-    }
-    
-    func configureAddPhotoButton() {
-        addPhotoButton           = UIButton()
-        guard let addPhotoButton = addPhotoButton else { return }
-        
-        self.addSubview(addPhotoButton)
-        addPhotoButton.anchor(top:     self.topAnchor,
-                              leading: self.leadingAnchor,
-                              padding: UIEdgeInsets(top: 13, left: 7, bottom: 0, right: 0),
-                              size:    CGSize(width: 56, height: 56))
-        
-        addPhotoButton.backgroundColor      = .darkGrayStant
-        addPhotoButton.layer.cornerRadius   = 28
-        addPhotoButton.imageEdgeInsets      = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        addPhotoButton.imageView?.tintColor = UIColor.white
-        
-        addPhotoButton.addTarget(self, action: #selector(goToAddPhotoScreen), for: .touchUpInside)
-        addPhotoButton.setImage(UIImage(named: "cameraIcon")?.withRenderingMode(.alwaysTemplate),
-                                for: .normal)
     }
     
     func configureCollectionView() {
@@ -57,13 +31,13 @@ public class PhotoInputCollectionView: UIView {
         
         self.addSubview(collectionView)
         collectionView.anchor(top:      self.topAnchor,
-                              leading:  addPhotoButton?.trailingAnchor,
+                              leading:  self.leadingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 7, left: 15, bottom: 13, right: 0))
+                              padding:  UIEdgeInsets(top: 7, left: 6, bottom: 13, right: 6))
         
-        collectionView.register(PhotoInputCollectionViewCell.self,
-                                forCellWithReuseIdentifier: PhotoInputCollectionViewCell.identifier())
+        collectionView.register(PhotoDetailCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PhotoDetailCollectionViewCell.identifier())
     }
     
     @objc func goToAddPhotoScreen() {
@@ -71,9 +45,15 @@ public class PhotoInputCollectionView: UIView {
     }
 }
 
-extension PhotoInputCollectionView: UICollectionViewDataSource,
-                                    UICollectionViewDelegate,
-                                    UICollectionViewDelegateFlowLayout  {
+extension PhotoDetailCollectionView: UICollectionViewDataSource,
+                                     UICollectionViewDelegate,
+                                     UICollectionViewDelegateFlowLayout,
+                                     PhotoDetailCollectionViewDelegate {
+    
+    public func showPhotoAtIndex(index: Int) {
+        print("Show photo at index \(index)")
+    }
+    
     
     public func collectionView(_ collectionView:               UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
@@ -84,12 +64,10 @@ extension PhotoInputCollectionView: UICollectionViewDataSource,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView
-                   .dequeueReusableCell(withReuseIdentifier: PhotoInputCollectionViewCell.identifier(),
-                                        for:                 indexPath) as! PhotoInputCollectionViewCell
+                   .dequeueReusableCell(withReuseIdentifier: PhotoDetailCollectionViewCell.identifier(),
+                                        for:                 indexPath) as! PhotoDetailCollectionViewCell
 
-        cell.configure(path:     self.photoUrls[indexPath.row],
-                       index:    indexPath.row,
-                       delegate: delegate!)
+        cell.configure(path: self.photoUrls[indexPath.row])
         
         return cell
     }
@@ -97,7 +75,7 @@ extension PhotoInputCollectionView: UICollectionViewDataSource,
     public func collectionView(_ collectionView:          UICollectionView,
                                didSelectItemAt indexPath: IndexPath) {
         
-        print("Cell in index \(indexPath.row) selected")
+        self.showPhotoAtIndex(index: indexPath.row)
     }
     
     public func collectionView(_ collectionView:            UICollectionView,
