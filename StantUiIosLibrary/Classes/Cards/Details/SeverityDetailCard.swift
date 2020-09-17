@@ -49,9 +49,9 @@ public class SeverityDetailCard: UIView {
                                      color:     .darkGrayStant)
         
         self.addSubview(severityLevelLabel)
-        severityLevelLabel.anchor(top:      titleLabel?.bottomAnchor,
-                                  leading:  self.leadingAnchor,
-                                  padding:  UIEdgeInsets(top: 6, left: 16, bottom: 0, right: 0))
+        severityLevelLabel.anchor(top:     titleLabel?.bottomAnchor,
+                                  leading: self.leadingAnchor,
+                                  padding: UIEdgeInsets(top: 6, left: 16, bottom: 0, right: 0))
     }
     
     func configureSeverityLevelView(severity: Int) {
@@ -61,7 +61,7 @@ public class SeverityDetailCard: UIView {
         self.addSubview(severityLevelView)
         severityLevelView.anchor(top:      titleLabel?.bottomAnchor,
                                  leading:  severityLevelLabel?.trailingAnchor,
-                                 padding:  UIEdgeInsets(top: 9, left: 6, bottom: 0, right: 0),
+                                 padding:  UIEdgeInsets(top: 10, left: 6, bottom: 0, right: 0),
                                  size:     CGSize(width: 56, height: 8))
         
         severityLevelView.configure(severity: severity)

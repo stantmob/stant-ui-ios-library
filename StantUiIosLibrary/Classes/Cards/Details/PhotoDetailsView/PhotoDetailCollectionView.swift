@@ -36,7 +36,7 @@ public class PhotoDetailCollectionView: UIView {
                               leading:  self.leadingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 7, left: 6, bottom: 13, right: 6))
+                              padding:  UIEdgeInsets(top: 7, left: 0, bottom: 13, right: 0))
         
         collectionView.register(PhotoDetailCollectionViewCell.self,
                                 forCellWithReuseIdentifier: PhotoDetailCollectionViewCell.identifier())
@@ -70,7 +70,6 @@ extension PhotoDetailCollectionView: UICollectionViewDataSource,
     
     public func collectionView(_ collectionView:          UICollectionView,
                                didSelectItemAt indexPath: IndexPath) {
-
         delegate?.showPhotoAtIndex(index: indexPath.row)
     }
     
