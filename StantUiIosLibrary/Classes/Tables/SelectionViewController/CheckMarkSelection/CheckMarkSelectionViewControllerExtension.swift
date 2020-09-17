@@ -1,11 +1,11 @@
 //
-//  SelectionViewControllerExtension.swift
+//  CheckMarkSelectionViewControllerExtension.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 21/05/20.
 //
 
-extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
+extension CheckMarkSelectionViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemTitles.count
     }
@@ -25,16 +25,18 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
                                         subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row],
                                         imageUrl: iconsUrls[indexPath.row])
         } else {
-            cell.configureView(title:    itemTitles[indexPath.row],
-                               subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row])
+            cell.configureSimpleView(title:    itemTitles[indexPath.row],
+                                     subtitle: itemSubtitles.isEmpty ? "" : itemSubtitles[indexPath.row])
         }
 
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectionType == .single {
-            selectedItems = []
+        if selectionType == .single && !selectedItems.isEmpty {
+            let cell            = tableView.cellForRow(at: IndexPath(row: selectedItems[0], section: 0))                    as? SelectionTableViewCell
+            cell?.accessoryType = .none
+            selectedItems       = []
         } else if selectedItems.contains(indexPath.row) {
             selectedItems      = selectedItems.filter{ $0 != indexPath.row }
             guard let cell     = tableView.cellForRow(at: indexPath) as? SelectionTableViewCell else { return }

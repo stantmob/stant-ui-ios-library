@@ -23,7 +23,7 @@ class FirstHeaderTests: XCTestCase {
     private let headerTitle     = "Title"
     private let firstItemTitle  = "Item List"
     private let secondItemTitle = "Item 01"
-    private let urlImage        = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+    private let urlImage        = UIImage.defaultImageUrl
     
     override func setUp() {
         super.setUp()

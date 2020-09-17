@@ -24,7 +24,7 @@ class RoundedImageViewController: UIViewController {
                                                           width: self.view.frame.width,
                                                           height: 150))
         roundedImage.set(icon: nil,
-                         iconURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
+                         iconURL: UIImage.defaultImageUrl,
                          iconDiameter: 150,
                          iconBorder: 5)
         self.view.addSubview(roundedImage)

@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIImage {
+    public static var defaultImageUrl: String {
+        return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+    }
+    
     public func roundedRectImageFromImage(cornerRadius: CGFloat) -> UIImage {
         let diameter = 2.00 * cornerRadius
         UIGraphicsBeginImageContextWithOptions(CGSize(width: diameter, height: diameter), false, 0.0)

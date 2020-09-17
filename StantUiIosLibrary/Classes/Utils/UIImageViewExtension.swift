@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImageView {
     
-    func showRoundedImageWith(path imagePath: String, radius: CGFloat = 8, activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()) {
+    public func showRoundedImageWith(path imagePath: String, radius: CGFloat = 8, activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()) {
         self.layer.cornerRadius  = radius
         self.layer.masksToBounds = true
         

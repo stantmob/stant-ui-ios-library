@@ -8,7 +8,7 @@
 import UIKit
 
 public class SeverityLevelView: UIView {
-    func configure(severity: Int) {
+    public func configure(severity: Int) {
         for i in (0...4) {
             let color: UIColor = severity >= (i + 1) ? getColor(severityLevel: severity) : .darkGrayStant
             configureView(index: i, color: color)

@@ -11,7 +11,6 @@ import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
 class BottomDialogWithScrollTests: XCTestCase {
-    
     let viewController = BottomDialogTestViewController()
     let items          = ["Item 01", "Item 02", "Item 03", "Item 04", "Item 05",
                           "Item 06", "Item 07", "Item 08", "Item 09", "Item 10"]
@@ -63,7 +62,7 @@ class BottomDialogWithScrollTests: XCTestCase {
 }
 
 class BottomDialogTestViewController: UIViewController, ScrollableTableViewDialogCellDelegate {
-    let bottomDialog      = BottomDialogWithScrollViewController()
+    let bottomDialog      = CheckMarkBottomDialogWithScrollViewController()
     var selectedItemIndex = 0
     var didClickOnCell    = false
     

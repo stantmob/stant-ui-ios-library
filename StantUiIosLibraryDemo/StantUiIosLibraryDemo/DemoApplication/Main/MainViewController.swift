@@ -12,8 +12,9 @@ import StantUiIosLibrary
 class MainViewController: UIViewController {
 
     let syncDialogViewController             = DialogViewController()
-    let bottomDialogWithScrollViewController = BottomDialogWithScrollViewController()
-    let selectionViewController              = SelectionViewController()
+    let bottomDialogWithScrollViewController = CheckMarkBottomDialogWithScrollViewController()
+    let checkMarkSelectionViewController     = CheckMarkSelectionViewController()
+    let radioButtonSelectionViewController   = RadioButtonSelectionViewController()
     let scrollView                           = UIScrollView()
     
     var tableViewSelectedItem    = 0
@@ -49,6 +50,7 @@ class MainViewController: UIViewController {
         self.addMethodDetailDemo()
         self.addItemMethodListingDemo()
         self.addPlacesListingDemo()
+        self.addCustomFieldsDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -285,8 +287,8 @@ class MainViewController: UIViewController {
 
     fileprivate func addItemMethodListingDemo() {
         self.scrollView.addButton(title:  "Item-Method listing demo",
-        action: #selector(goToItemMethodListingDemo),
-        target: self)
+                                  action: #selector(goToItemMethodListingDemo),
+                                  target: self)
     }
 
     @objc func goToItemMethodListingDemo() {
@@ -295,11 +297,21 @@ class MainViewController: UIViewController {
 
     fileprivate func addPlacesListingDemo() {
         self.scrollView.addButton(title:  "Places listing demo",
-        action: #selector(goToPlacesListingDemo),
-        target: self)
+                                  action: #selector(goToPlacesListingDemo),
+                                  target: self)
     }
 
     @objc func goToPlacesListingDemo() {
         self.open(viewController: ListingPlacesViewController())
+    }
+    
+    fileprivate func addCustomFieldsDemo() {
+        self.scrollView.addButton(title:  "Custom Fields demo",
+                                  action: #selector(goToCustomFieldsDemo),
+                                  target: self)
+    }
+    
+    @objc func goToCustomFieldsDemo() {
+        self.open(viewController: CustomFieldsViewController())
     }
 }

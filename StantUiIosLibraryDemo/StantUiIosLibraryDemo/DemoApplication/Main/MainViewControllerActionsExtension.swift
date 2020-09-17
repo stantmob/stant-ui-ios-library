@@ -45,16 +45,9 @@ extension MainViewController {
     
     func openBottomDialogWithScrollAndIconsDemo() {
         let items = ["Home", "Item 01", "Item 02", "Item 03", "Item 04", "Item 05", "Item 06", "Item 07", "Item 08", "Item 09"]
-        let icons = ["home",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"]
+        var icons = ["home"]
+        
+        icons.append(contentsOf: (0..<9).map{ _ in UIImage.defaultImageUrl })
         
         bottomDialogWithScrollViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         bottomDialogWithScrollViewController.cellDelegate           = self
@@ -119,37 +112,37 @@ extension MainViewController {
     func openTeamScreenDemo() {
         let itemTitles    = (1...30).map { "Person \($0)" }
         let itemSubtitles = (1...30).map { "Role \($0)" }
-        let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
+        let iconsUrls     = (1...30).map { _ in UIImage.defaultImageUrl }
         
-        selectionViewController.modalPresentationStyle = .fullScreen
+        radioButtonSelectionViewController.modalPresentationStyle = .fullScreen
         
-        selectionViewController.configure(delegate:          self,
-                                          headerTitle:       "Select Team",
-                                          selectionType:     .multiple,
-                                          confirmButtonText: "Confirm",
-                                          selectedItems:     [],
-                                          itemTitles:        itemTitles,
-                                          itemSubtitles:     itemSubtitles,
-                                          iconsUrls:         iconsUrls)
-        self.present(selectionViewController, animated: false, completion: nil)
+        radioButtonSelectionViewController.configure(delegate:          self,
+                                                     headerTitle:       "Select Team",
+                                                     selectionType:     .multiple,
+                                                     confirmButtonText: "Confirm",
+                                                     selectedItems:     [],
+                                                     itemTitles:        itemTitles,
+                                                     itemSubtitles:     itemSubtitles,
+                                                     iconsUrls:         iconsUrls)
+        self.present(radioButtonSelectionViewController, animated: false, completion: nil)
     }
     
     func openResponsibleScreenDemo() {
         let itemTitles    = (1...30).map { "Person \($0)" }
         let itemSubtitles = (1...30).map { "Role \($0)" }
-        let iconsUrls     = (1...30).map { _ in "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw" }
+        let iconsUrls     = (1...30).map { _ in UIImage.defaultImageUrl }
         
-        selectionViewController.modalPresentationStyle = .fullScreen
+        checkMarkSelectionViewController.modalPresentationStyle = .fullScreen
         
-        selectionViewController.configure(delegate:          self,
-                                          headerTitle:       "Select Responsible",
-                                          selectionType:     .single,
-                                          confirmButtonText: "Confirm",
-                                          selectedItems:     [],
-                                          itemTitles:        itemTitles,
-                                          itemSubtitles:     itemSubtitles,
-                                          iconsUrls:         iconsUrls)
-        self.present(selectionViewController, animated: false, completion: nil)
+        checkMarkSelectionViewController.configure(delegate:          self,
+                                                   headerTitle:       "Select Responsible",
+                                                   selectionType:     .single,
+                                                   confirmButtonText: "Confirm",
+                                                   selectedItems:     [],
+                                                   itemTitles:        itemTitles,
+                                                   itemSubtitles:     itemSubtitles,
+                                                   iconsUrls:         iconsUrls)
+        self.present(checkMarkSelectionViewController, animated: false, completion: nil)
     }
 }
 

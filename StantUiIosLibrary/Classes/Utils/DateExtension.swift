@@ -8,7 +8,15 @@
 import Foundation
 
 extension Date {
-    func toString(with format: String = "dd/MM/yyyy") -> String {
+    public func isValidDate(string: String) -> Date? {
+        if string == "" { return nil }
+        let dateFormatter        = DateFormatter()
+        dateFormatter.dateFormat = LibraryStrings.date_format
+        
+        return dateFormatter.date(from: string)
+    }
+    
+    public func toString(with format: String = LibraryStrings.date_format) -> String {
         let dateFormatter        = DateFormatter()
         let timeZone             = TimeZone(identifier: "America/Sao_Paulo")!
         let locale               = Locale(identifier: "pt_BR")

@@ -17,7 +17,7 @@ class ConstructionCardTests: XCTestCase {
     let id: String          = String()
     let title: String       = "Title for test"
     let subtitle: String    = "Subtitle"
-    let imageUrl: String    = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0P8RsPCO0qj21UeIfaVkRcsqguonI6bP4iLr3tWwS4qIS4MSquw"
+    let imageUrl: String    = UIImage.defaultImageUrl
     let color: UIColor      = .blue
     var percentage: CGFloat = 78.5
 

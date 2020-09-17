@@ -1,5 +1,5 @@
 //
-//  BottomDialogWithScrollViewController.swift
+//  CheckMarkBottomDialogWithScrollViewController.swift
 //  StantUiIosLibrary
 //
 //  Created by Mac Mini Novo on 10/07/19.
@@ -7,18 +7,19 @@
 
 import UIKit
 
-public class BottomDialogWithScrollViewController: UIViewController {
+public class CheckMarkBottomDialogWithScrollViewController: UIViewController {
     public weak var cellDelegate: ScrollableTableViewDialogCellDelegate?
     
-    private var backgroundView: UIView?
-    private var mainView:       UIView?
-    public var tableView:       UITableView?
-    private var gesturizer:     Gesturizer?
+    public var backgroundView: UIView?
+    public var mainView:       UIView?
+    public var tableView:      UITableView?
+    public var gesturizer:     Gesturizer?
     
-    private var items                   = [String]()
-    private var icons                   = [String]()
-    private var selectedItemIndex       = 0
-    private var mainViewHeight: CGFloat = 374
+    public var items                   = [String]()
+    public var icons                   = [String]()
+    public var leftViews               = [UIView]()
+    public var selectedItemIndex       = 0
+    public var mainViewHeight: CGFloat = 374
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,10 +48,16 @@ public class BottomDialogWithScrollViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    public func configureView(items: [String], icons: [String]? = [], selectedItemIndex: Int) {
+    public func configureView(items:             [String],
+                              icons:             [String]? = [],
+                              leftViews:         [UIView]? = [],
+                              selectedItemIndex: Int) {
+        
         self.view.removeSubviews()
+        
         self.items             = items
         self.icons             = icons ?? [String]()
+        self.leftViews         = leftViews ?? [UIView]()
         self.selectedItemIndex = selectedItemIndex
         
         self.addSubviews()
@@ -137,7 +144,8 @@ public class BottomDialogWithScrollViewController: UIViewController {
     }
     
     fileprivate func configureTableView() {
-        guard let mainView = mainView, let tableView = tableView else { return }
+        guard let mainView  = mainView,
+              let tableView = tableView else { return }
         
         tableView.delegate                 = self
         tableView.dataSource               = self
@@ -159,10 +167,9 @@ public class BottomDialogWithScrollViewController: UIViewController {
                             animated:       true,
                             scrollPosition: UITableView.ScrollPosition.middle)
     }
-    
 }
 
-extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableViewDataSource {
+extension CheckMarkBottomDialogWithScrollViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -173,16 +180,16 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ScrollableTableViewDialogCell.identifier())
-                         as? ScrollableTableViewDialogCell else {
-                            return UITableViewCell()
-                         }
+                         as? ScrollableTableViewDialogCell else { return UITableViewCell() }
         
         cell.selectionStyle = .none
         
-        if icons.isEmpty {
-            cell.configureViewWith(title: items[indexPath.row])
-        } else {
+        if !icons.isEmpty {
             cell.configureViewWith(title: items[indexPath.row], imageURL: icons[indexPath.row])
+        } else if !leftViews.isEmpty {
+            cell.configureViewWith(title: items[indexPath.row], leftImage: leftViews[indexPath.row].asImage())
+        } else {
+            cell.configureViewWith(title: items[indexPath.row])
         }
         
         if indexPath.row == selectedItemIndex {
@@ -200,7 +207,7 @@ extension BottomDialogWithScrollViewController: UITableViewDelegate, UITableView
         }
     }
     
-    fileprivate func selectTableViewCellAt(indexPath: IndexPath) {
+    public func selectTableViewCellAt(indexPath: IndexPath) {
         let cell            = tableView(tableView ?? UITableView(), cellForRowAt: indexPath) as? ScrollableTableViewDialogCell
         cell?.accessoryType = .checkmark
         

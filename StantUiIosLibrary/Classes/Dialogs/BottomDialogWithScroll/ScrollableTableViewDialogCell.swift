@@ -15,8 +15,9 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
     public var cellIcon:      UIImageView?
     public var cellTextLabel: UILabel?
     
-    public var imageURL: String?
-    public var title:    String?
+    public var imageURL:  String?
+    public var leftImage: UIImage?
+    public var title:     String?
     
     public let activityIndicator = UIActivityIndicatorView(style: .gray)
     
@@ -63,6 +64,21 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         self.addCellSubviewsWithIcons()
     }
     
+    public func configureViewWith(title: String, leftImage: UIImage) {
+        self.title     = title
+        self.leftImage = leftImage
+        
+        mainView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: ScrollableTableViewDialogCell.cellHeight))
+        
+        guard let mainView = mainView else { return }
+        self.addSubview(mainView)
+        
+        mainView.fillSuperView()
+        mainView.backgroundColor = .white
+        
+        self.addCellSubviewsWithIcons()
+    }
+    
     fileprivate func addCellSubviews() {
         guard let mainView = mainView else { return }
         cellTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: mainView.frame.width, height: 56))
@@ -88,10 +104,14 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
         
         if imageURL == "home" {
             cellIcon.image = UIImage(named: "home")
-            cellIcon.anchor(top:      mainView.topAnchor,
-                            leading:  mainView.leadingAnchor,
-                            padding:  UIEdgeInsets(top: 5, left: 20, bottom: 0, right: 0),
-                            size:     CGSize(width: 25, height: 25))
+            cellIcon.anchor(leading: mainView.leadingAnchor,
+                            padding: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0),
+                            size:    CGSize(width: 25, height: 25))
+        } else if let leftImage = leftImage {
+            cellIcon.image = leftImage
+            cellIcon.anchor(leading: mainView.leadingAnchor,
+                            padding: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0),
+                            size:    leftImage.size)
         } else {
             cellIcon.showRoundedImageWith(path: imageURL ?? String(), radius: 8, activityIndicator: activityIndicator)
             cellIcon.anchor(leading:  mainView.leadingAnchor,
@@ -99,16 +119,18 @@ public class ScrollableTableViewDialogCell: UITableViewCell {
                             size:     CGSize(width: 40, height: 40))
         }
         
+        cellIcon.anchorCenterY(anchorY: mainView.centerYAnchor)
+        
         cellTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: mainView.frame.width, height: mainView.frame.height))
         guard let cellTextLabel = cellTextLabel else { return }
         mainView.addSubview(cellTextLabel)
         
         cellTextLabel.configure(text: title ?? "", alignment: .left, size: 16, weight: .regular, color: .darkStant)
-        cellTextLabel.anchor(top:      mainView.topAnchor,
-                             leading:  cellIcon.trailingAnchor,
+        cellTextLabel.anchor(leading:  cellIcon.trailingAnchor,
                              bottom:   mainView.bottomAnchor,
                              trailing: mainView.trailingAnchor,
                              padding:  UIEdgeInsets(top: 0, left: 10, bottom: 15, right: 58))
+        cellTextLabel.anchorCenterY(anchorY: mainView.centerYAnchor)
     }
 }
 
