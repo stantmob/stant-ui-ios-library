@@ -11,8 +11,8 @@ import StantUiIosLibrary
 @testable import StantUiIosLibraryDemo
 
 class PhotoInputViewTests: XCTestCase {
-    let viewController      = CustomFieldsViewController()
-    var photoUrls           = (1...10).map { _ in UIImage.defaultImageUrl }
+    let viewController = CustomFieldsViewController()
+    var photoUrls      = (1...10).map { _ in UIImage.defaultImageUrl }
     
     func testInitialState() {
         viewController.loadViewIfNeeded()

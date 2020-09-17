@@ -55,6 +55,7 @@
 		8F52A165250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A164250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift */; };
 		8F52A16A2502766800B9F504 /* SelectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */; };
 		8F52A16C25029D0800B9F504 /* CustomFormTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */; };
+		8F65F8CD2513DAEA0047429F /* PhotoDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F65F8CC2513DAEA0047429F /* PhotoDetailViewTests.swift */; };
 		8F6CF2242500014900077FF8 /* CustomFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */; };
 		8F766F03245131FF0027B628 /* QuantityBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F766F02245131FF0027B628 /* QuantityBarTests.swift */; };
 		8F76A5FA24FE8CB900605307 /* ListingPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F76A5F924FE8CB900605307 /* ListingPlacesViewController.swift */; };
@@ -138,6 +139,7 @@
 		8F52A164250273E600B9F504 /* BottomDialogWithScrollAndLeftViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDialogWithScrollAndLeftViewsTests.swift; sourceTree = "<group>"; };
 		8F52A1692502766800B9F504 /* SelectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewControllerTests.swift; sourceTree = "<group>"; };
 		8F52A16B25029D0800B9F504 /* CustomFormTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormTextFieldTests.swift; sourceTree = "<group>"; };
+		8F65F8CC2513DAEA0047429F /* PhotoDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewTests.swift; sourceTree = "<group>"; };
 		8F6CF2232500014900077FF8 /* CustomFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldsViewController.swift; sourceTree = "<group>"; };
 		8F766F02245131FF0027B628 /* QuantityBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityBarTests.swift; sourceTree = "<group>"; };
 		8F76A5F924FE8CB900605307 /* ListingPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPlacesViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		34DFB8E2229495F7002D92FB /* StantUiIosLibraryDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8F65F8CB2513DA140047429F /* PhotoDetailView */,
 				8F52A166250275B200B9F504 /* Inputs */,
 				8F030E9723BFC66B009CDEA4 /* Services */,
 				8F20AECF2494545300C6CA19 /* ItemMethod */,
@@ -525,6 +528,14 @@
 			path = Inputs;
 			sourceTree = "<group>";
 		};
+		8F65F8CB2513DA140047429F /* PhotoDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8F65F8CC2513DAEA0047429F /* PhotoDetailViewTests.swift */,
+			);
+			path = PhotoDetailView;
+			sourceTree = "<group>";
+		};
 		8F6CF2222500011E00077FF8 /* Inspections */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +793,7 @@
 				34ECE71D22F46F0000D24ED3 /* SecondHeaderViewControllerMock.swift in Sources */,
 				8FD17FE22507AE40003A0691 /* MultiLineTextViewTests.swift in Sources */,
 				53D2813A22A1737F007064F1 /* TestFirstHeaderViewController.swift in Sources */,
+				8F65F8CD2513DAEA0047429F /* PhotoDetailViewTests.swift in Sources */,
 				8FBE26D923C7BBD1002C488C /* ServiceInspectionFormFilledCardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
