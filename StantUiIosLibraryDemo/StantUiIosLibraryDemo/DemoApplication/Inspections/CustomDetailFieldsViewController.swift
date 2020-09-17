@@ -15,7 +15,7 @@ class CustomDetailFieldsViewController: UIViewController {
     var photoDetailView: PhotoDetailView?
     
     let severityLevels = ["Very Low", "Low", "Medium", "High", "Very High"]
-    var photoUrls      = (1...10).map { _ in UIImage.defaultImageUrl }
+    let photoUrls      = (1...10).map { _ in UIImage.defaultImageUrl }
     
     override func viewDidLoad() {
         self.view.backgroundColor = .white
@@ -50,7 +50,7 @@ class CustomDetailFieldsViewController: UIViewController {
                             padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0),
                             size:     CGSize(width: 0, height: 80))
         
-        severityView.configure(title: "Gravidade", severityLevel: severityLevels[2], severity: 2)
+        severityView.configure(title: "Gravidade", severityLevel: severityLevels[2 - 1], severity: 2)
     }
     
     func configurePhotoDetailView () {
@@ -64,6 +64,12 @@ class CustomDetailFieldsViewController: UIViewController {
                                padding:  UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0),
                                size:     CGSize(width: 0, height: 122))
         
-        photoDetailView.configure(photoUrls: photoUrls)
+        photoDetailView.configure(photoUrls: photoUrls, delegate: self)
+    }
+}
+
+extension CustomDetailFieldsViewController: PhotoDetailCollectionViewDelegate {
+    public func showPhotoAtIndex(index: Int) {
+        print("Show photo at index \(index)")
     }
 }

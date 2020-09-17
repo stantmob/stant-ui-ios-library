@@ -9,12 +9,14 @@ import UIKit
 
 public class PhotoDetailCollectionView: UIView {
     var collectionView: UICollectionView?
+    var delegate:       PhotoDetailCollectionViewDelegate?
     var photoUrls:      [String] = []
     let photoDimension: CGFloat  = 56
     
-    public func configure(photoUrls: [String]) {
+    public func configure(photoUrls: [String], delegate: PhotoDetailCollectionViewDelegate) {
         self.backgroundColor = .backgroundStant
         self.photoUrls       = photoUrls
+        self.delegate        = delegate
 
         configureCollectionView()
     }
@@ -47,13 +49,7 @@ public class PhotoDetailCollectionView: UIView {
 
 extension PhotoDetailCollectionView: UICollectionViewDataSource,
                                      UICollectionViewDelegate,
-                                     UICollectionViewDelegateFlowLayout,
-                                     PhotoDetailCollectionViewDelegate {
-    
-    public func showPhotoAtIndex(index: Int) {
-        print("Show photo at index \(index)")
-    }
-    
+                                     UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView:               UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
@@ -74,8 +70,8 @@ extension PhotoDetailCollectionView: UICollectionViewDataSource,
     
     public func collectionView(_ collectionView:          UICollectionView,
                                didSelectItemAt indexPath: IndexPath) {
-        
-        self.showPhotoAtIndex(index: indexPath.row)
+
+        delegate?.showPhotoAtIndex(index: indexPath.row)
     }
     
     public func collectionView(_ collectionView:            UICollectionView,

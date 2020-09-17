@@ -12,11 +12,12 @@ public class PhotoDetailView: UIView {
     public var photoCounter:        UILabel?
     public var galleryButton:       UIButton?
     public var photoCollectionView: PhotoDetailCollectionView?
+    public var delegate:            PhotoDetailCollectionViewDelegate?
     public var photoUrls:           [String] = []
     
-    public func configure(photoUrls: [String]) {
-        
-        self.photoUrls                    = photoUrls
+    public func configure(photoUrls: [String], delegate: PhotoDetailCollectionViewDelegate) {
+        self.photoUrls = photoUrls
+        self.delegate  = delegate
         
         configureTitleLabel()
         configurePhotoCounter()
@@ -76,6 +77,6 @@ public class PhotoDetailView: UIView {
                                    padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                                    size:     CGSize(width: 0, height: 82))
         
-        photoCollectionView.configure(photoUrls: photoUrls)
+        photoCollectionView.configure(photoUrls: photoUrls, delegate: delegate as! PhotoDetailCollectionViewDelegate)
     }
 }
