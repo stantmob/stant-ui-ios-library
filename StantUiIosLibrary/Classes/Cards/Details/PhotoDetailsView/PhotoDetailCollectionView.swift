@@ -13,7 +13,7 @@ public class PhotoDetailCollectionView: UIView {
     let photoDimension: CGFloat  = 56
     
     public func configure(photoUrls: [String]) {
-        self.backgroundColor = .red
+        self.backgroundColor = .backgroundStant
         self.photoUrls       = photoUrls
 
         configureCollectionView()
