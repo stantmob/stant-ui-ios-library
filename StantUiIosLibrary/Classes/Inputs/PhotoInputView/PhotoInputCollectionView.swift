@@ -7,15 +7,15 @@
 
 import UIKit
 
-public class PhotoCollectionView: UIView {
+public class PhotoInputCollectionView: UIView {
     var addPhotoButton: UIButton?
     var collectionView: UICollectionView?
-    var delegate:       PhotoCollectionViewDelegate?
+    var delegate:       PhotoInputCollectionViewDelegate?
     var photoUrls:      [String] = []
     let photoDimension: CGFloat  = 56
     
     public func configure(photoUrls: [String],
-                          delegate:  PhotoCollectionViewDelegate) {
+                          delegate:  PhotoInputCollectionViewDelegate) {
         
         self.backgroundColor = .backgroundStant
         self.photoUrls       = photoUrls
@@ -62,8 +62,8 @@ public class PhotoCollectionView: UIView {
                               trailing: self.trailingAnchor,
                               padding:  UIEdgeInsets(top: 7, left: 15, bottom: 13, right: 0))
         
-        collectionView.register(PhotoCollectionViewCell.self,
-                                forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier())
+        collectionView.register(PhotoInputCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PhotoInputCollectionViewCell.identifier())
     }
     
     @objc func goToAddPhotoScreen() {
@@ -71,9 +71,9 @@ public class PhotoCollectionView: UIView {
     }
 }
 
-extension PhotoCollectionView: UICollectionViewDataSource,
-                               UICollectionViewDelegate,
-                               UICollectionViewDelegateFlowLayout  {
+extension PhotoInputCollectionView: UICollectionViewDataSource,
+                                    UICollectionViewDelegate,
+                                    UICollectionViewDelegateFlowLayout  {
     
     public func collectionView(_ collectionView:               UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
@@ -84,8 +84,8 @@ extension PhotoCollectionView: UICollectionViewDataSource,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView
-                   .dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier(),
-                                        for:                 indexPath) as! PhotoCollectionViewCell
+                   .dequeueReusableCell(withReuseIdentifier: PhotoInputCollectionViewCell.identifier(),
+                                        for:                 indexPath) as! PhotoInputCollectionViewCell
 
         cell.configure(path:     self.photoUrls[indexPath.row],
                        index:    indexPath.row,

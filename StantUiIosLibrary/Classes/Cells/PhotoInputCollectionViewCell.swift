@@ -1,5 +1,5 @@
 //
-//  PhotoCollectionViewCell.swift
+//  PhotoInputCollectionViewCell.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 08/09/20.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
+class PhotoInputCollectionViewCell: UICollectionViewCell {
     var imageView:      UIImageView?
     var closeButton:    UIButton?
-    var delegate:       PhotoCollectionViewDelegate?
+    var delegate:       PhotoInputCollectionViewDelegate?
     var index:          Int      = 0
     let photoDimension: CGFloat  = 56
     
     func configure(path:     String,
                    index:    Int,
-                   delegate: PhotoCollectionViewDelegate) {
+                   delegate: PhotoInputCollectionViewDelegate) {
         
         self.index    = index
         self.delegate = delegate
@@ -64,6 +64,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
 }
 
-public protocol PhotoCollectionViewDelegate {
+public protocol PhotoInputCollectionViewDelegate {
     func removePhotoAtIndex(index: Int)
 }

@@ -1,0 +1,93 @@
+//
+//  PhotoDetailCollectionView.swift
+//  StantUiIosLibrary
+//
+//  Created by Leandro Martins on 15/09/20.
+//
+
+import UIKit
+
+public class PhotoDetailCollectionView: UIView {
+    var collectionView: UICollectionView?
+    var delegate:       PhotoDetailCollectionViewDelegate?
+    var photoUrls:      [String] = []
+    let photoDimension: CGFloat  = 56
+    
+    public func configure(photoUrls: [String], delegate: PhotoDetailCollectionViewDelegate) {
+        self.backgroundColor = .backgroundStant
+        self.photoUrls       = photoUrls
+        self.delegate        = delegate
+
+        configureCollectionView()
+    }
+    
+    func configureCollectionView() {
+        let layout                                    = UICollectionViewFlowLayout()
+        layout.scrollDirection                        = .horizontal
+        collectionView                                = UICollectionView(frame: frame, collectionViewLayout: layout)
+        guard let collectionView                      = collectionView else { return }
+        collectionView.delegate                       = self
+        collectionView.dataSource                     = self
+        collectionView.backgroundColor                = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        
+        self.addSubview(collectionView)
+        collectionView.anchor(top:      self.topAnchor,
+                              leading:  self.leadingAnchor,
+                              bottom:   self.bottomAnchor,
+                              trailing: self.trailingAnchor,
+                              padding:  UIEdgeInsets(top: 7, left: 0, bottom: 13, right: 0))
+        
+        collectionView.register(PhotoDetailCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PhotoDetailCollectionViewCell.identifier())
+    }
+    
+    @objc func goToAddPhotoScreen() {
+        print("Add photo screen")
+    }
+}
+
+extension PhotoDetailCollectionView: UICollectionViewDataSource,
+                                     UICollectionViewDelegate,
+                                     UICollectionViewDelegateFlowLayout {
+    
+    public func collectionView(_ collectionView:               UICollectionView,
+                               numberOfItemsInSection section: Int) -> Int {
+        return photoUrls.count
+    }
+    
+    public func collectionView(_ collectionView:        UICollectionView,
+                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView
+                   .dequeueReusableCell(withReuseIdentifier: PhotoDetailCollectionViewCell.identifier(),
+                                        for:                 indexPath) as! PhotoDetailCollectionViewCell
+
+        cell.configure(path: self.photoUrls[indexPath.row])
+        
+        return cell
+    }
+    
+    public func collectionView(_ collectionView:          UICollectionView,
+                               didSelectItemAt indexPath: IndexPath) {
+        delegate?.showPhotoAtIndex(index: indexPath.row)
+    }
+    
+    public func collectionView(_ collectionView:            UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath:     IndexPath) -> CGSize {
+        return CGSize(width: photoDimension, height: photoDimension + 7)
+    }
+    
+    public func collectionView(_ collectionView:                            UICollectionView,
+                               layout collectionViewLayout:                 UICollectionViewLayout,
+                               minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    public func collectionView(_ collectionView:                       UICollectionView,
+                               layout collectionViewLayout:            UICollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
+    }
+}

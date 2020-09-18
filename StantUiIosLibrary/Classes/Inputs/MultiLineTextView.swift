@@ -12,30 +12,38 @@ public class MultiLineTextView: UIView {
     public var textView:         UITextView?
     public var characterCounter: UILabel?
     
+    public var title               = ""
     public var currentCharQuantity = 0
     public var maxCharQuantity     = 1
     public var currentText         = ""
     
     public func configureTextView(title: String, maxCharQuantity: Int) {
+        self.backgroundColor = .backgroundStant
+        self.title           = title
         self.maxCharQuantity = maxCharQuantity
         
         addTitleLabel(title: title)
         addTextView(maxCharQuantity: maxCharQuantity)
         addCharacterCounter()
+        
+        self.addBorders(edges: [.bottom], thickness: 1, color: .darkGrayStant)
     }
     
     func addTitleLabel(title: String) {
         titleLabel           = UILabel()
         guard let titleLabel = titleLabel else { return }
-        titleLabel.font      = .systemFont(ofSize: 12, weight: .regular)
-        titleLabel.textColor = .black
-        titleLabel.text      = "    " + title
+    
+        titleLabel.configure(text:      "   " + title,
+                             alignment: .left,
+                             size:      16,
+                             weight:    .regular,
+                             color:     .darkGrayStant)
 
         self.addSubview(titleLabel)
         titleLabel.anchor(top:      self.topAnchor,
                           leading:  self.leadingAnchor,
                           trailing: self.trailingAnchor,
-                          padding:  UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0),
+                          padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                           size:     CGSize(width: 0, height: 14))
     }
     
@@ -53,16 +61,7 @@ public class MultiLineTextView: UIView {
                         leading:  self.leadingAnchor,
                         bottom:   self.bottomAnchor,
                         trailing: self.trailingAnchor,
-                        padding:  UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0))
-        
-        let border             = UIView()
-        border.backgroundColor = .darkGrayStant
-        
-        self.addSubview(border)
-        border.anchor(top:      textView.bottomAnchor,
-                      leading:  textView.leadingAnchor,
-                      trailing: textView.trailingAnchor,
-                      size:     CGSize(width: 0, height: 1))
+                        padding:  UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
     }
     
     func setBar() -> UIToolbar {
@@ -133,6 +132,20 @@ extension MultiLineTextView: UITextViewDelegate {
         if self.currentCharQuantity != numberOfChars && numberOfChars <= self.maxCharQuantity{
             self.currentCharQuantity    = numberOfChars
             self.characterCounter?.text = "\(currentCharQuantity)/\(maxCharQuantity)"
+        }
+        
+        if numberOfChars > 0 {
+            titleLabel?.configure(text:      "    " + title,
+                                  alignment: .left,
+                                  size:      12,
+                                  weight:    .regular,
+                                  color:     .black)
+        } else {
+            titleLabel?.configure(text:      "   " + title,
+                                  alignment: .left,
+                                  size:      16,
+                                  weight:    .regular,
+                                  color:     .darkGrayStant)
         }
         
         return numberOfChars <= self.maxCharQuantity

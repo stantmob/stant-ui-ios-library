@@ -1,5 +1,5 @@
 //
-//  PhotoDetailView.swift
+//  InChargePersonDetailView.swift
 //  StantUiIosLibrary
 //
 //  Created by Leandro Martins on 27/05/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class PhotoDetailView: UIView {
+public class InChargePersonDetailView: UIView {
     public var photoImageView: UIImageView?
     public var nameLabel:      UILabel?
     public var roleLabel:      UILabel?
@@ -33,11 +33,11 @@ public class PhotoDetailView: UIView {
         self.addSubview(photoImageView)
         photoImageView.anchor(top:     self.topAnchor,
                               padding: UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 0),
-                              size:    CGSize(width: PhotoDetailView.photoSize, height: PhotoDetailView.photoSize))
+                              size:    CGSize(width: InChargePersonDetailView.photoSize, height: InChargePersonDetailView.photoSize))
         
         photoImageView.anchorCenterX(anchorX: self.centerXAnchor)
         photoImageView.showRoundedImageWith(path:              photoUrl,
-                                            radius:            PhotoDetailView.photoSize / 2,
+                                            radius:            InChargePersonDetailView.photoSize / 2,
                                             activityIndicator: activityIndicator)
         
         photoImageView.layer.borderWidth = 2
