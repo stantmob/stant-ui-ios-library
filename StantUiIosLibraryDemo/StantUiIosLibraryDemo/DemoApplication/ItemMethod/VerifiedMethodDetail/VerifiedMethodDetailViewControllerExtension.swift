@@ -126,9 +126,10 @@ extension VerifiedMethodDetailViewController: ScrollWithTableViewDelegate {
         for group in groupedInspectionList {
             let approvedInspections = group.value.filter{ $0.status == .approved }.count
             let reprovedInspections = group.value.count - approvedInspections
-            let incrementHeight     = dateHeaderHeight + ApprovedInspectionCell.cellHeight * CGFloat(approvedInspections)
+            let incrementHeight     = dateHeaderHeight
+                                      + ApprovedInspectionCell.cellHeight * CGFloat(approvedInspections)
                                       + ReprovedInspectionCell.cellHeight * CGFloat(reprovedInspections)
-                                      + 8 * CGFloat(group.value.count)
+                                      + 10 * CGFloat(group.value.count)
             
             height += incrementHeight
         }

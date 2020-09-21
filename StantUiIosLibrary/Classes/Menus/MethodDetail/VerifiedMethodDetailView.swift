@@ -1,6 +1,6 @@
 //
 //  VerifiedMethodDetailView.swift
-//  Pods-StantUiIosLibraryDemo
+//  StantUiIosLibrary
 //
 //  Created by Renato Vieira on 7/7/20.
 //
@@ -59,10 +59,7 @@ public class VerifiedMethodDetailView: UIView {
         self.addSubview(descriptionLabel)
         descriptionLabel.anchor(top:     self.topAnchor,
                                 leading: self.leadingAnchor,
-                                padding: UIEdgeInsets(top:    16,
-                                                      left:   16,
-                                                      bottom: 0,
-                                                      right:  0))
+                                padding: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 0))
     }
     
     fileprivate func configureMethodItemDescriptionLabel(methodItemDescription: String) {
@@ -80,10 +77,7 @@ public class VerifiedMethodDetailView: UIView {
         methodItemDescriptionLabel.anchor(top:      descriptionLabel?.bottomAnchor,
                                           leading:  self.leadingAnchor,
                                           trailing: self.trailingAnchor,
-                                          padding:  UIEdgeInsets(top:    5,
-                                                                 left:   16,
-                                                                 bottom: 0,
-                                                                 right:  16))
+                                          padding:  UIEdgeInsets(top: 5, left: 16, bottom: 0, right: 16))
     }
     
     fileprivate func configureUpperNotApplicableViewSeparator() {
@@ -95,12 +89,8 @@ public class VerifiedMethodDetailView: UIView {
         upperSeparator.anchor(top:      methodItemDescriptionLabel?.bottomAnchor,
                               leading:  self.leadingAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top:    16,
-                                                     left:   0,
-                                                     bottom: 0,
-                                                     right:  0),
-                              size:     CGSize(width:  0,
-                                               height: 1))
+                              padding:  UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0),
+                              size:     CGSize(width:  0, height: 1))
     }
     
     fileprivate func configureLowerNotApplicableViewSeparator() {
@@ -112,12 +102,8 @@ public class VerifiedMethodDetailView: UIView {
         lowerSeparator.anchor(top:      notApplicableLabel?.bottomAnchor,
                               leading:  self.leadingAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top:    13,
-                                                    left:    0,
-                                                    bottom:  0,
-                                                    right:   0),
-                              size: CGSize(width:  0,
-                                           height: 1))
+                              padding:  UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0),
+                              size:     CGSize(width: 0, height: 1))
     }
     
     fileprivate func configureNotApplicableView() {
@@ -130,8 +116,7 @@ public class VerifiedMethodDetailView: UIView {
                                  leading:  self.leadingAnchor,
                                  bottom:   lowerSeparator?.topAnchor,
                                  trailing: self.trailingAnchor,
-                                 size:     CGSize(width: self.frame.width,
-                                                  height: 48))
+                                 size:     CGSize(width: self.frame.width, height: 48))
     }
     
     fileprivate func configureNotApplicableLabel() {
@@ -146,10 +131,7 @@ public class VerifiedMethodDetailView: UIView {
         notApplicableLabel.anchor(top:     notApplicableView?.topAnchor,
                                   leading: notApplicableView?.leadingAnchor,
                                   bottom:  notApplicableView?.bottomAnchor,
-                                  padding: UIEdgeInsets(top:    15,
-                                                        left:   16,
-                                                        bottom: 14,
-                                                        right:  0))
+                                  padding: UIEdgeInsets(top: 15, left:  16, bottom: 14, right: 0))
     }
     
     fileprivate func configureNotApplicableSwitch() {
@@ -160,12 +142,8 @@ public class VerifiedMethodDetailView: UIView {
         notApplicableSwitch.anchor(top:      notApplicableView?.topAnchor,
                                    bottom:   notApplicableView?.bottomAnchor,
                                    trailing: notApplicableView?.trailingAnchor,
-                                   padding:  UIEdgeInsets(top:    8,
-                                                          left:   0,
-                                                          bottom: 8,
-                                                          right:  16),
-                                   size:     CGSize(width:  51,
-                                                    height: 31))
+                                   padding:  UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 16),
+                                   size:     CGSize(width: 51, height: 31))
         
         notApplicableSwitch.addTarget(self, action: #selector(toggleButtons), for: UIControl.Event.valueChanged)
     }
@@ -180,12 +158,8 @@ public class VerifiedMethodDetailView: UIView {
         self.addSubview(approveButton)
         approveButton.anchor(top:     notApplicableView?.bottomAnchor,
                              leading: self.leadingAnchor,
-                             padding: UIEdgeInsets(top:    16,
-                                                   left:   34,
-                                                   bottom: 0 ,
-                                                   right:  0),
-                             size:    CGSize(width:  140,
-                                             height: 50))
+                             padding: UIEdgeInsets(top: 16, left: 34, bottom: 0, right: 0),
+                             size:    CGSize(width:  140, height: 50))
         
         approveButton.addTarget(delegate, action: #selector(delegate?.goToApproveVerifiedMethod), for: .touchUpInside)
         approveButton.setTitle(LibraryStrings.approve.uppercased(), for: .normal)
@@ -204,12 +178,8 @@ public class VerifiedMethodDetailView: UIView {
         self.addSubview(reproveButton)
         reproveButton.anchor(top:      notApplicableView?.bottomAnchor,
                              trailing: self.trailingAnchor,
-                             padding:  UIEdgeInsets(top:    16,
-                                                    left:   0,
-                                                    bottom: 0 ,
-                                                    right:  34),
-                             size:     CGSize(width:  140,
-                                              height: 50))
+                             padding:  UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 34),
+                             size:     CGSize(width: 140, height: 50))
         
         reproveButton.addTarget(delegate, action: #selector(delegate?.goToReproveVerifiedMethod), for: .touchUpInside)
         reproveButton.setTitle(LibraryStrings.reprove.uppercased(), for: .normal)
@@ -231,10 +201,7 @@ public class VerifiedMethodDetailView: UIView {
         inspectionLabel.anchor(top:      approveButton?.bottomAnchor,
                                leading:  self.leadingAnchor,
                                trailing: self.trailingAnchor,
-                               padding:  UIEdgeInsets(top:    16,
-                                                      left:   152,
-                                                      bottom: 0,
-                                                      right:  152))
+                               padding:  UIEdgeInsets(top: 16, left: 152, bottom: 0, right: 152))
     }
     
     @objc public func toggleButtons() {

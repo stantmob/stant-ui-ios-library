@@ -87,7 +87,8 @@ class VerifiedMethodDetailViewController: UIViewController {
         verifiedMethodDetailView.configure(delegate:              self,
                                            methodItemDescription: methodItemDescription)
         
-        scrollView.updateContentSize(view: verifiedMethodDetailView, verticalPadding: 0)
+        scrollView.updateContentSize(view:            verifiedMethodDetailView,
+                                     verticalPadding: 0)
     }
     
     func configureTableView() {
