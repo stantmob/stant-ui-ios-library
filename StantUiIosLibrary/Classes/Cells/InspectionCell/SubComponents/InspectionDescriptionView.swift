@@ -24,6 +24,10 @@ public class InspectionDescriptionView: UIView {
         descriptionLabel.numberOfLines = 2
         
         self.addSubview(descriptionLabel)
-        descriptionLabel.fillSuperView()
+        descriptionLabel.anchor(top:      self.topAnchor,
+                                leading:  self.leadingAnchor,
+                                bottom:   self.bottomAnchor,
+                                trailing: self.trailingAnchor,
+                                padding:  UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
     }
 }

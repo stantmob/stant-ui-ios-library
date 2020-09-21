@@ -12,8 +12,8 @@ public class ScrollWithTableView: UIScrollView {
     public var contentViewConstraint: NSLayoutConstraint?
     public var tableViewDelegate:     ScrollWithTableViewDelegate?
     
-    public var contentViewHeight:     CGFloat = 0
-    public var tableViewHeight:       CGFloat = 0
+    public var contentViewHeight: CGFloat = 0
+    public var tableViewHeight:   CGFloat = 0
     
     public func addToContentView(_ view: UIView) {
         contentView?.addSubview(view)
@@ -42,15 +42,14 @@ public class ScrollWithTableView: UIScrollView {
         
         if view is UITableView {
             guard let tableViewDelegate = tableViewDelegate else { return }
-            height                      = tableViewDelegate.updateTableViewHeight() - tableViewHeight
+            height                      = tableViewDelegate.updateTableViewHeight()
             tableViewHeight             = height
         } else {
-            height = view.frame.height
+            contentViewHeight = view.frame.height
         }
 
-        contentViewHeight              += height + verticalPadding
-        self.contentSize                = CGSize(width: self.frame.width, height: contentViewHeight)
-        contentViewConstraint?.constant = contentViewHeight
+        self.contentSize                = CGSize(width: self.frame.width, height: contentViewHeight + tableViewHeight)
+        contentViewConstraint?.constant = contentViewHeight + tableViewHeight
         
         self.updateLayout()
     }

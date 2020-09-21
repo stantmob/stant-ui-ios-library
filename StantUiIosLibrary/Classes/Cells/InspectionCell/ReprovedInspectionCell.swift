@@ -129,7 +129,7 @@ public class ReprovedInspectionCell: UITableViewCell {
         descriptionView.anchor(top:      self.topAnchor,
                                leading:  self.leadingAnchor,
                                trailing: self.trailingAnchor,
-                               padding:  UIEdgeInsets(top: 51, left: 16, bottom: 0, right: 16),
+                               padding:  UIEdgeInsets(top: 51, left: 0, bottom: 0, right: 0),
                                size:     CGSize(width: 0, height: 46))
         
         descriptionView.configure(descriptionText: descriptionText)

@@ -83,7 +83,7 @@ public class ApprovedInspectionCell: UITableViewCell {
         descriptionView.anchor(top:      statusBadge?.bottomAnchor,
                                leading:  self.leadingAnchor,
                                trailing: self.trailingAnchor,
-                               padding:  UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 16),
+                               padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                                size:     CGSize(width: 0, height: 46))
         
         descriptionView.configure(descriptionText: descriptionText)
