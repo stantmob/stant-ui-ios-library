@@ -22,7 +22,7 @@ public class PhotoDetailView: UIView {
         configureTitleLabel()
         configurePhotoCounter()
         configureGalleryButton()
-        configurePhotoInputCollectionView()
+        configurePhotoDetailCollectionView()
     }
     
     func configureTitleLabel() {
@@ -66,7 +66,7 @@ public class PhotoDetailView: UIView {
         galleryButton.imageView?.tintColor = UIColor.darkGrayStant
     }
     
-    func configurePhotoInputCollectionView() {
+    func configurePhotoDetailCollectionView() {
         photoCollectionView           = PhotoDetailCollectionView()
         guard let photoCollectionView = photoCollectionView else { return }
         
@@ -77,6 +77,7 @@ public class PhotoDetailView: UIView {
                                    padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                                    size:     CGSize(width: 0, height: 82))
         
-        photoCollectionView.configure(photoUrls: photoUrls, delegate: delegate as! PhotoDetailCollectionViewDelegate)
+        photoCollectionView.configure(photoUrls: photoUrls,
+                                      delegate:  delegate!)
     }
 }
