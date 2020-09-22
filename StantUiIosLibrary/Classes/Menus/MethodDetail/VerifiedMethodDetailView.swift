@@ -48,6 +48,18 @@ public class VerifiedMethodDetailView: UIView {
         configureInspectionLabel()
     }
     
+    public func disableUserInteraction() {
+        guard let notApplicableSwitch = notApplicableSwitch,
+              let approveButton       = approveButton,
+              let reproveButton       = reproveButton else { return }
+        
+        notApplicableSwitch.isUserInteractionEnabled = false
+        approveButton.isUserInteractionEnabled       = false
+        reproveButton.isUserInteractionEnabled       = false
+        approveButton.backgroundColor                = .darkGrayStant
+        reproveButton.backgroundColor                = .darkGrayStant
+    }
+    
     fileprivate func configureDescriptionLabel() {
         descriptionLabel                 = UILabel()
         guard let descriptionLabel       = descriptionLabel else { return }

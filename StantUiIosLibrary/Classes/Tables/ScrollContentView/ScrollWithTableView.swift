@@ -45,11 +45,12 @@ public class ScrollWithTableView: UIScrollView {
             height                      = tableViewDelegate.updateTableViewHeight()
             tableViewHeight             = height
         } else {
-            contentViewHeight = view.frame.height
+            contentViewHeight += view.frame.height
         }
-
-        self.contentSize                = CGSize(width: self.frame.width, height: contentViewHeight + tableViewHeight)
-        contentViewConstraint?.constant = contentViewHeight + tableViewHeight
+        
+        let newHeight                   = contentViewHeight + tableViewHeight + verticalPadding
+        self.contentSize                = CGSize(width: self.frame.width, height: newHeight)
+        contentViewConstraint?.constant = newHeight
         
         self.updateLayout()
     }

@@ -14,6 +14,7 @@ public class ApprovedInspectionCell: UITableViewCell {
     public var detailButton:     UIButton?
     public var delegate:         InspectionCellButtonDelegate?
     
+    public var allowEditing:      Bool    = true
     public static let cellHeight: CGFloat = 137
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,8 +43,12 @@ public class ApprovedInspectionCell: UITableViewCell {
     }
     
     public func configure(delegate:        InspectionCellButtonDelegate,
-                          descriptionText: String) {
-        self.delegate = delegate
+                          descriptionText: String,
+                          allowEditing:    Bool) {
+        
+        self.delegate     = delegate
+        self.allowEditing = allowEditing
+        
         self.removeSubviews()
         addShadow()
         configureStatusBadge()
@@ -102,8 +107,13 @@ public class ApprovedInspectionCell: UITableViewCell {
                           size:     CGSize(width: 60, height: 0))
         
         editButton.setTitle(LibraryStrings.edit, for: .normal)
-        editButton.setTitleColor(.darkText, for: .normal)
-        editButton.addTarget(delegate, action: #selector(delegate?.goToInspectionEditScreen), for: .touchUpInside)
+        
+        if allowEditing {
+            editButton.setTitleColor(.darkText, for: .normal)
+            editButton.addTarget(delegate, action: #selector(delegate?.goToInspectionEditScreen), for: .touchUpInside)
+        } else {
+            editButton.setTitleColor(.darkGrayStant, for: .normal)
+        }
     }
     
     fileprivate func configureDetailButton() {
