@@ -76,7 +76,7 @@ public class PhotoInputView: UIView {
         photoCollectionView.anchor(top:      galleryButton?.bottomAnchor,
                                    leading:  self.leadingAnchor,
                                    trailing: self.trailingAnchor,
-                                   padding:  UIEdgeInsets(top: 8, left: 13, bottom: 0, right: 0),
+                                   padding:  UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0),
                                    size:     CGSize(width: 0, height: 82))
         
         photoCollectionView.configure(photoUrls: photoUrls,

@@ -60,7 +60,7 @@ public class PhotoInputCollectionView: UIView {
                               leading:  addPhotoButton?.trailingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 7, left: 15, bottom: 13, right: 0))
+                              padding:  UIEdgeInsets(top: 7, left: 7, bottom: 13, right: 7))
         
         collectionView.register(PhotoInputCollectionViewCell.self,
                                 forCellWithReuseIdentifier: PhotoInputCollectionViewCell.identifier())

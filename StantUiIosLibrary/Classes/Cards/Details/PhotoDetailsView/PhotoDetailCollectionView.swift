@@ -36,7 +36,7 @@ public class PhotoDetailCollectionView: UIView {
                               leading:  self.leadingAnchor,
                               bottom:   self.bottomAnchor,
                               trailing: self.trailingAnchor,
-                              padding:  UIEdgeInsets(top: 7, left: 0, bottom: 13, right: 0))
+                              padding:  UIEdgeInsets(top: 7, left: 7, bottom: 13, right: 7))
         
         collectionView.register(PhotoDetailCollectionViewCell.self,
                                 forCellWithReuseIdentifier: PhotoDetailCollectionViewCell.identifier())
