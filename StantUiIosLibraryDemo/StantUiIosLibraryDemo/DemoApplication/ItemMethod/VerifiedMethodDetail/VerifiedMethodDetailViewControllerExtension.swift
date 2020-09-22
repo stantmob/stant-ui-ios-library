@@ -102,7 +102,8 @@ extension VerifiedMethodDetailViewController: UITableViewDelegate, UITableViewDa
                                                      for:            indexPath) as! ApprovedInspectionCell
             
             cell.configure(delegate:        self,
-                           descriptionText: inspectionCellData.descriptionText)
+                           descriptionText: inspectionCellData.descriptionText,
+                           allowEditing:    true)
             
             return cell
         } else {
@@ -112,7 +113,8 @@ extension VerifiedMethodDetailViewController: UITableViewDelegate, UITableViewDa
             cell.configure(delegate:        self,
                            severity:        inspectionCellData.severity,
                            deadline:        inspectionCellData.deadline,
-                           descriptionText: inspectionCellData.descriptionText)
+                           descriptionText: inspectionCellData.descriptionText,
+                           allowEditing:    true)
             
             return cell
         }
