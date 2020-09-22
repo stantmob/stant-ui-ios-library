@@ -15,7 +15,7 @@ class VerifiedMethodDetailViewController: UIViewController {
     public var tableView:                UITableView?
     
     public var groupedInspectionList                = [(key: String, value: [InspectionCellData])]()
-    public var methodItemDescription                = "Observar a eliminação de qualquer foco de umidade de modo que a superfície apresente-se seca quando da execução da pintura"
+    public var verifiedMethodDescription            = "Observar a eliminação de qualquer foco de umidade de modo que a superfície apresente-se seca quando da execução da pintura"
     public let severityList: [Int]                  = [5, 3, 1, 0, 4, 3, 2, 0, 3, 5]
     public let descriptionList                      = (0..<10).map{"My really long description \($0 + 1)!!! My really long description \($0 + 1)!!!"}
     public let statusList: [InspectionCellTypeEnum] = [.reproved, .approved, .reproved, .approved, .reproved,
@@ -84,8 +84,8 @@ class VerifiedMethodDetailViewController: UIViewController {
                                         trailing: scrollView.trailingAnchor,
                                         size:     CGSize(width: 0, height: 250))
         
-        verifiedMethodDetailView.configure(delegate:              self,
-                                           methodItemDescription: methodItemDescription)
+        verifiedMethodDetailView.configure(delegate:                  self,
+                                           verifiedMethodDescription: verifiedMethodDescription)
         
         scrollView.updateContentSize(view:            verifiedMethodDetailView,
                                      verticalPadding: 0)

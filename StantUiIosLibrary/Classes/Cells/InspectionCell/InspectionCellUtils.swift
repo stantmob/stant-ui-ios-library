@@ -27,6 +27,15 @@ public enum InspectionCellTypeEnum {
             return .greenStant
         }
     }
+    
+    public static func getStatusFromInt(value: Int) -> InspectionCellTypeEnum {
+        switch value {
+        case 1:
+            return InspectionCellTypeEnum.reproved
+        default:
+            return InspectionCellTypeEnum.approved
+        }
+    }
 }
 
 @objc public protocol InspectionCellButtonDelegate {

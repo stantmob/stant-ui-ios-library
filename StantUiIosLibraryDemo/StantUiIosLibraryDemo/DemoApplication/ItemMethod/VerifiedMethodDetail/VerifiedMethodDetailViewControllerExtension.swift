@@ -10,7 +10,7 @@ import UIKit
 import StantUiIosLibrary
 
 extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
-    func goToApproveVerifiedMethod() {
+    func addApprovedInspectionData() {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Approve button clicked!",
                                       message: "Method Approved", preferredStyle: .alert)
@@ -20,7 +20,7 @@ extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
         self.presentAlert(alert: alert)
     }
     
-    func goToReproveVerifiedMethod() {
+    func addReprovedInspectionData() {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Reprove button clicked!",
                                       message: "Method Reproved", preferredStyle: .alert)

@@ -8,7 +8,7 @@
 import UIKit
 
 public enum MethodCellTypeEnum: Int {
-    case notApplicable = 0, reproved = 1, approved = 2, notInspected = 3
+    case notInspected = 0, reproved = 1, approved = 2, notApplicable = 3
     
     public func stringValue() -> String {
         switch self {
@@ -26,13 +26,13 @@ public enum MethodCellTypeEnum: Int {
     public static func getStatusFromInt(value: Int) -> MethodCellTypeEnum {
         switch value {
         case 0:
-            return MethodCellTypeEnum.notApplicable
+            return MethodCellTypeEnum.notInspected
         case 1:
             return MethodCellTypeEnum.reproved
         case 2:
             return MethodCellTypeEnum.approved
         default:
-            return MethodCellTypeEnum.notInspected
+            return MethodCellTypeEnum.notApplicable
         }
     }
     
