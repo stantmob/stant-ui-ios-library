@@ -39,6 +39,6 @@ public enum InspectionCellTypeEnum {
 }
 
 @objc public protocol InspectionCellButtonDelegate {
-    @objc func goToInspectionEditScreen()
-    @objc func goToInspectionDetailScreen()
+    func goToInspectionEditScreen(section: Int, row: Int)
+    func goToInspectionDetailScreen(section: Int, row: Int)
 }

@@ -117,9 +117,10 @@ class VerifiedMethodDetailViewController: UIViewController {
 }
 
 struct InspectionCellData {
-    var createdAt:       String               = ""
+    var guid:            String                 = ""
+    var createdAt:       String                 = ""
     var status:          InspectionCellTypeEnum = .approved
-    var severity:        Int                  = 0
-    var deadline:        String               = ""
-    var descriptionText: String               = ""
+    var severity:        Int                    = 0
+    var deadline:        String                 = ""
+    var descriptionText: String                 = ""
 }

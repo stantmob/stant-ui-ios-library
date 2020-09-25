@@ -46,7 +46,7 @@ extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
 }
 
 extension VerifiedMethodDetailViewController: InspectionCellButtonDelegate {
-    func goToInspectionEditScreen() {
+    func goToInspectionEditScreen(section: Int, row: Int) {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Edit button clicked!",
                                       message: "Going to Edit screen", preferredStyle: .alert)
@@ -56,7 +56,7 @@ extension VerifiedMethodDetailViewController: InspectionCellButtonDelegate {
         self.presentAlert(alert: alert)
     }
     
-    func goToInspectionDetailScreen() {
+    func goToInspectionDetailScreen(section: Int, row: Int) {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Detail Button clicked!",
                                       message: "Going to Detail screen", preferredStyle: .alert)
@@ -102,6 +102,8 @@ extension VerifiedMethodDetailViewController: UITableViewDelegate, UITableViewDa
                                                      for:            indexPath) as! ApprovedInspectionCell
             
             cell.configure(delegate:        self,
+                           section:         indexPath.section,
+                           row:             indexPath.row,
                            descriptionText: inspectionCellData.descriptionText,
                            allowEditing:    true)
             
@@ -111,6 +113,8 @@ extension VerifiedMethodDetailViewController: UITableViewDelegate, UITableViewDa
                                                      for:            indexPath) as! ReprovedInspectionCell
             
             cell.configure(delegate:        self,
+                           section:         indexPath.section,
+                           row:             indexPath.row,
                            severity:        inspectionCellData.severity,
                            deadline:        inspectionCellData.deadline,
                            descriptionText: inspectionCellData.descriptionText,

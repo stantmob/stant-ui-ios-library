@@ -17,6 +17,9 @@ public class ApprovedInspectionCell: UITableViewCell {
     public var allowEditing:      Bool    = true
     public static let cellHeight: CGFloat = 137
     
+    public var section: Int = 0
+    public var row:     Int = 0
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
@@ -43,10 +46,14 @@ public class ApprovedInspectionCell: UITableViewCell {
     }
     
     public func configure(delegate:        InspectionCellButtonDelegate,
+                          section:         Int,
+                          row:             Int,
                           descriptionText: String,
                           allowEditing:    Bool) {
         
         self.delegate     = delegate
+        self.section      = section
+        self.row          = row
         self.allowEditing = allowEditing
         
         self.removeSubviews()
@@ -110,7 +117,7 @@ public class ApprovedInspectionCell: UITableViewCell {
         
         if allowEditing {
             editButton.setTitleColor(.darkText, for: .normal)
-            editButton.addTarget(delegate, action: #selector(delegate?.goToInspectionEditScreen), for: .touchUpInside)
+            editButton.addTarget(self, action: #selector(goToInspectionEditScreen), for: .touchUpInside)
         } else {
             editButton.setTitleColor(.darkGrayStant, for: .normal)
         }
@@ -130,6 +137,14 @@ public class ApprovedInspectionCell: UITableViewCell {
         
         detailButton.setTitle(LibraryStrings.details, for: .normal)
         detailButton.setTitleColor(.darkText, for: .normal)
-        detailButton.addTarget(delegate, action: #selector(delegate?.goToInspectionDetailScreen), for: .touchUpInside)
+        detailButton.addTarget(self, action: #selector(goToInspectionDetailScreen), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func goToInspectionEditScreen() {
+        delegate?.goToInspectionEditScreen(section: section, row: row)
+    }
+    
+    @objc fileprivate func goToInspectionDetailScreen() {
+        delegate?.goToInspectionDetailScreen(section: section, row: row)
     }
 }
