@@ -89,7 +89,8 @@ public class CustomFormTextField: UITextField {
     }
     
     public func setText(text: String) {
-        self.text = text
+        self.text        = text
+        self.currentText = text
         self.togglePlaceholderLabel()
     }
     

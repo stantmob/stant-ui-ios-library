@@ -10,7 +10,7 @@ import UIKit
 import StantUiIosLibrary
 
 extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
-    func goToApproveVerifiedMethod() {
+    func addApprovedInspectionData() {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Approve button clicked!",
                                       message: "Method Approved", preferredStyle: .alert)
@@ -20,7 +20,7 @@ extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
         self.presentAlert(alert: alert)
     }
     
-    func goToReproveVerifiedMethod() {
+    func addReprovedInspectionData() {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Reprove button clicked!",
                                       message: "Method Reproved", preferredStyle: .alert)
@@ -46,7 +46,7 @@ extension VerifiedMethodDetailViewController: VerifiedMethodDetailViewDelegate {
 }
 
 extension VerifiedMethodDetailViewController: InspectionCellButtonDelegate {
-    func goToInspectionEditScreen() {
+    func goToInspectionEditScreen(section: Int, row: Int) {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Edit button clicked!",
                                       message: "Going to Edit screen", preferredStyle: .alert)
@@ -56,7 +56,7 @@ extension VerifiedMethodDetailViewController: InspectionCellButtonDelegate {
         self.presentAlert(alert: alert)
     }
     
-    func goToInspectionDetailScreen() {
+    func goToInspectionDetailScreen(section: Int, row: Int) {
         // Only for Demo purposes
         let alert = UIAlertController(title:   "Detail Button clicked!",
                                       message: "Going to Detail screen", preferredStyle: .alert)
@@ -102,7 +102,10 @@ extension VerifiedMethodDetailViewController: UITableViewDelegate, UITableViewDa
                                                      for:            indexPath) as! ApprovedInspectionCell
             
             cell.configure(delegate:        self,
-                           descriptionText: inspectionCellData.descriptionText)
+                           section:         indexPath.section,
+                           row:             indexPath.row,
+                           descriptionText: inspectionCellData.descriptionText,
+                           allowEditing:    true)
             
             return cell
         } else {
@@ -110,9 +113,12 @@ extension VerifiedMethodDetailViewController: UITableViewDelegate, UITableViewDa
                                                      for:            indexPath) as! ReprovedInspectionCell
             
             cell.configure(delegate:        self,
+                           section:         indexPath.section,
+                           row:             indexPath.row,
                            severity:        inspectionCellData.severity,
                            deadline:        inspectionCellData.deadline,
-                           descriptionText: inspectionCellData.descriptionText)
+                           descriptionText: inspectionCellData.descriptionText,
+                           allowEditing:    true)
             
             return cell
         }

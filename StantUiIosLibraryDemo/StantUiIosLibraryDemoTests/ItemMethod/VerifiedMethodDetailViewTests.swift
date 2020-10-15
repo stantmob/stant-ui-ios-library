@@ -25,8 +25,8 @@ class VerifiedMethodDetailViewTests: XCTestCase {
         var reproveAction = verifiedMethodDetailView.reproveButton?.actions(forTarget:       viewController,
                                                                              forControlEvent: .touchUpInside)
         
-        XCTAssertEqual(approveAction?[0], "goToApproveVerifiedMethod")
-        XCTAssertEqual(reproveAction?[0], "goToReproveVerifiedMethod")
+        XCTAssertEqual(approveAction?[0], "addApprovedInspectionData")
+        XCTAssertEqual(reproveAction?[0], "addReprovedInspectionData")
         XCTAssertEqual(verifiedMethodDetailView.inspectionLabel?.isHidden, false)
         XCTAssertEqual(viewController.tableView?.isHidden, false)
         
